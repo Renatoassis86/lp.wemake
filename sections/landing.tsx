@@ -20,8 +20,8 @@ const Services = dynamic(
 const PresenceMap = dynamic(
   () => import("@/features/presence-map/presence-map").then((m) => ({ default: m.PresenceMap })),
 );
-const Gallery = dynamic(
-  () => import("@/features/gallery/gallery").then((m) => ({ default: m.Gallery })),
+const Humans = dynamic(
+  () => import("@/features/humans/humans").then((m) => ({ default: m.Humans })),
 );
 const FreeMaterial = dynamic(
   () => import("@/features/free-material/free-material").then((m) => ({ default: m.FreeMaterial })),
@@ -59,7 +59,7 @@ const FloatingWhatsapp = dynamic(
  *   V.    Vídeo do CEO                    — player cinematográfico
  *   VI.   Produtos e serviços             — 5 frentes integradas
  *   VII.  Presença nacional               — mapa interativo do Brasil
- *   VIII. Galeria humana                  — frames temáticos
+ *   VIII. Humanizar a tecnologia          — sequência cinematográfica em 8 cenas
  *   IX.   Material gratuito               — livro + e-books
  *   X.    Grupo VIP                       — comunidade WhatsApp
  *   XI.   Consultor comercial             — WhatsApp direto
@@ -77,7 +77,7 @@ export function LandingPage() {
       <CeoVideo />
       <Services />
       <PresenceMap />
-      <Gallery />
+      <Humans />
       <FreeMaterial />
       <VipGroup />
       <Consultor />
