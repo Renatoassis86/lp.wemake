@@ -31,7 +31,7 @@ export function CtaStrategic() {
 
             <div className="relative">
               <span className="font-mono text-[0.6875rem] uppercase tracking-[0.24em] text-glow-cyan">
-                Próximo passo
+                Capítulo XIII · Próximo passo
               </span>
               <h2 className="mt-6 mx-auto max-w-3xl font-display font-light text-gradient-cinematic text-[clamp(2.25rem,1.8rem+2.5vw,4rem)] leading-[1.05] tracking-[-0.03em]">
                 Agende uma conversa estratégica{" "}
@@ -54,7 +54,7 @@ export function CtaStrategic() {
                     })
                   }
                 >
-                  <a href="#contato">Agendar conversa</a>
+                  <a href="#reuniao">Agendar conversa</a>
                 </Button>
                 <Button size="xl" variant="secondary" asChild>
                   <a href="#manifesto">Ler o manifesto</a>

@@ -88,7 +88,7 @@ export function Nav() {
 
           <div className="hidden lg:flex items-center gap-2.5">
             <Button variant="ghost" size="sm" asChild>
-              <a href="#contato">Acessar</a>
+              <a href="#reuniao">Acessar</a>
             </Button>
             <Button
               size="sm"
@@ -98,7 +98,7 @@ export function Nav() {
                 trackEvent({ name: "cta_click", placement: "nav", label: "Agendar conversa" })
               }
             >
-              <a href="#contato">Agendar conversa</a>
+              <a href="#reuniao">Agendar conversa</a>
             </Button>
           </div>
 
@@ -144,7 +144,7 @@ function MobileMenu() {
         ))}
         <div className="p-2 pt-3">
           <Button className="w-full" size="lg" trailingIcon asChild>
-            <a href="#contato" onClick={() => setNavOpen(false)}>
+            <a href="#reuniao" onClick={() => setNavOpen(false)}>
               Agendar conversa
             </a>
           </Button>

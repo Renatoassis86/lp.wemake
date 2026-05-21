@@ -5,56 +5,61 @@ export type NavLink = {
   description?: string;
 };
 
+/**
+ * 14-act narrative — surfaced as 5 nav anchors for clarity.
+ * Each anchor lands on the opening act of a chapter.
+ */
 export const primaryNav: NavLink[] = [
   {
-    id: "manifesto",
-    label: "Manifesto",
-    href: "#manifesto",
-    description: "Nossa convicção sobre tecnologia, formação e cosmovisão.",
+    id: "visao",
+    label: "Visão",
+    href: "#visao",
+    description: "Verdade, Beleza, Bondade e o Mandato Cultural.",
   },
   {
-    id: "pilares",
-    label: "Pilares",
-    href: "#pilares",
-    description: "Os quatro pilares pedagógicos que estruturam o currículo.",
+    id: "ceo",
+    label: "Manifesto",
+    href: "#ceo",
+    description: "Mensagem do CEO — apresentação institucional.",
   },
   {
     id: "solucoes",
     label: "Soluções",
     href: "#solucoes",
-    description: "Editora de soluções tecnológicas para escolas cristãs.",
+    description: "Currículo maker, formação, plataforma, espaço, assessoria.",
   },
   {
-    id: "escolas",
-    label: "Escolas",
-    href: "#escolas",
-    description: "Instituições parceiras em todo o Brasil.",
+    id: "presenca",
+    label: "Presença",
+    href: "#presenca",
+    description: "Escolas parceiras em todo o Brasil.",
   },
   {
-    id: "contato",
-    label: "Conversar",
-    href: "#contato",
-    description: "Agendar reunião com o time institucional.",
+    id: "reuniao",
+    label: "Reunião",
+    href: "#reuniao",
+    description: "Agendar conversa estratégica.",
   },
 ];
 
 export const footerNav = {
   institucional: [
-    { label: "Sobre a We Make", href: "/sobre" },
-    { label: "Manifesto", href: "/manifesto" },
-    { label: "Conselho consultivo", href: "/conselho" },
+    { label: "Manifesto", href: "#ceo" },
+    { label: "Visão", href: "#visao" },
+    { label: "Presença nacional", href: "#presenca" },
     { label: "Carreiras", href: "/carreiras" },
   ],
   solucoes: [
-    { label: "Currículo & Material", href: "/solucoes/curriculo" },
-    { label: "Plataforma", href: "/solucoes/plataforma" },
-    { label: "Formação de educadores", href: "/solucoes/formacao" },
-    { label: "Consultoria institucional", href: "/solucoes/consultoria" },
+    { label: "Currículo Maker", href: "#solucoes" },
+    { label: "Formação Docente", href: "#solucoes" },
+    { label: "Plataforma", href: "#solucoes" },
+    { label: "Espaço Maker", href: "#solucoes" },
+    { label: "Assessoria Institucional", href: "#solucoes" },
   ],
   recursos: [
-    { label: "Biblioteca", href: "/biblioteca" },
-    { label: "Casos de escola", href: "/casos" },
-    { label: "Documentação", href: "/docs" },
+    { label: "Material gratuito", href: "#material" },
+    { label: "Grupo VIP", href: "#vip" },
+    { label: "Falar com consultor", href: "#consultor" },
     { label: "Imprensa", href: "/imprensa" },
   ],
   legal: [

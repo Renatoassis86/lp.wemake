@@ -15,7 +15,7 @@ import { ContactForm } from "./contact-form";
  */
 export function Contact() {
   return (
-    <Section id="contato" bleed>
+    <Section id="reuniao" bleed>
       <Glow color="cyan" size="xl" intensity={0.22} className="-right-40 top-0" />
       <Glow color="violet" size="lg" intensity={0.16} className="-left-40 bottom-0" />
 
@@ -23,7 +23,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5">
             <Reveal>
-              <Eyebrow>Conversar</Eyebrow>
+              <Eyebrow>Capítulo XIII · Reunião estratégica</Eyebrow>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-5 font-display font-light text-gradient-cinematic text-[clamp(2rem,1.6rem+2vw,3.5rem)] leading-[1.05] tracking-[-0.03em]">
