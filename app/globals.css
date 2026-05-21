@@ -1,0 +1,269 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+/* ============================================================
+   Tailwind v4 @theme — surfaces tokens as utility classes.
+   ============================================================ */
+@theme {
+  --color-background: rgb(var(--color-bg));
+  --color-foreground: rgb(var(--color-fg));
+  --color-muted: rgb(var(--color-fg-muted));
+  --color-subtle: rgb(var(--color-fg-subtle));
+  --color-accent: rgb(var(--color-accent));
+
+  --color-ink-50: rgb(var(--color-ink-100));
+  --color-ink-100: rgb(var(--color-ink-100));
+  --color-ink-200: rgb(var(--color-ink-200));
+  --color-ink-300: rgb(var(--color-ink-300));
+  --color-ink-400: rgb(var(--color-ink-400));
+  --color-ink-500: rgb(var(--color-ink-500));
+  --color-ink-600: rgb(var(--color-ink-600));
+  --color-ink-700: rgb(var(--color-ink-700));
+  --color-ink-800: rgb(var(--color-ink-800));
+  --color-ink-850: rgb(var(--color-ink-850));
+  --color-ink-900: rgb(var(--color-ink-900));
+  --color-ink-950: rgb(var(--color-ink-950));
+
+  --color-glow-cyan: rgb(var(--color-glow-cyan));
+  --color-glow-blue: rgb(var(--color-glow-blue));
+  --color-glow-violet: rgb(var(--color-glow-violet));
+  --color-glow-amber: rgb(var(--color-glow-amber));
+
+  --color-ivory-50: rgb(var(--color-ivory-50));
+  --color-ivory-100: rgb(var(--color-ivory-100));
+  --color-ivory-200: rgb(var(--color-ivory-200));
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-pill: var(--radius-pill);
+
+  --animate-fade-in: fade-in 600ms var(--ease-out-expo) both;
+  --animate-rise: rise 800ms var(--ease-cinematic) both;
+  --animate-glow-pulse: glow-pulse 8s ease-in-out infinite;
+  --animate-aurora: aurora 24s linear infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+/* ============================================================
+   Base layer — typographic & global reset.
+   ============================================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-white/[0.06];
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    color-scheme: dark;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "ss02", "cv11", "calt";
+    font-synthesis: none;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgb(var(--color-glow-cyan) / 0.35);
+    color: rgb(var(--color-ivory-50));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-glow-cyan));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+  }
+
+  p, li {
+    text-wrap: pretty;
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255 255 255 / 0.08);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255 255 255 / 0.16);
+  }
+}
+
+/* ============================================================
+   Component layer — recurring premium primitives.
+   ============================================================ */
+@layer components {
+  .container-rail {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    max-width: var(--container-2xl);
+  }
+
+  .container-prose {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    max-width: var(--container-prose);
+  }
+
+  .eyebrow {
+    @apply font-mono uppercase text-ink-300/80;
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-eyebrow);
+  }
+
+  .hairline {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(255 255 255 / 0.18) 50%,
+      transparent 100%
+    );
+    height: 1px;
+  }
+
+  .display-balance {
+    text-wrap: balance;
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-display);
+  }
+
+  .text-gradient-cinematic {
+    background: linear-gradient(
+      180deg,
+      rgb(248 250 252) 0%,
+      rgb(248 250 252 / 0.92) 38%,
+      rgb(148 175 232 / 0.62) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-glow {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--color-glow-cyan)) 0%,
+      rgb(var(--color-ink-200)) 50%,
+      rgb(var(--color-glow-violet)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .surface-card {
+    background:
+      linear-gradient(180deg, rgb(255 255 255 / 0.025) 0%, rgb(255 255 255 / 0) 100%),
+      rgb(var(--color-ink-850));
+    border: 1px solid rgb(255 255 255 / 0.06);
+    box-shadow: var(--shadow-md), var(--shadow-inset-hair);
+  }
+
+  .surface-glass {
+    background: rgb(var(--color-ink-900) / 0.6);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgb(255 255 255 / 0.08);
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(64px);
+    opacity: 0.6;
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+}
+
+/* ============================================================
+   Utilities — single-purpose, opt-in.
+   ============================================================ */
+@layer utilities {
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+  }
+  .mask-fade-t {
+    -webkit-mask-image: linear-gradient(0deg, #000 60%, transparent 100%);
+    mask-image: linear-gradient(0deg, #000 60%, transparent 100%);
+  }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
+  }
+  .preserve-3d { transform-style: preserve-3d; }
+  .perspective-1200 { perspective: 1200px; }
+  .gpu { transform: translateZ(0); will-change: transform; }
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(48px); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+@keyframes aurora {
+  0% { transform: translate3d(-10%, -5%, 0) rotate(0deg); }
+  50% { transform: translate3d(8%, 4%, 0) rotate(180deg); }
+  100% { transform: translate3d(-10%, -5%, 0) rotate(360deg); }
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
