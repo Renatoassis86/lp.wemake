@@ -240,6 +240,30 @@
 }
 
 /* ============================================================
+   ::cue — sophisticated WebVTT subtitle styling.
+   Apple-keynote idiom: dark glass pill, generous tracking, readable.
+   ============================================================ */
+::cue {
+  background-color: rgba(4, 8, 20, 0.78);
+  color: rgb(248, 250, 252);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.45;
+  padding: 0.35rem 0.75rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+::cue(b), ::cue(strong) {
+  font-weight: 600;
+  color: rgb(207, 226, 255);
+}
+::cue(i), ::cue(em) {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: rgb(245, 241, 232);
+}
+
+/* ============================================================
    Keyframes
    ============================================================ */
 @keyframes fade-in {

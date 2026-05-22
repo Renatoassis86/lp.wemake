@@ -50,6 +50,16 @@ export const siteConfig = {
     videoPoster: "/videos/ceo-manifesto-poster.jpg",
     videoCaption: "/videos/ceo-manifesto-pt-BR.vtt",
     duration: "8 min 24s",
+    talkTitle: "A pergunta que deu origem à We Make",
+    talkChapters: [
+      { time: "00:00", seconds: 0,   label: "Introdução" },
+      { time: "00:32", seconds: 32,  label: "A pergunta inicial" },
+      { time: "02:14", seconds: 134, label: "Onde tudo começou" },
+      { time: "03:48", seconds: 228, label: "O encontro com a tradição" },
+      { time: "05:22", seconds: 322, label: "O movimento We Make" },
+      { time: "06:55", seconds: 415, label: "Convite às escolas" },
+      { time: "08:00", seconds: 480, label: "O que vem agora" },
+    ],
   },
   presence: {
     schools: 180,
