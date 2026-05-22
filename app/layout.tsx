@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { fontVariables, fontDisplay, fontSans, fontMono } from "@/lib/fonts";
 import { LenisProvider } from "@/lib/lenis";
 import { ScrollProgressBar } from "@/components/motion/scroll-progress";
+import { ChapterRail } from "@/components/navigation/chapter-rail";
 import { Nav } from "@/features/navigation/nav";
 import { Footer } from "@/features/footer/footer";
 import { buildMetadata, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <LenisProvider>
           <Nav />
+          <ChapterRail />
           {children}
           <Footer />
         </LenisProvider>
