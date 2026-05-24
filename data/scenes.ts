@@ -1,19 +1,8 @@
 /**
  * Roteiro visual da seção cinematográfica "Por trás da tecnologia".
  *
- * 8 cenas:
- *   I.    Cartela de abertura
- *   II.   Crianças — o assombro
- *   III.  Adolescentes — a construção
- *   IV.   Oração — a contemplação
- *   V.    Espaço maker — o ofício
- *   VI.   Professores — a transmissão
- *   VII.  Colaboração — o coletivo
- *   VIII. Cartela de encerramento
- *
- * Quando as fotografias institucionais entrarem, basta substituir os
- * paths em `src`. Enquanto isso, cada cena renderiza um fallback
- * atmosférico baseado em `tone`.
+ * 7 cenas (abertura + 5 cenas humanas + encerramento) usando as
+ * fotografias institucionais já entregues em /public/photos/.
  */
 
 export type SceneTone = "cool" | "warm" | "violet" | "amber" | "ink" | "ivory";
@@ -43,10 +32,9 @@ export const scenes: Scene[] = [
     number: "I",
     kind: "title",
     eyebrow: "Capítulo VIII · Humanizar a tecnologia",
-    headline:
-      "Por trás da tecnologia, sempre uma pessoa.",
+    headline: "Por trás da tecnologia, sempre uma pessoa.",
     caption:
-      "Uma sequência cinematográfica em sete momentos — sobre quem realmente carrega o futuro da educação cristã.",
+      "Uma sequência em cinco momentos sobre quem realmente carrega o futuro da educação cristã.",
     tone: "ink",
     position: "centered",
   },
@@ -57,9 +45,9 @@ export const scenes: Scene[] = [
     eyebrow: "01 · Educação Infantil",
     headline: "Antes do código, o assombro.",
     caption:
-      "Aprender começa com a capacidade de admirar. Crianças que se admiram são crianças que pensam.",
-    src: "/photos/01-criancas-programando.jpg",
-    alt: "Crianças explorando um projeto maker com olhar de descoberta",
+      "Aprender começa com a capacidade de admirar — e crianças que se admiram são crianças que pensam.",
+    src: "/photos/foto1.png",
+    alt: "Criança brasileira observando uma placa Arduino com LED azul aceso em um espaço maker",
     focal: "center",
     tone: "warm",
     position: "lower-left",
@@ -73,7 +61,7 @@ export const scenes: Scene[] = [
     headline: "Aprender não é consumir — é construir.",
     caption:
       "Adolescentes que escrevem código aprendem mais do que sintaxe: aprendem a ordenar o pensamento.",
-    src: "/photos/02-adolescentes-codigo.jpg",
+    src: "/photos/foto2.png",
     alt: "Adolescente em estação de trabalho escrevendo código",
     focal: "left",
     tone: "cool",
@@ -87,9 +75,9 @@ export const scenes: Scene[] = [
     eyebrow: "03 · Espiritualidade",
     headline: "Antes da técnica, a contemplação.",
     caption:
-      "Não há formação humana sem silêncio. Não há silêncio sem espaço para o sagrado.",
-    src: "/photos/03-oracao-em-grupo.jpg",
-    alt: "Grupo de estudantes em momento de oração",
+      "Não há formação humana sem silêncio — e não há silêncio sem espaço para o sagrado.",
+    src: "/photos/foto3.png",
+    alt: "Grupo de estudantes em silhueta diante de janela arqueada dourada",
     focal: "center",
     tone: "amber",
     position: "centered",
@@ -103,38 +91,23 @@ export const scenes: Scene[] = [
     headline: "Espaços que ensinam a fazer.",
     caption:
       "Arquitetura, equipamento, fluxo e protocolo — tudo desenhado para que o estudante experimente o gesto de criar.",
-    src: "/photos/04-espaco-maker.jpg",
-    alt: "Laboratório maker moderno com bancadas, impressoras 3D e ferramentas",
+    src: "/photos/foto4.png",
+    alt: "Laboratório maker em atividade com impressora 3D, bancadas e estudantes ao fundo",
     focal: "center",
     tone: "violet",
     position: "lower-left",
     parallax: -110,
   },
   {
-    id: "professores",
+    id: "colaboracao",
     number: "VI",
     kind: "scene",
-    eyebrow: "05 · Educadores",
-    headline: "Quem ensina, primeiro pensa.",
-    caption:
-      "Professores formados na tradição clássica e na prática maker. A diferença está sempre no educador.",
-    src: "/photos/05-professores-ensinando.jpg",
-    alt: "Professor orientando estudantes em projeto colaborativo",
-    focal: "right",
-    tone: "warm",
-    position: "lower-right",
-    parallax: -80,
-  },
-  {
-    id: "colaboracao",
-    number: "VII",
-    kind: "scene",
-    eyebrow: "06 · Coletivo",
+    eyebrow: "05 · Coletivo",
     headline: "Construir juntos — como fomos feitos para fazer.",
     caption:
       "Tecnologia que reúne. Pessoas que se reconhecem como criadoras. Esse é o gesto que a We Make tenta proteger todos os dias.",
-    src: "/photos/06-colaboracao-criatividade.jpg",
-    alt: "Estudantes colaborando em um projeto criativo em conjunto",
+    src: "/photos/foto5.png",
+    alt: "Estudantes colaborando em torno de um protótipo robótico",
     focal: "center",
     tone: "ivory",
     position: "upper-left",
@@ -142,7 +115,7 @@ export const scenes: Scene[] = [
   },
   {
     id: "closing",
-    number: "VIII",
+    number: "VII",
     kind: "closing",
     eyebrow: "Final do Capítulo VIII",
     headline: "Tecnologia redimida. Pessoas formadas.",

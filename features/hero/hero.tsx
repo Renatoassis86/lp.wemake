@@ -9,7 +9,6 @@ import { Glow } from "@/components/ui/glow";
 import { Section } from "@/components/ui/section";
 import { SplitText } from "@/components/motion/split-text";
 import { Reveal } from "@/components/motion/reveal";
-import { AmbientVideo } from "@/components/effects/ambient-video";
 import { Particles } from "@/components/effects/particles";
 import { trackEvent } from "@/lib/analytics";
 import { siteConfig, whatsappLink } from "@/constants/site";
@@ -30,11 +29,6 @@ export function Hero() {
       bleed
       className="relative min-h-[100svh] pt-[12rem] sm:pt-[16rem] pb-[8rem]"
     >
-      <AmbientVideo
-        src={siteConfig.ceo.videoHero}
-        poster={siteConfig.ceo.videoHeroPoster}
-        className="absolute inset-0 -z-20"
-      />
       <Atmosphere />
       <Particles count={56} className="-z-10" />
 

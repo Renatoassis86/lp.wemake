@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"d:/lp_wemake/doc\" && cp \"[Proposta] Tecnologia, VIrtude e Educação Cristã.pdf\" \"proposta.pdf\" 2>&1)",
+      "Bash(command -v pdftotext pdftoppm pdfinfo qpdf)",
+      "Bash(pdftotext -enc UTF-8 -layout proposta.pdf proposta.txt)",
+      "Bash(pdftotext -enc UTF-8 -layout Guia_Comercial_We_Make_2027.pdf guia.txt)",
+      "Bash(mkdir -p videos photos)",
+      "Bash(mv video1.mp4 videos/)",
+      "Bash(mv foto*.png photos/)",
+      "Bash(rm -rf photos/photos)"
+    ]
+  }
+}

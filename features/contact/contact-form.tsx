@@ -8,14 +8,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { contactSchema, type ContactInput } from "@/lib/validation";
+import {
+  contactSchema,
+  ROLES_LABEL,
+  UF_OPTIONS,
+  type ContactInput,
+} from "@/lib/validation";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 /**
- * Strategic lead capture form.
- * Hooked to React Hook Form + Zod. Posts to /api/lead by default,
- * but works in “fire-and-display-success” mode if no endpoint is wired.
+ * Formulário estratégico de captação para a reunião com o time comercial.
+ * Campos qualificam o lead conforme o playbook da campanha 2027:
+ *  - papel na escola
+ *  - dados de contato (email + whatsapp)
+ *  - identificação da instituição (nome + cidade + UF)
  */
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -34,10 +41,8 @@ export function ContactForm() {
       await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      }).catch(() => {
-        // Endpoint may not be wired in this environment; fail silently in MVP.
-      });
+        body: JSON.stringify({ ...data, channel: "contact_form" }),
+      }).catch(() => {});
       trackEvent({
         name: "lead_submit",
         channel: "contact_form",
@@ -52,20 +57,14 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div
-        className="
-          flex flex-col items-center justify-center gap-4
-          rounded-3xl border border-glow-cyan/30 bg-glow-cyan/[0.04]
-          px-8 py-16 text-center
-        "
-      >
+      <div className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-glow-cyan/30 bg-glow-cyan/[0.04] px-8 py-16 text-center">
         <div className="inline-flex size-12 items-center justify-center rounded-full bg-glow-cyan/15 ring-1 ring-glow-cyan/40">
           <Check className="size-5 text-glow-cyan" aria-hidden />
         </div>
         <h3 className="font-display text-2xl">Recebemos sua mensagem.</h3>
         <p className="max-w-md text-[0.9375rem] text-foreground/65">
           Nosso time institucional retornará em até <strong>um dia útil</strong> com
-          uma proposta de agenda para reunião estratégica.
+          uma proposta de agenda para a reunião estratégica.
         </p>
       </div>
     );
@@ -81,45 +80,64 @@ export function ContactForm() {
         />
       </Field>
 
-      <Field label="Email institucional" error={errors.email?.message}>
-        <Input
-          {...register("email")}
-          type="email"
-          autoComplete="email"
-          placeholder="diretoria@suaescola.com.br"
-        />
+      <Field label="Seu papel na escola" error={errors.role?.message}>
+        <SelectNative {...register("role")}>
+          <option value="">Selecione…</option>
+          {(Object.keys(ROLES_LABEL) as Array<keyof typeof ROLES_LABEL>).map((r) => (
+            <option key={r} value={r}>
+              {ROLES_LABEL[r]}
+            </option>
+          ))}
+        </SelectNative>
       </Field>
 
       <div className="grid sm:grid-cols-2 gap-5">
-        <Field label="Função" error={errors.role?.message}>
-          <SelectNative {...register("role")}>
-            <option value="">Selecione…</option>
-            <option value="diretor">Diretor(a)</option>
-            <option value="mantenedor">Mantenedor(a)</option>
-            <option value="coordenador">Coordenador(a)</option>
-            <option value="outro">Outro</option>
-          </SelectNative>
+        <Field label="Email institucional" error={errors.email?.message}>
+          <Input
+            {...register("email")}
+            type="email"
+            autoComplete="email"
+            placeholder="diretoria@suaescola.com.br"
+          />
         </Field>
-
-        <Field label="Porte da escola" error={errors.students?.message}>
-          <SelectNative {...register("students")}>
-            <option value="">Selecione…</option>
-            <option value="<200">Até 200 alunos</option>
-            <option value="200-500">200 a 500</option>
-            <option value="500-1000">500 a 1.000</option>
-            <option value="1000-2500">1.000 a 2.500</option>
-            <option value=">2500">Mais de 2.500</option>
-          </SelectNative>
+        <Field label="WhatsApp" error={errors.whatsapp?.message}>
+          <Input
+            {...register("whatsapp")}
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="(00) 00000-0000"
+          />
         </Field>
       </div>
 
-      <Field label="Instituição" error={errors.institution?.message}>
+      <Field label="Nome da escola" error={errors.institution?.message}>
         <Input
           {...register("institution")}
-          placeholder="Nome da escola"
           autoComplete="organization"
+          placeholder="Ex.: Colégio Cristão Esperança"
         />
       </Field>
+
+      <div className="grid sm:grid-cols-[1fr_8rem] gap-5">
+        <Field label="Cidade" error={errors.city?.message}>
+          <Input
+            {...register("city")}
+            autoComplete="address-level2"
+            placeholder="Ex.: Natal"
+          />
+        </Field>
+        <Field label="UF" error={errors.state?.message}>
+          <SelectNative {...register("state")}>
+            <option value="">UF</option>
+            {UF_OPTIONS.map((uf) => (
+              <option key={uf} value={uf}>
+                {uf}
+              </option>
+            ))}
+          </SelectNative>
+        </Field>
+      </div>
 
       <Field label="Mensagem (opcional)" error={errors.message?.message}>
         <Textarea

@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BookOpen, Download, FileText } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Section } from "@/components/ui/section";
@@ -18,20 +18,20 @@ import { Stagger } from "@/components/motion/stagger";
 import { freeMaterials } from "@/data/free-materials";
 import { fadeUp } from "@/lib/motion";
 import { trackEvent } from "@/lib/analytics";
+import {
+  leadShortSchema,
+  ROLES_LABEL,
+  UF_OPTIONS,
+  type LeadShortInput,
+} from "@/lib/validation";
 import { cn } from "@/lib/utils";
-
-const schema = z.object({
-  name: z.string().min(2, "Informe seu nome."),
-  email: z.string().email("Email inválido."),
-});
-type Input = z.infer<typeof schema>;
 
 /**
  * Ato IX — Material Gratuito.
  *
- * Layout em duas colunas:
- *   esquerda  →  capa editorial do livro do CEO + descrição
- *   direita   →  formulário curto + lista de materiais incluídos
+ *   esquerda  →  capa real do livro do CEO + descrição + metadados
+ *   direita   →  formulário estratégico (mesmos campos qualificadores)
+ *                + lista das peças complementares com capa real
  */
 export function FreeMaterial() {
   const [sent, setSent] = useState(false);
@@ -43,9 +43,9 @@ export function FreeMaterial() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<Input>({ resolver: zodResolver(schema) });
+  } = useForm<LeadShortInput>({ resolver: zodResolver(leadShortSchema) });
 
-  const onSubmit = async (data: Input) => {
+  const onSubmit = async (data: LeadShortInput) => {
     try {
       await fetch("/api/lead", {
         method: "POST",
@@ -79,14 +79,14 @@ export function FreeMaterial() {
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-6 max-w-prose text-[1rem] leading-[1.65] text-foreground/65">
+              <p className="mt-6 max-w-prose text-[1rem] leading-[1.65] text-foreground/70">
                 {livro.description}
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-end gap-8">
-                <BookCover title={livro.title} subtitle="Editorial · We Make" pages={livro.pages} />
+                <BookCover cover={livro.cover} title={livro.title} pages={livro.pages} />
                 <div className="space-y-3">
                   <Meta label="Autor" value={livro.author ?? "Equipe We Make"} />
                   <Meta label="Páginas" value={String(livro.pages ?? "—")} />
@@ -97,10 +97,10 @@ export function FreeMaterial() {
             </Reveal>
           </div>
 
-          {/* Right — form + extras */}
+          {/* Right — strategic form + extras */}
           <div className="lg:col-span-5 lg:col-start-8">
             <Reveal delay={0.2}>
-              <div className="rounded-[2rem] border border-white/10 bg-ink-900/70 backdrop-blur-xl p-8 lg:p-10 shadow-[0_40px_80px_-32px_rgba(0,0,0,0.7)]">
+              <div className="rounded-[2rem] border border-white/10 bg-ink-900/70 backdrop-blur-xl p-7 lg:p-9 shadow-[0_40px_80px_-32px_rgba(0,0,0,0.7)]">
                 {sent ? (
                   <div className="flex flex-col items-center justify-center gap-3 py-10 text-center">
                     <div className="inline-flex size-12 items-center justify-center rounded-full bg-glow-cyan/15 ring-1 ring-glow-cyan/40">
@@ -108,46 +108,105 @@ export function FreeMaterial() {
                     </div>
                     <h3 className="font-display text-2xl">Verifique seu email.</h3>
                     <p className="max-w-sm text-sm text-foreground/65">
-                      Acabamos de enviar o livro do CEO e os materiais
-                      complementares no seu inbox.
+                      Acabamos de enviar a biblioteca completa para o seu inbox.
                     </p>
                   </div>
                 ) : (
                   <>
                     <div className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-glow-cyan">
-                      Acesso gratuito · inclui livro + 3 materiais
+                      Acesso gratuito · livro + 3 materiais
                     </div>
                     <h3 className="mt-3 font-display text-2xl">
                       Receber a biblioteca completa
                     </h3>
+
                     <form
                       onSubmit={handleSubmit(onSubmit)}
-                      className="mt-6 grid gap-4"
+                      className="mt-5 grid gap-4"
                       noValidate
                     >
-                      <div className="grid gap-2">
-                        <Label>Nome</Label>
+                      <SmallField label="Nome completo" error={errors.name?.message}>
                         <Input
                           {...register("name")}
                           placeholder="Como devemos chamar você?"
                           autoComplete="name"
                         />
-                        {errors.name?.message && (
-                          <p className="text-xs text-red-300/90">{errors.name.message}</p>
-                        )}
+                      </SmallField>
+
+                      <SmallField label="Seu papel" error={errors.role?.message}>
+                        <SelectNative {...register("role")}>
+                          <option value="">Selecione…</option>
+                          {(Object.keys(ROLES_LABEL) as Array<keyof typeof ROLES_LABEL>).map((r) => (
+                            <option key={r} value={r}>{ROLES_LABEL[r]}</option>
+                          ))}
+                        </SelectNative>
+                      </SmallField>
+
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <SmallField label="Email" error={errors.email?.message}>
+                          <Input
+                            {...register("email")}
+                            type="email"
+                            placeholder="seu@email.com"
+                            autoComplete="email"
+                          />
+                        </SmallField>
+                        <SmallField label="WhatsApp" error={errors.whatsapp?.message}>
+                          <Input
+                            {...register("whatsapp")}
+                            type="tel"
+                            inputMode="tel"
+                            placeholder="(00) 00000-0000"
+                            autoComplete="tel"
+                          />
+                        </SmallField>
                       </div>
-                      <div className="grid gap-2">
-                        <Label>Email</Label>
+
+                      <SmallField label="Nome da escola" error={errors.institution?.message}>
                         <Input
-                          {...register("email")}
-                          type="email"
-                          placeholder="diretoria@suaescola.com.br"
-                          autoComplete="email"
+                          {...register("institution")}
+                          placeholder="Ex.: Colégio Cristão Esperança"
+                          autoComplete="organization"
                         />
-                        {errors.email?.message && (
-                          <p className="text-xs text-red-300/90">{errors.email.message}</p>
-                        )}
+                      </SmallField>
+
+                      <div className="grid sm:grid-cols-[1fr_6rem] gap-4">
+                        <SmallField label="Cidade" error={errors.city?.message}>
+                          <Input
+                            {...register("city")}
+                            placeholder="Ex.: Natal"
+                            autoComplete="address-level2"
+                          />
+                        </SmallField>
+                        <SmallField label="UF" error={errors.state?.message}>
+                          <SelectNative {...register("state")}>
+                            <option value="">UF</option>
+                            {UF_OPTIONS.map((uf) => (
+                              <option key={uf} value={uf}>{uf}</option>
+                            ))}
+                          </SelectNative>
+                        </SmallField>
                       </div>
+
+                      <label className="flex items-start gap-2.5 text-[0.75rem] text-foreground/60 leading-snug">
+                        <input
+                          type="checkbox"
+                          {...register("consent")}
+                          className="mt-0.5 size-4 rounded border-white/20 bg-transparent accent-glow-cyan"
+                        />
+                        <span>
+                          Autorizo o uso dos meus dados conforme a{" "}
+                          <a href="/privacidade" className="text-foreground underline decoration-white/30">
+                            Política de Privacidade
+                          </a>.
+                        </span>
+                      </label>
+                      {errors.consent?.message && (
+                        <p className="text-[0.75rem] text-red-300/90 -mt-2">
+                          {errors.consent.message}
+                        </p>
+                      )}
+
                       <Button
                         type="submit"
                         size="lg"
@@ -157,10 +216,6 @@ export function FreeMaterial() {
                       >
                         {isSubmitting ? "Enviando…" : "Receber a biblioteca"}
                       </Button>
-                      <p className="text-[0.6875rem] leading-relaxed text-foreground/45">
-                        Nada de spam. Você pode descadastrar-se a qualquer
-                        momento.
-                      </p>
                     </form>
                   </>
                 )}
@@ -177,20 +232,34 @@ export function FreeMaterial() {
                   <motion.div
                     key={m.id}
                     variants={fadeUp}
-                    className={cn(
-                      "flex items-start gap-4",
-                      "rounded-2xl border border-white/[0.08]",
-                      "bg-white/[0.02] hover:bg-white/[0.04]",
-                      "px-5 py-4 transition-colors",
-                    )}
+                    className="
+                      group flex items-start gap-4
+                      rounded-2xl border border-white/[0.08]
+                      bg-white/[0.02] hover:bg-white/[0.04]
+                      px-5 py-4 transition-colors
+                    "
                   >
-                    <div className="inline-flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
-                      {m.kind === "ebook" ? (
-                        <BookOpen className="size-4 text-glow-cyan" />
-                      ) : (
-                        <FileText className="size-4 text-glow-amber" />
-                      )}
-                    </div>
+                    {/* Mini cover */}
+                    {m.cover ? (
+                      <div className="relative size-12 shrink-0 overflow-hidden rounded-md ring-1 ring-white/10">
+                        <Image
+                          src={m.cover}
+                          alt={`Capa de ${m.title}`}
+                          fill
+                          sizes="48px"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="inline-flex size-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
+                        {m.kind === "ebook" ? (
+                          <BookOpen className="size-4 text-glow-cyan" />
+                        ) : (
+                          <FileText className="size-4 text-glow-amber" />
+                        )}
+                      </div>
+                    )}
+
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-foreground/45">
@@ -221,7 +290,15 @@ export function FreeMaterial() {
   );
 }
 
-function BookCover({ title, subtitle, pages }: { title: string; subtitle: string; pages?: number }) {
+function BookCover({
+  cover,
+  title,
+  pages,
+}: {
+  cover?: string;
+  title: string;
+  pages?: number;
+}) {
   return (
     <div className="relative">
       <div
@@ -231,33 +308,25 @@ function BookCover({ title, subtitle, pages }: { title: string; subtitle: string
       <div
         className="
           relative w-[200px] sm:w-[220px] aspect-[2/3]
-          rounded-[14px]
-          bg-gradient-to-br from-ink-700 via-ink-800 to-ink-950
-          border border-white/15
-          shadow-[12px_24px_60px_-20px_rgba(0,0,0,0.7),inset_0_1px_0_rgba(255,255,255,0.1)]
-          overflow-hidden
+          rounded-[14px] overflow-hidden
+          shadow-[12px_24px_60px_-20px_rgba(0,0,0,0.7)]
+          ring-1 ring-white/15
         "
       >
-        <div
-          aria-hidden
-          className="absolute inset-y-3 left-2 w-px bg-gradient-to-b from-white/20 via-white/5 to-transparent"
-        />
-        <div className="absolute inset-0 flex flex-col justify-between p-6">
-          <div>
-            <div className="font-mono text-[0.5625rem] uppercase tracking-[0.3em] text-foreground/55">
-              {subtitle}
-            </div>
-            <div className="mt-1 h-px w-10 bg-glow-amber" />
+        {cover ? (
+          <Image
+            src={cover}
+            alt={`Capa do livro ${title}`}
+            fill
+            sizes="(min-width: 640px) 220px, 200px"
+            className="object-cover"
+            priority
+          />
+        ) : (
+          <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-ink-700 to-ink-950 text-foreground/75">
+            <span className="font-display text-lg px-6 text-center">{title}</span>
           </div>
-          <div>
-            <div className="font-display text-[1.5rem] leading-[1.05] tracking-[-0.02em] text-ivory-100">
-              {title}
-            </div>
-            <div className="mt-4 font-mono text-[0.5625rem] uppercase tracking-[0.28em] text-foreground/45">
-              We Make · Volume 01
-            </div>
-          </div>
-        </div>
+        )}
       </div>
       {pages && (
         <div className="mt-3 text-center font-mono text-[0.625rem] uppercase tracking-[0.22em] text-foreground/45">
@@ -276,5 +345,42 @@ function Meta({ label, value }: { label: string; value: string }) {
       </dt>
       <dd className="mt-0.5 text-[0.9375rem] text-foreground/85">{value}</dd>
     </div>
+  );
+}
+
+function SmallField({
+  label,
+  error,
+  children,
+}: {
+  label: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="grid gap-1.5">
+      <Label className="text-[0.625rem]">{label}</Label>
+      {children}
+      {error && <p className="text-[0.75rem] text-red-300/90">{error}</p>}
+    </div>
+  );
+}
+
+function SelectNative({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<"select">) {
+  return (
+    <select
+      {...props}
+      className={cn(
+        "h-11 px-3 rounded-xl appearance-none",
+        "border border-white/10 hover:border-white/20 focus:border-glow-cyan/60",
+        "bg-ink-900 text-[0.9375rem] text-foreground",
+        "transition-colors duration-300 ease-[var(--ease-cinematic)]",
+        "focus:outline-none focus:ring-2 focus:ring-glow-cyan/30",
+        className,
+      )}
+    />
   );
 }

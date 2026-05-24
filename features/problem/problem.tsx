@@ -27,16 +27,17 @@ export function Problem() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-5 font-display font-light text-gradient-cinematic text-[clamp(2.25rem,1.8rem+2.6vw,3.75rem)] leading-[1.05] tracking-[-0.03em]">
-              A maioria das escolas adota tecnologia.{" "}
+              Toda escola adota tecnologia.{" "}
               <em className="font-display italic text-ivory-100">
-                Quase nenhuma sabe por quê.
+                Poucas escolhem com clareza.
               </em>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-6 max-w-prose text-[1.0625rem] leading-[1.6] text-foreground/65">
-              Em nove anos visitando escolas confessionais no Brasil, vemos
-              três padrões repetirem-se com clareza dolorosa.
+              Em quase uma década visitando escolas confessionais no Brasil,
+              vemos três padrões se repetirem — e é deles que a We Make
+              nasceu para cuidar.
             </p>
           </Reveal>
         </div>

@@ -19,10 +19,10 @@ export const siteConfig = {
     "We Make",
   ],
   founder: {
-    name: "Dênis",
+    name: "Dênis Júlio Pereira Francisco",
     role: "CEO & Fundador",
-    bio: "Educador e empreendedor à frente do movimento We Make.",
-    portrait: "/people/denis-portrait.jpg",
+    bio: "Educador e empreendedor à frente do movimento We Make. Autor do livro fundador “Tecnologia, Virtude e Educação Cristã”.",
+    portrait: "/photos/foto6.png",
   },
   contact: {
     email: "institucional@wemake.com.br",
@@ -31,24 +31,21 @@ export const siteConfig = {
   },
   whatsapp: {
     consultor: {
-      number: "5511999999999",
+      number: "5583982301530",
       label: "Falar com consultor",
       greeting:
         "Olá! Vim pela landing da We Make e gostaria de conversar com um consultor.",
     },
-    vip: {
-      number: "5511999999999",
-      label: "Entrar no grupo VIP",
-      greeting:
-        "Olá! Quero entrar no grupo VIP da We Make para receber conteúdos exclusivos.",
-    },
+    /** Link real do grupo VIP no WhatsApp. */
+    vipGroupUrl: "https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t",
   },
   ceo: {
-    videoHero: "/videos/ceo-hero-loop.mp4",
-    videoHeroPoster: "/videos/ceo-hero-poster.jpg",
-    videoFull: "/videos/ceo-manifesto-1080.mp4",
-    videoPoster: "/videos/ceo-manifesto-poster.jpg",
-    videoCaption: "/videos/ceo-manifesto-pt-BR.vtt",
+    /** Mesmo arquivo é usado como loop do hero (silencioso) e como manifesto principal. */
+    videoHero: "/videos/video1.mp4",
+    videoHeroPoster: "/photos/foto6.png",
+    videoFull: "/videos/video1.mp4",
+    videoPoster: "/photos/foto6.png",
+    videoCaption: "/videos/video1.vtt",
     duration: "8 min 24s",
     talkTitle: "A pergunta que deu origem à We Make",
     talkChapters: [
@@ -76,10 +73,15 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
+/**
+ * URL apropriada para cada canal WhatsApp:
+ *  - "consultor" → conversa 1:1 (wa.me)
+ *  - "vip"       → link de entrada no grupo
+ */
 export const whatsappLink = (
   channel: "consultor" | "vip" = "consultor",
 ): string => {
-  const ch = siteConfig.whatsapp[channel];
-  const text = encodeURIComponent(ch.greeting);
-  return `https://wa.me/${ch.number}?text=${text}`;
+  if (channel === "vip") return siteConfig.whatsapp.vipGroupUrl;
+  const c = siteConfig.whatsapp.consultor;
+  return `https://wa.me/${c.number}?text=${encodeURIComponent(c.greeting)}`;
 };
