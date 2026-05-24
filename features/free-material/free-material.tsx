@@ -35,8 +35,9 @@ import { cn } from "@/lib/utils";
  */
 export function FreeMaterial() {
   const [sent, setSent] = useState(false);
-  const livro = freeMaterials.find((m) => m.kind === "livro") ?? freeMaterials[0]!;
-  const extras = freeMaterials.filter((m) => m.id !== livro.id);
+  /** Capa de destaque (manifesto) + duas peças complementares formam a trilogia. */
+  const headline = freeMaterials[0]!;
+  const extras = freeMaterials.slice(1);
 
   const {
     register,
@@ -70,28 +71,30 @@ export function FreeMaterial() {
           {/* Left — book showcase */}
           <div className="lg:col-span-6">
             <Reveal>
-              <Eyebrow>Capítulo IX · Biblioteca aberta</Eyebrow>
+              <Eyebrow>Capítulo IX · Trilogia gratuita</Eyebrow>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-5 font-display font-light text-gradient-cinematic text-[clamp(2.25rem,1.8rem+2.4vw,3.5rem)] leading-[1.05] tracking-[-0.03em]">
-                Comece pelo livro do{" "}
-                <em className="font-display italic text-ivory-100">nosso CEO.</em>
+                Três materiais derivados{" "}
+                <em className="font-display italic text-ivory-100">do livro do CEO.</em>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-prose text-[1rem] leading-[1.65] text-foreground/70">
-                {livro.description}
+                Manifesto, diagnóstico institucional e guia prático — uma
+                trilogia editorial pensada para mover a direção da sua escola
+                do diagnóstico à ação. Acesso gratuito, conteúdo institucional.
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-end gap-8">
-                <BookCover cover={livro.cover} title={livro.title} pages={livro.pages} />
+                <BookCover cover={headline.cover} title={headline.title} pages={headline.pages} />
                 <div className="space-y-3">
-                  <Meta label="Autor" value={livro.author ?? "Equipe We Make"} />
-                  <Meta label="Páginas" value={String(livro.pages ?? "—")} />
-                  <Meta label="Formato" value="PDF · ePub · Kindle" />
-                  <Meta label="Idioma" value="Português · pt-BR" />
+                  <Meta label="Autor"     value={headline.author ?? "Equipe We Make"} />
+                  <Meta label="Páginas"   value={String(headline.pages ?? "—")} />
+                  <Meta label="Formato"   value="PDF · pt-BR" />
+                  <Meta label="Audiência" value={headline.audience ?? "Direção escolar"} />
                 </div>
               </div>
             </Reveal>
@@ -114,10 +117,10 @@ export function FreeMaterial() {
                 ) : (
                   <>
                     <div className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-glow-cyan">
-                      Acesso gratuito · livro + 3 materiais
+                      Acesso gratuito · trilogia editorial
                     </div>
                     <h3 className="mt-3 font-display text-2xl">
-                      Receber a biblioteca completa
+                      Receber os 3 materiais
                     </h3>
 
                     <form

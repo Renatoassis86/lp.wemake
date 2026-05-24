@@ -6,10 +6,10 @@ import { Principles } from "@/features/principles/principles";
 import { VipBanner } from "@/features/vip-group/vip-banner";
 
 /* ============================================================
-   Composer da landing — MVP.
-   Sequência por cor (navy → ivory → royal → mint) com transições
-   suaves via <ModuleSection /> (cantos arredondados + overlap).
-   Acima da dobra carrega eager; abaixo carrega dynamic p/ TTFB enxuto.
+   Composer da landing — MVP / campanha 2027.
+   Sequência por cor com cantos arredondados (ModuleSection) e
+   distribuição estratégica de CTAs VIP/Consultor em pontos-chave.
+   Acima da dobra: eager. Demais: dynamic p/ TTFB enxuto.
    ============================================================ */
 
 const CeoVideo = dynamic(
@@ -54,26 +54,30 @@ const FloatingWhatsapp = dynamic(
 );
 
 /**
- * Arco narrativo do MVP (com cor por módulo):
+ * Arco narrativo — 17 momentos (incluindo 5 banners de conversão):
  *
- *   I.    Hero                       — navy   (cinema, abertura)
- *   II.   O Mundo Mudou              — ivory  (luz, diagnóstico cultural)
- *   III.  O Problema                 — royal  (institucional, ousadia)
- *   IV.   Os 7 Princípios            — ivory  (núcleo do livro)
- *   V.    Visão (V·B·B)              — navy   (manifesto)
- *   ★     VipBanner pós-princípios   — mint
- *   VI.   Manifesto do CEO           — navy   (player cinemático)
- *   ★     VipBanner pós-vídeo        — navy variant
- *   VII.  Soluções                   — ivory  (catálogo institucional)
- *   VIII. Presença Nacional          — sky    (mapa + 11 escolas/5 estados)
- *   IX.   Humans                     — navy   (sequência cinema)
- *   X.    Material gratuito          — ivory  (livro do CEO + form)
- *   XI.   VIP Group                  — mint   (seção principal do VIP)
- *   XII.  Consultor (WhatsApp)       — ivory
- *   XIII. FAQ                        — ivory
- *   XIV.  CTA estratégica + Reunião  — royal/ivory (fechamento)
+ *   I.    Hero (split com foto do Dênis)
+ *   II.   O Mundo Mudou
+ *   III.  O Problema das escolas
+ *   IV.   Os 7 Princípios (núcleo do livro)
+ *   V.    Visão (V·B·B + Mandato)
+ *   ★     CTA VIP — pós-princípios (mint)
+ *   VI.   Manifesto filmado do CEO
+ *   ★     CTA VIP — pós-vídeo (navy)
+ *   VII.  Soluções (5 frentes)
+ *   VIII. Presença Nacional (mapa)
+ *   ★     CTA Consultor — pós-presença (royal)
+ *   IX.   Humans (cinema)
+ *   ★     CTA VIP — pós-humans (mint)
+ *   X.    Trilogia gratuita (3 PDFs + form)
+ *   XI.   Grupo VIP (seção principal)
+ *   XII.  Consultor (WhatsApp direto)
+ *   XIII. FAQ
+ *   XIV.  CTA estratégica final
+ *   XV.   Reunião (formulário completo)
  *
- *  Footer entra via app/layout.tsx.
+ *  Floating: ChapterRail (esquerda), FloatingWhatsapp (canto), Nav (topo).
+ *  Footer renderizado em app/layout.tsx.
  */
 export function LandingPage() {
   return (
@@ -84,25 +88,45 @@ export function LandingPage() {
       <Principles />
       <Vision />
 
+      {/* CTA 1 — VIP após os princípios (continuação natural da leitura) */}
       <VipBanner
         placement="post_principles"
         variant="mint"
         headline="Está acompanhando os 7 princípios? Receba o que vier antes de todo mundo."
-        caption="No grupo VIP no WhatsApp publicamos antes — bastidores, novos capítulos, convites para imersões."
+        caption="No grupo VIP no WhatsApp publicamos antes — bastidores, novos capítulos, convites para imersões e o lançamento de cada novo material."
       />
 
       <CeoVideo />
 
+      {/* CTA 2 — VIP após o vídeo (autoridade reforçada → adesão à comunidade) */}
       <VipBanner
         placement="post_ceo_video"
         variant="navy"
-        headline="Quer conversar diretamente com o Dênis e outros gestores?"
-        caption="No grupo VIP, o time da We Make e diretores de escolas parceiras dialogam todos os dias."
+        headline="Quer continuar essa conversa com o Dênis e outros gestores?"
+        caption="No grupo VIP, o time da We Make e diretores de escolas parceiras dialogam todos os dias — em ambiente fechado, sem ruído."
       />
 
       <Services />
       <PresenceMap />
+
+      {/* CTA 3 — Consultor após a presença nacional (curiosidade → atendimento 1:1) */}
+      <VipBanner
+        placement="post_presence"
+        variant="royal"
+        headline="Sua cidade ainda não aparece no mapa? Vamos conversar."
+        caption="Estamos abrindo vagas por região para a entrada das parcerias em janeiro de 2027 — fale agora com um consultor da We Make."
+      />
+
       <Humans />
+
+      {/* CTA 4 — VIP após Humans (emocional → adesão à comunidade) */}
+      <VipBanner
+        placement="post_humans"
+        variant="mint"
+        headline="Reconheceu essas cenas na sua escola? Junte-se a quem faz."
+        caption="No grupo VIP você acompanha o dia a dia das escolas parceiras e troca experiências com diretores que vivem o mesmo desafio."
+      />
+
       <FreeMaterial />
       <VipGroup />
       <Consultor />

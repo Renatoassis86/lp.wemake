@@ -118,7 +118,7 @@ export function PresenceMap() {
                       onBlur={() => setActive(null)}
                       tabIndex={0}
                       role="button"
-                      aria-label={`${state.name} — ${state.partners} ${state.partners === 1 ? "escola parceira" : "escolas parceiras"}`}
+                      aria-label={`${state.name} — ${state.partners > 0 ? "estado ativo" : "expansão prevista"}`}
                       className="cursor-pointer focus:outline-none"
                     >
                       {/* outer pulse */}
@@ -195,7 +195,12 @@ export function PresenceMap() {
                     {activeState.uf} · {activeState.name}
                   </div>
                   <div className="mt-1 font-display text-xl">
-                    {activeState.partners} {activeState.partners === 1 ? "escola parceira" : "escolas parceiras"}
+                    {activeState.partners > 0 ? "Estado ativo" : "Em expansão"}
+                  </div>
+                  <div className="mt-1 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-foreground/45">
+                    {activeState.partners > 0
+                      ? "Escolas em parceria · We Make"
+                      : "Próxima onda · campanha 2026"}
                   </div>
                 </motion.div>
               )}
@@ -239,8 +244,9 @@ export function PresenceMap() {
                             {state.name}
                           </span>
                         </div>
-                        <span className="font-mono text-xs tabular-nums text-foreground/55">
-                          {state.partners}
+                        <span className="inline-flex items-center gap-1.5 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-glow-cyan">
+                          <span className="size-1.5 rounded-full bg-glow-cyan shadow-[0_0_8px_rgba(96,165,250,0.7)]" />
+                          ativo
                         </span>
                       </li>
                     ))}
@@ -256,10 +262,10 @@ export function PresenceMap() {
 
 function PresenceStats() {
   const stats = [
-    { label: "escolas parceiras hoje",   value: `${siteConfig.presence.schools}` },
-    { label: "estados ativos",           value: `${siteConfig.presence.states}` },
-    { label: "meta 2026",                value: `${siteConfig.presence.goalSchools}` },
-    { label: "parcerias iniciam em",     value: "JAN 2027" },
+    { label: "cobertura atual",       value: "NACIONAL" },
+    { label: "expansão prevista",     value: "20 cidades" },
+    { label: "parcerias iniciam em",  value: "JAN 2027" },
+    { label: "disponibilidade",       value: "VAGAS LIMITADAS" },
   ];
   return (
     <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">

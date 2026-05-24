@@ -65,13 +65,17 @@ export const siteConfig = {
       { time: "08:00", seconds: 480, label: "O que vem agora" },
     ],
   },
-  /** Números reais — campanha 2026 com 11 escolas em 5 estados. */
+  /**
+   * Sinais qualitativos para o hero e demais seções.
+   * Por decisão institucional, números absolutos (quantas escolas / quantos estados
+   * já temos hoje) NÃO devem ser expostos publicamente — apenas marcos comerciais.
+   */
   presence: {
-    schools: 11,
-    states: 5,
+    /** Estados onde já há trabalho ativo — usados pelo mapa, sem expor contagem. */
     statesUf: ["PR", "SC", "MG", "PB", "RN"] as const,
-    goalSchools: 25,
-    goalDeadline: "30 de setembro de 2026",
+    enrollmentStart: "Janeiro de 2027",
+    enrollmentDeadline: "30 de setembro de 2026",
+    vacancyLabel: "Vagas limitadas por região",
   },
   social: {
     instagram: "https://instagram.com/wemake.tec",
