@@ -73,9 +73,9 @@ export const scenes: Scene[] = [
     number: "IV",
     kind: "scene",
     eyebrow: "03 · Espiritualidade",
-    headline: "Antes da técnica, a contemplação.",
+    headline: "Antes da técnica, a oração.",
     caption:
-      "Não há formação humana sem silêncio — e não há silêncio sem espaço para o sagrado.",
+      "Não há formação humana sem silêncio diante da Palavra — e é desse silêncio que nasce qualquer trabalho que valha a pena.",
     src: "/photos/foto3.png",
     alt: "Grupo de estudantes em silhueta diante de janela arqueada dourada",
     focal: "center",

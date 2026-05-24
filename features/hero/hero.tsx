@@ -92,8 +92,9 @@ export function Hero() {
             <Reveal delay={0.45}>
               <p className="mt-8 max-w-xl text-[1.0625rem] sm:text-lg leading-[1.55] text-foreground/75">
                 Currículo maker, formação docente, plataforma, espaço maker e
-                assessoria institucional — ancorados em{" "}
-                <span className="text-white font-medium">Verdade, Beleza e Bondade.</span>
+                assessoria institucional — desenvolvidos a partir da{" "}
+                <span className="text-white font-medium">cosmovisão reformada</span>{" "}
+                e ancorados em Verdade, Beleza e Bondade sob o Mandato Cultural.
               </p>
             </Reveal>
 

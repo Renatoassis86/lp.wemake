@@ -19,10 +19,10 @@ export const services: Service[] = [
     name: "Currículo Maker",
     headline: "Da Educação Infantil ao Ensino Médio",
     description:
-      "Material didático integrado e espiralado, articulando filosofia, tecnologia, ciências e artes. Cada caderno editorial é fundamentado e atravessado pelos princípios da cosmovisão cristã.",
+      "Material didático integrado e espiralado, articulando filosofia, tecnologia, ciências e artes. Cada caderno editorial é fundamentado a partir da cosmovisão reformada — não como um verniz teológico aplicado depois, mas como o ponto de partida.",
     features: [
       "Cadernos editoriais por segmento",
-      "Trilhas integradas BNCC + cosmovisão",
+      "Trilhas integradas BNCC + cosmovisão reformada",
       "Avaliação por competência e portfólio",
       "Guia teórico do professor",
     ],

@@ -3,8 +3,13 @@ import type { VisionPrinciple } from "@/types";
 
 /**
  * A Visão da We Make.
- * Os três transcendentais clássicos — Verdade, Beleza, Bondade — coroados
- * pelo Mandato Cultural. Substituem o conceito anterior de "pilares".
+ *
+ * Verdade, Beleza e Bondade — lidas a partir da cosmovisão reformada — e
+ * coroadas pelo Mandato Cultural (Gn 1:28) e pela doutrina da Imago Dei.
+ *
+ * Não tratamos os transcendentais como esquema tomista neutro: são lidos
+ * sob a soberania de Cristo sobre todas as esferas da vida (Kuyper) e
+ * encarnados pedagogicamente em cada princípio do nosso currículo.
  */
 export const vision: VisionPrinciple[] = [
   {

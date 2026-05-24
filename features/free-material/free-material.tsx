@@ -121,7 +121,7 @@ export function FreeMaterial() {
                 tone="mint"
                 badge="GRATUITO · APROVAÇÃO MANUAL"
                 title="Quero entrar no grupo VIP da We Make"
-                description="Comunidade restrita no WhatsApp para gestores, mantenedores e coordenadores de escolas cristãs. Discussões fechadas com o Dênis e diretores parceiros."
+                description="Comunidade restrita no WhatsApp para gestores, mantenedores e coordenadores de escolas cristãs interessados em desenvolver tecnologia educacional a partir da cosmovisão reformada."
                 cta={{
                   label: "Entrar no grupo VIP",
                   href: whatsappLink("vip"),

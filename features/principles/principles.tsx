@@ -25,7 +25,7 @@ export function Principles() {
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <Eyebrow className="text-[rgb(var(--color-brand-royal))]">
-              Os 7 princípios · Livro do CEO
+              Os 7 princípios · cosmovisão reformada
             </Eyebrow>
           </Reveal>
           <Reveal delay={0.1}>
@@ -36,9 +36,11 @@ export function Principles() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] leading-[1.65] text-[rgb(var(--color-brand-navy))]/70">
-              Estes sete princípios estruturam o currículo, a formação docente
-              e toda a metodologia que entregamos às escolas parceiras. Estão
-              detalhados no livro fundador da We Make.
+              Sete princípios construídos a partir da tradição reformada —
+              herdeiros da Reforma e da releitura kuyperiana sobre o Reino de
+              Deus em todas as esferas da vida. Estruturam o currículo, a
+              formação docente e toda a metodologia que entregamos às escolas
+              parceiras.
             </p>
           </Reveal>
         </div>

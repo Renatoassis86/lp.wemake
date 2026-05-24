@@ -21,9 +21,9 @@ export const worldChanges: WorldShift[] = [
     number: "02",
     signal: "Excesso de Telas",
     headline:
-      "Crianças crescem em ambientes saturados de estímulos digitais e empobrecidos em contemplação.",
+      "Crianças crescem em ambientes saturados de estímulos digitais e empobrecidos em silêncio.",
     body:
-      "A escola precisa devolver tempo, atenção e silêncio — não como nostalgia, mas como condição para qualquer aprendizado profundo.",
+      "A escola precisa devolver tempo, atenção e silêncio diante da Palavra — não como nostalgia, mas como condição para qualquer aprendizado profundo.",
     icon: MonitorSmartphone,
   },
   {

@@ -23,9 +23,10 @@ const accentMap = {
 
 /**
  * Ato IV — A Visão da We Make.
- * Os transcendentais clássicos coroados pelo Mandato Cultural.
- * Apresentados como um quadro institucional — numeração romana, grego,
- * tipografia editorial, espaçamento generoso.
+ *
+ * Verdade, Beleza e Bondade — lidas reformadamente — coroadas pelo
+ * Mandato Cultural. Apresentadas como quadro institucional: numeração
+ * romana, grego, tipografia editorial, espaçamento generoso.
  */
 export function Vision() {
   return (
@@ -37,22 +38,23 @@ export function Vision() {
       <Container>
         <div className="max-w-4xl">
           <Reveal>
-            <Eyebrow>Capítulo IV · A nossa visão</Eyebrow>
+            <Eyebrow>Capítulo IV · Cosmovisão reformada</Eyebrow>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-5 font-display font-light text-gradient-cinematic text-[clamp(2.25rem,1.8rem+3vw,4.25rem)] leading-[1.05] tracking-[-0.035em]">
-              Três transcendentais clássicos,{" "}
+              Verdade, Beleza e Bondade —{" "}
               <em className="font-display italic text-ivory-100">
-                coroados por um mandato.
+                coroadas pelo Mandato Cultural.
               </em>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-6 max-w-prose text-[1.0625rem] leading-[1.65] text-foreground/65">
-              A visão da We Make repousa em quatro pilares filosóficos que
-              atravessam todo o currículo, toda a formação e cada decisão de
-              produto. Eles não são slogans — são princípios herdados de uma
-              tradição que tem dois mil anos.
+              A visão da We Make repousa em quatro pilares filosóficos lidos
+              à luz da tradição reformada. Não são slogans nem esquema neutro
+              de teologia natural — são princípios que entendem Cristo como
+              Senhor de todas as esferas da vida (Kuyper), expressos
+              pedagogicamente no nosso currículo.
             </p>
           </Reveal>
         </div>

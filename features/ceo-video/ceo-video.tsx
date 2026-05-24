@@ -84,7 +84,7 @@ export function CeoVideo() {
           <Reveal delay={0.22}>
             <p className="mx-auto mt-7 max-w-2xl text-balance text-[1.0625rem] sm:text-lg leading-[1.55] text-foreground/70">
               Uma conversa sobre tecnologia, formação humana e o futuro das
-              escolas cristãs.
+              escolas cristãs — vista a partir da cosmovisão reformada.
             </p>
           </Reveal>
 

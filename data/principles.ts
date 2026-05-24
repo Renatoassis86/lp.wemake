@@ -31,9 +31,9 @@ export const principles: Principle[] = [
     id: "ferramenta",
     number: "01",
     title: "Tecnologia como ferramenta — não como fim.",
-    brief: "A tecnologia serve ao humano, não o contrário.",
+    brief: "A tecnologia serve ao humano, e o humano serve a Deus.",
     body:
-      "Ensinar a usar é fácil. Ensinar para quê é o que distingue uma escola cristã. Nossos estudantes aprendem a interrogar o propósito antes da técnica.",
+      "Ensinar a usar é fácil. Ensinar para quê é o que distingue uma escola cristã reformada. Nossos estudantes aprendem a interrogar o propósito antes da técnica, lembrando que toda criação humana é coram Deo — diante de Deus.",
     icon: Wrench,
   },
   {
@@ -49,9 +49,9 @@ export const principles: Principle[] = [
     id: "imago-dei",
     number: "03",
     title: "Criar como expressão da Imago Dei.",
-    brief: "Quem cria, espelha o Criador.",
+    brief: "Quem cria, reflete o Criador.",
     body:
-      "O ato de fazer — escrever código, imprimir em 3D, projetar um circuito — é, antes de tudo, um gesto teológico. A escola cristã não pode ensiná-lo de qualquer jeito.",
+      "Criar é vocação dada por Deus — derivada da nossa condição de portadores da Sua imagem (Gn 1:26-28). Escrever código, imprimir em 3D ou projetar um circuito são atos teológicos antes de técnicos. A escola cristã reformada não pode ensiná-los de qualquer jeito.",
     icon: Lightbulb,
   },
   {
@@ -60,16 +60,16 @@ export const principles: Principle[] = [
     title: "Discernimento diante da inovação.",
     brief: "Nem tudo o que é novo precisa ser adotado.",
     body:
-      "Formamos discernimento para saber o que abraçar, o que adiar e o que recusar — diante de IA, redes sociais e novas plataformas.",
+      "A queda atinge também a cultura tecnológica — toda inovação carrega pressupostos que precisam ser provados (1Ts 5:21). Formamos estudantes capazes de discernir o que abraçar, o que adiar e o que recusar diante de IA, redes e novas plataformas.",
     icon: Eye,
   },
   {
     id: "queda",
     number: "05",
-    title: "Tecnologia para aliviar os efeitos da queda.",
+    title: "Tecnologia para aliviar os efeitos da Queda.",
     brief: "Criar para servir e restaurar.",
     body:
-      "Engenharia, design e código têm um papel pastoral: aliviar sofrimento, restaurar dignidade, abrir possibilidades — não substituir o encontro humano.",
+      "Vivemos entre a Queda e a Consumação. Tecnologia bem aplicada participa do trabalho restaurador de Cristo: alivia sofrimento, devolve dignidade, abre possibilidades — sem nunca substituir o encontro humano nem assumir o lugar de Deus.",
     icon: Compass,
   },
   {
