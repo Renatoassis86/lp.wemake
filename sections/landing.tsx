@@ -69,7 +69,7 @@ const FloatingWhatsapp = dynamic(
  *   ★     CTA Consultor — pós-presença (royal)
  *   IX.   Humans (cinema)
  *   ★     CTA VIP — pós-humans (mint)
- *   X.    Trilogia gratuita (3 PDFs + form)
+ *   X.    Trilha dos 7 Princípios (3 free + 1 VIP + 3 reunião)
  *   XI.   Grupo VIP (seção principal)
  *   XII.  Consultor (WhatsApp direto)
  *   XIII. FAQ
