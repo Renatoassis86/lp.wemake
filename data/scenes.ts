@@ -45,7 +45,7 @@ export const scenes: Scene[] = [
     eyebrow: "01 · Educação Infantil",
     headline: "Antes do código, o assombro.",
     caption:
-      "Aprender começa com a capacidade de admirar — e crianças que se admiram são crianças que pensam.",
+      "Aprender começa com a capacidade de admirar - e crianças que se admiram são crianças que pensam.",
     src: "/photos/foto1.png",
     alt: "Criança brasileira observando uma placa Arduino com LED azul aceso em um espaço maker",
     focal: "center",
@@ -58,7 +58,7 @@ export const scenes: Scene[] = [
     number: "III",
     kind: "scene",
     eyebrow: "02 · Fundamental II · Ensino Médio",
-    headline: "Aprender não é consumir — é construir.",
+    headline: "Aprender não é consumir - é construir.",
     caption:
       "Adolescentes que escrevem código aprendem mais do que sintaxe: aprendem a ordenar o pensamento.",
     src: "/photos/foto2.png",
@@ -75,7 +75,7 @@ export const scenes: Scene[] = [
     eyebrow: "03 · Espiritualidade",
     headline: "Antes da técnica, a oração.",
     caption:
-      "Não há formação humana sem silêncio diante da Palavra — e é desse silêncio que nasce qualquer trabalho que valha a pena.",
+      "Não há formação humana sem silêncio diante da Palavra - e é desse silêncio que nasce qualquer trabalho que valha a pena.",
     src: "/photos/foto3.png",
     alt: "Grupo de estudantes em silhueta diante de janela arqueada dourada",
     focal: "center",
@@ -90,7 +90,7 @@ export const scenes: Scene[] = [
     eyebrow: "04 · Espaço maker",
     headline: "Espaços que ensinam a fazer.",
     caption:
-      "Arquitetura, equipamento, fluxo e protocolo — tudo desenhado para que o estudante experimente o gesto de criar.",
+      "Arquitetura, equipamento, fluxo e protocolo - tudo desenhado para que o estudante experimente o gesto de criar.",
     src: "/photos/foto4.png",
     alt: "Laboratório maker em atividade com impressora 3D, bancadas e estudantes ao fundo",
     focal: "center",
@@ -103,7 +103,7 @@ export const scenes: Scene[] = [
     number: "VI",
     kind: "scene",
     eyebrow: "05 · Coletivo",
-    headline: "Construir juntos — como fomos feitos para fazer.",
+    headline: "Construir juntos - como fomos feitos para fazer.",
     caption:
       "Tecnologia que reúne. Pessoas que se reconhecem como criadoras. Esse é o gesto que a We Make tenta proteger todos os dias.",
     src: "/photos/foto5.png",
@@ -120,7 +120,7 @@ export const scenes: Scene[] = [
     eyebrow: "Final do Capítulo VIII",
     headline: "Tecnologia redimida. Pessoas formadas.",
     caption:
-      "É isso que perseguimos — escola por escola, sala por sala, estudante por estudante.",
+      "É isso que perseguimos - escola por escola, sala por sala, estudante por estudante.",
     tone: "ink",
     position: "centered",
   },

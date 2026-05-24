@@ -67,13 +67,13 @@ export const fadeIn: Variants = {
 };
 
 export const slideIn = (direction: "left" | "right" | "up" | "down" = "up"): Variants => {
-  const axis = direction === "left" || direction === "right" ? "x" : "y";
+  const isX = direction === "left" || direction === "right";
   const sign = direction === "left" || direction === "up" ? -1 : 1;
   return {
-    hidden: { opacity: 0, [axis]: 40 * sign },
+    hidden: { opacity: 0, ...(isX ? { x: 40 * sign } : { y: 40 * sign }) },
     visible: {
       opacity: 1,
-      [axis]: 0,
+      ...(isX ? { x: 0 } : { y: 0 }),
       transition: transitions.cinematic,
     },
   };

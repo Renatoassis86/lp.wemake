@@ -9,7 +9,7 @@ import { SceneCounter } from "@/components/cinematic/scene-counter";
 import { scenes } from "@/data/scenes";
 
 /**
- * Capítulo VIII — "Por trás da tecnologia".
+ * Capítulo VIII - "Por trás da tecnologia".
  *
  * Sequência cinematográfica vertical em 8 atos:
  *   I.    Cartela de abertura
@@ -71,7 +71,7 @@ export function Humans() {
 }
 
 /**
- * Rodapé editorial — uma "tira de filme" horizontal com miniaturas
+ * Rodapé editorial - uma "tira de filme" horizontal com miniaturas
  * de todas as cenas, ligada por uma hairline. Encerra a sequência
  * com um aceno cinematográfico antes do próximo capítulo.
  */
@@ -81,11 +81,11 @@ function FilmStripPreview() {
     <section className="relative py-[var(--space-section-tight)] border-t border-white/[0.06] bg-ink-950">
       <div className="container-rail">
         <div className="flex items-center gap-3">
-          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-foreground/45">
+          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-white/45">
             Storyboard
           </span>
           <div className="h-px flex-1 bg-gradient-to-r from-white/15 via-white/5 to-transparent" />
-          <span className="font-mono text-[0.6875rem] tabular-nums tracking-[0.22em] text-foreground/45">
+          <span className="font-mono text-[0.6875rem] tabular-nums tracking-[0.22em] text-white/45">
             06 cenas
           </span>
         </div>
@@ -115,10 +115,10 @@ function FilmStripPreview() {
                 className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/20 to-transparent"
               />
               <div className="absolute inset-x-0 bottom-0 p-3">
-                <div className="font-mono text-[0.5625rem] uppercase tracking-[0.22em] text-foreground/55">
+                <div className="font-mono text-[0.5625rem] uppercase tracking-[0.22em] text-white/55">
                   {scene.number}
                 </div>
-                <div className="mt-1 font-display text-[0.875rem] leading-tight text-foreground/95">
+                <div className="mt-1 font-display text-[0.875rem] leading-tight text-white/95">
                   {scene.headline.split(",")[0]}
                 </div>
               </div>

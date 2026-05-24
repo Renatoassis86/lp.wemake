@@ -1,7 +1,7 @@
 import type { FreeMaterial } from "@/types";
 
 /**
- * Trilha dos 7 Princípios — fatiamento do livro do CEO
+ * Trilha dos 7 Princípios - fatiamento do livro do CEO
  * "Tecnologia, Virtude e Educação Cristã" em 7 PDFs (um por princípio).
  *
  * Cada princípio do livro vira um caderno editorial independente, que pode
@@ -13,7 +13,7 @@ import type { FreeMaterial } from "@/types";
  *    VIP      →  desbloqueia ao entrar no grupo VIP no WhatsApp
  *    MEETING  →  desbloqueia ao agendar reunião com o time comercial
  *
- * A trilha cria um funil natural — quem quer continuar lendo é levado para
+ * A trilha cria um funil natural - quem quer continuar lendo é levado para
  * o próximo passo de conversão (VIP → reunião estratégica).
  */
 
@@ -37,7 +37,7 @@ export const freeMaterials: PrinciplePdf[] = [
     kind: "ebook",
     title: "Tecnologia como ferramenta, não como fim",
     description:
-      "O primeiro princípio. A tecnologia serve à formação humana — não o contrário. Por que toda escola cristã precisa interrogar o propósito antes de adotar uma ferramenta.",
+      "O primeiro princípio. A tecnologia serve à formação humana - não o contrário. Por que toda escola cristã precisa interrogar o propósito antes de adotar uma ferramenta.",
     pages: 18,
     author: "Dênis Júlio P. Francisco · Editora We Make",
     cover: "/photos/foto7.png",
@@ -52,7 +52,7 @@ export const freeMaterials: PrinciplePdf[] = [
     kind: "ebook",
     title: "Caráter antes da habilidade técnica",
     description:
-      "Em um mundo que premia a competência amoral, a escola cristã forma pessoas em quem se possa confiar — mesmo quando ninguém estiver olhando o código.",
+      "Em um mundo que premia a competência amoral, a escola cristã forma pessoas em quem se possa confiar - mesmo quando ninguém estiver olhando o código.",
     pages: 20,
     author: "Dênis Júlio P. Francisco · Editora We Make",
     cover: "/photos/foto8.png",
@@ -67,7 +67,7 @@ export const freeMaterials: PrinciplePdf[] = [
     kind: "ebook",
     title: "Criar como expressão da Imago Dei",
     description:
-      "Quem cria, espelha o Criador. O ato de fazer — código, peças 3D, circuitos — é antes de tudo um gesto teológico. A escola cristã não pode ensiná-lo de qualquer jeito.",
+      "Quem cria, espelha o Criador. O ato de fazer - código, peças 3D, circuitos - é antes de tudo um gesto teológico. A escola cristã não pode ensiná-lo de qualquer jeito.",
     pages: 22,
     author: "Dênis Júlio P. Francisco · Editora We Make",
     cover: "/photos/foto9.png",
@@ -84,7 +84,7 @@ export const freeMaterials: PrinciplePdf[] = [
     kind: "ebook",
     title: "Discernimento diante da inovação",
     description:
-      "Nem tudo o que é novo precisa ser adotado. Como formar discernimento para saber o que abraçar, o que adiar e o que recusar — diante de IA, redes sociais e novas plataformas.",
+      "Nem tudo o que é novo precisa ser adotado. Como formar discernimento para saber o que abraçar, o que adiar e o que recusar - diante de IA, redes sociais e novas plataformas.",
     pages: 24,
     author: "Dênis Júlio P. Francisco · Editora We Make",
     cover: "/photos/foto10.png",
@@ -102,7 +102,7 @@ export const freeMaterials: PrinciplePdf[] = [
     kind: "ebook",
     title: "Tecnologia para aliviar os efeitos da Queda",
     description:
-      "Engenharia, design e código têm um papel pastoral: aliviar sofrimento, restaurar dignidade, abrir possibilidades — sem substituir o encontro humano.",
+      "Engenharia, design e código têm um papel pastoral: aliviar sofrimento, restaurar dignidade, abrir possibilidades - sem substituir o encontro humano.",
     pages: 26,
     author: "Dênis Júlio P. Francisco · Editora We Make",
     file: "/downloads/wemake-principio-05-queda.pdf",
@@ -117,7 +117,7 @@ export const freeMaterials: PrinciplePdf[] = [
     kind: "ebook",
     title: "Construir, não apenas consumir",
     description:
-      "A cultura digital nos transformou em consumidores passivos. Devolver aos estudantes o gesto ativo de construir — robôs, software, ideias, instituições.",
+      "A cultura digital nos transformou em consumidores passivos. Devolver aos estudantes o gesto ativo de construir - robôs, software, ideias, instituições.",
     pages: 28,
     author: "Dênis Júlio P. Francisco · Editora We Make",
     file: "/downloads/wemake-principio-06-construir.pdf",

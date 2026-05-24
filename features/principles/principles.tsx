@@ -11,12 +11,12 @@ import { fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Os 7 Princípios — Capítulo central do livro do Dênis e
+ * Os 7 Princípios - Capítulo central do livro do Dênis e
  * espinha dorsal pedagógica da We Make.
  *
  * Apresentados em formato editorial (lista numerada + ícone + corpo),
  * sobre fundo ivory para criar respiração entre o Hero (navy) e o
- * Problema (royal). Tom institucional sem ser pesado — escola.
+ * Problema (royal). Tom institucional sem ser pesado - escola.
  */
 export function Principles() {
   return (
@@ -36,7 +36,7 @@ export function Principles() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] leading-[1.65] text-[rgb(var(--color-brand-navy))]/70">
-              Sete princípios construídos a partir da tradição reformada —
+              Sete princípios construídos a partir da tradição reformada -
               herdeiros da Reforma e da releitura kuyperiana sobre o Reino de
               Deus em todas as esferas da vida. Estruturam o currículo, a
               formação docente e toda a metodologia que entregamos às escolas
@@ -122,7 +122,7 @@ export function Principles() {
           <p className="mt-14 text-center font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[rgb(var(--color-brand-navy))]/45">
             Os 7 princípios são desenvolvidos no livro&nbsp;
             <em className="italic">Tecnologia, Virtude e Educação Cristã</em>
-            &nbsp;— download gratuito mais abaixo.
+            &nbsp;- download gratuito mais abaixo.
           </p>
         </Reveal>
       </Container>

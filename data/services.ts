@@ -8,7 +8,7 @@ import {
 import type { Service } from "@/types";
 
 /**
- * Cinco frentes integradas — estrutura completa do portfólio We Make.
+ * Cinco frentes integradas - estrutura completa do portfólio We Make.
  * Substitui o catálogo genérico anterior.
  */
 export const services: Service[] = [
@@ -19,7 +19,7 @@ export const services: Service[] = [
     name: "Currículo Maker",
     headline: "Da Educação Infantil ao Ensino Médio",
     description:
-      "Material didático integrado e espiralado, articulando filosofia, tecnologia, ciências e artes. Cada caderno editorial é fundamentado a partir da cosmovisão reformada — não como um verniz teológico aplicado depois, mas como o ponto de partida.",
+      "Material didático integrado e espiralado, articulando filosofia, tecnologia, ciências e artes. Cada caderno editorial é fundamentado a partir da cosmovisão reformada - não como um verniz teológico aplicado depois, mas como o ponto de partida.",
     features: [
       "Cadernos editoriais por segmento",
       "Trilhas integradas BNCC + cosmovisão reformada",
@@ -51,7 +51,7 @@ export const services: Service[] = [
     name: "Plataforma We Make",
     headline: "Ambiente digital institucional",
     description:
-      "Plataforma proprietária para gestão pedagógica, trilhas do estudante, portfólio criativo e acompanhamento do educador — offline-first em sala.",
+      "Plataforma proprietária para gestão pedagógica, trilhas do estudante, portfólio criativo e acompanhamento do educador - offline-first em sala.",
     features: [
       "Portfólio digital do estudante",
       "Dashboards pedagógicos por turma",
@@ -67,7 +67,7 @@ export const services: Service[] = [
     name: "Espaço Maker",
     headline: "Arquitetura pedagógica do laboratório",
     description:
-      "Projeto completo de espaço maker: arquitetura, equipamentos, fluxo pedagógico e protocolos de uso — desenhado para integrar-se ao currículo e à identidade da escola.",
+      "Projeto completo de espaço maker: arquitetura, equipamentos, fluxo pedagógico e protocolos de uso - desenhado para integrar-se ao currículo e à identidade da escola.",
     features: [
       "Projeto arquitetônico e mobiliário",
       "Kit pedagógico de equipamentos",

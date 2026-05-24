@@ -8,7 +8,16 @@
       "Bash(mkdir -p videos photos)",
       "Bash(mv video1.mp4 videos/)",
       "Bash(mv foto*.png photos/)",
-      "Bash(rm -rf photos/photos)"
+      "Bash(rm -rf photos/photos)",
+      "Bash(command -v pandoc)",
+      "Bash(command -v pandoc python python3)",
+      "Bash(pip list *)",
+      "Bash(python -c ' *)",
+      "Bash(PYTHONHOME=/c/Users/renato/anaconda3 cd /tmp)",
+      "Bash(/c/Users/renato/anaconda3/python -c ' *)",
+      "Bash(unzip -p we_make_campanha_master.docx word/document.xml)",
+      "Bash(pdftotext -enc UTF-8 -layout \"[Paz] Plano de Parceria - 2026 \\(3\\).pdf\" parceria.txt)",
+      "Bash(pdftotext -enc UTF-8 -layout \"[Proposta] Tecnologia, VIrtude e Educação Cristã.pdf\" proposta.txt)"
     ]
   }
 }

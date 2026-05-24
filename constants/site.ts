@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "We Make",
   tagline: "Tecnologia educacional com cosmovisão reformada",
   description:
-    "A We Make é uma editora de soluções tecnológicas para escolas confessionais cristãs, fundada e desenvolvida a partir da cosmovisão reformada. Currículo maker, formação docente, plataforma, espaço maker e assessoria institucional — ancorados em Verdade, Beleza e Bondade e no Mandato Cultural.",
+    "A We Make é uma editora de soluções tecnológicas para escolas confessionais cristãs, fundada e desenvolvida a partir da cosmovisão reformada. Currículo maker, formação docente, plataforma, espaço maker e assessoria institucional - ancorados em Verdade, Beleza e Bondade e no Mandato Cultural.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://wemake.tec.br",
   ogImage: "/og/wemake-og.jpg",
   locale: "pt-BR",
@@ -22,15 +22,15 @@ export const siteConfig = {
   ],
   founder: {
     name: "Dênis Júlio P. Francisco",
-    role: "CEO & Fundador",
+    role: "CEO e Fundador",
     bio:
-      "Pastor batista, teólogo e mestrando em Tecnologias Educacionais pela UFRN. Autor do livro fundador “Tecnologia, Virtude e Educação Cristã” e idealizador da We Make.",
-    portrait: "/photos/foto6.png",
+      "Dênis Júlio Pereira Francisco é graduado em Teologia e especialista em Educação Clássica pela Faculdade Internacional Cidade Viva (FICV), também é mestre pela Universidade Federal do Rio Grande do Norte (UFRN), no Programa de Pós-Graduação em Inovação e Tecnologias Educacionais (PPgITE). Atua diretamente na área da educação há 10 anos, como professor de Educação Tecnológica, Robótica e Educação Maker. Fundou a We Make, primeira editora brasileira de Educação Tecnológica e Maker fundamentada na Cosmovisão Cristã. Casado com Gabi, pai de Luísa e Joaquim, Dênis também exerce a função pastoral, o que confere unidade entre sua vocação ministerial, sua prática educacional e sua produção acadêmica. Seu trabalho também pode ser acompanhado em suas redes sociais, onde compartilha reflexões e conteúdos relacionados à educação, tecnologia, fé e formação humana: no Instagram (@denisjulio) e no Substack \"Sabedoria e Silício\" (https://denisjulio.substack.com).",
+    portrait: "/photos/denis_profile.png",
     credentials: [
-      { label: "Pastor batista", short: "Pastor" },
-      { label: "Teólogo", short: "Teólogo" },
-      { label: "Mestrando UFRN · Tecnologias Educacionais", short: "Mestrando UFRN" },
-      { label: "CEO & Fundador da We Make", short: "CEO We Make" },
+      { label: "Mestre UFRN (PPgITE)", short: "Mestre UFRN" },
+      { label: "Teólogo e Especialista em Educação Clássica", short: "Educação Clássica" },
+      { label: "Fundador We Make", short: "Fundador We Make" },
+      { label: "Pastor", short: "Pastor" },
     ],
   },
   contact: {
@@ -49,7 +49,7 @@ export const siteConfig = {
     vipGroupUrl: "https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t",
   },
   ceo: {
-    /** Vídeo institucional gravado pelo Dênis — usado no hero e na seção do CEO. */
+    /** Vídeo institucional gravado pelo Dênis - usado no hero e na seção do CEO. */
     videoHero: "/videos/video1.mp4",
     videoHeroPoster: "/photos/foto6.png",
     videoFull: "/videos/video1.mp4",
@@ -70,10 +70,10 @@ export const siteConfig = {
   /**
    * Sinais qualitativos para o hero e demais seções.
    * Por decisão institucional, números absolutos (quantas escolas / quantos estados
-   * já temos hoje) NÃO devem ser expostos publicamente — apenas marcos comerciais.
+   * já temos hoje) NÃO devem ser expostos publicamente - apenas marcos comerciais.
    */
   presence: {
-    /** Estados onde já há trabalho ativo — usados pelo mapa, sem expor contagem. */
+    /** Estados onde já há trabalho ativo - usados pelo mapa, sem expor contagem. */
     statesUf: ["PR", "SC", "MG", "PB", "RN"] as const,
     enrollmentStart: "Janeiro de 2027",
     enrollmentDeadline: "30 de setembro de 2026",

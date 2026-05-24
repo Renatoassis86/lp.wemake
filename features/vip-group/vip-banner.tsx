@@ -11,11 +11,11 @@ import { cn } from "@/lib/utils";
 type Variant = "mint" | "navy" | "royal";
 
 type VipBannerProps = {
-  /** Onde este banner aparece — usado em analytics. */
+  /** Onde este banner aparece - usado em analytics. */
   placement: string;
   /** Tom visual do cartão. */
   variant?: Variant;
-  /** Headline curta — sobrescreve o padrão. */
+  /** Headline curta - sobrescreve o padrão. */
   headline?: string;
   /** Subtexto opcional. */
   caption?: string;
@@ -45,21 +45,21 @@ const palettes = {
 } as const;
 
 /**
- * VipBanner — chamada compacta para o grupo VIP do WhatsApp.
+ * VipBanner - chamada compacta para o grupo VIP do WhatsApp.
  *
  * Distribuído em pontos estratégicos da landing (depois do vídeo do CEO,
  * depois dos 7 princípios, depois da presença etc.) para multiplicar a
  * captura sem competir com o formulário de reunião estratégica.
  *
  * Pode ser usado:
- *   - como uma seção própria (default — `inline=false`)
+ *   - como uma seção própria (default - `inline=false`)
  *   - como componente embutido em outra seção (`inline=true`)
  */
 export function VipBanner({
   placement,
   variant = "mint",
   headline = "Quer estar perto de tudo o que acontece na We Make?",
-  caption = "Entre no grupo VIP no WhatsApp — conteúdos, bastidores e convites exclusivos para gestores escolares cristãos.",
+  caption = "Entre no grupo VIP no WhatsApp - conteúdos, bastidores e convites exclusivos para gestores escolares cristãos.",
   inline = false,
 }: VipBannerProps) {
   const p = palettes[variant];

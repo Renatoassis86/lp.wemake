@@ -5,7 +5,7 @@
  * usa esta lista como fonte da verdade para o indicador lateral e
  * para detectar o capítulo ativo via IntersectionObserver.
  *
- * Mantenha em ordem narrativa — a ordem é o storytelling.
+ * Mantenha em ordem narrativa - a ordem é o storytelling.
  */
 
 export type Chapter = {

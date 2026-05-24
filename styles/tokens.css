@@ -7,61 +7,59 @@
 @layer base {
   :root {
     /* ============================================================
-       BRAND PALETTE — extraída diretamente da logomarca We Make
-       (azul royal de fundo + W mint/sky + wordmark branco)
+       BRAND PALETTE — EdTech Lúdica Original We Make
        ============================================================ */
-    --color-brand-royal: 59 122 229;       /* azul institucional We Make — cor primária */
-    --color-brand-royal-deep: 28 78 175;   /* hover / sombra */
-    --color-brand-royal-soft: 141 190 240; /* azul claro secundário */
-    --color-brand-mint: 94 230 184;        /* mint do W — energia / CTA acento */
-    --color-brand-mint-deep: 39 168 132;   /* mint hover */
-    --color-brand-sky: 207 226 255;        /* sky muito claro p/ tons ivory */
-    --color-brand-ivory: 245 241 232;      /* creme suave — backgrounds claros */
-    --color-brand-ivory-deep: 232 224 207; /* creme com mais peso */
-    --color-brand-navy: 11 31 68;          /* navy profundo cinematográfico */
+    --color-brand-royal: 76 138 222;       /* Azul Principal (#4c8ade) */
+    --color-brand-royal-deep: 42 105 186;  /* Azul escuro hover */
+    --color-brand-royal-soft: 141 190 240; /* Azul claro secundário */
+    --color-brand-mint: 118 243 205;       /* Verdinho Água (#76f3cd) */
+    --color-brand-mint-deep: 39 168 132;   /* Mint hover */
+    --color-brand-sky: 255 204 0;          /* Amarelo vibrante - Destaque original */
+    --color-brand-ivory: 255 255 255;      /* Branco puro */
+    --color-brand-ivory-deep: 248 250 252; /* Cinza/Azul muito claro */
+    --color-brand-navy: 11 31 68;          /* Texto escuro primário (Navy original We Make) */
 
-    /* ─── Brand palette ─────────────────────────────────────── */
-    /* Deep institutional blue gradient anchored in contemplative navy. */
-    --color-ink-950: 4 8 20;          /* near-black navy — page background */
-    --color-ink-900: 7 12 28;         /* primary surface */
-    --color-ink-850: 10 16 38;        /* elevated surface */
-    --color-ink-800: 14 22 52;        /* cards / panels */
-    --color-ink-700: 22 33 74;        /* dividers / hairlines */
-    --color-ink-600: 36 52 104;       /* muted brand */
-    --color-ink-500: 58 86 168;       /* brand mid */
-    --color-ink-400: 96 132 220;      /* brand light */
-    --color-ink-300: 148 175 232;     /* brand soft */
-    --color-ink-200: 198 215 242;     /* brand whisper */
-    --color-ink-100: 232 240 252;     /* brand mist */
+    /* ─── Brand palette (Escala - Fundo Claro) ──────────────────── */
+    --color-ink-950: 255 255 255;     /* Fundo principal agora é BRANCO */
+    --color-ink-900: 248 250 252;     /* Fundo elevado super claro */
+    --color-ink-850: 241 245 249;     /* Cards claros */
+    --color-ink-800: 226 232 240;     /* Bordas suaves */
+    --color-ink-700: 203 213 225;     /* Dividers */
+    --color-ink-600: 148 163 184;     /* Texto sutil */
+    --color-ink-500: 100 116 139;     /* Texto secundário */
+    --color-ink-400: 71 85 105;       /* Texto base suave */
+    --color-ink-300: 51 65 85;        /* Texto forte suave */
+    --color-ink-200: 30 41 59;        /* Texto muito forte */
+    --color-ink-100: 15 23 42;        /* Texto principal / Títulos */
 
-    /* ─── Glow accents (cinematic light) ────────────────────── */
-    --color-glow-cyan: 96 165 250;    /* primary glow */
-    --color-glow-blue: 59 130 246;    /* secondary glow */
-    --color-glow-violet: 139 92 246;  /* contemplative accent */
-    --color-glow-amber: 212 165 116;  /* editorial warmth */
+    /* ─── Glow accents (Cores Lúdicas) ──────────────────────── */
+    --color-glow-cyan: 0 153 255;    
+    --color-glow-blue: 0 102 153;    
+    --color-glow-violet: 255 102 0;  
+    --color-glow-amber: 255 204 0;  
 
     /* ─── Editorial warm ivory (manifesto type) ─────────────── */
-    --color-ivory-50: 252 250 245;
-    --color-ivory-100: 245 241 232;
-    --color-ivory-200: 232 224 207;
+    --color-ivory-50: 255 255 255;
+    --color-ivory-100: 248 250 252;
+    --color-ivory-200: 241 245 249;
 
     /* ─── Neutral scale ─────────────────────────────────────── */
-    --color-mute-100: 226 232 240;
-    --color-mute-200: 203 213 225;
-    --color-mute-300: 148 163 184;
-    --color-mute-400: 100 116 139;
-    --color-mute-500: 71 85 105;
-    --color-mute-600: 51 65 85;
+    --color-mute-100: 241 245 249;
+    --color-mute-200: 226 232 240;
+    --color-mute-300: 203 213 225;
+    --color-mute-400: 148 163 184;
+    --color-mute-500: 100 116 139;
+    --color-mute-600: 71 85 105;
 
     /* ─── Semantic ──────────────────────────────────────────── */
     --color-bg: var(--color-ink-950);
     --color-bg-elev: var(--color-ink-900);
     --color-bg-card: var(--color-ink-850);
-    --color-border: 255 255 255;        /* used with low alpha */
-    --color-fg: 248 250 252;
-    --color-fg-muted: 148 163 184;
-    --color-fg-subtle: 100 116 139;
-    --color-accent: var(--color-glow-cyan);
+    --color-border: 226 232 240;        /* Borda cinza clara */
+    --color-fg: var(--color-ink-100);   /* Texto escuro */
+    --color-fg-muted: var(--color-ink-400);
+    --color-fg-subtle: var(--color-ink-500);
+    --color-accent: var(--color-brand-mint);
 
     /* ─── Typography scale (fluid clamp, 1.250 minor-third) ──── */
     --font-display: var(--font-fraunces), "Fraunces", "Times New Roman", serif;
@@ -112,8 +110,8 @@
     --space-24: 6rem;
     --space-32: 8rem;
     --space-40: 10rem;
-    --space-section: clamp(6rem, 4rem + 8vw, 12rem);
-    --space-section-tight: clamp(4rem, 3rem + 5vw, 8rem);
+    --space-section: clamp(4rem, 2.5rem + 5vw, 8rem);
+    --space-section-tight: clamp(2.5rem, 1.5rem + 3vw, 5rem);
 
     /* ─── Radius (soft institutional) ───────────────────────── */
     --radius-xs: 4px;

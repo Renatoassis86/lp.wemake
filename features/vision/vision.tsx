@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -22,9 +23,9 @@ const accentMap = {
 } as const;
 
 /**
- * Ato IV — A Visão da We Make.
+ * Ato IV - A Visão da We Make.
  *
- * Verdade, Beleza e Bondade — lidas reformadamente — coroadas pelo
+ * Verdade, Beleza e Bondade - lidas reformadamente - coroadas pelo
  * Mandato Cultural. Apresentadas como quadro institucional: numeração
  * romana, grego, tipografia editorial, espaçamento generoso.
  */
@@ -42,7 +43,7 @@ export function Vision() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-5 font-display font-light text-gradient-cinematic text-[clamp(2.25rem,1.8rem+3vw,4.25rem)] leading-[1.05] tracking-[-0.035em]">
-              Verdade, Beleza e Bondade —{" "}
+              Verdade, Beleza e Bondade -{" "}
               <em className="font-display italic text-ivory-100">
                 coroadas pelo Mandato Cultural.
               </em>
@@ -52,12 +53,36 @@ export function Vision() {
             <p className="mt-6 max-w-prose text-[1.0625rem] leading-[1.65] text-foreground/65">
               A visão da We Make repousa em quatro pilares filosóficos lidos
               à luz da tradição reformada. Não são slogans nem esquema neutro
-              de teologia natural — são princípios que entendem Cristo como
+              de teologia natural - são princípios que entendem Cristo como
               Senhor de todas as esferas da vida (Kuyper), expressos
               pedagogicamente no nosso currículo.
             </p>
           </Reveal>
         </div>
+
+        {/* Storytelling Images - Vision in Practice */}
+        <Reveal delay={0.3}>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-xl">
+              <Image
+                src="/photos/foto4.png"
+                alt="Prática educacional refletindo a cosmovisão cristã"
+                fill
+                className="object-cover opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
+            </div>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-xl md:translate-y-8">
+              <Image
+                src="/photos/foto5.png"
+                alt="Crianças expressando criatividade e bondade no espaço maker"
+                fill
+                className="object-cover opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
+            </div>
+          </div>
+        </Reveal>
 
         <Stagger
           delayChildren={0.1}

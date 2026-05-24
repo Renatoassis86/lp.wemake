@@ -8,7 +8,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * Strategic CTA band — final invitation before the footer.
+ * Strategic CTA band - final invitation before the footer.
  * Single message, single action, maximum visual weight.
  */
 export function CtaStrategic() {

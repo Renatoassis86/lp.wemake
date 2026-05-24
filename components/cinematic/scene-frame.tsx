@@ -130,20 +130,20 @@ export function SceneFrame({
       <div className="container-rail relative z-10 pt-[max(env(safe-area-inset-top),2rem)] sm:pt-10">
         <div className="flex items-center justify-between gap-4">
           <div className="inline-flex items-center gap-3">
-            <span className="font-display italic text-3xl text-foreground/60 select-none">
+            <span className="font-display italic text-3xl text-white/60 select-none">
               {scene.number}
             </span>
             <div className="hidden sm:block h-px w-12 bg-gradient-to-r from-white/40 to-transparent" />
-            <span className="hidden sm:inline font-mono text-[0.6875rem] uppercase tracking-[0.24em] text-foreground/55">
+            <span className="hidden sm:inline font-mono text-[0.6875rem] uppercase tracking-[0.24em] text-white/55">
               {scene.eyebrow}
             </span>
           </div>
           <div className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-ink-950/55 backdrop-blur px-3 py-1">
-            <span className="font-mono text-[0.625rem] tabular-nums tracking-[0.22em] text-foreground/85">
+            <span className="font-mono text-[0.625rem] tabular-nums tracking-[0.22em] text-white/85">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <span className="font-mono text-[0.625rem] text-foreground/35">/</span>
-            <span className="font-mono text-[0.625rem] tabular-nums tracking-[0.22em] text-foreground/40">
+            <span className="font-mono text-[0.625rem] text-white/35">/</span>
+            <span className="font-mono text-[0.625rem] tabular-nums tracking-[0.22em] text-white/40">
               {String(total).padStart(2, "0")}
             </span>
           </div>
@@ -171,7 +171,7 @@ export function SceneFrame({
           <h3
             className="
               font-display font-light tracking-[-0.03em]
-              text-balance text-ivory-50
+              text-balance text-white
               text-[clamp(2rem,1.4rem+3.5vw,4.75rem)] leading-[1.05]
               drop-shadow-[0_2px_24px_rgba(0,0,0,0.55)]
             "
@@ -179,7 +179,7 @@ export function SceneFrame({
             {scene.headline}
           </h3>
           {scene.caption && (
-            <p className="max-w-xl text-[1rem] sm:text-[1.0625rem] leading-[1.6] text-foreground/80 drop-shadow-[0_2px_18px_rgba(0,0,0,0.6)]">
+            <p className="max-w-xl text-[1rem] sm:text-[1.0625rem] leading-[1.6] text-white/80 drop-shadow-[0_2px_18px_rgba(0,0,0,0.6)]">
               {scene.caption}
             </p>
           )}

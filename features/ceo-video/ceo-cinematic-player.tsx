@@ -30,7 +30,7 @@ type CeoCinematicPlayerProps = {
 
   /** Talk title rendered on the premium poster overlay. */
   talkTitle: string;
-  /** Speaker line — "Com Dênis · CEO We Make". */
+  /** Speaker line - "Com Dênis · CEO We Make". */
   speakerLine: string;
   /** Duration label, e.g. "8 min 24s". */
   durationLabel?: string;
@@ -38,7 +38,7 @@ type CeoCinematicPlayerProps = {
   eyebrow?: string;
 
   /** When true, the video begins muted and plays as soon as it enters
-   *  the viewport — like the Apple keynote idiom. Off when reduced motion. */
+   *  the viewport - like the Apple keynote idiom. Off when reduced motion. */
   softAutoplay?: boolean;
 };
 
@@ -48,7 +48,7 @@ const breath: Variants = {
 };
 
 /**
- * Premium cinematic video player — TED Talk × Netflix doc × Apple keynote.
+ * Premium cinematic video player - TED Talk × Netflix doc × Apple keynote.
  *
  *  - Editorial poster with talk title, eyebrow and speaker line
  *  - Breathing concentric rings around the play button
@@ -270,7 +270,7 @@ export const CeoCinematicPlayer = forwardRef<CeoPlayerHandle, CeoCinematicPlayer
                 )}
               </div>
 
-              {/* Center — breathing play button */}
+              {/* Center - breathing play button */}
               <div className="flex flex-1 items-center justify-center">
                 <button
                   type="button"

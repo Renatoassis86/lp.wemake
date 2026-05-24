@@ -66,7 +66,7 @@ export function TitleCard({ scene, variant }: TitleCardProps) {
                 <SplitText text={scene.headline.split(".")[0] ?? scene.headline} by="word" />
                 {scene.headline.split(".").length > 1 && (
                   <>
-                    <em className="block font-display italic text-ivory-100">
+                    <em className="block font-display italic text-white/90">
                       <SplitText
                         text={scene.headline.split(".").slice(1).join(".").trim()}
                         by="word"
@@ -87,7 +87,7 @@ export function TitleCard({ scene, variant }: TitleCardProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
-              className="mx-auto mt-10 max-w-xl text-[1rem] sm:text-lg leading-[1.6] text-foreground/65"
+              className="mx-auto mt-10 max-w-xl text-[1rem] sm:text-lg leading-[1.6] text-white/70"
             >
               {scene.caption}
             </motion.p>
@@ -98,7 +98,7 @@ export function TitleCard({ scene, variant }: TitleCardProps) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 1.1 }}
-            className="mt-16 inline-flex items-center gap-3 font-mono text-[0.625rem] uppercase tracking-[0.28em] text-foreground/45"
+            className="mt-16 inline-flex items-center gap-3 font-mono text-[0.625rem] uppercase tracking-[0.28em] text-white/50"
           >
             <span className="h-px w-12 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
             <span>{scene.number}</span>

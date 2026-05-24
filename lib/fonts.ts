@@ -1,15 +1,13 @@
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Lilita_One, Geist, Geist_Mono } from "next/font/google";
 
 /**
- * Editorial display serif — used for manifesto / hero / institutional headlines.
- * Fraunces carries a literary, contemplative quality that fits a Christian-educational voice.
+ * Ludic display font — used for bold, playful headlines like SAS/Zoom.
  */
-export const fontDisplay = Fraunces({
+export const fontDisplay = Lilita_One({
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-  axes: ["opsz", "SOFT"],
-  variable: "--font-fraunces",
+  weight: "400",
+  variable: "--font-fraunces", /* mantemos o nome da variável no CSS pra não quebrar referências */
   preload: true,
 });
 

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * Inline-SVG logomark. Avoids an extra HTTP request and keeps the wordmark
@@ -10,10 +11,12 @@ export function Logo({
   className,
   href = "/",
   label = "We Make",
+  imageSrc = "/photos/1.png",
 }: {
   className?: string;
   href?: string;
   label?: string;
+  imageSrc?: string;
 }) {
   return (
     <Link
@@ -26,42 +29,14 @@ export function Logo({
         className,
       )}
     >
-      <svg
-        viewBox="0 0 28 28"
-        width="22"
-        height="22"
-        aria-hidden
-        className="text-foreground"
-      >
-        <defs>
-          <linearGradient id="wm-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#cfe2ff" />
-            <stop offset="60%" stopColor="#60a5fa" />
-            <stop offset="100%" stopColor="#8b5cf6" />
-          </linearGradient>
-        </defs>
-        <rect
-          x="1.5"
-          y="1.5"
-          width="25"
-          height="25"
-          rx="6"
-          fill="none"
-          stroke="url(#wm-grad)"
-          strokeWidth="1.25"
-        />
-        <path
-          d="M7 19 L11 9 L14 15 L17 9 L21 19"
-          fill="none"
-          stroke="url(#wm-grad)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <span className="font-display text-[1.0625rem] font-medium tracking-[-0.01em]">
-        {label}
-      </span>
+      <Image
+        src={imageSrc}
+        alt={label}
+        width={140}
+        height={40}
+        priority
+        className="object-contain"
+      />
     </Link>
   );
 }

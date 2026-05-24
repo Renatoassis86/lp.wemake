@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
-import { useRef, type ComponentPropsWithoutRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion, type HTMLMotionProps } from "framer-motion";
+import { useRef } from "react";
 
-type ParallaxProps = ComponentPropsWithoutRef<"div"> & {
+type ParallaxProps = HTMLMotionProps<"div"> & {
   /** Pixels of travel. Negative pulls upward as the user scrolls. */
   distance?: number;
   /** Scroll-progress range mapped to the travel range. */

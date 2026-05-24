@@ -44,7 +44,7 @@ export function SceneCounter({ active, scenes, visible }: SceneCounterProps) {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 8 }}
                         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-foreground/65 whitespace-nowrap"
+                        className="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-white/65 whitespace-nowrap"
                       >
                         {s.eyebrow}
                       </motion.span>
@@ -56,7 +56,7 @@ export function SceneCounter({ active, scenes, visible }: SceneCounterProps) {
                       "transition-colors duration-500",
                       isActive
                         ? "text-glow-cyan text-sm"
-                        : "text-foreground/30 text-[0.625rem]",
+                        : "text-white/30 text-[0.625rem]",
                     )}
                   >
                     {s.number}
@@ -66,7 +66,7 @@ export function SceneCounter({ active, scenes, visible }: SceneCounterProps) {
                       "rounded-full transition-all duration-500",
                       isActive
                         ? "size-2 bg-glow-cyan shadow-[0_0_12px_rgba(96,165,250,0.8)]"
-                        : "size-1 bg-foreground/30",
+                        : "size-1 bg-white/30",
                     )}
                   />
                 </li>

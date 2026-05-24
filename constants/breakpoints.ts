@@ -1,5 +1,5 @@
 /**
- * Responsive breakpoint constants — mirror the Tailwind config
+ * Responsive breakpoint constants - mirror the Tailwind config
  * so JS-driven measurements (motion, IO thresholds) stay in lockstep with CSS.
  */
 export const breakpoints = {

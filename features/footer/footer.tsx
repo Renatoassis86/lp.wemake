@@ -1,92 +1,105 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
-import { Divider } from "@/components/ui/divider";
-import { Logo } from "@/components/ui/logo";
-import { footerNav } from "@/constants/nav";
-import { siteConfig } from "@/constants/site";
+import { Instagram, Youtube, MessageCircle } from "lucide-react";
+
+const NAV_LINKS = [
+  { label: "Visão", href: "#proposito" },
+  { label: "Manifesto", href: "#proposito" },
+  { label: "Soluções", href: "#solucoes" },
+  { label: "Jornada", href: "#jornada" },
+  { label: "Presença", href: "#presenca" },
+  { label: "Reunião", href: "#reuniao" },
+];
+
+const MODULES = [
+  "Robótica Educacional",
+  "Programação Criativa",
+  "Impressão 3D",
+  "Internet das Coisas (IoT)",
+  "Inteligência Artificial",
+  "Marcenaria Digital",
+];
 
 /**
- * Institutional footer — sober, editorial, four columns + brand line.
+ * Footer institucional completo — Logo, missão, links de navegação,
+ * módulos, redes sociais e assinatura Arkos Intelligence.
  */
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-ink-950 pt-24 pb-12">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <Logo />
-            <p className="mt-6 max-w-sm text-[0.9375rem] leading-[1.6] text-foreground/55">
-              {siteConfig.description}
-            </p>
-            <p className="mt-8 font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-foreground/35">
-              {siteConfig.contact.address}
-            </p>
-          </div>
+    <footer className="bg-[rgb(var(--color-brand-navy))] text-white">
 
-          <FooterCol title="Institucional" links={footerNav.institucional} />
-          <FooterCol title="Soluções" links={footerNav.solucoes} />
-          <FooterCol title="Recursos" links={footerNav.recursos} />
-        </div>
+      {/* Topo do Footer */}
+      <div className="border-b border-white/10">
+        <Container className="py-16 sm:py-20">
+          <div className="grid lg:grid-cols-[1.5fr_1fr_1fr] gap-12">
 
-        <Divider className="my-12" />
-
-        <div className="flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-foreground/40">
-            © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
-          </p>
-          <ul className="flex flex-wrap gap-6 text-[0.8125rem] text-foreground/55">
-            {footerNav.legal.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="hover:text-foreground transition-colors">
-                  {l.label}
+            {/* Coluna: Marca + Manifesto */}
+            <div>
+              <div className="relative h-12 w-44 mb-6">
+                <Image
+                  src="/photos/6.png"
+                  alt="We Make — Educação Tecnológica Cristã"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+              <p className="text-white/65 text-[1rem] leading-relaxed max-w-xs">
+                A primeira editora brasileira de Educação Tecnológica e Maker fundamentada na Cosmovisão Cristã. Tecnologia com alma. Educação com propósito.
+              </p>
+              <div className="flex items-center gap-4 mt-8">
+                <a href="https://www.instagram.com/denisjulio" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[rgb(var(--color-brand-mint))]/30 flex items-center justify-center transition-colors" aria-label="Instagram">
+                  <Instagram className="size-5" />
                 </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+                <a href="https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#25D366]/30 flex items-center justify-center transition-colors" aria-label="WhatsApp">
+                  <MessageCircle className="size-5" />
+                </a>
+                <a href="https://www.youtube.com/@wemake" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-red-500/30 flex items-center justify-center transition-colors" aria-label="YouTube">
+                  <Youtube className="size-5" />
+                </a>
+              </div>
+            </div>
 
-        <div
-          aria-hidden
-          className="mt-20 select-none text-center font-display font-light tracking-[-0.04em] leading-[0.9]"
-          style={{
-            fontSize: "clamp(4rem, 16vw, 18rem)",
-            backgroundImage:
-              "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          We Make.
+            {/* Coluna: Navegação */}
+            <div>
+              <h3 className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-white/40 mb-6">
+                Navegação
+              </h3>
+              <ul className="space-y-3">
+                {NAV_LINKS.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-white/65 hover:text-white transition-colors text-[0.9375rem]">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Coluna: Módulos */}
+            <div>
+              <h3 className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-white/40 mb-6">
+                Módulos We Make
+              </h3>
+              <ul className="space-y-3">
+                {MODULES.map((mod) => (
+                  <li key={mod} className="text-white/65 text-[0.9375rem]">
+                    {mod}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Faixa inferior */}
+      <Container className="py-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.75rem] text-white/35">
+          <p>© {new Date().getFullYear()} We Make. Todos os direitos reservados.</p>
+          <p className="font-mono uppercase tracking-[0.15em]">Criado pela <span className="text-white/55">Arkos Intelligence</span></p>
         </div>
       </Container>
-    </footer>
-  );
-}
 
-function FooterCol({
-  title,
-  links,
-}: {
-  title: string;
-  links: ReadonlyArray<{ label: string; href: string }>;
-}) {
-  return (
-    <div className="lg:col-span-2">
-      <h3 className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-foreground/45">
-        {title}
-      </h3>
-      <ul className="mt-5 space-y-3">
-        {links.map((l) => (
-          <li key={l.href}>
-            <a
-              href={l.href}
-              className="text-[0.9375rem] text-foreground/75 hover:text-foreground transition-colors"
-            >
-              {l.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </footer>
   );
 }

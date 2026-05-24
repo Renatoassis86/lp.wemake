@@ -31,7 +31,7 @@ export function buildMetadata({
     title: fullTitle,
     description,
     applicationName: siteConfig.name,
-    keywords: siteConfig.keywords,
+    keywords: [...siteConfig.keywords],
     authors: [{ name: siteConfig.name, url: siteConfig.url }],
     creator: siteConfig.name,
     publisher: siteConfig.name,

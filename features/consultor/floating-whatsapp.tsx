@@ -7,7 +7,7 @@ import { whatsappLink } from "@/constants/site";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * Floating WhatsApp shortcut — fixed in the lower-right corner.
+ * Floating WhatsApp shortcut - fixed in the lower-right corner.
  * Shows after the user scrolls past the hero. Honors reduced-motion.
  */
 export function FloatingWhatsapp() {

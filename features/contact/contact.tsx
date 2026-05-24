@@ -10,7 +10,7 @@ import { siteConfig } from "@/constants/site";
 import { ContactForm } from "./contact-form";
 
 /**
- * Contact — split layout: institutional pitch on the left, lead form on the right.
+ * Contact - split layout: institutional pitch on the left, lead form on the right.
  * Strategic CTA, not a generic “send us a message”.
  */
 export function Contact() {
@@ -34,7 +34,7 @@ export function Contact() {
               <p className="mt-6 text-[1.0625rem] leading-[1.55] text-foreground/65">
                 Toda parceria começa com uma reunião estratégica entre nosso
                 time institucional e a direção da escola. Não é uma reunião
-                comercial — é o início de um diálogo.
+                comercial - é o início de um diálogo.
               </p>
             </Reveal>
 

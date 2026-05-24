@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -12,9 +13,9 @@ import { worldChanges } from "@/data/world-changes";
 import { fadeUp } from "@/lib/motion";
 
 /**
- * Ato II — O Mundo Mudou.
+ * Ato II - O Mundo Mudou.
  * Diagnóstico cultural sóbrio: IA, telas, crise educacional, cultura digital.
- * Apresentado como sequência editorial — números romanos + leituras espaçadas.
+ * Apresentado como sequência editorial - números romanos + leituras espaçadas.
  */
 export function WorldChanged() {
   return (
@@ -47,6 +48,19 @@ export function WorldChanged() {
             </Reveal>
           </div>
         </div>
+
+        {/* Storytelling Image */}
+        <Reveal delay={0.4}>
+          <div className="relative mt-16 aspect-[21/9] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
+            <Image
+              src="/photos/foto1.png"
+              alt="Alunos em um ambiente de aprendizagem moderno e maker"
+              fill
+              className="object-cover opacity-80"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-transparent" />
+          </div>
+        </Reveal>
 
         <Stagger
           delayChildren={0.1}

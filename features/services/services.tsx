@@ -1,127 +1,139 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import { Cpu, Scissors, Palette, Wrench, Settings, BookOpen } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Section } from "@/components/ui/section";
-import { Glow } from "@/components/ui/glow";
 import { Reveal } from "@/components/motion/reveal";
-import { Stagger } from "@/components/motion/stagger";
-import { services } from "@/data/services";
-import { fadeUp } from "@/lib/motion";
 
-/**
- * Ato VI — Produtos e Serviços.
- * Cinco frentes integradas, apresentadas em formato catálogo editorial.
- * Cada linha é um capítulo: número editorial, ícone, headline, corpo, lista de entregas.
- */
+const solutions = [
+  {
+    title: "Currículo completo de Educação Tecnológica e Maker",
+    desc: "Aulas estruturadas com trilhas envolvendo programação, robótica, eletrônica, modelagem e impressão 3D, engenharia, cultura maker e cidadania digital.",
+    color: "bg-[rgb(var(--color-brand-mint))]/20", // Mint soft
+    iconColor: "text-[rgb(var(--color-brand-mint-deep))]",
+    icon: Cpu,
+  },
+  {
+    title: "Material didático do aluno",
+    desc: "Livro maker do aluno, que funcionará como um portfólio pessoal: poderá anotar ideias; registrar etapas de criação, organizar aprendizados e conquistas ao longo das aulas.",
+    color: "bg-[rgb(var(--color-brand-sky))]/20", // Yellow soft
+    iconColor: "text-[rgb(var(--color-brand-sky))]",
+    icon: BookOpen,
+  },
+  {
+    title: "Metodologia própria",
+    desc: "Conhecer · Explorar · Criar. Os alunos são convidados a conhecer um problema real, explorar conceitos fundamentais e criar soluções práticas por meio de projetos mão na massa.",
+    color: "bg-orange-400/20", // Laranja ludico soft
+    iconColor: "text-orange-500",
+    icon: Palette,
+  },
+  {
+    title: "Assessoria pedagógica, tecnológica e teológica",
+    desc: "A escola não recebe apenas aulas prontas, mas acompanhamento para implantação, formação docente, organização da sala maker e melhoria contínua da prática pedagógica.",
+    color: "bg-pink-400/20", // Rosa ludico soft
+    iconColor: "text-pink-500",
+    icon: Scissors,
+  },
+  {
+    title: "Plataforma Virtual completa",
+    desc: "Materiais e recursos organizados em um ambiente digital de apoio para os professores, pais e coordenação.",
+    color: "bg-[rgb(var(--color-brand-royal-soft))]/30", // Azul claro
+    iconColor: "text-[rgb(var(--color-brand-royal))]",
+    icon: Settings,
+  },
+  {
+    title: "Ecologia Formativa",
+    desc: "Projetamos com você uma sala maker completa, que atenda toda a comunidade escolar e não apenas às aulas da We Make.",
+    color: "bg-purple-400/20", // Roxo ludico soft
+    iconColor: "text-purple-500",
+    icon: Wrench,
+  },
+];
+
 export function Services() {
-  return (
-    <Section id="solucoes" bleed>
-      <Glow color="cyan" size="xl" intensity={0.16} className="-left-40 top-0" />
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  
+  const yBg = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
-      <Container>
-        <div className="grid lg:grid-cols-12 gap-12 items-end">
+  return (
+    <Section
+      id="solucoes"
+      ref={containerRef}
+      bleed
+      className="relative min-h-[100svh] flex flex-col pt-16 pb-24 overflow-hidden bg-[rgb(var(--color-brand-royal))] z-10"
+    >
+      <BackgroundIcons y={yBg} />
+
+      <Container className="relative z-30 flex flex-col h-full gap-16">
+        
+        {/* Topo: Texto solto em vez de absoluto para não sobrepor */}
+        <div className="grid lg:grid-cols-12 gap-8 items-center mt-8 mb-8">
           <div className="lg:col-span-7">
-            <Reveal>
-              <Eyebrow>Capítulo VI · O portfólio</Eyebrow>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="mt-5 font-display font-light text-gradient-cinematic text-[clamp(2.25rem,1.8rem+2.6vw,3.75rem)] leading-[1.05] tracking-[-0.03em]">
-                Cinco frentes integradas.{" "}
-                <em className="font-display italic text-ivory-100">
-                  Uma única visão institucional.
-                </em>
-              </h2>
-            </Reveal>
+            <div className="bg-[rgb(var(--color-brand-royal-soft))] p-8 sm:p-12 shadow-xl rounded-[2rem] sm:rounded-[3rem]">
+              <Reveal>
+                <h2 className="font-display text-white text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.1] mb-4">
+                  Por que isso importa?
+                </h2>
+                <p className="text-white/95 text-[clamp(1rem,1.1vw,1.125rem)] leading-relaxed max-w-xl">
+                  Porque tecnologia na escola <strong className="font-bold">não é neutra</strong> e não deve depender de improviso ou de adaptações. Com currículo estruturado, formação docente e acompanhamento, a escola ganha segurança pedagógica, coerência à fé cristã e uma experiência de aprendizagem mais significativa para os alunos.
+                </p>
+              </Reveal>
+            </div>
           </div>
-          <div className="lg:col-span-4 lg:col-start-9">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <Reveal delay={0.2}>
-              <p className="text-[1rem] leading-[1.65] text-foreground/65">
-                Currículo, formação, plataforma, espaço maker e assessoria.
-                Adotáveis em conjunto ou em sequência — sempre articulados
-                pela mesma visão pedagógica.
-              </p>
+              <h2 className="font-display text-white text-[clamp(2rem,4vw,3.5rem)] leading-[1.1] lg:text-right text-center">
+                Soluções e <br className="hidden lg:block" /> Diferenciais
+              </h2>
             </Reveal>
           </div>
         </div>
 
-        <Stagger
-          delayChildren={0.1}
-          staggerChildren={0.12}
-          className="mt-20 divide-y divide-white/10 border-y border-white/10"
-        >
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <motion.article
-                key={service.id}
-                variants={fadeUp}
-                className="group grid gap-6 sm:gap-10 py-10 lg:py-14 lg:grid-cols-12 items-start"
-              >
-                <div className="lg:col-span-2 flex items-start gap-3 lg:flex-col">
-                  <div
-                    aria-hidden
-                    className="inline-flex size-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] ring-1 ring-glow-cyan/20"
-                  >
-                    <Icon className="size-5 text-foreground/80" />
-                  </div>
-                  <div className="lg:mt-4">
-                    <span className="block font-mono text-[0.75rem] tracking-[0.22em] text-foreground/35">
-                      {service.number}
-                    </span>
-                    <span className="mt-1 block font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-glow-cyan/80">
-                      {service.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-5">
-                  <h3 className="font-display text-[clamp(1.75rem,1.4rem+1.4vw,2.5rem)] leading-[1.1] tracking-[-0.025em]">
-                    {service.name}
-                  </h3>
-                  <p className="mt-2 font-display italic text-lg text-ivory-100/85">
-                    {service.headline}
-                  </p>
-                  <p className="mt-5 max-w-prose text-[0.9375rem] leading-[1.65] text-foreground/65">
-                    {service.description}
-                  </p>
-                  <a
-                    href="#reuniao"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-glow-cyan hover:text-glow-cyan/80 transition-colors"
-                  >
-                    Conversar sobre {service.name.toLowerCase()}
-                    <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                </div>
-
-                <div className="lg:col-span-5">
-                  <ul className="grid sm:grid-cols-2 gap-3">
-                    {service.features.map((feat) => (
-                      <li
-                        key={feat}
-                        className="
-                          flex items-start gap-3
-                          rounded-2xl border border-white/[0.06]
-                          bg-white/[0.025] px-4 py-3
-                          text-[0.875rem] leading-snug text-foreground/75
-                        "
-                      >
-                        <span
-                          className="mt-1 size-1.5 shrink-0 rounded-full bg-glow-cyan/80 shadow-[0_0_8px_rgba(96,165,250,0.7)]"
-                          aria-hidden
-                        />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.article>
-            );
-          })}
-        </Stagger>
+        {/* Grid de Soluções com Cores Lúdicas */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solutions.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`rounded-[1.5rem] p-6 sm:p-8 shadow-lg flex flex-col bg-white border-2 border-transparent hover:border-white transition-all`}
+            >
+              <div className={`size-12 rounded-[1rem] ${item.color} flex items-center justify-center mb-5`}>
+                <item.icon className={`size-6 ${item.iconColor}`} />
+              </div>
+              <h3 className="font-display text-[rgb(var(--color-brand-navy))] text-[1.125rem] sm:text-[1.25rem] font-bold mb-3 leading-[1.2]">
+                {item.title}
+              </h3>
+              <p className="text-[rgb(var(--color-brand-navy))]/90 text-[1rem] leading-relaxed">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </Container>
     </Section>
   );
 }
+
+function BackgroundIcons({ y }: { y: any }) {
+  return (
+    <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-[0.06] pointer-events-none">
+      <Cpu className="absolute top-[15%] left-[80%] size-24 text-white rotate-12" />
+      <Settings className="absolute top-[50%] left-[15%] size-32 text-white -rotate-12" />
+      <Palette className="absolute top-[70%] left-[85%] size-16 text-white rotate-6" />
+      <Wrench className="absolute bottom-[10%] left-[45%] size-28 text-white rotate-45" />
+      <BookOpen className="absolute bottom-[20%] right-[10%] size-20 text-white -rotate-12" />
+      <Scissors className="absolute top-[30%] left-[5%] size-20 text-white rotate-12" />
+    </motion.div>
+  );
+}
+

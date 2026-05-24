@@ -9,7 +9,7 @@ import { siteConfig } from "@/constants/site";
  * Cartão editorial do palestrante.
  *
  *   - Retrato (com fallback elegante caso a foto institucional não esteja
- *     disponível ainda — gera um monograma a partir das iniciais do nome).
+ *     disponível ainda - gera um monograma a partir das iniciais do nome).
  *   - Nome em display, cargo em mono, bio editorial.
  *   - Pin "Falando agora" com glow vivo durante a sequência.
  */
@@ -92,7 +92,7 @@ export function SpeakerCard({ live = false }: { live?: boolean }) {
             {bio}
           </p>
 
-          {/* Tags de credenciais — autoridade reconhecida */}
+          {/* Tags de credenciais - autoridade reconhecida */}
           <ul className="mt-5 flex flex-wrap gap-1.5">
             {credentials.map((c) => (
               <li
@@ -112,7 +112,7 @@ export function SpeakerCard({ live = false }: { live?: boolean }) {
         </div>
       </div>
 
-      {/* Métricas qualitativas — sem números absolutos */}
+      {/* Métricas qualitativas - sem números absolutos */}
       <dl className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
         <Credential label="formação"   value="UFRN" />
         <Credential label="tradição"   value="REFORMADA" />

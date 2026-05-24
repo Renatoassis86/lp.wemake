@@ -6,7 +6,7 @@ export type NavLink = {
 };
 
 /**
- * 14-act narrative — surfaced as 5 nav anchors for clarity.
+ * 14-act narrative - surfaced as 5 nav anchors for clarity.
  * Each anchor lands on the opening act of a chapter.
  */
 export const primaryNav: NavLink[] = [
@@ -20,7 +20,7 @@ export const primaryNav: NavLink[] = [
     id: "ceo",
     label: "Manifesto",
     href: "#ceo",
-    description: "Mensagem do CEO — apresentação institucional.",
+    description: "Mensagem do CEO - apresentação institucional.",
   },
   {
     id: "solucoes",

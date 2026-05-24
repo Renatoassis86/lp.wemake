@@ -13,7 +13,7 @@ import { trackEvent } from "@/lib/analytics";
 
 /**
  * Institutional top nav.
- * Floating glass capsule that condenses on scroll — Linear/Arc inspired.
+ * Floating glass capsule that condenses on scroll - Linear/Arc inspired.
  */
 export function Nav() {
   const { navOpen, setNavOpen, scrolled, setScrolled } = useUi();
@@ -54,7 +54,10 @@ export function Nav() {
               : "max-w-[var(--container-2xl)] h-16 border-white/5 bg-ink-950/30 backdrop-blur-xl",
           )}
         >
-          <Logo />
+          {/* A logo muda dependendo do scroll para garantir contraste. 
+              1.png (escura) para quando o menu fica branco no scroll.
+              3.png (clara - testando) para o topo azul. */}
+          <Logo imageSrc={scrolled ? "/photos/1.png" : "/photos/3.png"} />
 
           <nav className="hidden lg:flex items-center gap-1">
             {primaryNav.map((link) => {

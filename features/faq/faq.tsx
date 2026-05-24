@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * Editorial FAQ — typographic accordion, no surprise icons.
+ * Editorial FAQ - typographic accordion, no surprise icons.
  */
 export function Faq() {
   return (

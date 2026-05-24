@@ -1,7 +1,7 @@
 import type { StatePresence } from "@/types";
 
 /**
- * Estados brasileiros — presença atual da We Make.
+ * Estados brasileiros - presença atual da We Make.
  *
  * Apenas 5 estados têm presença ativa hoje (PR, SC, MG, PB, RN) com 11 escolas
  * parceiras no total. Os demais aparecem no mapa como nós apagados,

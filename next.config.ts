@@ -18,7 +18,7 @@ const config: NextConfig = {
       "@radix-ui/react-select",
       "@radix-ui/react-tabs",
     ],
-    optimizeCss: true,
+    // optimizeCss: true,
     scrollRestoration: true,
   },
 
