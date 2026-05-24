@@ -6,6 +6,20 @@
 
 @layer base {
   :root {
+    /* ============================================================
+       BRAND PALETTE — extraída diretamente da logomarca We Make
+       (azul royal de fundo + W mint/sky + wordmark branco)
+       ============================================================ */
+    --color-brand-royal: 59 122 229;       /* azul institucional We Make — cor primária */
+    --color-brand-royal-deep: 28 78 175;   /* hover / sombra */
+    --color-brand-royal-soft: 141 190 240; /* azul claro secundário */
+    --color-brand-mint: 94 230 184;        /* mint do W — energia / CTA acento */
+    --color-brand-mint-deep: 39 168 132;   /* mint hover */
+    --color-brand-sky: 207 226 255;        /* sky muito claro p/ tons ivory */
+    --color-brand-ivory: 245 241 232;      /* creme suave — backgrounds claros */
+    --color-brand-ivory-deep: 232 224 207; /* creme com mais peso */
+    --color-brand-navy: 11 31 68;          /* navy profundo cinematográfico */
+
     /* ─── Brand palette ─────────────────────────────────────── */
     /* Deep institutional blue gradient anchored in contemplative navy. */
     --color-ink-950: 4 8 20;          /* near-black navy — page background */

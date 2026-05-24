@@ -7,7 +7,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Section } from "@/components/ui/section";
 import { Glow } from "@/components/ui/glow";
 import { Reveal } from "@/components/motion/reveal";
-import { statePresence, presenceTotals } from "@/data/states";
+import { statePresence } from "@/data/states";
 import { siteConfig } from "@/constants/site";
 import { cn } from "@/lib/utils";
 
@@ -256,10 +256,10 @@ export function PresenceMap() {
 
 function PresenceStats() {
   const stats = [
-    { label: "escolas parceiras", value: `${siteConfig.presence.schools}+` },
-    { label: "estados ativos", value: `${presenceTotals.statesActive}` },
-    { label: "estudantes alcançados", value: `${(siteConfig.presence.students / 1000).toFixed(0)}k` },
-    { label: "educadores formados", value: `${(siteConfig.presence.educators / 1000).toFixed(1)}k` },
+    { label: "escolas parceiras hoje",   value: `${siteConfig.presence.schools}` },
+    { label: "estados ativos",           value: `${siteConfig.presence.states}` },
+    { label: "meta 2026",                value: `${siteConfig.presence.goalSchools}` },
+    { label: "parcerias iniciam em",     value: "JAN 2027" },
   ];
   return (
     <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">

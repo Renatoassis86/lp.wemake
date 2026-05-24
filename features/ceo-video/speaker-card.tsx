@@ -14,7 +14,7 @@ import { siteConfig } from "@/constants/site";
  *   - Pin "Falando agora" com glow vivo durante a sequência.
  */
 export function SpeakerCard({ live = false }: { live?: boolean }) {
-  const { name, role, bio, portrait } = siteConfig.founder;
+  const { name, role, bio, portrait, credentials } = siteConfig.founder;
   const [portraitOk, setPortraitOk] = useState(true);
 
   const initials = name
@@ -91,14 +91,32 @@ export function SpeakerCard({ live = false }: { live?: boolean }) {
           <p className="mt-4 text-[0.9375rem] leading-[1.65] text-foreground/70">
             {bio}
           </p>
+
+          {/* Tags de credenciais — autoridade reconhecida */}
+          <ul className="mt-5 flex flex-wrap gap-1.5">
+            {credentials.map((c) => (
+              <li
+                key={c.short}
+                className="
+                  inline-flex items-center gap-1 rounded-full
+                  border border-glow-cyan/25 bg-glow-cyan/10
+                  px-2.5 py-0.5
+                  font-mono text-[0.625rem] uppercase tracking-[0.16em] text-glow-cyan
+                "
+              >
+                <span className="size-1 rounded-full bg-glow-cyan" />
+                {c.short}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      {/* Credential strip */}
+      {/* Métricas institucionais */}
       <dl className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
-        <Credential label="à frente" value="9 anos" />
-        <Credential label="escolas formadas" value={`${siteConfig.presence.schools}+`} />
-        <Credential label="estados" value={`${siteConfig.presence.states}`} />
+        <Credential label="escolas parceiras" value={`${siteConfig.presence.schools}`} />
+        <Credential label="estados ativos"    value={`${siteConfig.presence.states}`} />
+        <Credential label="meta 2026"         value={`${siteConfig.presence.goalSchools}`} />
       </dl>
     </article>
   );

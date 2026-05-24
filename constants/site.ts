@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "We Make",
   tagline: "Tecnologia educacional com cosmovisão cristã",
   description:
-    "A We Make é uma editora de soluções tecnológicas para escolas cristãs. Currículo maker, formação docente, plataforma, espaço maker e assessoria institucional ancorados em Verdade, Beleza e Bondade.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://wemake.com.br",
+    "A We Make é uma editora de soluções tecnológicas para escolas confessionais cristãs. Currículo maker, formação docente, plataforma, espaço maker e assessoria institucional — ancorados em Verdade, Beleza e Bondade.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://wemake.tec.br",
   ogImage: "/og/wemake-og.jpg",
   locale: "pt-BR",
   keywords: [
@@ -15,19 +15,26 @@ export const siteConfig = {
     "currículo maker",
     "espaço maker",
     "robótica educacional",
-    "Dênis We Make",
+    "Dênis Júlio",
     "We Make",
   ],
   founder: {
-    name: "Dênis Júlio Pereira Francisco",
+    name: "Dênis Júlio P. Francisco",
     role: "CEO & Fundador",
-    bio: "Educador e empreendedor à frente do movimento We Make. Autor do livro fundador “Tecnologia, Virtude e Educação Cristã”.",
+    bio:
+      "Pastor batista, teólogo e mestrando em Tecnologias Educacionais pela UFRN. Autor do livro fundador “Tecnologia, Virtude e Educação Cristã” e idealizador da We Make.",
     portrait: "/photos/foto6.png",
+    credentials: [
+      { label: "Pastor batista", short: "Pastor" },
+      { label: "Teólogo", short: "Teólogo" },
+      { label: "Mestrando UFRN · Tecnologias Educacionais", short: "Mestrando UFRN" },
+      { label: "CEO & Fundador da We Make", short: "CEO We Make" },
+    ],
   },
   contact: {
-    email: "institucional@wemake.com.br",
-    phone: "+55 (11) 0000-0000",
-    address: "São Paulo · Brasil",
+    email: "contato@wemake.tec.br",
+    phone: "+55 (83) 98230-1530",
+    address: "Natal · Rio Grande do Norte · Brasil",
   },
   whatsapp: {
     consultor: {
@@ -40,13 +47,13 @@ export const siteConfig = {
     vipGroupUrl: "https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t",
   },
   ceo: {
-    /** Mesmo arquivo é usado como loop do hero (silencioso) e como manifesto principal. */
+    /** Vídeo institucional gravado pelo Dênis — usado no hero e na seção do CEO. */
     videoHero: "/videos/video1.mp4",
     videoHeroPoster: "/photos/foto6.png",
     videoFull: "/videos/video1.mp4",
     videoPoster: "/photos/foto6.png",
     videoCaption: "/videos/video1.vtt",
-    duration: "8 min 24s",
+    duration: "8 min",
     talkTitle: "A pergunta que deu origem à We Make",
     talkChapters: [
       { time: "00:00", seconds: 0,   label: "Introdução" },
@@ -58,16 +65,18 @@ export const siteConfig = {
       { time: "08:00", seconds: 480, label: "O que vem agora" },
     ],
   },
+  /** Números reais — campanha 2026 com 11 escolas em 5 estados. */
   presence: {
-    schools: 180,
-    states: 19,
-    students: 42000,
-    educators: 2400,
+    schools: 11,
+    states: 5,
+    statesUf: ["PR", "SC", "MG", "PB", "RN"] as const,
+    goalSchools: 25,
+    goalDeadline: "30 de setembro de 2026",
   },
   social: {
-    instagram: "https://instagram.com/wemake.education",
-    linkedin: "https://linkedin.com/company/wemake-education",
-    youtube: "https://youtube.com/@wemake-education",
+    instagram: "https://instagram.com/wemake.tec",
+    linkedin: "https://linkedin.com/company/wemake-tec",
+    youtube: "https://youtube.com/@wemake.tec",
   },
 } as const;
 

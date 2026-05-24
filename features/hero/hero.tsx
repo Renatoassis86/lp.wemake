@@ -37,13 +37,26 @@ export function Hero() {
           <Reveal delay={0.05}>
             <Badge tone="glow" className="mx-auto">
               <span className="size-1.5 rounded-full bg-glow-cyan shadow-[0_0_12px] shadow-glow-cyan animate-pulse" />
-              Movimento de educação cristã · 2026
+              Editora de tecnologia para escolas cristãs · campanha 2026
             </Badge>
+          </Reveal>
+
+          {/* Pergunta-disparo do briefing comercial — bem visível mas não rouba a tela. */}
+          <Reveal delay={0.15}>
+            <p
+              className="
+                mt-8 mx-auto max-w-3xl
+                font-mono text-[0.75rem] sm:text-[0.8125rem] uppercase
+                tracking-[0.22em] text-glow-cyan/90
+              "
+            >
+              Sua escola ensina tecnologia com cosmovisão cristã?
+            </p>
           </Reveal>
 
           <h1
             className="
-              mt-10 font-display font-light text-gradient-cinematic
+              mt-6 font-display font-light text-gradient-cinematic
               text-[clamp(2.75rem,2.2rem+5vw,7rem)] leading-[0.94]
               tracking-[-0.038em]
             "
@@ -65,8 +78,8 @@ export function Hero() {
               "
             >
               A We Make é uma editora brasileira de soluções tecnológicas para
-              escolas cristãs. Currículo maker, formação docente, plataforma,
-              espaço maker e assessoria institucional —{" "}
+              escolas confessionais cristãs. Currículo maker, formação docente,
+              plataforma, espaço maker e assessoria institucional —{" "}
               <span className="text-foreground/90">
                 ancorados em Verdade, Beleza e Bondade.
               </span>
@@ -167,10 +180,10 @@ function Atmosphere() {
 
 function HeroSignals() {
   const signals = [
-    { label: "escolas parceiras", value: `${siteConfig.presence.schools}+` },
-    { label: "estados brasileiros", value: `${siteConfig.presence.states}` },
-    { label: "estudantes alcançados", value: `${(siteConfig.presence.students / 1000).toFixed(0)}k` },
-    { label: "educadores formados", value: `${(siteConfig.presence.educators / 1000).toFixed(1)}k` },
+    { label: "escolas parceiras hoje",     value: `${siteConfig.presence.schools}` },
+    { label: "estados ativos no Brasil",   value: `${siteConfig.presence.states}` },
+    { label: "meta de escolas em 2026",    value: `${siteConfig.presence.goalSchools}` },
+    { label: "início das parcerias",       value: "JAN 2027" },
   ];
   return (
     <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] mx-auto max-w-3xl">
