@@ -81,27 +81,19 @@ export function Services() {
 
       <Container className="relative z-30 flex flex-col h-full gap-10 sm:gap-14 lg:gap-16">
 
-        {/* Topo: Texto solto em vez de absoluto para não sobrepor */}
-        <div className="grid lg:grid-cols-12 gap-8 items-center mt-4 sm:mt-8 mb-4 sm:mb-8">
-          <div className="lg:col-span-7">
-            <div className="bg-[rgb(var(--color-brand-royal-soft))] p-6 sm:p-10 md:p-12 shadow-xl rounded-[2rem] sm:rounded-[3rem]">
-              <Reveal>
-                <h2 className="font-display text-white text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.1] mb-4">
-                  Por que isso importa?
-                </h2>
-                <p className="text-white/95 text-[clamp(1rem,1.1vw,1.125rem)] leading-relaxed max-w-xl">
-                  Porque tecnologia na escola <strong className="font-bold">não é neutra</strong> e não deve depender de improviso ou de adaptações. Com currículo estruturado, formação docente e acompanhamento, a escola ganha segurança pedagógica, coerência à fé cristã e uma experiência de aprendizagem mais significativa para os alunos.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <Reveal delay={0.2}>
-              <h2 className="font-display text-white text-[clamp(2rem,4vw,3.5rem)] leading-[1.1] lg:text-right text-center">
-                Soluções e <br className="hidden lg:block" /> Diferenciais
-              </h2>
-            </Reveal>
-          </div>
+        {/* Topo centralizado: título em destaque */}
+        <div className="text-center max-w-4xl mx-auto mt-4 sm:mt-8 mb-2 sm:mb-4">
+          <Reveal>
+            <p className="font-mono text-[0.75rem] sm:text-[0.8125rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))] mb-5 font-bold">
+              O que entregamos
+            </p>
+            <h2 className="font-display text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] mb-6 text-balance">
+              Soluções e <span className="text-[rgb(var(--color-brand-mint))]">Diferenciais</span>
+            </h2>
+            <p className="text-white/85 text-[clamp(1.0625rem,1.4vw,1.25rem)] leading-relaxed max-w-2xl mx-auto">
+              Uma plataforma completa que une currículo, formação e tecnologia para escolas cristãs que querem ensinar com propósito.
+            </p>
+          </Reveal>
         </div>
 
         {/* Grid de Soluções com Cores Lúdicas */}
