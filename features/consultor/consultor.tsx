@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { CalendarDays, Building2, User2, Mail, Phone, CheckCircle2, AlertCircle, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -12,6 +12,14 @@ export function Consultor() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDone, setIsDone] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Após confirmar, rola suavemente para o topo da seção (card de confirmação)
+  useEffect(() => {
+    if (isDone && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [isDone]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,7 +64,7 @@ export function Consultor() {
   };
 
   return (
-    <Section id="reuniao" bleed className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-royal-deep))] relative overflow-hidden">
+    <Section ref={sectionRef} id="reuniao" bleed className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-royal-deep))] relative overflow-hidden">
       {/* Glow decorativo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[rgb(var(--color-brand-mint))]/10 blur-[120px] rounded-full pointer-events-none" />
 

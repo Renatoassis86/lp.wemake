@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Download, FileText, CheckCircle2, AlertCircle } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -12,6 +12,14 @@ export function FreeMaterial() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Após liberar, rola para o topo da seção (mostra o card "Tudo certo!")
+  useEffect(() => {
+    if (isUnlocked && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [isUnlocked]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,7 +62,7 @@ export function FreeMaterial() {
   };
 
   return (
-    <Section className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-mint))]/10 relative overflow-hidden">
+    <Section ref={sectionRef} className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-mint))]/10 relative overflow-hidden">
       {/* Elemento Decorativo */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[rgb(var(--color-brand-mint))]/20 blur-[100px] -z-10 rounded-full translate-x-1/2" />
 
