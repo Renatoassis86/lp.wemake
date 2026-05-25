@@ -23,13 +23,13 @@ export function CeoVideo() {
         <Reveal>
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <p className="font-mono text-[0.75rem] uppercase tracking-[0.2em] text-[rgb(var(--color-brand-mint))]/80 mb-4">
-              Ciência e Fé
+              Masterclass · Dênis Júlio
             </p>
-            <h2 className="font-display text-white text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] mb-6">
-              Ciência e fé estão<br className="hidden sm:block" /> fundamentalmente em conflito?
+            <h2 className="font-display text-white text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] mb-6 text-balance">
+              Por que ensinar tecnologia a partir da cosmovisão cristã?
             </h2>
             <p className="text-white/70 text-[1.125rem] leading-relaxed">
-              Manter raízes confessionais profundas e abraçar a tecnologia de ponta realmente gera tensão? Dênis Júlio discute como a cultura maker e a sabedoria cristã cooperam para formar alunos prudentes, justos e responsáveis no mundo digital.
+              A principal razão não é apenas a pressão do nosso tempo, uma normativa educacional ou o fato de que não existe neutralidade. Tudo isso importa, mas há algo mais profundo. Nesta masterclass, Dênis Júlio apresenta a principal razão pela qual nós, educadores cristãos, precisamos nos engajar nesta missão gloriosa de educar mentes e corações, levando a luz do Evangelho para a Educação Tecnológica e Digital.
             </p>
           </div>
         </Reveal>
