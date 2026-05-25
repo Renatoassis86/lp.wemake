@@ -24,10 +24,10 @@ export function CeoVideo() {
 
   return (
     <Section id="ceo" className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-navy))] relative overflow-hidden">
-      {/* Watermark W — canto inferior direito, fora dos limites do vídeo */}
+      {/* Watermark W — canto inferior direito, escondido em mobile pra evitar scroll horizontal */}
       <div
         aria-hidden
-        className="absolute -bottom-16 -right-20 w-[420px] h-[420px] opacity-[0.09] pointer-events-none select-none rotate-[12deg] z-0"
+        className="hidden md:block absolute -bottom-16 -right-20 w-[320px] md:w-[380px] lg:w-[420px] aspect-square opacity-[0.09] pointer-events-none select-none rotate-[12deg] z-0"
       >
         <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="380px" />
       </div>

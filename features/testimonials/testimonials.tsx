@@ -118,15 +118,15 @@ export function Testimonials() {
           />
 
           <Reveal delay={0.2}>
-            <div className="relative overflow-hidden bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 rounded-[3rem] p-8 sm:p-14 md:p-16 shadow-2xl flex flex-col md:flex-row gap-10 md:gap-12 items-center backdrop-blur-sm">
+            <div className="relative overflow-hidden bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 items-center backdrop-blur-sm">
 
               {/* Moldura da esquerda: Badge flutuante lúdico */}
-              <div className="relative flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-[2.5rem] bg-gradient-to-br from-[rgb(var(--color-brand-royal))] to-[rgb(var(--color-brand-royal-deep))] text-white shadow-xl flex items-center justify-center transition-all duration-500 hover:rotate-6">
+              <div className="relative flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-[rgb(var(--color-brand-royal))] to-[rgb(var(--color-brand-royal-deep))] text-white shadow-xl flex items-center justify-center transition-all duration-500 hover:rotate-6">
 
                 {/* SVG Brush stroke decorativo */}
                 <div className="absolute inset-1.5 border border-white/20 rounded-[2rem] pointer-events-none" />
 
-                <IconComponent className="size-14 sm:size-16 opacity-90 animate-pulse" />
+                <IconComponent className="size-10 sm:size-14 md:size-16 opacity-90 animate-pulse" />
 
                 <div className="absolute -bottom-2 -right-2 bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] p-2.5 rounded-2xl shadow-lg border-2 border-[rgb(var(--color-brand-navy))]">
                   <Quote className="size-4" />
@@ -141,7 +141,7 @@ export function Testimonials() {
                   <span className="font-serif text-[10rem] leading-none text-white">“</span>
                 </div>
 
-                <div className="relative min-h-[140px] flex items-center">
+                <div className="relative min-h-[180px] sm:min-h-[160px] md:min-h-[140px] flex items-center">
                   <AnimatePresence mode="wait">
                     <motion.p
                       key={current.id}
@@ -149,7 +149,7 @@ export function Testimonials() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -15 }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="text-white/90 text-[1.125rem] sm:text-[1.25rem] leading-relaxed italic text-justify text-balance"
+                      className="text-white/90 text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] leading-relaxed italic text-left sm:text-justify text-balance"
                     >
                       &ldquo;{current.text}&rdquo;
                     </motion.p>

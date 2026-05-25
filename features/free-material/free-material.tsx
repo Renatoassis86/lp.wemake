@@ -58,16 +58,16 @@ export function FreeMaterial() {
       {/* Elemento Decorativo */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[rgb(var(--color-brand-mint))]/20 blur-[100px] -z-10 rounded-full translate-x-1/2" />
 
-      {/* Marca d'água — emblema We Make */}
-      <div aria-hidden className="absolute top-[8%] left-[-6%] w-[420px] h-[420px] opacity-[0.08] -rotate-12 pointer-events-none select-none">
+      {/* Marca d'água — emblema We Make (escondida em mobile) */}
+      <div aria-hidden className="hidden md:block absolute top-[8%] left-[-6%] w-[300px] md:w-[360px] lg:w-[420px] aspect-square opacity-[0.08] -rotate-12 pointer-events-none select-none">
         <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="420px" />
       </div>
-      <div aria-hidden className="absolute bottom-[8%] right-[-5%] w-[360px] h-[360px] opacity-[0.07] rotate-12 pointer-events-none select-none">
+      <div aria-hidden className="hidden md:block absolute bottom-[8%] right-[-5%] w-[260px] md:w-[320px] lg:w-[360px] aspect-square opacity-[0.07] rotate-12 pointer-events-none select-none">
         <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="360px" />
       </div>
 
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center">
           
           {/* Mockup E-book e Sinopse */}
           <Reveal>
@@ -118,7 +118,7 @@ export function FreeMaterial() {
 
           {/* Gated Content Form */}
           <Reveal delay={0.2}>
-            <div className="bg-white rounded-[2rem] p-8 sm:p-10 shadow-xl border border-gray-100 relative z-10">
+            <div className="bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-xl border border-gray-100 relative z-10">
               
               {!isUnlocked ? (
                 <>
@@ -213,7 +213,7 @@ function FmField({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
+        className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
       />
     </div>
   );
@@ -229,7 +229,7 @@ function FmSelect({
         id={name}
         name={name}
         required={required}
-        className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all appearance-none bg-white text-gray-700"
+        className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all appearance-none bg-white text-gray-700"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>{opt.label}</option>

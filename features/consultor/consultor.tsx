@@ -69,7 +69,7 @@ export function Consultor() {
       </div>
 
       <Container>
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 sm:gap-14 lg:gap-20 items-start">
 
           {/* Copy Esquerda */}
           <Reveal>
@@ -77,7 +77,7 @@ export function Consultor() {
               <CalendarDays className="size-4" />
               REUNIÃO ESTRATÉGICA
             </div>
-            <h2 className="font-display text-white text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] mb-6">
+            <h2 className="font-display text-white text-[clamp(2rem,4vw,4rem)] lg:text-[4rem] leading-[1.05] mb-6 text-balance">
               Vamos conversar sobre a sua escola?
             </h2>
             <p className="text-white/75 text-[1.125rem] leading-relaxed mb-8 max-w-lg">
@@ -101,7 +101,7 @@ export function Consultor() {
 
           {/* Formulário */}
           <Reveal delay={0.15}>
-            <div className="bg-white rounded-[2rem] p-8 sm:p-10 shadow-2xl">
+            <div className="bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-2xl">
               {!isDone ? (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <h3 className="font-display text-[rgb(var(--color-brand-navy))] text-[1.75rem] mb-2">
@@ -160,7 +160,7 @@ export function Consultor() {
                             name="preferred_date"
                             type="date"
                             min={new Date().toISOString().split("T")[0]}
-                            className="w-full h-11 pl-9 pr-3 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white"
+                            className="w-full h-12 pl-9 pr-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white"
                           />
                         </div>
                       </div>
@@ -172,7 +172,7 @@ export function Consultor() {
                             id="preferred_time"
                             name="preferred_time"
                             type="time"
-                            className="w-full h-11 pl-9 pr-3 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white"
+                            className="w-full h-12 pl-9 pr-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white"
                           />
                         </div>
                       </div>
@@ -189,7 +189,7 @@ export function Consultor() {
                       name="message"
                       rows={3}
                       placeholder="Total de alunos, séries atendidas, principais desafios..."
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all resize-y"
+                      className="w-full px-4 py-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all resize-y"
                     />
                   </div>
 
@@ -260,7 +260,7 @@ function Field({
           type={type}
           required={required}
           placeholder={placeholder}
-          className="w-full h-12 pl-9 pr-4 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
+          className="w-full h-12 pl-9 pr-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
         />
       </div>
     </div>
@@ -282,7 +282,7 @@ function SelectField({
           id={id}
           name={id}
           required={required}
-          className="w-full h-12 pl-9 pr-4 rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all appearance-none bg-white text-gray-700"
+          className="w-full h-12 pl-9 pr-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all appearance-none bg-white text-gray-700"
         >
           {options.map((opt) => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>

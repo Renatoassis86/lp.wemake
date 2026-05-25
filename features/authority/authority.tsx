@@ -43,10 +43,10 @@ function SectionBridge() {
 
 function FounderIntro() {
   return (
-    <Section bleed className="bg-[#021014] relative overflow-hidden pt-24 pb-24">
+    <Section bleed className="bg-[#021014] relative overflow-hidden pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
       {/* Glow de fundo */}
-      <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
-        <div className="w-[800px] h-[800px] bg-[rgb(var(--color-brand-mint))]/10 blur-[120px] rounded-full translate-x-1/3" />
+      <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none overflow-hidden">
+        <div className="w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-[rgb(var(--color-brand-mint))]/10 blur-[120px] rounded-full translate-x-1/3" />
       </div>
 
       <Container className="relative z-10">
@@ -70,15 +70,15 @@ function FounderIntro() {
         </div>
 
         {/* ── 2) FOTO NO CÍRCULO (esquerda) + BIO (direita) ── */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
 
           {/* Foto em molde blob + ícones flutuantes */}
           <Reveal delay={0.15}>
-            <div className="relative flex items-center justify-center h-[520px] sm:h-[600px] lg:h-[640px]">
+            <div className="relative flex items-center justify-center h-[380px] sm:h-[520px] md:h-[600px] lg:h-[640px]">
 
               {/* Blob de fundo (anel de contorno) */}
               <div
-                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] sm:w-[440px] sm:h-[440px]"
+                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px]"
                 style={{
                   background: "linear-gradient(135deg, rgba(76,138,222,0.18) 0%, rgba(118,243,205,0.12) 100%)",
                   borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%",
@@ -90,12 +90,12 @@ function FounderIntro() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[420px] h-[420px] sm:w-[480px] sm:h-[480px] rounded-full border border-dashed border-[rgb(var(--color-brand-mint))]/20 pointer-events-none"
+                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] rounded-full border border-dashed border-[rgb(var(--color-brand-mint))]/20 pointer-events-none"
               />
 
               {/* Foto do Dênis (jaleco) recortada no blob orgânico */}
               <div
-                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] overflow-hidden"
+                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] overflow-hidden"
                 style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
               >
                 <Image
@@ -240,7 +240,7 @@ function FounderIntro() {
 ────────────────────────────────────────────── */
 function BookShowcase() {
   return (
-    <Section bleed className="relative overflow-hidden bg-[#021014] pt-24 pb-40">
+    <Section bleed className="relative overflow-hidden bg-[#021014] pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-28 lg:pb-40">
       {/* ── Glows de fundo (contidos no terço superior) ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute top-[5%] left-[-5%] w-[400px] h-[400px] bg-[rgb(var(--color-brand-sky))]/[0.03] blur-[160px] rounded-full" />
@@ -253,10 +253,10 @@ function BookShowcase() {
             backgroundSize: "60px 60px",
           }}
         />
-        {/* Watermark W — canto inferior esquerdo, longe do livro e do CTA */}
+        {/* Watermark W — escondido no mobile pra evitar bleed; tablet menor */}
         <div
           aria-hidden
-          className="absolute -bottom-12 -left-16 w-[380px] h-[380px] opacity-[0.09] pointer-events-none select-none -rotate-[8deg]"
+          className="hidden md:block absolute -bottom-12 -left-16 w-[260px] h-[260px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] opacity-[0.09] pointer-events-none select-none -rotate-[8deg]"
         >
           <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="320px" />
         </div>
@@ -273,7 +273,7 @@ function BookShowcase() {
           </div>
         </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-14 lg:gap-24 items-center max-w-6xl mx-auto">
 
           {/* ── ESQUERDA: capa do livro grande ── */}
           <Reveal delay={0.15} className="flex justify-center lg:justify-end">
@@ -284,7 +284,7 @@ function BookShowcase() {
 
               {/* Livro com perspectiva CSS (maior) */}
               <motion.div
-                className="book-3d relative w-[320px] sm:w-[400px] lg:w-[460px]"
+                className="book-3d relative w-[260px] sm:w-[340px] md:w-[400px] lg:w-[460px]"
                 initial={{ rotateY: -10, opacity: 0, y: 20 }}
                 whileInView={{ rotateY: -10, opacity: 1, y: 0 }}
                 whileHover={{ rotateY: -5, scale: 1.04 }}

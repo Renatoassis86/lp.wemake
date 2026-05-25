@@ -48,11 +48,11 @@ export function Problem() {
         </div>
 
         {/* Blocos Lúdicos Responsivos (Lado a Lado no Desktop) */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 sm:gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
           
           {/* Foto do CEO em moldura orgânica blob */}
           <Reveal delay={0.3}>
-            <div className="relative w-full max-w-[380px] sm:max-w-[440px] aspect-square mx-auto flex items-center justify-center overflow-visible">
+            <div className="relative w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px] aspect-square mx-auto flex items-center justify-center overflow-visible">
 
               {/* Blob de fundo (gradiente sky → mint) */}
               <motion.div
@@ -161,17 +161,14 @@ export function Problem() {
             </div>
           </Reveal>
 
-          {/* Texto Orgânico */}
+          {/* Texto Orgânico — mobile arredondado normal, desktop blob orgânico */}
           <Reveal delay={0.4}>
             <div className="relative w-full">
-              <div 
-                className="bg-[rgb(var(--color-brand-royal))] p-10 sm:p-14 shadow-2xl"
-                style={{ borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%" }}
-              >
+              <div className="bg-[rgb(var(--color-brand-royal))] p-8 sm:p-10 md:p-14 shadow-2xl rounded-3xl md:rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%]">
                 <h3 className="font-display text-white text-[clamp(1.5rem,2vw,2.25rem)] leading-[1.1] mb-6 text-balance">
                   A Editora We Make nasce exatamente com este propósito!
                 </h3>
-                <p className="text-white/95 text-[1.0625rem] leading-relaxed">
+                <p className="text-white/95 text-[1rem] sm:text-[1.0625rem] leading-relaxed">
                   Nós somos a primeira Editora brasileira que nasceu especialmente com o objetivo de transformar a educação tecnológica e maker em escolas confessionais, fundamentada na Cosmovisão Cristã. Unimos currículo, formação docente, acompanhamento pedagógico e orientação de implantação para que a escola desenvolva uma proposta tecnológica com consistência, beleza e propósito.
                 </p>
               </div>

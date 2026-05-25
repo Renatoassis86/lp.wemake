@@ -57,19 +57,19 @@ export function CurriculumInfographic() {
         style={{ backgroundImage: "radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)", backgroundSize: "32px 32px" }}
       />
 
-      {/* Marca d'água — emblema We Make rotacionado */}
-      <div aria-hidden className="absolute top-[10%] right-[-6%] w-[460px] h-[460px] opacity-[0.08] rotate-12 pointer-events-none select-none">
+      {/* Marca d'água — emblema We Make rotacionado (escondida em mobile pra evitar overflow) */}
+      <div aria-hidden className="hidden md:block absolute top-[10%] right-[-6%] w-[320px] md:w-[400px] lg:w-[460px] aspect-square opacity-[0.08] rotate-12 pointer-events-none select-none">
         <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="460px" />
       </div>
-      <div aria-hidden className="absolute bottom-[6%] left-[-8%] w-[400px] h-[400px] opacity-[0.07] -rotate-12 pointer-events-none select-none">
+      <div aria-hidden className="hidden md:block absolute bottom-[6%] left-[-8%] w-[280px] md:w-[340px] lg:w-[400px] aspect-square opacity-[0.07] -rotate-12 pointer-events-none select-none">
         <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="400px" />
       </div>
 
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-24 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24 relative z-10">
           <Reveal>
             <span className="font-mono text-sm uppercase tracking-widest text-brand-royal font-bold">O Desenvolvimento</span>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl text-ink-100 tracking-tight">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl text-ink-100 tracking-tight text-balance">
               Uma Jornada Contínua de Aprendizagem
             </h2>
             <p className="mt-6 text-lg text-ink-500">
@@ -88,7 +88,7 @@ export function CurriculumInfographic() {
             style={{ height: lineHeight }}
           />
 
-          <div className="flex flex-col gap-20 md:gap-32">
+          <div className="flex flex-col gap-16 sm:gap-20 md:gap-32">
             {steps.map((step, i) => {
               const isEven = i % 2 === 0;
               return (
@@ -101,7 +101,7 @@ export function CurriculumInfographic() {
                   <div className={`flex-1 pl-[80px] md:pl-0 w-full ${isEven ? "md:text-right" : "md:text-left"}`}>
                     <Reveal delay={0.2}>
                       <span className="font-mono text-3xl text-brand-royal/20 font-black tracking-widest block mb-2">{step.id}</span>
-                      <h3 className="font-display text-3xl sm:text-4xl text-ink-100 mb-4">{step.title}</h3>
+                      <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-ink-100 mb-4 text-balance">{step.title}</h3>
                       <p className="text-ink-500 text-[1.0625rem] leading-relaxed max-w-md ml-auto mr-auto md:mx-0">{step.desc}</p>
                     </Reveal>
                   </div>
@@ -109,7 +109,7 @@ export function CurriculumInfographic() {
                   {/* Imagem em blob + mancha de cor offset */}
                   <div className="flex-1 w-full pl-[80px] md:pl-0 flex justify-center md:justify-start">
                     <Reveal delay={0.4}>
-                      <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px]">
+                      <div className="relative w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[340px] md:h-[340px]">
 
                         {/* Mancha de cor sólida atrás, deslocada (estilo "tinta") */}
                         <motion.div

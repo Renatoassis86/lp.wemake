@@ -21,14 +21,14 @@ export function Hero() {
     <Section
       id="visao"
       bleed
-      className="relative pt-[10rem] sm:pt-[12rem] pb-[4rem] sm:pb-[8rem] bg-[rgb(var(--color-brand-royal))] overflow-hidden"
+      className="relative pt-[7rem] sm:pt-[10rem] md:pt-[12rem] pb-[2.5rem] sm:pb-[6rem] md:pb-[8rem] bg-[rgb(var(--color-brand-royal))] overflow-hidden"
     >
       <Atmosphere />
 
       <Container className="relative z-10 h-full flex flex-col justify-center">
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
-          {/* ─── COPY (Esquerda) ─────── */}
-          <div className="order-2 lg:order-1 relative z-20">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-6 sm:gap-10 lg:gap-16 items-center">
+          {/* ─── COPY (Esquerda no desktop, TOPO no mobile) ─────── */}
+          <div className="order-1 lg:order-1 relative z-20">
             
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -101,8 +101,8 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ─── FOTO DO ALUNO MAKER (Direita) ──────────────────── */}
-          <div className="order-1 lg:order-2 relative z-10 flex justify-center">
+          {/* ─── FOTO DO ALUNO MAKER (Direita no desktop, abaixo do texto no mobile) ──────────────────── */}
+          <div className="order-2 lg:order-2 relative z-10 flex justify-center">
             <MakerStudentImage />
           </div>
         </div>
@@ -115,15 +115,15 @@ export function Hero() {
 function Atmosphere() {
   return (
     <>
-      {/* Círculo Grande Fundo Esquerda */}
+      {/* Círculo Grande Fundo Esquerda — escondido no mobile para evitar poluição */}
       <div
         aria-hidden
-        className="absolute -left-[20%] top-0 w-[60%] aspect-square rounded-full border-[100px] border-[rgb(var(--color-brand-royal-deep))]/40 opacity-50"
+        className="hidden md:block absolute -left-[20%] top-0 w-[60%] aspect-square rounded-full border-[60px] lg:border-[100px] border-[rgb(var(--color-brand-royal-deep))]/40 opacity-50"
       />
-      {/* Arco decorativo direito — círculo grande deslocado para mostrar curva inteira */}
+      {/* Arco decorativo direito — escondido no mobile (causa scroll horizontal) */}
       <div
         aria-hidden
-        className="absolute -right-[35%] top-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full border-[60px] border-[rgb(var(--color-brand-royal-soft))]/30"
+        className="hidden md:block absolute -right-[35%] top-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full border-[40px] lg:border-[60px] border-[rgb(var(--color-brand-royal-soft))]/30"
       />
     </>
   );
@@ -134,7 +134,7 @@ const BLOB_RADIUS = "62% 38% 47% 53% / 45% 60% 40% 55%";
 
 function MakerStudentImage() {
   return (
-    <div className="relative w-full max-w-[440px] lg:max-w-[520px] mx-auto lg:ml-auto h-[520px] sm:h-[600px] lg:h-[640px] flex items-center justify-center overflow-visible">
+    <div className="relative w-full max-w-[300px] sm:max-w-[440px] lg:max-w-[520px] mx-auto lg:ml-auto h-[300px] sm:h-[520px] md:h-[600px] lg:h-[640px] flex items-center justify-center overflow-visible">
 
       {/* Blob de cor vibrante atrás (gradiente mint → royal-deep) */}
       <motion.div
@@ -155,7 +155,7 @@ function MakerStudentImage() {
         viewBox="0 0 100 100"
         animate={{ rotate: [0, 8, 0], y: [0, -6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-3 -right-3 size-32 sm:size-40 text-[rgb(var(--color-brand-mint))]/80 z-30 pointer-events-none select-none"
+        className="absolute -top-3 -right-3 size-20 sm:size-32 md:size-40 text-[rgb(var(--color-brand-mint))]/80 z-30 pointer-events-none select-none"
       >
         <path
           d="M50 50 C40 30 20 40 30 60 C40 80 80 60 70 30 C60 0 0 20 20 70 C40 120 120 80 90 20"
@@ -166,50 +166,50 @@ function MakerStudentImage() {
         />
       </motion.svg>
 
-      {/* Bolinhas decorativas (acentos geométricos como nas refs) */}
-      <div aria-hidden className="absolute top-[18%] left-[4%] size-3 rounded-full bg-white/70 z-20" />
-      <div aria-hidden className="absolute top-[36%] right-[4%] size-2 rounded-full bg-[rgb(var(--color-brand-mint))]/80 z-20" />
-      <div aria-hidden className="absolute bottom-[14%] right-[18%] size-4 rounded-full border-2 border-white/60 z-20" />
-      <div aria-hidden className="absolute bottom-[26%] left-[2%] size-2.5 rounded-full bg-white/50 z-20" />
+      {/* Bolinhas decorativas (só em tablet/desktop, mobile fica limpo) */}
+      <div aria-hidden className="hidden sm:block absolute top-[18%] left-[4%] size-3 rounded-full bg-white/70 z-20" />
+      <div aria-hidden className="hidden sm:block absolute top-[36%] right-[4%] size-2 rounded-full bg-[rgb(var(--color-brand-mint))]/80 z-20" />
+      <div aria-hidden className="hidden sm:block absolute bottom-[14%] right-[18%] size-4 rounded-full border-2 border-white/60 z-20" />
+      <div aria-hidden className="hidden sm:block absolute bottom-[26%] left-[2%] size-2.5 rounded-full bg-white/50 z-20" />
 
-      {/* Triângulo decorativo */}
+      {/* Triângulo decorativo (escondido em mobile) */}
       <motion.svg
         aria-hidden
         viewBox="0 0 24 24"
         animate={{ rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[6%] left-[24%] size-7 text-[rgb(var(--color-brand-mint))]/60 z-20"
+        className="hidden sm:block absolute top-[6%] left-[24%] size-7 text-[rgb(var(--color-brand-mint))]/60 z-20"
       >
         <path d="M12 2 L22 20 L2 20 Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       </motion.svg>
 
-      {/* Mosaico de ícones monocromáticos — tech + cosmovisão cristã */}
+      {/* Mosaico de ícones — mobile mostra só 3 (Cross, Dove, Sparkles), demais sm+ */}
       <FloatingIcon className="top-[4%] right-[22%]" duration={4.2}>
-        <CrossIcon className="size-7 text-white/65" />
+        <CrossIcon className="size-6 sm:size-7 text-white/65" />
       </FloatingIcon>
 
-      <FloatingIcon className="top-[28%] left-[-4%]" duration={5.2} delay={0.5} rotateRange={-4}>
-        <BookOpen className="size-8 text-white/55" strokeWidth={1.4} />
+      <FloatingIcon className="top-[28%] left-[-4%] hidden sm:block" duration={5.2} delay={0.5} rotateRange={-4}>
+        <BookOpen className="size-6 sm:size-8 text-white/55" strokeWidth={1.4} />
       </FloatingIcon>
 
-      <FloatingIcon className="top-[60%] right-[-4%]" duration={4.8} delay={0.9} rotateRange={6}>
-        <Bot className="size-9 text-white/60" strokeWidth={1.4} />
+      <FloatingIcon className="top-[60%] right-[-4%] hidden sm:block" duration={4.8} delay={0.9} rotateRange={6}>
+        <Bot className="size-7 sm:size-9 text-white/60" strokeWidth={1.4} />
       </FloatingIcon>
 
-      <FloatingIcon className="bottom-[4%] left-[18%]" duration={5.6} delay={1.4}>
+      <FloatingIcon className="bottom-[4%] left-[18%] hidden sm:block" duration={5.6} delay={1.4}>
         <Cpu className="size-7 text-[rgb(var(--color-brand-mint))]/75" strokeWidth={1.5} />
       </FloatingIcon>
 
       <FloatingIcon className="bottom-[16%] right-[8%]" duration={4} delay={0.4}>
-        <DoveIcon className="size-9 text-[rgb(var(--color-brand-mint))]/70" />
+        <DoveIcon className="size-7 sm:size-9 text-[rgb(var(--color-brand-mint))]/70" />
       </FloatingIcon>
 
-      <FloatingIcon className="top-[48%] left-[2%]" duration={5} delay={1.8} rotateRange={5}>
+      <FloatingIcon className="top-[48%] left-[2%] hidden sm:block" duration={5} delay={1.8} rotateRange={5}>
         <Code2 className="size-6 text-white/50" strokeWidth={1.5} />
       </FloatingIcon>
 
       <FloatingIcon className="top-[14%] right-[4%]" duration={3.8} delay={1.1} scalePulse>
-        <Sparkles className="size-6 text-[rgb(var(--color-brand-mint))]/80" strokeWidth={1.5} />
+        <Sparkles className="size-5 sm:size-6 text-[rgb(var(--color-brand-mint))]/80" strokeWidth={1.5} />
       </FloatingIcon>
 
       {/* ── Foto da criança em formato orgânico (foco) ── */}

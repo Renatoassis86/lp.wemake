@@ -12,12 +12,12 @@ export function VipGroup() {
   return (
     <Section className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-navy))] relative overflow-hidden">
       <Container>
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 sm:gap-14 lg:gap-20 items-center">
           
           {/* Ilustração ou Celular */}
           <Reveal className="order-2 lg:order-1 relative flex justify-center">
             {/* Celular Mockup Menor e Elegante */}
-            <div className="relative w-[320px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/10 bg-[#0b141a] text-xs flex flex-col font-sans">
+            <div className="relative w-full max-w-[300px] sm:max-w-[320px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/10 bg-[#0b141a] text-xs flex flex-col font-sans">
               
               {/* Header do WhatsApp */}
               <div className="bg-[#075e54] text-white p-3 pt-5 flex items-center gap-2.5 shadow-md relative">
@@ -97,8 +97,8 @@ export function VipGroup() {
               ACESSO EXCLUSIVO
             </div>
             
-            <h2 className="font-display text-white text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] mb-6">
-              Faça parte da nossa <br/> <span className="text-[rgb(var(--color-brand-mint))]">Comunidade VIP.</span>
+            <h2 className="font-display text-white text-[clamp(2rem,4vw,3.5rem)] lg:text-[3.5rem] leading-[1.1] mb-6 text-balance">
+              Faça parte da nossa <br className="hidden sm:block"/> <span className="text-[rgb(var(--color-brand-mint))]">Comunidade VIP.</span>
             </h2>
             
             <p className="text-white/80 text-[1.125rem] leading-relaxed mb-8 max-w-xl">

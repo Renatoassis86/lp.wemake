@@ -71,20 +71,20 @@ export function Services() {
     >
       <BackgroundIcons y={yBg} />
 
-      {/* Watermark W gigante — centro topo, atrás dos ícones decorativos, longe dos cards */}
+      {/* Watermark W gigante — escondido em mobile (causaria bleed/overflow) */}
       <div
         aria-hidden
-        className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[560px] h-[560px] opacity-[0.07] pointer-events-none select-none z-0"
+        className="hidden md:block absolute top-[8%] left-1/2 -translate-x-1/2 w-[320px] md:w-[420px] lg:w-[560px] aspect-square opacity-[0.07] pointer-events-none select-none z-0"
       >
         <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="500px" />
       </div>
 
-      <Container className="relative z-30 flex flex-col h-full gap-16">
-        
+      <Container className="relative z-30 flex flex-col h-full gap-10 sm:gap-14 lg:gap-16">
+
         {/* Topo: Texto solto em vez de absoluto para não sobrepor */}
-        <div className="grid lg:grid-cols-12 gap-8 items-center mt-8 mb-8">
+        <div className="grid lg:grid-cols-12 gap-8 items-center mt-4 sm:mt-8 mb-4 sm:mb-8">
           <div className="lg:col-span-7">
-            <div className="bg-[rgb(var(--color-brand-royal-soft))] p-8 sm:p-12 shadow-xl rounded-[2rem] sm:rounded-[3rem]">
+            <div className="bg-[rgb(var(--color-brand-royal-soft))] p-6 sm:p-10 md:p-12 shadow-xl rounded-[2rem] sm:rounded-[3rem]">
               <Reveal>
                 <h2 className="font-display text-white text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.1] mb-4">
                   Por que isso importa?
