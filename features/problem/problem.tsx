@@ -4,7 +4,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { Gamepad2, Mouse, Heart, Zap, Shield, MonitorPlay } from "lucide-react";
+import { Gamepad2, Mouse, Heart, Zap, Shield, MonitorPlay, BookOpenText } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
@@ -50,51 +50,111 @@ export function Problem() {
         {/* Blocos Lúdicos Responsivos (Lado a Lado no Desktop) */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
           
-          {/* Foto Orgânica em Mosaico e Estilo de Recorte Premium de Silhueta */}
+          {/* Foto do CEO em moldura orgânica blob */}
           <Reveal delay={0.3}>
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px] aspect-square mx-auto flex items-center justify-center overflow-visible">
+            <div className="relative w-full max-w-[380px] sm:max-w-[440px] aspect-square mx-auto flex items-center justify-center overflow-visible">
 
-              {/* Camada 1: Círculo de Fundo Sólido e Vibrante (estilo Zoom Education) */}
-              <div 
-                className="absolute w-[80%] aspect-square rounded-full bg-gradient-to-br from-[rgb(var(--color-brand-sky))]/30 to-[rgb(var(--color-brand-mint))]/40 shadow-xl z-0"
+              {/* Blob de fundo (gradiente sky → mint) */}
+              <motion.div
+                aria-hidden
+                animate={{ rotate: [0, 2, -2, 0] }}
+                transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-0"
+                style={{
+                  background: "linear-gradient(135deg, rgb(var(--color-brand-sky)) 0%, rgb(var(--color-brand-mint)) 100%)",
+                  borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%",
+                  filter: "drop-shadow(0 24px 48px rgba(11,31,68,0.18))",
+                }}
               />
 
               {/* Espiral Decorativa de Fundo */}
-              <svg viewBox="0 0 100 100" className="absolute -top-4 -left-4 size-36 text-[rgb(var(--color-brand-mint))]/60 opacity-80 z-0 pointer-events-none select-none">
+              <svg viewBox="0 0 100 100" className="absolute -top-4 -left-4 size-36 text-[rgb(var(--color-brand-mint))]/70 z-0 pointer-events-none select-none">
                 <path d="M50 50 C40 30 20 40 30 60 C40 80 80 60 70 30 C60 0 0 20 20 70 C40 120 120 80 90 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
               </svg>
 
-              {/* Camada 2: Mosaico de Ícones Flutuantes ao Redor */}
-              <motion.div 
-                animate={{ y: [0, -6, 0] }} 
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              {/* Ícones flutuantes ao redor — fé + tecnologia */}
+
+              {/* Cruz (canto superior esquerdo) */}
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [0, -4, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                className="absolute top-4 left-2 bg-white text-[rgb(var(--color-brand-royal))] p-3 rounded-2xl shadow-lg z-20 border border-[rgb(var(--color-brand-mint))]/30"
+                aria-label="Cruz"
+              >
+                <svg viewBox="0 0 24 24" className="size-5" fill="currentColor" aria-hidden>
+                  <rect x="10" y="2" width="4" height="20" rx="1" />
+                  <rect x="4" y="8" width="16" height="4" rx="1" />
+                </svg>
+              </motion.div>
+
+              {/* Raio / energia (canto superior direito) */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.3 }}
                 className="absolute top-2 right-4 bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] p-2.5 rounded-full shadow-lg z-20"
               >
                 <Zap className="size-5" />
               </motion.div>
-              <motion.div 
-                animate={{ y: [0, 6, 0] }} 
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="absolute bottom-6 left-2 bg-white text-[rgb(var(--color-brand-royal))] p-3 rounded-xl shadow-lg z-20"
+
+              {/* Bíblia (canto inferior esquerdo — substitui o joystick) */}
+              <motion.div
+                animate={{ y: [0, 6, 0], rotate: [0, 5, 0] }}
+                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.6 }}
+                className="absolute bottom-12 left-1 bg-white text-[rgb(var(--color-brand-royal))] p-3 rounded-2xl shadow-lg z-20 border border-[rgb(var(--color-brand-mint))]/30"
+                aria-label="Bíblia"
               >
-                <Gamepad2 className="size-5" />
+                <BookOpenText className="size-6" />
               </motion.div>
 
-              {/* Camada 3: Imagem Principal sem fundo (/photos/fotos7.png) em corte dinâmico silhueta */}
-              <motion.div 
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10 w-[95%] h-[95%] overflow-visible flex items-end justify-center"
+              {/* Pomba do Espírito (canto direito meio) */}
+              <motion.div
+                animate={{ y: [0, -7, 0], rotate: [0, -3, 0] }}
+                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.9 }}
+                className="absolute bottom-20 -right-2 bg-[rgb(var(--color-brand-mint))]/90 text-[rgb(var(--color-brand-navy))] p-2.5 rounded-2xl shadow-lg z-20"
+                aria-label="Pomba"
               >
-                <div className="w-full h-full relative overflow-visible">
-                  <Image
-                    src="/photos/fotos7.png"
-                    alt="Educação Tecnológica com Proposta We Make"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 400px"
-                    className="object-contain object-bottom hover:scale-[1.02] transition-transform duration-500 select-none pointer-events-none"
-                    priority
-                  />
+                <svg viewBox="0 0 32 32" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+                  <path d="M4 18 C8 14 12 12 18 13 C22 8 26 8 28 10 C26 12 24 12 22 14 C24 16 22 20 18 21 C14 22 10 22 6 24 C5 22 4 20 4 18 Z" strokeLinejoin="round" />
+                  <circle cx="24" cy="11" r="1" fill="currentColor" />
+                </svg>
+              </motion.div>
+
+              {/* Foto do CEO (fotos7.png) — chroma-key + máscara blob (corta verde residual) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+                className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-10 overflow-hidden"
+                style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
+              >
+                <Image
+                  src="/photos/fotos7.png"
+                  alt="Dênis Júlio — CEO e Fundador da We Make"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 440px"
+                  className="object-cover object-top select-none pointer-events-none"
+                  style={{ filter: "url(#chroma-green)" }}
+                />
+              </motion.div>
+
+              {/* Badge: Nome + Cargo (sobrepõe canto inferior) */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30 bg-white border border-[rgb(var(--color-brand-royal))]/10 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl"
+              >
+                <div className="size-2.5 rounded-full bg-[rgb(var(--color-brand-mint))] animate-pulse" />
+                <div>
+                  <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1rem] leading-none font-bold">
+                    Dênis Júlio
+                  </p>
+                  <p className="text-[rgb(var(--color-brand-royal))] text-[0.75rem] font-semibold mt-1 tracking-wide">
+                    CEO e Fundador · We Make
+                  </p>
                 </div>
               </motion.div>
 

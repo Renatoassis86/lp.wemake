@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { WaveDivider } from "@/components/ui/wave-divider";
 
 /* ============================================================
@@ -8,7 +7,7 @@ import { WaveDivider } from "@/components/ui/wave-divider";
    Hero          → #4c8ade  (color-brand-royal)
    Problem       → #ffffff  (bg-white)
    CeoVideo      → #0b1f44  (color-brand-navy)
-   Authority     → #021014  (Manifesto) → #010c12 (BookShowcase)
+   Authority     → #021014  (FounderIntro) → #010c12 (BookShowcase)
    Services      → #ffffff  (bg-white)
    Curriculum    → #ffffff  (bg-ink-950 = branco)
    PresenceMap   → #ffffff  (bg-white)
@@ -16,43 +15,28 @@ import { WaveDivider } from "@/components/ui/wave-divider";
    VipGroup      → #0b1f44  (color-brand-navy)
    Consultor     → #2a69ba  (color-brand-royal-deep)
    Footer        → #0b1f44  (color-brand-navy)
+   ============================================================
+
+   Estratégia de carregamento:
+   - Above-the-fold (Hero + Problem) → import direto (SSR), zero flash
+   - Mid-page (CeoVideo, Authority, Services, Curriculum) → SSR também
+     para que o HTML completo chegue ao browser no primeiro byte
+   - Below-the-fold pesados (FloatingWhatsapp) → dynamic ssr:false
+     pois só importa após interação
    ============================================================ */
 
-const Hero = dynamic(
-  () => import("@/features/hero/hero").then((m) => ({ default: m.Hero })),
-  { ssr: false },
-);
-const Problem = dynamic(
-  () => import("@/features/problem/problem").then((m) => ({ default: m.Problem })),
-  { ssr: false },
-);
-const Authority = dynamic(
-  () => import("@/features/authority/authority").then((m) => ({ default: m.Authority })),
-  { ssr: false },
-);
-const CeoVideo = dynamic(
-  () => import("@/features/ceo-video/ceo-video").then((m) => ({ default: m.CeoVideo })),
-  { ssr: false },
-);
-const Services = dynamic(
-  () => import("@/features/services/services").then((m) => ({ default: m.Services })),
-);
-const CurriculumInfographic = dynamic(
-  () => import("@/features/curriculum/curriculum-infographic").then((m) => ({ default: m.CurriculumInfographic })),
-);
-const Testimonials = dynamic(
-  () => import("@/features/testimonials/testimonials").then((m) => ({ default: m.Testimonials })),
-  { ssr: false },
-);
-const FreeMaterial = dynamic(
-  () => import("@/features/free-material/free-material").then((m) => ({ default: m.FreeMaterial })),
-);
-const VipGroup = dynamic(
-  () => import("@/features/vip-group/vip-group").then((m) => ({ default: m.VipGroup })),
-);
-const Consultor = dynamic(
-  () => import("@/features/consultor/consultor").then((m) => ({ default: m.Consultor })),
-);
+import { Hero } from "@/features/hero/hero";
+import { Problem } from "@/features/problem/problem";
+import { CeoVideo } from "@/features/ceo-video/ceo-video";
+import { Authority } from "@/features/authority/authority";
+import { Services } from "@/features/services/services";
+import { CurriculumInfographic } from "@/features/curriculum/curriculum-infographic";
+import { Testimonials } from "@/features/testimonials/testimonials";
+import { FreeMaterial } from "@/features/free-material/free-material";
+import { VipGroup } from "@/features/vip-group/vip-group";
+import { Consultor } from "@/features/consultor/consultor";
+import dynamic from "next/dynamic";
+
 const FloatingWhatsapp = dynamic(
   () => import("@/features/consultor/floating-whatsapp").then((m) => ({ default: m.FloatingWhatsapp })),
   { ssr: false },
@@ -64,53 +48,53 @@ export function LandingPage() {
 
       {/* 1 ── Hero (azul royal #4c8ade) */}
       <Hero />
-      {/* Hero azul → Problem branco | forma: S largo */}
-      <WaveDivider fromColor="#4c8ade" toColor="#ffffff" variant={3} height={90} shadowColor="#3b7bc7" />
+      {/* Hero azul → Problem branco | curva suave */}
+      <WaveDivider fromColor="#4c8ade" toColor="#ffffff" variant={1} height={70} />
 
       {/* 2 ── Problem (branco) */}
       <Problem />
-      {/* Problem branco → CeoVideo navy | forma: assimétrico fundo */}
-      <WaveDivider fromColor="#ffffff" toColor="#0b1f44" variant={5} height={100} shadowColor="#e2e8f0" />
+      {/* Problem branco → CeoVideo navy | curva suave */}
+      <WaveDivider fromColor="#ffffff" toColor="#0b1f44" variant={1} height={70} />
 
       {/* 3 ── CeoVideo (navy #0b1f44) */}
       <CeoVideo />
-      {/* CeoVideo navy → Manifesto dark | forma: dois picos */}
-      <WaveDivider fromColor="#0b1f44" toColor="#021014" variant={4} height={80} shadowColor="#061530" />
+      {/* CeoVideo navy → Authority dark | curva suave */}
+      <WaveDivider fromColor="#0b1f44" toColor="#021014" variant={1} height={60} />
 
-      {/* 4 ── Authority: Manifesto (#021014) + Biography (branco) + BookShowcase (#010c12) */}
+      {/* 4 ── Authority: FounderIntro (#021014) + BookShowcase (#010c12) */}
       <Authority />
-      {/* BookShowcase dark → Services royal blue | forma: três ondas */}
-      <WaveDivider fromColor="#021014" toColor="#4c8ade" variant={6} height={95} shadowColor="#0c264e" />
+      {/* BookShowcase dark → Services royal blue | curva suave alta para esconder vazamento de glow */}
+      <WaveDivider fromColor="#021014" toColor="#4c8ade" variant={1} height={90} />
 
       {/* 5 ── Services (royal blue) */}
       <Services />
-      {/* Services royal blue → Curriculum branco | forma: curva lenta */}
-      <WaveDivider fromColor="#4c8ade" toColor="#f8fafc" variant={1} height={70} shadowColor="#3b7bc7" />
+      {/* Services royal blue → Curriculum branco | curva suave */}
+      <WaveDivider fromColor="#4c8ade" toColor="#f8fafc" variant={1} height={60} />
 
       {/* 6 ── CurriculumInfographic (branco/#f8fafc) */}
       <CurriculumInfographic />
-      {/* Curriculum → Testimonials branco | forma: S clássico invertido */}
-      <WaveDivider fromColor="#f8fafc" toColor="#ffffff" variant={2} height={75} shadowColor="#f1f5f9" />
+      {/* Curriculum branco → Testimonials navy | curva suave */}
+      <WaveDivider fromColor="#f8fafc" toColor="#0b1f44" variant={1} height={60} />
 
-      {/* 7 ── Testimonials (branco) */}
+      {/* 7 ── Testimonials (navy #0b1f44) */}
       <Testimonials />
-      {/* Testimonials branco → FreeMaterial mint | forma: assimétrico */}
-      <WaveDivider fromColor="#ffffff" toColor="#ecfdf8" variant={5} height={85} shadowColor="#f1f5f9" />
+      {/* Testimonials navy → FreeMaterial mint | curva suave */}
+      <WaveDivider fromColor="#0b1f44" toColor="#ecfdf8" variant={1} height={60} />
 
       {/* 8 ── FreeMaterial (mint suave #ecfdf8) */}
       <FreeMaterial />
-      {/* FreeMaterial mint → VipGroup navy | forma: três ondas agitado */}
-      <WaveDivider fromColor="#ecfdf8" toColor="#0b1f44" variant={6} height={100} shadowColor="#ccfbf1" />
+      {/* FreeMaterial mint → VipGroup navy | curva suave */}
+      <WaveDivider fromColor="#ecfdf8" toColor="#0b1f44" variant={1} height={70} />
 
       {/* 9 ── VipGroup (navy #0b1f44) */}
       <VipGroup />
-      {/* VipGroup navy → Consultor royal-deep | forma: picos duplos */}
-      <WaveDivider fromColor="#0b1f44" toColor="#2a69ba" variant={4} height={85} shadowColor="#061530" />
+      {/* VipGroup navy → Consultor royal-deep | curva suave */}
+      <WaveDivider fromColor="#0b1f44" toColor="#2a69ba" variant={1} height={60} />
 
       {/* 10 ── Consultor (royal-deep #2a69ba) */}
       <Consultor />
-      {/* Consultor → Footer navy | forma: S largo */}
-      <WaveDivider fromColor="#2a69ba" toColor="#0b1f44" variant={3} height={80} shadowColor="#1b539c" />
+      {/* Consultor → Footer navy | curva suave */}
+      <WaveDivider fromColor="#2a69ba" toColor="#0b1f44" variant={1} height={60} />
 
       {/* ── FLUTUANTE */}
       <FloatingWhatsapp />

@@ -2,8 +2,15 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Rocket, Lightbulb, Blocks, Cpu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  Rocket,
+  Lightbulb,
+  Cpu,
+  Code2,
+  Bot,
+  BookOpen,
+  Sparkles,
+} from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { trackEvent } from "@/lib/analytics";
@@ -12,7 +19,7 @@ import { whatsappLink } from "@/constants/site";
 export function Hero() {
   return (
     <Section
-      id="topo"
+      id="visao"
       bleed
       className="relative pt-[10rem] sm:pt-[12rem] pb-[4rem] sm:pb-[8rem] bg-[rgb(var(--color-brand-royal))] overflow-hidden"
     >
@@ -113,78 +120,175 @@ function Atmosphere() {
         aria-hidden
         className="absolute -left-[20%] top-0 w-[60%] aspect-square rounded-full border-[100px] border-[rgb(var(--color-brand-royal-deep))]/40 opacity-50"
       />
-      {/* Círculo Médio Direita */}
+      {/* Arco decorativo direito — círculo grande deslocado para mostrar curva inteira */}
       <div
         aria-hidden
-        className="absolute -right-[10%] -bottom-[20%] w-[50%] aspect-square rounded-full border-[60px] border-[rgb(var(--color-brand-royal-soft))]/30"
+        className="absolute -right-[35%] top-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full border-[60px] border-[rgb(var(--color-brand-royal-soft))]/30"
       />
     </>
   );
 }
 
-/* ─── Composição Ludica do Aluno ── */
-const HeroBrushMask = () => (
-  <svg width="0" height="0" className="absolute">
-    <defs>
-      <clipPath id="hero-brush" clipPathUnits="objectBoundingBox">
-        {/* Brush orgânico estilizado para o Hero */}
-        <path d="M0.04,0.12 C0.1,-0.02 0.88,-0.04 0.96,0.15 C1.06,0.35 1.02,0.82 0.88,0.94 C0.74,1.06 0.12,0.98 0.04,0.85 C-0.04,0.72 0.0,0.25 0.04,0.12 Z" />
-      </clipPath>
-    </defs>
-  </svg>
-);
+/* ─── Composição Ludica do Aluno — blob orgânico + mosaico ── */
+const BLOB_RADIUS = "62% 38% 47% 53% / 45% 60% 40% 55%";
 
 function MakerStudentImage() {
   return (
-    <div className="relative w-full max-w-[380px] lg:max-w-[420px] mx-auto lg:ml-auto overflow-visible flex items-center justify-center">
-      
-      {/* Círculo de Fundo Sólido e Vibrante (sunset complementary gradient) */}
-      <div 
-        className="absolute w-[80%] aspect-square rounded-full bg-gradient-to-br from-[#ff9e00] to-[#ff5d00] shadow-2xl z-0"
-        style={{ filter: "drop-shadow(0 12px 32px rgba(255,109,0,0.3))" }}
+    <div className="relative w-full max-w-[440px] lg:max-w-[520px] mx-auto lg:ml-auto h-[520px] sm:h-[600px] lg:h-[640px] flex items-center justify-center overflow-visible">
+
+      {/* Blob de cor vibrante atrás (gradiente mint → royal-deep) */}
+      <motion.div
+        aria-hidden
+        animate={{ rotate: [0, 2, -2, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-0"
+        style={{
+          background: "linear-gradient(135deg, rgb(var(--color-brand-mint)) 0%, rgb(var(--color-brand-royal-deep)) 100%)",
+          borderRadius: BLOB_RADIUS,
+          filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.3))",
+        }}
       />
-      
-      {/* Espiral Dourada Decorativa Flutuante (estilo Zoom Education) */}
-      <svg viewBox="0 0 100 100" className="absolute -top-10 -right-6 size-40 text-[#ffcc00] opacity-90 z-0 pointer-events-none select-none">
-        <path d="M50 50 C40 30 20 40 30 60 C40 80 80 60 70 30 C60 0 0 20 20 70 C40 120 120 80 90 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-      </svg>
-      
-      {/* Ícones Decorativos Maker Flutuantes */}
-      <motion.div 
-        animate={{ y: [0, -8, 0], rotate: [0, 4, 0] }} 
-        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} 
-        className="absolute top-2 right-4 bg-white text-[rgb(var(--color-brand-navy))] p-3 rounded-full shadow-xl z-20 border border-[rgb(var(--color-brand-mint))]/30"
+
+      {/* Espiral decorativa flutuante (estilo Zoom Education) */}
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 100 100"
+        animate={{ rotate: [0, 8, 0], y: [0, -6, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-3 -right-3 size-32 sm:size-40 text-[rgb(var(--color-brand-mint))]/80 z-30 pointer-events-none select-none"
       >
-        <Cpu className="size-7 text-[rgb(var(--color-brand-royal))]" />
-      </motion.div>
-      <motion.div 
-        animate={{ y: [0, 8, 0], rotate: [0, -4, 0] }} 
-        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} 
-        className="absolute bottom-12 -left-6 bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] p-3.5 rounded-2xl shadow-xl z-20 border border-white/20"
+        <path
+          d="M50 50 C40 30 20 40 30 60 C40 80 80 60 70 30 C60 0 0 20 20 70 C40 120 120 80 90 20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+        />
+      </motion.svg>
+
+      {/* Bolinhas decorativas (acentos geométricos como nas refs) */}
+      <div aria-hidden className="absolute top-[18%] left-[4%] size-3 rounded-full bg-white/70 z-20" />
+      <div aria-hidden className="absolute top-[36%] right-[4%] size-2 rounded-full bg-[rgb(var(--color-brand-mint))]/80 z-20" />
+      <div aria-hidden className="absolute bottom-[14%] right-[18%] size-4 rounded-full border-2 border-white/60 z-20" />
+      <div aria-hidden className="absolute bottom-[26%] left-[2%] size-2.5 rounded-full bg-white/50 z-20" />
+
+      {/* Triângulo decorativo */}
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 24 24"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        className="absolute top-[6%] left-[24%] size-7 text-[rgb(var(--color-brand-mint))]/60 z-20"
       >
-        <Blocks className="size-7" />
+        <path d="M12 2 L22 20 L2 20 Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      </motion.svg>
+
+      {/* Mosaico de ícones monocromáticos — tech + cosmovisão cristã */}
+      <FloatingIcon className="top-[4%] right-[22%]" duration={4.2}>
+        <CrossIcon className="size-7 text-white/65" />
+      </FloatingIcon>
+
+      <FloatingIcon className="top-[28%] left-[-4%]" duration={5.2} delay={0.5} rotateRange={-4}>
+        <BookOpen className="size-8 text-white/55" strokeWidth={1.4} />
+      </FloatingIcon>
+
+      <FloatingIcon className="top-[60%] right-[-4%]" duration={4.8} delay={0.9} rotateRange={6}>
+        <Bot className="size-9 text-white/60" strokeWidth={1.4} />
+      </FloatingIcon>
+
+      <FloatingIcon className="bottom-[4%] left-[18%]" duration={5.6} delay={1.4}>
+        <Cpu className="size-7 text-[rgb(var(--color-brand-mint))]/75" strokeWidth={1.5} />
+      </FloatingIcon>
+
+      <FloatingIcon className="bottom-[16%] right-[8%]" duration={4} delay={0.4}>
+        <DoveIcon className="size-9 text-[rgb(var(--color-brand-mint))]/70" />
+      </FloatingIcon>
+
+      <FloatingIcon className="top-[48%] left-[2%]" duration={5} delay={1.8} rotateRange={5}>
+        <Code2 className="size-6 text-white/50" strokeWidth={1.5} />
+      </FloatingIcon>
+
+      <FloatingIcon className="top-[14%] right-[4%]" duration={3.8} delay={1.1} scalePulse>
+        <Sparkles className="size-6 text-[rgb(var(--color-brand-mint))]/80" strokeWidth={1.5} />
+      </FloatingIcon>
+
+      {/* ── Foto da criança em formato orgânico (foco) ── */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+        className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-10 overflow-hidden"
+        style={{ borderRadius: BLOB_RADIUS }}
+      >
+        <Image
+          src="/photos/maker_student.png"
+          alt="Estudante Maker de Educação Tecnológica We Make"
+          fill
+          priority
+          sizes="(min-width: 1024px) 520px, 440px"
+          className="object-cover object-center select-none"
+        />
       </motion.div>
 
-      {/* Imagem do Estudante Maker (Recorte PNG transparente sem clipping) */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.15 }}
-        className="relative z-10 w-full aspect-[4/5] overflow-visible flex items-end justify-center"
-      >
-        <div className="w-[100%] h-[100%] relative overflow-visible">
-          <Image
-            src="/photos/maker_student.png"
-            alt="Estudante Maker de Educação Tecnológica We Make"
-            fill
-            priority
-            sizes="(min-width: 1024px) 400px, 100vw"
-            className="object-contain object-bottom hover:scale-[1.02] transition-transform duration-500 select-none pointer-events-none"
-          />
-        </div>
-      </motion.div>
-      
     </div>
+  );
+}
+
+type FloatingIconProps = {
+  children: React.ReactNode;
+  className?: string;
+  duration?: number;
+  delay?: number;
+  rotateRange?: number;
+  scalePulse?: boolean;
+};
+
+function FloatingIcon({
+  children,
+  className = "",
+  duration = 5,
+  delay = 0,
+  rotateRange = 0,
+  scalePulse = false,
+}: FloatingIconProps) {
+  const animate = scalePulse
+    ? { y: [0, -6, 0], scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }
+    : { y: [0, -8, 0], rotate: rotateRange ? [0, rotateRange, 0] : [0, 0, 0] };
+
+  return (
+    <motion.div
+      aria-hidden
+      animate={animate}
+      transition={{ duration, delay, repeat: Infinity, ease: "easeInOut" }}
+      className={`absolute z-20 pointer-events-none ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── Símbolos cristãos não inclusos no lucide-react ─── */
+function CrossIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <rect x="10" y="2" width="4" height="20" rx="1" fill="currentColor" />
+      <rect x="4" y="8" width="16" height="4" rx="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function DoveIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden>
+      <path
+        d="M4 18 C8 14 12 12 18 13 C22 8 26 8 28 10 C26 12 24 12 22 14 C24 16 22 20 18 21 C14 22 10 22 6 24 C5 22 4 20 4 18 Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <circle cx="24" cy="11" r="1" fill="currentColor" />
+    </svg>
   );
 }
 

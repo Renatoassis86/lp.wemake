@@ -6,58 +6,38 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 
-// Máscaras orgânicas (brush strokes) para as fotos - estilo Lúdico e Tecnológico
-const BrushMasks = () => (
-  <svg width="0" height="0" className="absolute">
-    <defs>
-      {/* Brush 1: Dinâmico e assimétrico */}
-      <clipPath id="brush-1" clipPathUnits="objectBoundingBox">
-        <path d="M0.05,0.1 C0.1,-0.05 0.8,-0.05 0.95,0.1 C1.1,0.25 1.05,0.8 0.9,0.95 C0.75,1.1 0.1,1.1 0.02,0.9 C-0.06,0.7 0,0.25 0.05,0.1 Z" />
-      </clipPath>
-      {/* Brush 2: Mais horizontal e ondulado */}
-      <clipPath id="brush-2" clipPathUnits="objectBoundingBox">
-        <path d="M0.1,0.05 C0.3,-0.02 0.7,-0.02 0.9,0.1 C1.05,0.2 1.1,0.7 0.95,0.9 C0.8,1.1 0.2,1.1 0.05,0.95 C-0.1,0.8 -0.05,0.2 0.1,0.05 Z" />
-      </clipPath>
-      {/* Brush 3: Formato de gota inclinada orgânica */}
-      <clipPath id="brush-3" clipPathUnits="objectBoundingBox">
-        <path d="M0.08,0.15 C0.15,0.02 0.85,-0.05 0.95,0.12 C1.05,0.3 0.98,0.85 0.85,0.95 C0.7,1.05 0.1,0.98 0.02,0.85 C-0.06,0.7 0,0.3 0.08,0.15 Z" />
-      </clipPath>
-    </defs>
-  </svg>
-);
-
 const steps = [
   {
     id: "01",
     title: "Cultura Maker",
     desc: "Mais do que montar peças, os alunos aprendem a solucionar problemas reais construindo projetos criativos. Uma abordagem prática de engenharia, física e eletrônica.",
-    color: "bg-brand-mint", 
+    color: "bg-[#FF7B54]", // laranja vibrante
     photo: "/photos/foto4.png",
-    brush: "brush-1",
+    blob: "62% 38% 47% 53% / 45% 60% 40% 55%",
   },
   {
     id: "02",
     title: "Programação",
     desc: "Alfabetização para o futuro. Da criação de narrativas visuais e jogos à automação de projetos físicos e digitais com Scratch, Python e blocos lógicos.",
-    color: "bg-brand-sky", 
+    color: "bg-[#9333EA]", // roxo profundo
     photo: "/photos/foto2.png",
-    brush: "brush-2",
+    blob: "38% 62% 53% 47% / 60% 45% 55% 40%",
   },
   {
     id: "03",
     title: "Robótica",
     desc: "Mão na massa! Construção e programação de robôs que interagem com o ambiente, estimulando o raciocínio lógico e o trabalho em equipe.",
-    color: "bg-brand-royal",
+    color: "bg-[#14B8A6]", // teal vibrante
     photo: "/photos/foto1.png",
-    brush: "brush-3",
+    blob: "55% 45% 38% 62% / 50% 58% 42% 50%",
   },
   {
     id: "04",
     title: "Pensamento Computacional",
     desc: "O superpoder de decompor problemas complexos em etapas simples. Abstração, reconhecimento de padrões e algoritmos aplicados ao currículo.",
-    color: "bg-[rgb(255,107,107)]", // Coral/Lúdico
+    color: "bg-[#FF6B6B]", // coral
     photo: "/photos/foto5.png",
-    brush: "brush-1",
+    blob: "45% 55% 62% 38% / 55% 40% 60% 45%",
   }
 ];
 
@@ -71,18 +51,24 @@ export function CurriculumInfographic() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="relative pt-12 pb-24 sm:pt-16 sm:pb-32 bg-ink-950 overflow-hidden">
-      <BrushMasks />
-      
+    <section id="jornada" ref={containerRef} className="relative pt-12 pb-24 sm:pt-16 sm:pb-32 bg-ink-950 overflow-hidden">
       {/* Background Tech Dot Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)", backgroundSize: "32px 32px" }}
       />
 
+      {/* Marca d'água — emblema We Make rotacionado */}
+      <div aria-hidden className="absolute top-[10%] right-[-6%] w-[460px] h-[460px] opacity-[0.08] rotate-12 pointer-events-none select-none">
+        <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="460px" />
+      </div>
+      <div aria-hidden className="absolute bottom-[6%] left-[-8%] w-[400px] h-[400px] opacity-[0.07] -rotate-12 pointer-events-none select-none">
+        <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="400px" />
+      </div>
+
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-24 relative z-10">
           <Reveal>
-            <span className="font-mono text-sm uppercase tracking-widest text-brand-royal font-bold">O Desenvolimento</span>
+            <span className="font-mono text-sm uppercase tracking-widest text-brand-royal font-bold">O Desenvolvimento</span>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl text-ink-100 tracking-tight">
               Uma Jornada Contínua de Aprendizagem
             </h2>
@@ -120,41 +106,44 @@ export function CurriculumInfographic() {
                     </Reveal>
                   </div>
 
-                  {/* Imagem Lúdica com Brush/Blob */}
+                  {/* Imagem em blob + mancha de cor offset */}
                   <div className="flex-1 w-full pl-[80px] md:pl-0 flex justify-center md:justify-start">
                     <Reveal delay={0.4}>
-                      <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px]">
-                        {/* Fundo Decorativo Lúdico (brilho colorido) */}
-                        <motion.div 
-                          className={`absolute inset-0 ${step.color} opacity-40 blur-3xl rounded-full`}
-                          animate={{ scale: [1, 1.1, 1], rotate: [0, 10, 0] }}
-                          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                      <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px]">
+
+                        {/* Mancha de cor sólida atrás, deslocada (estilo "tinta") */}
+                        <motion.div
+                          aria-hidden
+                          animate={{ rotate: [0, 3, -3, 0] }}
+                          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+                          className={`absolute inset-0 ${step.color} opacity-95 ${isEven ? "translate-x-5 translate-y-5" : "-translate-x-5 translate-y-5"}`}
+                          style={{ borderRadius: step.blob }}
                         />
-                        
-                        {/* Imagem recortada no brush */}
-                        <div 
-                          className="relative w-full h-full bg-white p-2"
-                          style={{ clipPath: `url(#${step.brush})` }}
+
+                        {/* Glow sutil bem atrás */}
+                        <div
+                          aria-hidden
+                          className={`absolute inset-0 ${step.color} opacity-30 blur-3xl rounded-full scale-90`}
+                        />
+
+                        {/* Foto em formato blob orgânico (sem borda) */}
+                        <div
+                          className="absolute inset-0 overflow-hidden shadow-2xl"
+                          style={{ borderRadius: step.blob }}
                         >
-                          <div 
-                            className="w-full h-full relative overflow-hidden bg-ink-200"
-                            style={{ clipPath: `url(#${step.brush})` }}
-                          >
-                            <Image
-                              src={step.photo}
-                              alt={step.title}
-                              fill
-                              className="object-cover transition-transform duration-1000 hover:scale-110"
-                              sizes="(max-width: 768px) 100vw, 400px"
-                            />
-                            {/* Overlay sutil para tecnologia */}
-                            <div className={`absolute inset-0 ${step.color} mix-blend-overlay opacity-20`} />
-                          </div>
+                          <Image
+                            src={step.photo}
+                            alt={step.title}
+                            fill
+                            className="object-cover transition-transform duration-1000 hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, 400px"
+                          />
                         </div>
 
-                        {/* Detalhe tecnológico (ícones flutuantes) */}
-                        <motion.div 
-                          className="absolute -top-4 -right-4 w-12 h-12 text-brand-royal opacity-60 drop-shadow-md"
+                        {/* Estrela tecnológica flutuante */}
+                        <motion.div
+                          aria-hidden
+                          className="absolute -top-3 -right-3 w-10 h-10 text-brand-royal opacity-60 drop-shadow-md"
                           animate={{ rotate: 360 }}
                           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                         >

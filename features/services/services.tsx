@@ -71,6 +71,14 @@ export function Services() {
     >
       <BackgroundIcons y={yBg} />
 
+      {/* Watermark W gigante — centro topo, atrás dos ícones decorativos, longe dos cards */}
+      <div
+        aria-hidden
+        className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[560px] h-[560px] opacity-[0.07] pointer-events-none select-none z-0"
+      >
+        <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="500px" />
+      </div>
+
       <Container className="relative z-30 flex flex-col h-full gap-16">
         
         {/* Topo: Texto solto em vez de absoluto para não sobrepor */}

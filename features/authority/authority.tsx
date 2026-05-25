@@ -5,104 +5,113 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
-import { ArrowRight, BookOpen, Star, Award, GraduationCap, Users } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 
 export function Authority() {
   return (
     <>
-      <Manifesto />
-      <Biography />
+      <FounderIntro />
+      <SectionBridge />
       <BookShowcase />
     </>
   );
 }
 
-function Manifesto() {
+/* Divisória ornamental entre fala do fundador e apresentação do livro */
+function SectionBridge() {
   return (
-    <Section bleed className="bg-[#021014] relative overflow-hidden pt-24 pb-0">
+    <div className="bg-[#021014] py-10 sm:py-14 flex items-center justify-center relative overflow-hidden">
+      {/* Glow sutil mint no centro */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-32 bg-[rgb(var(--color-brand-mint))]/[0.04] blur-[80px] mx-auto max-w-md rounded-full"
+      />
+
+      {/* Linha ornamental: traço + ícone livro + traço */}
+      <div className="relative flex items-center gap-5 w-full max-w-md px-8">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/15 to-[rgb(var(--color-brand-mint))]/30" />
+
+        <div className="flex-shrink-0 size-10 rounded-full border border-[rgb(var(--color-brand-mint))]/25 bg-[rgb(var(--color-brand-mint))]/[0.04] flex items-center justify-center">
+          <BookOpen className="size-4 text-[rgb(var(--color-brand-mint))]/70" />
+        </div>
+
+        <div className="h-px flex-1 bg-gradient-to-l from-transparent via-white/15 to-[rgb(var(--color-brand-mint))]/30" />
+      </div>
+    </div>
+  );
+}
+
+function FounderIntro() {
+  return (
+    <Section bleed className="bg-[#021014] relative overflow-hidden pt-24 pb-24">
       {/* Glow de fundo */}
       <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-[rgb(var(--color-brand-mint))]/10 blur-[120px] rounded-full translate-x-1/3" />
       </div>
 
-      {/* Clip-path SVG definition — blob orgânico */}
-      <svg width="0" height="0" className="absolute">
-        <defs>
-          <clipPath id="ceo-blob" clipPathUnits="objectBoundingBox">
-            <path d="M0.52,0.03 C0.68,0.00 0.86,0.07 0.94,0.21 C1.02,0.35 0.99,0.53 0.96,0.68 C0.92,0.84 0.83,0.97 0.68,0.99 C0.53,1.01 0.38,0.94 0.26,0.84 C0.13,0.74 0.04,0.59 0.02,0.44 C-0.01,0.28 0.06,0.12 0.18,0.07 C0.30,0.02 0.42,0.05 0.52,0.03 Z" />
-          </clipPath>
-        </defs>
-      </svg>
-
       <Container className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* ── 1) TÍTULO + MANIFESTO (topo, centralizado) ── */}
+        <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-24">
+          <Reveal>
+            <h2 className="font-display text-white text-[clamp(2.5rem,4.5vw,5rem)] leading-[1.05] mb-8">
+              Tecnologia com{" "}
+              <span className="text-[rgb(var(--color-brand-mint))]">alma.</span>
+              <br />
+              Educação com{" "}
+              <span className="text-[rgb(var(--color-brand-mint))]">propósito.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-white/80 text-[clamp(1.125rem,1.5vw,1.375rem)] leading-relaxed mx-auto max-w-2xl">
+              A We Make ajuda escolas cristãs a formarem alunos capazes de criar, discernir e
+              transformar o mundo com sabedoria, caráter e fé.
+            </p>
+          </Reveal>
+        </div>
 
-          {/* ── Texto esquerda ── */}
-          <div className="pb-16 lg:pb-24">
-            <Reveal>
-              <h2 className="font-display text-white text-[clamp(2.5rem,4.5vw,5rem)] leading-[1.05] mb-8">
-                Tecnologia <br className="hidden lg:block" />com{" "}
-                <span className="text-[rgb(var(--color-brand-mint))]">alma.</span>
-                <br />
-                Educação com <br className="hidden lg:block" />{" "}
-                <span className="text-[rgb(var(--color-brand-mint))]">propósito.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="text-white/80 text-[clamp(1.125rem,1.5vw,1.375rem)] leading-relaxed max-w-lg">
-                A We Make ajuda escolas cristãs a formarem alunos capazes de criar, discernir e
-                transformar o mundo com sabedoria, caráter e fé.
-              </p>
-            </Reveal>
-          </div>
+        {/* ── 2) FOTO NO CÍRCULO (esquerda) + BIO (direita) ── */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* ── Foto em molde blob + ícones flutuantes ── */}
+          {/* Foto em molde blob + ícones flutuantes */}
           <Reveal delay={0.15}>
-            <div className="relative flex items-end justify-center h-[520px] sm:h-[600px] lg:h-[680px]">
+            <div className="relative flex items-center justify-center h-[520px] sm:h-[600px] lg:h-[640px]">
 
-              {/* ── Blob de fundo (anel de contorno) ── */}
+              {/* Blob de fundo (anel de contorno) */}
               <div
-                className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] sm:w-[440px] sm:h-[440px]"
+                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] sm:w-[440px] sm:h-[440px]"
                 style={{
                   background: "linear-gradient(135deg, rgba(76,138,222,0.18) 0%, rgba(118,243,205,0.12) 100%)",
-                  clipPath: "url(#ceo-blob)",
+                  borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%",
                   border: "2px solid rgba(118,243,205,0.25)",
                 }}
               />
 
-              {/* ── Anel decorativo girando ── */}
+              {/* Anel decorativo girando */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[420px] h-[420px] sm:w-[480px] sm:h-[480px] rounded-full border border-dashed border-[rgb(var(--color-brand-mint))]/20 pointer-events-none"
+                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[420px] h-[420px] sm:w-[480px] sm:h-[480px] rounded-full border border-dashed border-[rgb(var(--color-brand-mint))]/20 pointer-events-none"
               />
 
-              {/* ── Foto recortada no blob ── */}
+              {/* Foto do Dênis (jaleco) recortada no blob orgânico */}
               <div
-                className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] overflow-hidden"
-                style={{ clipPath: "url(#ceo-blob)" }}
+                className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] overflow-hidden"
+                style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
               >
                 <Image
-                  src="/photos/denis.png"
+                  src="/photos/denis julio_bcgreen.png"
                   alt="Dênis Júlio — Fundador da We Make"
                   fill
-                  className="object-cover object-top scale-110"
+                  className="object-cover object-top"
                   sizes="440px"
                 />
-                {/* Overlay sutil escuro nas bordas para integrar ao fundo */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#021014]/40 via-transparent to-transparent" />
               </div>
-
-              {/* ──────────────────────────────────────────────
-                  ÍCONES MONOCROMÁTICOS FLUTUANTES
-                  Tom sério: branco/10–30% + mint traço fino
-              ────────────────────────────────────────────── */}
 
               {/* Ícone: Cruz — acima direita */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[2%] right-[8%]"
+                className="absolute top-[4%] right-[8%]"
               >
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="opacity-40">
                   <rect x="15" y="2" width="6" height="32" rx="2" fill="rgb(var(--color-brand-mint))" />
@@ -114,7 +123,7 @@ function Manifesto() {
               <motion.div
                 animate={{ y: [0, 6, 0], rotate: [-3, 3, -3] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-[38%] left-[2%]"
+                className="absolute top-[40%] left-[2%]"
               >
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="opacity-30">
                   <path d="M4 8 C4 8 12 6 20 10 C28 6 36 8 36 8 L36 32 C36 32 28 30 20 34 C12 30 4 32 4 32 Z" stroke="rgb(var(--color-brand-mint))" strokeWidth="1.5" />
@@ -126,7 +135,7 @@ function Manifesto() {
               <motion.div
                 animate={{ y: [0, -6, 0], rotate: [0, 8, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-[45%] right-[3%]"
+                className="absolute top-[46%] right-[3%]"
               >
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" className="opacity-35">
                   <circle cx="22" cy="22" r="5" stroke="white" strokeWidth="1.5" />
@@ -146,7 +155,7 @@ function Manifesto() {
               <motion.div
                 animate={{ y: [0, 5, 0], rotate: [0, -5, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute top-[8%] left-[10%]"
+                className="absolute top-[10%] left-[10%]"
               >
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="opacity-30">
                   <path d="M6 26 L14 10 L24 6 L20 18 Z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
@@ -159,7 +168,7 @@ function Manifesto() {
               <motion.div
                 animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute bottom-[12%] right-[8%]"
+                className="absolute bottom-[14%] right-[8%]"
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="opacity-40">
                   <path d="M14 2 L16 12 L26 14 L16 16 L14 26 L12 16 L2 14 L12 12 Z" stroke="rgb(var(--color-brand-mint))" strokeWidth="1.2" fill="none" />
@@ -170,7 +179,7 @@ function Manifesto() {
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute bottom-[16%] left-[6%]"
+                className="absolute bottom-[18%] left-[6%]"
               >
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" className="opacity-25">
                   <path d="M8 4 C4 4 2 8 2 15 C2 22 4 26 8 26" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
@@ -183,7 +192,7 @@ function Manifesto() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="absolute bottom-[8%] left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl"
+                className="absolute bottom-[10%] left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl"
               >
                 <div className="w-2 h-2 rounded-full bg-[rgb(var(--color-brand-mint))] animate-pulse" />
                 <div>
@@ -194,31 +203,10 @@ function Manifesto() {
 
             </div>
           </Reveal>
-        </div>
-      </Container>
-    </Section>
-  );
-}
 
-function Biography() {
-  return (
-    <Section className="py-24 bg-[#021014] relative overflow-hidden">
-      <Container>
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
-          <Reveal className="relative">
-             <div className="relative w-full aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-[3rem] overflow-hidden shadow-2xl">
-               <Image
-                 src="/photos/denis julio_bcgreen.png"
-                 alt="Dênis Júlio - Fundador da We Make"
-                 fill
-                 className="object-cover"
-               />
-             </div>
-             <div className="absolute -inset-6 bg-[rgb(var(--color-brand-sky))]/30 rounded-[4rem] -z-10 rotate-6 max-w-md mx-auto lg:mx-0" />
-          </Reveal>
-
+          {/* Bio à direita */}
           <div>
-            <Reveal>
+            <Reveal delay={0.25}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgb(var(--color-brand-mint))]/20 text-[rgb(var(--color-brand-mint))] font-bold text-sm mb-6">
                 <BookOpen className="size-4" />
                 SOBRE O FUNDADOR
@@ -226,7 +214,7 @@ function Biography() {
               <h3 className="font-display text-white text-[clamp(2rem,3vw,3rem)] leading-[1.1] mb-6">
                 Dênis Júlio
               </h3>
-              
+
               <div className="space-y-4 text-white/80 text-[1.0625rem] leading-relaxed text-justify">
                 <p>
                   Dênis Júlio Pereira Francisco é graduado em Teologia e especialista em Educação Clássica pela Faculdade Internacional Cidade Viva (FICV), também é mestre pela Universidade Federal do Rio Grande do Norte (UFRN), no Programa de Pós-Graduação em Inovação e Tecnologias Educacionais (PPgITE).
@@ -240,6 +228,7 @@ function Biography() {
               </div>
             </Reveal>
           </div>
+
         </div>
       </Container>
     </Section>
@@ -250,19 +239,12 @@ function Biography() {
    BOOK SHOWCASE — seção premium dedicada ao livro
 ────────────────────────────────────────────── */
 function BookShowcase() {
-  const badges = [
-    { icon: GraduationCap, label: "Mestrado UFRN", sub: "Obra acadêmica" },
-    { icon: Award,         label: "Publicado pela", sub: "Metrópole Digital" },
-    { icon: Users,         label: "Para educadores", sub: "Escolas cristãs" },
-    { icon: Star,          label: "Cosmovisão cristã", sub: "Como fundamento" },
-  ];
-
   return (
-    <Section bleed className="relative overflow-hidden bg-[#021014] py-28">
-      {/* ── Glows de fundo ── */}
+    <Section bleed className="relative overflow-hidden bg-[#021014] pt-24 pb-40">
+      {/* ── Glows de fundo (contidos no terço superior) ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-[rgb(var(--color-brand-sky))]/10 blur-[130px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-[rgb(var(--color-brand-mint))]/10 blur-[130px] rounded-full" />
+        <div className="absolute top-[5%] left-[-5%] w-[400px] h-[400px] bg-[rgb(var(--color-brand-sky))]/[0.03] blur-[160px] rounded-full" />
+        <div className="absolute top-[5%] right-[-5%] w-[350px] h-[350px] bg-[rgb(var(--color-brand-mint))]/[0.03] blur-[160px] rounded-full" />
         {/* Grade sutil */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -271,6 +253,13 @@ function BookShowcase() {
             backgroundSize: "60px 60px",
           }}
         />
+        {/* Watermark W — canto inferior esquerdo, longe do livro e do CTA */}
+        <div
+          aria-hidden
+          className="absolute -bottom-12 -left-16 w-[380px] h-[380px] opacity-[0.09] pointer-events-none select-none -rotate-[8deg]"
+        >
+          <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="320px" />
+        </div>
       </div>
 
       <Container className="relative z-10">
@@ -284,42 +273,29 @@ function BookShowcase() {
           </div>
         </Reveal>
 
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between">
-          
-          {/* ── ESQUERDA: badges de credencial ── */}
-          <Reveal className="hidden lg:grid grid-cols-2 gap-4 lg:w-1/3">
-            {badges.map(({ icon: Icon, label, sub }) => (
-              <div
-                key={label}
-                className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm hover:border-[rgb(var(--color-brand-mint))]/40 hover:bg-white/10 transition-all duration-300"
-              >
-                <Icon className="size-6 text-[rgb(var(--color-brand-mint))]" />
-                <span className="text-white font-semibold text-[0.9375rem] leading-snug">{label}</span>
-                <span className="text-white/50 text-xs">{sub}</span>
-              </div>
-            ))}
-          </Reveal>
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
 
-          {/* ── CENTRO: capa do livro ── */}
-          <Reveal delay={0.15} className="flex justify-center">
+          {/* ── ESQUERDA: capa do livro grande ── */}
+          <Reveal delay={0.15} className="flex justify-center lg:justify-end">
             <div className="book-wrapper relative">
-              {/* Brilho atrás do livro */}
-              <div className="absolute inset-0 -z-10 scale-[1.3] blur-[60px] bg-[rgb(var(--color-brand-sky))]/30 rounded-full" />
+              {/* Halo de luz atrás do livro — contido para não vazar na transição */}
+              <div className="absolute inset-0 -z-10 scale-[1.25] blur-[70px] bg-[rgb(var(--color-brand-sky))]/20 rounded-full" />
+              <div className="absolute inset-0 -z-10 scale-[1.05] blur-[45px] bg-[rgb(var(--color-brand-mint))]/12 rounded-full" />
 
-              {/* Livro com perspectiva CSS */}
+              {/* Livro com perspectiva CSS (maior) */}
               <motion.div
-                className="book-3d relative w-[240px] sm:w-[280px] lg:w-[300px]"
+                className="book-3d relative w-[320px] sm:w-[400px] lg:w-[460px]"
                 initial={{ rotateY: -10, opacity: 0, y: 20 }}
                 whileInView={{ rotateY: -10, opacity: 1, y: 0 }}
                 whileHover={{ rotateY: -5, scale: 1.04 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
+                style={{ perspective: "1400px", transformStyle: "preserve-3d" }}
               >
                 <div
                   className="relative aspect-[2/3] rounded-sm overflow-hidden"
                   style={{
-                    boxShadow: "-16px 16px 48px rgba(0,0,0,0.8), -4px 4px 12px rgba(0,0,0,0.6), 2px 0 6px rgba(255,255,255,0.08)",
+                    boxShadow: "-24px 24px 64px rgba(0,0,0,0.8), -6px 6px 18px rgba(0,0,0,0.6), 2px 0 8px rgba(255,255,255,0.1)",
                   }}
                 >
                   <Image
@@ -327,16 +303,16 @@ function BookShowcase() {
                     alt="Cartas para um Professor Digital — Dênis Júlio"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 240px, 300px"
+                    sizes="(max-width: 768px) 320px, 460px"
                     priority
                   />
                 </div>
 
                 {/* Lombada sintética (espessura esquerda do livro) */}
                 <div
-                  className="absolute top-0 left-0 h-full w-[18px] rounded-l-sm"
+                  className="absolute top-0 left-0 h-full w-[22px] rounded-l-sm"
                   style={{
-                    transform: "rotateY(90deg) translateZ(-9px) translateX(-9px)",
+                    transform: "rotateY(90deg) translateZ(-11px) translateX(-11px)",
                     background: "linear-gradient(90deg, #1a2a3a 0%, #2c4a60 40%, #1a2a3a 100%)",
                     boxShadow: "inset -2px 0 6px rgba(0,0,0,0.5)",
                     transformOrigin: "left center",
@@ -366,16 +342,6 @@ function BookShowcase() {
                   &ldquo;A escola não deve ser apenas um espaço de transmissão de regras, mas também um escudo moral e comunitário capaz de formar alunos mais prudentes, justos, corajosos e responsáveis.&rdquo;
                 </p>
               </blockquote>
-
-              {/* Badges mobile (visível só em telas pequenas) */}
-              <div className="flex flex-wrap gap-2 mb-8 lg:hidden">
-                {badges.map(({ icon: Icon, label }) => (
-                  <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-medium border border-white/10">
-                    <Icon className="size-3 text-[rgb(var(--color-brand-mint))]" />
-                    {label}
-                  </span>
-                ))}
-              </div>
 
               <a
                 href="#"

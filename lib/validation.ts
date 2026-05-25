@@ -51,6 +51,11 @@ export const contactSchema = z.object({
 
   message: z.string().max(2000).optional().default(""),
 
+  /** Sugestão de data para a reunião (YYYY-MM-DD). Opcional. */
+  preferred_date: z.string().optional(),
+  /** Sugestão de horário (HH:MM). Opcional. */
+  preferred_time: z.string().optional(),
+
   consent: z
     .boolean()
     .refine((v) => v === true, "É preciso consentir o tratamento de dados."),

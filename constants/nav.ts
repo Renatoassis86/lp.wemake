@@ -29,10 +29,10 @@ export const primaryNav: NavLink[] = [
     description: "Currículo maker, formação, plataforma, espaço, assessoria.",
   },
   {
-    id: "presenca",
-    label: "Presença",
-    href: "#presenca",
-    description: "Escolas parceiras em todo o Brasil.",
+    id: "jornada",
+    label: "Jornada",
+    href: "#jornada",
+    description: "Trilha contínua de aprendizagem: Maker, Programação, Robótica e Pensamento Computacional.",
   },
   {
     id: "reuniao",

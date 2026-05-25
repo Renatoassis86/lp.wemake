@@ -46,6 +46,16 @@ function GlobalSVGMasks() {
         <clipPath id="ceo-blob" clipPathUnits="objectBoundingBox">
           <path d="M0.52,0.03 C0.68,0.00 0.86,0.07 0.94,0.21 C1.02,0.35 0.99,0.53 0.96,0.68 C0.92,0.84 0.83,0.97 0.68,0.99 C0.53,1.01 0.38,0.94 0.26,0.84 C0.13,0.74 0.04,0.59 0.02,0.44 C-0.01,0.28 0.06,0.12 0.18,0.07 C0.30,0.02 0.42,0.05 0.52,0.03 Z" />
         </clipPath>
+        {/* Chroma-key: remove fundo verde de fotos PNG (alpha = 2R - 3G + 2B + 1) */}
+        <filter id="chroma-green" x="0%" y="0%" width="100%" height="100%">
+          <feColorMatrix
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    2 -3 2 0 1"
+          />
+        </filter>
       </defs>
     </svg>
   );

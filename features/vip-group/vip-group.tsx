@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, Users, Sparkles, ArrowRight } from "lucide-react";
+import { MessageCircle, Users } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
@@ -107,15 +107,15 @@ export function VipGroup() {
 
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-3 text-white/90 font-medium">
-                <Sparkles className="size-5 text-[rgb(var(--color-brand-mint))]" />
+                <Image src="/photos/3.png" alt="" width={24} height={24} className="size-6 flex-shrink-0 object-contain" />
                 Networking com Diretores e Mantenedores
               </li>
               <li className="flex items-center gap-3 text-white/90 font-medium">
-                <Sparkles className="size-5 text-[rgb(var(--color-brand-mint))]" />
+                <Image src="/photos/3.png" alt="" width={24} height={24} className="size-6 flex-shrink-0 object-contain" />
                 Dicas de Educação e Cosmovisão Cristã
               </li>
               <li className="flex items-center gap-3 text-white/90 font-medium">
-                <Sparkles className="size-5 text-[rgb(var(--color-brand-mint))]" />
+                <Image src="/photos/3.png" alt="" width={24} height={24} className="size-6 flex-shrink-0 object-contain" />
                 Convites para Webnários Exclusivos
               </li>
             </ul>

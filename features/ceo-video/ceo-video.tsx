@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { Play, Pause } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -22,7 +23,15 @@ export function CeoVideo() {
   };
 
   return (
-    <Section className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-navy))] relative overflow-hidden">
+    <Section id="ceo" className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-navy))] relative overflow-hidden">
+      {/* Watermark W — canto inferior direito, fora dos limites do vídeo */}
+      <div
+        aria-hidden
+        className="absolute -bottom-16 -right-20 w-[420px] h-[420px] opacity-[0.09] pointer-events-none select-none rotate-[12deg] z-0"
+      >
+        <Image src="/photos/3.png" alt="" fill className="object-contain" sizes="380px" />
+      </div>
+
       <Container>
         <Reveal>
           <div className="text-center mb-12 max-w-3xl mx-auto">
