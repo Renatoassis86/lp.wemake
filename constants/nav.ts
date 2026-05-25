@@ -36,7 +36,7 @@ export const primaryNav: NavLink[] = [
   },
   {
     id: "reuniao",
-    label: "Reunião",
+    label: "Fale conosco",
     href: "#reuniao",
     description: "Agendar conversa estratégica.",
   },
