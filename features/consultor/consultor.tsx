@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { CalendarDays, Building2, User2, Mail, Phone, CheckCircle2, AlertCircle, MapPin, Clock } from "lucide-react";
+import { CalendarDays, Building2, User2, Mail, Phone, CheckCircle2, AlertCircle, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
@@ -153,28 +153,22 @@ export function Consultor() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="preferred_date" className="block text-xs font-medium text-gray-600 mb-1">Data preferida</label>
-                        <div className="relative">
-                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"><CalendarDays className="size-4" /></div>
-                          <input
-                            id="preferred_date"
-                            name="preferred_date"
-                            type="date"
-                            min={new Date().toISOString().split("T")[0]}
-                            className="w-full h-12 pl-9 pr-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white"
-                          />
-                        </div>
+                        <input
+                          id="preferred_date"
+                          name="preferred_date"
+                          type="date"
+                          min={new Date().toISOString().split("T")[0]}
+                          className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white text-gray-700"
+                        />
                       </div>
                       <div>
                         <label htmlFor="preferred_time" className="block text-xs font-medium text-gray-600 mb-1">Horário preferido</label>
-                        <div className="relative">
-                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"><Clock className="size-4" /></div>
-                          <input
-                            id="preferred_time"
-                            name="preferred_time"
-                            type="time"
-                            className="w-full h-12 pl-9 pr-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white"
-                          />
-                        </div>
+                        <input
+                          id="preferred_time"
+                          name="preferred_time"
+                          type="time"
+                          className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white text-gray-700"
+                        />
                       </div>
                     </div>
                     <p className="text-[0.6875rem] text-gray-500 mt-2">Confirmaremos a disponibilidade por e-mail/WhatsApp.</p>
