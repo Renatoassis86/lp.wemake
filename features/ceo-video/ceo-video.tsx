@@ -1,27 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
 import Image from "next/image";
-import { Play, Pause } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 
+const PANDA_VIDEO_SRC =
+  "https://player-vz-98c53a17-46f.tv.pandavideo.com.br/embed/?v=22fe98ff-c64f-4250-bc9a-b357abb976d2";
+
 export function CeoVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
     <Section id="ceo" className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[rgb(var(--color-brand-navy))] relative overflow-hidden">
       {/* Watermark W — canto inferior direito, escondido em mobile pra evitar scroll horizontal */}
@@ -48,31 +35,17 @@ export function CeoVideo() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div 
-            className="relative max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-video group cursor-pointer border border-white/10" 
-            onClick={togglePlay}
-          >
-            <video
-              ref={videoRef}
-              src="/videos/video1.mp4"
-              poster="/videos/thumbnail-manifesto.png"
-              className="w-full h-full object-cover"
-              controls={false}
-              playsInline
-              onEnded={() => setIsPlaying(false)}
-            />
-            
-            {/* Play/Pause Overlay */}
-            <div className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
-              <button 
-                className="w-20 h-20 bg-[rgb(var(--color-brand-mint))] rounded-full flex items-center justify-center text-[rgb(var(--color-brand-navy))] shadow-lg hover:scale-110 transition-transform"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  togglePlay();
-                }}
-              >
-                {isPlaying ? <Pause className="size-8" /> : <Play className="size-8 ml-1" />}
-              </button>
+          <div className="relative max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-black border border-white/10">
+            {/* Wrapper 16:9 com iframe Panda Video */}
+            <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+              <iframe
+                src={PANDA_VIDEO_SRC}
+                title="Dênis Júlio — Ciência e fé"
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full border-0"
+              />
             </div>
           </div>
         </Reveal>
