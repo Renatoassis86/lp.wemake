@@ -36,7 +36,21 @@ export async function POST(req: Request) {
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseKey) {
-    return NextResponse.json({ ok: false, error: "SupabaseNotConfigured" }, { status: 500 });
+    console.error("[lead] env missing", {
+      hasUrl: !!supabaseUrl,
+      hasKey: !!supabaseKey,
+      hasNextPublicUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+      hasNextPublicAnon: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      hasServiceRole: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+    });
+    return NextResponse.json({
+      ok: false,
+      error: "SupabaseNotConfigured",
+      missing: {
+        url: !supabaseUrl,
+        key: !supabaseKey,
+      },
+    }, { status: 500 });
   }
 
   const data = parsed.data as any;
