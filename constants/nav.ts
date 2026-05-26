@@ -41,6 +41,12 @@ export const primaryNav: NavLink[] = [
     description: "Agendar conversa estratégica.",
   },
   {
+    id: "maturidade-section",
+    label: "Diagnóstico",
+    href: "#maturidade-section",
+    description: "Avalie a maturidade tecnológica da sua escola em 8 blocos.",
+  },
+  {
     id: "ebook",
     label: "Ebook gratuito",
     href: "/diagnostico",

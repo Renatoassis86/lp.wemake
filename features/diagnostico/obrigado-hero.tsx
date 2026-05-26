@@ -31,7 +31,6 @@ export function ObrigadoHero({ nome, email }: { nome: string; email: string }) {
     cargo_qualificado: "",
     espaco_maker: "",
     tamanho_escola: "",
-    orcamento_2026: "",
   });
   const downloadLinkRef = useRef<HTMLAnchorElement>(null);
 
@@ -49,13 +48,12 @@ export function ObrigadoHero({ nome, email }: { nome: string; email: string }) {
   const isComplete =
     answers.cargo_qualificado &&
     answers.espaco_maker &&
-    answers.tamanho_escola &&
-    answers.orcamento_2026;
+    answers.tamanho_escola;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isComplete) {
-      setSubmitError("Responda as 4 perguntas para liberar o ebook.");
+      setSubmitError("Responda as 3 perguntas para liberar o ebook.");
       return;
     }
     if (!email) {
@@ -138,7 +136,6 @@ type QualAnswers = {
   cargo_qualificado: string;
   espaco_maker: string;
   tamanho_escola: string;
-  orcamento_2026: string;
 };
 
 function QualificationView({
@@ -179,7 +176,7 @@ function QualificationView({
             Seu e-book está chegando em poucos segundos{primeiroNome}...
           </h1>
           <p className="text-white/80 text-[1rem] sm:text-[1.125rem] leading-relaxed max-w-xl mx-auto">
-            Antes disso, <strong className="text-white">4 perguntas rápidas</strong> para
+            Antes disso, <strong className="text-white">3 perguntas rápidas</strong> para
             personalizar sua jornada com a We Make:
           </p>
         </div>
@@ -223,19 +220,6 @@ function QualificationView({
               { value: "pequena", label: "Pequena (< 200 alunos)" },
               { value: "media", label: "Média (200 — 500 alunos)" },
               { value: "grande", label: "Grande (500+ alunos)" },
-            ]}
-          />
-
-          <Pergunta
-            n={4}
-            label="Qual é seu orçamento para educação tecnológica em 2026?"
-            value={answers.orcamento_2026}
-            onChange={(v) => setAnswer("orcamento_2026", v)}
-            options={[
-              { value: "nao_definido", label: "Ainda não definiu" },
-              { value: "5_15k", label: "R$ 5 — 15 mil" },
-              { value: "15_50k", label: "R$ 15 — 50 mil" },
-              { value: "50k_mais", label: "R$ 50 mil ou mais" },
             ]}
           />
 

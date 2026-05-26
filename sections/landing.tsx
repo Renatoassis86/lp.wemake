@@ -35,6 +35,7 @@ import { Testimonials } from "@/features/testimonials/testimonials";
 import { FreeMaterial } from "@/features/free-material/free-material";
 import { VipGroup } from "@/features/vip-group/vip-group";
 import { Consultor } from "@/features/consultor/consultor";
+import { MaturidadeSection } from "@/features/diagnostico/maturidade-section";
 import dynamic from "next/dynamic";
 
 const FloatingWhatsapp = dynamic(
@@ -73,8 +74,13 @@ export function LandingPage() {
 
       {/* 6 ── CurriculumInfographic (branco/#f8fafc) */}
       <CurriculumInfographic />
-      {/* Curriculum branco → Testimonials navy | curva suave */}
-      <WaveDivider fromColor="#f8fafc" toColor="#0b1f44" variant={1} height={60} />
+      {/* Curriculum branco → Maturidade royal | curva suave */}
+      <WaveDivider fromColor="#f8fafc" toColor="#4c8ade" variant={1} height={60} />
+
+      {/* 6.5 ── Diagnóstico de Maturidade (inline: intro → wizard → resultado) */}
+      <MaturidadeSection />
+      {/* Maturidade → Testimonials navy | curva suave */}
+      <WaveDivider fromColor="#4c8ade" toColor="#0b1f44" variant={1} height={60} />
 
       {/* 7 ── Testimonials (navy #0b1f44) */}
       <Testimonials />

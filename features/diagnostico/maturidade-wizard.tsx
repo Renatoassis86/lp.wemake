@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useRef } from "react";
-import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
@@ -34,8 +33,7 @@ type Answers = Record<string, any>;
 
 const TOTAL_STEPS = BLOCKS.length + 1; // +1 = identificação
 
-export function MaturidadeWizard() {
-  const router = useRouter();
+export function MaturidadeWizard({ onComplete }: { onComplete?: (result: MaturidadeResult) => void }) {
   const [step, setStep] = useState(0); // 0 = identificação
   const [answers, setAnswers] = useState<Answers>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -270,19 +268,15 @@ export function MaturidadeWizard() {
         dimensions,
       };
 
-      // Persiste resultado completo para /obrigado-maturidade ler
+      // Persiste resultado completo (útil pra recuperar em refresh)
       try {
         sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(result));
       } catch {
-        // sessionStorage pode falhar em modo privado; query params funcionam como fallback
+        // ignore
       }
 
-      const params = new URLSearchParams({
-        nome: result.nome,
-        estagio: stage.slug,
-        score: String(globalScore),
-      });
-      router.push(`/obrigado-maturidade?${params.toString()}`);
+      // Em vez de redirecionar, entrega o resultado pro container renderizar inline
+      onComplete?.(result);
     } catch {
       setSubmitError("Falha de conexão. Verifique sua internet.");
       setIsSubmitting(false);

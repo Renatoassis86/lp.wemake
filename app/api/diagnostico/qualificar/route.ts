@@ -23,12 +23,6 @@ const TAMANHO_LABEL: Record<string, string> = {
   media: "Média (200-500 alunos)",
   grande: "Grande (500+ alunos)",
 };
-const ORCAMENTO_LABEL: Record<string, string> = {
-  nao_definido: "Ainda não definiu",
-  "5_15k": "R$ 5-15k",
-  "15_50k": "R$ 15-50k",
-  "50k_mais": "R$ 50k+",
-};
 
 /**
  * Etapa 2 da LP do ebook — qualificação na /obrigado.
@@ -64,7 +58,6 @@ export async function POST(req: Request) {
     cargo_qualificado: data.cargo_qualificado,
     espaco_maker: data.espaco_maker,
     tamanho_escola: data.tamanho_escola,
-    orcamento_2026: data.orcamento_2026,
     status: "lead_qualificado",
   };
 
@@ -114,7 +107,6 @@ async function sendQualifiedLeadEmail(data: ReturnType<typeof diagnosticoQualifi
     ["Cargo", CARGO_LABEL[data.cargo_qualificado] || data.cargo_qualificado],
     ["Espaço maker", ESPACO_LABEL[data.espaco_maker] || data.espaco_maker],
     ["Tamanho da escola", TAMANHO_LABEL[data.tamanho_escola] || data.tamanho_escola],
-    ["Orçamento 2026", ORCAMENTO_LABEL[data.orcamento_2026] || data.orcamento_2026],
     ["Qualificado em", new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })],
   ];
 

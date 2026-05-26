@@ -114,18 +114,16 @@ export const diagnosticoLeadSchema = z.object({
 
 export type DiagnosticoLeadInput = z.infer<typeof diagnosticoLeadSchema>;
 
-/** Etapa 2 da LP do ebook — qualificação na /obrigado (4 perguntas radio). */
+/** Etapa 2 da LP do ebook — qualificação na /obrigado (3 perguntas radio). */
 export const QUALIFICACAO_CARGO = ["gestor", "professor", "mantenedor", "outro"] as const;
 export const QUALIFICACAO_ESPACO = ["tem_funciona", "tem_melhorar", "planejando", "nao_tem"] as const;
 export const QUALIFICACAO_TAMANHO = ["pequena", "media", "grande"] as const;
-export const QUALIFICACAO_ORCAMENTO = ["nao_definido", "5_15k", "15_50k", "50k_mais"] as const;
 
 export const diagnosticoQualificacaoSchema = z.object({
   email: z.string().email("Email inválido."),
   cargo_qualificado: z.enum(QUALIFICACAO_CARGO, { message: "Selecione seu cargo." }),
   espaco_maker: z.enum(QUALIFICACAO_ESPACO, { message: "Selecione uma opção." }),
   tamanho_escola: z.enum(QUALIFICACAO_TAMANHO, { message: "Selecione o tamanho da escola." }),
-  orcamento_2026: z.enum(QUALIFICACAO_ORCAMENTO, { message: "Selecione uma faixa." }),
 });
 
 export type DiagnosticoQualificacaoInput = z.infer<typeof diagnosticoQualificacaoSchema>;

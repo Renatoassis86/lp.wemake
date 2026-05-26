@@ -15,7 +15,7 @@ const PHOTO_SRC = "/photos/formacao_docente.png";
  * orgânico à direita (mesmo padrão das outras seções do site — blob,
  * ícones flutuantes monocromáticos tech+fé, marca d'água sutil).
  */
-export function MaturidadeHero() {
+export function MaturidadeHero({ onStart }: { onStart?: () => void } = {}) {
   return (
     <Section
       bleed
@@ -88,13 +88,14 @@ export function MaturidadeHero() {
             </Reveal>
 
             <Reveal delay={0.3}>
-              <a
-                href="#maturidade-form"
+              <button
+                type="button"
+                onClick={onStart}
                 className="inline-flex items-center justify-center gap-3 h-14 px-7 sm:px-8 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight shadow-xl hover:-translate-y-0.5 transition-transform"
               >
                 Iniciar diagnóstico agora
                 <ArrowRight className="size-5" />
-              </a>
+              </button>
               <p className="mt-4 text-[0.8125rem] text-white/65 max-w-md">
                 Suas respostas são confidenciais e usadas apenas para gerar o diagnóstico.
               </p>

@@ -6,17 +6,19 @@ import { ObrigadoHero } from "@/features/diagnostico/obrigado-hero";
 export const metadata: Metadata = {
   title: "Seu e-book está chegando — We Make",
   description:
-    "Responda 4 perguntas rápidas para personalizar sua jornada e baixar o ebook 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã.",
+    "Responda 3 perguntas rápidas para personalizar sua jornada e baixar o ebook 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã.",
   robots: { index: false, follow: false },
 };
 
-export default function ObrigadoPage({
+// Next 16: searchParams é Promise — precisa de await
+export default async function ObrigadoPage({
   searchParams,
 }: {
-  searchParams: { nome?: string; email?: string };
+  searchParams: Promise<{ nome?: string; email?: string }>;
 }) {
-  const nome = (searchParams?.nome || "").trim();
-  const email = (searchParams?.email || "").trim();
+  const { nome: rawNome, email: rawEmail } = await searchParams;
+  const nome = (rawNome || "").trim();
+  const email = (rawEmail || "").trim();
   return (
     <>
       <LpHeader />
