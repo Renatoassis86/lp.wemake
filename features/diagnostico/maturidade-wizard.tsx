@@ -19,7 +19,9 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { BLOCKS, type Question } from "@/features/diagnostico/maturidade/blocks-config";
 import { ROLES_LABEL } from "@/lib/validation";
-import { calcStageFromScales } from "@/lib/maturidade-stages";
+import { calcStageFromScales, calcDimensions, type MaturidadeResult } from "@/lib/maturidade-stages";
+
+const RESULT_STORAGE_KEY = "wemake:maturidade:result";
 
 /**
  * Wizard gamificado de Diagnóstico de Maturidade.
@@ -246,21 +248,39 @@ export function MaturidadeWizard() {
         setIsSubmitting(false);
         return;
       }
-      // Calcula estágio de maturidade a partir das escalas Likert (1-5)
+      // Calcula resultado completo: estágio global + breakdown por dimensão
+      const scaleAnswers: Record<string, number> = {};
       const scaleValues: number[] = [];
       BLOCKS.forEach((b) => {
         b.questions.forEach((q) => {
           if (q.tipo === "scale" && typeof answers[q.id] === "number") {
+            scaleAnswers[q.id] = answers[q.id];
             scaleValues.push(answers[q.id]);
           }
         });
       });
-      const { stage, score } = calcStageFromScales(scaleValues);
+
+      const { stage, score: globalScore } = calcStageFromScales(scaleValues);
+      const dimensions = calcDimensions(scaleAnswers);
+
+      const result: MaturidadeResult = {
+        nome: (answers.nome_respondente || "").split(" ")[0] || "",
+        globalScore,
+        stageSlug: stage.slug,
+        dimensions,
+      };
+
+      // Persiste resultado completo para /obrigado-maturidade ler
+      try {
+        sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(result));
+      } catch {
+        // sessionStorage pode falhar em modo privado; query params funcionam como fallback
+      }
 
       const params = new URLSearchParams({
-        nome: (answers.nome_respondente || "").split(" ")[0],
+        nome: result.nome,
         estagio: stage.slug,
-        score: String(score),
+        score: String(globalScore),
       });
       router.push(`/obrigado-maturidade?${params.toString()}`);
     } catch {

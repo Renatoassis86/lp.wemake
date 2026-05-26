@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   CheckCircle2,
@@ -19,7 +20,10 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
-import type { Stage } from "@/lib/maturidade-stages";
+import type { Stage, MaturidadeResult, DimensionResult } from "@/lib/maturidade-stages";
+import { DimensionsBreakdown } from "@/features/diagnostico/dimensions-breakdown";
+
+const RESULT_STORAGE_KEY = "wemake:maturidade:result";
 
 const STAGE_ICONS = {
   1: Compass, // descoberta
@@ -43,6 +47,21 @@ export function ObrigadoMaturidadeHero({
   score: number;
 }) {
   const primeiroNome = nome ? `, ${nome}` : "";
+  const [dimensions, setDimensions] = useState<DimensionResult[] | null>(null);
+
+  // Lê o resultado completo do sessionStorage (gravado pelo wizard)
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem(RESULT_STORAGE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw) as MaturidadeResult;
+      if (Array.isArray(parsed.dimensions) && parsed.dimensions.length > 0) {
+        setDimensions(parsed.dimensions);
+      }
+    } catch {
+      // Ignora — query params já cobrem os dados essenciais
+    }
+  }, []);
 
   return (
     <Section
@@ -84,6 +103,15 @@ export function ObrigadoMaturidadeHero({
         {stage && (
           <Reveal delay={0.1}>
             <StageCard stage={stage} score={score} />
+          </Reveal>
+        )}
+
+        {/* BREAKDOWN POR DIMENSÃO — análise detalhada */}
+        {dimensions && (
+          <Reveal delay={0.15}>
+            <div className="mt-10 sm:mt-12">
+              <DimensionsBreakdown dimensions={dimensions} />
+            </div>
           </Reveal>
         )}
 

@@ -162,3 +162,178 @@ export function getStageBySlug(slug?: string | null): Stage | null {
   if (!slug) return null;
   return Object.values(STAGES).find((s) => s.slug === slug) || null;
 }
+
+/* ────────────────────────────────────────────────
+   MODELAGEM DIMENSIONAL — fiel ao checklist do ebook
+   "7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã"
+──────────────────────────────────────────────── */
+
+export type DimensionKey =
+  | "visao_cosmovisao"
+  | "carater_discernimento"
+  | "curriculo_progressao"
+  | "pratica_maker"
+  | "gestao_estrutura";
+
+export type Dimension = {
+  key: DimensionKey;
+  number: 1 | 2 | 3 | 4 | 5;
+  name: string;
+  shortName: string;
+  description: string;
+  /** IDs das perguntas tipo "scale" que compõem esta dimensão */
+  questionIds: string[];
+};
+
+export const DIMENSIONS: Record<DimensionKey, Dimension> = {
+  visao_cosmovisao: {
+    key: "visao_cosmovisao",
+    number: 1,
+    name: "Visão e cosmovisão cristã",
+    shortName: "Visão",
+    description:
+      "Mostra se a escola sabe por que ensina tecnologia e como essa prática se conecta à sua missão cristã.",
+    questionIds: ["visao_1", "visao_2", "visao_3", "visao_4", "cosmovisao_1"],
+  },
+  carater_discernimento: {
+    key: "carater_discernimento",
+    number: 2,
+    name: "Formação do caráter e discernimento",
+    shortName: "Caráter",
+    description:
+      "Revela se as aulas estão formando apenas habilidades técnicas ou também virtudes — prudência, responsabilidade, domínio próprio, honestidade, colaboração e serviço.",
+    questionIds: ["cosmovisao_2", "cosmovisao_3", "cosmovisao_4", "cosmovisao_5", "cosmovisao_6"],
+  },
+  curriculo_progressao: {
+    key: "curriculo_progressao",
+    number: 3,
+    name: "Currículo e progressão",
+    shortName: "Currículo",
+    description:
+      "Mostra se existe um caminho claro, progressivo e coerente para ensinar tecnologia ao longo dos anos escolares.",
+    questionIds: ["curriculo_1", "curriculo_2", "curriculo_3", "curriculo_4", "curriculo_5"],
+  },
+  pratica_maker: {
+    key: "pratica_maker",
+    number: 4,
+    name: "Prática pedagógica e cultura maker",
+    shortName: "Prática",
+    description:
+      "Avalia se os alunos são convidados a criar, testar, errar, melhorar e compartilhar soluções, ou se a tecnologia aparece apenas como consumo ou entretenimento.",
+    questionIds: ["visao_5", "professor_4", "infra_1", "infra_3"],
+  },
+  gestao_estrutura: {
+    key: "gestao_estrutura",
+    number: 5,
+    name: "Gestão, professores e estrutura",
+    shortName: "Gestão",
+    description:
+      "Mostra se a proposta tem sustentação institucional: professores formados, coordenação acompanhando, recursos adequados e liderança com clareza de prioridades.",
+    questionIds: [
+      "professor_1",
+      "professor_2",
+      "professor_3",
+      "professor_5",
+      "professor_6",
+      "infra_2",
+      "infra_4",
+      "infra_5",
+    ],
+  },
+};
+
+export type DimensionLevel = {
+  /** 1 (frágil) → 4 (bem desenvolvida) */
+  rank: 1 | 2 | 3 | 4;
+  label: string;
+  /** Cor de destaque na UI */
+  color: "orange" | "sky" | "royal" | "mint";
+  /** Descrição interpretativa do nível */
+  blurb: string;
+};
+
+const LEVELS: DimensionLevel[] = [
+  {
+    rank: 1,
+    label: "Frágil",
+    color: "orange",
+    blurb: "Esta dimensão ainda está pouco desenvolvida. É uma oportunidade clara de crescimento.",
+  },
+  {
+    rank: 2,
+    label: "Inicial",
+    color: "sky",
+    blurb: "Há sinais de movimento, mas a dimensão ainda precisa de estruturação mais firme.",
+  },
+  {
+    rank: 3,
+    label: "Estruturação",
+    color: "royal",
+    blurb: "A dimensão já tem boa base — agora é momento de refinar e aprofundar.",
+  },
+  {
+    rank: 4,
+    label: "Bem desenvolvida",
+    color: "mint",
+    blurb: "Dimensão sólida e madura. Esta é uma força da sua escola para sustentar as outras.",
+  },
+];
+
+export type DimensionResult = {
+  dimension: Dimension;
+  score: number; // 0..100
+  answered: number; // quantas perguntas dessa dim foram respondidas
+  total: number; // total de perguntas da dim
+  level: DimensionLevel;
+};
+
+/**
+ * Recebe um Map de respostas (id da pergunta → valor 1-5 da escala)
+ * e retorna um array com o resultado por dimensão (sempre 5 itens em ordem).
+ */
+export function calcDimensions(answers: Record<string, number | undefined>): DimensionResult[] {
+  const order: DimensionKey[] = [
+    "visao_cosmovisao",
+    "carater_discernimento",
+    "curriculo_progressao",
+    "pratica_maker",
+    "gestao_estrutura",
+  ];
+
+  return order.map((key) => {
+    const dim = DIMENSIONS[key];
+    const values = dim.questionIds
+      .map((qid) => answers[qid])
+      .filter((v): v is number => typeof v === "number" && v >= 1 && v <= 5);
+
+    const score = values.length === 0
+      ? 0
+      : Math.round(((values.reduce((a, b) => a + b, 0) / values.length) - 1) / 4 * 100);
+
+    return {
+      dimension: dim,
+      score,
+      answered: values.length,
+      total: dim.questionIds.length,
+      level: levelForScore(score),
+    };
+  });
+}
+
+export function levelForScore(score: number): DimensionLevel {
+  if (score >= 76) return LEVELS[3]!; // Bem desenvolvida
+  if (score >= 51) return LEVELS[2]!; // Estruturação
+  if (score >= 26) return LEVELS[1]!; // Inicial
+  return LEVELS[0]!; // Frágil
+}
+
+/**
+ * Resultado final completo do diagnóstico — usado para persistir entre
+ * a submissão do wizard e a tela /obrigado-maturidade.
+ */
+export type MaturidadeResult = {
+  nome: string;
+  globalScore: number;
+  stageSlug: string;
+  dimensions: DimensionResult[];
+};
