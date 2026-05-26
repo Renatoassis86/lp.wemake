@@ -88,7 +88,7 @@ export function DiagnosticoHero() {
             <Reveal>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[rgb(var(--color-brand-mint))]/20 text-[rgb(var(--color-brand-mint))] font-bold text-[0.75rem] mb-5 border border-[rgb(var(--color-brand-mint))]/30">
                 <Sparkles className="size-3.5" />
-                EBOOK GRATUITO PARA LIDERANÇAS ESCOLARES
+                EBOOK GRATUITO PARA EDUCADORES E LIDERANÇAS
               </div>
             </Reveal>
 
@@ -104,8 +104,8 @@ export function DiagnosticoHero() {
 
             <Reveal delay={0.15}>
               <p className="text-white/85 text-[0.9375rem] sm:text-[1rem] leading-relaxed mb-8 max-w-xl">
-                Material exclusivo para diretores, mantenedores e coordenadores avaliarem a
-                maturidade tecnológica da sua escola.
+                Material exclusivo para diretores, mantenedores, coordenadores e professores
+                avaliarem a maturidade tecnológica da sua escola.
               </p>
             </Reveal>
 

@@ -9,7 +9,7 @@ import { DiagnosticoAutor } from "@/features/diagnostico/diagnostico-autor";
 export const metadata: Metadata = {
   title: "7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã — Ebook gratuito",
   description:
-    "Material exclusivo para diretores, mantenedores e coordenadores pedagógicos avaliarem a maturidade tecnológica da sua escola.",
+    "Material exclusivo para diretores, mantenedores, coordenadores e professores avaliarem a maturidade tecnológica da sua escola.",
   openGraph: {
     title: "Ebook gratuito — 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã",
     description:
