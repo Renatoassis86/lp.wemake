@@ -3,9 +3,9 @@ import { Nav } from "@/features/navigation/nav";
 import { Footer } from "@/features/footer/footer";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { DiagnosticoHero } from "@/features/diagnostico/diagnostico-hero";
+import { DiagnosticoLeadForm } from "@/features/diagnostico/diagnostico-lead-form";
 import { DiagnosticoTemas } from "@/features/diagnostico/diagnostico-temas";
 import { DiagnosticoAutor } from "@/features/diagnostico/diagnostico-autor";
-import { DiagnosticoLeadForm } from "@/features/diagnostico/diagnostico-lead-form";
 
 export const metadata: Metadata = {
   title: "Diagnóstico de Maturidade Tecnológica + Ebook gratuito — We Make",
@@ -25,16 +25,16 @@ export default function DiagnosticoPage() {
       <Nav />
       <main className="relative">
         <DiagnosticoHero />
-        <WaveDivider fromColor="#4c8ade" toColor="#ffffff" variant={1} height={70} />
-
-        <DiagnosticoTemas />
-        <WaveDivider fromColor="#ffffff" toColor="#0b1f44" variant={1} height={70} />
-
-        <DiagnosticoAutor />
-        <WaveDivider fromColor="#0b1f44" toColor="#2a69ba" variant={1} height={60} />
+        <WaveDivider fromColor="#4c8ade" toColor="#2a69ba" variant={1} height={50} />
 
         <DiagnosticoLeadForm />
-        <WaveDivider fromColor="#2a69ba" toColor="#0b1f44" variant={1} height={60} />
+        <WaveDivider fromColor="#2a69ba" toColor="#ffffff" variant={1} height={60} />
+
+        <DiagnosticoTemas />
+        <WaveDivider fromColor="#ffffff" toColor="#0b1f44" variant={1} height={60} />
+
+        <DiagnosticoAutor />
+        <WaveDivider fromColor="#0b1f44" toColor="#0b1f44" variant={1} height={40} />
       </main>
       <Footer />
     </>
