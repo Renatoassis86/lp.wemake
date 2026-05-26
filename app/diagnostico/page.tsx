@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Nav } from "@/features/navigation/nav";
-import { Footer } from "@/features/footer/footer";
 import { WaveDivider } from "@/components/ui/wave-divider";
+import { LpHeader } from "@/features/diagnostico/lp-header";
+import { LpFooter } from "@/features/diagnostico/lp-footer";
 import { DiagnosticoHero } from "@/features/diagnostico/diagnostico-hero";
 import { DiagnosticoLeadForm } from "@/features/diagnostico/diagnostico-lead-form";
 import { DiagnosticoTemas } from "@/features/diagnostico/diagnostico-temas";
 import { DiagnosticoAutor } from "@/features/diagnostico/diagnostico-autor";
 
 export const metadata: Metadata = {
-  title: "Diagnóstico de Maturidade Tecnológica + Ebook gratuito — We Make",
+  title: "7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã — Ebook gratuito",
   description:
-    "Responda nosso diagnóstico exclusivo e receba o ebook '7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã'. Para diretores, coordenadores e mantenedores de escolas confessionais.",
+    "Material exclusivo para diretores, mantenedores e coordenadores pedagógicos avaliarem a maturidade tecnológica da sua escola.",
   openGraph: {
-    title: "Diagnóstico + Ebook gratuito — We Make",
+    title: "Ebook gratuito — 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã",
     description:
-      "Avalie a maturidade tecnológica da sua escola e receba o ebook gratuito da We Make.",
+      "Receba gratuitamente o ebook da We Make e descubra como ensinar tecnologia com propósito.",
     type: "website",
   },
 };
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function DiagnosticoPage() {
   return (
     <>
-      <Nav />
+      <LpHeader />
       <main className="relative">
         <DiagnosticoHero />
         <WaveDivider fromColor="#4c8ade" toColor="#2a69ba" variant={1} height={50} />
@@ -34,9 +34,8 @@ export default function DiagnosticoPage() {
         <WaveDivider fromColor="#ffffff" toColor="#0b1f44" variant={1} height={60} />
 
         <DiagnosticoAutor />
-        <WaveDivider fromColor="#0b1f44" toColor="#0b1f44" variant={1} height={40} />
       </main>
-      <Footer />
+      <LpFooter />
     </>
   );
 }

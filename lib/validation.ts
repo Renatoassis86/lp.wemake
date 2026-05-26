@@ -119,6 +119,42 @@ export const diagnosticoLeadSchema = z.object({
 
 export type DiagnosticoLeadInput = z.infer<typeof diagnosticoLeadSchema>;
 
+/* ────────────────────────────────────────────
+   Diagnóstico de Maturidade — Wizard gamificado completo (8 blocos)
+──────────────────────────────────────────── */
+
+/** Resposta individual: o cliente envia um array dessas. */
+export const respostaSchema = z.object({
+  bloco: z.number().int().min(2).max(8),
+  pergunta_id: z.string().min(1).max(80),
+  tipo: z.enum(["radio", "checkbox", "scale", "text"]),
+  valor_texto: z.string().max(2000).optional().nullable(),
+  valor_escala: z.number().int().min(1).max(5).optional().nullable(),
+  valor_opcoes: z.array(z.string().max(120)).max(50).optional().nullable(),
+});
+
+/** Submit final do wizard: bloco 1 (identificação) + array de respostas dos blocos 2-8. */
+export const diagnosticoMaturidadeSchema = z.object({
+  // Bloco 1 — Identificação
+  nome_escola: z.string().min(2).max(160),
+  cidade: z.string().min(2).max(80),
+  uf: z.string().min(2).max(2).optional(),
+  nome_respondente: z.string().min(2).max(120),
+  email: z.string().email(),
+  whatsapp: z.string().min(10).max(20).regex(/^[\d\s()+\-]+$/),
+  funcao: z.enum(["mantenedor", "diretor", "coordenador", "professor", "outro"]),
+  segmentos: z.array(z.enum(["infantil", "fund1", "fund2", "medio"])).min(1, "Selecione pelo menos um segmento."),
+  num_alunos: z.number().int().min(0).max(100000).optional().nullable(),
+  eh_confessional: z.enum(["sim", "nao"]).optional(),
+  tradicao_confessional: z.string().max(120).optional().nullable(),
+  consent: z.boolean().refine((v) => v === true, "É preciso consentir o tratamento de dados."),
+
+  // Respostas dos blocos 2-8
+  respostas: z.array(respostaSchema).min(1).max(120),
+});
+
+export type DiagnosticoMaturidadeInput = z.infer<typeof diagnosticoMaturidadeSchema>;
+
 export const ROLES_LABEL: Record<ContactInput["role"], string> = {
   mantenedor: "Mantenedor(a)",
   gestor: "Gestor(a)",

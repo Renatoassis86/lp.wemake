@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Nav } from "@/features/navigation/nav";
-import { Footer } from "@/features/footer/footer";
+import { LpHeader } from "@/features/diagnostico/lp-header";
+import { LpFooter } from "@/features/diagnostico/lp-footer";
 import { ObrigadoHero } from "@/features/diagnostico/obrigado-hero";
 
 export const metadata: Metadata = {
   title: "Material liberado! — We Make",
-  description: "Seu ebook está disponível para download. Próximos passos: diagnóstico, comunidade VIP e conversa com nosso time.",
-  robots: { index: false, follow: false }, // não indexar a página de agradecimento
+  description:
+    "Seu ebook está disponível para download. Próximos passos: diagnóstico, comunidade VIP e conversa com nosso time.",
+  robots: { index: false, follow: false },
 };
 
 export default function ObrigadoPage({
@@ -17,11 +18,11 @@ export default function ObrigadoPage({
   const nome = (searchParams?.nome || "").trim();
   return (
     <>
-      <Nav />
+      <LpHeader />
       <main className="relative">
         <ObrigadoHero nome={nome} />
       </main>
-      <Footer />
+      <LpFooter />
     </>
   );
 }
