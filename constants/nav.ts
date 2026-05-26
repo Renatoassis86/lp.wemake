@@ -41,10 +41,16 @@ export const primaryNav: NavLink[] = [
     description: "Agendar conversa estratégica.",
   },
   {
-    id: "diagnostico",
-    label: "Download Ebook",
+    id: "ebook",
+    label: "Ebook gratuito",
     href: "/diagnostico",
-    description: "Diagnóstico de maturidade tecnológica + ebook gratuito.",
+    description: "Baixe o ebook 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã.",
+  },
+  {
+    id: "diagnostico-maturidade",
+    label: "Diagnóstico",
+    href: "/diagnostico/maturidade",
+    description: "Avalie a maturidade tecnológica da sua escola em 8 blocos.",
   },
 ];
 
