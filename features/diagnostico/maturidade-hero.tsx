@@ -40,7 +40,7 @@ export function MaturidadeHero({ onStart }: { onStart?: () => void } = {}) {
             <Reveal>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[rgb(var(--color-brand-mint))]/20 text-[rgb(var(--color-brand-mint))] font-bold text-[0.75rem] mb-5 border border-[rgb(var(--color-brand-mint))]/30">
                 <BarChart3 className="size-3.5" />
-                DIAGNÓSTICO GRATUITO · 8 BLOCOS
+                DIAGNÓSTICO GRATUITO
               </div>
             </Reveal>
 

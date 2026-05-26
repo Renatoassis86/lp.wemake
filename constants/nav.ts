@@ -35,12 +35,6 @@ export const primaryNav: NavLink[] = [
     description: "Trilha contínua de aprendizagem: Maker, Programação, Robótica e Pensamento Computacional.",
   },
   {
-    id: "reuniao",
-    label: "Fale conosco",
-    href: "#reuniao",
-    description: "Agendar conversa estratégica.",
-  },
-  {
     id: "maturidade-section",
     label: "Diagnóstico",
     href: "#maturidade-section",
@@ -51,6 +45,12 @@ export const primaryNav: NavLink[] = [
     label: "Ebook gratuito",
     href: "/diagnostico",
     description: "Baixe o ebook 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã.",
+  },
+  {
+    id: "reuniao",
+    label: "Fale conosco",
+    href: "#reuniao",
+    description: "Agendar conversa estratégica.",
   },
 ];
 
