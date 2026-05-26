@@ -40,6 +40,12 @@ export const primaryNav: NavLink[] = [
     href: "#reuniao",
     description: "Agendar conversa estratégica.",
   },
+  {
+    id: "diagnostico",
+    label: "Download Ebook",
+    href: "/diagnostico",
+    description: "Diagnóstico de maturidade tecnológica + ebook gratuito.",
+  },
 ];
 
 export const footerNav = {
