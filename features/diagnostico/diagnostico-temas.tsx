@@ -4,17 +4,18 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 
 const temas = [
-  "Por que ensinar tecnologia a partir da cosmovisão cristã",
-  "Discernimento sobre o uso de telas em casa e na escola",
-  "Formação docente para professores em escolas confessionais",
-  "Currículo estruturado por progressão e faixa etária",
-  "Virtudes formadas pela prática técnica (prudência, responsabilidade, colaboração)",
-  "Ciberética e formação humana na era digital",
-  "Checklist prático de diagnóstico para a liderança escolar",
+  "A pergunta que a escola cristã precisa responder sobre tecnologia",
+  "Os 3 sinais de alerta de uma educação tecnológica sem formação",
+  "O filtro bíblico (Criação · Queda · Redenção · Restauração) para pensar tecnologia",
+  "Os 7 Princípios para uma educação tecnológica fundamentada na cosmovisão cristã",
+  "Como formar virtudes — prudência, domínio próprio, colaboração — através da técnica",
+  "Por que criar é mais formativo que consumir e como mudar a postura dos alunos",
+  "Checklist de 5 dimensões para diagnosticar a maturidade da sua escola",
 ];
 
 /**
- * Lista de temas do ebook — estilo Poliedro adaptado:
+ * Lista de temas do ebook — conteúdo fiel ao PDF
+ * "7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã".
  * 2 colunas com bullets de check, fundo branco limpo, identidade mint.
  */
 export function DiagnosticoTemas() {
@@ -30,8 +31,9 @@ export function DiagnosticoTemas() {
               O que você vai encontrar neste material
             </h2>
             <p className="text-[rgb(var(--color-brand-navy))]/70 text-[1.0625rem] leading-relaxed">
-              7 capítulos práticos para apoiar diretores, coordenadores e professores em
-              decisões pedagógicas com clareza e propósito.
+              Um guia bíblico-pedagógico para a liderança da sua escola formar alunos
+              sábios diante de um mundo profundamente tecnológico — sem cair no medo nem
+              na fascinação acrítica pela inovação.
             </p>
           </Reveal>
         </div>
