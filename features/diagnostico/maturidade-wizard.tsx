@@ -51,10 +51,65 @@ export function MaturidadeWizard() {
     window.scrollTo({ top: targetY, behavior: "smooth" });
   };
 
-  // Progresso 0–100
+  // IDs dos campos OBRIGATÓRIOS da identificação (contam pro percentual)
+  const ID_REQUIRED_FIELDS = useMemo(
+    () => ["nome_escola", "cidade", "nome_respondente", "email", "whatsapp", "funcao", "segmentos", "consent"],
+    [],
+  );
+
+  // Total de perguntas no diagnóstico (identificação + todos os blocos 2-8)
+  const totalQuestions = useMemo(() => {
+    const blocksCount = BLOCKS.reduce((sum, b) => sum + b.questions.length, 0);
+    return ID_REQUIRED_FIELDS.length + blocksCount;
+  }, [ID_REQUIRED_FIELDS]);
+
+  // Quantas perguntas o usuário JÁ respondeu (real, não por etapa)
+  const answeredCount = useMemo(() => {
+    const isAnswered = (id: string, v: any, tipo?: "scale" | "checkbox" | "radio" | "text" | "consent" | "list" | "any"): boolean => {
+      if (v === undefined || v === null) return false;
+      if (tipo === "consent") return v === true;
+      if (tipo === "list" || Array.isArray(v)) return Array.isArray(v) && v.length > 0;
+      if (typeof v === "number") return !Number.isNaN(v);
+      if (typeof v === "boolean") return v === true;
+      if (typeof v === "string") return v.trim() !== "";
+      return Boolean(v);
+    };
+
+    // Identificação
+    let n = 0;
+    ID_REQUIRED_FIELDS.forEach((id) => {
+      const v = answers[id];
+      if (id === "consent") {
+        if (v === true) n++;
+      } else if (id === "segmentos") {
+        if (Array.isArray(v) && v.length > 0) n++;
+      } else if (isAnswered(id, v)) {
+        n++;
+      }
+    });
+
+    // Blocos 2-8
+    BLOCKS.forEach((block) => {
+      block.questions.forEach((q) => {
+        const v = answers[q.id];
+        if (q.tipo === "checkbox") {
+          if (Array.isArray(v) && v.length > 0) n++;
+        } else if (q.tipo === "scale") {
+          if (typeof v === "number" && v >= 1 && v <= 5) n++;
+        } else {
+          if (typeof v === "string" ? v.trim() !== "" : !!v) n++;
+        }
+      });
+    });
+
+    return n;
+  }, [answers, ID_REQUIRED_FIELDS]);
+
+  // Percentual real: 0% no início, cresce conforme responde
   const progress = useMemo(() => {
-    return Math.round(((step + 1) / TOTAL_STEPS) * 100);
-  }, [step]);
+    if (totalQuestions === 0) return 0;
+    return Math.round((answeredCount / totalQuestions) * 100);
+  }, [answeredCount, totalQuestions]);
 
   // Atualiza uma resposta
   const setAnswer = (id: string, value: any) => {
@@ -229,7 +284,13 @@ export function MaturidadeWizard() {
         <div className="max-w-3xl mx-auto" ref={wizardTopRef}>
 
           {/* Progress bar sticky */}
-          <ProgressBar step={step} total={TOTAL_STEPS} progress={progress} />
+          <ProgressBar
+            step={step}
+            total={TOTAL_STEPS}
+            progress={progress}
+            answered={answeredCount}
+            totalQuestions={totalQuestions}
+          />
 
           {/* Card do passo */}
           <AnimatePresence mode="wait">
@@ -304,24 +365,43 @@ export function MaturidadeWizard() {
   );
 }
 
-/* ─── Progress bar ─── */
-function ProgressBar({ step, total, progress }: { step: number; total: number; progress: number }) {
+/* ─── Progress bar — percentual real baseado em perguntas respondidas ─── */
+function ProgressBar({
+  step,
+  total,
+  progress,
+  answered,
+  totalQuestions,
+}: {
+  step: number;
+  total: number;
+  progress: number;
+  answered: number;
+  totalQuestions: number;
+}) {
   const blockLabel = step === 0 ? "Identificação" : BLOCKS[step - 1]?.titulo || "";
   const stepLabel = `Etapa ${step + 1} de ${total}`;
 
   return (
     <div className="mb-6">
-      <div className="flex items-baseline justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-[rgb(var(--color-brand-mint))]/90 font-bold">
+      <div className="flex items-baseline justify-between mb-2 gap-3">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-[rgb(var(--color-brand-mint))]/90 font-bold whitespace-nowrap">
             {stepLabel}
           </span>
           <span className="text-white/40 text-[0.75rem]">·</span>
-          <span className="text-white/85 text-[0.8125rem] sm:text-sm font-semibold truncate max-w-[220px] sm:max-w-none">
+          <span className="text-white/85 text-[0.8125rem] sm:text-sm font-semibold truncate">
             {blockLabel}
           </span>
         </div>
-        <span className="text-[rgb(var(--color-brand-mint))] text-[0.875rem] font-bold">{progress}%</span>
+        <div className="flex items-baseline gap-2 shrink-0">
+          <span className="text-white/55 text-[0.75rem] hidden sm:inline">
+            {answered}/{totalQuestions}
+          </span>
+          <span className="text-[rgb(var(--color-brand-mint))] text-[0.875rem] font-bold tabular-nums">
+            {progress}%
+          </span>
+        </div>
       </div>
       <div className="h-2 bg-white/10 rounded-full overflow-hidden">
         <motion.div
