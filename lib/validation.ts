@@ -78,6 +78,47 @@ export const leadShortSchema = contactSchema
 
 export type LeadShortInput = z.infer<typeof leadShortSchema>;
 
+/* ────────────────────────────────────────────
+   Diagnóstico — Form curto da LP /diagnostico
+   8 campos + LGPD consent. Lead chega na tabela diagnostico_escola.
+──────────────────────────────────────────── */
+
+export const PERFIL_ESCOLA = [
+  "privada",
+  "publica",
+  "terceiro_setor",
+  "outro",
+] as const;
+
+export const PERFIL_ESCOLA_LABEL: Record<typeof PERFIL_ESCOLA[number], string> = {
+  privada: "Privada",
+  publica: "Pública",
+  terceiro_setor: "Terceiro setor",
+  outro: "Outro",
+};
+
+export const diagnosticoLeadSchema = z.object({
+  nome: z.string().min(2, "Informe seu nome.").max(120),
+  email: z.string().email("Email inválido."),
+  telefone: z
+    .string()
+    .min(10, "Informe um telefone válido com DDD.")
+    .max(20)
+    .regex(/^[\d\s()+\-]+$/, "Use apenas números e símbolos de telefone."),
+  cargo: z.enum(["mantenedor", "gestor", "diretor", "coordenador", "professor", "outro"], {
+    message: "Selecione seu cargo.",
+  }),
+  nome_escola: z.string().min(2, "Informe o nome da escola.").max(160),
+  perfil_escola: z.enum(PERFIL_ESCOLA, { message: "Selecione o perfil da escola." }),
+  cidade: z.string().min(2, "Informe a cidade.").max(80),
+  ja_conversou_especialista: z.boolean(),
+  consent: z
+    .boolean()
+    .refine((v) => v === true, "É preciso consentir o tratamento de dados."),
+});
+
+export type DiagnosticoLeadInput = z.infer<typeof diagnosticoLeadSchema>;
+
 export const ROLES_LABEL: Record<ContactInput["role"], string> = {
   mantenedor: "Mantenedor(a)",
   gestor: "Gestor(a)",

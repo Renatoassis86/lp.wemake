@@ -5,7 +5,7 @@ import { WaveDivider } from "@/components/ui/wave-divider";
 import { DiagnosticoHero } from "@/features/diagnostico/diagnostico-hero";
 import { DiagnosticoTemas } from "@/features/diagnostico/diagnostico-temas";
 import { DiagnosticoAutor } from "@/features/diagnostico/diagnostico-autor";
-import { DiagnosticoWizard } from "@/features/diagnostico/diagnostico-wizard";
+import { DiagnosticoLeadForm } from "@/features/diagnostico/diagnostico-lead-form";
 
 export const metadata: Metadata = {
   title: "Diagnóstico de Maturidade Tecnológica + Ebook gratuito — We Make",
@@ -33,7 +33,7 @@ export default function DiagnosticoPage() {
         <DiagnosticoAutor />
         <WaveDivider fromColor="#0b1f44" toColor="#2a69ba" variant={1} height={60} />
 
-        <DiagnosticoWizard />
+        <DiagnosticoLeadForm />
         <WaveDivider fromColor="#2a69ba" toColor="#0b1f44" variant={1} height={60} />
       </main>
       <Footer />
