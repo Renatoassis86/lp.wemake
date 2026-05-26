@@ -5,6 +5,7 @@ import { CheckCircle2, Download, MessageCircle, Sparkles, CalendarDays, ArrowRig
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
+import { EBOOK_ISCA_PDF, EBOOK_ISCA_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
 
 /**
  * Pagina de obrigado da LP /diagnostico.
@@ -52,8 +53,8 @@ export function ObrigadoHero({ nome }: { nome: string }) {
         <Reveal delay={0.1}>
           <div className="max-w-2xl mx-auto mb-10">
             <a
-              href="/downloads/E_book 2026_camp.pdf"
-              download="7-Principios-WeMake.pdf"
+              href={EBOOK_ISCA_PDF}
+              download={EBOOK_ISCA_FILENAME}
               target="_blank"
               rel="noreferrer"
               className="group flex items-center justify-between gap-4 p-6 sm:p-7 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold shadow-2xl hover:shadow-[0_16px_48px_-12px_rgba(118,243,205,0.6)] hover:-translate-y-0.5 transition-all"
@@ -72,6 +73,41 @@ export function ObrigadoHero({ nome }: { nome: string }) {
                 </div>
               </div>
               <ArrowRight className="size-5 sm:size-6 shrink-0 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </Reveal>
+
+        {/* Faixa VIP WhatsApp — destaque imediato após download */}
+        <Reveal delay={0.18}>
+          <div className="max-w-2xl mx-auto mb-12 -mt-2">
+            <a
+              href={WHATSAPP_VIP_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative flex items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/15 to-[#25D366]/5 border-2 border-[#25D366]/40 hover:border-[#25D366]/70 hover:-translate-y-0.5 transition-all backdrop-blur-sm shadow-lg"
+            >
+              {/* Glow pulsante atrás */}
+              <div aria-hidden className="absolute inset-0 bg-[#25D366]/15 blur-2xl rounded-2xl animate-pulse pointer-events-none -z-10" />
+
+              <div className="flex items-center gap-4 flex-1 min-w-0">
+                <div className="size-12 sm:size-14 rounded-xl bg-[#25D366] flex items-center justify-center shrink-0 shadow-md">
+                  <MessageCircle className="size-6 sm:size-7 text-white" fill="white" />
+                </div>
+                <div className="text-left min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-[#25D366] text-white text-[0.625rem] font-bold tracking-wider uppercase">
+                      VIP
+                    </span>
+                    <div className="text-white text-[1rem] sm:text-[1.0625rem] font-bold leading-tight">
+                      Entre no grupo de líderes
+                    </div>
+                  </div>
+                  <div className="text-white/75 text-[0.8125rem] sm:text-sm leading-snug">
+                    Networking com diretores, materiais exclusivos e atualizações em primeira mão.
+                  </div>
+                </div>
+              </div>
+              <ArrowRight className="size-5 shrink-0 text-[#25D366] group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </Reveal>
@@ -107,7 +143,7 @@ export function ObrigadoHero({ nome }: { nome: string }) {
                 title="Comunidade VIP"
                 desc="Entre no grupo fechado no WhatsApp e converse com outros líderes educacionais que vivem o mesmo desafio."
                 cta="Entrar no grupo"
-                href="https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t"
+                href={WHATSAPP_VIP_LINK}
                 external
                 accent="green"
               />

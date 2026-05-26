@@ -86,9 +86,21 @@ export function DiagnosticoHero() {
           {/* ─── COLUNA ESQUERDA: badge + título + subtítulo + devices stack ─── */}
           <div className="order-1">
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[rgb(var(--color-brand-mint))]/20 text-[rgb(var(--color-brand-mint))] font-bold text-[0.75rem] mb-5 border border-[rgb(var(--color-brand-mint))]/30">
-                <Sparkles className="size-3.5" />
-                EBOOK GRATUITO PARA EDUCADORES E LIDERANÇAS
+              <div className="relative inline-block mb-6">
+                {/* Glow pulsante atrás do badge */}
+                <div
+                  aria-hidden
+                  className="absolute -inset-1.5 bg-[rgb(var(--color-brand-mint))]/40 blur-xl rounded-full animate-pulse pointer-events-none"
+                />
+                <div className="relative inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-extrabold text-[0.875rem] sm:text-[0.9375rem] tracking-wide shadow-[0_8px_24px_-4px_rgba(118,243,205,0.6)] ring-2 ring-[rgb(var(--color-brand-mint))]/40">
+                  <span className="flex items-center justify-center size-6 sm:size-7 rounded-full bg-[rgb(var(--color-brand-navy))] text-[rgb(var(--color-brand-mint))]">
+                    <Sparkles className="size-3.5 sm:size-4" />
+                  </span>
+                  <span className="leading-none">
+                    <span className="font-display text-[1rem] sm:text-[1.125rem] mr-1.5">100% GRATUITO</span>
+                    <span className="opacity-80">para educadores e lideranças</span>
+                  </span>
+                </div>
               </div>
             </Reveal>
 
