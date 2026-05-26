@@ -3,11 +3,10 @@
  * Trocar arquivos: atualize aqui e em todos os componentes muda automático.
  */
 
-/** Ebook isca: versão desfocada/parcial entregue após /diagnostico (form curto). */
-export const EBOOK_ISCA_PDF = "/downloads/ebook-isca-7-principios.pdf";
-export const EBOOK_ISCA_FILENAME = "7-Principios-WeMake-Isca.pdf";
-
-/** Ebook completo: liberado APÓS resposta do diagnóstico de maturidade. */
+/**
+ * Único ebook usado hoje. Entregue na /obrigado após a qualificação
+ * (4 perguntas pós-cadastro).
+ */
 export const EBOOK_COMPLETO_PDF = "/downloads/ebook-completo-7-principios.pdf";
 export const EBOOK_COMPLETO_FILENAME = "7-Principios-WeMake-Completo.pdf";
 

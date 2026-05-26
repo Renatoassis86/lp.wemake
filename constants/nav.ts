@@ -46,12 +46,6 @@ export const primaryNav: NavLink[] = [
     href: "/diagnostico",
     description: "Baixe o ebook 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã.",
   },
-  {
-    id: "diagnostico-maturidade",
-    label: "Diagnóstico",
-    href: "/diagnostico/maturidade",
-    description: "Avalie a maturidade tecnológica da sua escola em 8 blocos.",
-  },
 ];
 
 export const footerNav = {

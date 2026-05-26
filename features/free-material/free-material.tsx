@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { ROLES_LABEL, UF_OPTIONS } from "@/lib/validation";
-import { EBOOK_ISCA_PDF, EBOOK_ISCA_FILENAME } from "@/constants/ebooks";
+import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME } from "@/constants/ebooks";
 
 export function FreeMaterial() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -189,8 +189,8 @@ export function FreeMaterial() {
                     Seu material foi liberado com sucesso. Clique no botão abaixo para baixar o PDF.
                   </p>
                   <a 
-                    href={EBOOK_ISCA_PDF} 
-                    download={EBOOK_ISCA_FILENAME}
+                    href={EBOOK_COMPLETO_PDF} 
+                    download={EBOOK_COMPLETO_FILENAME}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-3 w-full h-14 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-lg shadow-lg hover:-translate-y-1 transition-all"

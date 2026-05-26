@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { diagnosticoLeadSchema, PERFIL_ESCOLA_LABEL, ROLES_LABEL } from "@/lib/validation";
+import { diagnosticoLeadSchema } from "@/lib/validation";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -39,19 +39,19 @@ export async function POST(req: Request) {
 
   const data = parsed.data;
 
+  // Etapa 1: captura mínima. Qualificação adicional vem na /obrigado via UPDATE.
+  // `funcao` e `cidade` são obrigatórios no schema do DB — usamos valores neutros até a qualificação preencher.
   const row = {
     nome_escola: data.nome_escola,
-    cidade: data.cidade,
+    cidade: "—",
     nome_respondente: data.nome,
-    funcao: data.cargo,
+    funcao: "pendente",
     email: data.email,
     whatsapp: data.telefone,
     telefone: data.telefone,
-    perfil_escola: data.perfil_escola,
-    ja_conversou_especialista: data.ja_conversou_especialista,
     consent: data.consent,
-    origem: "wemake-landing-diagnostico",
-    status: "novo",
+    origem: "wemake-landing-ebook",
+    status: "lead_capturado",
   };
 
   // 1) Insert no Supabase
@@ -96,19 +96,13 @@ async function sendNotificationEmail(data: ReturnType<typeof diagnosticoLeadSche
     return;
   }
 
-  const cargoLabel = ROLES_LABEL[data.cargo as keyof typeof ROLES_LABEL] || data.cargo;
-  const perfilLabel = PERFIL_ESCOLA_LABEL[data.perfil_escola] || data.perfil_escola;
-
   const rows: [string, string][] = [
-    ["Origem", "LP /diagnostico — download de ebook"],
+    ["Origem", "LP /diagnostico — captura inicial (Etapa 1)"],
     ["Nome", data.nome],
-    ["Cargo", cargoLabel],
     ["E-mail", data.email],
-    ["Telefone", data.telefone],
+    ["WhatsApp", data.telefone],
     ["Escola", data.nome_escola],
-    ["Perfil da escola", perfilLabel],
-    ["Cidade", data.cidade],
-    ["Já conversou com especialista?", data.ja_conversou_especialista ? "Sim" : "Não"],
+    ["Status", "Lead capturou. Aguardando qualificação na /obrigado."],
     ["Recebido em", new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })],
   ];
 
@@ -147,7 +141,7 @@ async function sendNotificationEmail(data: ReturnType<typeof diagnosticoLeadSche
       from,
       to: [NOTIFY_TO],
       reply_to: data.email,
-      subject: `📥 Novo lead Diagnóstico/Ebook — ${data.nome_escola} (${data.cidade})`,
+      subject: `📥 Novo lead (Etapa 1) — ${data.nome_escola}`,
       html,
       text,
     }),

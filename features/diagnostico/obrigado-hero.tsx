@@ -1,227 +1,463 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { CheckCircle2, Download, MessageCircle, Sparkles, CalendarDays, ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  CheckCircle2,
+  Download,
+  MessageCircle,
+  Sparkles,
+  CalendarDays,
+  ArrowRight,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
-import { EBOOK_ISCA_PDF, EBOOK_ISCA_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
+import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
 
 /**
- * Pagina de obrigado da LP /diagnostico.
- * Libera o download imediato + 3 CTAs para qualificar o lead:
- * 1) Form gamificado de maturidade (lead quente)
- * 2) Grupo VIP no WhatsApp
- * 3) Falar com consultor (lead muito quente)
+ * Página /obrigado — Etapa 2 do fluxo do ebook.
+ * - Inicial: 4 perguntas de qualificação rápidas
+ * - Após submit OK: libera o ebook completo + CTAs WhatsApp/Consultor
  */
-export function ObrigadoHero({ nome }: { nome: string }) {
+export function ObrigadoHero({ nome, email }: { nome: string; email: string }) {
   const primeiroNome = nome ? `, ${nome}` : "";
+  const [phase, setPhase] = useState<"qualifying" | "ready">("qualifying");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [answers, setAnswers] = useState({
+    cargo_qualificado: "",
+    espaco_maker: "",
+    tamanho_escola: "",
+    orcamento_2026: "",
+  });
+  const downloadLinkRef = useRef<HTMLAnchorElement>(null);
+
+  // Após liberação, dispara o download automaticamente
+  useEffect(() => {
+    if (phase === "ready") {
+      // pequeno delay pra usuário ler "está chegando" antes do browser abrir o PDF
+      const t = setTimeout(() => {
+        downloadLinkRef.current?.click();
+      }, 800);
+      return () => clearTimeout(t);
+    }
+  }, [phase]);
+
+  const isComplete =
+    answers.cargo_qualificado &&
+    answers.espaco_maker &&
+    answers.tamanho_escola &&
+    answers.orcamento_2026;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isComplete) {
+      setSubmitError("Responda as 4 perguntas para liberar o ebook.");
+      return;
+    }
+    if (!email) {
+      setSubmitError("Identificação perdida. Volte ao formulário inicial.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("/api/diagnostico/qualificar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, ...answers }),
+      });
+      if (!res.ok) {
+        setSubmitError("Não conseguimos registrar agora. Tente novamente em instantes.");
+        setIsSubmitting(false);
+        return;
+      }
+      setPhase("ready");
+    } catch {
+      setSubmitError("Falha de conexão. Tente novamente.");
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <Section
       bleed
       className="relative pt-[7rem] sm:pt-[10rem] md:pt-[11rem] pb-16 sm:pb-24 lg:pb-28 bg-[rgb(var(--color-brand-royal-deep))] overflow-hidden"
     >
-      {/* Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[rgb(var(--color-brand-mint))]/15 blur-[140px] rounded-full" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[rgb(var(--color-brand-sky))]/15 blur-[120px] rounded-full" />
       </div>
 
       <Container className="relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <Reveal>
+        <AnimatePresence mode="wait">
+          {phase === "qualifying" ? (
             <motion.div
-              initial={{ scale: 0.6, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="inline-flex items-center justify-center size-20 sm:size-24 rounded-full bg-[rgb(var(--color-brand-mint))]/20 border-2 border-[rgb(var(--color-brand-mint))]/40 mb-6"
+              key="qualifying"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.4 }}
             >
-              <CheckCircle2 className="size-10 sm:size-12 text-[rgb(var(--color-brand-mint))]" />
+              <QualificationView
+                primeiroNome={primeiroNome}
+                answers={answers}
+                setAnswers={setAnswers}
+                onSubmit={handleSubmit}
+                isSubmitting={isSubmitting}
+                submitError={submitError}
+                isComplete={!!isComplete}
+              />
             </motion.div>
-
-            <h1 className="font-display text-white text-[clamp(2rem,4vw+1rem,3.75rem)] leading-[1.05] mb-5 text-balance">
-              Material liberado{primeiroNome}!
-            </h1>
-            <p className="text-white/85 text-[1.0625rem] sm:text-[1.1875rem] leading-relaxed max-w-2xl mx-auto">
-              Seu acesso ao ebook <strong className="text-white">7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã</strong> está pronto.
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Card principal: download */}
-        <Reveal delay={0.1}>
-          <div className="max-w-2xl mx-auto mb-10">
-            <a
-              href={EBOOK_ISCA_PDF}
-              download={EBOOK_ISCA_FILENAME}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-between gap-4 p-6 sm:p-7 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold shadow-2xl hover:shadow-[0_16px_48px_-12px_rgba(118,243,205,0.6)] hover:-translate-y-0.5 transition-all"
+          ) : (
+            <motion.div
+              key="ready"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
             >
-              <div className="flex items-center gap-4">
-                <div className="size-12 sm:size-14 rounded-xl bg-[rgb(var(--color-brand-navy))]/10 flex items-center justify-center shrink-0">
-                  <Download className="size-6 sm:size-7" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[1rem] sm:text-[1.125rem] font-bold leading-tight">
-                    Baixar o ebook (PDF)
-                  </div>
-                  <div className="text-[0.8125rem] sm:text-sm opacity-80 font-medium mt-0.5">
-                    Clique para iniciar o download
-                  </div>
-                </div>
-              </div>
-              <ArrowRight className="size-5 sm:size-6 shrink-0 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </Reveal>
-
-        {/* Faixa VIP WhatsApp — destaque imediato após download */}
-        <Reveal delay={0.18}>
-          <div className="max-w-2xl mx-auto mb-12 -mt-2">
-            <a
-              href={WHATSAPP_VIP_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="group relative flex items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/15 to-[#25D366]/5 border-2 border-[#25D366]/40 hover:border-[#25D366]/70 hover:-translate-y-0.5 transition-all backdrop-blur-sm shadow-lg"
-            >
-              {/* Glow pulsante atrás */}
-              <div aria-hidden className="absolute inset-0 bg-[#25D366]/15 blur-2xl rounded-2xl animate-pulse pointer-events-none -z-10" />
-
-              <div className="flex items-center gap-4 flex-1 min-w-0">
-                <div className="size-12 sm:size-14 rounded-xl bg-[#25D366] flex items-center justify-center shrink-0 shadow-md">
-                  <MessageCircle className="size-6 sm:size-7 text-white" fill="white" />
-                </div>
-                <div className="text-left min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-[#25D366] text-white text-[0.625rem] font-bold tracking-wider uppercase">
-                      VIP
-                    </span>
-                    <div className="text-white text-[1rem] sm:text-[1.0625rem] font-bold leading-tight">
-                      Entre no grupo de líderes
-                    </div>
-                  </div>
-                  <div className="text-white/75 text-[0.8125rem] sm:text-sm leading-snug">
-                    Networking com diretores, materiais exclusivos e atualizações em primeira mão.
-                  </div>
-                </div>
-              </div>
-              <ArrowRight className="size-5 shrink-0 text-[#25D366] group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </Reveal>
-
-        {/* Próximos passos: 3 CTAs em cards */}
-        <Reveal delay={0.25}>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <p className="font-mono text-[0.75rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))]/90 mb-3 font-bold">
-                Próximos passos
-              </p>
-              <h2 className="font-display text-white text-[clamp(1.5rem,2.5vw,2.25rem)] leading-[1.15] text-balance">
-                Quer aprofundar e levar a tecnologia educacional cristã para a sua escola?
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
-
-              {/* CTA 2 — Grupo VIP WhatsApp */}
-              <CardCTA
-                icon={<MessageCircle className="size-6" />}
-                title="Comunidade VIP"
-                desc="Entre no grupo fechado no WhatsApp e converse com outros líderes educacionais que vivem o mesmo desafio."
-                cta="Entrar no grupo"
-                href={WHATSAPP_VIP_LINK}
-                external
-                accent="green"
+              <ReadyView
+                primeiroNome={primeiroNome}
+                downloadLinkRef={downloadLinkRef}
               />
-
-              {/* CTA 3 — Falar com consultor */}
-              <CardCTA
-                icon={<CalendarDays className="size-6" />}
-                title="Falar com consultor"
-                desc="Agende uma conversa direta com nosso time e descubra como implementar na sua escola com propósito."
-                cta="Agendar conversa"
-                href="/#reuniao"
-                accent="sky"
-              />
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Tip / dica final */}
-        <Reveal delay={0.4}>
-          <div className="max-w-2xl mx-auto mt-12 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm">
-              <Sparkles className="size-4 text-[rgb(var(--color-brand-mint))]" />
-              Também enviamos uma cópia do ebook por e-mail.
-            </div>
-          </div>
-        </Reveal>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Container>
     </Section>
   );
 }
 
-function CardCTA({
-  icon, title, desc, cta, href, external, accent, featured,
+/* ─── FASE 1: Qualificação (4 perguntas rápidas) ─── */
+type QualAnswers = {
+  cargo_qualificado: string;
+  espaco_maker: string;
+  tamanho_escola: string;
+  orcamento_2026: string;
+};
+
+function QualificationView({
+  primeiroNome,
+  answers,
+  setAnswers,
+  onSubmit,
+  isSubmitting,
+  submitError,
+  isComplete,
 }: {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-  cta: string;
-  href: string;
-  external?: boolean;
-  accent: "mint" | "green" | "sky";
-  featured?: boolean;
+  primeiroNome: string;
+  answers: QualAnswers;
+  setAnswers: React.Dispatch<React.SetStateAction<QualAnswers>>;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  isSubmitting: boolean;
+  submitError: string | null;
+  isComplete: boolean;
 }) {
-  const accentRing = {
-    mint: "ring-[rgb(var(--color-brand-mint))]/40",
-    green: "ring-[#25D366]/40",
-    sky: "ring-[rgb(var(--color-brand-sky))]/40",
-  }[accent];
-
-  const iconBg = {
-    mint: "bg-[rgb(var(--color-brand-mint))]/20 text-[rgb(var(--color-brand-mint))]",
-    green: "bg-[#25D366]/20 text-[#25D366]",
-    sky: "bg-[rgb(var(--color-brand-sky))]/20 text-[rgb(var(--color-brand-sky))]",
-  }[accent];
-
-  const btnBg = {
-    mint: "bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] hover:bg-[rgb(var(--color-brand-mint-deep))]",
-    green: "bg-[#25D366] text-white hover:bg-[#128C7E]",
-    sky: "bg-[rgb(var(--color-brand-sky))] text-[rgb(var(--color-brand-navy))] hover:brightness-110",
-  }[accent];
+  const setAnswer = (key: keyof QualAnswers, value: string) =>
+    setAnswers((a) => ({ ...a, [key]: value }));
 
   return (
-    <div
-      className={`group relative flex flex-col h-full p-6 sm:p-7 rounded-2xl bg-white/[0.06] border border-white/15 backdrop-blur-sm hover:bg-white/[0.1] hover:-translate-y-1 transition-all duration-300 ${
-        featured ? `ring-2 ${accentRing}` : ""
-      }`}
-    >
-      {featured && (
-        <span className="absolute -top-3 left-6 inline-flex items-center px-2.5 py-1 rounded-full bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] text-[0.6875rem] font-bold tracking-wide uppercase">
-          Recomendado
-        </span>
-      )}
-      <div className={`size-12 rounded-xl ${iconBg} flex items-center justify-center mb-4`}>
-        {icon}
-      </div>
-      <h3 className="font-display text-white text-[1.125rem] sm:text-[1.1875rem] leading-tight mb-2.5">
-        {title}
-      </h3>
-      <p className="text-white/70 text-[0.9375rem] leading-relaxed mb-5 flex-1">
-        {desc}
-      </p>
-      <a
-        href={href}
-        {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-        className={`inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full font-bold text-[0.9375rem] transition-all ${btnBg}`}
-      >
-        {cta}
-        <ArrowRight className="size-4" />
-      </a>
+    <div className="max-w-3xl mx-auto">
+      {/* Cabeçalho */}
+      <Reveal>
+        <div className="text-center mb-8 sm:mb-10">
+          <motion.div
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-flex items-center justify-center size-16 sm:size-20 rounded-full bg-[rgb(var(--color-brand-mint))]/20 border-2 border-[rgb(var(--color-brand-mint))]/40 mb-5"
+          >
+            <CheckCircle2 className="size-8 sm:size-10 text-[rgb(var(--color-brand-mint))]" />
+          </motion.div>
+
+          <h1 className="font-display text-white text-[clamp(1.875rem,3.5vw+0.5rem,3rem)] leading-[1.05] mb-3 text-balance">
+            Seu e-book está chegando em poucos segundos{primeiroNome}...
+          </h1>
+          <p className="text-white/80 text-[1rem] sm:text-[1.125rem] leading-relaxed max-w-xl mx-auto">
+            Antes disso, <strong className="text-white">4 perguntas rápidas</strong> para
+            personalizar sua jornada com a We Make:
+          </p>
+        </div>
+      </Reveal>
+
+      {/* Form de 4 perguntas */}
+      <Reveal delay={0.1}>
+        <form onSubmit={onSubmit} className="bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-2xl space-y-7">
+          <Pergunta
+            n={1}
+            label="Você é gestor/diretor/coordenador?"
+            value={answers.cargo_qualificado}
+            onChange={(v) => setAnswer("cargo_qualificado", v)}
+            options={[
+              { value: "gestor", label: "Sim, sou gestor / diretor / coordenador" },
+              { value: "professor", label: "Sou professor" },
+              { value: "mantenedor", label: "Sou mantenedor / dono" },
+              { value: "outro", label: "Outro" },
+            ]}
+          />
+
+          <Pergunta
+            n={2}
+            label="Sua escola tem espaço / laboratório maker / robótica?"
+            value={answers.espaco_maker}
+            onChange={(v) => setAnswer("espaco_maker", v)}
+            options={[
+              { value: "tem_funciona", label: "Já tem e funciona bem" },
+              { value: "tem_melhorar", label: "Tem mas precisa melhorar" },
+              { value: "planejando", label: "Está planejando construir" },
+              { value: "nao_tem", label: "Não tem (caro demais)" },
+            ]}
+          />
+
+          <Pergunta
+            n={3}
+            label="Qual é o tamanho da sua escola?"
+            value={answers.tamanho_escola}
+            onChange={(v) => setAnswer("tamanho_escola", v)}
+            options={[
+              { value: "pequena", label: "Pequena (< 200 alunos)" },
+              { value: "media", label: "Média (200 — 500 alunos)" },
+              { value: "grande", label: "Grande (500+ alunos)" },
+            ]}
+          />
+
+          <Pergunta
+            n={4}
+            label="Qual é seu orçamento para educação tecnológica em 2026?"
+            value={answers.orcamento_2026}
+            onChange={(v) => setAnswer("orcamento_2026", v)}
+            options={[
+              { value: "nao_definido", label: "Ainda não definiu" },
+              { value: "5_15k", label: "R$ 5 — 15 mil" },
+              { value: "15_50k", label: "R$ 15 — 50 mil" },
+              { value: "50k_mais", label: "R$ 50 mil ou mais" },
+            ]}
+          />
+
+          {submitError && (
+            <div className="flex items-start gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+              <AlertCircle className="size-4 shrink-0 mt-0.5" />
+              <span>{submitError}</span>
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={isSubmitting || !isComplete}
+            className="w-full h-14 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] flex items-center justify-center gap-3 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="size-5 animate-spin" />
+                Liberando seu ebook...
+              </>
+            ) : (
+              <>
+                Próximo · Desbloquear E-book
+                <ArrowRight className="size-5" />
+              </>
+            )}
+          </button>
+        </form>
+      </Reveal>
     </div>
+  );
+}
+
+/* ─── FASE 2: Liberado (download automático + CTAs) ─── */
+function ReadyView({
+  primeiroNome,
+  downloadLinkRef,
+}: {
+  primeiroNome: string;
+  downloadLinkRef: React.RefObject<HTMLAnchorElement | null>;
+}) {
+  return (
+    <div>
+      <div className="max-w-3xl mx-auto text-center mb-10">
+        <motion.div
+          initial={{ scale: 0.6, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="inline-flex items-center justify-center size-20 sm:size-24 rounded-full bg-[rgb(var(--color-brand-mint))]/20 border-2 border-[rgb(var(--color-brand-mint))]/40 mb-6"
+        >
+          <CheckCircle2 className="size-10 sm:size-12 text-[rgb(var(--color-brand-mint))]" />
+        </motion.div>
+
+        <h1 className="font-display text-white text-[clamp(2rem,4vw+1rem,3.75rem)] leading-[1.05] mb-5 text-balance">
+          Ebook liberado{primeiroNome}!
+        </h1>
+        <p className="text-white/85 text-[1.0625rem] sm:text-[1.1875rem] leading-relaxed max-w-2xl mx-auto">
+          O download começa em instantes. Caso não inicie automaticamente,{" "}
+          <a
+            ref={downloadLinkRef}
+            href={EBOOK_COMPLETO_PDF}
+            download={EBOOK_COMPLETO_FILENAME}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[rgb(var(--color-brand-mint))] hover:underline font-semibold"
+          >
+            clique aqui para baixar o PDF
+          </a>
+          .
+        </p>
+      </div>
+
+      {/* Card grande de download (visível mesmo após autostart) */}
+      <Reveal delay={0.1}>
+        <div className="max-w-2xl mx-auto mb-8">
+          <a
+            href={EBOOK_COMPLETO_PDF}
+            download={EBOOK_COMPLETO_FILENAME}
+            target="_blank"
+            rel="noreferrer"
+            className="group flex items-center justify-between gap-4 p-6 sm:p-7 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold shadow-2xl hover:shadow-[0_16px_48px_-12px_rgba(118,243,205,0.6)] hover:-translate-y-0.5 transition-all"
+          >
+            <div className="flex items-center gap-4">
+              <div className="size-12 sm:size-14 rounded-xl bg-[rgb(var(--color-brand-navy))]/10 flex items-center justify-center shrink-0">
+                <Download className="size-6 sm:size-7" />
+              </div>
+              <div className="text-left">
+                <div className="text-[1rem] sm:text-[1.125rem] font-bold leading-tight">
+                  Baixar o ebook (PDF)
+                </div>
+                <div className="text-[0.8125rem] sm:text-sm opacity-80 font-medium mt-0.5">
+                  7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã
+                </div>
+              </div>
+            </div>
+            <ArrowRight className="size-5 sm:size-6 shrink-0 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </Reveal>
+
+      {/* Faixa VIP WhatsApp */}
+      <Reveal delay={0.18}>
+        <div className="max-w-2xl mx-auto mb-10">
+          <a
+            href={WHATSAPP_VIP_LINK}
+            target="_blank"
+            rel="noreferrer"
+            className="group relative flex items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/15 to-[#25D366]/5 border-2 border-[#25D366]/40 hover:border-[#25D366]/70 hover:-translate-y-0.5 transition-all backdrop-blur-sm shadow-lg"
+          >
+            <div aria-hidden className="absolute inset-0 bg-[#25D366]/15 blur-2xl rounded-2xl animate-pulse pointer-events-none -z-10" />
+            <div className="flex items-center gap-4 flex-1 min-w-0">
+              <div className="size-12 sm:size-14 rounded-xl bg-[#25D366] flex items-center justify-center shrink-0 shadow-md">
+                <MessageCircle className="size-6 sm:size-7 text-white" fill="white" />
+              </div>
+              <div className="text-left min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-[#25D366] text-white text-[0.625rem] font-bold tracking-wider uppercase">
+                    VIP
+                  </span>
+                  <div className="text-white text-[1rem] sm:text-[1.0625rem] font-bold leading-tight">
+                    Entre no grupo de líderes
+                  </div>
+                </div>
+                <div className="text-white/75 text-[0.8125rem] sm:text-sm leading-snug">
+                  Networking com diretores, materiais exclusivos e atualizações em primeira mão.
+                </div>
+              </div>
+            </div>
+            <ArrowRight className="size-5 shrink-0 text-[#25D366] group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </Reveal>
+
+      {/* CTA Falar com consultor */}
+      <Reveal delay={0.25}>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.15] mb-3 text-balance">
+            Quer aprofundar e levar para sua escola?
+          </h2>
+          <p className="text-white/70 text-[0.9375rem] sm:text-[1rem] leading-relaxed max-w-xl mx-auto mb-6">
+            Agende uma conversa direta com nosso time e descubra como aplicar os 7
+            princípios na realidade da sua escola.
+          </p>
+          <a
+            href="/#reuniao"
+            className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight hover:brightness-110 hover:-translate-y-0.5 transition-all shadow-[0_8px_28px_-6px_rgba(118,243,205,0.45)] ring-1 ring-[rgb(var(--color-brand-mint))]/40"
+          >
+            <CalendarDays className="size-5" />
+            Falar com consultor
+            <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.4}>
+        <div className="max-w-2xl mx-auto mt-12 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm">
+            <Sparkles className="size-4 text-[rgb(var(--color-brand-mint))]" />
+            Também enviamos uma cópia do ebook por e-mail.
+          </div>
+        </div>
+      </Reveal>
+    </div>
+  );
+}
+
+/* ─── Pergunta com radio cards ─── */
+function Pergunta({
+  n,
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  n: number;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: { value: string; label: string }[];
+}) {
+  return (
+    <fieldset>
+      <legend className="flex items-baseline gap-2 mb-3">
+        <span className="inline-flex items-center justify-center size-6 rounded-full bg-[rgb(var(--color-brand-mint))]/15 text-[rgb(var(--color-brand-mint-deep))] font-bold text-[0.75rem] shrink-0">
+          {n}
+        </span>
+        <span className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] sm:text-[1.125rem] leading-snug">
+          {label}
+        </span>
+      </legend>
+      <div className="space-y-2">
+        {options.map((opt) => {
+          const selected = value === opt.value;
+          return (
+            <label
+              key={opt.value}
+              className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                selected
+                  ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))]/8"
+                  : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+              }`}
+            >
+              <span
+                className={`size-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
+                  selected ? "border-[rgb(var(--color-brand-mint))]" : "border-gray-300"
+                }`}
+              >
+                {selected && <span className="size-2.5 rounded-full bg-[rgb(var(--color-brand-mint))]" />}
+              </span>
+              <input
+                type="radio"
+                name={`pergunta-${n}`}
+                value={opt.value}
+                checked={selected}
+                onChange={() => onChange(opt.value)}
+                className="sr-only"
+              />
+              <span className="text-[0.9375rem] text-gray-700 leading-snug">{opt.label}</span>
+            </label>
+          );
+        })}
+      </div>
+    </fieldset>
   );
 }

@@ -97,27 +97,38 @@ export const PERFIL_ESCOLA_LABEL: Record<typeof PERFIL_ESCOLA[number], string> =
   outro: "Outro",
 };
 
+/** Etapa 1 da LP do ebook — captura mínima (4 campos + consent). */
 export const diagnosticoLeadSchema = z.object({
   nome: z.string().min(2, "Informe seu nome.").max(120),
   email: z.string().email("Email inválido."),
   telefone: z
     .string()
-    .min(10, "Informe um telefone válido com DDD.")
+    .min(10, "Informe um WhatsApp válido com DDD.")
     .max(20)
     .regex(/^[\d\s()+\-]+$/, "Use apenas números e símbolos de telefone."),
-  cargo: z.enum(["mantenedor", "gestor", "diretor", "coordenador", "professor", "outro"], {
-    message: "Selecione seu cargo.",
-  }),
   nome_escola: z.string().min(2, "Informe o nome da escola.").max(160),
-  perfil_escola: z.enum(PERFIL_ESCOLA, { message: "Selecione o perfil da escola." }),
-  cidade: z.string().min(2, "Informe a cidade.").max(80),
-  ja_conversou_especialista: z.boolean(),
   consent: z
     .boolean()
     .refine((v) => v === true, "É preciso consentir o tratamento de dados."),
 });
 
 export type DiagnosticoLeadInput = z.infer<typeof diagnosticoLeadSchema>;
+
+/** Etapa 2 da LP do ebook — qualificação na /obrigado (4 perguntas radio). */
+export const QUALIFICACAO_CARGO = ["gestor", "professor", "mantenedor", "outro"] as const;
+export const QUALIFICACAO_ESPACO = ["tem_funciona", "tem_melhorar", "planejando", "nao_tem"] as const;
+export const QUALIFICACAO_TAMANHO = ["pequena", "media", "grande"] as const;
+export const QUALIFICACAO_ORCAMENTO = ["nao_definido", "5_15k", "15_50k", "50k_mais"] as const;
+
+export const diagnosticoQualificacaoSchema = z.object({
+  email: z.string().email("Email inválido."),
+  cargo_qualificado: z.enum(QUALIFICACAO_CARGO, { message: "Selecione seu cargo." }),
+  espaco_maker: z.enum(QUALIFICACAO_ESPACO, { message: "Selecione uma opção." }),
+  tamanho_escola: z.enum(QUALIFICACAO_TAMANHO, { message: "Selecione o tamanho da escola." }),
+  orcamento_2026: z.enum(QUALIFICACAO_ORCAMENTO, { message: "Selecione uma faixa." }),
+});
+
+export type DiagnosticoQualificacaoInput = z.infer<typeof diagnosticoQualificacaoSchema>;
 
 /* ────────────────────────────────────────────
    Diagnóstico de Maturidade — Wizard gamificado completo (8 blocos)
