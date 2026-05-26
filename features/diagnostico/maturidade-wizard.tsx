@@ -18,9 +18,6 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { BLOCKS, type Question } from "@/features/diagnostico/maturidade/blocks-config";
 import { ROLES_LABEL } from "@/lib/validation";
-import { calcStageFromScales, calcDimensions, type MaturidadeResult } from "@/lib/maturidade-stages";
-
-const RESULT_STORAGE_KEY = "wemake:maturidade:result";
 
 /**
  * Wizard gamificado de Diagnóstico de Maturidade.
@@ -33,7 +30,7 @@ type Answers = Record<string, any>;
 
 const TOTAL_STEPS = BLOCKS.length + 1; // +1 = identificação
 
-export function MaturidadeWizard({ onComplete }: { onComplete?: (result: MaturidadeResult) => void }) {
+export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
   const [step, setStep] = useState(0); // 0 = identificação
   const [answers, setAnswers] = useState<Answers>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -246,37 +243,10 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: (result: Maturid
         setIsSubmitting(false);
         return;
       }
-      // Calcula resultado completo: estágio global + breakdown por dimensão
-      const scaleAnswers: Record<string, number> = {};
-      const scaleValues: number[] = [];
-      BLOCKS.forEach((b) => {
-        b.questions.forEach((q) => {
-          if (q.tipo === "scale" && typeof answers[q.id] === "number") {
-            scaleAnswers[q.id] = answers[q.id];
-            scaleValues.push(answers[q.id]);
-          }
-        });
-      });
 
-      const { stage, score: globalScore } = calcStageFromScales(scaleValues);
-      const dimensions = calcDimensions(scaleAnswers);
-
-      const result: MaturidadeResult = {
-        nome: (answers.nome_respondente || "").split(" ")[0] || "",
-        globalScore,
-        stageSlug: stage.slug,
-        dimensions,
-      };
-
-      // Persiste resultado completo (útil pra recuperar em refresh)
-      try {
-        sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(result));
-      } catch {
-        // ignore
-      }
-
-      // Em vez de redirecionar, entrega o resultado pro container renderizar inline
-      onComplete?.(result);
+      // Não mostra resultado — diagnóstico vira isca pra conversa com o time.
+      // O Supabase armazena tudo e o email de notificação leva pro time.
+      onComplete?.();
     } catch {
       setSubmitError("Falha de conexão. Verifique sua internet.");
       setIsSubmitting(false);

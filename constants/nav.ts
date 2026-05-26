@@ -37,7 +37,7 @@ export const primaryNav: NavLink[] = [
   {
     id: "maturidade-section",
     label: "Diagnóstico",
-    href: "#maturidade-section",
+    href: "/diagnostico-maturidade",
     description: "Avalie a maturidade tecnológica da sua escola em 8 blocos.",
   },
   {

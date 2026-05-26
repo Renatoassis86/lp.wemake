@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Clock, CheckCircle2, Sparkles, BookOpen, Bot, Cpu } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -10,12 +11,17 @@ import { Reveal } from "@/components/motion/reveal";
 const PHOTO_SRC = "/photos/formacao_docente.png";
 
 /**
- * Hero da LP /diagnostico/maturidade.
- * Layout split: explicação + CTA à esquerda, foto da equipe maker em blob
- * orgânico à direita (mesmo padrão das outras seções do site — blob,
- * ícones flutuantes monocromáticos tech+fé, marca d'água sutil).
+ * Hero da LP /diagnostico-maturidade (e teaser na landing).
+ * - `onStart` (callback) → comportamento inline (botão dispara início do wizard).
+ * - `linkHref` (string)  → vira um Link para outra rota (uso no teaser da landing).
  */
-export function MaturidadeHero({ onStart }: { onStart?: () => void } = {}) {
+export function MaturidadeHero({
+  onStart,
+  linkHref,
+}: {
+  onStart?: () => void;
+  linkHref?: string;
+} = {}) {
   return (
     <Section
       bleed
@@ -69,7 +75,7 @@ export function MaturidadeHero({ onStart }: { onStart?: () => void } = {}) {
                 {[
                   { icon: Clock, text: "8 blocos curtos — leva cerca de 6 minutos" },
                   { icon: BarChart3, text: "Identifica forças e dores da escola em currículo, formação e infraestrutura" },
-                  { icon: CheckCircle2, text: "Você recebe recomendações personalizadas ao final" },
+                  { icon: CheckCircle2, text: "Nosso time analisa suas respostas e te procura para uma conversa estratégica" },
                 ].map(({ icon: Icon, text }, i) => (
                   <motion.li
                     key={i}
@@ -88,14 +94,24 @@ export function MaturidadeHero({ onStart }: { onStart?: () => void } = {}) {
             </Reveal>
 
             <Reveal delay={0.3}>
-              <button
-                type="button"
-                onClick={onStart}
-                className="inline-flex items-center justify-center gap-3 h-14 px-7 sm:px-8 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight shadow-xl hover:-translate-y-0.5 transition-transform"
-              >
-                Iniciar diagnóstico agora
-                <ArrowRight className="size-5" />
-              </button>
+              {linkHref ? (
+                <Link
+                  href={linkHref}
+                  className="inline-flex items-center justify-center gap-3 h-14 px-7 sm:px-8 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight shadow-xl hover:-translate-y-0.5 transition-transform"
+                >
+                  Iniciar diagnóstico agora
+                  <ArrowRight className="size-5" />
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={onStart}
+                  className="inline-flex items-center justify-center gap-3 h-14 px-7 sm:px-8 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight shadow-xl hover:-translate-y-0.5 transition-transform"
+                >
+                  Iniciar diagnóstico agora
+                  <ArrowRight className="size-5" />
+                </button>
+              )}
               <p className="mt-4 text-[0.8125rem] text-white/65 max-w-md">
                 Suas respostas são confidenciais e usadas apenas para gerar o diagnóstico.
               </p>
