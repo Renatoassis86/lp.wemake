@@ -1,17 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Download, MessageCircle, Sparkles, CalendarDays, ArrowRight } from "lucide-react";
+import {
+  CheckCircle2,
+  Download,
+  MessageCircle,
+  Sparkles,
+  CalendarDays,
+  ArrowRight,
+  Trophy,
+  Compass,
+  Map,
+  Rocket,
+  Award,
+  Crown,
+} from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
+import type { Stage } from "@/lib/maturidade-stages";
+
+const STAGE_ICONS = {
+  1: Compass, // descoberta
+  2: Map,     // primeiros passos
+  3: Rocket,  // estruturação
+  4: Award,   // consolidação
+  5: Crown,   // excelência
+} as const;
 
 /**
- * Página de sucesso APÓS o usuário completar o diagnóstico de maturidade.
- * Libera o ebook COMPLETO (sem desfoque) + 2 CTAs (WhatsApp VIP + Falar com consultor).
+ * Tela de obrigado APÓS o diagnóstico de maturidade.
+ * Mostra o estágio (1-5) calculado + ebook completo + WhatsApp + consultor.
  */
-export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
+export function ObrigadoMaturidadeHero({
+  nome,
+  stage,
+  score,
+}: {
+  nome: string;
+  stage: Stage | null;
+  score: number;
+}) {
   const primeiroNome = nome ? `, ${nome}` : "";
 
   return (
@@ -25,6 +55,7 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
       </div>
 
       <Container className="relative z-10">
+        {/* Cabeçalho de boas-vindas */}
         <div className="max-w-3xl mx-auto text-center mb-10">
           <Reveal>
             <motion.div
@@ -37,22 +68,28 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
             </motion.div>
 
             <p className="font-mono text-[0.75rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))]/90 mb-3 font-bold">
-              Diagnóstico recebido
+              Diagnóstico concluído
             </p>
             <h1 className="font-display text-white text-[clamp(2rem,4vw+1rem,3.75rem)] leading-[1.05] mb-5 text-balance">
               Obrigado pela sua dedicação{primeiroNome}!
             </h1>
             <p className="text-white/85 text-[1.0625rem] sm:text-[1.1875rem] leading-relaxed max-w-2xl mx-auto">
-              Suas respostas foram registradas e nosso time vai analisar para preparar
-              recomendações personalizadas para a sua escola. Como agradecimento, liberamos
-              agora o <strong className="text-white">ebook completo</strong> sem desfoque.
+              Suas respostas foram analisadas. Veja abaixo o estágio em que sua escola se
+              encontra e os próximos passos sugeridos.
             </p>
           </Reveal>
         </div>
 
-        {/* Card principal — download do ebook COMPLETO */}
-        <Reveal delay={0.1}>
-          <div className="max-w-2xl mx-auto mb-8">
+        {/* CARD DO ESTÁGIO — peça central */}
+        {stage && (
+          <Reveal delay={0.1}>
+            <StageCard stage={stage} score={score} />
+          </Reveal>
+        )}
+
+        {/* Card download do ebook completo */}
+        <Reveal delay={0.2}>
+          <div className="max-w-2xl mx-auto mb-6 mt-10">
             <a
               href={EBOOK_COMPLETO_PDF}
               download={EBOOK_COMPLETO_FILENAME}
@@ -69,7 +106,7 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
                     Baixar o ebook completo (PDF)
                   </div>
                   <div className="text-[0.8125rem] sm:text-sm opacity-80 font-medium mt-0.5">
-                    Versão sem desfoque · acesso total ao conteúdo
+                    Versão sem desfoque · acesso total liberado
                   </div>
                 </div>
               </div>
@@ -78,8 +115,8 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
           </div>
         </Reveal>
 
-        {/* Faixa VIP WhatsApp em destaque */}
-        <Reveal delay={0.18}>
+        {/* Faixa VIP WhatsApp */}
+        <Reveal delay={0.25}>
           <div className="max-w-2xl mx-auto mb-12">
             <a
               href={WHATSAPP_VIP_LINK}
@@ -88,7 +125,6 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
               className="group relative flex items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/15 to-[#25D366]/5 border-2 border-[#25D366]/40 hover:border-[#25D366]/70 hover:-translate-y-0.5 transition-all backdrop-blur-sm shadow-lg"
             >
               <div aria-hidden className="absolute inset-0 bg-[#25D366]/15 blur-2xl rounded-2xl animate-pulse pointer-events-none -z-10" />
-
               <div className="flex items-center gap-4 flex-1 min-w-0">
                 <div className="size-12 sm:size-14 rounded-xl bg-[#25D366] flex items-center justify-center shrink-0 shadow-md">
                   <MessageCircle className="size-6 sm:size-7 text-white" fill="white" />
@@ -113,15 +149,15 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
         </Reveal>
 
         {/* CTA Falar com consultor */}
-        <Reveal delay={0.25}>
+        <Reveal delay={0.3}>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-6">
               <h2 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.15] text-balance">
-                Quer transformar isso em um plano real para a sua escola?
+                Quer transformar este diagnóstico em um plano real?
               </h2>
               <p className="text-white/70 text-[0.9375rem] sm:text-[1rem] leading-relaxed mt-3 max-w-xl mx-auto">
-                Agende uma conversa direta com nosso time e discutimos os próximos passos
-                baseados no diagnóstico que você acabou de fazer.
+                Agende uma conversa direta com nosso time. A partir do estágio que você está,
+                vamos pensar os próximos passos com você.
               </p>
             </div>
             <div className="flex justify-center">
@@ -147,5 +183,146 @@ export function ObrigadoMaturidadeHero({ nome }: { nome: string }) {
         </Reveal>
       </Container>
     </Section>
+  );
+}
+
+/* ─── Card do estágio (1-5) — peça central da página ─── */
+function StageCard({ stage, score }: { stage: Stage; score: number }) {
+  const Icon = STAGE_ICONS[stage.number];
+
+  const accentColor = {
+    mint: "rgb(var(--color-brand-mint))",
+    sky: "rgb(var(--color-brand-sky))",
+    royal: "rgb(var(--color-brand-royal))",
+    orange: "rgb(255, 144, 80)",
+    navy: "rgb(var(--color-brand-navy))",
+  }[stage.color];
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="relative rounded-[2rem] bg-white shadow-2xl overflow-hidden"
+      >
+        {/* Faixa colorida superior */}
+        <div
+          className="h-2"
+          style={{
+            background: `linear-gradient(90deg, ${accentColor}, rgb(var(--color-brand-mint)))`,
+          }}
+        />
+
+        <div className="p-7 sm:p-10">
+          {/* Header do card */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div className="flex items-center gap-4">
+              <div
+                className="size-14 sm:size-16 rounded-2xl flex items-center justify-center shrink-0 shadow-md"
+                style={{ background: accentColor }}
+              >
+                <Icon className="size-7 sm:size-8 text-white" />
+              </div>
+              <div>
+                <p className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-gray-500 mb-1 font-bold">
+                  Sua escola está no
+                </p>
+                <h2 className="font-display text-[rgb(var(--color-brand-navy))] text-[1.5rem] sm:text-[1.875rem] leading-[1.1]">
+                  {stage.name}
+                </h2>
+              </div>
+            </div>
+
+            {/* Score badge */}
+            <div className="flex items-center gap-3">
+              <div className="text-right">
+                <div className="font-display text-[2rem] sm:text-[2.5rem] leading-none text-[rgb(var(--color-brand-navy))] font-bold">
+                  {score}%
+                </div>
+                <div className="text-[0.6875rem] text-gray-500 uppercase tracking-wide mt-0.5">
+                  Score
+                </div>
+              </div>
+              <Trophy className="size-7 sm:size-8 text-[rgb(var(--color-brand-mint-deep))]" />
+            </div>
+          </div>
+
+          {/* Progress bar dos 5 estágios */}
+          <div className="mb-7">
+            <div className="flex items-center justify-between mb-2 text-[0.6875rem] text-gray-500 font-medium">
+              <span>Descoberta</span>
+              <span>Excelência</span>
+            </div>
+            <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${score}%` }}
+                transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+                className="h-full rounded-full"
+                style={{
+                  background: `linear-gradient(90deg, ${accentColor}, rgb(var(--color-brand-mint)))`,
+                }}
+              />
+              {/* Marcadores de estágio */}
+              {[20, 40, 60, 80].map((m) => (
+                <div
+                  key={m}
+                  className="absolute top-0 bottom-0 w-px bg-white/70"
+                  style={{ left: `${m}%` }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Tagline */}
+          <p
+            className="font-display text-[1.125rem] sm:text-[1.25rem] leading-snug mb-4"
+            style={{ color: accentColor }}
+          >
+            {stage.tagline}
+          </p>
+
+          {/* Descrição */}
+          <p className="text-[rgb(var(--color-brand-navy))]/85 text-[1rem] sm:text-[1.0625rem] leading-relaxed mb-7">
+            {stage.description}
+          </p>
+
+          {/* Recomendações */}
+          <div className="mb-7">
+            <h3 className="font-display text-[rgb(var(--color-brand-navy))] text-[1.125rem] mb-4">
+              Recomendações para os próximos passos
+            </h3>
+            <ul className="space-y-2.5">
+              {stage.recommendations.map((rec, i) => (
+                <li key={i} className="flex items-start gap-3 text-[rgb(var(--color-brand-navy))]/85 text-[0.9375rem] sm:text-[1rem] leading-snug">
+                  <CheckCircle2
+                    className="size-5 shrink-0 mt-0.5"
+                    style={{ color: accentColor }}
+                  />
+                  <span>{rec}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Next step (callout) */}
+          <div
+            className="rounded-xl p-4 sm:p-5 border-2 text-[0.9375rem] leading-relaxed text-[rgb(var(--color-brand-navy))]/90"
+            style={{
+              backgroundColor: `${accentColor}10`,
+              borderColor: `${accentColor}40`,
+            }}
+          >
+            <div className="flex items-start gap-2.5">
+              <Sparkles className="size-4 shrink-0 mt-0.5" style={{ color: accentColor }} />
+              <div>
+                <span className="font-bold">Próximo passo recomendado:</span> {stage.nextStep}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 }

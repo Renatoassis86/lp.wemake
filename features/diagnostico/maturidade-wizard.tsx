@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -19,6 +19,7 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { BLOCKS, type Question } from "@/features/diagnostico/maturidade/blocks-config";
 import { ROLES_LABEL } from "@/lib/validation";
+import { calcStageFromScales } from "@/lib/maturidade-stages";
 
 /**
  * Wizard gamificado de Diagnóstico de Maturidade.
@@ -38,6 +39,17 @@ export function MaturidadeWizard() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const wizardTopRef = useRef<HTMLDivElement>(null);
+
+  // Rola até o topo do wizard (NÃO da página inteira)
+  const scrollToWizardTop = () => {
+    if (typeof window === "undefined") return;
+    const el = wizardTopRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const targetY = window.scrollY + rect.top - 24; // 24px de respiro acima da progress bar
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  };
 
   // Progresso 0–100
   const progress = useMemo(() => {
@@ -118,7 +130,7 @@ export function MaturidadeWizard() {
     }
     if (step < TOTAL_STEPS - 1) {
       setStep((s) => s + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToWizardTop();
     } else {
       handleSubmit();
     }
@@ -127,7 +139,7 @@ export function MaturidadeWizard() {
   const handlePrev = () => {
     if (step > 0) {
       setStep((s) => s - 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToWizardTop();
     }
   };
 
@@ -179,7 +191,23 @@ export function MaturidadeWizard() {
         setIsSubmitting(false);
         return;
       }
-      router.push(`/obrigado-maturidade?nome=${encodeURIComponent((answers.nome_respondente || "").split(" ")[0])}`);
+      // Calcula estágio de maturidade a partir das escalas Likert (1-5)
+      const scaleValues: number[] = [];
+      BLOCKS.forEach((b) => {
+        b.questions.forEach((q) => {
+          if (q.tipo === "scale" && typeof answers[q.id] === "number") {
+            scaleValues.push(answers[q.id]);
+          }
+        });
+      });
+      const { stage, score } = calcStageFromScales(scaleValues);
+
+      const params = new URLSearchParams({
+        nome: (answers.nome_respondente || "").split(" ")[0],
+        estagio: stage.slug,
+        score: String(score),
+      });
+      router.push(`/obrigado-maturidade?${params.toString()}`);
     } catch {
       setSubmitError("Falha de conexão. Verifique sua internet.");
       setIsSubmitting(false);
@@ -198,7 +226,7 @@ export function MaturidadeWizard() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[rgb(var(--color-brand-mint))]/10 blur-[120px] rounded-full pointer-events-none" />
 
       <Container className="relative z-10">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto" ref={wizardTopRef}>
 
           {/* Progress bar sticky */}
           <ProgressBar step={step} total={TOTAL_STEPS} progress={progress} />
