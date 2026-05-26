@@ -217,6 +217,7 @@ export function ObrigadoMaturidadeHero({
 /* ─── Card do estágio (1-5) — peça central da página ─── */
 function StageCard({ stage, score }: { stage: Stage; score: number }) {
   const Icon = STAGE_ICONS[stage.number];
+  const [imgOk, setImgOk] = useState(true);
 
   const accentColor = {
     mint: "rgb(var(--color-brand-mint))",
@@ -241,6 +242,26 @@ function StageCard({ stage, score }: { stage: Stage; score: number }) {
             background: `linear-gradient(90deg, ${accentColor}, rgb(var(--color-brand-mint)))`,
           }}
         />
+
+        {/* IMAGEM ILUSTRATIVA do estágio (gerada por IA) */}
+        {imgOk && (
+          <div className="relative w-full aspect-[16/7] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={stage.image}
+              alt={`Ilustração do ${stage.name}`}
+              className="w-full h-full object-cover"
+              onError={() => setImgOk(false)}
+            />
+            {/* Overlay sutil pra integrar com o card */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: `linear-gradient(180deg, transparent 60%, ${accentColor}15 100%)`,
+              }}
+            />
+          </div>
+        )}
 
         <div className="p-7 sm:p-10">
           {/* Header do card */}

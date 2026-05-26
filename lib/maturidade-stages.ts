@@ -35,6 +35,8 @@ export type Stage = {
   nextStep: string;
   /** Cor de destaque (paleta We Make) */
   color: "mint" | "sky" | "royal" | "orange" | "navy";
+  /** Caminho da imagem ilustrativa gerada por IA (1024x1024 ideal) */
+  image: string;
 };
 
 export const STAGES: Record<StageNumber, Stage> = {
@@ -56,6 +58,7 @@ export const STAGES: Record<StageNumber, Stage> = {
     nextStep:
       "Converse com nosso time para entender por onde começar de forma sustentável. Não precisa de orçamento alto — precisa de visão.",
     color: "orange",
+    image: "/photos/maturidade/estagio-1-descoberta.jpg",
   },
   2: {
     number: 2,
@@ -75,6 +78,7 @@ export const STAGES: Record<StageNumber, Stage> = {
     nextStep:
       "Vamos te ajudar a transformar iniciativas soltas em uma proposta pedagógica coerente, com currículo e formação docente.",
     color: "sky",
+    image: "/photos/maturidade/estagio-2-primeiros-passos.jpg",
   },
   3: {
     number: 3,
@@ -94,6 +98,7 @@ export const STAGES: Record<StageNumber, Stage> = {
     nextStep:
       "Nosso time pode te ajudar a colocar a 'alma' que falta — sem perder a estrutura técnica que vocês já têm.",
     color: "royal",
+    image: "/photos/maturidade/estagio-3-estruturacao.jpg",
   },
   4: {
     number: 4,
@@ -113,6 +118,7 @@ export const STAGES: Record<StageNumber, Stage> = {
     nextStep:
       "Vamos pensar com você em como amplificar o que já funciona e influenciar outras escolas confessionais.",
     color: "mint",
+    image: "/photos/maturidade/estagio-4-consolidacao.jpg",
   },
   5: {
     number: 5,
@@ -132,6 +138,7 @@ export const STAGES: Record<StageNumber, Stage> = {
     nextStep:
       "Vamos conversar sobre como amplificar seu impacto além das suas paredes — mentorias, eventos, produção de conteúdo.",
     color: "navy",
+    image: "/photos/maturidade/estagio-5-excelencia.jpg",
   },
 };
 
