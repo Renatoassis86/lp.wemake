@@ -9,7 +9,7 @@ import { Reveal } from "@/components/motion/reveal";
 
 export function DiagnosticoAutor() {
   return (
-    <Section bleed className="py-16 sm:py-24 bg-[rgb(var(--color-brand-navy))] relative overflow-hidden">
+    <Section bleed className="py-16 sm:py-24 bg-[#143358] relative overflow-hidden">
       {/* Glow de fundo */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[rgb(var(--color-brand-mint))]/[0.06] blur-[120px] rounded-full" />
