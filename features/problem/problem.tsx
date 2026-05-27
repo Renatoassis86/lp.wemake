@@ -120,17 +120,27 @@ export function Problem() {
               </motion.div>
 
               {/* Sala maker — carrossel auto-rotativo de 8 fotos reais.
-                  Área expandida (94% × aspect-square) e blob mais aberto
-                  para mostrar mais do conteúdo de cada foto. */}
+                  IMPORTANTE: o motion.div SÓ faz a animação de entrada;
+                  o recorte do blob fica num div interno estático (sem
+                  transform) pra garantir que o clipping nunca quebra. */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-                className="absolute top-[3%] left-[3%] w-[94%] aspect-square z-10 overflow-hidden"
-                style={{ borderRadius: "55% 45% 50% 50% / 48% 52% 48% 52%" }}
+                className="absolute top-[3%] left-[3%] w-[94%] aspect-square z-10"
               >
-                <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
+                <div
+                  className="relative w-full h-full overflow-hidden"
+                  style={{
+                    borderRadius: "55% 45% 50% 50% / 48% 52% 48% 52%",
+                    isolation: "isolate",
+                    WebkitMaskImage: "-webkit-radial-gradient(white, black)",
+                    transform: "translateZ(0)",
+                  }}
+                >
+                  <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
+                </div>
               </motion.div>
 
               {/* Badge: Identifica a escola da foto (sobrepõe canto inferior) */}
