@@ -161,7 +161,7 @@ function EnviadoMessage() {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-white/20 hover:border-white/40 text-white font-semibold text-[0.9375rem] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-white/20 hover:border-white/40 text-white font-semibold text-[0.9375rem] card-hover-lift"
               >
                 Voltar para o início
                 <ArrowRight className="size-4" />
@@ -170,7 +170,7 @@ function EnviadoMessage() {
                 href="https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:brightness-110 text-white font-semibold text-[0.9375rem] shadow-lg transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:brightness-110 text-white font-semibold text-[0.9375rem] shadow-lg card-hover-lift"
               >
                 <MessageCircle className="size-4" fill="white" />
                 Entre no grupo VIP

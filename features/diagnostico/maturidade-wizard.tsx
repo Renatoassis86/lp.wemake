@@ -325,7 +325,7 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
                   type="button"
                   onClick={handleNext}
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 h-12 px-6 sm:px-7 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] transition-all shadow-md hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-wait"
+                  className="inline-flex items-center gap-2 h-12 px-6 sm:px-7 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] transition-[background-color,transform,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-cinematic)] shadow-md hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-wait"
                 >
                   {isSubmitting
                     ? "Enviando..."
@@ -753,7 +753,7 @@ function FieldRadio({
           return (
             <label
               key={opt.value}
-              className={`flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all ${
+              className={`flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer card-hover-soft ${
                 selected
                   ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))]/8"
                   : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"
@@ -797,7 +797,7 @@ function FieldRadioInline({
               key={opt.value}
               type="button"
               onClick={() => onChange(opt.value)}
-              className={`px-5 h-11 rounded-full border-2 font-semibold text-[0.9375rem] transition-all ${
+              className={`px-5 h-11 rounded-full border-2 font-semibold text-[0.9375rem] card-hover-soft ${
                 selected
                   ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))]/15 text-[rgb(var(--color-brand-navy))]"
                   : "border-gray-200 text-gray-600 hover:border-gray-300"
@@ -844,7 +844,7 @@ function FieldCheckbox({
           return (
             <label
               key={opt.value}
-              className={`flex items-center gap-3 p-3 rounded-xl border-2 transition-all ${
+              className={`flex items-center gap-3 p-3 rounded-xl border-2 card-hover-soft ${
                 selected
                   ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))]/8 cursor-pointer"
                   : disabled
@@ -888,7 +888,7 @@ function FieldScale({
               key={n}
               type="button"
               onClick={() => onChange(n)}
-              className={`flex-1 h-12 sm:h-14 rounded-xl border-2 font-display text-[1.125rem] sm:text-[1.25rem] font-bold transition-all ${
+              className={`flex-1 h-12 sm:h-14 rounded-xl border-2 font-display text-[1.125rem] sm:text-[1.25rem] font-bold card-hover-soft ${
                 selected
                   ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] shadow-md"
                   : "border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:bg-gray-50"

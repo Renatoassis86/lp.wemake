@@ -133,7 +133,7 @@ export function LoginForm({
             <button
               type="submit"
               disabled={loading}
-              className="w-full h-12 inline-flex items-center justify-center gap-2 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] tracking-tight shadow-lg hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-wait"
+              className="w-full h-12 inline-flex items-center justify-center gap-2 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] tracking-tight shadow-lg hover:-translate-y-0.5 transition-[background-color,transform,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-cinematic)] disabled:opacity-60 disabled:cursor-wait"
             >
               {loading ? "Entrando..." : "Entrar"}
               {!loading && <ArrowRight className="size-4" />}

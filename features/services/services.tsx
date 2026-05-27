@@ -105,7 +105,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-[1.5rem] p-6 sm:p-8 shadow-lg flex flex-col bg-white border-2 border-transparent hover:border-white transition-all`}
+              className={`rounded-[1.5rem] p-6 sm:p-8 shadow-lg flex flex-col bg-white border-2 border-transparent hover:border-white card-hover-lift`}
             >
               <div className={`size-12 rounded-[1rem] ${item.color} flex items-center justify-center mb-5`}>
                 <item.icon className={`size-6 ${item.iconColor}`} />

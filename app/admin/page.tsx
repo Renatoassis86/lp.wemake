@@ -106,17 +106,17 @@ export default async function AdminDashboard() {
             <Link
               key={m.href}
               href={m.href}
-              className="group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-white/20 p-5 sm:p-6 transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-white/20 p-5 sm:p-6 card-hover-lift overflow-hidden"
             >
               <div
                 aria-hidden
-                className={`absolute inset-0 -z-10 bg-gradient-to-br ${m.color} opacity-60 group-hover:opacity-100 transition-opacity`}
+                className={`absolute inset-0 -z-10 bg-gradient-to-br ${m.color} opacity-60 group-hover:opacity-100 transition-opacity duration-[var(--duration-fast)] ease-[var(--ease-cinematic)]`}
               />
               <div className="flex items-start justify-between mb-5">
                 <div className="size-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center">
                   <Icon className="size-5 text-[rgb(var(--color-brand-mint))]" />
                 </div>
-                <ArrowRight className="size-4 text-white/40 group-hover:text-white/80 group-hover:translate-x-1 transition" />
+                <ArrowRight className="size-4 text-white/40 group-hover:text-white/80 group-hover:translate-x-1 transition-[color,transform] duration-[var(--duration-fast)] ease-[var(--ease-cinematic)]" />
               </div>
               <h2 className="font-display text-white text-[1.25rem] leading-tight mb-1">
                 {m.label}

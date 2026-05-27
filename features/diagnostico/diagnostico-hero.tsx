@@ -153,7 +153,7 @@ export function DiagnosticoHero() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 mt-1 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] flex items-center justify-center gap-2 transition-all shadow-md disabled:opacity-70 disabled:cursor-wait hover:-translate-y-0.5"
+                  className="w-full h-12 mt-1 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] flex items-center justify-center gap-2 card-hover-lift shadow-md disabled:opacity-70 disabled:cursor-wait hover:-translate-y-0.5"
                 >
                   {isSubmitting ? "Enviando..." : "Continuar"}
                   {!isSubmitting && <ArrowRight className="size-4" />}
@@ -254,7 +254,7 @@ function Field({
           type={type}
           required={required}
           placeholder={placeholder}
-          className="w-full h-11 pl-8 pr-3 text-[0.9375rem] rounded-lg border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
+          className="w-full h-11 pl-8 pr-3 text-[0.9375rem] rounded-lg border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift"
         />
       </div>
     </div>

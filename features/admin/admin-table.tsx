@@ -119,9 +119,9 @@ export function AdminTable<T extends Record<string, any>>({
                     onClick={() => {
                       if (href) router.push(href);
                     }}
-                    className={`border-b border-white/5 last:border-0 transition group ${
+                    className={`border-b border-white/5 last:border-0 row-hover group ${
                       clickable
-                        ? "cursor-pointer hover:bg-[rgb(var(--color-brand-mint))]/[0.06] hover:border-[rgb(var(--color-brand-mint))]/15"
+                        ? "cursor-pointer hover:bg-[rgb(var(--color-brand-mint))]/[0.06]"
                         : "hover:bg-white/[0.03]"
                     }`}
                   >
@@ -142,7 +142,7 @@ export function AdminTable<T extends Record<string, any>>({
                               onClick={(e) => e.stopPropagation()}
                               aria-label="Editar"
                               title="Editar"
-                              className="inline-flex items-center justify-center size-8 rounded-lg bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/25 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] transition"
+                              className="inline-flex items-center justify-center size-8 rounded-lg bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/25 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] card-hover-soft"
                             >
                               <Pencil className="size-3.5" />
                             </Link>
@@ -156,7 +156,7 @@ export function AdminTable<T extends Record<string, any>>({
                               }}
                               aria-label="Excluir"
                               title="Excluir"
-                              className="inline-flex items-center justify-center size-8 rounded-lg bg-red-500/10 hover:bg-red-500/25 border border-red-400/30 text-red-200 transition"
+                              className="inline-flex items-center justify-center size-8 rounded-lg bg-red-500/10 hover:bg-red-500/25 border border-red-400/30 text-red-200 card-hover-soft"
                             >
                               <Trash2 className="size-3.5" />
                             </button>
@@ -182,7 +182,7 @@ export function AdminTable<T extends Record<string, any>>({
             const primary = columns.find((c) => c.primary) ?? columns[0];
             const others = columns.filter((c) => c !== primary);
             const card = (
-              <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4 hover:bg-white/[0.05] transition">
+              <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4 hover:bg-white/[0.05] card-hover-soft">
                 <div className="mb-3">
                   <p className="font-display text-white text-[1rem] leading-tight">
                     {primary?.render ? primary.render(row) : String(row[primary?.key as keyof T] ?? "—")}

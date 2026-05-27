@@ -166,7 +166,7 @@ export function Consultor() {
                           name="preferred_date"
                           type="date"
                           min={new Date().toISOString().split("T")[0]}
-                          className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white text-gray-700"
+                          className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift bg-white text-gray-700"
                         />
                       </div>
                       <div>
@@ -175,7 +175,7 @@ export function Consultor() {
                           id="preferred_time"
                           name="preferred_time"
                           type="time"
-                          className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all bg-white text-gray-700"
+                          className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift bg-white text-gray-700"
                         />
                       </div>
                     </div>
@@ -191,7 +191,7 @@ export function Consultor() {
                       name="message"
                       rows={3}
                       placeholder="Total de alunos, séries atendidas, principais desafios..."
-                      className="w-full px-4 py-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all resize-y"
+                      className="w-full px-4 py-3 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift resize-y"
                     />
                   </div>
 
@@ -217,7 +217,7 @@ export function Consultor() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-14 mt-2 rounded-xl bg-[rgb(var(--color-brand-royal))] hover:bg-[rgb(var(--color-brand-royal-deep))] text-white font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg disabled:opacity-70 disabled:cursor-wait hover:-translate-y-0.5"
+                    className="w-full h-14 mt-2 rounded-xl bg-[rgb(var(--color-brand-royal))] hover:bg-[rgb(var(--color-brand-royal-deep))] text-white font-bold text-lg flex items-center justify-center gap-2 card-hover-lift shadow-lg disabled:opacity-70 disabled:cursor-wait hover:-translate-y-0.5"
                   >
                     {isSubmitting ? "Enviando..." : "Quero agendar minha reunião"}
                   </button>
@@ -262,7 +262,7 @@ function Field({
           type={type}
           required={required}
           placeholder={placeholder}
-          className="w-full h-12 pl-9 pr-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
+          className="w-full h-12 pl-9 pr-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift"
         />
       </div>
     </div>
@@ -284,7 +284,7 @@ function SelectField({
           id={id}
           name={id}
           required={required}
-          className="w-full h-12 pl-9 pr-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all appearance-none bg-white text-gray-700"
+          className="w-full h-12 pl-9 pr-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift appearance-none bg-white text-gray-700"
         >
           {options.map((opt) => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>

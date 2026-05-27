@@ -127,7 +127,7 @@ export function Testimonials() {
             <div className="relative overflow-hidden bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 items-center backdrop-blur-sm">
 
               {/* Moldura da esquerda: Badge flutuante lúdico */}
-              <div className="relative flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-[rgb(var(--color-brand-royal))] to-[rgb(var(--color-brand-royal-deep))] text-white shadow-xl flex items-center justify-center transition-all duration-500 hover:rotate-6">
+              <div className="relative flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-[rgb(var(--color-brand-royal))] to-[rgb(var(--color-brand-royal-deep))] text-white shadow-xl flex items-center justify-center transition-transform duration-[var(--duration-base)] ease-[var(--ease-cinematic)] hover:rotate-3">
 
                 {/* SVG Brush stroke decorativo */}
                 <div className="absolute inset-1.5 border border-white/20 rounded-[2rem] pointer-events-none" />
@@ -219,14 +219,14 @@ export function Testimonials() {
             <div className="flex gap-3">
               <button
                 onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-white/15 hover:border-[rgb(var(--color-brand-mint))] bg-white/5 text-white hover:text-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/10 transition-all shadow-md flex items-center justify-center backdrop-blur-sm"
+                className="w-12 h-12 rounded-full border border-white/15 hover:border-[rgb(var(--color-brand-mint))] bg-white/5 text-white hover:text-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/10 card-hover-soft shadow-md flex items-center justify-center backdrop-blur-sm"
                 aria-label="Depoimento anterior"
               >
                 <ChevronLeft className="size-5" />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full border border-white/15 hover:border-[rgb(var(--color-brand-mint))] bg-white/5 text-white hover:text-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/10 transition-all shadow-md flex items-center justify-center backdrop-blur-sm"
+                className="w-12 h-12 rounded-full border border-white/15 hover:border-[rgb(var(--color-brand-mint))] bg-white/5 text-white hover:text-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/10 card-hover-soft shadow-md flex items-center justify-center backdrop-blur-sm"
                 aria-label="Próximo depoimento"
               >
                 <ChevronRight className="size-5" />

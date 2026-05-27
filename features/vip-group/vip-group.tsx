@@ -124,7 +124,7 @@ export function VipGroup() {
               href={whatsappLink} 
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-3 h-14 px-8 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center gap-3 h-14 px-8 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-105 transition-[background-color,transform] duration-[var(--duration-fast)] ease-[var(--ease-cinematic)]"
             >
               <MessageCircle className="size-5" />
               Entrar no Grupo do WhatsApp

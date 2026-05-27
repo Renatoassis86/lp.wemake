@@ -133,6 +133,41 @@
    Component layer — recurring premium primitives.
    ============================================================ */
 @layer components {
+  /* ────────────────────────────────────────────────
+     HOVER PATTERNS — padrão unificado para evitar
+     "pisca" em cards/linhas/tiles. Usa tokens
+     existentes (--duration-fast, --ease-cinematic).
+
+     Sempre listar propriedades EXPLÍCITAS (nunca
+     `transition-all`) com 1 duração apenas — quando
+     props diferentes têm timings diferentes, o
+     navegador renderiza fora de sync e parece piscar.
+  ──────────────────────────────────────────────── */
+
+  /* Hover suave — só cor de fundo/borda. Para cards
+     planos, badges, chips, status pills. */
+  .card-hover-soft {
+    transition-property: background-color, border-color, color;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-cinematic);
+  }
+
+  /* Hover com elevação — transition para transform + shadow + bg/border.
+     Cada elemento define o seu próprio `hover:-translate-y-*` ou `hover:scale-*`.
+     Garante que TODAS as propriedades animam juntas (sem pisca). */
+  .card-hover-lift {
+    transition-property: transform, box-shadow, border-color, background-color, color, opacity;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-cinematic);
+    will-change: transform;
+  }
+
+  /* Hover de linha — só bg, ultra suave (para tables).
+     Evita pisca quando o cursor cruza várias rows. */
+  .row-hover {
+    transition: background-color var(--duration-fast) var(--ease-cinematic);
+  }
+
   .container-rail {
     width: 100%;
     margin-inline: auto;

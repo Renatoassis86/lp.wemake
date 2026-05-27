@@ -106,7 +106,7 @@ export function FreeMaterial() {
 
               {/* Capa real do ebook (PNG) com perspectiva sutil */}
               <div
-                className="relative z-10 w-[240px] sm:w-[280px] aspect-[2/3] rounded-md overflow-hidden hover:scale-[1.04] hover:-rotate-2 transition-transform duration-500"
+                className="relative z-10 w-[240px] sm:w-[280px] aspect-[2/3] rounded-md overflow-hidden hover:scale-[1.03] hover:-rotate-1 transition-transform duration-[var(--duration-base)] ease-[var(--ease-cinematic)]"
                 style={{
                   boxShadow: "-16px 16px 48px rgba(11,31,68,0.35), -4px 4px 12px rgba(11,31,68,0.25), 2px 0 6px rgba(255,255,255,0.4)",
                 }}
@@ -170,7 +170,7 @@ export function FreeMaterial() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-14 mt-4 rounded-xl bg-[rgb(var(--color-brand-royal))] hover:bg-[rgb(var(--color-brand-royal-deep))] text-white font-bold text-lg flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-wait"
+                      className="w-full h-14 mt-4 rounded-xl bg-[rgb(var(--color-brand-royal))] hover:bg-[rgb(var(--color-brand-royal-deep))] text-white font-bold text-lg flex items-center justify-center gap-2 card-hover-lift disabled:opacity-70 disabled:cursor-wait"
                     >
                       {isSubmitting ? "Liberando acesso..." : "Quero baixar agora"}
                     </button>
@@ -193,7 +193,7 @@ export function FreeMaterial() {
                     download={EBOOK_COMPLETO_FILENAME}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-3 w-full h-14 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-lg shadow-lg hover:-translate-y-1 transition-all"
+                    className="inline-flex items-center justify-center gap-3 w-full h-14 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-lg shadow-lg hover:-translate-y-1 card-hover-lift"
                   >
                     <Download className="size-5" />
                     Fazer Download do PDF
@@ -222,7 +222,7 @@ function FmField({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all"
+        className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift"
       />
     </div>
   );
@@ -238,7 +238,7 @@ function FmSelect({
         id={name}
         name={name}
         required={required}
-        className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none transition-all appearance-none bg-white text-gray-700"
+        className="w-full h-12 px-4 text-base rounded-xl border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift appearance-none bg-white text-gray-700"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>{opt.label}</option>

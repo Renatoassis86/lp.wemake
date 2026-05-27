@@ -233,7 +233,7 @@ function QualificationView({
           <button
             type="submit"
             disabled={isSubmitting || !isComplete}
-            className="w-full h-14 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] flex items-center justify-center gap-3 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
+            className="w-full h-14 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] flex items-center justify-center gap-3 card-hover-lift shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
           >
             {isSubmitting ? (
               <>
@@ -300,7 +300,7 @@ function ReadyView({
             download={EBOOK_COMPLETO_FILENAME}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center justify-between gap-4 p-6 sm:p-7 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold shadow-2xl hover:shadow-[0_16px_48px_-12px_rgba(118,243,205,0.6)] hover:-translate-y-0.5 transition-all"
+            className="group flex items-center justify-between gap-4 p-6 sm:p-7 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold shadow-2xl hover:shadow-[0_16px_48px_-12px_rgba(118,243,205,0.6)] hover:-translate-y-0.5 card-hover-lift"
           >
             <div className="flex items-center gap-4">
               <div className="size-12 sm:size-14 rounded-xl bg-[rgb(var(--color-brand-navy))]/10 flex items-center justify-center shrink-0">
@@ -327,7 +327,7 @@ function ReadyView({
             href={WHATSAPP_VIP_LINK}
             target="_blank"
             rel="noreferrer"
-            className="group relative flex items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/15 to-[#25D366]/5 border-2 border-[#25D366]/40 hover:border-[#25D366]/70 hover:-translate-y-0.5 transition-all backdrop-blur-sm shadow-lg"
+            className="group relative flex items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#25D366]/15 to-[#25D366]/5 border-2 border-[#25D366]/40 hover:border-[#25D366]/70 hover:-translate-y-0.5 card-hover-lift backdrop-blur-sm shadow-lg"
           >
             <div aria-hidden className="absolute inset-0 bg-[#25D366]/15 blur-2xl rounded-2xl animate-pulse pointer-events-none -z-10" />
             <div className="flex items-center gap-4 flex-1 min-w-0">
@@ -365,7 +365,7 @@ function ReadyView({
           </p>
           <a
             href="/#reuniao"
-            className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight hover:brightness-110 hover:-translate-y-0.5 transition-all shadow-[0_8px_28px_-6px_rgba(118,243,205,0.45)] ring-1 ring-[rgb(var(--color-brand-mint))]/40"
+            className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight hover:brightness-110 hover:-translate-y-0.5 card-hover-lift shadow-[0_8px_28px_-6px_rgba(118,243,205,0.45)] ring-1 ring-[rgb(var(--color-brand-mint))]/40"
           >
             <CalendarDays className="size-5" />
             Falar com consultor
@@ -416,7 +416,7 @@ function Pergunta({
           return (
             <label
               key={opt.value}
-              className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+              className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer card-hover-lift ${
                 selected
                   ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))]/8"
                   : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"

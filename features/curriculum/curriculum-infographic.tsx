@@ -135,7 +135,7 @@ export function CurriculumInfographic() {
                             src={step.photo}
                             alt={step.title}
                             fill
-                            className="object-cover transition-transform duration-1000 hover:scale-110"
+                            className="object-cover transition-transform duration-[var(--duration-base)] ease-[var(--ease-cinematic)] hover:scale-105"
                             sizes="(max-width: 768px) 100vw, 400px"
                           />
                         </div>
