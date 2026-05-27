@@ -11,28 +11,51 @@ async function fetchDiagnostico(id: string) {
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!supabaseUrl || !supabaseKey) return null;
 
-  const [headRes, respRes] = await Promise.all([
-    fetch(
-      `${supabaseUrl}/rest/v1/diagnostico_escola?id=eq.${encodeURIComponent(id)}&select=*`,
-      {
-        headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
-        cache: "no-store",
-      },
-    ),
-    fetch(
-      `${supabaseUrl}/rest/v1/diagnostico_respostas?diagnostico_id=eq.${encodeURIComponent(id)}&select=*&order=bloco.asc,pergunta_id.asc`,
-      {
-        headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
-        cache: "no-store",
-      },
-    ),
-  ]);
-  if (!headRes.ok) return null;
-  const headRows = await headRes.json();
-  const head = headRows?.[0];
-  if (!head) return null;
-  const respostas = respRes.ok ? await respRes.json() : [];
-  return { head, respostas };
+  try {
+    const [headRes, respRes] = await Promise.all([
+      fetch(
+        `${supabaseUrl}/rest/v1/diagnostico_escola?id=eq.${encodeURIComponent(id)}&select=*`,
+        {
+          headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
+          cache: "no-store",
+        },
+      ),
+      // Tenta ordenar; se as colunas nao existirem, cai para sem order
+      fetch(
+        `${supabaseUrl}/rest/v1/diagnostico_respostas?diagnostico_id=eq.${encodeURIComponent(id)}&select=*&order=bloco.asc`,
+        {
+          headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
+          cache: "no-store",
+        },
+      ),
+    ]);
+    if (!headRes.ok) return null;
+    const headRows = (await headRes.json().catch(() => [])) ?? [];
+    const head = Array.isArray(headRows) ? headRows[0] : null;
+    if (!head) return null;
+    let respostas: any[] = [];
+    if (respRes.ok) {
+      const parsed = await respRes.json().catch(() => []);
+      respostas = Array.isArray(parsed) ? parsed : [];
+    } else {
+      // Fallback: tenta sem order
+      const fallback = await fetch(
+        `${supabaseUrl}/rest/v1/diagnostico_respostas?diagnostico_id=eq.${encodeURIComponent(id)}&select=*`,
+        {
+          headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
+          cache: "no-store",
+        },
+      );
+      if (fallback.ok) {
+        const parsed = await fallback.json().catch(() => []);
+        respostas = Array.isArray(parsed) ? parsed : [];
+      }
+    }
+    return { head, respostas };
+  } catch (err) {
+    console.error("[admin/diag-detail] fetch error:", err);
+    return null;
+  }
 }
 
 export default async function DiagnosticoDetailPage({
