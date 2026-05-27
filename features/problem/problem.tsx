@@ -54,20 +54,12 @@ export function Problem() {
           <Reveal delay={0.3}>
             <div className="relative w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px] aspect-square mx-auto flex items-center justify-center overflow-visible">
 
-              {/* Blob de fundo (gradiente sky → mint) */}
+              {/* Sombra colorida atrás do post-it (efeito de relevo) */}
               <motion.div
                 aria-hidden
-                animate={{ rotate: [0, 2, -2, 0] }}
+                animate={{ rotate: [-4, -2, -4] }}
                 transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-0"
-                style={{
-                  background: "linear-gradient(135deg, rgb(var(--color-brand-sky)) 0%, rgb(var(--color-brand-mint)) 100%)",
-                  borderTopLeftRadius: "62% 45%",
-                  borderTopRightRadius: "38% 60%",
-                  borderBottomRightRadius: "47% 40%",
-                  borderBottomLeftRadius: "53% 55%",
-                  filter: "drop-shadow(0 24px 48px rgba(11,31,68,0.18))",
-                }}
+                className="absolute top-[8%] left-[6%] w-[88%] aspect-square z-0 rounded-2xl bg-gradient-to-br from-[rgb(var(--color-brand-sky))] to-[rgb(var(--color-brand-mint))] opacity-50 blur-sm"
               />
 
               {/* Espiral Decorativa de Fundo */}
@@ -122,29 +114,15 @@ export function Problem() {
                 </svg>
               </motion.div>
 
-              {/* Sala maker — carrossel auto-rotativo de 8 fotos reais.
-                  IMPORTANTE: o motion.div SÓ faz a animação de entrada;
-                  o recorte do blob fica num div interno estático (sem
-                  transform) pra garantir que o clipping nunca quebra. */}
+              {/* Sala maker — post-it quadrado com carrossel auto-rotativo */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.92, rotate: 0 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 1.5 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-                className="absolute top-[3%] left-[3%] w-[94%] aspect-square z-10"
+                className="absolute top-[5%] left-[4%] w-[92%] aspect-square z-10 rounded-2xl overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-12px_rgba(11,31,68,0.45)]"
               >
-                <div
-                  className="relative w-full h-full overflow-hidden"
-                  style={{
-                    borderTopLeftRadius: "55% 48%",
-                    borderTopRightRadius: "45% 52%",
-                    borderBottomRightRadius: "50% 48%",
-                    borderBottomLeftRadius: "50% 52%",
-                    isolation: "isolate",
-                  }}
-                >
-                  <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
-                </div>
+                <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
               </motion.div>
 
               {/* Badge: Identifica a escola da foto (sobrepõe canto inferior) */}
