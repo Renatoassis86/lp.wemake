@@ -93,17 +93,18 @@ function FounderIntro() {
                 className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] rounded-full border border-dashed border-[rgb(var(--color-brand-mint))]/20 pointer-events-none"
               />
 
-              {/* Foto do Dênis (jaleco) recortada no blob orgânico */}
+              {/* Foto do Dênis (CEO, terno azul) — chroma-key remove o verde */}
               <div
                 className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[440px] md:h-[440px] overflow-hidden"
                 style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
               >
                 <Image
-                  src="/photos/denis julio_bcgreen.png"
-                  alt="Dênis Júlio — Fundador da We Make"
+                  src="/photos/fotos7.png"
+                  alt="Dênis Júlio — CEO e Fundador da We Make"
                   fill
                   className="object-cover object-top"
                   sizes="440px"
+                  style={{ filter: "url(#chroma-green)" }}
                 />
               </div>
 

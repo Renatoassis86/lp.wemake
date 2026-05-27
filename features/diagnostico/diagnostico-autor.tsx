@@ -40,17 +40,18 @@ export function DiagnosticoAutor() {
                 className="absolute top-[6%] left-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] lg:w-[400px] lg:h-[400px] rounded-full border border-dashed border-[rgb(var(--color-brand-mint))]/22 pointer-events-none"
               />
 
-              {/* Foto do Dênis recortada no blob orgânico */}
+              {/* Foto do Dênis (CEO, terno azul) — chroma-key remove o verde */}
               <div
                 className="absolute top-[6%] left-1/2 -translate-x-1/2 w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] overflow-hidden"
                 style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
               >
                 <Image
-                  src="/photos/denis julio_bcgreen.png"
-                  alt="Dênis Júlio — Fundador We Make"
+                  src="/photos/fotos7.png"
+                  alt="Dênis Júlio — CEO e Fundador We Make"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 280px, 360px"
+                  style={{ filter: "url(#chroma-green)" }}
                 />
               </div>
 
