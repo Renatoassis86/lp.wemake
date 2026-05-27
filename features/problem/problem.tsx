@@ -54,12 +54,10 @@ export function Problem() {
           <Reveal delay={0.3}>
             <div className="relative w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px] aspect-square mx-auto flex items-center justify-center overflow-visible">
 
-              {/* Sombra colorida atrás do post-it (efeito de relevo) */}
-              <motion.div
+              {/* Sombra suave atrás (substitui o blob, sem rotação que cause flicker) */}
+              <div
                 aria-hidden
-                animate={{ rotate: [-4, -2, -4] }}
-                transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[8%] left-[6%] w-[88%] aspect-square z-0 rounded-2xl bg-gradient-to-br from-[rgb(var(--color-brand-sky))] to-[rgb(var(--color-brand-mint))] opacity-50 blur-sm"
+                className="absolute inset-0 z-0 bg-[rgb(var(--color-brand-royal))]/25 blur-2xl"
               />
 
               {/* Espiral Decorativa de Fundo */}
@@ -114,15 +112,42 @@ export function Problem() {
                 </svg>
               </motion.div>
 
-              {/* Sala maker — post-it quadrado com carrossel auto-rotativo */}
+              {/* Sala maker — moldura quadrada cantos retos, fixada com washi tape */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.92, rotate: 0 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 1.5 }}
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-                className="absolute top-[5%] left-[4%] w-[92%] aspect-square z-10 rounded-2xl overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-12px_rgba(11,31,68,0.45)]"
+                className="absolute inset-0 z-10 ring-4 ring-white shadow-[0_22px_55px_-15px_rgba(11,31,68,0.5)]"
               >
-                <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
+                {/* Carrossel ocupa o quadrado inteiro, sem borda arredondada */}
+                <div className="relative w-full h-full overflow-hidden">
+                  <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
+                </div>
+
+                {/* Washi tape — canto superior esquerdo (mint, diagonal) */}
+                <div
+                  aria-hidden
+                  className="absolute -top-3 -left-4 w-24 h-7 -rotate-45 bg-[rgb(var(--color-brand-mint))]/70 border-y border-white/50 shadow-md z-30"
+                />
+
+                {/* Washi tape — canto superior direito (royal, diagonal oposta) */}
+                <div
+                  aria-hidden
+                  className="absolute -top-3 -right-4 w-24 h-7 rotate-45 bg-[rgb(var(--color-brand-royal))]/65 border-y border-white/50 shadow-md z-30"
+                />
+
+                {/* Washi tape — canto inferior esquerdo (royal, diagonal) */}
+                <div
+                  aria-hidden
+                  className="absolute -bottom-3 -left-4 w-24 h-7 rotate-45 bg-[rgb(var(--color-brand-royal))]/65 border-y border-white/50 shadow-md z-30"
+                />
+
+                {/* Washi tape — canto inferior direito (mint, diagonal oposta) */}
+                <div
+                  aria-hidden
+                  className="absolute -bottom-3 -right-4 w-24 h-7 -rotate-45 bg-[rgb(var(--color-brand-mint))]/70 border-y border-white/50 shadow-md z-30"
+                />
               </motion.div>
 
               {/* Badge: Identifica a escola da foto (sobrepõe canto inferior) */}
