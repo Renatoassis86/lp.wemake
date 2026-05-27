@@ -154,7 +154,9 @@ export function Problem() {
                   transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
                   className="absolute inset-0 z-10 shadow-[0_18px_45px_-15px_rgba(11,31,68,0.4)]"
                 >
-                  <div className="relative w-full h-full overflow-hidden">
+                  {/* Wrapper que clipa a foto (overflow-hidden) mas deixa as tapes
+                      ficarem visíveis pra fora */}
+                  <div className="absolute inset-0 overflow-hidden">
                     <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
                   </div>
 
