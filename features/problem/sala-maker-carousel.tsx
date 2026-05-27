@@ -21,8 +21,8 @@ const PHOTOS = [
   "/photos/salamaker7.png",
   "/photos/salamaker8.png",
 ];
-const INTERVAL = 4500;
-const FADE_DURATION = 1.1; // segundos — overlap longo evita "vazio"
+const INTERVAL = 5500;
+const FADE_DURATION = 2.2; // overlap bem longo = transição cinematográfica
 
 export function SalaMakerCarousel({
   alt = "Espaço maker da escola — alunos criando projetos com tecnologia",
@@ -51,7 +51,7 @@ export function SalaMakerCarousel({
           key={src}
           initial={false}
           animate={{ opacity: idx === i ? 1 : 0 }}
-          transition={{ duration: FADE_DURATION, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: FADE_DURATION, ease: "easeInOut" }}
           className="absolute inset-0"
           style={{ zIndex: idx === i ? 2 : 1 }}
         >

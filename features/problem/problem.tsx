@@ -168,22 +168,23 @@ export function Problem() {
                 </motion.div>
               </div>
 
-              {/* ─── Caption tipográfica embaixo (sem fundo, padrão editorial Linear/Stripe) ─── */}
+              {/* ─── Caption centralizada e destacada ─── */}
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                className="mt-5 text-left"
+                className="mt-6 text-center"
               >
-                <p className="text-[rgb(var(--color-brand-navy))] text-[0.875rem] font-semibold tracking-[-0.01em] leading-tight">
+                <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.125rem] sm:text-[1.25rem] tracking-[-0.01em] leading-tight">
                   Colégio Cristão Amar
                 </p>
-                <div className="flex items-center gap-1.5 mt-1">
-                  <span aria-hidden className="size-1.5 rounded-full bg-[rgb(var(--color-brand-mint-deep))]" />
-                  <p className="text-[rgb(var(--color-brand-navy))]/55 text-[0.75rem] tracking-[0.02em]">
-                    Itajaí, SC
+                <div className="flex items-center justify-center gap-2 mt-1.5">
+                  <span aria-hidden className="h-px w-6 bg-[rgb(var(--color-brand-mint-deep))]" />
+                  <p className="text-[rgb(var(--color-brand-navy))]/65 text-[0.75rem] font-mono uppercase tracking-[0.18em]">
+                    Itajaí · SC
                   </p>
+                  <span aria-hidden className="h-px w-6 bg-[rgb(var(--color-brand-mint-deep))]" />
                 </div>
               </motion.div>
 
