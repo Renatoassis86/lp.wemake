@@ -119,14 +119,16 @@ export function Problem() {
                 </svg>
               </motion.div>
 
-              {/* Sala maker — carrossel auto-rotativo de 8 fotos reais */}
+              {/* Sala maker — carrossel auto-rotativo de 8 fotos reais.
+                  Área expandida (94% × aspect-square) e blob mais aberto
+                  para mostrar mais do conteúdo de cada foto. */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-                className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-10 overflow-hidden"
-                style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
+                className="absolute top-[3%] left-[3%] w-[94%] aspect-square z-10 overflow-hidden"
+                style={{ borderRadius: "55% 45% 50% 50% / 48% 52% 48% 52%" }}
               >
                 <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
               </motion.div>
