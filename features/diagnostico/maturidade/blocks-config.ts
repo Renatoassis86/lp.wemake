@@ -46,7 +46,6 @@ export type Block = {
   numero: number;
   titulo: string;
   subtitulo: string;
-  emoji?: string;
   questions: Question[];
 };
 
@@ -56,7 +55,6 @@ export const BLOCKS: Block[] = [
     numero: 2,
     titulo: "Momento atual da escola",
     subtitulo: "Queremos entender se a escola está começando, expandindo ou reorganizando.",
-    emoji: "🏫",
     questions: [
       {
         id: "momento_operacao",
@@ -115,7 +113,6 @@ export const BLOCKS: Block[] = [
     numero: 3,
     titulo: "Visão sobre tecnologia",
     subtitulo: "Avalie de 1 (discordo totalmente) a 5 (concordo totalmente).",
-    emoji: "🎯",
     questions: [
       { id: "visao_1", tipo: "scale", required: true, label: "Nossa escola sabe explicar por que deseja ensinar tecnologia." },
       { id: "visao_2", tipo: "scale", required: true, label: "A tecnologia é vista como ferramenta de formação, não como fim em si mesma." },
@@ -129,7 +126,6 @@ export const BLOCKS: Block[] = [
     numero: 4,
     titulo: "Currículo e progressão",
     subtitulo: "Como a tecnologia está estruturada hoje?",
-    emoji: "📘",
     questions: [
       {
         id: "curriculo_formato",
@@ -176,7 +172,6 @@ export const BLOCKS: Block[] = [
     numero: 5,
     titulo: "Cosmovisão cristã e formação de virtudes",
     subtitulo: "O diferencial central da educação confessional. Avalie de 1 a 5.",
-    emoji: "✝️",
     questions: [
       { id: "cosmovisao_1", tipo: "scale", required: true, label: "A cosmovisão cristã orienta as aulas de tecnologia de forma natural." },
       { id: "cosmovisao_2", tipo: "scale", required: true, label: "Os alunos são ensinados a discernir usos bons e maus da tecnologia." },
@@ -191,7 +186,6 @@ export const BLOCKS: Block[] = [
     numero: 6,
     titulo: "Professores e acompanhamento",
     subtitulo: "Capacidade de execução pedagógica.",
-    emoji: "👨‍🏫",
     questions: [
       {
         id: "professor_responsavel",
@@ -219,7 +213,6 @@ export const BLOCKS: Block[] = [
     numero: 7,
     titulo: "Infraestrutura e recursos",
     subtitulo: "O que a escola já tem disponível.",
-    emoji: "🛠️",
     questions: [
       {
         id: "infra_espaco",
@@ -263,7 +256,6 @@ export const BLOCKS: Block[] = [
     numero: 8,
     titulo: "Dores principais",
     subtitulo: "Onde você sente que precisa de mais apoio agora.",
-    emoji: "🎯",
     questions: [
       {
         id: "dores",

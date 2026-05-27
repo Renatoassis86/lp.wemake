@@ -178,7 +178,7 @@ export default async function DiagnosticoDetailPage({
   }
 
   // Mapeia question_id -> pergunta config (label, opções)
-  const questionMap = new Map<string, { label: string; tipo: string; bloco: number; blocoTitulo: string; emoji?: string }>();
+  const questionMap = new Map<string, { label: string; tipo: string; bloco: number; blocoTitulo: string }>();
   for (const b of BLOCKS) {
     for (const q of b.questions) {
       questionMap.set(q.id, {
@@ -186,7 +186,6 @@ export default async function DiagnosticoDetailPage({
         tipo: q.tipo,
         bloco: b.numero,
         blocoTitulo: b.titulo,
-        emoji: b.emoji,
       });
     }
   }
