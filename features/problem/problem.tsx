@@ -3,11 +3,11 @@
 // problem-brush - validation placeholder for verify_lp.py
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 import { Gamepad2, Mouse, Heart, Zap, Shield, MonitorPlay, BookOpenText } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
+import { SalaMakerCarousel } from "@/features/problem/sala-maker-carousel";
 
 export function Problem() {
   const containerRef = useRef<HTMLElement>(null);
@@ -119,7 +119,7 @@ export function Problem() {
                 </svg>
               </motion.div>
 
-              {/* Sala maker — imagem ilustrativa do espaço */}
+              {/* Sala maker — carrossel auto-rotativo de 8 fotos reais */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -128,31 +128,24 @@ export function Problem() {
                 className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-10 overflow-hidden"
                 style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
               >
-                <Image
-                  src="/photos/sala-maker.jpg"
-                  alt="Sala maker de uma escola cristã clássica com bancadas, impressoras 3D, kits de robótica e alunos criando projetos"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 440px"
-                  className="object-cover object-center select-none pointer-events-none"
-                />
+                <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
               </motion.div>
 
-              {/* Badge: Selo do espaço maker (sobrepõe canto inferior) */}
+              {/* Badge: Identifica a escola da foto (sobrepõe canto inferior) */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30 bg-white border border-[rgb(var(--color-brand-royal))]/10 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl"
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30 bg-white border border-[rgb(var(--color-brand-royal))]/10 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl whitespace-nowrap"
               >
                 <div className="size-2.5 rounded-full bg-[rgb(var(--color-brand-mint))] animate-pulse" />
                 <div>
                   <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1rem] leading-none font-bold">
-                    Espaço Maker We Make
+                    Colégio Cristão Amar
                   </p>
                   <p className="text-[rgb(var(--color-brand-royal))] text-[0.75rem] font-semibold mt-1 tracking-wide">
-                    Currículo · Formação · Infraestrutura
+                    Itajaí, SC
                   </p>
                 </div>
               </motion.div>
