@@ -1,4 +1,5 @@
 import { DiagnosticosClient } from "@/features/admin/diagnosticos-client";
+import { ExportButton } from "@/features/admin/export-button";
 
 export const dynamic = "force-dynamic";
 
@@ -29,17 +30,20 @@ export default async function DiagnosticosPage() {
   const { rows, total } = await fetchDiagnosticos();
   return (
     <div>
-      <header className="mb-6 sm:mb-8">
-        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))]/90 font-bold mb-2">
-          Funil do diagnóstico
-        </p>
-        <h1 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1]">
-          Diagnósticos de maturidade
-        </h1>
-        <p className="text-white/55 text-[0.875rem] sm:text-sm mt-1.5 max-w-2xl">
-          Escolas em qualquer etapa do funil: captura de lead, ebook qualificado ou
-          diagnóstico completo. Clique numa linha pra ver respostas detalhadas.
-        </p>
+      <header className="mb-6 sm:mb-8 flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))]/90 font-bold mb-2">
+            Funil do diagnóstico
+          </p>
+          <h1 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1]">
+            Diagnósticos de maturidade
+          </h1>
+          <p className="text-white/55 text-[0.875rem] sm:text-sm mt-1.5 max-w-2xl">
+            Escolas em qualquer etapa do funil: captura de lead, ebook qualificado ou
+            diagnóstico completo. Clique numa linha pra ver respostas detalhadas.
+          </p>
+        </div>
+        <ExportButton table="diagnostico_escola" />
       </header>
       <DiagnosticosClient initialRows={rows} total={total} />
     </div>
