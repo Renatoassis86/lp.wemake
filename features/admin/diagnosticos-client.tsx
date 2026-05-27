@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { AdminTable, formatDateBR, type AdminColumn } from "@/features/admin/admin-table";
+import { AdminTable, type AdminColumn } from "@/features/admin/admin-table";
+import { formatDateBR } from "@/lib/admin-format";
 import { StatusEditor } from "@/features/admin/status-editor";
+import { DeleteConfirmModal } from "@/features/admin/delete-confirm-modal";
 
 type Diagnostico = {
   id: string;
@@ -44,9 +46,15 @@ export function DiagnosticosClient({
   total: number;
 }) {
   const [rows, setRows] = useState<Diagnostico[]>(initialRows);
+  const [deletingRow, setDeletingRow] = useState<Diagnostico | null>(null);
 
   const handleStatusChange = (id: string, newStatus: string) => {
     setRows((r) => r.map((row) => (row.id === id ? { ...row, status: newStatus } : row)));
+  };
+
+  const handleDeleted = (id: string) => {
+    setRows((r) => r.filter((row) => row.id !== id));
+    setDeletingRow(null);
   };
 
   const columns: AdminColumn<Diagnostico>[] = [
@@ -111,20 +119,34 @@ export function DiagnosticosClient({
   ];
 
   return (
-    <AdminTable<Diagnostico>
-      rows={rows}
-      columns={columns}
-      total={total}
-      rowHref={(r) => `/admin/diagnostico-escola/${r.id}`}
-      searchableKeys={[
-        "nome_escola",
-        "cidade",
-        "nome_respondente",
-        "email",
-        "whatsapp",
-        "telefone",
-      ]}
-      emptyText="Nenhum diagnóstico ainda."
-    />
+    <>
+      <AdminTable<Diagnostico>
+        rows={rows}
+        columns={columns}
+        total={total}
+        rowHref={(r) => `/admin/diagnostico-escola/${r.id}`}
+        onDelete={(r) => setDeletingRow(r)}
+        searchableKeys={[
+          "nome_escola",
+          "cidade",
+          "nome_respondente",
+          "email",
+          "whatsapp",
+          "telefone",
+        ]}
+        emptyText="Nenhum diagnóstico ainda."
+      />
+      {deletingRow && (
+        <DeleteConfirmModal
+          table="diagnostico_escola"
+          id={deletingRow.id}
+          itemLabel={deletingRow.nome_escola || "este diagnóstico"}
+          cascade="todas as respostas vinculadas"
+          open={true}
+          onClose={() => setDeletingRow(null)}
+          onDeleted={handleDeleted}
+        />
+      )}
+    </>
   );
 }

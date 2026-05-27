@@ -3,7 +3,7 @@
 import { useState, useMemo, type ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, ChevronLeft, ChevronRight, Pencil } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Pencil, Trash2 } from "lucide-react";
 
 // Re-exporta utilitários para conveniência de quem já importava daqui
 export { formatDateBR, StatusBadge } from "@/lib/admin-format";
@@ -23,6 +23,7 @@ export function AdminTable<T extends Record<string, any>>({
   total,
   pageSize = 50,
   rowHref,
+  onDelete,
   emptyText = "Nada por aqui ainda.",
   searchableKeys = [],
 }: {
@@ -31,6 +32,8 @@ export function AdminTable<T extends Record<string, any>>({
   total: number;
   pageSize?: number;
   rowHref?: (row: T) => string | null;
+  /** Se passado, cada linha ganha botao de excluir rapido (com confirmacao) */
+  onDelete?: (row: T) => void;
   emptyText?: string;
   searchableKeys?: (keyof T | string)[];
 }) {
@@ -89,8 +92,8 @@ export function AdminTable<T extends Record<string, any>>({
                   {col.label}
                 </th>
               ))}
-              {rowHref && (
-                <th className="w-32 text-right text-[0.6875rem] font-mono uppercase tracking-wider text-white/55 font-bold px-4 py-3">
+              {(rowHref || onDelete) && (
+                <th className="w-24 text-right text-[0.6875rem] font-mono uppercase tracking-wider text-white/55 font-bold px-3 py-3">
                   Ações
                 </th>
               )}
@@ -130,21 +133,37 @@ export function AdminTable<T extends Record<string, any>>({
                         {col.render ? col.render(row) : String(row[col.key as keyof T] ?? "—")}
                       </td>
                     ))}
-                    {rowHref &&
-                      (href ? (
-                        <td className="px-4 py-3 text-right">
-                          <Link
-                            href={href}
-                            onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/20 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] text-[0.75rem] font-bold transition"
-                          >
-                            <Pencil className="size-3.5" />
-                            Editar
-                          </Link>
-                        </td>
-                      ) : (
-                        <td></td>
-                      ))}
+                    {(rowHref || onDelete) && (
+                      <td className="px-3 py-3 text-right whitespace-nowrap">
+                        <div className="inline-flex items-center gap-1.5">
+                          {href && (
+                            <Link
+                              href={href}
+                              onClick={(e) => e.stopPropagation()}
+                              aria-label="Editar"
+                              title="Editar"
+                              className="inline-flex items-center justify-center size-8 rounded-lg bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/25 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] transition"
+                            >
+                              <Pencil className="size-3.5" />
+                            </Link>
+                          )}
+                          {onDelete && (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onDelete(row);
+                              }}
+                              aria-label="Excluir"
+                              title="Excluir"
+                              className="inline-flex items-center justify-center size-8 rounded-lg bg-red-500/10 hover:bg-red-500/25 border border-red-400/30 text-red-200 transition"
+                            >
+                              <Trash2 className="size-3.5" />
+                            </button>
+                          )}
+                        </div>
+                      </td>
+                    )}
                   </tr>
                 );
               })

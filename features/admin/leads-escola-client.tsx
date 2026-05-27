@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { AdminTable, StatusBadge, formatDateBR, type AdminColumn } from "@/features/admin/admin-table";
+import { AdminTable, type AdminColumn } from "@/features/admin/admin-table";
+import { formatDateBR } from "@/lib/admin-format";
 import { StatusEditor } from "@/features/admin/status-editor";
+import { DeleteConfirmModal } from "@/features/admin/delete-confirm-modal";
 
 type Lead = {
   id: string;
@@ -29,9 +31,15 @@ const STATUS_OPTIONS = [
 
 export function LeadsEscolaClient({ initialRows, total }: { initialRows: Lead[]; total: number }) {
   const [rows, setRows] = useState<Lead[]>(initialRows);
+  const [deletingRow, setDeletingRow] = useState<Lead | null>(null);
 
   const handleStatusChange = (id: string, newStatus: string) => {
     setRows((r) => r.map((row) => (row.id === id ? { ...row, status_lead: newStatus } : row)));
+  };
+
+  const handleDeleted = (id: string) => {
+    setRows((r) => r.filter((row) => row.id !== id));
+    setDeletingRow(null);
   };
 
   const columns: AdminColumn<Lead>[] = [
@@ -93,13 +101,26 @@ export function LeadsEscolaClient({ initialRows, total }: { initialRows: Lead[];
   ];
 
   return (
-    <AdminTable<Lead>
-      rows={rows}
-      columns={columns}
-      total={total}
-      rowHref={(r) => `/admin/leads-escola/${r.id}`}
-      searchableKeys={["nome", "cidade", "rep_legal_nome", "rep_legal_email", "rep_legal_tel"]}
-      emptyText="Nenhum lead capturado ainda."
-    />
+    <>
+      <AdminTable<Lead>
+        rows={rows}
+        columns={columns}
+        total={total}
+        rowHref={(r) => `/admin/leads-escola/${r.id}`}
+        onDelete={(r) => setDeletingRow(r)}
+        searchableKeys={["nome", "cidade", "rep_legal_nome", "rep_legal_email", "rep_legal_tel"]}
+        emptyText="Nenhum lead capturado ainda."
+      />
+      {deletingRow && (
+        <DeleteConfirmModal
+          table="leads_escola"
+          id={deletingRow.id}
+          itemLabel={deletingRow.nome || "este lead"}
+          open={true}
+          onClose={() => setDeletingRow(null)}
+          onDeleted={handleDeleted}
+        />
+      )}
+    </>
   );
 }
