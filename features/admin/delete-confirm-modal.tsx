@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import { Trash2, Loader2, AlertTriangle, X } from "lucide-react";
 
 /**
- * Modal de confirmação de exclusão — controlado por `open/onClose`.
- * Usado tanto pelo DeleteButton quanto pelas listas (botão trash inline).
+ * Modal de confirmação de exclusão — Sim/Não simples.
+ * Controlado por `open/onClose`. Usado tanto pelo DeleteButton quanto
+ * pelas listas (botão trash inline).
  */
 export function DeleteConfirmModal({
   table,
@@ -30,7 +31,6 @@ export function DeleteConfirmModal({
   redirectTo?: string;
 }) {
   const router = useRouter();
-  const [confirmText, setConfirmText] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -49,7 +49,6 @@ export function DeleteConfirmModal({
       }
       onDeleted?.(id);
       setDeleting(false);
-      setConfirmText("");
       if (redirectTo) {
         router.push(redirectTo);
         router.refresh();
@@ -75,7 +74,7 @@ export function DeleteConfirmModal({
           onClick={() => !deleting && onClose()}
           disabled={deleting}
           aria-label="Fechar"
-          className="absolute top-3 right-3 size-8 inline-flex items-center justify-center rounded-lg hover:bg-white/5 text-white/60"
+          className="absolute top-3 right-3 size-8 inline-flex items-center justify-center rounded-lg hover:bg-white/5 text-white/60 card-hover-soft"
         >
           <X className="size-4" />
         </button>
@@ -83,51 +82,41 @@ export function DeleteConfirmModal({
           <AlertTriangle className="size-6 text-red-300" />
         </div>
         <h2 className="font-display text-white text-[1.25rem] leading-tight mb-2">
-          Excluir registro?
+          Tem certeza?
         </h2>
-        <p className="text-white/70 text-[0.875rem] leading-relaxed mb-3">
-          Esta ação é <strong className="text-red-200">permanente</strong>. O registro{" "}
-          <strong className="text-white">{itemLabel}</strong> será apagado do banco.
+        <p className="text-white/75 text-[0.9375rem] leading-relaxed mb-3">
+          Você está prestes a excluir <strong className="text-white">{itemLabel}</strong>{" "}
+          definitivamente do banco de dados. Esta ação{" "}
+          <strong className="text-red-200">não pode ser desfeita</strong>.
         </p>
         {cascade && (
           <p className="text-amber-200/85 text-[0.8125rem] mb-4 p-3 rounded-lg bg-amber-500/10 border border-amber-400/30">
             ⚠️ Também serão apagados: {cascade}
           </p>
         )}
-        <p className="text-white/55 text-[0.75rem] mb-2">
-          Digite <code className="text-red-200 font-mono">EXCLUIR</code> para confirmar:
-        </p>
-        <input
-          type="text"
-          value={confirmText}
-          onChange={(e) => setConfirmText(e.target.value)}
-          disabled={deleting}
-          autoFocus
-          className="w-full h-10 px-3 mb-4 text-[0.875rem] rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-red-400/50 focus:ring-2 focus:ring-red-400/20 outline-none transition"
-          placeholder="EXCLUIR"
-        />
 
         {error && (
           <p className="text-red-300 text-[0.8125rem] mb-3 p-2 bg-red-500/10 rounded">{error}</p>
         )}
 
-        <div className="flex gap-3 justify-end">
+        <div className="flex gap-3 justify-end mt-5">
           <button
             type="button"
             onClick={onClose}
             disabled={deleting}
-            className="h-10 px-4 rounded-xl border border-white/15 hover:bg-white/5 text-white/75 font-medium text-[0.875rem] transition"
+            className="inline-flex items-center justify-center h-11 px-6 rounded-xl border border-white/15 hover:bg-white/5 text-white font-semibold text-[0.9375rem] card-hover-soft disabled:opacity-50"
           >
-            Cancelar
+            Não
           </button>
           <button
             type="button"
             onClick={handleDelete}
-            disabled={deleting || confirmText !== "EXCLUIR"}
-            className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-red-500 hover:bg-red-600 text-white font-bold text-[0.875rem] transition disabled:opacity-40 disabled:cursor-not-allowed"
+            disabled={deleting}
+            autoFocus
+            className="inline-flex items-center gap-2 h-11 px-6 rounded-xl bg-red-500 hover:bg-red-600 text-white font-bold text-[0.9375rem] card-hover-lift disabled:opacity-50 disabled:cursor-wait"
           >
             {deleting ? <Loader2 className="size-4 animate-spin" /> : <Trash2 className="size-4" />}
-            {deleting ? "Excluindo..." : "Excluir permanentemente"}
+            {deleting ? "Excluindo..." : "Sim, excluir"}
           </button>
         </div>
       </div>
