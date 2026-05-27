@@ -62,7 +62,10 @@ export function Problem() {
                 className="absolute top-[6%] left-[8%] w-[84%] aspect-square z-0"
                 style={{
                   background: "linear-gradient(135deg, rgb(var(--color-brand-sky)) 0%, rgb(var(--color-brand-mint)) 100%)",
-                  borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%",
+                  borderTopLeftRadius: "62% 45%",
+                  borderTopRightRadius: "38% 60%",
+                  borderBottomRightRadius: "47% 40%",
+                  borderBottomLeftRadius: "53% 55%",
                   filter: "drop-shadow(0 24px 48px rgba(11,31,68,0.18))",
                 }}
               />
@@ -133,7 +136,10 @@ export function Problem() {
                 <div
                   className="relative w-full h-full overflow-hidden"
                   style={{
-                    borderRadius: "55% 45% 50% 50% / 48% 52% 48% 52%",
+                    borderTopLeftRadius: "55% 48%",
+                    borderTopRightRadius: "45% 52%",
+                    borderBottomRightRadius: "50% 48%",
+                    borderBottomLeftRadius: "50% 52%",
                     isolation: "isolate",
                   }}
                 >
