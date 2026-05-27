@@ -69,10 +69,13 @@ export function StatusEditor({
   const current = options.find((o) => o.value === value) ?? options[0]!;
 
   return (
-    <div ref={ref} className="relative inline-block">
+    <div ref={ref} className="relative inline-block" onClick={(e) => e.stopPropagation()}>
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpen((v) => !v);
+        }}
         disabled={saving}
         className="inline-flex items-center gap-1.5 hover:opacity-85 transition disabled:opacity-50"
       >
@@ -90,7 +93,10 @@ export function StatusEditor({
             <button
               key={opt.value}
               type="button"
-              onClick={() => selectStatus(opt.value)}
+              onClick={(e) => {
+                e.stopPropagation();
+                selectStatus(opt.value);
+              }}
               className="w-full flex items-center justify-between gap-2 px-3 py-2 text-left text-[0.8125rem] text-white/85 hover:bg-white/8 transition"
             >
               <span>{opt.label}</span>

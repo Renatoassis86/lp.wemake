@@ -2,7 +2,8 @@
 
 import { useState, useMemo, type ReactNode } from "react";
 import Link from "next/link";
-import { Search, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Search, ChevronLeft, ChevronRight, Pencil } from "lucide-react";
 
 // Re-exporta utilitários para conveniência de quem já importava daqui
 export { formatDateBR, StatusBadge } from "@/lib/admin-format";
@@ -33,6 +34,7 @@ export function AdminTable<T extends Record<string, any>>({
   emptyText?: string;
   searchableKeys?: (keyof T | string)[];
 }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
 
@@ -74,7 +76,7 @@ export function AdminTable<T extends Record<string, any>>({
         </p>
       </div>
 
-      {/* DESKTOP: Tabela */}
+      {/* DESKTOP: Tabela (linha inteira clicavel se rowHref) */}
       <div className="hidden md:block overflow-x-auto rounded-2xl border border-white/8 bg-white/[0.02]">
         <table className="w-full">
           <thead>
@@ -87,7 +89,11 @@ export function AdminTable<T extends Record<string, any>>({
                   {col.label}
                 </th>
               ))}
-              {rowHref && <th className="w-12"></th>}
+              {rowHref && (
+                <th className="w-32 text-right text-[0.6875rem] font-mono uppercase tracking-wider text-white/55 font-bold px-4 py-3">
+                  Ações
+                </th>
+              )}
             </tr>
           </thead>
           <tbody>
@@ -103,10 +109,18 @@ export function AdminTable<T extends Record<string, any>>({
             ) : (
               paged.map((row, i) => {
                 const href = rowHref?.(row);
+                const clickable = !!href;
                 return (
                   <tr
                     key={(row.id as string) || i}
-                    className="border-b border-white/5 last:border-0 hover:bg-white/[0.03] transition"
+                    onClick={() => {
+                      if (href) router.push(href);
+                    }}
+                    className={`border-b border-white/5 last:border-0 transition group ${
+                      clickable
+                        ? "cursor-pointer hover:bg-[rgb(var(--color-brand-mint))]/[0.06] hover:border-[rgb(var(--color-brand-mint))]/15"
+                        : "hover:bg-white/[0.03]"
+                    }`}
                   >
                     {columns.map((col) => (
                       <td
@@ -118,12 +132,14 @@ export function AdminTable<T extends Record<string, any>>({
                     ))}
                     {rowHref &&
                       (href ? (
-                        <td className="px-4 py-3">
+                        <td className="px-4 py-3 text-right">
                           <Link
                             href={href}
-                            className="inline-flex items-center justify-center size-8 rounded-lg hover:bg-white/8 text-white/55 hover:text-[rgb(var(--color-brand-mint))] transition"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/20 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] text-[0.75rem] font-bold transition"
                           >
-                            <ExternalLink className="size-4" />
+                            <Pencil className="size-3.5" />
+                            Editar
                           </Link>
                         </td>
                       ) : (
