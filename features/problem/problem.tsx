@@ -3,7 +3,7 @@
 // problem-brush - validation placeholder for verify_lp.py
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Gamepad2, Mouse, Heart, Zap, Shield, MonitorPlay, BookOpenText } from "lucide-react";
+import { Gamepad2, Mouse, Heart, Zap, Shield, MonitorPlay } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
@@ -50,114 +50,136 @@ export function Problem() {
         {/* Blocos Lúdicos Responsivos (Lado a Lado no Desktop) */}
         <div className="grid md:grid-cols-2 gap-12 sm:gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
           
-          {/* Foto do CEO em moldura orgânica blob */}
+          {/* Foto da sala maker — moldura limpa, tapes nas quinas, ícones fora */}
           <Reveal delay={0.3}>
-            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] aspect-[4/3] mx-auto flex items-center justify-center overflow-visible">
+            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] mx-auto overflow-visible">
 
-              {/* Sombra suave atrás (substitui o blob, sem rotação que cause flicker) */}
-              <div
+              {/* Espiral decorativa de fundo (sutil, sai dos cantos do bloco) */}
+              <svg
                 aria-hidden
-                className="absolute inset-0 z-0 bg-[rgb(var(--color-brand-royal))]/25 blur-2xl"
-              />
-
-              {/* Espiral Decorativa de Fundo */}
-              <svg viewBox="0 0 100 100" className="absolute -top-4 -left-4 size-36 text-[rgb(var(--color-brand-mint))]/70 z-0 pointer-events-none select-none">
-                <path d="M50 50 C40 30 20 40 30 60 C40 80 80 60 70 30 C60 0 0 20 20 70 C40 120 120 80 90 20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                viewBox="0 0 100 100"
+                className="absolute -top-8 -left-8 size-36 text-[rgb(var(--color-brand-mint))]/50 z-0 pointer-events-none select-none"
+              >
+                <path
+                  d="M50 50 C40 30 20 40 30 60 C40 80 80 60 70 30 C60 0 0 20 20 70 C40 120 120 80 90 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
               </svg>
 
-              {/* Ícones flutuantes ao redor — fé + tecnologia */}
+              {/* ─── Ícones monocromáticos vetorizados, FORA da foto ─── */}
 
-              {/* Cruz (canto superior esquerdo) */}
-              <motion.div
-                animate={{ y: [0, -8, 0], rotate: [0, -4, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="absolute top-4 left-2 bg-white text-[rgb(var(--color-brand-royal))] p-3 rounded-2xl shadow-lg z-20 border border-[rgb(var(--color-brand-mint))]/30"
+              {/* Cruz — canto superior esquerdo, fora */}
+              <motion.svg
                 aria-label="Cruz"
+                viewBox="0 0 32 32"
+                animate={{ y: [0, -6, 0], rotate: [0, -3, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                className="absolute -top-7 -left-5 size-9 text-[rgb(var(--color-brand-navy))] z-20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
               >
-                <svg viewBox="0 0 24 24" className="size-5" fill="currentColor" aria-hidden>
-                  <rect x="10" y="2" width="4" height="20" rx="1" />
-                  <rect x="4" y="8" width="16" height="4" rx="1" />
-                </svg>
-              </motion.div>
+                <line x1="16" y1="3" x2="16" y2="29" />
+                <line x1="5" y1="11" x2="27" y2="11" />
+              </motion.svg>
 
-              {/* Raio / energia (canto superior direito) */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
+              {/* Raio — canto superior direito, fora */}
+              <motion.svg
+                aria-label="Raio"
+                viewBox="0 0 24 24"
+                animate={{ y: [0, -8, 0], scale: [1, 1.08, 1] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.3 }}
-                className="absolute top-2 right-4 bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] p-2.5 rounded-full shadow-lg z-20"
+                className="absolute -top-6 -right-5 size-9 text-[rgb(var(--color-brand-mint-deep))] z-20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               >
-                <Zap className="size-5" />
-              </motion.div>
+                <path d="M13 2 L3 14 L11 14 L10 22 L21 10 L13 10 L13 2 Z" />
+              </motion.svg>
 
-              {/* Bíblia (canto inferior esquerdo — substitui o joystick) */}
-              <motion.div
-                animate={{ y: [0, 6, 0], rotate: [0, 5, 0] }}
+              {/* Livro aberto — canto inferior esquerdo, fora */}
+              <motion.svg
+                aria-label="Livro aberto"
+                viewBox="0 0 32 32"
+                animate={{ y: [0, 6, 0], rotate: [0, 4, 0] }}
                 transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.6 }}
-                className="absolute bottom-12 left-1 bg-white text-[rgb(var(--color-brand-royal))] p-3 rounded-2xl shadow-lg z-20 border border-[rgb(var(--color-brand-mint))]/30"
-                aria-label="Bíblia"
+                className="absolute -bottom-6 -left-5 size-9 text-[rgb(var(--color-brand-navy))] z-20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               >
-                <BookOpenText className="size-6" />
-              </motion.div>
+                <path d="M4 7 C4 7 10 5 16 8 C22 5 28 7 28 7 L28 26 C28 26 22 24 16 27 C10 24 4 26 4 26 Z" />
+                <line x1="16" y1="8" x2="16" y2="27" />
+              </motion.svg>
 
-              {/* Pomba do Espírito (canto direito meio) */}
-              <motion.div
-                animate={{ y: [0, -7, 0], rotate: [0, -3, 0] }}
-                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.9 }}
-                className="absolute bottom-20 -right-2 bg-[rgb(var(--color-brand-mint))]/90 text-[rgb(var(--color-brand-navy))] p-2.5 rounded-2xl shadow-lg z-20"
+              {/* Pomba estilizada — canto inferior direito, fora */}
+              <motion.svg
                 aria-label="Pomba"
+                viewBox="0 0 32 32"
+                animate={{ y: [0, -7, 0], rotate: [0, -4, 0] }}
+                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.9 }}
+                className="absolute -bottom-6 -right-5 size-9 text-[rgb(var(--color-brand-mint-deep))] z-20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               >
-                <svg viewBox="0 0 32 32" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
-                  <path d="M4 18 C8 14 12 12 18 13 C22 8 26 8 28 10 C26 12 24 12 22 14 C24 16 22 20 18 21 C14 22 10 22 6 24 C5 22 4 20 4 18 Z" strokeLinejoin="round" />
-                  <circle cx="24" cy="11" r="1" fill="currentColor" />
-                </svg>
-              </motion.div>
+                <path d="M4 18 C8 14 12 12 18 13 C22 8 26 8 28 10 C26 12 24 12 22 14 C24 16 22 20 18 21 C14 22 10 22 6 24 C5 22 4 20 4 18 Z" />
+                <circle cx="24" cy="11" r="1" fill="currentColor" />
+              </motion.svg>
 
-              {/* Sala maker — foto quadrada limpa, fixada com washi tape nos cantos */}
+              {/* ─── Container da foto (aspect 4:3 da imagem real) ─── */}
+              <div className="relative aspect-[4/3] w-full">
+
+                {/* Sombra suave atrás */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 z-0 bg-[rgb(var(--color-brand-royal))]/20 blur-2xl"
+                />
+
+                {/* Foto + tapes nas quinas */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+                  className="absolute inset-0 z-10 shadow-[0_18px_45px_-15px_rgba(11,31,68,0.4)]"
+                >
+                  <div className="relative w-full h-full overflow-hidden">
+                    <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
+                  </div>
+
+                  {/* Washi tape diagonais nas 4 quinas */}
+                  <div aria-hidden className="absolute -top-2 -left-3 w-16 h-5 -rotate-45 bg-[rgb(var(--color-brand-mint))]/75 border-y border-white/55 shadow z-30" />
+                  <div aria-hidden className="absolute -top-2 -right-3 w-16 h-5 rotate-45 bg-[rgb(var(--color-brand-royal))]/70 border-y border-white/55 shadow z-30" />
+                  <div aria-hidden className="absolute -bottom-2 -left-3 w-16 h-5 rotate-45 bg-[rgb(var(--color-brand-royal))]/70 border-y border-white/55 shadow z-30" />
+                  <div aria-hidden className="absolute -bottom-2 -right-3 w-16 h-5 -rotate-45 bg-[rgb(var(--color-brand-mint))]/75 border-y border-white/55 shadow z-30" />
+                </motion.div>
+              </div>
+
+              {/* ─── Caption tipográfica embaixo (sem fundo, padrão editorial Linear/Stripe) ─── */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-                className="absolute inset-0 z-10 shadow-[0_18px_45px_-15px_rgba(11,31,68,0.4)]"
-              >
-                {/* Carrossel sem borda — só a foto */}
-                <div className="relative w-full h-full overflow-hidden">
-                  <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
-                </div>
-
-                {/* Washi tape — atravessa diagonalmente cada quina (metade sobre a foto, metade fora) */}
-                <div
-                  aria-hidden
-                  className="absolute -top-2 -left-3 w-16 h-5 -rotate-45 origin-center bg-[rgb(var(--color-brand-mint))]/75 border-y border-white/55 shadow z-30"
-                />
-                <div
-                  aria-hidden
-                  className="absolute -top-2 -right-3 w-16 h-5 rotate-45 origin-center bg-[rgb(var(--color-brand-royal))]/70 border-y border-white/55 shadow z-30"
-                />
-                <div
-                  aria-hidden
-                  className="absolute -bottom-2 -left-3 w-16 h-5 rotate-45 origin-center bg-[rgb(var(--color-brand-royal))]/70 border-y border-white/55 shadow z-30"
-                />
-                <div
-                  aria-hidden
-                  className="absolute -bottom-2 -right-3 w-16 h-5 -rotate-45 origin-center bg-[rgb(var(--color-brand-mint))]/75 border-y border-white/55 shadow z-30"
-                />
-              </motion.div>
-
-              {/* Badge: Identifica a escola da foto (sobrepõe canto inferior) */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30 bg-white border border-[rgb(var(--color-brand-royal))]/10 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-xl whitespace-nowrap"
+                className="mt-5 text-left"
               >
-                <div className="size-2.5 rounded-full bg-[rgb(var(--color-brand-mint))] animate-pulse" />
-                <div>
-                  <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1rem] leading-none font-bold">
-                    Colégio Cristão Amar
-                  </p>
-                  <p className="text-[rgb(var(--color-brand-royal))] text-[0.75rem] font-semibold mt-1 tracking-wide">
+                <p className="text-[rgb(var(--color-brand-navy))] text-[0.875rem] font-semibold tracking-[-0.01em] leading-tight">
+                  Colégio Cristão Amar
+                </p>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <span aria-hidden className="size-1.5 rounded-full bg-[rgb(var(--color-brand-mint-deep))]" />
+                  <p className="text-[rgb(var(--color-brand-navy))]/55 text-[0.75rem] tracking-[0.02em]">
                     Itajaí, SC
                   </p>
                 </div>
