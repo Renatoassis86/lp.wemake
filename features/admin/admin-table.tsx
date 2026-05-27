@@ -87,7 +87,7 @@ export function AdminTable<T extends Record<string, any>>({
               {columns.map((col) => (
                 <th
                   key={String(col.key)}
-                  className="text-left text-[0.6875rem] font-mono uppercase tracking-wider text-white/55 font-bold px-4 py-3 whitespace-nowrap"
+                  className={`text-left text-[0.6875rem] font-mono uppercase tracking-wider text-white/55 font-bold px-3 py-2.5 whitespace-nowrap ${col.className || ""}`}
                 >
                   {col.label}
                 </th>
@@ -128,7 +128,7 @@ export function AdminTable<T extends Record<string, any>>({
                     {columns.map((col) => (
                       <td
                         key={String(col.key)}
-                        className={`px-4 py-3 text-[0.875rem] text-white/85 ${col.className || ""}`}
+                        className={`px-3 py-2.5 text-[0.8125rem] text-white/85 ${col.className || ""}`}
                       >
                         {col.render ? col.render(row) : String(row[col.key as keyof T] ?? "—")}
                       </td>

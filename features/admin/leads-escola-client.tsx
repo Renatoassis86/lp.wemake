@@ -71,6 +71,7 @@ export function LeadsEscolaClient({ initialRows, total }: { initialRows: Lead[];
     {
       key: "origem",
       label: "Origem",
+      className: "hidden xl:table-cell",
       render: (r) => (
         <span className="text-[0.75rem] text-white/65 font-mono">{r.origem || "—"}</span>
       ),

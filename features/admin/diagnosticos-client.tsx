@@ -80,12 +80,17 @@ export function DiagnosticosClient({
           <p className="text-white/45 text-[0.75rem] truncate">
             {r.funcao ? <span className="capitalize">{r.funcao}</span> : "—"}
           </p>
+          {/* Em telas < xl, mostra contato aqui (a coluna Contato fica oculta) */}
+          <p className="xl:hidden text-white/55 text-[0.6875rem] truncate mt-0.5">
+            {r.email || r.whatsapp || "—"}
+          </p>
         </div>
       ),
     },
     {
       key: "email",
       label: "Contato",
+      className: "hidden xl:table-cell",
       render: (r) => (
         <div className="min-w-0">
           <p className="text-white/85 text-[0.8125rem] truncate">{r.email || "—"}</p>
