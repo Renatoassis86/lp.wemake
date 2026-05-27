@@ -97,6 +97,7 @@ export function LeadsEscolaClient({ initialRows, total }: { initialRows: Lead[];
       rows={rows}
       columns={columns}
       total={total}
+      rowHref={(r) => `/admin/leads-escola/${r.id}`}
       searchableKeys={["nome", "cidade", "rep_legal_nome", "rep_legal_email", "rep_legal_tel"]}
       emptyText="Nenhum lead capturado ainda."
     />

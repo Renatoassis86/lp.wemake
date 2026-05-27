@@ -3,6 +3,107 @@ import { ArrowLeft, Mail, Phone, MapPin, Users, Building2 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { formatDateBR } from "@/lib/admin-format";
 import { BLOCKS } from "@/features/diagnostico/maturidade/blocks-config";
+import { RecordEditForm, type FieldDef } from "@/features/admin/record-edit-form";
+import { DeleteButton } from "@/features/admin/delete-button";
+
+const DIAG_FIELDS: FieldDef[] = [
+  { name: "nome_escola", label: "Escola", type: "text", colSpan: 2 },
+  { name: "cidade", label: "Cidade", type: "text" },
+  { name: "uf", label: "UF", type: "text" },
+  { name: "nome_respondente", label: "Respondente", type: "text" },
+  {
+    name: "funcao",
+    label: "Função",
+    type: "select",
+    options: [
+      { value: "mantenedor", label: "Mantenedor" },
+      { value: "diretor", label: "Diretor(a)" },
+      { value: "coordenador", label: "Coordenador(a)" },
+      { value: "professor", label: "Professor(a)" },
+      { value: "outro", label: "Outro" },
+    ],
+  },
+  { name: "email", label: "E-mail", type: "email" },
+  { name: "whatsapp", label: "WhatsApp", type: "tel" },
+  { name: "telefone", label: "Telefone fixo", type: "tel" },
+  { name: "num_alunos", label: "Número de alunos", type: "number" },
+  {
+    name: "segmentos",
+    label: "Segmentos",
+    type: "multi",
+    colSpan: 2,
+    options: [
+      { value: "infantil", label: "Infantil" },
+      { value: "fund1", label: "Fundamental 1" },
+      { value: "fund2", label: "Fundamental 2" },
+      { value: "medio", label: "Ensino Médio" },
+    ],
+  },
+  {
+    name: "eh_confessional",
+    label: "Confessional cristã?",
+    type: "select",
+    options: [
+      { value: "sim", label: "Sim" },
+      { value: "nao", label: "Não" },
+    ],
+  },
+  { name: "tradicao_confessional", label: "Tradição", type: "text" },
+  {
+    name: "cargo_qualificado",
+    label: "Cargo (qualificação)",
+    type: "select",
+    options: [
+      { value: "gestor", label: "Gestor / Diretor / Coordenador" },
+      { value: "professor", label: "Professor" },
+      { value: "mantenedor", label: "Mantenedor / Dono" },
+      { value: "outro", label: "Outro" },
+    ],
+  },
+  {
+    name: "espaco_maker",
+    label: "Espaço maker",
+    type: "select",
+    options: [
+      { value: "tem_funciona", label: "Já tem e funciona bem" },
+      { value: "tem_melhorar", label: "Tem mas precisa melhorar" },
+      { value: "planejando", label: "Está planejando construir" },
+      { value: "nao_tem", label: "Não tem (caro demais)" },
+    ],
+  },
+  {
+    name: "tamanho_escola",
+    label: "Tamanho da escola",
+    type: "select",
+    options: [
+      { value: "pequena", label: "Pequena (< 200)" },
+      { value: "media", label: "Média (200-500)" },
+      { value: "grande", label: "Grande (500+)" },
+    ],
+  },
+  { name: "origem", label: "Origem", type: "text" },
+  {
+    name: "status",
+    label: "Status",
+    type: "select",
+    options: [
+      { value: "lead_capturado", label: "Lead capturado" },
+      { value: "lead_qualificado", label: "Lead qualificado" },
+      { value: "diagnostico_completo", label: "Diagnóstico completo" },
+      { value: "contatado", label: "Contatado" },
+      { value: "agendado", label: "Agendado" },
+      { value: "fechado", label: "Fechado" },
+      { value: "descartado", label: "Descartado" },
+    ],
+  },
+  {
+    name: "observacoes",
+    label: "Observações internas",
+    type: "textarea",
+    colSpan: 2,
+    helper: "Anotações do time — não vão pra escola.",
+  },
+];
 
 export const dynamic = "force-dynamic";
 
@@ -98,12 +199,21 @@ export default async function DiagnosticoDetailPage({
 
   return (
     <div>
-      <Link
-        href="/admin/diagnostico-escola"
-        className="inline-flex items-center gap-1.5 text-[0.8125rem] text-white/65 hover:text-white mb-6 transition"
-      >
-        <ArrowLeft className="size-4" /> Voltar para a lista
-      </Link>
+      <div className="flex items-center justify-between gap-3 mb-6 flex-wrap">
+        <Link
+          href="/admin/diagnostico-escola"
+          className="inline-flex items-center gap-1.5 text-[0.8125rem] text-white/65 hover:text-white transition"
+        >
+          <ArrowLeft className="size-4" /> Voltar para a lista
+        </Link>
+        <DeleteButton
+          table="diagnostico_escola"
+          id={head.id}
+          itemLabel={head.nome_escola || "este diagnóstico"}
+          redirectTo="/admin/diagnostico-escola"
+          cascade={respostas.length > 0 ? `${respostas.length} respostas vinculadas` : undefined}
+        />
+      </div>
 
       {/* Header da escola */}
       <header className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 mb-6">
@@ -134,7 +244,25 @@ export default async function DiagnosticoDetailPage({
         </div>
       </header>
 
+      {/* Formulário de edição dos campos do cabeçalho */}
+      <section className="mb-6 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-7">
+        <h2 className="font-display text-white text-[1.125rem] mb-1">Editar informações</h2>
+        <p className="text-white/55 text-[0.8125rem] mb-5">
+          Atualiza os dados cadastrais da escola. As respostas do questionário (abaixo) não
+          são editáveis pelo painel.
+        </p>
+        <RecordEditForm
+          table="diagnostico_escola"
+          id={head.id}
+          initial={head}
+          fields={DIAG_FIELDS}
+        />
+      </section>
+
       {/* Respostas */}
+      <h2 className="font-display text-white text-[1.125rem] mb-3 mt-8">
+        Respostas do questionário
+      </h2>
       {respostas.length === 0 ? (
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-white/55">
           Esta escola ainda não respondeu o questionário de 8 blocos.
