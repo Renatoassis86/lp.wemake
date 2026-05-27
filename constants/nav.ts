@@ -43,7 +43,7 @@ export const primaryNav: NavLink[] = [
   {
     id: "ebook",
     label: "Ebook gratuito",
-    href: "/diagnostico",
+    href: "/ebook_7_principios",
     description: "Baixe o ebook 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã.",
   },
   {

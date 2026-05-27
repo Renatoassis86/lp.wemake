@@ -13,6 +13,7 @@ interface Testimonial {
   author: string;
   role: string;
   school: string;
+  location: string;
   badge: string;
   icon: any;
   color: string;
@@ -21,52 +22,57 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    text: "Unir robótica prática com a soberania de Deus mudou o engajamento dos nossos alunos. O material didático da We Make é riquíssimo, aliando alta técnica e princípios eternos.",
-    author: "Ana Beatriz Ramos",
-    role: "Coordenadora Pedagógica",
-    school: "Colégio Confessional Batista",
-    badge: "Parceria Escolar",
+    text: "Temos o privilégio de ser a primeira Escola Cristã e Clássica do Estado de São Paulo a implementar o Programa de educação Tecnológica We Make. Sou engenheiro e a nossa empresa mantenedora é do ramo de tecnologia e, como especialista, conseguimos enxergar excelência técnica e, o mais importante, tudo embasado na Cosmovisão Cristã.",
+    author: "Abraão Pires",
+    role: "Diretor Geral",
+    school: "ACR Classical Christian School",
+    location: "São Bernardo do Campo, SP",
+    badge: "Ano de implantação",
     icon: GraduationCap,
     color: "from-[rgb(var(--color-brand-royal))]/20 to-[rgb(var(--color-brand-sky))]/10",
   },
   {
     id: 2,
-    text: "A We Make nos ajudou a implantar a cultura maker sem ceder ao materialismo do mercado. Uma proposta pedagógica fundamentada na Cosmovisão Cristã e de altíssima qualidade técnica.",
-    author: "Marcos Vinícius Souza",
-    role: "Diretor Geral",
-    school: "Colégio Presbiteriano da Aliança",
-    badge: "Liderança",
+    text: "Sem dúvidas nenhuma, o posicionamento cristão bem consolidado, permeando todo o conteúdo da We Make, deixou o meu coração tranquilo em saber que seria implantado em nosso Colégio algo cristão de fato. Já estamos trabalhando há dois anos com a We Make e tem sido uma experiência maravilhosa. Se tornou a matéria favorita da nossa Escola! Eu, como Diretor e também pai de aluno, eu recomendo muito.",
+    author: "Thiago Ramos",
+    role: "Diretor",
+    school: "Colégio Cristão Amar",
+    location: "Itajaí, SC",
+    badge: "Segundo ano de parceria",
     icon: Award,
     color: "from-[rgb(var(--color-brand-mint))]/20 to-[rgb(var(--color-brand-royal))]/10",
   },
   {
     id: 3,
-    text: "Pela primeira vez, vejo os alunos programando e construindo robôs pensando em como servir ao próximo, resolver problemas reais e glorificar o Criador na cultura digital.",
-    author: "Gabriel Mendes",
-    role: "Professor de Tecnologia",
-    school: "Instituto Educacional Videira",
-    badge: "Corpo Docente",
-    icon: BookOpen,
+    text: "Praticamente, é a aula que eles mais gostam! Eu recomendo a We Make com certeza! Eu conheço o projeto. Eu conheço Dênis. Conheço todo o trabalho que tem sido feito. De 0 a 10: 10, com certeza! Porque vai abençoar a Escola, vai abençoar os alunos e vai ser o diferencial.",
+    author: "João Weidman Jr",
+    role: "Diretor Administrativo",
+    school: "Colégio Graciosa",
+    location: "Quatro Barras, PR",
+    badge: "Terceiro ano de parceria",
+    icon: Star,
     color: "from-[rgb(var(--color-brand-sky))]/20 to-[rgb(var(--color-brand-mint))]/10",
   },
   {
     id: 4,
-    text: "Ver meu filho construir tecnologia com discernimento moral, sabedoria e princípios teológicos sólidos conforta nosso coração como pais. Um diferencial sem igual.",
-    author: "Renata Lemos",
-    role: "Mãe Confessional",
-    school: "Comunidade de Aprendizagem",
-    badge: "Comunidade de Pais",
-    icon: Heart,
+    text: "Escolher a We Make foi muito fácil. A educação cristã vem para suprir uma lacuna da sociedade, e a We Make tem valores e princípios inegociáveis que se encaixam perfeitamente com a gente. Ela tem desenvolvido algo que é extremamente fundamental para os nossos alunos que é a criatividade!",
+    author: "Bruno Güiguer",
+    role: "Gestor",
+    school: "Colégio Journey",
+    location: "Curitiba, PR",
+    badge: "Segundo ano de parceria",
+    icon: BookOpen,
     color: "from-[rgb(var(--color-brand-royal))]/20 to-[rgb(var(--color-brand-mint))]/10",
   },
   {
     id: 5,
-    text: "A assessoria contínua de implantação e a formação docente nos deram segurança e consistência pedagógica. Hoje, nossa escola expressa verdade, beleza e propósito na tecnologia.",
-    author: "Sandra Albuquerque",
-    role: "Coordenadora de Inovação",
-    school: "Colégio Confessional Shalom",
-    badge: "Inovação Confessional",
-    icon: Star,
+    text: "Este é o nosso primeiro ano de parceria e os nossos alunos estão amando! Nós somos uma escola cristã, então ter um programa de educação tecnológica e robótica com Cosmovisão Cristã é o grande diferencial da We Make e nós estamos encantados com isso.",
+    author: "Ana Flávia",
+    role: "Diretora",
+    school: "Colégio Educar",
+    location: "Londrina, PR",
+    badge: "Ano de implantação",
+    icon: Heart,
     color: "from-[rgb(var(--color-brand-mint))]/20 to-[rgb(var(--color-brand-sky))]/10",
   },
 ];
@@ -170,6 +176,9 @@ export function Testimonials() {
                       </h4>
                       <p className="text-sm text-white/60 mt-0.5">
                         {current.role} · <span className="font-semibold text-[rgb(var(--color-brand-mint))]">{current.school}</span>
+                      </p>
+                      <p className="text-[0.75rem] text-white/45 mt-1 font-mono uppercase tracking-wide">
+                        {current.location}
                       </p>
                     </motion.div>
                   </AnimatePresence>
