@@ -119,7 +119,7 @@ export function Problem() {
                 </svg>
               </motion.div>
 
-              {/* Foto do CEO (fotos7.png) — chroma-key + máscara blob (corta verde residual) */}
+              {/* Sala maker — imagem ilustrativa do espaço */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -129,17 +129,16 @@ export function Problem() {
                 style={{ borderRadius: "62% 38% 47% 53% / 45% 60% 40% 55%" }}
               >
                 <Image
-                  src="/photos/fotos7.png"
-                  alt="Dênis Júlio — CEO e Fundador da We Make"
+                  src="/photos/sala-maker.jpg"
+                  alt="Sala maker de uma escola cristã clássica com bancadas, impressoras 3D, kits de robótica e alunos criando projetos"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 440px"
-                  className="object-cover object-top select-none pointer-events-none"
-                  style={{ filter: "url(#chroma-green)" }}
+                  className="object-cover object-center select-none pointer-events-none"
                 />
               </motion.div>
 
-              {/* Badge: Nome + Cargo (sobrepõe canto inferior) */}
+              {/* Badge: Selo do espaço maker (sobrepõe canto inferior) */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -150,10 +149,10 @@ export function Problem() {
                 <div className="size-2.5 rounded-full bg-[rgb(var(--color-brand-mint))] animate-pulse" />
                 <div>
                   <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1rem] leading-none font-bold">
-                    Dênis Júlio
+                    Espaço Maker We Make
                   </p>
                   <p className="text-[rgb(var(--color-brand-royal))] text-[0.75rem] font-semibold mt-1 tracking-wide">
-                    CEO e Fundador · We Make
+                    Currículo · Formação · Infraestrutura
                   </p>
                 </div>
               </motion.div>
