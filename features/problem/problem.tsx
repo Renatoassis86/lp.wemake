@@ -52,7 +52,7 @@ export function Problem() {
           
           {/* Foto do CEO em moldura orgânica blob */}
           <Reveal delay={0.3}>
-            <div className="relative w-full max-w-[360px] sm:max-w-[460px] md:max-w-[540px] aspect-[4/3] mx-auto flex items-center justify-center overflow-visible">
+            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] aspect-[4/3] mx-auto flex items-center justify-center overflow-visible">
 
               {/* Sombra suave atrás (substitui o blob, sem rotação que cause flicker) */}
               <div
@@ -112,41 +112,35 @@ export function Problem() {
                 </svg>
               </motion.div>
 
-              {/* Sala maker — moldura quadrada cantos retos, fixada com washi tape */}
+              {/* Sala maker — foto quadrada limpa, fixada com washi tape nos cantos */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-                className="absolute inset-0 z-10 ring-4 ring-white shadow-[0_22px_55px_-15px_rgba(11,31,68,0.5)]"
+                className="absolute inset-0 z-10 shadow-[0_18px_45px_-15px_rgba(11,31,68,0.4)]"
               >
-                {/* Carrossel ocupa o quadrado inteiro, sem borda arredondada */}
+                {/* Carrossel sem borda — só a foto */}
                 <div className="relative w-full h-full overflow-hidden">
                   <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
                 </div>
 
-                {/* Washi tape — canto superior esquerdo (mint, diagonal) */}
+                {/* Washi tape — atravessa diagonalmente cada quina (metade sobre a foto, metade fora) */}
                 <div
                   aria-hidden
-                  className="absolute -top-3 -left-4 w-24 h-7 -rotate-45 bg-[rgb(var(--color-brand-mint))]/70 border-y border-white/50 shadow-md z-30"
+                  className="absolute -top-2 -left-3 w-16 h-5 -rotate-45 origin-center bg-[rgb(var(--color-brand-mint))]/75 border-y border-white/55 shadow z-30"
                 />
-
-                {/* Washi tape — canto superior direito (royal, diagonal oposta) */}
                 <div
                   aria-hidden
-                  className="absolute -top-3 -right-4 w-24 h-7 rotate-45 bg-[rgb(var(--color-brand-royal))]/65 border-y border-white/50 shadow-md z-30"
+                  className="absolute -top-2 -right-3 w-16 h-5 rotate-45 origin-center bg-[rgb(var(--color-brand-royal))]/70 border-y border-white/55 shadow z-30"
                 />
-
-                {/* Washi tape — canto inferior esquerdo (royal, diagonal) */}
                 <div
                   aria-hidden
-                  className="absolute -bottom-3 -left-4 w-24 h-7 rotate-45 bg-[rgb(var(--color-brand-royal))]/65 border-y border-white/50 shadow-md z-30"
+                  className="absolute -bottom-2 -left-3 w-16 h-5 rotate-45 origin-center bg-[rgb(var(--color-brand-royal))]/70 border-y border-white/55 shadow z-30"
                 />
-
-                {/* Washi tape — canto inferior direito (mint, diagonal oposta) */}
                 <div
                   aria-hidden
-                  className="absolute -bottom-3 -right-4 w-24 h-7 -rotate-45 bg-[rgb(var(--color-brand-mint))]/70 border-y border-white/50 shadow-md z-30"
+                  className="absolute -bottom-2 -right-3 w-16 h-5 -rotate-45 origin-center bg-[rgb(var(--color-brand-mint))]/75 border-y border-white/55 shadow z-30"
                 />
               </motion.div>
 
