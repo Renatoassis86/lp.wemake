@@ -135,8 +135,6 @@ export function Problem() {
                   style={{
                     borderRadius: "55% 45% 50% 50% / 48% 52% 48% 52%",
                     isolation: "isolate",
-                    WebkitMaskImage: "-webkit-radial-gradient(white, black)",
-                    transform: "translateZ(0)",
                   }}
                 >
                   <SalaMakerCarousel alt="Espaço maker do Colégio Cristão Amar em Itajaí, SC" />
