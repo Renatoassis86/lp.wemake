@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
-import { Instagram, Youtube, MessageCircle, Mail, Phone, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight } from "lucide-react";
+import { SocialIcons } from "@/features/footer/social-icons";
 
 /**
  * Footer da LP de captura — logo + missão + contato + CTA.
@@ -23,35 +24,7 @@ export function LpFooter() {
                 Cosmovisão Cristã. Tecnologia com alma. Educação com propósito.
               </p>
 
-              <div className="flex items-center gap-4 mt-7">
-                <a
-                  href="https://www.instagram.com/denisjulio"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[rgb(var(--color-brand-mint))]/30 flex items-center justify-center transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="size-5" />
-                </a>
-                <a
-                  href="https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#25D366]/30 flex items-center justify-center transition-colors"
-                  aria-label="WhatsApp"
-                >
-                  <MessageCircle className="size-5" />
-                </a>
-                <a
-                  href="https://www.youtube.com/@wemake"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-red-500/30 flex items-center justify-center transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="size-5" />
-                </a>
-              </div>
+              <SocialIcons className="mt-7" />
             </div>
 
             {/* Coluna: Contato + CTA */}

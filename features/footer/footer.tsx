@@ -1,7 +1,8 @@
 import { Container } from "@/components/ui/container";
-import { Instagram, Youtube, MessageCircle, Mail, Phone, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { primaryNav } from "@/constants/nav";
+import { SocialIcons } from "@/features/footer/social-icons";
 
 /**
  * Footer institucional — Logo, missão, navegação, contato + CTA principal.
@@ -21,17 +22,7 @@ export function Footer() {
               <p className="text-white/65 text-[1rem] leading-relaxed max-w-xs">
                 A primeira editora brasileira de Educação Tecnológica e Maker fundamentada na Cosmovisão Cristã. Tecnologia com alma. Educação com propósito.
               </p>
-              <div className="flex items-center gap-4 mt-8">
-                <a href="https://www.instagram.com/denisjulio" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[rgb(var(--color-brand-mint))]/30 flex items-center justify-center transition-colors" aria-label="Instagram">
-                  <Instagram className="size-5" />
-                </a>
-                <a href="https://chat.whatsapp.com/J4giIFuxMFh8vWGBgpAm3z?mode=gi_t" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#25D366]/30 flex items-center justify-center transition-colors" aria-label="WhatsApp">
-                  <MessageCircle className="size-5" />
-                </a>
-                <a href="https://www.youtube.com/@wemake" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-red-500/30 flex items-center justify-center transition-colors" aria-label="YouTube">
-                  <Youtube className="size-5" />
-                </a>
-              </div>
+              <SocialIcons />
             </div>
 
             {/* Coluna: Navegação */}
