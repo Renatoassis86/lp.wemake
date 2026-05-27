@@ -52,7 +52,7 @@ export function Problem() {
           
           {/* Foto do CEO em moldura orgânica blob */}
           <Reveal delay={0.3}>
-            <div className="relative w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px] aspect-square mx-auto flex items-center justify-center overflow-visible">
+            <div className="relative w-full max-w-[360px] sm:max-w-[460px] md:max-w-[540px] aspect-[4/3] mx-auto flex items-center justify-center overflow-visible">
 
               {/* Sombra suave atrás (substitui o blob, sem rotação que cause flicker) */}
               <div

@@ -60,7 +60,8 @@ export function SalaMakerCarousel({
             alt={alt}
             fill
             priority={idx === 0}
-            sizes="(max-width: 768px) 100vw, 480px"
+            quality={92}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 540px, 640px"
             className="object-cover object-center select-none pointer-events-none"
           />
         </motion.div>
