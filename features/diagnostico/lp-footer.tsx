@@ -62,13 +62,9 @@ export function LpFooter() {
 
               {/* CTA principal — destaque */}
               <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute -inset-3 bg-[rgb(var(--color-brand-mint))]/20 blur-2xl rounded-full animate-pulse pointer-events-none"
-                />
                 <a
                   href="/#reuniao"
-                  className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-8px_rgba(118,243,205,0.6)] transition-all duration-300 shadow-[0_8px_28px_-6px_rgba(118,243,205,0.45)] ring-1 ring-[rgb(var(--color-brand-mint))]/40"
+                  className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[rgb(var(--color-brand-mint))] text-[rgb(var(--color-brand-navy))] font-bold text-[1.0625rem] tracking-tight hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-8px_rgba(118,243,205,0.6)] card-hover-lift shadow-[0_8px_28px_-6px_rgba(118,243,205,0.45)] ring-1 ring-[rgb(var(--color-brand-mint))]/40"
                 >
                   Falar com consultor
                   <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +81,15 @@ export function LpFooter() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.75rem] text-white/45">
           <p>© {new Date().getFullYear()} We Make. Todos os direitos reservados.</p>
           <p className="font-mono uppercase tracking-[0.15em]">
-            Criado pela <span className="text-white/70">Arkos Intelligence</span>
+            Criado pela{" "}
+            <a
+              href="https://arkosintelligence.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/70 hover:text-[rgb(var(--color-brand-mint))] card-hover-soft underline-offset-2 hover:underline"
+            >
+              Arkos Intelligence
+            </a>
           </p>
         </div>
       </Container>

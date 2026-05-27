@@ -411,7 +411,7 @@ function IdentificacaoBlock({
 }) {
   return (
     <div>
-      <BlockHeader emoji="📝" titulo="Identificação da escola" subtitulo="Para personalizar seu diagnóstico, precisamos conhecer você e sua escola." />
+      <BlockHeader titulo="Identificação da escola" subtitulo="Para personalizar seu diagnóstico, precisamos conhecer você e sua escola." />
 
       <div className="space-y-4">
         <FieldText
@@ -572,7 +572,7 @@ function BlockRenderer({
 }) {
   return (
     <div>
-      <BlockHeader emoji={block.emoji} titulo={block.titulo} subtitulo={block.subtitulo} />
+      <BlockHeader titulo={block.titulo} subtitulo={block.subtitulo} />
 
       <div className="space-y-7">
         {block.questions.map((q) => (
@@ -589,15 +589,12 @@ function BlockRenderer({
   );
 }
 
-function BlockHeader({ emoji, titulo, subtitulo }: { emoji?: string; titulo: string; subtitulo: string }) {
+function BlockHeader({ titulo, subtitulo }: { titulo: string; subtitulo: string }) {
   return (
     <div className="mb-7 pb-5 border-b border-gray-100">
-      <div className="flex items-center gap-3 mb-2.5">
-        {emoji && <span className="text-2xl sm:text-3xl">{emoji}</span>}
-        <h2 className="font-display text-[rgb(var(--color-brand-navy))] text-[1.5rem] sm:text-[1.75rem] leading-[1.1]">
-          {titulo}
-        </h2>
-      </div>
+      <h2 className="font-display text-[rgb(var(--color-brand-navy))] text-[1.5rem] sm:text-[1.75rem] leading-[1.1] mb-2.5">
+        {titulo}
+      </h2>
       <p className="text-gray-600 text-[0.9375rem] leading-relaxed">{subtitulo}</p>
     </div>
   );

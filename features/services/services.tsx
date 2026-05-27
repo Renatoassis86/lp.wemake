@@ -8,47 +8,51 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 
+/* Paleta monocromática unificada (We Make navy/mint) — todos iguais */
+const ICON_BG = "bg-[rgb(var(--color-brand-mint))]/15";
+const ICON_COLOR = "text-[rgb(var(--color-brand-mint-deep))]";
+
 const solutions = [
   {
     title: "Currículo completo de Educação Tecnológica e Maker",
     desc: "Aulas estruturadas com trilhas envolvendo programação, robótica, eletrônica, modelagem e impressão 3D, engenharia, cultura maker e cidadania digital.",
-    color: "bg-[rgb(var(--color-brand-mint))]/20", // Mint soft
-    iconColor: "text-[rgb(var(--color-brand-mint-deep))]",
+    color: ICON_BG,
+    iconColor: ICON_COLOR,
     icon: Cpu,
   },
   {
     title: "Material didático do aluno",
     desc: "Livro maker do aluno, que funcionará como um portfólio pessoal: poderá anotar ideias; registrar etapas de criação, organizar aprendizados e conquistas ao longo das aulas.",
-    color: "bg-[rgb(var(--color-brand-sky))]/20", // Yellow soft
-    iconColor: "text-[rgb(var(--color-brand-sky))]",
+    color: ICON_BG,
+    iconColor: ICON_COLOR,
     icon: BookOpen,
   },
   {
     title: "Metodologia própria",
     desc: "Conhecer · Explorar · Criar. Os alunos são convidados a conhecer um problema real, explorar conceitos fundamentais e criar soluções práticas por meio de projetos mão na massa.",
-    color: "bg-orange-400/20", // Laranja ludico soft
-    iconColor: "text-orange-500",
+    color: ICON_BG,
+    iconColor: ICON_COLOR,
     icon: Palette,
   },
   {
     title: "Assessoria pedagógica, tecnológica e teológica",
     desc: "A escola não recebe apenas aulas prontas, mas acompanhamento para implantação, formação docente, organização da sala maker e melhoria contínua da prática pedagógica.",
-    color: "bg-pink-400/20", // Rosa ludico soft
-    iconColor: "text-pink-500",
+    color: ICON_BG,
+    iconColor: ICON_COLOR,
     icon: Scissors,
   },
   {
     title: "Plataforma Virtual completa",
     desc: "Materiais e recursos organizados em um ambiente digital de apoio para os professores, pais e coordenação.",
-    color: "bg-[rgb(var(--color-brand-royal-soft))]/30", // Azul claro
-    iconColor: "text-[rgb(var(--color-brand-royal))]",
+    color: ICON_BG,
+    iconColor: ICON_COLOR,
     icon: Settings,
   },
   {
     title: "Ecologia Formativa",
     desc: "Projetamos com você uma sala maker completa, que atenda toda a comunidade escolar e não apenas às aulas da We Make.",
-    color: "bg-purple-400/20", // Roxo ludico soft
-    iconColor: "text-purple-500",
+    color: ICON_BG,
+    iconColor: ICON_COLOR,
     icon: Wrench,
   },
 ];

@@ -280,7 +280,6 @@ export default async function DiagnosticoDetailPage({
                   className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden"
                 >
                   <div className="px-5 sm:px-6 py-4 bg-white/[0.03] border-b border-white/8 flex items-center gap-3">
-                    {blocoConfig?.emoji && <span className="text-2xl">{blocoConfig.emoji}</span>}
                     <div>
                       <p className="text-[0.6875rem] font-mono uppercase tracking-wide text-white/55">
                         Bloco {bloco}
