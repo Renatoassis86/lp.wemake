@@ -30,6 +30,14 @@ export default function DiagnosticoPage() {
         <WaveDivider fromColor="#ffffff" toColor="#0b1f44" variant={1} height={60} />
 
         <DiagnosticoAutor />
+        {/* Autor navy → Footer navy | wave tom sobre tom (mesma cor, com pincelada royal sutil) */}
+        <WaveDivider
+          fromColor="#0b1f44"
+          toColor="#0b1f44"
+          variant={3}
+          height={70}
+          shadowColor="#1a3060"
+        />
       </main>
       <LpFooter />
     </>
