@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 import { primaryNav } from "@/constants/nav";
 import { cn } from "@/lib/utils";
@@ -78,23 +77,20 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "fixed top-3 inset-x-0 z-[var(--z-nav)]",
-        "transition-[top] duration-500 ease-[var(--ease-cinematic)]",
-        scrolled && "top-2",
+        "fixed top-0 inset-x-0 z-[var(--z-nav)]",
       )}
     >
-      <Container size="2xl">
         <motion.div
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            "relative mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6",
-            "rounded-lg border px-4 sm:px-5",
-            "transition-[max-width,height,background,border-color,box-shadow] duration-500 ease-[var(--ease-cinematic)]",
+            "relative w-full grid grid-cols-[auto_1fr_auto] items-center gap-6",
+            "border-b px-5 sm:px-8 lg:px-12",
+            "transition-[height,background,border-color,box-shadow] duration-500 ease-[var(--ease-cinematic)]",
             scrolled
-              ? "max-w-[var(--container-xl)] h-[72px] border-white/10 bg-ink-900/45 backdrop-blur-2xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.45)]"
-              : "max-w-[var(--container-2xl)] h-[76px] border-white/5 bg-ink-950/15 backdrop-blur-xl",
+              ? "h-[68px] border-white/10 bg-ink-900/55 backdrop-blur-2xl shadow-[0_4px_24px_-8px_rgba(0,0,0,0.4)]"
+              : "h-[76px] border-white/5 bg-ink-950/20 backdrop-blur-xl",
           )}
         >
           {/* Esquerda — Logo */}
@@ -183,7 +179,6 @@ export function Nav() {
             </button>
           </div>
         </motion.div>
-      </Container>
 
       <AnimatePresence>{navOpen && <MobileMenu />}</AnimatePresence>
     </header>
