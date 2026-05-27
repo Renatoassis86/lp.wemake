@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import { formatDateBR } from "@/features/admin/admin-table";
+import { formatDateBR } from "@/lib/admin-format";
 
 export const dynamic = "force-dynamic";
 

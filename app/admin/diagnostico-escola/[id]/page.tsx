@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, Mail, Phone, MapPin, Users, Building2 } from "lucide-react";
 import { notFound } from "next/navigation";
-import { formatDateBR } from "@/features/admin/admin-table";
+import { formatDateBR } from "@/lib/admin-format";
 import { BLOCKS } from "@/features/diagnostico/maturidade/blocks-config";
 
 export const dynamic = "force-dynamic";
