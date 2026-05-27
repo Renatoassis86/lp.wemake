@@ -90,11 +90,11 @@ export function Nav() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
             "relative mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6",
-            "rounded-full border px-4 sm:px-5",
+            "rounded-lg border px-4 sm:px-5",
             "transition-[max-width,height,background,border-color,box-shadow] duration-500 ease-[var(--ease-cinematic)]",
             scrolled
-              ? "max-w-[var(--container-xl)] h-[76px] border-white/10 bg-ink-900/75 backdrop-blur-2xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6)]"
-              : "max-w-[var(--container-2xl)] h-[80px] border-white/5 bg-ink-950/30 backdrop-blur-xl",
+              ? "max-w-[var(--container-xl)] h-[72px] border-white/10 bg-ink-900/45 backdrop-blur-2xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.45)]"
+              : "max-w-[var(--container-2xl)] h-[76px] border-white/5 bg-ink-950/15 backdrop-blur-xl",
           )}
         >
           {/* Esquerda — Logo */}
@@ -114,7 +114,7 @@ export function Nav() {
                     trackEvent({ name: "scroll_section", section: link.id })
                   }
                   className={cn(
-                    "group relative px-4 py-2 rounded-full",
+                    "group relative px-4 py-2 rounded-md",
                     "text-[0.9375rem] font-semibold tracking-tight",
                     "text-white/85 hover:text-white",
                     "transition-colors duration-300",
@@ -139,7 +139,7 @@ export function Nav() {
                   <span
                     aria-hidden
                     className="
-                      pointer-events-none absolute inset-0 rounded-full
+                      pointer-events-none absolute inset-0 rounded-md
                       bg-[rgb(var(--color-brand-mint))]/0
                       group-hover:bg-[rgb(var(--color-brand-mint))]/10
                       transition-colors duration-300
@@ -149,7 +149,7 @@ export function Nav() {
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute inset-0 -z-10 rounded-full bg-white/[0.12] border border-white/15"
+                      className="absolute inset-0 -z-10 rounded-md bg-white/[0.10] border border-white/15"
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     />
                   )}
@@ -177,7 +177,7 @@ export function Nav() {
               type="button"
               aria-label={navOpen ? "Fechar menu" : "Abrir menu"}
               onClick={() => setNavOpen(!navOpen)}
-              className="lg:hidden inline-flex size-10 items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition"
+              className="lg:hidden inline-flex size-10 items-center justify-center rounded-md border border-white/10 hover:bg-white/5 transition"
             >
               {navOpen ? <X className="size-4" /> : <Menu className="size-4" />}
             </button>
@@ -198,7 +198,7 @@ function MobileMenu() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="lg:hidden mt-2 mx-3 rounded-3xl border border-white/10 bg-ink-900/90 backdrop-blur-2xl shadow-xl overflow-hidden"
+      className="lg:hidden mt-2 mx-3 rounded-lg border border-white/10 bg-ink-900/80 backdrop-blur-2xl shadow-xl overflow-hidden"
     >
       <nav className="flex flex-col p-2">
         {primaryNav.map((link) => (
