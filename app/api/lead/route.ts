@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { contactSchema, leadShortSchema, ROLES_LABEL } from "@/lib/validation";
+import { getNotifyEmails } from "@/lib/notify";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const NOTIFY_TO = "contato@wemake.com.br";
 
 /**
  * Lead capture endpoint — grava na tabela `leads_escola` (Supabase),
@@ -127,7 +126,7 @@ async function sendNotificationEmail(type: "reuniao" | "material", data: any) {
   const from = process.env.MAIL_FROM || "We Make Landing <onboarding@resend.dev>";
 
   if (!apiKey) {
-    console.warn("[lead] RESEND_API_KEY não configurado — email não enviado para", NOTIFY_TO);
+    console.warn("[lead] RESEND_API_KEY não configurado — email não enviado para", getNotifyEmails());
     return;
   }
 
@@ -182,7 +181,7 @@ async function sendNotificationEmail(type: "reuniao" | "material", data: any) {
     },
     body: JSON.stringify({
       from,
-      to: [NOTIFY_TO],
+      to: getNotifyEmails(),
       reply_to: data.email,
       subject,
       html,

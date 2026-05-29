@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { diagnosticoQualificacaoSchema } from "@/lib/validation";
+import { getNotifyEmails } from "@/lib/notify";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const NOTIFY_TO = "contato@wemake.com.br";
 
 const CARGO_LABEL: Record<string, string> = {
   gestor: "Gestor / Diretor / Coordenador",
@@ -138,7 +137,7 @@ async function sendQualifiedLeadEmail(data: ReturnType<typeof diagnosticoQualifi
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify({
       from,
-      to: [NOTIFY_TO],
+      to: getNotifyEmails(),
       reply_to: data.email,
       subject: `🔥 Lead QUALIFICADO — ${data.email}`,
       html,

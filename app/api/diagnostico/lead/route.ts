@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { diagnosticoLeadSchema } from "@/lib/validation";
+import { getNotifyEmails } from "@/lib/notify";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const NOTIFY_TO = "contato@wemake.com.br";
 
 /**
  * Captura de lead da LP /diagnostico (form curto antes do download do ebook).
@@ -139,7 +138,7 @@ async function sendNotificationEmail(data: ReturnType<typeof diagnosticoLeadSche
     },
     body: JSON.stringify({
       from,
-      to: [NOTIFY_TO],
+      to: getNotifyEmails(),
       reply_to: data.email,
       subject: `📥 Novo lead (Etapa 1) — ${data.nome_escola}`,
       html,

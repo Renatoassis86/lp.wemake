@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { diagnosticoMaturidadeSchema } from "@/lib/validation";
+import { getNotifyEmails } from "@/lib/notify";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const NOTIFY_TO = "contato@wemake.com.br";
 
 /**
  * Submit do questionário de maturidade (8 blocos).
@@ -185,7 +184,7 @@ async function sendNotificationEmail(
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify({
       from,
-      to: [NOTIFY_TO],
+      to: getNotifyEmails(),
       reply_to: data.email,
       subject: `🎯 Diagnóstico completo — ${data.nome_escola} (${data.cidade})`,
       html,
