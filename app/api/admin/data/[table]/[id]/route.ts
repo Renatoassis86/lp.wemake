@@ -44,6 +44,7 @@ const EDITABLE_FIELDS: Record<string, string[]> = {
     "telefone",
     "segmentos",
     "num_alunos",
+    "maior_turma",
     "eh_confessional",
     "tradicao_confessional",
     "cargo_qualificado",

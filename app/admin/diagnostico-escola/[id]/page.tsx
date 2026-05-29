@@ -27,6 +27,7 @@ const DIAG_FIELDS: FieldDef[] = [
   { name: "whatsapp", label: "WhatsApp", type: "tel" },
   { name: "telefone", label: "Telefone fixo", type: "tel" },
   { name: "num_alunos", label: "Número de alunos", type: "number" },
+  { name: "maior_turma", label: "Alunos na maior turma", type: "number" },
   {
     name: "segmentos",
     label: "Segmentos",
@@ -227,6 +228,7 @@ export default async function DiagnosticoDetailPage({
           <InfoLine icon={MapPin} label="Localização" value={[head.cidade, head.uf].filter(Boolean).join(" · ")} />
           <InfoLine icon={Building2} label="Confessional" value={head.eh_confessional === "sim" ? `Sim — ${head.tradicao_confessional || ""}` : head.eh_confessional || "—"} />
           <InfoLine icon={Users} label="Alunos" value={head.num_alunos ? String(head.num_alunos) : "—"} />
+          <InfoLine icon={Users} label="Maior turma" value={head.maior_turma ? `${head.maior_turma} alunos` : "—"} />
           <InfoLine icon={Mail} label="E-mail" value={head.email} />
           <InfoLine icon={Phone} label="WhatsApp/Tel" value={head.whatsapp || head.telefone || "—"} />
           <InfoLine icon={Users} label="Respondente" value={`${head.nome_respondente || "—"} (${head.funcao || "—"})`} />

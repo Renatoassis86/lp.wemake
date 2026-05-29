@@ -154,6 +154,7 @@ export const diagnosticoMaturidadeSchema = z.object({
   funcao: z.enum(["mantenedor", "diretor", "coordenador", "professor", "outro"]),
   segmentos: z.array(z.enum(["infantil", "fund1", "fund2", "medio"])).min(1, "Selecione pelo menos um segmento."),
   num_alunos: z.number().int().min(0).max(100000).optional().nullable(),
+  maior_turma: z.number().int().min(0).max(1000).optional().nullable(),
   eh_confessional: z.enum(["sim", "nao"]).optional(),
   tradicao_confessional: z.string().max(120).optional().nullable(),
   consent: z.boolean().refine((v) => v === true, "É preciso consentir o tratamento de dados."),

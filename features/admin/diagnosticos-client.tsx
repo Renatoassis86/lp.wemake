@@ -19,6 +19,7 @@ type Diagnostico = {
   telefone: string | null;
   segmentos: string[] | null;
   num_alunos: number | null;
+  maior_turma: number | null;
   eh_confessional: string | null;
   tradicao_confessional: string | null;
   cargo_qualificado: string | null;

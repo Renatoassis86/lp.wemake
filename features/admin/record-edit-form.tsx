@@ -61,13 +61,15 @@ export function RecordEditForm({
     setError(null);
     setSavedAt(null);
 
-    // Normaliza payload: num_alunos vira number
+    // Normaliza payload: campos numéricos viram number (ou null)
     const payload: Record<string, any> = { ...values };
-    if (payload.num_alunos != null && payload.num_alunos !== "") {
-      const n = Number(payload.num_alunos);
-      payload.num_alunos = Number.isFinite(n) ? n : null;
-    } else {
-      payload.num_alunos = null;
+    for (const numField of ["num_alunos", "maior_turma"]) {
+      if (payload[numField] != null && payload[numField] !== "") {
+        const n = Number(payload[numField]);
+        payload[numField] = Number.isFinite(n) ? n : null;
+      } else {
+        payload[numField] = null;
+      }
     }
 
     try {

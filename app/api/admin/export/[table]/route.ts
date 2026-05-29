@@ -56,6 +56,7 @@ const COLUMN_LABELS: Record<string, string> = {
   telefone: "Telefone",
   segmentos: "Segmentos",
   num_alunos: "Nº alunos",
+  maior_turma: "Maior turma",
   eh_confessional: "Confessional?",
   tradicao_confessional: "Tradição",
   cargo_qualificado: "Cargo (qualif.)",

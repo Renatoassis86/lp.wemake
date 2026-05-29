@@ -226,6 +226,7 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
       funcao: answers.funcao,
       segmentos: answers.segmentos || [],
       num_alunos: answers.num_alunos ? Number(answers.num_alunos) : null,
+      maior_turma: answers.maior_turma ? Number(answers.maior_turma) : null,
       eh_confessional: answers.eh_confessional || undefined,
       tradicao_confessional: answers.tradicao_confessional || null,
       consent: !!answers.consent,
@@ -510,14 +511,24 @@ function IdentificacaoBlock({
           ]}
         />
 
-        <FieldText
-          id="num_alunos"
-          type="number"
-          label="Número aproximado de alunos (opcional)"
-          placeholder="Ex: 350"
-          value={answers.num_alunos || ""}
-          onChange={(v) => setAnswer("num_alunos", v)}
-        />
+        <div className="grid sm:grid-cols-2 gap-3">
+          <FieldText
+            id="num_alunos"
+            type="number"
+            label="Número aproximado de alunos (opcional)"
+            placeholder="Ex: 350"
+            value={answers.num_alunos || ""}
+            onChange={(v) => setAnswer("num_alunos", v)}
+          />
+          <FieldText
+            id="maior_turma"
+            type="number"
+            label="Alunos na maior turma"
+            placeholder="Ex: 32"
+            value={answers.maior_turma || ""}
+            onChange={(v) => setAnswer("maior_turma", v)}
+          />
+        </div>
 
         <FieldRadioInline
           id="eh_confessional"
