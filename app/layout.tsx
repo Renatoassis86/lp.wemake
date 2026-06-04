@@ -5,6 +5,10 @@ import { LenisProvider } from "@/lib/lenis";
 import { ScrollProgressBar } from "@/components/motion/scroll-progress";
 import { buildMetadata, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { cn } from "@/lib/utils";
+import { Suspense } from "react";
+import { MetaPixel } from "@/components/MetaPixel";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { UtmTracker } from "@/components/UtmTracker";
 import "./globals.css";
 
 export const metadata: Metadata = buildMetadata();
@@ -72,6 +76,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground antialiased">
+        <Suspense fallback={null}>
+          <MetaPixel />
+          <GoogleAnalytics />
+          <UtmTracker />
+        </Suspense>
         <GlobalSVGMasks />
         
         <a

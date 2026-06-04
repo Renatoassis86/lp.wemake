@@ -7,7 +7,16 @@
       "Bash(mv \"Ebook Isca 2026 \\(Desfoque\\).pdf\" \"ebook-isca-7-principios.pdf\")",
       "Bash(mv \"Ebook_Sete princípios_SD.pdf\" \"ebook-completo-7-principios.pdf\")",
       "PowerShell($tools = @\\('pdftotext','pdfinfo','pdftoppm','mutool','magick','gswin64c'\\); foreach \\($t in $tools\\) { $c = Get-Command $t -ErrorAction SilentlyContinue; if \\($c\\) { \"$\\($t\\): $\\($c.Source\\)\" } else { \"$\\($t\\): NAO ENCONTRADO\" } })",
-      "PowerShell(winget install oschwartz10612.Poppler --accept-source-agreements --accept-package-agreements --silent 2>&1)"
+      "PowerShell(winget install oschwartz10612.Poppler --accept-source-agreements --accept-package-agreements --silent 2>&1)",
+      "Bash(powershell -NoProfile -Command \"Get-Volume D | Select-Object DriveLetter, SizeRemaining, Size\")",
+      "Bash(git mv *)",
+      "Bash(Get-ChildItem -Path \"d:\\\\lp_wemake\" -Recurse -Include \"*.ts\",\"*.tsx\" -Exclude \".next\",\"node_modules\",\"dist\",\"build\")",
+      "Bash(node -e ' *)",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(48\\).toString\\('base64url'\\)\\)\")",
+      "Bash(kill bezy4y6vx *)",
+      "Bash(powershell -NoProfile -Command \"Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash(powershell -NoProfile -Command 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''D:\\\\lp_wemake\\\\public\\\\photos\\\\salamaker1.png'\\\\''\\); Write-Host \"Width: $\\($img.Width\\), Height: $\\($img.Height\\), Ratio: $\\([math]::Round\\($img.Width / $img.Height, 3\\)\\)\"; $img.Dispose\\(\\)')",
+      "Bash(awk -F: '{print $1\":\"$2}')"
     ]
   }
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { contactSchema, leadShortSchema, ROLES_LABEL } from "@/lib/validation";
 import { getNotifyEmails } from "@/lib/notify";
 
@@ -59,6 +60,18 @@ export async function POST(req: Request) {
     `[${type === "material" ? "Material gratuito" : "Reunião estratégica"}] via wemake-landing`,
     `Cargo: ${ROLES_LABEL[data.role as keyof typeof ROLES_LABEL] || data.role}`,
   ];
+
+  const cookieStore = await cookies();
+  const utmSource = cookieStore.get("utm_source")?.value;
+  const utmCampaign = cookieStore.get("utm_campaign")?.value;
+  const utmMedium = cookieStore.get("utm_medium")?.value;
+  const fbclid = cookieStore.get("fbclid")?.value;
+
+  if (utmSource) meta.push(`UTM Source: ${utmSource}`);
+  if (utmCampaign) meta.push(`UTM Campaign: ${utmCampaign}`);
+  if (utmMedium) meta.push(`UTM Medium: ${utmMedium}`);
+  if (fbclid) meta.push(`FBCLID: ${fbclid}`);
+
   if (type === "reuniao") {
     if (data.preferred_date) meta.push(`Sugestão data: ${data.preferred_date}`);
     if (data.preferred_time) meta.push(`Sugestão horário: ${data.preferred_time}`);

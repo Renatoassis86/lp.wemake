@@ -12,10 +12,12 @@ import {
   LogOut,
   Menu,
   X,
+  TrendingUp,
 } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Visão geral", icon: LayoutDashboard, exact: true },
+  { href: "/admin/analytics", label: "Analytics & Funil", icon: TrendingUp },
   { href: "/admin/leads-escola", label: "Leads (escolas)", icon: Users },
   {
     href: "/admin/diagnostico-escola",
