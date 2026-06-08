@@ -11,11 +11,14 @@ import {
   ArrowRight,
   AlertCircle,
   Loader2,
+  X,
+  Phone
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
+import { siteConfig } from "@/constants/site";
 
 /**
  * Página /obrigado — Etapa 2 do fluxo do ebook.
@@ -261,8 +264,77 @@ function ReadyView({
   primeiroNome: string;
   downloadLinkRef: React.RefObject<HTMLAnchorElement | null>;
 }) {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setShowPopup(true);
+    }, 2500);
+    return () => clearTimeout(t);
+  }, []);
+
+  const waMessage = "Olá! Acabei de baixar o e-book e gostaria de saber mais sobre as soluções da We Make para escolas confessionais.";
+  const waLink = `https://wa.me/${siteConfig.whatsapp.consultor.number}?text=${encodeURIComponent(waMessage)}`;
+
   return (
     <div>
+      <AnimatePresence>
+        {showPopup && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setShowPopup(false)}
+            />
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl z-10 text-center overflow-hidden"
+            >
+              <button
+                onClick={() => setShowPopup(false)}
+                className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition"
+              >
+                <X className="size-4" />
+              </button>
+              
+              <div className="inline-flex items-center justify-center size-16 rounded-full bg-[#25D366]/15 mb-5">
+                <Phone className="size-8 text-[#25D366]" />
+              </div>
+              
+              <h3 className="font-display text-[rgb(var(--color-brand-navy))] text-2xl mb-3">
+                Que tal darmos o próximo passo?
+              </h3>
+              <p className="text-gray-600 text-[0.9375rem] leading-relaxed mb-6">
+                Enquanto o seu e-book baixa, que tal falar direto com o nosso time institucional pelo WhatsApp para entender como a We Make pode ajudar a sua escola?
+              </p>
+              
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setShowPopup(false)}
+                className="flex items-center justify-center gap-2 w-full h-14 rounded-xl bg-[#25D366] hover:bg-[#20b858] text-white font-bold text-[1.0625rem] shadow-lg hover:-translate-y-0.5 transition-all"
+              >
+                <MessageCircle className="size-5" />
+                Falar no WhatsApp
+              </a>
+              
+              <button
+                onClick={() => setShowPopup(false)}
+                className="mt-4 text-[0.875rem] font-medium text-gray-400 hover:text-gray-600 transition"
+              >
+                Agora não, obrigado
+              </button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-3xl mx-auto text-center mb-10">
         <motion.div
           initial={{ scale: 0.6, opacity: 0 }}
