@@ -293,24 +293,27 @@ function ReadyView({
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl z-10 text-center overflow-hidden"
+              className="relative bg-[#060D20] border border-white/10 rounded-[2rem] p-8 sm:p-10 max-w-[420px] w-full shadow-[0_32px_80px_-16px_rgba(0,0,0,0.8)] z-10 text-center overflow-hidden"
             >
+              {/* Glow Effect */}
+              <div aria-hidden className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-[#25D366]/10 blur-[80px] rounded-full pointer-events-none" />
+
               <button
                 onClick={() => setShowPopup(false)}
-                className="absolute top-4 right-4 size-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition"
+                className="absolute top-5 right-5 size-9 flex items-center justify-center rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition z-20"
               >
-                <X className="size-4" />
+                <X className="size-4.5" />
               </button>
               
-              <div className="inline-flex items-center justify-center size-16 rounded-full bg-[#25D366]/15 mb-5">
-                <Phone className="size-8 text-[#25D366]" />
+              <div className="relative inline-flex items-center justify-center size-20 rounded-full bg-gradient-to-br from-[#25D366]/20 to-[#25D366]/5 border border-[#25D366]/30 mb-6 shadow-[0_0_40px_-10px_rgba(37,211,102,0.4)]">
+                <Phone className="size-9 text-[#25D366] fill-[#25D366]/20" />
               </div>
               
-              <h3 className="font-display text-[rgb(var(--color-brand-navy))] text-2xl mb-3">
+              <h3 className="font-display text-white text-[1.75rem] leading-[1.1] mb-4">
                 Que tal darmos o próximo passo?
               </h3>
-              <p className="text-gray-600 text-[0.9375rem] leading-relaxed mb-6">
-                Enquanto o seu e-book baixa, que tal falar direto com o nosso time institucional pelo WhatsApp para entender como a We Make pode ajudar a sua escola?
+              <p className="text-white/65 text-[1rem] leading-relaxed mb-8">
+                Enquanto o seu e-book baixa, fale direto com o nosso time institucional pelo WhatsApp para entender como a <strong className="text-white/90">We Make</strong> pode ajudar a sua escola.
               </p>
               
               <a
@@ -318,7 +321,7 @@ function ReadyView({
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setShowPopup(false)}
-                className="flex items-center justify-center gap-2 w-full h-14 rounded-xl bg-[#25D366] hover:bg-[#20b858] text-white font-bold text-[1.0625rem] shadow-lg hover:-translate-y-0.5 transition-all"
+                className="group flex items-center justify-center gap-3 w-full h-14 rounded-xl bg-[#25D366] hover:bg-[#20b858] text-white font-bold text-[1.0625rem] shadow-[0_8px_24px_-8px_rgba(37,211,102,0.6)] hover:-translate-y-0.5 transition-all card-hover-lift"
               >
                 <MessageCircle className="size-5" />
                 Falar no WhatsApp
@@ -326,7 +329,7 @@ function ReadyView({
               
               <button
                 onClick={() => setShowPopup(false)}
-                className="mt-4 text-[0.875rem] font-medium text-gray-400 hover:text-gray-600 transition"
+                className="mt-5 text-[0.875rem] font-medium text-white/40 hover:text-white/80 transition underline decoration-transparent hover:decoration-white/30 underline-offset-4"
               >
                 Agora não, obrigado
               </button>
