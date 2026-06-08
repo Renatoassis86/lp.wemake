@@ -50,7 +50,7 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
 
   // IDs dos campos OBRIGATÓRIOS da identificação (contam pro percentual)
   const ID_REQUIRED_FIELDS = useMemo(
-    () => ["nome_escola", "cidade", "nome_respondente", "email", "whatsapp", "funcao", "segmentos", "consent"],
+    () => ["nome_escola", "cidade", "nome_respondente", "email", "whatsapp", "funcao", "segmentos", "consent", "uf", "num_alunos", "maior_turma", "eh_confessional"],
     [],
   );
 
@@ -128,11 +128,15 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
       const required = [
         "nome_escola",
         "cidade",
+        "uf",
         "nome_respondente",
         "email",
         "whatsapp",
         "funcao",
         "segmentos",
+        "num_alunos",
+        "maior_turma",
+        "eh_confessional"
       ];
       required.forEach((id) => {
         const v = answers[id];
@@ -140,6 +144,9 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
           newErrors[id] = "Campo obrigatório";
         }
       });
+      if (answers.eh_confessional === "sim" && !answers.tradicao_confessional) {
+        newErrors.tradicao_confessional = "Campo obrigatório";
+      }
       if (answers.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email)) {
         newErrors.email = "Email inválido";
       }
@@ -515,7 +522,7 @@ function IdentificacaoBlock({
           <FieldText
             id="num_alunos"
             type="number"
-            label="Número aproximado de alunos (opcional)"
+            label="Número aproximado de alunos"
             placeholder="Ex: 350"
             value={answers.num_alunos || ""}
             onChange={(v) => setAnswer("num_alunos", v)}
@@ -532,7 +539,7 @@ function IdentificacaoBlock({
 
         <FieldRadioInline
           id="eh_confessional"
-          label="A escola é confessional cristã? (opcional)"
+          label="A escola é confessional cristã?"
           value={answers.eh_confessional || ""}
           onChange={(v) => setAnswer("eh_confessional", v)}
           options={[
@@ -544,7 +551,7 @@ function IdentificacaoBlock({
         {answers.eh_confessional === "sim" && (
           <FieldText
             id="tradicao_confessional"
-            label="Qual tradição confessional? (opcional)"
+            label="Qual tradição confessional?"
             placeholder="Ex: Batista, Presbiteriana, Adventista..."
             value={answers.tradicao_confessional || ""}
             onChange={(v) => setAnswer("tradicao_confessional", v)}

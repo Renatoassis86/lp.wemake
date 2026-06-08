@@ -9,6 +9,8 @@ import { Suspense } from "react";
 import { MetaPixel } from "@/components/MetaPixel";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { UtmTracker } from "@/components/UtmTracker";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = buildMetadata();
@@ -111,6 +113,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

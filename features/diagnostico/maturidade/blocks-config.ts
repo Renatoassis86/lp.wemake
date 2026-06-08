@@ -119,7 +119,7 @@ export const BLOCKS: Block[] = [
       { id: "visao_3", tipo: "scale", required: true, label: "A liderança possui uma visão cristã clara sobre tecnologia." },
       { id: "visao_4", tipo: "scale", required: true, label: "A escola evita tanto o medo da tecnologia quanto a fascinação acrítica pela inovação." },
       { id: "visao_5", tipo: "scale", required: true, label: "Sabemos comunicar às famílias o valor formativo da educação tecnológica." },
-      { id: "visao_papel", tipo: "text", multiline: true, maxLength: 400, label: "Em uma frase, qual você acredita ser o maior papel da tecnologia dentro da missão da sua escola?", placeholder: "Sua resposta..." },
+      { id: "visao_papel", tipo: "text", multiline: true, maxLength: 400, required: true, label: "Em uma frase, qual você acredita ser o maior papel da tecnologia dentro da missão da sua escola?", placeholder: "Sua resposta..." },
     ],
   },
   {
@@ -179,7 +179,7 @@ export const BLOCKS: Block[] = [
       { id: "cosmovisao_4", tipo: "scale", required: true, label: "Os projetos ajudam os alunos a pensar em serviço ao próximo." },
       { id: "cosmovisao_5", tipo: "scale", required: true, label: "A escola trata temas como IA, autoria, verdade, beleza e ética digital." },
       { id: "cosmovisao_6", tipo: "scale", required: true, label: "Os professores sabem integrar tecnologia e fé cristã sem parecer forçado." },
-      { id: "cosmovisao_dificuldade", tipo: "text", multiline: true, maxLength: 500, label: "Qual é a maior dificuldade da sua escola para integrar tecnologia e cosmovisão cristã?", placeholder: "Sua resposta..." },
+      { id: "cosmovisao_dificuldade", tipo: "text", multiline: true, maxLength: 500, required: true, label: "Qual é a maior dificuldade da sua escola para integrar tecnologia e cosmovisão cristã?", placeholder: "Sua resposta..." },
     ],
   },
   {
@@ -206,7 +206,7 @@ export const BLOCKS: Block[] = [
       { id: "professor_4", tipo: "scale", required: true, label: "A coordenação acompanha as aulas." },
       { id: "professor_5", tipo: "scale", required: true, label: "O professor recebe formação contínua." },
       { id: "professor_6", tipo: "scale", required: true, label: "O professor tem tempo e recursos para preparar as aulas." },
-      { id: "professor_necessidade", tipo: "text", multiline: true, maxLength: 400, label: "Qual seria hoje a maior necessidade do professor responsável pela área?", placeholder: "Sua resposta..." },
+      { id: "professor_necessidade", tipo: "text", multiline: true, maxLength: 400, required: true, label: "Qual seria hoje a maior necessidade do professor responsável pela área?", placeholder: "Sua resposta..." },
     ],
   },
   {
@@ -287,6 +287,7 @@ export const BLOCKS: Block[] = [
         tipo: "text",
         multiline: true,
         maxLength: 500,
+        required: true,
         label: "Se você pudesse resolver apenas uma coisa nos próximos 6 meses, o que seria?",
         placeholder: "Sua resposta...",
       },
