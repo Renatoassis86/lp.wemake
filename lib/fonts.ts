@@ -1,13 +1,13 @@
-import { Lilita_One, Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 
 /**
- * Ludic display font — used for bold, playful headlines like SAS/Zoom.
+ * Serif display font — used for bold, elegant headlines.
  */
-export const fontDisplay = Lilita_One({
+export const fontDisplay = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
-  variable: "--font-fraunces", /* mantemos o nome da variável no CSS pra não quebrar referências */
+  axes: ["SOFT", "WONK"],
+  variable: "--font-fraunces",
   preload: true,
 });
 

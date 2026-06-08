@@ -273,7 +273,7 @@ function ReadyView({
     return () => clearTimeout(t);
   }, []);
 
-  const waMessage = "Olá! Acabei de baixar o e-book e gostaria de saber mais sobre as soluções da We Make para escolas confessionais.";
+  const waMessage = "Olá! Acabei de baixar o e-book e gostaria de saber mais sobre as soluções da We Make para a minha escola.";
   const waLink = `https://wa.me/${siteConfig.whatsapp.consultor.number}?text=${encodeURIComponent(waMessage)}`;
 
   return (
