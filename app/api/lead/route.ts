@@ -145,8 +145,8 @@ async function sendNotificationEmail(type: "reuniao" | "material", data: any) {
 
   const isReuniao = type === "reuniao";
   const subject = isReuniao
-    ? `🎯 Novo lead — Reunião: ${data.institution} (${data.city}/${data.state})`
-    : `📥 Novo lead — Material: ${data.institution} (${data.city}/${data.state})`;
+    ? `Novo lead — Reunião: ${data.institution} (${data.city}/${data.state})`
+    : `Novo lead — Material: ${data.institution} (${data.city}/${data.state})`;
 
   const roleLabel = ROLES_LABEL[data.role as keyof typeof ROLES_LABEL] || data.role;
 
@@ -167,7 +167,7 @@ async function sendNotificationEmail(type: "reuniao" | "material", data: any) {
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0b1f44;">
       <div style="background: linear-gradient(135deg, #4c8ade, #0b1f44); color: white; padding: 24px; border-radius: 16px 16px 0 0;">
-        <h1 style="margin: 0; font-size: 22px;">${isReuniao ? "🎯 Solicitação de Reunião" : "📥 Download de Material"}</h1>
+        <h1 style="margin: 0; font-size: 22px;">${isReuniao ? "Solicitação de Reunião" : "Download de Material"}</h1>
         <p style="margin: 8px 0 0; opacity: 0.85; font-size: 14px;">Novo lead capturado em wemake-landing</p>
       </div>
       <table style="width: 100%; border-collapse: collapse; background: #f8fafc; border-radius: 0 0 16px 16px; overflow: hidden;">

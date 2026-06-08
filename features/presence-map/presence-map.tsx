@@ -150,7 +150,7 @@ function BrazilMap() {
               whiteSpace: "nowrap",
             }}
           >
-            📍 {UF_LABEL[hovered]}
+            {UF_LABEL[hovered]}
           </div>
         </foreignObject>
       )}

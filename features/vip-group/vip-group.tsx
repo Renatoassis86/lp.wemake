@@ -45,7 +45,7 @@ export function VipGroup() {
                 {/* Mensagem 1: Diretor Marcos (Esquerda) */}
                 <div className="flex flex-col items-start max-w-[85%]">
                   <div className="bg-[#1f2c34] text-white/90 p-2.5 rounded-r-xl rounded-bl-xl shadow-sm relative">
-                    <span className="block font-bold text-[9px] text-emerald-400 mb-0.5">Dir. Marcos (Colégio ✟)</span>
+                    <span className="block font-bold text-[9px] text-emerald-400 mb-0.5">Dir. Marcos (Colégio Confessional)</span>
                     <p className="leading-normal text-[10px]">
                       Boa tarde, líderes! Como tem sido a experiência de vocês com a We Make e a integração da tecnologia com a cosmovisão clássica/cristã? Os pais aceitaram bem?
                     </p>
@@ -56,7 +56,7 @@ export function VipGroup() {
                 {/* Mensagem 2: We Make (Direita - Resposta Oficial) */}
                 <div className="flex flex-col items-end w-full">
                   <div className="bg-[#005c4b] text-white/95 p-2.5 rounded-l-xl rounded-br-xl max-w-[85%] shadow-sm relative">
-                    <span className="block font-bold text-[9px] text-[#25D366] mb-0.5">We Make 🚀</span>
+                    <span className="block font-bold text-[9px] text-[#25D366] mb-0.5">We Make</span>
                     <p className="leading-normal text-[10px]">
                       Olá, Marcos! A aceitação é fantástica. Nosso currículo foi desenhado para usar a tecnologia como instrumento para expressar a Verdade, Beleza e Bondade. O foco é a formação ética e humana (a ciberética), e não a técnica fria.
                     </p>

@@ -112,7 +112,7 @@ async function sendQualifiedLeadEmail(data: ReturnType<typeof diagnosticoQualifi
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0b1f44;">
       <div style="background: linear-gradient(135deg, #76f3cd, #4c8ade); color: #0b1f44; padding: 24px; border-radius: 16px 16px 0 0;">
-        <h1 style="margin: 0; font-size: 22px;">🔥 Lead qualificado!</h1>
+        <h1 style="margin: 0; font-size: 22px;">Lead qualificado!</h1>
         <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.85;">${data.email}</p>
       </div>
       <table style="width: 100%; border-collapse: collapse; background: #f8fafc; border-radius: 0 0 16px 16px; overflow: hidden;">
@@ -139,7 +139,7 @@ async function sendQualifiedLeadEmail(data: ReturnType<typeof diagnosticoQualifi
       from,
       to: getNotifyEmails(),
       reply_to: data.email,
-      subject: `🔥 Lead QUALIFICADO — ${data.email}`,
+      subject: `Lead QUALIFICADO — ${data.email}`,
       html,
     }),
   });

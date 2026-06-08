@@ -91,7 +91,7 @@ export function DeleteConfirmModal({
         </p>
         {cascade && (
           <p className="text-amber-200/85 text-[0.8125rem] mb-4 p-3 rounded-lg bg-amber-500/10 border border-amber-400/30">
-            ⚠️ Também serão apagados: {cascade}
+            Atenção: Também serão apagados: {cascade}
           </p>
         )}
 

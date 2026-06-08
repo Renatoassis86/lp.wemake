@@ -122,7 +122,7 @@ async function sendNotificationEmail(data: ReturnType<typeof diagnosticoLeadSche
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0b1f44;">
       <div style="background: linear-gradient(135deg, #76f3cd, #4c8ade); color: #0b1f44; padding: 24px; border-radius: 16px 16px 0 0;">
-        <h1 style="margin: 0; font-size: 22px;">📥 Novo lead — Diagnóstico/Ebook</h1>
+        <h1 style="margin: 0; font-size: 22px;">Novo lead — Diagnóstico/Ebook</h1>
         <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.85;">Capturado em wemake-landing/diagnostico</p>
       </div>
       <table style="width: 100%; border-collapse: collapse; background: #f8fafc; border-radius: 0 0 16px 16px; overflow: hidden;">
@@ -154,7 +154,7 @@ async function sendNotificationEmail(data: ReturnType<typeof diagnosticoLeadSche
       from,
       to: getNotifyEmails(),
       reply_to: data.email,
-      subject: `📥 Novo lead (Etapa 1) — ${data.nome_escola}`,
+      subject: `Novo lead (Etapa 1) — ${data.nome_escola}`,
       html,
       text,
     }),

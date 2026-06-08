@@ -90,7 +90,7 @@ export default async function AdminDashboard() {
           Painel administrativo
         </p>
         <h1 className="font-display text-white text-[clamp(1.875rem,3vw,2.5rem)] leading-[1.05]">
-          Olá, {username || "admin"} 👋
+          Olá, {username || "admin"}
         </h1>
         <p className="text-white/65 text-[0.9375rem] sm:text-base mt-2 max-w-2xl">
           Acompanhe os leads e diagnósticos coletados pela landing. Os números abaixo
