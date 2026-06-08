@@ -184,9 +184,9 @@ export function AdminTable<T extends Record<string, any>>({
             const card = (
               <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4 hover:bg-white/[0.05] card-hover-soft">
                 <div className="mb-3">
-                  <p className="font-display text-white text-[1rem] leading-tight">
+                  <div className="font-display text-white text-[1rem] leading-tight">
                     {primary?.render ? primary.render(row) : String(row[primary?.key as keyof T] ?? "—")}
-                  </p>
+                  </div>
                 </div>
                 <dl className="space-y-1.5">
                   {others.map((col) => (

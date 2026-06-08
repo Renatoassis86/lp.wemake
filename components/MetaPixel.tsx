@@ -4,7 +4,7 @@ import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-export const FB_PIXEL_ID = "1706999140429793";
+export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "1706999140429793";
 
 declare global {
   interface Window {

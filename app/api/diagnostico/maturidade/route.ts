@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { diagnosticoMaturidadeSchema } from "@/lib/validation";
 import { getNotifyEmails } from "@/lib/notify";
 
@@ -36,6 +37,18 @@ export async function POST(req: Request) {
 
   const data = parsed.data;
 
+  const cookieStore = await cookies();
+  const utmSource = cookieStore.get("utm_source")?.value;
+  const utmCampaign = cookieStore.get("utm_campaign")?.value;
+  const utmMedium = cookieStore.get("utm_medium")?.value;
+  const fbclid = cookieStore.get("fbclid")?.value;
+
+  const meta: string[] = [];
+  if (utmSource) meta.push(`UTM Source: ${utmSource}`);
+  if (utmCampaign) meta.push(`UTM Campaign: ${utmCampaign}`);
+  if (utmMedium) meta.push(`UTM Medium: ${utmMedium}`);
+  if (fbclid) meta.push(`FBCLID: ${fbclid}`);
+
   // 1) Cabeçalho da escola
   const escolaRow = {
     nome_escola: data.nome_escola,
@@ -53,6 +66,7 @@ export async function POST(req: Request) {
     consent: data.consent,
     origem: "wemake-landing-diagnostico-maturidade",
     status: "diagnostico_completo",
+    observacoes: meta.length > 0 ? meta.join(" | ") : null,
   };
 
   let diagnosticoId: string;

@@ -75,12 +75,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       )}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground antialiased">
+      <head>
         <Suspense fallback={null}>
           <MetaPixel />
           <GoogleAnalytics />
           <UtmTracker />
         </Suspense>
+      </head>
+      <body className="bg-background text-foreground antialiased">
         <GlobalSVGMasks />
         
         <a

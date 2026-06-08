@@ -1,47 +1,134 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
-import { MousePointerClick, Users, DollarSign, Target } from "lucide-react";
-
-const lineData = [
-  { name: "01/06", acessos: 400, leads: 24 },
-  { name: "02/06", acessos: 300, leads: 13 },
-  { name: "03/06", acessos: 550, leads: 48 },
-  { name: "04/06", acessos: 450, leads: 39 },
-  { name: "05/06", acessos: 600, leads: 55 },
-  { name: "06/06", acessos: 700, leads: 68 },
-];
-
-const funnelData = [
-  { stage: "Acessos", count: 3000 },
-  { stage: "Diagnósticos", count: 800 },
-  { stage: "Leads Capturados", count: 247 },
-  { stage: "Agendamentos", count: 42 },
-];
+import { MousePointerClick, Users, DollarSign, Target, Loader2, AlertCircle } from "lucide-react";
 
 export default function AnalyticsDashboard() {
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchMetrics() {
+      try {
+        const res = await fetch("/api/metrics");
+        if (!res.ok) {
+          throw new Error("Falha ao carregar as métricas de tráfego.");
+        }
+        const json = await res.json();
+        if (json.ok) {
+          setData(json);
+        } else {
+          throw new Error(json.error || "Erro desconhecido");
+        }
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchMetrics();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
+        <Loader2 className="size-8 text-[rgb(var(--color-brand-royal))] animate-spin" />
+        <p className="text-white/60 font-mono text-[10px] uppercase tracking-[0.2em] font-bold">
+          Carregando dados em tempo real...
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-red-950/20 border border-red-500/30 rounded-2xl p-6 max-w-xl mx-auto my-8 flex items-start gap-4">
+        <AlertCircle className="size-6 text-red-400 shrink-0 mt-0.5" />
+        <div>
+          <h3 className="text-red-200 font-semibold mb-1">Erro de Integração</h3>
+          <p className="text-red-300/80 text-sm mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 border border-red-500/40 rounded-xl text-red-200 text-xs font-mono transition"
+          >
+            Tentar novamente
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const isHybrid = !data.integrations.googleAnalytics.active || !data.integrations.metaAds.active;
+
+  const cardItems = [
+    {
+      title: "Acessos (Sessões)",
+      value: data.cards.sessions.value,
+      subtitle: data.integrations.googleAnalytics.active ? "Dados reais do GA4" : "Aguardando API",
+      icon: MousePointerClick,
+      color: "text-blue-400",
+    },
+    {
+      title: "Leads Capturados",
+      value: data.cards.leads.value,
+      subtitle: "Total real (Formulários + Diagnósticos)",
+      icon: Users,
+      color: "text-emerald-400",
+    },
+    {
+      title: "Gasto em Ads (Meta)",
+      value: data.cards.spend.value,
+      subtitle: data.integrations.metaAds.active ? "Dados reais da Meta API" : "Aguardando API",
+      icon: DollarSign,
+      color: "text-rose-400",
+    },
+    {
+      title: "Agendamentos",
+      value: data.cards.meetings.value,
+      subtitle: `Taxa de Conversão: ${data.cards.meetings.rate}`,
+      icon: Target,
+      color: "text-amber-400",
+    },
+  ];
+
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      <header>
-        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-royal))]/90 font-bold mb-2">
-          Inteligência & Tráfego
-        </p>
-        <h1 className="font-display text-white text-[clamp(1.875rem,3vw,2.5rem)] leading-[1.05]">
-          Analytics & Funil
-        </h1>
-        <p className="text-white/65 text-[0.9375rem] sm:text-base mt-2 max-w-2xl">
-          Acompanhe o desempenho das campanhas em tempo real. Esta visão unifica os cliques no anúncio com os agendamentos finais.
-        </p>
+      <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <p className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-royal))]/90 font-bold mb-2">
+            Inteligência & Tráfego
+          </p>
+          <h1 className="font-display text-white text-[clamp(1.875rem,3vw,2.5rem)] leading-[1.05]">
+            Analytics & Funil
+          </h1>
+          <p className="text-white/65 text-[0.9375rem] sm:text-base mt-2 max-w-2xl">
+            Acompanhe o desempenho das campanhas em tempo real. Esta visão unifica os cliques no anúncio com os agendamentos finais.
+          </p>
+        </div>
+
+        {/* Status das conexões */}
+        <div className="flex flex-col gap-1.5 p-3.5 bg-white/[0.02] border border-white/10 rounded-xl text-[11px] font-mono text-white/50 w-full md:w-auto">
+          <div className="text-white/30 uppercase tracking-wider text-[10px] mb-1 font-bold">Status das Integrações</div>
+          <div className="flex items-center gap-2">
+            <span className={`size-1.5 rounded-full ${data.integrations.googleAnalytics.active ? 'bg-emerald-500' : 'bg-amber-500'}`} />
+            <span>GA4 API: {data.integrations.googleAnalytics.active ? 'Ativa' : 'Aguardando API'}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className={`size-1.5 rounded-full ${data.integrations.metaAds.active ? 'bg-emerald-500' : 'bg-amber-500'}`} />
+            <span>Meta Ads API: {data.integrations.metaAds.active ? 'Ativa' : 'Aguardando API'}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-emerald-500" />
+            <span>Supabase Leads: Ativo (Real)</span>
+          </div>
+        </div>
       </header>
 
       {/* Cards de Topo */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {[
-          { title: "Acessos (Sessões)", value: "3.000", subtitle: "+12% vs mês anterior", icon: MousePointerClick, color: "text-blue-400" },
-          { title: "Leads Capturados", value: "247", subtitle: "Custo por Lead: R$ 14,50", icon: Users, color: "text-emerald-400" },
-          { title: "Gasto em Ads (Meta)", value: "R$ 3.581", subtitle: "Orçamento Mês: 5k", icon: DollarSign, color: "text-rose-400" },
-          { title: "Agendamentos", value: "42", subtitle: "Taxa de Conversão: 17%", icon: Target, color: "text-amber-400" },
-        ].map((card, i) => (
+        {cardItems.map((card, i) => (
           <div key={i} className="bg-white/[0.04] border border-white/10 rounded-2xl p-5 relative overflow-hidden flex flex-col">
             <div className="flex justify-between items-start mb-4">
               <span className="text-white/60 font-medium text-sm">{card.title}</span>
@@ -61,7 +148,7 @@ export default function AnalyticsDashboard() {
           <h3 className="text-white/80 font-medium mb-6">Acessos vs Leads Gerados (Últimos 7 dias)</h3>
           <div className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={lineData}>
+              <LineChart data={data.lineData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" vertical={false} />
                 <XAxis dataKey="name" stroke="rgba(255,255,255,0.4)" fontSize={12} tickLine={false} axisLine={false} dy={10} />
                 <YAxis stroke="rgba(255,255,255,0.4)" fontSize={12} tickLine={false} axisLine={false} dx={-10} />
@@ -69,8 +156,8 @@ export default function AnalyticsDashboard() {
                   contentStyle={{ backgroundColor: '#040814', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
                   itemStyle={{ color: '#fff' }}
                 />
-                <Line type="monotone" dataKey="acessos" stroke="#60a5fa" strokeWidth={3} dot={{ r: 4, strokeWidth: 2 }} activeDot={{ r: 6 }} />
-                <Line type="monotone" dataKey="leads" stroke="#34d399" strokeWidth={3} dot={{ r: 4, strokeWidth: 2 }} activeDot={{ r: 6 }} />
+                <Line type="monotone" name="Sessões" dataKey="acessos" stroke="#60a5fa" strokeWidth={3} dot={{ r: 4, strokeWidth: 2 }} activeDot={{ r: 6 }} />
+                <Line type="monotone" name="Leads" dataKey="leads" stroke="#34d399" strokeWidth={3} dot={{ r: 4, strokeWidth: 2 }} activeDot={{ r: 6 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -81,7 +168,7 @@ export default function AnalyticsDashboard() {
           <h3 className="text-white/80 font-medium mb-6">Funil de Conversão Global</h3>
           <div className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={funnelData} layout="vertical" margin={{ left: 40, top: 20 }}>
+              <BarChart data={data.funnelData} layout="vertical" margin={{ left: 40, top: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" horizontal={true} vertical={false} />
                 <XAxis type="number" stroke="rgba(255,255,255,0.4)" fontSize={12} tickLine={false} axisLine={false} />
                 <YAxis type="category" dataKey="stage" stroke="rgba(255,255,255,0.6)" fontSize={12} tickLine={false} axisLine={false} dx={-10} />
@@ -90,7 +177,7 @@ export default function AnalyticsDashboard() {
                   itemStyle={{ color: '#fff' }}
                   cursor={{fill: 'rgba(255,255,255,0.05)'}}
                 />
-                <Bar dataKey="count" fill="#818cf8" radius={[0, 4, 4, 0]} barSize={32} />
+                <Bar dataKey="count" name="Total" fill="#818cf8" radius={[0, 4, 4, 0]} barSize={32} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -113,32 +200,28 @@ export default function AnalyticsDashboard() {
               </tr>
             </thead>
             <tbody className="text-white/80 text-sm">
-              <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
-                <td className="py-4 pr-4 font-medium text-white">bf_escolas_privadas_nov</td>
-                <td className="py-4 px-4 text-blue-400">1.250</td>
-                <td className="py-4 px-4 text-emerald-400">115</td>
-                <td className="py-4 px-4 text-rose-400">R$ 1.200</td>
-                <td className="py-4 pl-4 text-right font-bold text-amber-400">22</td>
-              </tr>
-              <tr className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
-                <td className="py-4 pr-4 font-medium text-white">retargeting_diagnostico_30d</td>
-                <td className="py-4 px-4 text-blue-400">800</td>
-                <td className="py-4 px-4 text-emerald-400">89</td>
-                <td className="py-4 px-4 text-rose-400">R$ 450</td>
-                <td className="py-4 pl-4 text-right font-bold text-amber-400">14</td>
-              </tr>
-              <tr className="hover:bg-white/[0.02] transition-colors">
-                <td className="py-4 pr-4 font-medium text-white">organico_instagram</td>
-                <td className="py-4 px-4 text-blue-400">950</td>
-                <td className="py-4 px-4 text-emerald-400">43</td>
-                <td className="py-4 px-4 text-rose-400">R$ 0</td>
-                <td className="py-4 pl-4 text-right font-bold text-amber-400">6</td>
-              </tr>
+              {data.campaigns.map((c: any, i: number) => (
+                <tr key={i} className="border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
+                  <td className="py-4 pr-4 font-medium text-white max-w-[280px] truncate" title={c.campaign}>
+                    {c.campaign}
+                  </td>
+                  <td className="py-4 px-4 text-blue-400">{c.sessions.toLocaleString("pt-BR")}</td>
+                  <td className="py-4 px-4 text-emerald-400">{c.leads.toLocaleString("pt-BR")}</td>
+                  <td className="py-4 px-4 text-rose-400">
+                    R$ {c.spend.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </td>
+                  <td className="py-4 pl-4 text-right font-bold text-amber-400">{c.meetings.toLocaleString("pt-BR")}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
         <div className="mt-4 pt-4 border-t border-white/10 flex justify-end">
-          <p className="text-xs text-white/40 font-mono">* Valores simulados. Será integrado com a API Metrics na Fase 3.</p>
+          <p className="text-xs text-white/40 font-mono">
+            {isHybrid 
+              ? "* Integração parcial. Insira as credenciais no painel (Vercel ou .env.local) para ativar todas as conexões em tempo real." 
+              : "* Integração de dados em tempo real ativa (Supabase + Google Analytics + Meta Ads)."}
+          </p>
         </div>
       </section>
 
