@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import { MetaPixel } from "@/components/MetaPixel";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { UtmTracker } from "@/components/UtmTracker";
+import { MicrosoftClarity } from "@/components/MicrosoftClarity";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Suspense fallback={null}>
           <MetaPixel />
           <GoogleAnalytics />
+          <MicrosoftClarity />
           <UtmTracker />
         </Suspense>
       </head>

@@ -126,6 +126,29 @@ export default function AnalyticsDashboard() {
         </div>
       </header>
 
+      {/* Banner do Microsoft Clarity */}
+      <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-500/20 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="flex items-start gap-4">
+          <div className="size-12 rounded-xl bg-blue-500/20 flex items-center justify-center shrink-0 border border-blue-500/30">
+            <MousePointerClick className="size-6 text-blue-400" />
+          </div>
+          <div>
+            <h3 className="text-white font-semibold text-[1.125rem] mb-1">Gravações de Tela & Heatmaps</h3>
+            <p className="text-blue-200/70 text-[0.9375rem] max-w-2xl">
+              Para assistir aos vídeos das sessões, mapas de calor e histórico de cliques por IP, acesse o dashboard oficial da Microsoft Clarity.
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://clarity.microsoft.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="shrink-0 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-[0.9375rem] shadow-lg hover:shadow-blue-500/25 transition-all w-full sm:w-auto text-center whitespace-nowrap"
+        >
+          Acessar Microsoft Clarity
+        </a>
+      </div>
+
       {/* Cards de Topo */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {cardItems.map((card, i) => (
