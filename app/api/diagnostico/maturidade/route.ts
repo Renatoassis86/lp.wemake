@@ -8,9 +8,10 @@ export const dynamic = "force-dynamic";
 
 /**
  * Submit do questionário de maturidade (8 blocos).
- * 1) Insert em diagnostico_escola (cabeçalho/identificação)
- * 2) Bulk insert em diagnostico_respostas (1 linha por resposta)
- * 3) Email de notificação para o time
+ * Salva tudo em uma única tabela: diagnostico_maturidade
+ * - Cabeçalho (identificação da escola)
+ * - Todas as respostas em JSON
+ * - Email de notificação
  */
 export async function POST(req: Request) {
   let payload: unknown;
@@ -49,14 +50,14 @@ export async function POST(req: Request) {
   if (utmMedium) meta.push(`UTM Medium: ${utmMedium}`);
   if (fbclid) meta.push(`FBCLID: ${fbclid}`);
 
-  // 1) Cabeçalho da escola
-  const escolaRow = {
+  // Consolidar tudo em uma única tabela
+  const diagnosticoRow = {
     nome_escola: data.nome_escola,
     cidade: data.cidade,
     uf: data.uf,
     nome_respondente: data.nome_respondente,
     funcao: data.funcao,
-    segmentos: data.segmentos,
+    segmentos: JSON.stringify(data.segmentos),
     num_alunos: data.num_alunos ?? null,
     maior_turma: data.maior_turma ?? null,
     eh_confessional: data.eh_confessional ?? null,
@@ -66,12 +67,12 @@ export async function POST(req: Request) {
     consent: data.consent,
     origem: "wemake-landing-diagnostico-maturidade",
     status: "diagnostico_completo",
+    respostas: JSON.stringify(data.respostas),
     observacoes: meta.length > 0 ? meta.join(" | ") : null,
   };
 
-  let diagnosticoId: string;
   try {
-    const sbRes = await fetch(`${supabaseUrl}/rest/v1/diagnostico_escola`, {
+    const sbRes = await fetch(`${supabaseUrl}/rest/v1/diagnostico_maturidade`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,63 +80,31 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${supabaseKey}`,
         Prefer: "return=representation",
       },
-      body: JSON.stringify(escolaRow),
+      body: JSON.stringify(diagnosticoRow),
     });
+
     if (!sbRes.ok) {
       const errBody = await sbRes.text();
-      console.error("[diagnostico-maturidade] insert escola failed:", sbRes.status, errBody);
+      console.error("[diagnostico-maturidade] insert failed:", sbRes.status, errBody);
       return NextResponse.json(
         { ok: false, error: "SupabaseInsertFailed", details: errBody },
         { status: 502 },
       );
     }
+
     const inserted = await sbRes.json();
-    diagnosticoId = inserted?.[0]?.id;
-    if (!diagnosticoId) throw new Error("Sem ID após insert");
+    const diagnosticoId = inserted?.[0]?.id;
+
+    // 2) Email para o time (em background, não bloqueia)
+    sendNotificationEmail(data, diagnosticoId).catch((err) =>
+      console.error("[diagnostico-maturidade] email failed:", err),
+    );
+
+    return NextResponse.json({ ok: true, diagnostico_id: diagnosticoId });
   } catch (err) {
     console.error("[diagnostico-maturidade] supabase fetch error:", err);
     return NextResponse.json({ ok: false, error: "SupabaseUnreachable" }, { status: 502 });
   }
-
-  // 2) Bulk insert das respostas
-  if (data.respostas.length > 0) {
-    const rows = data.respostas.map((r) => ({
-      diagnostico_id: diagnosticoId,
-      bloco: r.bloco,
-      pergunta_id: r.pergunta_id,
-      tipo: r.tipo,
-      valor_texto: r.valor_texto ?? null,
-      valor_escala: r.valor_escala ?? null,
-      valor_opcoes: r.valor_opcoes ?? null,
-    }));
-
-    try {
-      const sbRes = await fetch(`${supabaseUrl}/rest/v1/diagnostico_respostas`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify(rows),
-      });
-      if (!sbRes.ok) {
-        const errBody = await sbRes.text();
-        console.error("[diagnostico-maturidade] insert respostas failed:", sbRes.status, errBody);
-        // Não falha o request — cabeçalho já foi salvo; equipe pode reprocessar via log
-      }
-    } catch (err) {
-      console.error("[diagnostico-maturidade] bulk insert respostas error:", err);
-    }
-  }
-
-  // 3) Email para o time
-  sendNotificationEmail(data, diagnosticoId).catch((err) =>
-    console.error("[diagnostico-maturidade] email failed:", err),
-  );
-
-  return NextResponse.json({ ok: true, diagnostico_id: diagnosticoId });
 }
 
 async function sendNotificationEmail(
