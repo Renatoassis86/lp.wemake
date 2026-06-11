@@ -247,7 +247,10 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
-        setSubmitError("Não foi possível enviar agora. Tente em instantes.");
+        const errData = await res.json().catch(() => ({ error: "Unknown error" }));
+        const errorMsg = errData?.details || errData?.error || `Erro ${res.status}`;
+        console.error("[maturidade-wizard] submit failed:", res.status, errorMsg);
+        setSubmitError(`Não foi possível enviar: ${errorMsg}`);
         setIsSubmitting(false);
         return;
       }
@@ -255,8 +258,10 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
       // Não mostra resultado — diagnóstico vira isca pra conversa com o time.
       // O Supabase armazena tudo e o email de notificação leva pro time.
       onComplete?.();
-    } catch {
-      setSubmitError("Falha de conexão. Verifique sua internet.");
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Falha de conexão";
+      console.error("[maturidade-wizard] fetch error:", msg);
+      setSubmitError(`Falha de conexão: ${msg}`);
       setIsSubmitting(false);
     }
   };
