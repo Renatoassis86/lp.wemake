@@ -19,17 +19,17 @@ import {
 const NAV_ITEMS = [
   { href: "/admin", label: "Visão geral", icon: LayoutDashboard, exact: true },
   { href: "/admin/analytics", label: "Analytics & Funil", icon: TrendingUp },
-  { href: "/admin/leads-escola", label: "Leads - Reunião", icon: Users },
   {
     href: "/admin/pdf-downloads",
-    label: "Downloads do Ebook",
+    label: "Dados Ebook",
     icon: Download,
   },
   {
     href: "/admin/diagnostico-respostas",
-    label: "Diagnósticos de Maturidade",
+    label: "Diagnóstico",
     icon: ListChecks,
   },
+  { href: "/admin/leads-escola", label: "Leads Escolas", icon: Users },
 ];
 
 export function AdminShell({
