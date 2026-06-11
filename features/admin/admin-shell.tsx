@@ -19,20 +19,20 @@ import {
 const NAV_ITEMS = [
   { href: "/admin", label: "Visão geral", icon: LayoutDashboard, exact: true },
   { href: "/admin/analytics", label: "Analytics & Funil", icon: TrendingUp },
-  { href: "/admin/leads-escola", label: "Leads (escolas)", icon: Users },
+  { href: "/admin/leads-escola", label: "Leads - Reunião Estratégica", icon: Users },
   {
     href: "/admin/diagnostico-escola",
-    label: "Diagnósticos",
+    label: "Respondentes - Diagnóstico",
     icon: ClipboardList,
   },
   {
     href: "/admin/diagnostico-respostas",
-    label: "Respostas",
+    label: "Diagnósticos de Maturidade",
     icon: ListChecks,
   },
   {
     href: "/admin/pdf-downloads",
-    label: "Downloads de PDF",
+    label: "Downloads - Ebook 7 Princípios",
     icon: Download,
   },
 ];
