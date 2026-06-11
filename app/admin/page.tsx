@@ -132,17 +132,8 @@ export default async function AdminDashboard() {
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
         {cards.map((card) => {
           const Icon = card.icon;
-          const CardWrapper = card.href ? Link : "div";
-          const props = card.href ? { href: card.href } : {};
-
-          return (
-            <CardWrapper
-              key={card.label}
-              {...props}
-              className={`group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-white/20 p-5 sm:p-6 overflow-hidden ${
-                card.href ? "card-hover-lift cursor-pointer" : "cursor-default"
-              }`}
-            >
+          const cardContent = (
+            <>
               <div
                 aria-hidden
                 className={`absolute inset-0 -z-10 bg-gradient-to-br ${card.color} opacity-60 group-hover:opacity-100 transition-opacity duration-[var(--duration-fast)] ease-[var(--ease-cinematic)]`}
@@ -161,7 +152,28 @@ export default async function AdminDashboard() {
                   {card.value.toLocaleString("pt-BR")}
                 </span>
               </div>
-            </CardWrapper>
+            </>
+          );
+
+          if (card.href) {
+            return (
+              <Link
+                key={card.label}
+                href={card.href}
+                className="group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-white/20 p-5 sm:p-6 overflow-hidden card-hover-lift cursor-pointer"
+              >
+                {cardContent}
+              </Link>
+            );
+          }
+
+          return (
+            <div
+              key={card.label}
+              className="group relative rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-white/20 p-5 sm:p-6 overflow-hidden cursor-default"
+            >
+              {cardContent}
+            </div>
           );
         })}
       </section>
