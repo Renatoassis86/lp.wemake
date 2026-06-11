@@ -21,6 +21,7 @@ const ALLOWED_TABLES = new Set([
   "leads_escola",
   "diagnostico_escola",
   "diagnostico_respostas",
+  "pdf_downloads",
 ]);
 
 export async function GET(

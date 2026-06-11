@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cookies } from "next/headers";
-import { ArrowRight, Users, ClipboardList, ListChecks } from "lucide-react";
+import { ArrowRight, Users, ClipboardList, ListChecks, Download } from "lucide-react";
 import { ADMIN_COOKIE, verifySession } from "@/lib/admin-auth";
 
 export const dynamic = "force-dynamic";
@@ -50,10 +50,11 @@ export default async function AdminDashboard() {
   const session = await verifySession(cookieStore.get(ADMIN_COOKIE)?.value);
   const username = session?.username || "";
 
-  const [leads, diagnosticos, respostas] = await Promise.all([
+  const [leads, diagnosticos, respostas, pdfs] = await Promise.all([
     fetchTableStats("leads_escola"),
     fetchTableStats("diagnostico_escola"),
     fetchTableStats("diagnostico_respostas"),
+    fetchTableStats("pdf_downloads"),
   ]);
 
   const modules = [
@@ -80,6 +81,14 @@ export default async function AdminDashboard() {
       icon: ListChecks,
       stats: respostas,
       color: "from-[rgb(var(--color-brand-sky))]/25 to-[rgb(var(--color-brand-sky))]/5",
+    },
+    {
+      href: "/admin/pdf-downloads",
+      label: "Downloads de PDF",
+      sub: "Pessoas que baixaram o ebook '7 Princípios'.",
+      icon: Download,
+      stats: pdfs,
+      color: "from-[rgb(var(--color-brand-mint-deep))]/20 to-[rgb(var(--color-brand-mint-deep))]/5",
     },
   ];
 

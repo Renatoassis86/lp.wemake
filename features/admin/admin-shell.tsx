@@ -13,6 +13,7 @@ import {
   Menu,
   X,
   TrendingUp,
+  Download,
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -28,6 +29,11 @@ const NAV_ITEMS = [
     href: "/admin/diagnostico-respostas",
     label: "Respostas",
     icon: ListChecks,
+  },
+  {
+    href: "/admin/pdf-downloads",
+    label: "Downloads de PDF",
+    icon: Download,
   },
 ];
 

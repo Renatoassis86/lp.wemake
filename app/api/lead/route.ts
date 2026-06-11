@@ -55,28 +55,97 @@ export async function POST(req: Request) {
 
   const data = parsed.data as any;
 
-  // Observações estruturadas — leads_escola não tem colunas próprias para esses campos
-  const meta: string[] = [
-    `[${type === "material" ? "Material gratuito" : "Reunião estratégica"}] via wemake-landing`,
-    `Cargo: ${ROLES_LABEL[data.role as keyof typeof ROLES_LABEL] || data.role}`,
-  ];
-
   const cookieStore = await cookies();
   const utmSource = cookieStore.get("utm_source")?.value;
   const utmCampaign = cookieStore.get("utm_campaign")?.value;
   const utmMedium = cookieStore.get("utm_medium")?.value;
   const fbclid = cookieStore.get("fbclid")?.value;
 
-  if (utmSource) meta.push(`UTM Source: ${utmSource}`);
-  if (utmCampaign) meta.push(`UTM Campaign: ${utmCampaign}`);
-  if (utmMedium) meta.push(`UTM Medium: ${utmMedium}`);
-  if (fbclid) meta.push(`FBCLID: ${fbclid}`);
-
-  if (type === "reuniao") {
-    if (data.preferred_date) meta.push(`Sugestão data: ${data.preferred_date}`);
-    if (data.preferred_time) meta.push(`Sugestão horário: ${data.preferred_time}`);
-    if (data.message) meta.push(`Mensagem: ${data.message}`);
+  if (type === "material") {
+    // Para downloads, salva em tabela específica
+    await savePdfDownload(supabaseUrl, supabaseKey, data, { utmSource, utmCampaign, utmMedium, fbclid });
+  } else {
+    // Para reuniões, segue o fluxo antigo em leads_escola
+    await saveLead(supabaseUrl, supabaseKey, data, { utmSource, utmCampaign, utmMedium, fbclid });
   }
+
+  // Email de notificação — dispara em background, não bloqueia resposta
+  sendNotificationEmail(type, data).catch((err) => console.error("[lead] email failed:", err));
+
+  // Webhook secundário opcional
+  const webhook = process.env.LEAD_INBOX_WEBHOOK;
+  if (webhook) {
+    fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ source: "wemake-landing", type, receivedAt: new Date().toISOString(), lead: parsed.data }),
+    }).catch((err) => console.error("[lead] webhook failed:", err));
+  }
+
+  return NextResponse.json({ ok: true });
+}
+
+async function savePdfDownload(
+  supabaseUrl: string,
+  supabaseKey: string,
+  data: any,
+  utm: { utmSource?: string; utmCampaign?: string; utmMedium?: string; fbclid?: string },
+) {
+  const row = {
+    nome_contato: data.name,
+    email: data.email,
+    telefone: data.whatsapp,
+    cargo: data.role,
+    nome_escola: data.institution,
+    cidade: data.city,
+    uf: data.state,
+    utm_source: utm.utmSource || null,
+    utm_campaign: utm.utmCampaign || null,
+    utm_medium: utm.utmMedium || null,
+    fbclid: utm.fbclid || null,
+    material: "7-principios",
+    fluxo: "free-material",
+  };
+
+  try {
+    const sbRes = await fetch(`${supabaseUrl}/rest/v1/pdf_downloads`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": supabaseKey,
+        "Authorization": `Bearer ${supabaseKey}`,
+        "Prefer": "return=minimal",
+      },
+      body: JSON.stringify(row),
+    });
+    if (!sbRes.ok) {
+      const errBody = await sbRes.text();
+      console.error("[lead] pdf_downloads insert failed:", sbRes.status, errBody);
+    }
+  } catch (err) {
+    console.error("[lead] pdf_downloads fetch error:", err);
+  }
+}
+
+async function saveLead(
+  supabaseUrl: string,
+  supabaseKey: string,
+  data: any,
+  utm: { utmSource?: string; utmCampaign?: string; utmMedium?: string; fbclid?: string },
+) {
+  const meta: string[] = [
+    "[Reunião estratégica] via wemake-landing",
+    `Cargo: ${ROLES_LABEL[data.role as keyof typeof ROLES_LABEL] || data.role}`,
+  ];
+
+  if (utm.utmSource) meta.push(`UTM Source: ${utm.utmSource}`);
+  if (utm.utmCampaign) meta.push(`UTM Campaign: ${utm.utmCampaign}`);
+  if (utm.utmMedium) meta.push(`UTM Medium: ${utm.utmMedium}`);
+  if (utm.fbclid) meta.push(`FBCLID: ${utm.fbclid}`);
+
+  if (data.preferred_date) meta.push(`Sugestão data: ${data.preferred_date}`);
+  if (data.preferred_time) meta.push(`Sugestão horário: ${data.preferred_time}`);
+  if (data.message) meta.push(`Mensagem: ${data.message}`);
 
   const row = {
     nome: data.institution,
@@ -85,7 +154,7 @@ export async function POST(req: Request) {
     rep_legal_nome: data.name,
     rep_legal_email: data.email,
     rep_legal_tel: data.whatsapp,
-    origem: `wemake-landing-${type}`,
+    origem: "wemake-landing-reuniao",
     status_lead: "novo",
     observacoes: meta.join(" | "),
   };
@@ -104,30 +173,10 @@ export async function POST(req: Request) {
     if (!sbRes.ok) {
       const errBody = await sbRes.text();
       console.error("[lead] supabase insert failed:", sbRes.status, errBody);
-      return NextResponse.json(
-        { ok: false, error: "SupabaseInsertFailed", status: sbRes.status, details: errBody },
-        { status: 502 },
-      );
     }
   } catch (err) {
     console.error("[lead] supabase fetch error:", err);
-    return NextResponse.json({ ok: false, error: "SupabaseUnreachable" }, { status: 502 });
   }
-
-  // Email de notificação — dispara em background, não bloqueia resposta
-  sendNotificationEmail(type, data).catch((err) => console.error("[lead] email failed:", err));
-
-  // Webhook secundário opcional
-  const webhook = process.env.LEAD_INBOX_WEBHOOK;
-  if (webhook) {
-    fetch(webhook, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ source: "wemake-landing", type, receivedAt: new Date().toISOString(), lead: parsed.data }),
-    }).catch((err) => console.error("[lead] webhook failed:", err));
-  }
-
-  return NextResponse.json({ ok: true });
 }
 
 /**

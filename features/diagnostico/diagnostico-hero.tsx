@@ -30,15 +30,19 @@ export function DiagnosticoHero() {
 
     const form = e.currentTarget;
     const data = {
-      nome: (form.elements.namedItem("nome") as HTMLInputElement).value,
+      type: "material",
+      name: (form.elements.namedItem("nome") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      telefone: (form.elements.namedItem("telefone") as HTMLInputElement).value,
-      nome_escola: (form.elements.namedItem("nome_escola") as HTMLInputElement).value,
+      whatsapp: (form.elements.namedItem("telefone") as HTMLInputElement).value,
+      role: (form.elements.namedItem("cargo") as HTMLSelectElement).value,
+      institution: (form.elements.namedItem("nome_escola") as HTMLInputElement).value,
+      city: (form.elements.namedItem("cidade") as HTMLInputElement).value,
+      state: (form.elements.namedItem("uf") as HTMLSelectElement).value,
       consent: (form.elements.namedItem("consent") as HTMLInputElement).checked,
     };
 
     try {
-      const res = await fetch("/api/diagnostico/lead", {
+      const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -48,17 +52,13 @@ export function DiagnosticoHero() {
         setSubmitError(
           json?.error === "ValidationError"
             ? "Confira os campos e tente novamente."
-            : "Não foi possível continuar agora. Tente em instantes.",
+            : "Não foi possível liberar agora. Tente em instantes.",
         );
         setIsSubmitting(false);
         return;
       }
-      // Passa nome + email pra /obrigado identificar o lead na qualificação
-      const params = new URLSearchParams({
-        nome: data.nome.split(" ")[0] || "",
-        email: data.email,
-      });
-      router.push(`/obrigado?${params.toString()}`);
+      // Redirect to thank you page after download
+      router.push(`/obrigado?email=${encodeURIComponent(data.email)}`);
     } catch {
       setSubmitError("Falha de conexão. Tente novamente.");
       setIsSubmitting(false);
@@ -115,7 +115,7 @@ export function DiagnosticoHero() {
             </Reveal>
           </div>
 
-          {/* ─── COLUNA DIREITA: formulário simplificado (4 campos) ─── */}
+          {/* ─── COLUNA DIREITA: formulário completo (7 campos) ─── */}
           <Reveal delay={0.25} className="order-2 w-full">
             <div className="bg-white rounded-[1.5rem] sm:rounded-[1.75rem] p-5 sm:p-6 md:p-7 shadow-2xl">
               <div className="mb-5">
@@ -123,7 +123,7 @@ export function DiagnosticoHero() {
                   Receba o ebook agora
                 </h2>
                 <p className="text-gray-500 text-[0.875rem] leading-snug">
-                  Preencha os dados abaixo. São apenas 4 campos.
+                  Preencha os dados abaixo para liberar seu acesso imediato.
                 </p>
               </div>
 
@@ -132,6 +132,23 @@ export function DiagnosticoHero() {
                 <Field id="email" type="email" label="E-mail" placeholder="voce@escola.com.br" icon={<Mail className="size-4" />} required />
                 <Field id="telefone" type="tel" label="WhatsApp" placeholder="(99) 99999-9999" icon={<Phone className="size-4" />} required />
                 <Field id="nome_escola" label="Qual sua escola?" placeholder="Colégio..." icon={<Building2 className="size-4" />} required />
+                <div className="grid grid-cols-[1fr_100px] gap-3">
+                  <Field id="cidade" label="Cidade" placeholder="Sua cidade" icon={<Building2 className="size-4" />} required />
+                  <SelectField id="uf" label="UF" required options={[
+                    { value: "", label: "—" },
+                    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
+                    "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
+                    "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+                  ].map(uf => typeof uf === 'string' ? { value: uf, label: uf } : uf)} />
+                </div>
+                <SelectField id="cargo" label="Seu Cargo" required options={[
+                  { value: "", label: "Selecione..." },
+                  { value: "mantenedor", label: "Mantenedor(a)" },
+                  { value: "gestor", label: "Gestor(a)" },
+                  { value: "diretor", label: "Diretor(a)" },
+                  { value: "coordenador", label: "Coordenador(a)" },
+                  { value: "professor", label: "Professor(a)" }
+                ]} />
 
                 <label className="flex items-start gap-2.5 text-[0.8125rem] text-gray-600 cursor-pointer leading-snug pt-1">
                   <input
@@ -257,6 +274,26 @@ function Field({
           className="w-full h-11 pl-8 pr-3 text-[0.9375rem] rounded-lg border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift"
         />
       </div>
+    </div>
+  );
+}
+
+function SelectField({
+  id, label, required, options,
+}: { id: string; label: string; required?: boolean; options: { value: string; label: string }[] }) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-[0.8125rem] font-medium text-gray-700 mb-1">{label}</label>
+      <select
+        id={id}
+        name={id}
+        required={required}
+        className="w-full h-11 px-3 text-[0.9375rem] rounded-lg border border-gray-200 focus:border-[rgb(var(--color-brand-royal))] focus:ring-2 focus:ring-[rgb(var(--color-brand-royal))]/20 outline-none card-hover-lift appearance-none bg-white text-gray-700"
+      >
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>{opt.label}</option>
+        ))}
+      </select>
     </div>
   );
 }
