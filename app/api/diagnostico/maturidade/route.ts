@@ -72,31 +72,74 @@ export async function POST(req: Request) {
   };
 
   try {
-    const sbRes = await fetch(`${supabaseUrl}/rest/v1/diagnostico_maturidade`, {
+    // 1) Inserir cabeçalho em diagnostico_escola
+    const escolaRow = {
+      nome_escola: data.nome_escola,
+      cidade: data.cidade,
+      uf: data.uf || null,
+      nome_respondente: data.nome_respondente,
+      funcao: data.funcao,
+      segmentos: data.segmentos && data.segmentos.length > 0 ? data.segmentos : null,
+      num_alunos: data.num_alunos ?? null,
+      maior_turma: data.maior_turma ?? null,
+      eh_confessional: data.eh_confessional ? (data.eh_confessional === "sim" ? true : false) : null,
+      tradicao_confessional: data.tradicao_confessional || null,
+      email: data.email,
+      whatsapp: data.whatsapp,
+      consent: data.consent,
+      origem: "wemake-landing-diagnostico-maturidade",
+      status: "diagnostico_completo",
+      observacoes: meta.length > 0 ? meta.join(" | ") : null,
+    };
+
+    const escolaRes = await fetch(`${supabaseUrl}/rest/v1/diagnostico_escola`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         apikey: supabaseKey,
         Authorization: `Bearer ${supabaseKey}`,
-        Prefer: "return=minimal",
+        Prefer: "return=representation",
       },
-      body: JSON.stringify(diagnosticoRow),
+      body: JSON.stringify(escolaRow),
     });
 
-    if (!sbRes.ok) {
-      const errBody = await sbRes.text();
-      console.error("[diagnostico-maturidade] insert failed:", sbRes.status, errBody);
-      console.error("[diagnostico-maturidade] data sent:", JSON.stringify(diagnosticoRow, null, 2));
+    if (!escolaRes.ok) {
+      const errBody = await escolaRes.text();
+      console.error("[diagnostico-maturidade] insert escola failed:", escolaRes.status, errBody);
       return NextResponse.json(
-        { ok: false, error: "SupabaseInsertFailed", details: errBody, status: sbRes.status },
+        { ok: false, error: "SupabaseInsertFailed", details: errBody },
         { status: 502 },
       );
     }
 
-    // Para return=minimal, não há body na resposta
-    const diagnosticoId = data.email + "-" + Date.now();
+    const inserted = await escolaRes.json();
+    const diagnosticoId = inserted?.[0]?.id;
 
-    // 2) Email para o time (em background, não bloqueia)
+    // 2) Inserir respostas em diagnostico_respostas
+    if (data.respostas && data.respostas.length > 0) {
+      const respostasRows = data.respostas.map((r: any) => ({
+        diagnostico_id: diagnosticoId,
+        bloco: r.bloco,
+        pergunta_id: r.pergunta_id,
+        tipo: r.tipo,
+        valor_texto: r.valor_texto ?? null,
+        valor_escala: r.valor_escala ?? null,
+        valor_opcoes: r.valor_opcoes ?? null,
+      }));
+
+      await fetch(`${supabaseUrl}/rest/v1/diagnostico_respostas`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: supabaseKey,
+          Authorization: `Bearer ${supabaseKey}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(respostasRows),
+      }).catch((err) => console.error("[diagnostico-maturidade] respostas error:", err));
+    }
+
+    // 3) Email para o time
     sendNotificationEmail(data, diagnosticoId).catch((err) =>
       console.error("[diagnostico-maturidade] email failed:", err),
     );
