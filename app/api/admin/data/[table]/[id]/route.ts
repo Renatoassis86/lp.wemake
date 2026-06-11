@@ -18,6 +18,7 @@ const READ_TABLES = new Set([
   "leads_escola",
   "diagnostico_escola",
   "diagnostico_respostas",
+  "pdf_downloads",
 ]);
 
 /* Campos editáveis por tabela — qualquer outro é ignorado no PATCH */
@@ -54,9 +55,21 @@ const EDITABLE_FIELDS: Record<string, string[]> = {
     "status",
     "observacoes",
   ],
+  pdf_downloads: [
+    "nome_contato",
+    "email",
+    "telefone",
+    "cargo",
+    "nome_escola",
+    "cidade",
+    "uf",
+    "material",
+    "origem",
+    "observacoes",
+  ],
 };
 
-const DELETABLE_TABLES = new Set(["leads_escola", "diagnostico_escola"]);
+const DELETABLE_TABLES = new Set(["leads_escola", "diagnostico_escola", "pdf_downloads"]);
 
 async function requireSession() {
   const cookieStore = await cookies();
