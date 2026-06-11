@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
-import { formatDateBR } from "@/lib/admin-format";
 import { ExportButton } from "@/features/admin/export-button";
+import { DiagnosticoRespostasClient } from "@/features/admin/diagnostico-respostas-client";
 
 export const dynamic = "force-dynamic";
 
@@ -71,54 +69,7 @@ export default async function RespostasPage() {
         </div>
       )}
 
-      <div className="overflow-x-auto rounded-2xl border border-white/10">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b border-white/10 bg-white/[0.02]">
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Escola
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Respondente
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Email
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Localidade
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Data
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={5} className="px-6 py-8 text-center text-white/55">
-                  Nenhum diagnóstico completo ainda.
-                </td>
-              </tr>
-            ) : (
-              rows.map((row) => (
-                <tr key={row.id} className="border-b border-white/5 hover:bg-white/[0.03] transition">
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/85">{row.nome_escola}</td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/85">{row.nome_respondente}</td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/55 font-mono text-[0.8125rem]">
-                    {row.email}
-                  </td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/55">
-                    {row.cidade} — {row.uf}
-                  </td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/55 font-mono text-[0.8125rem]">
-                    {formatDateBR(row.created_at)}
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+      <DiagnosticoRespostasClient initialRows={rows} />
     </div>
   );
 }
