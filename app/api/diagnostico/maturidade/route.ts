@@ -81,7 +81,6 @@ export async function POST(req: Request) {
       funcao: data.funcao,
       segmentos: data.segmentos && data.segmentos.length > 0 ? data.segmentos : null,
       num_alunos: data.num_alunos ?? null,
-      maior_turma: data.maior_turma ?? null,
       eh_confessional: data.eh_confessional ? (data.eh_confessional === "sim" ? true : false) : null,
       tradicao_confessional: data.tradicao_confessional || null,
       email: data.email,
