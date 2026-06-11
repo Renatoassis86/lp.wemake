@@ -19,7 +19,7 @@ export function DeleteConfirmModal({
   onDeleted,
   redirectTo,
 }: {
-  table: "leads_escola" | "diagnostico_escola";
+  table: "leads_escola" | "diagnostico_escola" | "pdf_downloads";
   id: string;
   itemLabel: string;
   cascade?: string;
