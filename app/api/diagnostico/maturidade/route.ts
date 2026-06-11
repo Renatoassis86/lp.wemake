@@ -57,7 +57,7 @@ export async function POST(req: Request) {
     uf: data.uf,
     nome_respondente: data.nome_respondente,
     funcao: data.funcao,
-    segmentos: JSON.stringify(data.segmentos),
+    segmentos: data.segmentos,
     num_alunos: data.num_alunos ?? null,
     maior_turma: data.maior_turma ?? null,
     eh_confessional: data.eh_confessional ?? null,
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
     consent: data.consent,
     origem: "wemake-landing-diagnostico-maturidade",
     status: "diagnostico_completo",
-    respostas: JSON.stringify(data.respostas),
+    respostas: data.respostas,
     observacoes: meta.length > 0 ? meta.join(" | ") : null,
   };
 
