@@ -78,7 +78,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
         apikey: supabaseKey,
         Authorization: `Bearer ${supabaseKey}`,
-        Prefer: "return=representation",
+        Prefer: "return=minimal",
       },
       body: JSON.stringify(diagnosticoRow),
     });
@@ -86,14 +86,15 @@ export async function POST(req: Request) {
     if (!sbRes.ok) {
       const errBody = await sbRes.text();
       console.error("[diagnostico-maturidade] insert failed:", sbRes.status, errBody);
+      console.error("[diagnostico-maturidade] data sent:", JSON.stringify(diagnosticoRow, null, 2));
       return NextResponse.json(
-        { ok: false, error: "SupabaseInsertFailed", details: errBody },
+        { ok: false, error: "SupabaseInsertFailed", details: errBody, status: sbRes.status },
         { status: 502 },
       );
     }
 
-    const inserted = await sbRes.json();
-    const diagnosticoId = inserted?.[0]?.id;
+    // Para return=minimal, não há body na resposta
+    const diagnosticoId = data.email + "-" + Date.now();
 
     // 2) Email para o time (em background, não bloqueia)
     sendNotificationEmail(data, diagnosticoId).catch((err) =>
@@ -103,7 +104,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true, diagnostico_id: diagnosticoId });
   } catch (err) {
     console.error("[diagnostico-maturidade] supabase fetch error:", err);
-    return NextResponse.json({ ok: false, error: "SupabaseUnreachable" }, { status: 502 });
+    const errMsg = err instanceof Error ? err.message : String(err);
+    return NextResponse.json(
+      { ok: false, error: "SupabaseUnreachable", details: errMsg },
+      { status: 502 },
+    );
   }
 }
 
