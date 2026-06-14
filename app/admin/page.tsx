@@ -26,23 +26,23 @@ async function fetchInitialStats(): Promise<StatsPayload> {
   try {
     const [downloads, diagnosticos, leads] = await Promise.all([
       count("pdf_downloads"),
-      count("diagnostico_escola"),
-      count("leads_escola"),
+      count("diagnostico_escola", "status=eq.diagnostico_completo"),
+      count("diagnostico_escola", "status=eq.lead_qualificado"),
     ]);
 
     const LIMIT = 10;
-    const [recentPdfs, recentDiags, recentLeads, pdfsEmails, diagEmails, leadsEmails] =
+    const [recentPdfs, recentDiags, recentLeads, pdfsEmails, diagEmails] =
       await Promise.all([
         fetch(
           `${supabaseUrl}/rest/v1/pdf_downloads?select=id,nome_contato,email,cidade,uf,created_at&order=created_at.desc&limit=${LIMIT}`,
           { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store" },
         ).then((r) => r.json()).catch(() => []),
         fetch(
-          `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,status,created_at&order=created_at.desc&limit=${LIMIT}`,
+          `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,status,created_at&status=eq.diagnostico_completo&order=created_at.desc&limit=${LIMIT}`,
           { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store" },
         ).then((r) => r.json()).catch(() => []),
         fetch(
-          `${supabaseUrl}/rest/v1/leads_escola?select=id,nome,email,cidade,uf,status_lead,created_at&order=created_at.desc&limit=${LIMIT}`,
+          `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,status,created_at&status=eq.lead_qualificado&order=created_at.desc&limit=${LIMIT}`,
           { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store" },
         ).then((r) => r.json()).catch(() => []),
         fetch(`${supabaseUrl}/rest/v1/pdf_downloads?select=email&limit=500`, {
@@ -51,15 +51,11 @@ async function fetchInitialStats(): Promise<StatsPayload> {
         fetch(`${supabaseUrl}/rest/v1/diagnostico_escola?select=email&limit=500`, {
           headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store",
         }).then((r) => r.json()).catch(() => []),
-        fetch(`${supabaseUrl}/rest/v1/leads_escola?select=email&limit=500`, {
-          headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store",
-        }).then((r) => r.json()).catch(() => []),
       ]);
 
     const allEmails = new Set([
       ...(Array.isArray(pdfsEmails) ? pdfsEmails : []).map((r: any) => r.email?.toLowerCase()).filter(Boolean),
       ...(Array.isArray(diagEmails) ? diagEmails : []).map((r: any) => r.email?.toLowerCase()).filter(Boolean),
-      ...(Array.isArray(leadsEmails) ? leadsEmails : []).map((r: any) => r.email?.toLowerCase()).filter(Boolean),
     ]);
 
     const recent = [
@@ -75,8 +71,8 @@ async function fetchInitialStats(): Promise<StatsPayload> {
       })),
       ...(Array.isArray(recentLeads) ? recentLeads : []).map((r: any) => ({
         id: r.id, tipo: "lead" as const,
-        nome: r.nome || "—", email: r.email || "—",
-        cidade: r.cidade, uf: r.uf, status: r.status_lead, created_at: r.created_at,
+        nome: r.nome_escola || r.nome_respondente || "—", email: r.email || "—",
+        cidade: r.cidade, uf: r.uf, status: r.status, created_at: r.created_at,
       })),
     ]
       .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())

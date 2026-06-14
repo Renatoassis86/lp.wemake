@@ -34,10 +34,10 @@ const TIPO_CONFIG: Record<
     href: (id) => `/admin/diagnostico-escola/${id}`,
   },
   lead: {
-    label: "Lead",
+    label: "Lead Qualificado",
     icon: Users,
     color: "text-[rgb(var(--color-brand-sky))] bg-[rgb(var(--color-brand-sky))]/10",
-    href: (id) => `/admin/leads-escola/${id}`,
+    href: (id) => `/admin/diagnostico-escola/${id}`,
   },
 };
 
@@ -104,14 +104,14 @@ export function DashboardStats({ initial }: { initial: StatsPayload }) {
     },
     {
       href: "/admin/diagnostico-respostas",
-      label: "Diagnósticos",
+      label: "Diagnósticos Completos",
       icon: BarChart3,
       value: stats.diagnosticos,
       color: "from-[rgb(var(--color-brand-royal))]/20 to-[rgb(var(--color-brand-royal))]/5",
     },
     {
-      href: "/admin/leads-escola",
-      label: "Leads Escolas",
+      href: "/admin/diagnostico-respostas",
+      label: "Leads Qualificados",
       icon: Users,
       value: stats.leads,
       color: "from-[rgb(var(--color-brand-sky))]/25 to-[rgb(var(--color-brand-sky))]/5",

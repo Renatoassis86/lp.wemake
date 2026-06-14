@@ -56,12 +56,12 @@ export async function GET() {
   try {
     const [downloads, diagnosticos, leads] = await Promise.all([
       countTable(supabaseUrl, supabaseKey, "pdf_downloads"),
-      countTable(supabaseUrl, supabaseKey, "diagnostico_escola"),
-      countTable(supabaseUrl, supabaseKey, "leads_escola"),
+      countTable(supabaseUrl, supabaseKey, "diagnostico_escola", "status=eq.diagnostico_completo"),
+      countTable(supabaseUrl, supabaseKey, "diagnostico_escola", "status=eq.lead_qualificado"),
     ]);
 
-    // Emails únicos entre as 3 tabelas
-    const [pdfsEmails, diagEmails, leadsEmails] = await Promise.all([
+    // Emails únicos entre downloads + todos os registros de diagnostico_escola
+    const [pdfsEmails, diagEmails] = await Promise.all([
       fetch(`${supabaseUrl}/rest/v1/pdf_downloads?select=email&limit=500`, {
         headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
         cache: "no-store",
@@ -70,20 +70,15 @@ export async function GET() {
         headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
         cache: "no-store",
       }).then((r) => r.json()).catch(() => []),
-      fetch(`${supabaseUrl}/rest/v1/leads_escola?select=email&limit=500`, {
-        headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
-        cache: "no-store",
-      }).then((r) => r.json()).catch(() => []),
     ]);
 
     const allEmails = new Set([
       ...(Array.isArray(pdfsEmails) ? pdfsEmails : []).map((r: any) => r.email?.toLowerCase()).filter(Boolean),
       ...(Array.isArray(diagEmails) ? diagEmails : []).map((r: any) => r.email?.toLowerCase()).filter(Boolean),
-      ...(Array.isArray(leadsEmails) ? leadsEmails : []).map((r: any) => r.email?.toLowerCase()).filter(Boolean),
     ]);
     const emails_unicos = allEmails.size;
 
-    // Atividade recente — últimos 10 de cada tabela, merge e ordena por data
+    // Atividade recente — últimos 10 de cada tipo, merge e ordena por data
     const LIMIT = 10;
     const [recentPdfs, recentDiags, recentLeads] = await Promise.all([
       fetch(
@@ -91,11 +86,12 @@ export async function GET() {
         { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store" },
       ).then((r) => r.json()).catch(() => []),
       fetch(
-        `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,status,created_at&order=created_at.desc&limit=${LIMIT}`,
+        `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,status,created_at&status=eq.diagnostico_completo&order=created_at.desc&limit=${LIMIT}`,
         { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store" },
       ).then((r) => r.json()).catch(() => []),
+      // Leads = escola que qualificou mas ainda não fez o diagnóstico completo
       fetch(
-        `${supabaseUrl}/rest/v1/leads_escola?select=id,nome,email,cidade,uf,status_lead,created_at&order=created_at.desc&limit=${LIMIT}`,
+        `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,status,created_at&status=eq.lead_qualificado&order=created_at.desc&limit=${LIMIT}`,
         { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` }, cache: "no-store" },
       ).then((r) => r.json()).catch(() => []),
     ]);
@@ -123,11 +119,11 @@ export async function GET() {
       ...(Array.isArray(recentLeads) ? recentLeads : []).map((r: any): RecentEntry => ({
         id: r.id,
         tipo: "lead",
-        nome: r.nome || "—",
+        nome: r.nome_escola || r.nome_respondente || "—",
         email: r.email || "—",
         cidade: r.cidade,
         uf: r.uf,
-        status: r.status_lead,
+        status: r.status,
         created_at: r.created_at,
       })),
     ]
