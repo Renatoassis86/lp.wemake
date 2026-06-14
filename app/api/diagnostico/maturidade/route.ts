@@ -50,27 +50,6 @@ export async function POST(req: Request) {
   if (utmMedium) meta.push(`UTM Medium: ${utmMedium}`);
   if (fbclid) meta.push(`FBCLID: ${fbclid}`);
 
-  // Consolidar tudo em uma única tabela
-  const diagnosticoRow = {
-    nome_escola: data.nome_escola,
-    cidade: data.cidade,
-    uf: data.uf || null,
-    nome_respondente: data.nome_respondente,
-    funcao: data.funcao,
-    segmentos: data.segmentos.length > 0 ? data.segmentos : null,
-    num_alunos: data.num_alunos ?? null,
-    maior_turma: data.maior_turma ?? null,
-    eh_confessional: data.eh_confessional ? (data.eh_confessional === "sim" ? true : false) : null,
-    tradicao_confessional: data.tradicao_confessional || null,
-    email: data.email,
-    whatsapp: data.whatsapp,
-    consent: data.consent,
-    origem: "wemake-landing-diagnostico-maturidade",
-    status: "diagnostico_completo",
-    respostas: data.respostas.length > 0 ? data.respostas : null,
-    observacoes: meta.length > 0 ? meta.join(" | ") : null,
-  };
-
   try {
     // 1) Inserir cabeçalho em diagnostico_escola
     const escolaRow = {
@@ -82,7 +61,7 @@ export async function POST(req: Request) {
       segmentos: data.segmentos && data.segmentos.length > 0 ? data.segmentos : null,
       num_alunos: data.num_alunos ?? null,
       maior_turma: data.maior_turma ?? null,
-      eh_confessional: data.eh_confessional ? (data.eh_confessional === "sim" ? true : false) : null,
+      eh_confessional: data.eh_confessional ?? null,
       tradicao_confessional: data.tradicao_confessional || null,
       email: data.email,
       whatsapp: data.whatsapp,
@@ -115,6 +94,14 @@ export async function POST(req: Request) {
     const inserted = await escolaRes.json();
     const diagnosticoId = inserted?.[0]?.id;
 
+    if (!diagnosticoId) {
+      console.error("[diagnostico-maturidade] supabase nao retornou id:", inserted);
+      return NextResponse.json(
+        { ok: false, error: "SupabaseNoIdReturned" },
+        { status: 502 },
+      );
+    }
+
     // 2) Inserir respostas em diagnostico_respostas
     if (data.respostas && data.respostas.length > 0) {
       const respostasRows = data.respostas.map((r: any) => ({
@@ -127,7 +114,7 @@ export async function POST(req: Request) {
         valor_opcoes: r.valor_opcoes ?? null,
       }));
 
-      await fetch(`${supabaseUrl}/rest/v1/diagnostico_respostas`, {
+      const respRes = await fetch(`${supabaseUrl}/rest/v1/diagnostico_respostas`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -136,7 +123,15 @@ export async function POST(req: Request) {
           Prefer: "return=minimal",
         },
         body: JSON.stringify(respostasRows),
-      }).catch((err) => console.error("[diagnostico-maturidade] respostas error:", err));
+      }).catch((err) => {
+        console.error("[diagnostico-maturidade] respostas fetch error:", err);
+        return null;
+      });
+
+      if (!respRes || !respRes.ok) {
+        const errBody = respRes ? await respRes.text().catch(() => "") : "fetch failed";
+        console.error("[diagnostico-maturidade] respostas insert failed:", respRes?.status, errBody);
+      }
     }
 
     // 3) Email para o time

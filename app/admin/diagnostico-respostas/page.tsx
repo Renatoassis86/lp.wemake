@@ -12,7 +12,7 @@ async function fetchRespostas(): Promise<{ rows: any[]; total: number; error?: s
 
   try {
     let res = await fetch(
-      `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,funcao,status,created_at&order=created_at.desc&limit=500`,
+      `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,funcao,status,created_at&status=eq.diagnostico_completo&order=created_at.desc&limit=500`,
       {
         headers: {
           apikey: supabaseKey,

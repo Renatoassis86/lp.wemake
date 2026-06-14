@@ -1,88 +1,101 @@
 "use client";
 
 import { useState } from "react";
-import { Trash2 } from "lucide-react";
+import { AdminTable, type AdminColumn } from "@/features/admin/admin-table";
 import { formatDateBR } from "@/lib/admin-format";
 import { DeleteConfirmModal } from "@/features/admin/delete-confirm-modal";
 
-export function DiagnosticoRespostasClient({ initialRows }: { initialRows: any[] }) {
-  const [rows, setRows] = useState(initialRows);
-  const [deletingRow, setDeletingRow] = useState<any | null>(null);
+type DiagnosticoCompleto = {
+  id: string;
+  created_at: string;
+  nome_escola: string;
+  nome_respondente: string | null;
+  email: string | null;
+  cidade: string | null;
+  uf: string | null;
+  funcao: string | null;
+  status: string | null;
+};
+
+export function DiagnosticoRespostasClient({
+  initialRows,
+}: {
+  initialRows: DiagnosticoCompleto[];
+}) {
+  const [rows, setRows] = useState<DiagnosticoCompleto[]>(initialRows);
+  const [deletingRow, setDeletingRow] = useState<DiagnosticoCompleto | null>(null);
 
   const handleDeleted = (id: string) => {
-    setRows(rows.filter((r) => r.id !== id));
+    setRows((r) => r.filter((row) => row.id !== id));
     setDeletingRow(null);
   };
 
+  const columns: AdminColumn<DiagnosticoCompleto>[] = [
+    {
+      key: "nome_escola",
+      label: "Escola",
+      primary: true,
+      render: (r) => (
+        <p className="font-semibold text-white truncate">{r.nome_escola || "—"}</p>
+      ),
+    },
+    {
+      key: "nome_respondente",
+      label: "Respondente",
+      render: (r) => (
+        <div className="min-w-0">
+          <p className="text-white truncate">{r.nome_respondente || "—"}</p>
+          {r.funcao && r.funcao !== "pendente" && (
+            <p className="text-white/45 text-[0.75rem] truncate capitalize">{r.funcao}</p>
+          )}
+        </div>
+      ),
+    },
+    {
+      key: "email",
+      label: "Email",
+      render: (r) => (
+        <p className="text-white/85 text-[0.8125rem] truncate font-mono">{r.email || "—"}</p>
+      ),
+    },
+    {
+      key: "cidade",
+      label: "Localidade",
+      render: (r) => {
+        const local = [r.cidade, r.uf].filter((v) => v && v !== "—").join(" — ");
+        return (
+          <p className="text-white/75 text-[0.8125rem] truncate">{local || "—"}</p>
+        );
+      },
+    },
+    {
+      key: "created_at",
+      label: "Data",
+      render: (r) => (
+        <span className="text-[0.75rem] text-white/65 font-mono whitespace-nowrap">
+          {formatDateBR(r.created_at)}
+        </span>
+      ),
+    },
+  ];
+
   return (
     <>
-      <div className="overflow-x-auto rounded-2xl border border-white/10">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b border-white/10 bg-white/[0.02]">
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Escola
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Respondente
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Email
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Localidade
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-left text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Data
-              </th>
-              <th className="px-4 sm:px-6 py-3 text-center text-[0.75rem] font-semibold text-white/55 uppercase tracking-wide">
-                Ações
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={6} className="px-6 py-8 text-center text-white/55">
-                  Nenhum diagnóstico completo ainda.
-                </td>
-              </tr>
-            ) : (
-              rows.map((row) => (
-                <tr key={row.id} className="border-b border-white/5 hover:bg-white/[0.03] transition">
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/85">{row.nome_escola}</td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/85">{row.nome_respondente}</td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/55 font-mono text-[0.8125rem]">
-                    {row.email}
-                  </td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/55">
-                    {row.cidade} — {row.uf}
-                  </td>
-                  <td className="px-4 sm:px-6 py-3 text-sm text-white/55 font-mono text-[0.8125rem]">
-                    {formatDateBR(row.created_at)}
-                  </td>
-                  <td className="px-4 sm:px-6 py-3 text-center">
-                    <button
-                      type="button"
-                      onClick={() => setDeletingRow(row)}
-                      className="inline-flex items-center justify-center size-8 rounded-lg hover:bg-red-500/20 text-red-400 hover:text-red-300 transition"
-                      title="Excluir diagnóstico"
-                    >
-                      <Trash2 className="size-4" />
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
-
+      <AdminTable<DiagnosticoCompleto>
+        rows={rows}
+        columns={columns}
+        total={rows.length}
+        rowHref={(r) => `/admin/diagnostico-escola/${r.id}`}
+        onDelete={(r) => setDeletingRow(r)}
+        searchableKeys={["nome_escola", "nome_respondente", "email", "cidade"]}
+        emptyText="Nenhum diagnóstico completo ainda."
+      />
       {deletingRow && (
         <DeleteConfirmModal
           table="diagnostico_escola"
           id={deletingRow.id}
-          itemLabel={`${deletingRow.nome_escola} (${deletingRow.nome_respondente})`}
+          itemLabel={deletingRow.nome_escola || "este diagnóstico"}
+          cascade="todas as respostas vinculadas"
           open={true}
           onClose={() => setDeletingRow(null)}
           onDeleted={handleDeleted}
