@@ -193,9 +193,10 @@ async function sendNotificationEmail(type: "reuniao" | "material", data: any) {
   }
 
   const isReuniao = type === "reuniao";
+  const localidade = data.city && data.city !== "—" ? ` (${data.city}${data.state ? `/${data.state}` : ""})` : "";
   const subject = isReuniao
-    ? `Novo lead — Reunião: ${data.institution} (${data.city}/${data.state})`
-    : `Novo lead — Material: ${data.institution} (${data.city}/${data.state})`;
+    ? `Novo lead — Reunião: ${data.institution}${localidade}`
+    : `Novo lead — Material: ${data.institution}${localidade}`;
 
   const roleLabel = ROLES_LABEL[data.role as keyof typeof ROLES_LABEL] || data.role;
 
@@ -206,7 +207,7 @@ async function sendNotificationEmail(type: "reuniao" | "material", data: any) {
     ["E-mail", data.email],
     ["WhatsApp", data.whatsapp],
     ["Escola", data.institution],
-    ["Cidade / UF", `${data.city} — ${data.state}`],
+    ...(data.city && data.city !== "—" ? [["Cidade / UF", `${data.city}${data.state ? ` — ${data.state}` : ""}`] as [string, string]] : []),
   ];
   if (isReuniao && data.preferred_date) rows.push(["Data preferida", data.preferred_date]);
   if (isReuniao && data.preferred_time) rows.push(["Horário preferido", data.preferred_time]);

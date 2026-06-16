@@ -63,17 +63,13 @@ export const contactSchema = z.object({
 
 export type ContactInput = z.infer<typeof contactSchema>;
 
-/** Versão enxuta usada quando o objetivo é só baixar material. */
+/** Versão enxuta usada quando o objetivo é só baixar material (sem cidade/UF). */
 export const leadShortSchema = contactSchema
-  .pick({
-    name: true,
-    email: true,
-    whatsapp: true,
-    role: true,
-    institution: true,
-    city: true,
-    state: true,
-    consent: true,
+  .pick({ name: true, email: true, whatsapp: true, role: true, institution: true })
+  .extend({
+    city: z.string().min(2).max(80).optional().default("—"),
+    state: z.enum(UFS).optional(),
+    consent: z.boolean().default(true),
   });
 
 export type LeadShortInput = z.infer<typeof leadShortSchema>;

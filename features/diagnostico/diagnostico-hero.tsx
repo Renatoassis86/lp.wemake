@@ -36,9 +36,7 @@ export function DiagnosticoHero() {
       whatsapp: (form.elements.namedItem("telefone") as HTMLInputElement).value,
       role: (form.elements.namedItem("cargo") as HTMLSelectElement).value,
       institution: (form.elements.namedItem("nome_escola") as HTMLInputElement).value,
-      city: (form.elements.namedItem("cidade") as HTMLInputElement).value,
-      state: (form.elements.namedItem("uf") as HTMLSelectElement).value,
-      consent: (form.elements.namedItem("consent") as HTMLInputElement).checked,
+      consent: true,
     };
 
     try {
@@ -129,36 +127,17 @@ export function DiagnosticoHero() {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Field id="nome" label="Nome" placeholder="Seu nome" icon={<User2 className="size-4" />} required />
-                <Field id="email" type="email" label="E-mail" placeholder="voce@escola.com.br" icon={<Mail className="size-4" />} required />
                 <Field id="telefone" type="tel" label="WhatsApp" placeholder="(99) 99999-9999" icon={<Phone className="size-4" />} required />
+                <Field id="email" type="email" label="E-mail" placeholder="voce@escola.com.br" icon={<Mail className="size-4" />} required />
                 <Field id="nome_escola" label="Qual sua escola?" placeholder="Colégio..." icon={<Building2 className="size-4" />} required />
-                <div className="grid grid-cols-[1fr_100px] gap-3">
-                  <Field id="cidade" label="Cidade" placeholder="Sua cidade" icon={<Building2 className="size-4" />} required />
-                  <SelectField id="uf" label="UF" required options={[
-                    { value: "", label: "—" },
-                    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
-                    "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
-                    "RS", "RO", "RR", "SC", "SP", "SE", "TO"
-                  ].map(uf => typeof uf === 'string' ? { value: uf, label: uf } : uf)} />
-                </div>
                 <SelectField id="cargo" label="Seu Cargo" required options={[
-                  { value: "", label: "Selecione..." },
+                  { value: "", label: "Selecione seu cargo..." },
                   { value: "mantenedor", label: "Mantenedor(a)" },
                   { value: "gestor", label: "Gestor(a)" },
                   { value: "diretor", label: "Diretor(a)" },
                   { value: "coordenador", label: "Coordenador(a)" },
-                  { value: "professor", label: "Professor(a)" }
+                  { value: "professor", label: "Professor(a)" },
                 ]} />
-
-                <label className="flex items-start gap-2.5 text-[0.8125rem] text-gray-600 cursor-pointer leading-snug pt-1">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    required
-                    className="mt-0.5 size-4 rounded border-gray-300 text-[rgb(var(--color-brand-royal))] focus:ring-[rgb(var(--color-brand-royal))]/30 shrink-0"
-                  />
-                  <span>Concordo em receber o material e comunicações da We Make (LGPD).</span>
-                </label>
 
                 {submitError && (
                   <div className="flex items-start gap-2 p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-[0.8125rem]">
@@ -172,12 +151,12 @@ export function DiagnosticoHero() {
                   disabled={isSubmitting}
                   className="w-full h-12 mt-1 rounded-xl bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] flex items-center justify-center gap-2 card-hover-lift shadow-md disabled:opacity-70 disabled:cursor-wait hover:-translate-y-0.5"
                 >
-                  {isSubmitting ? "Enviando..." : "Continuar"}
+                  {isSubmitting ? "Enviando..." : "Receber o ebook grátis"}
                   {!isSubmitting && <ArrowRight className="size-4" />}
                 </button>
 
-                <p className="text-[0.6875rem] text-center text-gray-400">
-                  Seus dados são confidenciais. Sem spam.
+                <p className="text-[0.75rem] text-center text-gray-400 leading-snug">
+                  Ao continuar, você concorda em receber o material e comunicações da We Make.
                 </p>
               </form>
             </div>
