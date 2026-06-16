@@ -18,6 +18,7 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { BLOCKS, type Question } from "@/features/diagnostico/maturidade/blocks-config";
 import { ROLES_LABEL } from "@/lib/validation";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Wizard gamificado de Diagnóstico de Maturidade.
@@ -255,8 +256,7 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
         return;
       }
 
-      // Não mostra resultado — diagnóstico vira isca pra conversa com o time.
-      // O Supabase armazena tudo e o email de notificação leva pro time.
+      trackEvent({ name: "diagnostico_completo", escola: answers.nome_escola });
       onComplete?.();
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Falha de conexão";

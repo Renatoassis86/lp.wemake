@@ -18,6 +18,7 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME, WHATSAPP_VIP_LINK } from "@/constants/ebooks";
+import { trackEvent } from "@/lib/analytics";
 import { siteConfig } from "@/constants/site";
 
 /**
@@ -78,6 +79,7 @@ export function ObrigadoHero({ nome, email }: { nome: string; email: string }) {
         setIsSubmitting(false);
         return;
       }
+      trackEvent({ name: "lead_qualificado", cargo: answers.cargo_qualificado });
       setPhase("ready");
     } catch {
       setSubmitError("Falha de conexão. Tente novamente.");
