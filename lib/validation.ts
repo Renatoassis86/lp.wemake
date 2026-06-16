@@ -64,13 +64,22 @@ export const contactSchema = z.object({
 export type ContactInput = z.infer<typeof contactSchema>;
 
 /** Versão enxuta usada quando o objetivo é só baixar material (sem cidade/UF). */
-export const leadShortSchema = contactSchema
-  .pick({ name: true, email: true, whatsapp: true, role: true, institution: true })
-  .extend({
-    city: z.string().min(2).max(80).optional().default("—"),
-    state: z.enum(UFS).optional(),
-    consent: z.boolean().default(true),
-  });
+export const leadShortSchema = z.object({
+  name: z.string().min(2, "Informe seu nome completo.").max(120),
+  email: z.string().email("Email inválido."),
+  whatsapp: z
+    .string()
+    .min(10, "Informe um WhatsApp válido com DDD.")
+    .max(20)
+    .regex(/^[\d\s()+\-]+$/, "Use apenas números e símbolos de telefone."),
+  role: z.enum(["mantenedor", "gestor", "diretor", "coordenador", "professor"], {
+    message: "Selecione qual é o seu papel na escola.",
+  }),
+  institution: z.string().min(2, "Informe o nome da escola.").max(160),
+  city: z.string().max(80).optional().default("—"),
+  state: z.string().max(2).optional(),
+  consent: z.boolean().default(true),
+});
 
 export type LeadShortInput = z.infer<typeof leadShortSchema>;
 

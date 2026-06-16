@@ -6,7 +6,7 @@ import { Download, FileText, CheckCircle2, AlertCircle } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
-import { ROLES_LABEL, UF_OPTIONS } from "@/lib/validation";
+import { ROLES_LABEL } from "@/lib/validation";
 import { EBOOK_COMPLETO_PDF, EBOOK_COMPLETO_FILENAME } from "@/constants/ebooks";
 
 export function FreeMaterial() {
@@ -35,9 +35,7 @@ export function FreeMaterial() {
       whatsapp: (form.elements.namedItem("whatsapp") as HTMLInputElement).value,
       role: (form.elements.namedItem("role") as HTMLSelectElement).value,
       institution: (form.elements.namedItem("institution") as HTMLInputElement).value,
-      city: (form.elements.namedItem("city") as HTMLInputElement).value,
-      state: (form.elements.namedItem("state") as HTMLSelectElement).value,
-      consent: (form.elements.namedItem("consent") as HTMLInputElement).checked,
+      consent: true,
     };
 
     try {
@@ -147,18 +145,6 @@ export function FreeMaterial() {
                       ...Object.entries(ROLES_LABEL).map(([value, label]) => ({ value, label })),
                     ]} />
                     <FmField name="institution" label="Nome da Escola" placeholder="Colégio..." required />
-                    <div className="grid grid-cols-[1fr_100px] gap-3">
-                      <FmField name="city" label="Cidade" placeholder="Sua cidade" required />
-                      <FmSelect name="state" label="UF" required options={[
-                        { value: "", label: "—" },
-                        ...UF_OPTIONS.map((uf) => ({ value: uf, label: uf })),
-                      ]} />
-                    </div>
-
-                    <label className="flex items-start gap-3 text-xs text-gray-600 cursor-pointer pt-1">
-                      <input type="checkbox" name="consent" required className="mt-0.5 size-4 rounded border-gray-300 text-[rgb(var(--color-brand-royal))] focus:ring-[rgb(var(--color-brand-royal))]/30" />
-                      <span>Concordo em receber o material e contatos da We Make (LGPD).</span>
-                    </label>
 
                     {submitError && (
                       <div className="flex items-start gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
@@ -175,7 +161,9 @@ export function FreeMaterial() {
                       {isSubmitting ? "Liberando acesso..." : "Quero baixar agora"}
                     </button>
                   </form>
-                  <p className="text-xs text-center text-gray-400 mt-4">Suas informações estão seguras. Não enviamos spam.</p>
+                  <p className="text-xs text-center text-gray-400 mt-4 leading-snug">
+                    Ao continuar, você concorda em receber o material e comunicações da We Make.
+                  </p>
                 </>
               ) : (
                 <div className="text-center py-10">
