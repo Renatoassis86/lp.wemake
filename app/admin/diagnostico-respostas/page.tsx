@@ -12,7 +12,7 @@ async function fetchRespostas(): Promise<{ rows: any[]; total: number; error?: s
 
   try {
     let res = await fetch(
-      `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,cidade,uf,funcao,status,created_at&status=eq.diagnostico_completo&order=created_at.desc&limit=500`,
+      `${supabaseUrl}/rest/v1/diagnostico_escola?select=id,nome_escola,nome_respondente,email,whatsapp,funcao,cargo_qualificado,espaco_maker,tamanho_escola,cidade,uf,status,created_at&status=eq.diagnostico_completo&order=created_at.desc&limit=500`,
       {
         headers: {
           apikey: supabaseKey,
@@ -49,15 +49,15 @@ export default async function RespostasPage() {
       <header className="mb-6 sm:mb-8 flex items-start justify-between gap-4 flex-wrap">
         <div>
           <p className="font-mono text-[0.6875rem] uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))]/90 font-bold mb-2">
-            Dados brutos
+            Abordagem comercial
           </p>
           <h1 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1]">
-            Diagnósticos de Maturidade Completos
+            Diagnósticos Completos
           </h1>
           <p className="text-white/55 text-[0.875rem] sm:text-sm mt-1.5 max-w-2xl">
-            Escolas que responderam o diagnóstico completo (8 blocos).
-            Total: <strong className="text-white/85">{total.toLocaleString("pt-BR")}</strong>{" "}
-            diagnósticos.
+            Escolas que responderam os 8 blocos do diagnóstico. Clique em qualquer linha para ver
+            todas as respostas detalhadas.{" "}
+            <strong className="text-white/75">{total.toLocaleString("pt-BR")} escola{total !== 1 ? "s" : ""}.</strong>
           </p>
         </div>
         <ExportButton table="diagnostico_escola" />
