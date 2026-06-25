@@ -60,7 +60,10 @@ export default async function RespostasPage() {
             <strong className="text-white/75">{total.toLocaleString("pt-BR")} escola{total !== 1 ? "s" : ""}.</strong>
           </p>
         </div>
-        <ExportButton table="diagnostico_completos" />
+        <div className="flex flex-col sm:flex-row items-end gap-2">
+          <ExportButton table="diagnostico_completos" label="Baixar dados das escolas" />
+          <ExportButton table="respostas_completas" label="Baixar respostas do diagnóstico" />
+        </div>
       </header>
 
       {error && (
