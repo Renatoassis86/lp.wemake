@@ -18,9 +18,15 @@ export const dynamic = "force-dynamic";
  * - Nome de arquivo: <table>-YYYY-MM-DD.xlsx
  */
 
-const ALLOWED_TABLES: Record<string, { label: string; sheetName: string }> = {
+const ALLOWED_TABLES: Record<string, { label: string; sheetName: string; realTable?: string; filter?: string }> = {
   leads_escola: { label: "Leads (escolas)", sheetName: "Leads" },
   diagnostico_escola: { label: "Diagnósticos", sheetName: "Diagnósticos" },
+  diagnostico_completos: {
+    label: "Diagnósticos Completos",
+    sheetName: "Diagnósticos Completos",
+    realTable: "diagnostico_escola",
+    filter: "status=eq.diagnostico_completo",
+  },
   diagnostico_respostas: { label: "Respostas do diagnóstico", sheetName: "Respostas" },
   pdf_downloads: { label: "Downloads do Ebook", sheetName: "Downloads" },
 };
@@ -29,6 +35,7 @@ const ALLOWED_TABLES: Record<string, { label: string; sheetName: string }> = {
 const ORDER_BY: Record<string, string> = {
   leads_escola: "created_at.desc",
   diagnostico_escola: "created_at.desc",
+  diagnostico_completos: "created_at.desc",
   diagnostico_respostas: "diagnostico_id.asc,bloco.asc,pergunta_id.asc",
   pdf_downloads: "created_at.desc",
 };
@@ -122,7 +129,9 @@ export async function GET(
 
   // Busca todos os registros (limite alto pra cobrir tudo)
   const order = ORDER_BY[table] || "created_at.desc";
-  const url = `${supabaseUrl}/rest/v1/${table}?select=*&order=${encodeURIComponent(order)}&limit=10000`;
+  const realTable = tableMeta.realTable || table;
+  const extraFilter = tableMeta.filter ? `&${tableMeta.filter}` : "";
+  const url = `${supabaseUrl}/rest/v1/${realTable}?select=*&order=${encodeURIComponent(order)}&limit=10000${extraFilter}`;
   const sbRes = await fetch(url, {
     headers: {
       apikey: supabaseKey,

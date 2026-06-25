@@ -11,7 +11,7 @@ export function ExportButton({
   table,
   label = "Baixar planilha",
 }: {
-  table: "leads_escola" | "diagnostico_escola" | "diagnostico_respostas" | "pdf_downloads";
+  table: "leads_escola" | "diagnostico_escola" | "diagnostico_completos" | "diagnostico_respostas" | "pdf_downloads";
   label?: string;
 }) {
   const [downloading, setDownloading] = useState(false);
