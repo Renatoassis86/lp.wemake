@@ -22,6 +22,7 @@ const ALLOWED_TABLES: Record<string, { label: string; sheetName: string }> = {
   leads_escola: { label: "Leads (escolas)", sheetName: "Leads" },
   diagnostico_escola: { label: "Diagnósticos", sheetName: "Diagnósticos" },
   diagnostico_respostas: { label: "Respostas do diagnóstico", sheetName: "Respostas" },
+  pdf_downloads: { label: "Downloads do Ebook", sheetName: "Downloads" },
 };
 
 // Coluna preferida pra ordenar (descendente)
@@ -29,6 +30,7 @@ const ORDER_BY: Record<string, string> = {
   leads_escola: "created_at.desc",
   diagnostico_escola: "created_at.desc",
   diagnostico_respostas: "diagnostico_id.asc,bloco.asc,pergunta_id.asc",
+  pdf_downloads: "created_at.desc",
 };
 
 // Headers amigáveis (label visível na planilha)
@@ -64,6 +66,14 @@ const COLUMN_LABELS: Record<string, string> = {
   tamanho_escola: "Tamanho",
   consent: "Consentimento LGPD",
   status: "Status",
+  // pdf_downloads
+  nome_contato: "Nome",
+  cargo: "Cargo",
+  material: "Material",
+  fluxo: "Origem / Fluxo",
+  utm_campaign: "UTM Campaign",
+  utm_medium: "UTM Medium",
+  fbclid: "FBCLID",
   // diagnostico_respostas
   diagnostico_id: "Diagnóstico ID",
   bloco: "Bloco",
