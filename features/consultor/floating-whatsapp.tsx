@@ -41,6 +41,7 @@ export function FloatingWhatsapp() {
                 className="
                   absolute bottom-[4.5rem] right-0
                   w-[min(20rem,calc(100vw-2.5rem))]
+                  max-h-[min(24rem,calc(100vh-7rem))] overflow-y-auto
                   rounded-2xl border border-white/12 bg-ink-900/90 backdrop-blur-xl
                   p-5
                   shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]
@@ -56,7 +57,7 @@ export function FloatingWhatsapp() {
                   <button
                     type="button"
                     onClick={() => setOpen(false)}
-                    className="size-7 inline-flex items-center justify-center rounded-full hover:bg-white/10"
+                    className="-m-2.5 size-11 shrink-0 inline-flex items-center justify-center rounded-full hover:bg-white/10"
                     aria-label="Fechar"
                   >
                     <X className="size-3.5" />

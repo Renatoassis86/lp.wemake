@@ -209,9 +209,13 @@ export function Testimonials() {
                 <button
                   key={i}
                   onClick={() => setActiveIndex(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-8 bg-[rgb(var(--color-brand-mint))]' : 'w-2.5 bg-white/20 hover:bg-white/40'}`}
+                  className="p-[15px] -m-[15px] flex items-center justify-center"
                   aria-label={`Ir para depoimento ${i + 1}`}
-                />
+                >
+                  <span
+                    className={`h-2.5 rounded-full transition-all duration-300 block ${i === activeIndex ? "w-8 bg-[rgb(var(--color-brand-mint))]" : "w-2.5 bg-white/20"}`}
+                  />
+                </button>
               ))}
             </div>
 

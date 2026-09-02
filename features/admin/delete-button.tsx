@@ -32,7 +32,7 @@ export function DeleteButton({
       ? "bg-red-500/10 hover:bg-red-500/20 border-red-400/30 text-red-200"
       : "bg-white/5 hover:bg-white/10 border-white/15 text-white/75 hover:text-red-200";
   const sizeClasses =
-    size === "sm" ? "h-9 px-3 text-[0.8125rem]" : "h-10 px-4 text-[0.875rem]";
+    size === "sm" ? "h-10 px-3 text-[0.8125rem]" : "h-11 px-4 text-[0.875rem]";
 
   return (
     <>

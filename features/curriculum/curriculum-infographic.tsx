@@ -98,7 +98,7 @@ export function CurriculumInfographic() {
                   <div className="absolute left-[36px] md:left-1/2 top-8 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-brand-royal z-10 shadow-lg" />
 
                   {/* Conteúdo (Texto) */}
-                  <div className={`flex-1 pl-[80px] md:pl-0 w-full ${isEven ? "md:text-right" : "md:text-left"}`}>
+                  <div className={`flex-1 pl-16 md:pl-0 w-full ${isEven ? "md:text-right" : "md:text-left"}`}>
                     <Reveal delay={0.2}>
                       <span className="font-mono text-3xl text-brand-royal/20 font-black tracking-widest block mb-2">{step.id}</span>
                       <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-ink-100 mb-4 text-balance">{step.title}</h3>
@@ -107,9 +107,9 @@ export function CurriculumInfographic() {
                   </div>
 
                   {/* Imagem em blob + mancha de cor offset */}
-                  <div className="flex-1 w-full pl-[80px] md:pl-0 flex justify-center md:justify-start">
+                  <div className="flex-1 w-full pl-16 md:pl-0 flex justify-center md:justify-start">
                     <Reveal delay={0.4}>
-                      <div className="relative w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[340px] md:h-[340px]">
+                      <div className="relative w-[min(240px,55vw)] h-[min(240px,55vw)] sm:w-[300px] sm:h-[300px] md:w-[340px] md:h-[340px]">
 
                         {/* Mancha de cor sólida atrás, deslocada (estilo "tinta") */}
                         <motion.div

@@ -184,7 +184,7 @@ export function DashboardStats({ initial }: { initial: StatsPayload }) {
           type="button"
           onClick={refresh}
           disabled={loading}
-          className="inline-flex items-center gap-1.5 text-white/55 hover:text-white transition disabled:opacity-40"
+          className="-m-2.5 p-2.5 inline-flex items-center gap-1.5 text-white/55 hover:text-white transition disabled:opacity-40"
         >
           <RefreshCw className={`size-3.5 ${loading ? "animate-spin" : ""}`} />
           Atualizar agora

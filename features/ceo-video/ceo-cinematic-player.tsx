@@ -386,19 +386,18 @@ export const CeoCinematicPlayer = forwardRef<CeoPlayerHandle, CeoCinematicPlayer
                 aria-label="Progresso"
                 aria-valuenow={Math.round(progress * 100)}
                 onClick={seekFromBar}
-                className="
-                  relative h-1 cursor-pointer rounded-full bg-white/15
-                  hover:h-1.5 transition-[height]
-                "
+                className="relative py-3.5 -my-3.5 cursor-pointer"
               >
-                <div
-                  className="
-                    h-full rounded-full
-                    bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-violet
-                    shadow-[0_0_12px_rgba(96,165,250,0.7)]
-                  "
-                  style={{ width: `${progress * 100}%` }}
-                />
+                <div className="relative h-1 rounded-full bg-white/15 transition-[height]">
+                  <div
+                    className="
+                      h-full rounded-full
+                      bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-violet
+                      shadow-[0_0_12px_rgba(96,165,250,0.7)]
+                    "
+                    style={{ width: `${progress * 100}%` }}
+                  />
+                </div>
               </div>
               <div className="mt-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -436,7 +435,7 @@ function ControlButton({
       onClick={onClick}
       aria-label={label}
       className="
-        inline-flex size-9 items-center justify-center rounded-full
+        inline-flex size-11 items-center justify-center rounded-full
         border border-white/10 bg-white/[0.06] backdrop-blur-md
         text-foreground/85 hover:text-foreground
         hover:bg-white/[0.12] hover:border-white/20

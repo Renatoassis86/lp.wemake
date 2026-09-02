@@ -113,7 +113,7 @@ export function SpeakerCard({ live = false }: { live?: boolean }) {
       </div>
 
       {/* Métricas qualitativas - sem números absolutos */}
-      <dl className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
+      <dl className="mt-7 grid grid-cols-1 min-[360px]:grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
         <Credential label="formação"   value="UFRN" />
         <Credential label="tradição"   value="REFORMADA" />
         <Credential label="movimento"  value="NACIONAL" />

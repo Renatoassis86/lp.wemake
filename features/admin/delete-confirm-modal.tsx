@@ -68,13 +68,13 @@ export function DeleteConfirmModal({
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={() => !deleting && onClose()}
       />
-      <div className="relative w-full max-w-md rounded-2xl bg-[rgb(var(--color-brand-navy))] border border-red-400/30 p-6 shadow-2xl">
+      <div className="relative w-full max-w-md max-h-[85vh] overflow-y-auto rounded-2xl bg-[rgb(var(--color-brand-navy))] border border-red-400/30 p-6 shadow-2xl">
         <button
           type="button"
           onClick={() => !deleting && onClose()}
           disabled={deleting}
           aria-label="Fechar"
-          className="absolute top-3 right-3 size-8 inline-flex items-center justify-center rounded-lg hover:bg-white/5 text-white/60 card-hover-soft"
+          className="absolute top-2 right-2 size-11 inline-flex items-center justify-center rounded-lg hover:bg-white/5 text-white/60 card-hover-soft"
         >
           <X className="size-4" />
         </button>

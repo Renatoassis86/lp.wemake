@@ -319,15 +319,15 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
               )}
 
               {/* Navegação */}
-              <div className="mt-8 flex items-center justify-between gap-3 pt-6 border-t border-gray-100">
+              <div className="mt-8 flex flex-wrap items-center justify-between gap-3 pt-6 border-t border-gray-100">
                 {step > 0 ? (
                   <button
                     type="button"
                     onClick={handlePrev}
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 h-12 px-5 rounded-full border-2 border-gray-200 text-gray-700 font-semibold text-[0.9375rem] hover:bg-gray-50 transition-colors disabled:opacity-50"
+                    className="inline-flex items-center justify-center gap-2 h-12 px-4 sm:px-5 rounded-full border-2 border-gray-200 text-gray-700 font-semibold text-[0.9375rem] hover:bg-gray-50 transition-colors disabled:opacity-50"
                   >
-                    <ArrowLeft className="size-4" />
+                    <ArrowLeft className="size-4 shrink-0" />
                     Voltar
                   </button>
                 ) : (
@@ -338,7 +338,7 @@ export function MaturidadeWizard({ onComplete }: { onComplete?: () => void }) {
                   type="button"
                   onClick={handleNext}
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 h-12 px-6 sm:px-7 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] transition-[background-color,transform,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-cinematic)] shadow-md hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-wait"
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 h-12 px-4 sm:px-7 rounded-full bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint-deep))] text-[rgb(var(--color-brand-navy))] font-bold text-[0.9375rem] transition-[background-color,transform,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-cinematic)] shadow-md hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-wait whitespace-nowrap"
                 >
                   {isSubmitting
                     ? "Enviando..."

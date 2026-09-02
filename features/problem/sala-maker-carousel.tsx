@@ -79,10 +79,14 @@ export function SalaMakerCarousel({
               setTimeout(() => setPaused(false), 10000);
             }}
             aria-label={`Ir para foto ${idx + 1} de ${PHOTOS.length}`}
-            className={`h-1.5 rounded-full transition-all ${
-              idx === i ? "w-5 bg-white" : "w-1.5 bg-white/45 hover:bg-white/75"
-            }`}
-          />
+            className="p-[13px] -m-[13px] flex items-center justify-center"
+          >
+            <span
+              className={`h-1.5 rounded-full transition-all block ${
+                idx === i ? "w-5 bg-white" : "w-1.5 bg-white/45"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </>

@@ -54,7 +54,7 @@ export function ExportButton({
         type="button"
         onClick={handleExport}
         disabled={downloading}
-        className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/20 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] font-bold text-[0.875rem] transition disabled:opacity-60 disabled:cursor-wait"
+        className="inline-flex items-center gap-2 h-11 px-4 rounded-xl bg-[rgb(var(--color-brand-mint))]/10 hover:bg-[rgb(var(--color-brand-mint))]/20 border border-[rgb(var(--color-brand-mint))]/30 text-[rgb(var(--color-brand-mint))] font-bold text-[0.875rem] transition disabled:opacity-60 disabled:cursor-wait"
       >
         {downloading ? (
           <Loader2 className="size-4 animate-spin" />

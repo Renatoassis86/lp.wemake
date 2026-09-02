@@ -295,16 +295,16 @@ function ReadyView({
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative bg-[#060D20] border border-white/10 rounded-[2rem] p-8 sm:p-10 max-w-[420px] w-full shadow-[0_32px_80px_-16px_rgba(0,0,0,0.8)] z-10 text-center overflow-hidden"
+              className="relative bg-[#060D20] border border-white/10 rounded-[2rem] p-8 sm:p-10 max-w-[420px] w-full max-h-[85vh] overflow-y-auto shadow-[0_32px_80px_-16px_rgba(0,0,0,0.8)] z-10 text-center"
             >
               {/* Glow Effect */}
               <div aria-hidden className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[200px] bg-[#25D366]/10 blur-[80px] rounded-full pointer-events-none" />
 
               <button
                 onClick={() => setShowPopup(false)}
-                className="absolute top-5 right-5 size-9 flex items-center justify-center rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition z-20"
+                className="absolute top-3 right-3 size-11 flex items-center justify-center rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition z-20"
               >
-                <X className="size-4.5" />
+                <X className="size-4" />
               </button>
               
               <div className="relative inline-flex items-center justify-center size-20 rounded-full bg-gradient-to-br from-[#25D366]/20 to-[#25D366]/5 border border-[#25D366]/30 mb-6 shadow-[0_0_40px_-10px_rgba(37,211,102,0.4)]">

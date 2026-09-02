@@ -12,6 +12,9 @@ import {
   X,
   TrendingUp,
   Download,
+  ClipboardList,
+  Calculator,
+  Presentation,
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -26,6 +29,22 @@ const NAV_ITEMS = [
     href: "/admin/diagnostico-respostas",
     label: "Diagnósticos Completos",
     icon: ListChecks,
+  },
+  {
+    href: "/admin/plano-de-negocio",
+    label: "Plano de Negócio · Questionário",
+    icon: ClipboardList,
+    exact: true,
+  },
+  {
+    href: "/admin/plano-de-negocio/financeiro",
+    label: "Plano de Negócio · Financeiro",
+    icon: Calculator,
+  },
+  {
+    href: "/admin/plano-de-negocio/apresentacao",
+    label: "Plano de Negócio · Apresentação",
+    icon: Presentation,
   },
 ];
 
@@ -78,7 +97,7 @@ export function AdminShell({
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menu"
-            className="size-10 inline-flex items-center justify-center rounded-xl border border-white/10 hover:bg-white/5 transition"
+            className="size-11 inline-flex items-center justify-center rounded-xl border border-white/10 hover:bg-white/5 transition"
           >
             <Menu className="size-5" />
           </button>
@@ -101,7 +120,7 @@ export function AdminShell({
                 type="button"
                 onClick={() => setMenuOpen(false)}
                 aria-label="Fechar menu"
-                className="size-9 inline-flex items-center justify-center rounded-lg hover:bg-white/5"
+                className="size-11 inline-flex items-center justify-center rounded-lg hover:bg-white/5"
               >
                 <X className="size-5" />
               </button>

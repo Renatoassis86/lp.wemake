@@ -72,7 +72,7 @@ export function SocialIcons({ className = "mt-8" }: { className?: string }) {
           rel="noreferrer"
           aria-label={name}
           title={name}
-          className="w-10 h-10 rounded-full bg-white/8 border border-white/10 text-white/85 hover:bg-[rgb(var(--color-brand-mint))]/20 hover:border-[rgb(var(--color-brand-mint))]/40 hover:text-[rgb(var(--color-brand-mint))] transition-all flex items-center justify-center"
+          className="w-11 h-11 rounded-full bg-white/8 border border-white/10 text-white/85 hover:bg-[rgb(var(--color-brand-mint))]/20 hover:border-[rgb(var(--color-brand-mint))]/40 hover:text-[rgb(var(--color-brand-mint))] transition-all flex items-center justify-center"
         >
           <span className="size-5 block">
             <Icon />

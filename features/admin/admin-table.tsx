@@ -183,10 +183,24 @@ export function AdminTable<T extends Record<string, any>>({
             const others = columns.filter((c) => c !== primary);
             const card = (
               <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4 hover:bg-white/[0.05] card-hover-soft">
-                <div className="mb-3">
-                  <div className="font-display text-white text-[1rem] leading-tight">
+                <div className="mb-3 flex items-start justify-between gap-3">
+                  <div className="font-display text-white text-[1rem] leading-tight min-w-0">
                     {primary?.render ? primary.render(row) : String(row[primary?.key as keyof T] ?? "—")}
                   </div>
+                  {onDelete && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        onDelete(row);
+                      }}
+                      aria-label="Excluir"
+                      className="shrink-0 -m-1.5 inline-flex items-center justify-center size-11 rounded-lg bg-red-500/10 hover:bg-red-500/25 border border-red-400/30 text-red-200"
+                    >
+                      <Trash2 className="size-4" />
+                    </button>
+                  )}
                 </div>
                 <dl className="space-y-1.5">
                   {others.map((col) => (

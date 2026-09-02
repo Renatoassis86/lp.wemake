@@ -210,7 +210,7 @@ function FieldRender({
                 key={o.value}
                 type="button"
                 onClick={() => toggle(o.value)}
-                className={`px-3.5 h-9 rounded-full border-2 font-semibold text-[0.8125rem] transition ${
+                className={`px-3.5 h-11 rounded-full border-2 font-semibold text-[0.8125rem] transition ${
                   selected
                     ? "border-[rgb(var(--color-brand-mint))] bg-[rgb(var(--color-brand-mint))]/15 text-[rgb(var(--color-brand-mint))]"
                     : "border-white/15 text-white/70 hover:border-white/30"
