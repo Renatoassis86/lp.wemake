@@ -89,7 +89,7 @@ export function organizationJsonLd() {
     "@type": "EducationalOrganization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/brand/wemake-logo.svg`,
+    logo: `${siteConfig.url}/photos/2.png`,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
     sameAs: Object.values(siteConfig.social),

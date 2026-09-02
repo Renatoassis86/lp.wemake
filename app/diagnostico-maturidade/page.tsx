@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description:
       "Diagnóstico estruturado para diretores, coordenadores e professores. Em 6 minutos, nosso time analisa e retorna com recomendações personalizadas.",
     type: "website",
+    images: [{ url: "/og/wemake-og.jpg", width: 1200, height: 630, alt: "We Make — Tecnologia educacional com cosmovisão reformada" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Diagnóstico de Maturidade Tecnológica — We Make",
+    description:
+      "Diagnóstico estruturado para diretores, coordenadores e professores. Em 6 minutos, nosso time analisa e retorna com recomendações personalizadas.",
+    images: ["/og/wemake-og.jpg"],
   },
 };
 

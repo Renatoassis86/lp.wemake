@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "Receba gratuitamente o ebook da We Make e descubra como ensinar tecnologia com propósito.",
     type: "website",
+    images: [{ url: "/og/wemake-og.jpg", width: 1200, height: 630, alt: "We Make — Tecnologia educacional com cosmovisão reformada" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ebook gratuito — 7 Princípios para Ensinar Tecnologia com Cosmovisão Cristã",
+    description:
+      "Receba gratuitamente o ebook da We Make e descubra como ensinar tecnologia com propósito.",
+    images: ["/og/wemake-og.jpg"],
   },
 };
 
