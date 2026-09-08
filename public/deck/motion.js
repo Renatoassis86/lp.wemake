@@ -162,11 +162,11 @@
     current = Math.max(0, Math.min(all.length - 1, i));
 
     all.forEach((s, idx) => {
-      s.classList.remove('active', 'prev');
+      s.classList.remove('is-active', 'is-prev');
       if (idx === current) {
-        s.classList.add('active');
+        s.classList.add('is-active');
       } else if (idx < current) {
-        s.classList.add('prev');
+        s.classList.add('is-prev');
       }
     });
 

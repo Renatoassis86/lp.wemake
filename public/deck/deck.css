@@ -346,6 +346,7 @@ html, body {
 /* ANIMAÇÕES */
 [data-anim] { opacity: 0; transform: translateY(30px); transition: all 0.6s var(--ease-out); }
 .is-active [data-anim] { opacity: 1; transform: translateY(0); }
+[data-anim].is-in { opacity: 1; transform: translateY(0); }
 
 /* FOOTER */
 .footer {
@@ -357,4 +358,24 @@ html, body {
   font-size: 13px;
   color: #94B4BD;
   font-family: var(--font-mono);
+}
+
+/* EXPORTAÇÃO (build.py / PDF): empilha os slides em fluxo normal para que
+   cada um ocupe sua própria área e possa ser fotografado individualmente.
+   No carrossel ao vivo (sem .export), o comportamento continua intacto. */
+html.export .deck {
+  height: auto;
+  overflow: visible;
+}
+html.export .slide {
+  position: relative;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transition: none !important;
+}
+html.export [data-anim],
+html.export [data-anim].is-in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }

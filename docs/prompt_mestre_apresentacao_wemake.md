@@ -35,6 +35,26 @@ Ao executar a montagem do deck e do relatório A4, os seguintes documentos **DEV
 - ❌ **INVERSÃO DA SEQUÊNCIA DE CAPÍTULOS**: Proibido alterar a ordem dos capítulos. A apresentação deve seguir estritamente a ordem cronológica dos 15 capítulos do Plano de Negócio PDF.
 - ❌ **LINGUAGEM DE MARQUETINGUE CLICHÊ**: Proibido utilizar palavras como *"sinergia"*, *"robusto"*, *"alavancar"*, *"solução completa"*, *"de forma estratégica"*.
 - ❌ **PONTOS FINAIS E TRAVESSÕES EM TÍTULOS**: Proibido usar travessões `—` ou ponto final ao término de títulos.
+- ❌ **PDF DESATUALIZADO**: Proibido deixar o PDF baixável (`public/Apresentacao_We_Make_Plano_de_Negocio_2027_2031.pdf`) com data de geração anterior à última edição de `deck.html`. Todo commit que altera `deck.html` **DEVE** regenerar e substituir esse PDF na mesma execução, nunca depois.
+
+---
+
+## 🔄 Sincronização Obrigatória do PDF
+
+O botão **PDF** da página `/admin/plano-de-negocio/apresentacao` ([apresentacao-plano.tsx](file:///c:/repositorio/wemake/projetos_wemake/lp_wemake/features/admin/apresentacao/apresentacao-plano.tsx)) baixa um arquivo **estático**, não gerado sob demanda:
+
+```
+public/Apresentacao_We_Make_Plano_de_Negocio_2027_2031.pdf
+```
+
+Esse arquivo **não se atualiza sozinho**. Ele é uma cópia congelada do último `build/deck.pdf` gerado a partir de `deck.html`. Sempre que `deck.html` for editado, sem exceção:
+
+1. Rodar o build do deck-forge para regenerar `build/deck.pdf` a partir do `deck.html` atual (`decks/wemake-plano/deck.html`, espelhado em `wemake/projetos_wemake/lp_wemake/public/deck/deck.html`).
+2. Sobrescrever `wemake/projetos_wemake/lp_wemake/public/Apresentacao_We_Make_Plano_de_Negocio_2027_2031.pdf` com o PDF recém-gerado.
+3. Sobrescrever também `wemake/projetos_wemake/lp_wemake/public/deck/build/deck.pdf` e `decks/wemake-plano/build/deck.pdf`, mantendo as três cópias idênticas e com a mesma data de modificação.
+4. Conferir que o texto fixo `"32 Slides Cinematográficos"` em `apresentacao-plano.tsx` reflete a contagem real de `<section class="slide">` em `deck.html` (hoje 40, não 32) antes de publicar.
+
+Nunca considerar a tarefa de editar o deck concluída enquanto o PDF público estiver desatualizado — é a mesma classe de erro que subir HTML sem renderizar os PNGs.
 
 ---
 
@@ -150,4 +170,5 @@ Regras Inegociáveis:
 6. Mantenha os cartões no formato quadrado (.card--square) com ícones flutuantes circulares de 52px.
 7. Garanta que a .logo-zone fique fixa no canto inferior direito sem distorção vertical (top: auto; max-height: 48px).
 8. Replique todos estes elementos visuais (Organograma, Mapa IBGE, Capas de Livros e Ciclo Maker) no relatório A4 (/admin/plano-de-negocio/relatorio).
+9. Ao final de qualquer alteração em `deck.html`, regenere `build/deck.pdf` e sobrescreva as três cópias públicas do PDF (`public/Apresentacao_We_Make_Plano_de_Negocio_2027_2031.pdf`, `public/deck/build/deck.pdf`, `decks/wemake-plano/build/deck.pdf`). O PDF baixável pela página de apresentação nunca pode ficar mais antigo que o `deck.html` que o originou.
 ```
