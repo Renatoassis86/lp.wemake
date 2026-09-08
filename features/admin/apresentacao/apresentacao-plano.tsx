@@ -866,7 +866,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 16 — mapa: onde estão nossos alunos
     <Slide key="mapa-alunos" variante="royal">
       <Eyebrow>Onde estamos hoje</Eyebrow>
-      <Titulo>Presença em 7 estados, do Sul ao Nordeste</Titulo>
+      <Titulo>Presença em 9 estados, do Sul ao Nordeste</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 items-center">
         {geoBrasil ? (
           <MapaBrasil geo={geoBrasil} porEstado={escolasPorEstado} width={460} height={460} />
@@ -876,7 +876,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <div>
           <p className="text-white/70 text-base leading-relaxed mb-4">
             Escolas parceiras identificadas por estado no cadastro comercial, entre as 23 que compõem o
-            orçamento de 2027. Concentração inicial em PR, SC e SP, com presença já em ES, MA, RN e RS.
+            orçamento de 2027. Concentração no Paraná, com presença já em São Paulo, Santa Catarina,
+            Paraíba, Espírito Santo, Maranhão, Rio Grande do Sul, Rio Grande do Norte e Ceará.
           </p>
           <div className="grid grid-cols-3 gap-2">
             {Object.entries(escolasPorEstado).sort((a, b) => b[1] - a[1]).map(([uf, qtd], i) => (

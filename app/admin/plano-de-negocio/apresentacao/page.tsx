@@ -14,19 +14,22 @@ import type { LinhaDeNegocioId } from "@/data/plano-negocio-perguntas";
 export const dynamic = "force-dynamic";
 
 /**
- * Distribuição real das 23 escolas do orçamento 2027 por estado, confirmada
- * contra o cadastro do CRM comercial (app_comercial_We Make). 11 das 23
- * escolas foram localizadas com confiança; as demais ainda não têm
- * cidade/UF padronizados no CRM e não entram aqui para não inventar dado.
+ * Distribuição real das 23 escolas do orçamento 2027 por estado. Base: cadastro
+ * do CRM comercial (app_comercial_We Make) e o slide "Onde estamos?" enviado
+ * pelo usuário, que confirmou cidade das escolas do Paraná, Ceará, Paraíba,
+ * São Paulo e Santa Catarina. 21 das 23 escolas já têm cidade/UF confirmados;
+ * as 2 restantes ainda não entram aqui para não inventar dado.
  */
 const ESCOLAS_POR_ESTADO: Record<string, number> = {
-  PR: 3, // Educar Londrina, Colégio Lighthouse (Campo Largo), Escola Supremo (Curitiba)
+  PR: 8, // Educar Londrina, Colégio Lighthouse (Campo Largo), Escola Supremo (Curitiba), Colégio Graciosa (Quatro Barras), Escola Cristã do Reino (Campo Mourão), Colégio Journey (Curitiba), Escola Aprender e Viver (Curitiba), Sagrados Corações (Jacarezinho)
+  SP: 3, // ACR Classical Christian School (São Bernardo do Campo), Colégio Cristão Zoe (Guarulhos), Escola Cristã Paz (Itapetininga)
   SC: 2, // Colégio Cristão Amar (Itajaí), For Life School (Florianópolis)
-  SP: 2, // ACR Classical Christian School (São Bernardo do Campo), Colégio Cristão Zoe (Guarulhos)
+  PB: 2, // Executivo Colégio e Curso (Guarabira), Centro Educacional Sonho de Eloi (Ingá)
   ES: 1, // Primeiro o Reino (Vitória)
   MA: 1, // Escola Estímulos (São Mateus do Maranhão)
   RS: 1, // Colégio/Instituto Reverendo Olavo Nunes (Porto Alegre)
   RN: 1, // Bee Christian School (Natal/Parnamirim)
+  CE: 1, // Centro de Ensino Ágape (Milagres)
 };
 
 const ESTADOS_COM_LEI_PROPRIA: Record<string, number> = { DF: 1, SP: 1, MG: 1, PR: 1, RS: 1 };
