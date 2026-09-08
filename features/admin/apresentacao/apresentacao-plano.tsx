@@ -322,7 +322,8 @@ function Titulo({ children, tom = "claro" }: { children: string; tom?: "claro" |
   const palavras = children.split(" ");
   return (
     <h2
-      className={`font-display text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.05] max-w-4xl text-balance ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
+      className={`text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.12] max-w-4xl text-balance font-bold ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
+      style={{ fontFamily: "var(--font-wemake)" }}
     >
       {palavras.map((p, i) => (
         <motion.span
@@ -442,7 +443,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             Plano de Negócio · 2027–2031
           </motion.p>
           <motion.h1
-            className="font-display text-white text-[clamp(2rem,5.5vw,4.25rem)] leading-[1.03] text-balance"
+            className="font-bold text-white text-[clamp(2rem,5.5vw,4.25rem)] leading-[1.1] text-balance"
+            style={{ fontFamily: "var(--font-wemake)" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
