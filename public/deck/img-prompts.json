@@ -1,0 +1,11 @@
+{
+  "style": "TROCAR: uma direção de arte única para o deck inteiro — técnica, luz, paleta, grão. Sem texto na imagem.",
+  "images": [
+    {
+      "file": "01-capa.png",
+      "prompt": "TROCAR: assunto concreto, enquadramento, luz, óptica. Reserve espaço vazio onde o título vai entrar.",
+      "aspect": "21:9",
+      "resolution": "2K"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "wemake",
+  "bg": "#0B1F44",
+  "surface": "#1A2C4F",
+  "ink": "#F4F6FB",
+  "muted": "#929CAE",
+  "accent": "#76F3CD",
+  "accent2": "#76F3CD",
+  "display": "Poppins",
+  "body": "Inter",
+  "logo_height_px": 56,
+  "logo_position": "br",
+  "contrast": {
+    "ink/bg": 15.01,
+    "muted/bg": 5.85,
+    "accent/bg": 11.96
+  },
+  "adjustments": []
+}

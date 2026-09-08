@@ -1,0 +1,24 @@
+Photo assets directory — drop the institutional photo set here.
+
+Expected files (referenced by data/scenes.ts):
+
+  01-criancas-programando.jpg
+  02-adolescentes-codigo.jpg
+  03-oracao-em-grupo.jpg
+  04-espaco-maker.jpg
+  05-professores-ensinando.jpg
+  06-colaboracao-criatividade.jpg
+
+Recommended specs
+  format       JPEG (or AVIF — Next/Image will negotiate)
+  resolution   2560×1440 minimum (3840×2160 ideal)
+  ratio        16:9 horizontal preferred
+  weight       ≤ 480kb each after optimization
+  treatment    cinematic color grade, soft natural light, low contrast
+               highlights, deep navy shadows compatible with the
+               existing palette
+  focal point  match `focal` field in data/scenes.ts so subjects
+               survive the parallax over-render
+
+While files are absent, <CinematicImage /> renders a richly tonal
+atmosphere placeholder — the page never breaks.

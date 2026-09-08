@@ -1,0 +1,312 @@
+/* ============================================================
+   DECK FORGE v2 — design system para slides cinematográficos
+   Canvas fixo 1920x1080. Slide é cartaz, não página responsiva.
+
+   Camadas:
+     1. tokens        (cores, tipo, espaço)  <- brand.css sobrescreve
+     2. slide + zonas (logo, rodapé, safe area)
+     3. tipografia
+     4. grades
+     5. componentes
+     6. mídia
+     7. dados
+     8. diagramas (fluxo, ciclo, hierarquia, mapa)
+     9. movimento
+    10. export (congela tudo para PNG/PDF/PPTX)
+   ============================================================ */
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+  --margin: 120px;
+  --gap: 40px;
+  --gap-lg: 64px;
+  --radius: 20px;
+  --radius-lg: 32px;
+
+  /* Escala tipográfica. Canvas 1920px: 1px = 0.5pt no PPTX.
+     O mercado pede 24pt de corpo mínimo; aqui o piso é 32px = 16pt,
+     usado só em blocos curtos. Corpo confortável: 40px = 20pt. */
+  --fs-display: 148px;   /* 74pt */
+  --fs-h1: 96px;         /* 48pt */
+  --fs-h2: 64px;         /* 32pt */
+  --fs-h3: 40px;         /* 20pt */
+  --fs-lede: 40px;       /* 20pt */
+  --fs-body: 32px;       /* 16pt — piso de corpo */
+  --fs-small: 24px;      /* 12pt — legenda, fonte do dado */
+  --fs-micro: 20px;      /* 10pt — eyebrow e rodapé apenas */
+
+  --lh-tight: 0.95;
+  --lh-snug: 1.12;
+  --lh-body: 1.45;
+  --track-tight: -0.03em;
+  --track-wide: 0.16em;
+
+  --font-display: "Poppins", "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  /* zona de marca */
+  --logo-h: 56px;
+  --logo-inset: 64px;
+  --logo-safe: 320px;
+
+  /* movimento */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --dur-fast: .45s;
+  --dur: .8s;
+  --dur-slow: 1.4s;
+}
+
+/* ---------- 2. TEMAS ----------
+   Dominância: 1 cor ocupa 60-70% da área, 1 apoia, 1 corta.
+   O tema do projeto vem em brand.css (scripts/brand_init.py). */
+[data-theme="midnight"] {
+  --bg: #0B0F1A; --surface: #141A2A; --ink: #F4F6FB; --muted: #93A0BC;
+  --accent: #9B8CFF; --accent-2: #35E3B4; --line: rgba(244,246,251,.14);
+}
+[data-theme="ivory"] {
+  --bg: #FAF9F6; --surface: #FFFFFF; --ink: #14161A; --muted: #5E6570;
+  --accent: #B23A05; --accent-2: #0F766E; --line: rgba(20,22,26,.12);
+}
+[data-theme="signal"] {
+  --bg: #101010; --surface: #1B1B1B; --ink: #FAFAFA; --muted: #9A9A9A;
+  --accent: #E8FF4D; --accent-2: #FF5C39; --line: rgba(250,250,250,.16);
+}
+[data-theme="institucional"] {
+  --bg: #0E2A47; --surface: #143A5E; --ink: #F2F7FC; --muted: #A9C2DA;
+  --accent: #F2B705; --accent-2: #4FC3A1; --line: rgba(242,247,252,.16);
+}
+
+/* ---------- 3. RESET E PALCO ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #232326; font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+.deck { display: flex; flex-direction: column; align-items: center; gap: 48px; padding: 48px 0; }
+
+/* ---------- 4. SLIDE E ZONAS FIXAS ---------- */
+.slide {
+  position: relative;
+  width: var(--slide-w); height: var(--slide-h);
+  overflow: hidden;
+  background: var(--bg); color: var(--ink);
+  padding: var(--margin);
+  display: flex; flex-direction: column; justify-content: center;
+  font-size: var(--fs-body); line-height: var(--lh-body);
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+.slide--flush { padding: 0; }
+.slide--tight { padding: 88px 96px; }
+.slide--top { justify-content: flex-start; }
+.slide--invert { background: var(--ink); color: var(--bg); }
+
+/* ZONA DE LOGO — mesmo canto em todos os slides.
+   Padrão: inferior direito. Variantes: --tr, --tl, --bl, --hero, --onmedia. */
+.logo-zone {
+  position: absolute; z-index: 20;
+  right: var(--logo-inset); bottom: var(--logo-inset);
+  display: flex; align-items: center; gap: 16px;
+  max-width: var(--logo-safe);
+}
+.logo-zone--tr { top: var(--logo-inset); bottom: auto; }
+.logo-zone--tl { top: var(--logo-inset); left: var(--logo-inset); right: auto; bottom: auto; }
+.logo-zone--bl { left: var(--logo-inset); right: auto; }
+.logo-zone img, .logo-zone svg { height: var(--logo-h); width: auto; display: block; }
+.logo-zone--hero img, .logo-zone--hero svg { height: calc(var(--logo-h) * 1.8); }
+/* marca sobre foto: cápsula de proteção; nunca logo solta em cima de imagem */
+.logo-zone--onmedia { background: color-mix(in srgb, var(--bg) 82%, transparent); padding: 14px 22px; border-radius: 999px; backdrop-filter: blur(12px); }
+.slide-num {
+  position: absolute; z-index: 15; left: var(--margin); bottom: 56px;
+  font-size: var(--fs-micro); letter-spacing: .12em; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.logo-lockup { font-size: var(--fs-micro); letter-spacing: var(--track-wide); text-transform: uppercase; color: var(--muted); }
+
+/* o slide reserva o canto da marca */
+.slide:has(.logo-zone) { padding-bottom: calc(var(--logo-inset) + var(--logo-h) + 40px); }
+.slide:has(.logo-zone--hero) { padding-bottom: calc(var(--logo-inset) + var(--logo-h) * 1.8 + 48px); }
+.slide:has(.logo-zone--tr), .slide:has(.logo-zone--tl) { padding-bottom: var(--margin); padding-top: calc(var(--logo-inset) + var(--logo-h) + 40px); }
+
+.footer {
+  position: absolute; z-index: 15;
+  left: var(--margin); bottom: 52px;
+  right: calc(var(--logo-safe) + var(--logo-inset));
+  display: flex; gap: 32px; align-items: center;
+  font-size: var(--fs-micro); color: var(--muted); letter-spacing: .04em;
+}
+
+/* ---------- 5. TIPOGRAFIA ---------- */
+.display { font-family: var(--font-display); font-size: var(--fs-display); line-height: var(--lh-tight); letter-spacing: var(--track-tight); font-weight: 700; }
+.h1 { font-family: var(--font-display); font-size: var(--fs-h1); line-height: var(--lh-snug); letter-spacing: var(--track-tight); font-weight: 700; }
+.h2 { font-family: var(--font-display); font-size: var(--fs-h2); line-height: var(--lh-snug); letter-spacing: -.02em; font-weight: 600; }
+.h3 { font-family: var(--font-display); font-size: var(--fs-h3); line-height: 1.2; font-weight: 600; }
+.lede { font-size: var(--fs-lede); line-height: 1.4; color: var(--muted); max-width: 24ch; }
+.body { font-size: var(--fs-body); line-height: var(--lh-body); max-width: 46ch; }
+.small { font-size: var(--fs-small); line-height: 1.4; }
+.muted { color: var(--muted); }
+.accent { color: var(--accent); }
+.eyebrow { font-size: var(--fs-micro); letter-spacing: var(--track-wide); text-transform: uppercase; font-weight: 600; color: var(--accent); }
+.balance { text-wrap: balance; }
+.tnum, .stat__value, .bar__value, table { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+/* ---------- 6. GRADES ---------- */
+.grid { display: grid; gap: var(--gap); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); align-items: center; }
+.split--60 { grid-template-columns: 1.4fr 1fr; }
+.split--40 { grid-template-columns: 1fr 1.4fr; }
+.stack { display: flex; flex-direction: column; gap: var(--gap); }
+.stack--sm { gap: 20px; }
+.row { display: flex; align-items: center; gap: 24px; }
+.push { margin-top: auto; }
+.bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(200px, auto); gap: 28px; flex: 1; }
+.bento .card--wide { grid-column: span 2; }
+.bento .card--tall { grid-row: span 2; }
+.bento .card--hero { grid-column: span 2; grid-row: span 2; }
+
+/* ---------- 7. COMPONENTES ---------- */
+.card { background: var(--surface); border-radius: var(--radius); padding: 40px; display: flex; flex-direction: column; gap: 16px; border: 1px solid var(--line); }
+.card--accent { background: var(--accent); color: #0B0F1A; border-color: transparent; }
+.card--accent .muted, .card--accent .eyebrow { color: rgba(11,15,26,.72); }
+.card--ghost { background: transparent; }
+.card--glass { background: color-mix(in srgb, var(--surface) 55%, transparent); backdrop-filter: blur(18px) saturate(1.2); border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+
+.stat { display: flex; flex-direction: column; gap: 8px; }
+.stat__value { font-family: var(--font-display); font-size: 128px; line-height: .9; font-weight: 700; letter-spacing: var(--track-tight); }
+.stat__value--sm { font-size: 88px; }
+.stat__label { font-size: var(--fs-small); color: var(--muted); max-width: 20ch; }
+
+.quote { font-family: var(--font-display); font-size: 72px; line-height: 1.15; font-weight: 500; letter-spacing: -.02em; max-width: 24ch; }
+.quote__by { font-size: var(--fs-small); color: var(--muted); margin-top: 32px; }
+
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line); font-size: var(--fs-micro); letter-spacing: .08em; text-transform: uppercase; }
+.num { width: 64px; height: 64px; flex: 0 0 64px; border-radius: 999px; background: var(--accent); color: #0B0F1A; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 28px; }
+.rule { height: 1px; background: var(--line); border: 0; }
+
+.timeline { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 32px; position: relative; }
+.timeline::before { content: ""; position: absolute; top: 32px; left: 0; right: 0; height: 2px; background: var(--line); }
+.timeline__item { position: relative; padding-top: 96px; }
+.timeline__dot { position: absolute; top: 20px; left: 0; width: 26px; height: 26px; border-radius: 999px; background: var(--accent); }
+
+/* ícones: herdam cor e tamanho do texto (icons.js injeta a biblioteca) */
+.icon { width: 1em; height: 1em; display: inline-block; vertical-align: -.12em; flex: none; }
+.icon--lg { width: 56px; height: 56px; stroke-width: 1.5; }
+.icon--xl { width: 88px; height: 88px; stroke-width: 1.25; }
+.icon-badge { width: 88px; height: 88px; border-radius: var(--radius); background: color-mix(in srgb, var(--accent) 16%, transparent);
+              color: var(--accent); display: flex; align-items: center; justify-content: center; }
+
+/* ---------- 8. MÍDIA ---------- */
+.media { position: relative; overflow: hidden; border-radius: var(--radius-lg); background: var(--surface); }
+.media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media--bleed { position: absolute; inset: 0; border-radius: 0; }
+.media--21x9 { aspect-ratio: 21/9; }
+.media--4x5 { aspect-ratio: 4/5; }
+.media--duotone img { filter: grayscale(1) contrast(1.15); }
+.media--duotone::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, var(--accent), var(--accent-2)); mix-blend-mode: color; opacity: .78; }
+.scrim { position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 8%, color-mix(in srgb, var(--bg) 55%, transparent) 48%, transparent 78%); }
+.scrim--bottom { background: linear-gradient(0deg, var(--bg) 6%, color-mix(in srgb, var(--bg) 40%, transparent) 42%, transparent 70%); }
+.caption { font-size: var(--fs-micro); color: var(--muted); margin-top: 12px; }
+
+.bg-mesh { position: absolute; inset: 0; background:
+  radial-gradient(900px 600px at 78% 18%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 62%),
+  radial-gradient(700px 520px at 12% 88%, color-mix(in srgb, var(--accent-2) 40%, transparent), transparent 60%); }
+.grain { position: absolute; inset: 0; opacity: .16; background-image: radial-gradient(rgba(255,255,255,.35) 1px, transparent 1px); background-size: 4px 4px; }
+.vignette { position: absolute; inset: 0; box-shadow: inset 0 0 320px 80px color-mix(in srgb, var(--bg) 85%, transparent); }
+
+/* ---------- 9. DADOS ---------- */
+.bars { display: flex; align-items: flex-end; gap: 28px; height: 380px; }
+.bar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px; height: 100%; }
+.bar__fill { background: var(--accent); border-radius: 12px 12px 4px 4px; width: 100%; }
+.bar__fill--muted { background: var(--surface); border: 1px solid var(--line); }
+.bar__label { font-size: var(--fs-small); color: var(--muted); text-align: center; }
+.bar__value { font-family: var(--font-display); font-size: 34px; font-weight: 700; text-align: center; }
+
+.chart { position: relative; }
+.chart svg { width: 100%; height: auto; overflow: visible; }
+.chart .axis { stroke: var(--line); stroke-width: 2; }
+.chart .grid-line { stroke: var(--line); stroke-width: 1; stroke-dasharray: 6 8; }
+.chart .series { fill: none; stroke: var(--muted); stroke-width: 4; stroke-linecap: round; }
+.chart .series--key { stroke: var(--accent); stroke-width: 6; }
+.chart .dot { fill: var(--accent); }
+.chart .label { fill: var(--muted); font-size: var(--fs-small); font-family: var(--font-body); }
+.chart .value { fill: var(--ink); font-size: var(--fs-small); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.annot { position: absolute; display: flex; flex-direction: column; gap: 8px; max-width: 28ch; }
+.annot__line { height: 2px; background: var(--accent); }
+.annot__text { font-size: var(--fs-small); color: var(--ink); }
+.legend { display: flex; gap: 28px; font-size: var(--fs-small); color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 14px; height: 14px; border-radius: 4px; background: currentColor; margin-right: 10px; }
+.legend .key { color: var(--accent); }
+.source { font-size: var(--fs-micro); color: var(--muted); letter-spacing: .02em; }
+
+/* ---------- 10. DIAGRAMAS ---------- */
+.flow { display: flex; align-items: stretch; }
+.flow__step { flex: 1; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; gap: 12px; }
+.flow__step--key { background: var(--accent); color: #0B0F1A; border-color: transparent; }
+.flow__step--key .eyebrow, .flow__step--key .muted { color: rgba(11,15,26,.72); }
+.hier__node--root .muted, .cycle__dot .muted { color: rgba(11,15,26,.72); }
+.flow__arrow { flex: 0 0 64px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 40px; }
+
+.cycle { position: relative; width: 620px; height: 620px; margin: 0 auto; }
+.cycle__ring { position: absolute; inset: 0; border: 2px dashed var(--line); border-radius: 999px; }
+.cycle__node { position: absolute; width: 240px; margin-left: -120px; text-align: center; }
+.cycle__dot { width: 72px; height: 72px; border-radius: 999px; background: var(--accent); color: #0B0F1A; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 30px; margin: 0 auto 14px; }
+.cycle__center { position: absolute; inset: 26%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
+
+.hier { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.hier__row { display: flex; gap: 32px; justify-content: center; }
+.hier__node { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 32px; text-align: center; min-width: 260px; }
+.hier__node--root { background: var(--accent); color: #0B0F1A; border-color: transparent; }
+.hier__link { width: 2px; height: 40px; background: var(--line); }
+
+.map { position: relative; }
+.map svg { width: 100%; height: auto; }
+.map .region { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+.map .region--key { fill: var(--accent); }
+.map__pin { position: absolute; width: 22px; height: 22px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 25%, transparent); transform: translate(-50%, -50%); }
+.map__label { position: absolute; transform: translate(-50%, -180%); font-size: var(--fs-small); white-space: nowrap; }
+
+/* ---------- 11. MOVIMENTO ----------
+   <div data-anim="rise" data-delay="200">. motion.js dispara por slide.
+   No modo export tudo congela no estado final. */
+[data-anim] { opacity: 0; will-change: transform, opacity, clip-path; }
+[data-anim].is-in { opacity: 1; }
+
+@keyframes df-rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+@keyframes df-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes df-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes df-scale { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes df-blur { from { opacity: 0; filter: blur(18px); transform: scale(1.03); } to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes df-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes df-draw { to { stroke-dashoffset: 0; } }
+@keyframes df-kenburns { from { transform: scale(1.06); } to { transform: scale(1.16) translate3d(-2%, -2%, 0); } }
+
+[data-anim="rise"].is-in { animation: df-rise var(--dur) var(--ease-out) both; }
+[data-anim="fade"].is-in { animation: df-fade var(--dur) var(--ease-out) both; }
+[data-anim="wipe"].is-in { animation: df-wipe var(--dur) var(--ease-in-out) both; opacity: 1; }
+[data-anim="scale"].is-in { animation: df-scale var(--dur) var(--ease-out) both; }
+[data-anim="blur"].is-in { animation: df-blur var(--dur-slow) var(--ease-out) both; }
+[data-anim="grow"].is-in { animation: df-grow-y var(--dur) var(--ease-out) both; transform-origin: bottom; opacity: 1; }
+[data-anim="ken"] { opacity: 1; }
+[data-anim="ken"].is-in img, [data-anim="ken"].is-in .bg-mesh { animation: df-kenburns 14s var(--ease-in-out) both; }
+
+.kinetic .w { display: inline-block; opacity: 0; }
+.kinetic.is-in .w { animation: df-rise .7s var(--ease-out) both; }
+
+.draw { stroke-dasharray: var(--len, 2000); stroke-dashoffset: var(--len, 2000); }
+.is-in .draw, .draw.is-in { animation: df-draw 1.6s var(--ease-in-out) forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anim], .kinetic .w { opacity: 1 !important; animation: none !important; }
+}
+
+/* ---------- 12. EXPORT ---------- */
+.export body { background: #fff; }
+.export .deck { gap: 0; padding: 0; }
+.export .slide { box-shadow: none; }
+.export [data-anim], .export .kinetic .w { opacity: 1 !important; filter: none !important; transform: none !important; clip-path: none !important; animation: none !important; }
+.export [data-anim="ken"] img, .export [data-anim="ken"] .bg-mesh { animation: none !important; transform: none !important; }
+.export .draw { stroke-dashoffset: 0 !important; animation: none !important; }

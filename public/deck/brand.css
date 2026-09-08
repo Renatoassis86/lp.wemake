@@ -1,0 +1,27 @@
+/* brand.css — tokens de wemake. Gerado por brand_init.py.
+   Carregue DEPOIS de deck.css e use <body data-theme="wemake">. */
+/* sem webfont: fontes do sistema */
+
+:root {
+  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --logo-h: 56px;
+}
+
+[data-theme="wemake"] {
+  --bg: #0B1F44;
+  --surface: #1A2C4F;
+  --ink: #F4F6FB;
+  --muted: #929CAE;
+  --accent: #76F3CD;
+  --accent-2: #76F3CD;
+  --line: rgba(244,246,251,.15);
+  --on-accent: #0B0F1A;
+}
+
+/* texto sobre bloco de acento: cor calculada, nunca chutada */
+[data-theme="wemake"] .card--accent,
+[data-theme="wemake"] .num,
+[data-theme="wemake"] .cycle__dot,
+[data-theme="wemake"] .flow__step--key,
+[data-theme="wemake"] .hier__node--root { color: var(--on-accent); }
