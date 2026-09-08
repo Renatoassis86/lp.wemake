@@ -1,0 +1,2109 @@
+PLANO DE NEGÓCIOS ·                       2027 - 2031
+
+PROMISE
+
+EDUCATION GROUP
+
+Ecossistema de internacionalização educacional para escolas, famílias e professores,
+fundamentado em excelência acadêmica e cosmovisão cristã. Este documento estrutura a
+operação, o mercado, a estratégia e a projeção econômico-financeira de cinco anos das
+quatro frentes de negócio da Promise: Schools, Learners, Professionals e Global.
+
+Schools                    Learners       Professionals       Global
+
+ ESCOLAS               FAMÍLIAS E ALUNOS      EDUCADORES  INTERNACIONAL
+
+Razão social           Promise Education Group (marca: Promise English)
+Fundador e Diretor
+Executivo              Calebe Braga
+Sede
+Situação legal atual   João Pessoa - Paraíba - Brasil · operação 100% online
+Horizonte de projeção  MEI - migração societária prevista para o 4º trimestre de 2026
+Versão do documento    set/2026 (janela de lançamento) a dez/2031
+Destinatários          1.0 · 31 de agosto de 2026
+                       Sócios, investidores, parceiros institucionais e instituições financeiras
+                              PLANO DE NEGÓCIOS · 2027 - 2031
+
+Sumário
+
+O plano segue a metodologia de dez capítulos adotada pela Promise. O Sumário Executivo
+(Capítulo 10) foi redigido por último, como síntese de todo o material, e pode ser lido
+isoladamente por leitores que buscam uma visão rápida do negócio.
+
+Nota metodológica e fontes                                                              3
+
+01 Análise de oportunidade                                                              4
+
+02 Conceito do negócio                                                                  9
+
+03 Mercado e competidores                                                               13
+
+04 Equipe de gestão                                                                     17
+
+05 Produtos e serviços                                                                  20
+
+06 Estrutura e operações                                                                24
+
+07 Marketing e vendas                                                                   28
+
+08 Estratégia de crescimento                                                            32
+
+09 Finanças                                                                             35
+
+10 Sumário executivo                                                                    41
+
+Anexos                                                                                  43
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  2 / 44
+                                                                                                                                     PLANO DE NEGÓCIOS · 2027 - 2031
+
+Nota metodológica e fontes
+
+Este plano de negócios foi construído a partir de cinco fontes primárias, todas geradas
+internamente pela Promise entre julho e agosto de 2026:
+
+      Questionário estruturado do plano de negócios, respondido pelo fundador Calebe
+          Braga, organizado nos dez capítulos oficiais da metodologia.
+
+      Transcrições de três reuniões de estruturação de negócio, marketing e precificação
+          realizadas com a consultoria parceira, nas quais foram definidos preços, modelos de
+          venda, roteiros comerciais e o desenho do funil de aquisição.
+
+      Materiais institucionais já produzidos: site, panfleto Promise for Learners, identidade
+          visual, coleção autoral To the Nations e as coleções de inglês Paideia e Oikos.
+
+      Estruturas de referência de mercado já validadas em operação paralela (modelo de
+          prospecção, funil comercial, calculadora de proposta e painel de dados escolares).
+
+      Estimativas públicas de tamanho de mercado para ensino de idiomas, educação
+          internacional, educação básica privada e homeschooling no Brasil.
+
+     COMO LER OS NÚMEROS DESTE PLANO
+    Há uma separação rigorosa entre três categorias de informação. PREMISSA é uma hipótese de
+    planejamento definida pela direção (número de clientes, ticket, percentual de custo). VALOR
+    CALCULADO é resultado matemático das premissas (receita, margem, resultado, payback).
+    PENDÊNCIA EM ABERTO é uma decisão que ainda não foi tomada e está explicitamente sinalizada.
+    Nenhum valor apresentado como calculado foi arbitrado: todos derivam do modelo descrito no
+    Capítulo 9. Ponto de equilíbrio (breakeven) é sempre expresso em ANO de exercício; prazo de
+    retorno (payback) é sempre expresso em MESES a partir do início da operação ampliada (setembro
+    de 2026). Os dois conceitos não se confundem.
+
+Aviso. As projeções financeiras deste documento são estimativas construídas sobre premissas
+declaradas e não constituem garantia de resultado. O modelo deve ser revisado trimestralmente com
+dados reais de matrícula, retenção e custo.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  3 / 44
+                                                          PLANO DE NEGÓCIOS · 2027 - 2031
+
+01 Análise de oportunidade
+
+A análise de oportunidade responde a pergunta que antecede qualquer plano: existe, de fato,
+um negócio aqui? Ela e organizada nas onze questões clássicas de avaliação de oportunidade
+e encerra com um scorecard consolidado.
+
+1.1 Público-alvo
+
+A Promise atua sobre quatro públicos distintos, com decisores, ciclos de compra e canais
+próprios. Nenhum deles e subordinado aos demais: são pilares de igual peso estratégico,
+conectados por uma mesma jornada.
+
+Público                       Quem decide             Frente principal                  Necessidade central
+Escolas privadas,             Mantenedores,           Promise for Schools               Estruturar ou reconstruir o
+especialmente cristãs e       diretores e                                               departamento de inglês e a
+clássicas                     coordenadores           Promise for                       internacionalização
+                              pedagógicos             Learners                          Validar academicamente o estudo
+Famílias homeschoolers        País e responsáveis     Promise for                       domiciliar e abrir portas para a
+Famílias e estudantes em      País e responsáveis; o  Learners                          universidade
+escola regular                próprio aluno adulto    Promise for                       Proficiência em inglês e
+Professores, coordenadores e  O próprio profissional  Professionals                     certificação internacional
+gestores                                                                                Qualificação docente,
+                                                                                        certificações e desenvolvimento
+                                                                                        de carreira
+
+Um quinto público, transversal, e formado por escolas, igrejas e organizações cristãs que
+funcionam como canal de acesso aos quatro públicos anteriores e são tratadas no Capítulo 7
+como parceiros de distribuição.
+
+1.2 Ciclo de vida e durabilidade da relação
+
+A Promise não opera em um mercado de transação única. O modelo foi desenhado para
+reaproveitar o mesmo cliente ao longo de anos, migrando-o entre frentes conforme sua
+jornada avança. Um aluno pode entrar pelo curso de inglês aos 12 anos, migrar para o
+programa American School aos 14, obter certificação Cambridge aos 16 e realizar uma imersão
+internacional aos 17 - quatro receitas distintas sobre um único custo de aquisição.
+
+Frente                        Duração média da            Recorrência                   Valor estimado do
+Promise for Schools           relação                                                   ciclo (LTV bruto)
+Learners - cursos de inglês   3 a 5 anos (contrato anual  Alta - anuidade               R$ 93.100
+Learners - American School    renovável)                  Alta - mensalidade            R$ 5.363
+Promise for Professionals     2 a 4 anos até a fluência   Muito alta -                  R$ 44.000
+Promise Global                4 a 8 anos (Elementary ao   anuidade
+                              High School)                Média - por ciclo             R$ 2.520
+                              1 a 3 anos, renovada por    Baixa - por projeto
+                              nova etapa de carreira                                    R$ 13.300
+                              Evento pontual, repetido a
+                              cada 2 a 3 anos
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                     4 / 44
+                                            PLANO DE NEGÓCIOS · 2027 - 2031
+
+Leitura de controller. O LTV acima já aplica um fator de retenção conservador (65% a 80%).
+A frente American School concentra o maior valor de ciclo do portfólio e e, por isso, a prioridade
+comercial da janela de lançamento tratada no Capítulo 7.
+
+1.3 Acessibilidade dos clientes e canais de chegada
+
+Todos os quatro públicos são acessíveis com custo de aquisição baixo ou moderado, porque a
+Promise já detém ou tem acesso privilegiado às bases e comunidades onde eles se
+concentram.
+
+Público            Canais de acesso disponíveis hoje                                    Grau de acesso
+Escolas            Prospecção direta, base de leads de escolas cristãs já               Alto
+                   mapeadas, indicações, congressos e eventos educacionais
+Homeschoolers      confessionais, redes de escolas                                      Alto
+Famílias e alunos  Base de contatos de dois congressos de homeschooling,                Médio-alto
+Professores        comunidades e grupos, Instagram, eventos e feiras do                 Médio
+                   segmento, indicações
+                   Marketing digital, WhatsApp, indicação de alunos atuais, igrejas
+                   Redes sociais, formação docente dentro das escolas
+                   contratantes, eventos
+
+1.4 Potencial de crescimento do mercado
+
+Alto. Quatro vetores sustentam a projeção: a expansão continuada de escolas confessionais e
+clássicas em todas as regiões do país, quase todas sem competência interna para montar um
+departamento de inglês; a migração estrutural do ensino de idiomas para o formato online, que
+elimina a barreira geográfica; o crescimento e o amadurecimento do homeschooling brasileiro,
+cujos alunos precisarão comprovar trajetória acadêmica para ingressar em universidades; e a
+elevação do interesse de famílias brasileiras por educação internacional.
+
+1.5 Recuperação do investimento no curto prazo
+
+Sim. O modelo e intensivo em conhecimento e leve em ativos: não há planta física, frota,
+estoque relevante nem folha pesada no início. O investimento inicial estimado de R$ 130.000
+concentra-se em marketing de lançamento, tecnologia, produção de materiais e estruturação
+jurídico-comercial. O modelo do Capítulo 9 indica payback no mês 17 (jan/28), dentro da janela
+de 24 meses definida como meta.
+
+1.6 Estágio, crescimento e fragmentação do mercado
+
+O mercado está em crescimento e é altamente fragmentado - a combinação mais favorável
+para um entrante especializado. A demanda por inglês de qualidade, formação docente,
+certificações internacionais e experiências acadêmicas no exterior e continua; as certificações
+Cambridge têm reconhecimento internacional consolidado, com presença em mais de 130
+países; e o mercado de intercâmbio permanece relevante para brasileiros. A fragmentação é o
+ponto central: escolas de idiomas, consultorias, plataformas, agências e instituições atuam
+separadamente, e nenhuma delas entrega a jornada completa. Homeschooling e educação
+cristã são nichos em expansão e ainda pouco disputados.
+
+1.7 Barreiras de entrada e estratégias de transposição
+
+Barreira                      Natureza      Estratégia da Promise
+Validação junto a comunidade  Reputacional  Presença do fundador em congressos e eventos do
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969       5 / 44
+                                               PLANO DE NEGÓCIOS · 2027 - 2031
+
+Barreira                         Natureza      Estratégia da Promise
+homeschooler, que compra                       segmento, prova social de famílias atendidas, conteúdo de
+por confiança e referência       Comercial     autoridade e parceria com nomes já inseridos na comunidade
+Baixo custo de troca nos         Estrutural    Ancorar o curso na jornada maior (certificação e American
+cursos de inglês: são fáceis de  Reputacional  School), criando motivo objetivo de permanência e elevando
+vender e fáceis de cancelar      Financeiro    o custo psicológico de sair
+Propriedade das certificações
+pertence a terceiros                           Não competir com o certificador: posicionar-se como
+(Cambridge, escola                             preparador e integrador credenciado, e construir PI própria
+americana)                                     em metodologia, currículo e material
+Marca ainda em construção
+diante de redes nacionais                      Competir por integração, personalização e propósito - não
+Capital limitado para mídia                    por escala, preço ou capilaridade
+paga                                           Priorizar canais de custo marginal baixo: bases próprias de e-
+                                               mail, eventos, indicação e orgânico
+
+1.8 Competidores-chave e controle de propriedade intelectual
+
+O mercado tem muitos concorrentes especializados em partes da proposta e nenhum
+concorrente direto do conjunto. No ensino de inglês há milhares de escolas e grandes redes -
+Wizard (Pearson), Fisk, CCAA, CNA e Cultura Inglesa. Em certificação e currículo internacional
+atuam a própria Cambridge e instituições associadas. Em internacionalização escolar atuam
+consultorias e sistemas de ensino bilíngue. Em intercâmbio, agências e operadoras de viagem
+educacional.
+
+A propriedade intelectual das certificações e dos exames pertence às respectivas instituições
+certificadoras, e nenhum concorrente controla os canais de venda de forma exclusiva. A
+vantagem defensável da Promise não está em disputar a PI de terceiros, mas em acumular
+ativos próprios: metodologia (Promise Excellence Framework), currículos e materiais autorais,
+relacionamentos institucionais e a integração do ecossistema.
+
+1.9 Tamanho de mercado e participação potencial
+
+A estimativa abaixo aplica o funil clássico TAM - SAM - SOM. O objetivo declarado da Promise
+não e capturar fatia relevante do mercado total, mas construir participação pequena,
+especializada e sustentável dentro de nichos onde a concorrência é baixa.
+
+Camada  Definição                              Dimensão estimada                        Base de referência
+TAM     Mercado brasileiro de treinamento
+        linguístico, educação internacional e  US$ 1,5 bi (idiomas) + R$ 7,0            Estimativas setoriais
+SAM     serviços educacionais correlatos       bi (educação internacional)              2025
+SOM (5  Escolas privadas confessionais e
+anos)   clássicas, famílias de classe          R$ 900 mi a R$ 1,3 bi                    ~10 mi de matrículas na
+        média/média-alta e homeschoolers       R$ 9,14 mi · ~0,7% a 1,0%                rede privada; ~35 mil
+        com interesse em internacionalização   do SAM                                   estudantes em
+        Participação efetivamente alcançável                                            homeschooling (MEC)
+        pela Promise até 2031                                                           Modelo de projeção do
+                                                                                        Capítulo 9
+
+Nota. Os números de homeschooling divulgados oficialmente (cerca de 17 mil famílias e 35 mil
+estudantes) são reconhecidamente subdimensionados e defasados, dada a informalidade do segmento.
+Trata-se do número mais conservador disponível e foi adotado deliberadamente como piso da estimativa.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                         6 / 44
+                                              PLANO DE NEGÓCIOS · 2027 - 2031
+
+1.10 Potencial de lucro e margens brutas
+
+As margens brutas variam substancialmente entre frentes, em função da participação de
+terceiros no custo de entrega. Consultoria, formação e produtos digitais escaláveis
+concentram a maior margem; Global apresenta a menor, por envolver transporte,
+hospedagem e fornecedores externos.
+
+Frente                Faixa de margem      Margem adotada no                            Vetor de melhoria
+Promise for Schools   bruta (premissa)     modelo
+                                           70%                                          Plataforma de dados
+                      60% a 75%                                                         própria e materiais
+                                           52% a 60% conforme a linha                   autorais
+Promise for Learners  50% a 65%            70%                                          Currículo próprio
+Promise for           65% a 80%            35%                                          substituindo material
+Professionals         25% a 45%            56,8% no Ano 1 · 56,0% no                    de terceiros
+Promise Global        Meta: ~60%           Ano 5                                        Produtos gravados e
+CONSOLIDADO                                                                             turmas maiores
+                                                                                        Negociação de
+                                                                                        volume e operação
+                                                                                        própria de grupos
+                                                                                        Mix e escala
+
+Observação do controller. A margem bruta consolidada calculada (56,8% no Ano 1) fica
+ligeiramente abaixo da meta de 60% porque a frente Learners - responsável por cerca de dois
+terços da receita - carrega o custo de material e convalidação do programa American School.
+Substituir gradualmente o material de terceiros por currículo autoral é a alavanca mais direta
+para levar o consolidado a meta.
+
+1.11 Necessidade de capital, ponto de equilíbrio e retorno
+
+R$ 130.000                Ano 1               17 meses                                      24,1%
+                         (2027)
+INVESTIMENTO INICIAL                                   PAYBACK                          MARGEM LÍQUIDA 2031
+                      PONTO DE EQUILÍBRIO
+
+A necessidade de capital é moderada. O investimento é direcionado a equipe, tecnologia,
+marketing, desenvolvimento de materiais e estruturação comercial, e será realizado de forma
+gradual, com maior concentração nos primeiros doze meses. O detalhamento consta do
+Capítulo 9.
+
+1.12 Scorecard consolidado da oportunidade
+
+Síntese avaliativa dos onze critérios, em escala de 1 (desfavorável) a 5 (muito favorável).
+
+Critério de avaliação                   Nota  Comentário
+Tamanho e crescimento do mercado        5     Mercado grande, em crescimento e com nichos em
+Fragmentação e espaço competitivo       5     expansão
+Acessibilidade do cliente               4     Nenhum concorrente entrega a jornada integrada
+Recorrência e ciclo de vida             5     Bases próprias e comunidades já mapeadas
+                                              Relação plurianual e migração entre frentes
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  7 / 44
+                                               PLANO DE NEGÓCIOS · 2027 - 2031
+
+Critério de avaliação                    Nota  Comentário
+Margem bruta                             4     Boa, com dependência de material de terceiros a
+Necessidade de capital                   5     resolver
+Barreiras de entrada a favor da Promise  3     Baixa intensidade de ativos
+Força da marca hoje                      2     Metodologia e relacionamentos, ainda pouco
+Capacidade de execução da equipe         3     formalizados
+Risco regulatório                        3     Marca nova, sem prova social acumulada
+Escalabilidade                           4     Know-how alto, estrutura gerencial ainda
+                                               concentrada
+MÉDIA GERAL                              3,9   Homeschooling ainda em debate legislativo
+                                               Alta em digital, limitada nos serviços
+                                               personalizados
+                                               Oportunidade favorável, condicionada a
+                                               profissionalização da gestão e a construção
+                                               de marca
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  8 / 44
+                                              PLANO DE NEGÓCIOS · 2027 - 2031
+
+02 Conceito do negócio
+
+2.1 O que é a Promise
+
+A Promise Education Group é uma empresa de educação voltada a formação integral e a
+internacionalização educacional. Ela não se define como escola de idiomas, consultoria ou
+agência de intercâmbio, ainda que execute atividades dessas três naturezas. Define-se como
+ecossistema: um conjunto de serviços conectados por uma metodologia única, que
+acompanha escolas, famílias, alunos e professores ao longo de uma trajetória - do primeiro
+contato com o idioma até o diploma internacional e a experiência no exterior.
+
+PROPOSIÇÃO DE VALOR CENTRAL
+
+A Promise não disputa isoladamente o mercado de inglês, o de consultoria escolar, o de formação
+docente ou o de intercâmbio. Ela integra escola, aluno, profissional e internacionalização em um
+único ecossistema educacional - com cosmovisão cristã como nicho diferenciado e pouco disputado.
+
+2.2 Missão, visão e valores
+
+MISSÃO               Expandir os horizontes de escolas, famílias homeschooling, educadores e
+VISÃO                estudantes por meio da internacionalização educacional de excelência, formando
+VALORES              cidadãos preparados para impactar o mundo com competência, propósito e uma
+                     cosmovisão cristã.
+
+                     Ser o principal ecossistema cristão de internacionalização educacional da
+                     América Latina.
+
+                     Excelência · Propósito · Cosmovisão cristã · Desenvolvimento integral ·
+                     Autonomia · Visão global
+
+2.3 Promise Excellence Framework
+
+O Promise Excellence Framework é a metodologia proprietária que amarra as quatro frentes e
+constitui o principal ativo intangível da empresa. Ele organiza qualquer trajetória - de um
+aluno, de um professor ou de uma escola inteira - em cinco estágios sequenciais e cumulativos.
+É o que permite que a Promise venda serviços aparentemente distintos como etapas de um
+mesmo caminho.
+
+Estág  Nome                    O que entrega                                            Onde se aplica
+io
+
+01     Inglês                  Aprender inglês com método, propósito e                  Learners, Schools
+                               confiança
+02     Proficiência            Desenvolver habilidades linguísticas para                Learners, Professionals
+                               comunicar e compreender o mundo                          Learners, Professionals,
+03     Certificação            Conquistar certificações reconhecidas                    Schools
+                               internacionalmente                                       Learners (American
+04     Formação internacional  Construir base acadêmica sólida com validade             School), Schools
+                               internacional                                            Global
+05     Experiências globais    Viver o mundo, conhecer culturas e ampliar
+                               horizontes
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                  9 / 44
+                                                 PLANO DE NEGÓCIOS · 2027 - 2031
+
+Os mesmos cinco estágios operam como grade de diagnóstico no B2B: ao entrar em uma
+escola, a Promise mapeia em qual estágio o departamento de inglês se encontra e desenha o
+percurso até o estágio seguinte. Isso transforma uma consultoria subjetiva em um método
+replicável - condição para escalar sem depender da presença do fundador.
+
+2.4 O que a empresa vende
+
+O portfólio está organizado em quatro frentes de igual peso estratégico. O detalhamento de
+produtos, preços e ciclos consta do Capítulo 5.
+
+Frente                   Modelo       Escopo
+Promise for Schools      B2B          Consultoria educacional, diagnóstico, estruturação curricular,
+                                      formação docente, avaliação, certificações e internacionalização
+Promise for Learners     B2C          escolar
+                                      Aulas de inglês em turma e particulares, preparação Cambridge,
+Promise for              B2C / B2B2C  American School (Elementary ao High School), programa para
+Professionals            B2C / B2B    famílias homeschoolers e experiências internacionais
+Promise Global                        Formação continuada, workshops, cursos, mentorias, preparação
+                                      para TKT, CELTA e DELTA e desenvolvimento de lideranças
+                                      educacionais
+                                      Intercâmbios, viagens acadêmicas, imersões, parcerias e
+                                      cooperação com instituições internacionais
+
+2.5 Para quem a empresa vende e quem decide
+
+Frente          Cliente               Decisor    Ciclo de venda                         Gatilho de compra
+                                                                                        Planejamento do ano
+Schools         Escola privada        Mantenedor / diretor 60 a 120 dias                letivo seguinte
+                                                                                        Necessidade concreta
+Learners        Família / aluno       País ou aluno adulto 3 a 21 dias                  (viagem, prova, ensino
+                                                                                        médio)
+Professionals   Profissional          O próprio  7 a 30 dias                            Etapa de carreira ou
+Global          Escola, família ou                                                      exigência da escola
+                aluno                 Variável por projeto 45 a 90 dias                 Calendário escolar e
+                                                                                        férias
+
+O perfil ideal de cliente reúne três características: escolas cristãs que buscam excelência e
+internacionalização; famílias que desejam uma trajetória educacional internacional para os
+filhos; e profissionais que investem na própria carreira - todos alinhados aos valores e a
+proposta educacional da Promise.
+
+2.6 Origem e histórico
+
+A Promise nasce de duas linhas que convergem. A primeira e profissional: mais de quatorze
+anos de atuação no ensino de inglês, oito anos a frente de um Centro Preparatório Oficial de
+Cambridge, a autoria do currículo de inglês das coleções Paideia e Oikos de um sistema de
+ensino cristão, a coleção autoral To the Nations e a formação em Letras com certificação
+CELTA. A segunda e vocacional: a marca nasce de uma promessa pessoal do fundador, que da
+nome a empresa e define seu critério de decisão - construir um negócio de educação que seja,
+ao mesmo tempo, economicamente sustentável e fiel a uma cosmovisão.
+
+Como estrutura empresarial autônoma, a Promise é nova: não possui ainda histórico
+consolidado de faturamento próprio, base de clientes formalizada sob CNPJ próprio nem equipe
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  10 / 44
+                                                                                                                                     PLANO DE NEGÓCIOS · 2027 - 2031
+
+interna. Isso e declarado abertamente neste plano e tratado no Capítulo 8 como fraqueza a
+superar, não como detalhe a omitir. O que a empresa traz de ativo preexistente e substancial:
+metodologia testada, materiais autorais prontos, professores pré-contratados, parcerias
+internacionais já abertas e acesso a bases de leads qualificadas.
+
+2.7 Por que este negócio pode ser bem-sucedido
+
+      Competência comprovada na entrega. O núcleo do serviço - ensinar inglês, montar
+          currículo, formar professor, preparar para Cambridge - é exatamente o que o fundador
+          executa há quinze anos.
+
+      Produto raro no mercado brasileiro. A combinação de homeschooling, High School
+          americano com emissão de diploma e preparação linguística em um único fornecedor
+          não tem equivalente direto conhecido no país.
+
+      Estrutura de custos leve. Operação 100% online, sem planta física, com custo
+          variável dominante sobre o fixo - o que reduz o risco de caixa em cenários de baixa
+          aquisição.
+
+      Múltiplas fontes de receita sobre um mesmo cliente. Quatro frentes que se
+          alimentam mutuamente elevam o LTV e diluem o custo de aquisição.
+
+      Nicho com barreira de valores. A cosmovisão cristã não é apenas posicionamento: é
+          critério de escolha do cliente e reduz a sensibilidade a preço frente a concorrentes
+          seculares maiores.
+
+2.8 Estrutura legal e composição societária
+
+A empresa opera atualmente como MEI. Essa configuração e incompatível com o plano
+descrito neste documento por três razões objetivas: o limite de faturamento anual do MEI e
+ultrapassado já no primeiro ano projetado; o MEI não permite a contratação do quadro de
+professores e coordenadores previsto; e contratos B2B com mantenedoras exigem, na prática,
+pessoa jurídica com objeto social compatível e capacidade de emissão de nota fiscal de
+serviços educacionais.
+
+     PENDÊNCIA CRÍTICA - PRAZO RECOMENDADO: ATÉ 31 DE OUTUBRO DE 2026
+    Migração de MEI para Sociedade Empresária Limitada, com definição de quadro societário, objeto
+    social cobrindo as quatro frentes, enquadramento no Simples Nacional (Anexo III) e registro da
+    marca Promise e do Promise Excellence Framework junto ao INPI.
+    Esta é a única pendência deste plano classificada como bloqueante: sem ela, a receita projetada
+    para 2027 não pode ser faturada regularmente.
+
+2.9 Localização e abrangência
+
+Sede administrativa em João Pessoa, Paraíba. A operação é integralmente online, sem filiais.
+As aulas, formações e consultorias são realizadas por plataformas de videoconferência;
+encontros presenciais ocorrem pontualmente em eventos, feiras e visitas a escolas
+contratantes. A abrangência comercial e nacional, com presença já registrada em cinco
+estados brasileiros e expectativa de concentração relevante no interior de estados em
+crescimento, onde a oferta local de ensino de inglês de qualidade e escassa.
+
+2.10 Aspectos legais, certificações e regulamentação
+
+A Promise atua em conformidade com as regulamentações aplicáveis a cada serviço e não se
+apresenta como instituição certificadora quando a certificação pertence a terceiro. Nas
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  11 / 44
+                                              PLANO DE NEGÓCIOS · 2027 - 2031
+
+certificações Cambridge, prepara e orienta candidatos, mas os exames e certificados são
+emitidos pelos organismos autorizados. No programa American School, a operação ocorre em
+parceria com instituição educacional americana responsável pelos requisitos acadêmicos,
+créditos e emissão do diploma. Toda comunicação comercial deve refletir essa distinção com
+precisão - trata-se de requisito de compliance, não de preferência editorial.
+
+2.11 Terceiros e parcerias estruturantes
+
+Parceiro                      Natureza        Papel no modelo                            Grau de
+                                                                                         dependência
+Instituição educacional       Acadêmica       Matrícula, transferência de créditos,      Alta
+americana parceira                            histórico escolar e emissão do diploma de
+Cambridge Assessment          Certificadora   High School                                Média
+English                       Distribuição e  Exames e certificações de proficiência e   Média
+Kairos e Arkos                produção        de qualificação docente                    Alta (temporária)
+Fornecedores de currículo     Conteúdo        Distribuição de livros, desenvolvimento    Média
+americano                     Operacional     do site e apoio na comercialização         Baixa
+Operadores de viagem e        Produção        Material didático das disciplinas do
+instituições no exterior                      programa American School
+Gráfica e produção editorial                  Execução logística dos programas
+                                              Promise Global
+                                              Impressão das coleções autorais
+
+Alerta de concentração. Duas dependências são classificadas como altas e devem ser
+formalizadas por contrato escrito com cláusulas de exclusividade territorial, prazo mínimo e
+condições de reajuste: a instituição americana parceira e o fornecedor do currículo. A segunda
+tem mitigação já prevista - a produção de currículo autoral próprio, tratada no Capítulo 5.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969   12 / 44
+                                                                PLANO DE NEGÓCIOS · 2027 - 2031
+
+03 Mercado e competidores
+
+3.1 Análise setorial
+
+Tendências estruturais
+
+      Expansão das escolas confessionais e clássicas. Novas escolas cristãs são
+          abertas em todas as regiões do país e a maioria não sabe montar o departamento de
+          inglês. Essa é a dor que a frente Schools ataca diretamente.
+
+      Migração do ensino de idiomas para o online. O deslocamento estrutural para
+          aulas remotas favorece um operador nacional sem rede física e elimina a vantagem
+          histórica de capilaridade das grandes redes.
+
+      Amadurecimento do homeschooling. O crescimento e nítido e traz consigo uma
+          necessidade nova: estruturação e comprovação acadêmica. Esses alunos chegarão ao
+          ensino médio e precisarão de histórico escolar válido.
+
+      Elevação da demanda por educação bilíngue e internacional. A expansão de
+          escolas bilíngues aumenta a concorrência, mas amplia o mercado potencial e normaliza
+          a compra de serviços de internacionalização pelas escolas.
+
+      Inteligência artificial no ensino e na avaliação de idiomas. Já transforma práticas
+          de ensino e avaliação. É simultaneamente risco (novos entrantes de baixo custo) e
+          oportunidade (a plataforma de dados descrita no Capítulo 6).
+
+Dimensionamento do mercado
+
+Segmento                 Dimensão                               Relevância para a Promise
+                                                                Base da frente Learners e da consultoria
+Ensino de idiomas no     ~US$ 1,52 bi em 2025, com projeção     de inglês em Schools
+Brasil                   de ~US$ 3,02 bi até 2034               Universo de escolas para Schools e de
+                                                                famílias para Learners
+Educação básica privada  ~10 milhões de matrículas (de ~46      Mercado direto de Promise Global e do
+                         milhões no total)                      programa American School
+
+Educação internacional   ~R$ 7 bi movimentados em 2025, com     Nicho prioritario da janela de lançamento
+                         crescimento de ~27,3%
+
+Homeschooling            ~17 mil famílias e ~35 mil estudantes
+                         (estimativa oficial, subdimensionada)
+
+Por que o mercado se mostra promissor
+
+Porque combina demanda crescente por inglês de qualidade, internacionalização e formação
+acadêmica global com uma oferta fragmentada e incompleta. O Brasil já é um dos principais
+mercados de origem de estudantes de inglês no exterior, e o serviço central da Promise -
+validar academicamente o percurso de um aluno e abrir portas para universidades fora do país
+- é inovador e praticamente não disputado no recorte cristão e homeschooler.
+
+3.2 Estrutura e segmentação do mercado
+
+Eixo de segmentação      Segmentos
+Por tipo de oferta       Cursos de inglês · Certificações internacionais · Consultoria educacional ·
+Por perfil de cliente    Formação de professores · Programas de High School americano · Intercâmbio e
+Por região               educação internacional
+                         Escolas privadas (cristãs, clássicas e bilíngues) · Famílias e estudantes, incluindo
+                         homeschoolers · Professores, coordenadores e gestores educacionais
+                         Atuação nacional, com concentração esperada em capitais do Nordeste e no
+                         interior de estados em crescimento econômico
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  13 / 44
+                                                           PLANO DE NEGÓCIOS · 2027 - 2031
+
+Eixo de segmentação   Segmentos
+Por poder aquisitivo  Classe média e média-alta no B2C; escolas de pequeno a grande porte no B2B
+
+3.3 Mercado-alvo: perfil do comprador
+
+Dimensão           Escolas (Schools)                Famílias (Learners)                 Profissionais
+                                                                                        (Professionals)
+Perfil             Escolas privadas cristãs e       Classe média e média-alta,
+                   clássicas, de pequeno a grande   incluindo homeschoolers e           Professores, coordenadores e
+O que compra hoje  porte                            alunos de escolas regulares         gestores em busca de
+                                                                                        progressão
+Por que compra     Materiais didáticos, cursos de   Cursos de inglês, aulas
+O que pesa na      inglês, plataformas e formação   particulares, programas de          Cursos de formação
+decisão            pontual, de forma isolada        homeschooling, certificações e      continuada, mentorias e
+Quando compra                                       intercâmbios                        preparação para TKT, CELTA
+                   Qualidade e estrutura do                                             e DELTA
+                   ensino de inglês, exigência      Formação dos filhos,
+                   curricular, internacionalização  certificação, oportunidades         Reconhecimento profissional,
+                   e alinhamento de valores         acadêmicas e valores da             empregabilidade e domínio
+                                                    família                             pedagógico
+                   Resultados comprovados,
+                   metodologia, segurança da        Confiança, qualidade                Conteúdo, qualificação dos
+                   parceria e preço                 pedagógica, valores e               mentores e reconhecimento
+                                                    resultado para o filho              da certificação
+                   Ciclo anual, decidido antes do
+                   início do ano letivo             Recorrente - mensalidades e         Continuo, conforme etapa de
+                                                    ciclos semestrais ou anuais         carreira
+
+3.4 Sazonalidade e janelas de decisão
+
+O calendário comercial da Promise não é uniforme. Reconhecê-lo é condição para dimensionar
+corretamente investimento de mídia e capacidade de atendimento.
+
+Período    Schools                    Learners             Professionals                Global
+Ago - Out  Pico de prospecção         Aquecimento e        Médio                        Venda de programas
+Nov - Dez  para o ano seguinte        captação de leads    Baixo                        do verão
+Jan - Mar  Fechamento de              Pico de matrícula    Pico de formação             Execução de
+Abr - Jul  contratos                  antecipada           Médio                        programas
+           Implantação e              Pico absoluto de                                  Planejamento do
+           formação docente           matrícula                                         próximo ciclo
+           Acompanhamento e                                                             Venda de julho e
+           upsell                     Reposição de turmas                               janeiro
+
+3.5 Necessidades ainda não atendidas
+
+A principal lacuna do mercado é a fragmentação. Escolas, famílias e profissionais encontram
+materiais, cursos, certificações, plataformas e intercâmbios de forma isolada, mas
+praticamente nenhuma solução integra ensino de inglês, currículo, formação profissional,
+certificação, internacionalização e cosmovisão cristã em uma trajetória coerente. Três lacunas
+específicas merecem destaque comercial:
+
+      O aluno homeschooler que chega ao ensino médio sem trajetória acadêmica
+          documentada e sem caminho claro para a universidade - no Brasil ou fora dele.
+
+      A escola cristã recém-aberta que precisa de um departamento de inglês e não tem
+          quem o monte, treine e avalie.
+
+      A família que quer o High School americano sem que o filho precise estar matriculado
+          simultaneamente em uma escola regular - condição imposta pela maioria das ofertas
+          existentes no mercado brasileiro.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  14 / 44
+                                                                    PLANO DE NEGÓCIOS · 2027 - 2031
+
+3.6 Análise de concorrência
+
+Os concorrentes variam conforme a frente e são, em sua maioria, especializados e
+verticalizados.
+
+Frente               Concorrentes diretos                           Concorrentes indiretos
+Schools              Consultorias educacionais, empresas de         Cultura Inglesa, CNA, Wizard, CCAA, Fisk
+                     implantação de programas bilíngues e
+Learners             internacionais, sistemas de ensino             Empresas de intercâmbio, plataformas de
+Professionals        Escolas e plataformas de inglês, aulas         idiomas por assinatura
+Global               particulares, programas de homeschooling e de  Pos-graduações, cursos livres e formações
+                     High School americano                          das mantenedoras
+                     Centros preparatórios Cambridge (TKT, CELTA,   Consultorias de educação internacional e
+                     DELTA) e a própria Cambridge                   programas de universidades
+                     Agências de intercâmbio e empresas de viagens
+                     educacionais
+
+Quadro comparativo
+
+Critério                    Grandes redes      Consultorias e       Agências de         Promise
+                            de idiomas         sistemas             intercâmbio
+                                               Média                Média               Baixa
+Escala e capilaridade       Muito alta         Médio                Médio               Baixo
+                                               Sim                  Não se aplica       Sim (em construção)
+Orçamento de marketing      Muito alto         Parcial              Não                 Em desenvolvimento
+                                               Média                Baixa               Alta
+Material próprio            Sim                Parcial              Não                 Sim
+                                               Raro                 Parcial             Sim
+Plataforma digital          Sim                Parcial              Não                 Sim - central
+
+Consultoria personalizada Baixa                Não                  Não                 Sim - único
+
+Certificação internacional  Parcial            Estruturada          Estruturada         Enxuta
+
+High School americano       Não
+
+Foco em educação cristã     Não
+
+Jornada integrada das 4 frentes Não
+
+Estrutura gerencial         Muito estruturada
+
+Concorrentes maiores levam vantagem clara em escala, marca, número de unidades,
+orçamento de mídia, tecnologia e canais de distribuição. A Cultura Inglesa combina material
+próprio, cursos presenciais e online, certificações Cambridge, formação docente e eventos
+culturais; a Wizard, sob a Pearson, destaca-se por material próprio, plataforma digital e
+capilaridade; o CNA opera com estrutura executiva de C-level e áreas dedicadas a marketing,
+tecnologia, vendas, produtos e experiência do cliente. Diante disso, a Promise não deve
+competir por escala nem por preço.
+
+3.7 Posicionamento competitivo
+
+     ONDE A PROMISE GANHA E ONDE ELA NÃO DEVE COMPETIR
+    GANHA em: integração das quatro frentes, personalização, relacionamento próximo, velocidade de
+    decisão, autoridade técnica do fundador em Cambridge e currículo, e alinhamento de cosmovisão
+    com o cliente ideal.
+    NÃO DEVE COMPETIR em: preço, número de unidades, volume de mídia, marca institucional ou
+    amplitude de catálogo. Toda vez que a negociação se desloca para preço, a Promise está jogando o
+    jogo do concorrente.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  15 / 44
+                                                       PLANO DE NEGÓCIOS · 2027 - 2031
+
+3.8 Vantagens competitivas defensáveis
+
+Vantagem                         Por que e defensável                                   Prazo para ser copiada
+                                 Exige competência simultânea em pedagogia,             24 a 36 meses
+Integração das quatro frentes    currículo, certificação e operação internacional       18 a 30 meses
+                                 PI registrada e acumulada ao longo de anos de          12 a 24 meses
+Promise Excellence Framework e   sala de aula                                           Não replicável
+materiais autorais               Relacionamento pessoal, construído e de difícil        12 meses
+Parceria com instituição         replicação imediata                                    24 a 36 meses
+americana emissora de diploma    Reputação pessoal não transferível
+Autoridade do fundador no nicho
+cristão e Cambridge              Ativo de relacionamento, não comprado
+Acesso a bases de leads de       Combina pedagogia, ciência de dados e
+congressos do segmento           currículo próprio
+Plataforma de dados e
+diagnóstico por aluno
+
+3.9 Oportunidades e riscos de mercado
+
+Oportunidades                                          Riscos
+Crescimento da demanda por inglês, educação bilíngue   Concorrência intensa e pressão por preço no ensino de
+e certificações internacionais                         inglês
+Expansão da internacionalização escolar e das escolas  Ciclo orçamentário e capacidade de investimento
+confessionais                                          limitada das escolas
+Crescimento do homeschooling e de modelos              Mudanças regulatórias no homeschooling, ainda em
+educacionais flexíveis                                 debate legislativo no Brasil
+Demanda represada por formação de professores e        Novos entrantes de baixo custo apoiados em
+gestores                                               inteligência artificial
+Expansão via parcerias com escolas, igrejas e          Dependência de fornecedores e parceiros
+instituições internacionais                            internacionais e exposição cambial
+Desenvolvimento de produtos digitais e aplicativos     Dificuldade de escalar serviços altamente
+escaláveis                                             personalizados
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  16 / 44
+                                                            PLANO DE NEGÓCIOS · 2027 - 2031
+
+04 Equipe de gestão
+
+4.1 Organograma funcional
+
+A estrutura atual é deliberadamente enxuta e concentrada. No topo está o Diretor Executivo e
+Fundador, responsável pela gestão estratégica e pela integração de todas as áreas. Abaixo, a
+operação conta com professores responsáveis pela entrega dos serviços educacionais.
+Marketing, gestão administrativa e gestão pedagógica são hoje apoiadas por parceiros
+especializados externos. A medida que a empresa crescer, essas funções serão gradualmente
+internalizadas.
+
+Nível        Estrutura atual (2026)                         Estrutura-alvo (2029)
+Direção      Diretor Executivo e Fundador (acumula
+             estratégia, comercial, pedagógico e            Diretor Executivo + Conselho consultivo
+Gerência     financeiro)
+Coordenação  Inexistente - funções exercidas por parceiros  Gerente Administrativo-Financeiro · Gerente
+Operação     externos                                       Comercial e de Marketing
+Suporte                                                     Coordenador Learners · Coordenador Schools
+             Inexistente                                    · Coordenador Professionals
+                                                            12 a 18 professores e consultores
+             4 professores pré-contratados                  Assistente administrativo · Customer Success
+             Parceiros de marketing, contabilidade e        · Parceiro de tecnologia
+             tecnologia
+
+4.2 Perfil do fundador
+
+Calebe Braga           Fundador e Diretor Executivo
+                       Licenciatura em Letras · CELTA (Cambridge Assessment English)
+Formação               Mais de 14 anos no ensino de inglês; 12 anos de vivência nos Estados Unidos
+Experiência docente    Mais de 8 anos a frente de um Centro Preparatório Oficial de Cambridge
+Gestão acadêmica       Currículo de inglês das coleções Paideia e Oikos · coleção autoral To the Nations
+Autoria                Desenho curricular, avaliação Cambridge, formação de professores, gestão
+Competências centrais  acadêmica e produção de material didático
+                       Gestão financeira estruturada, processo comercial documentado e delegação
+Lacunas reconhecidas   operacional
+
+4.3 Responsabilidades por área
+
+Área                   Responsabilidades                                                Quem executa hoje
+Direção Executiva      Estratégia, decisões, desenvolvimento de produtos e              Fundador
+                       serviços, relacionamento com clientes e parceiros,
+Pedagógico             expansão das quatro frentes                                      Fundador, com apoio de
+Professores            Desenvolvimento e acompanhamento de programas,                   parceiros
+Marketing e Vendas     currículos, materiais, metodologia, qualidade das aulas e        4 professores pré-
+                       formação de professores                                          contratados
+                       Execução pedagógica, aulas, acompanhamento de alunos,            Parceiros externos
+                       aplicação de atividades e registro de progresso
+                       Posicionamento, comunicação, redes sociais, geração de
+                       leads, campanhas, prospecção e conversão
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  17 / 44
+                                                                  PLANO DE NEGÓCIOS · 2027 - 2031
+
+Área            Responsabilidades                                                                Quem executa hoje
+Administrativo  Processos internos, contratos, atendimento, documentação,                        Fundador, com apoio
+Financeiro      agenda e suporte operacional                                                     externo
+                Controle de receitas e despesas, fluxo de caixa,                                 Fundador, com apoio
+                precificação, pagamentos, orçamento e indicadores                                administrativo
+                                                                                                 especializado
+
+4.4 O que - e quem - está faltando
+
+O diagnóstico da própria direção é claro: a gestão precisa ser separada entre pedagógico e
+administrativo. Enquanto uma única pessoa responde por currículo, aula, venda, contrato,
+cobrança e marketing, a capacidade de crescimento fica limitada pela agenda do fundador - e
+o risco de dependência, tratado no Capítulo 8, permanece elevado.
+
+Função ausente             Impacto de não ter                                           Prioridade  Momento
+                                                                                                    sugerido
+Gerente administrativo-    Fundador consumido por contrato,                             Crítica
+financeiro                 cobrança, plano e orçamento; risco de                                    1o semestre de
+                           decisão sem número                                           Alta        2027
+Coordenador Learners       Gargalo na abertura de turmas e no                           Alta
+                           acompanhamento pedagógico dos alunos                         Média       1o semestre de
+Coordenador Schools        Limite de escolas atendidas                                              2027
+Coordenador Professionals  simultaneamente                                                          2o semestre de
+Analista de marketing e    Frente permanece não lançada                                             2027
+tráfego interno                                                                                     2027
+Customer Success           Dependência total de parceiros externos Média
+                                                                                                    2028
+                           Retenção gerida de forma reativa                             Média
+                                                                                                    2028
+
+4.5 Previsão de recursos humanos
+
+O quadro abaixo traduz o plano de pessoas em custo, e alimenta diretamente a linha de custos
+fixos do Capítulo 9. A política adotada é de crescimento defasado: contratar após a receita se
+confirmar, e não antes.
+
+Ano   Direção   Coordenação  Gerência                        Professores e                          Custo mensal
+                             adm./comercial                  consultores                            de pessoal
+2026  1         -            1 (parcial)                     4                                      R$ 7.800
+2027  1         1            1                               6 a 8                                  R$ 19.300
+2028  1         2            2                               10 a 12                                R$ 30.000
+2029  1         3            2                               14 a 16                                R$ 42.000
+2030  1         3            3                               18 a 22                                R$ 54.000
+2031  1         3            4                               24 a 30                                R$ 66.000
+
+Nota. Professores e consultores são remunerados majoritariamente por hora-aula ou por
+projeto e, portanto, compõem custo variável - não a linha fixa acima. Apenas direção,
+coordenação e gerência entram como custo fixo no modelo financeiro.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969              18 / 44
+                                                                                                                                     PLANO DE NEGÓCIOS · 2027 - 2031
+
+4.6 Política de recursos humanos
+
+A política se apoia em valorização profissional, excelência, desenvolvimento continuo e
+alinhamento de valores. A remuneração e compatível com mercado, experiência e
+responsabilidade, complementada por remuneração variável por desempenho quando
+aplicável. Promoções são baseadas em competência, resultados e comprometimento. Planos
+de carreira, formação continuada e avaliações periódicas serão estruturados gradualmente,
+acompanhando a formalização societária.
+
+4.7 Governança recomendada
+
+Recomenda-se a instituição, já em 2027, de três mecanismos mínimos de governança,
+proporcionais ao porte da empresa e essenciais para reduzir o risco de decisão concentrada:
+
+      Conselho consultivo trimestral com três a quatro membros externos (educação,
+          finanças e marketing), sem poder deliberativo, com função de contraditório qualificado.
+
+      Reunião mensal de resultados com pauta fixa: receita por frente, margem, caixa,
+          funil comercial, retenção e pendências.
+
+      Separação formal de contas entre pessoa física e jurídica, com pro-labore definido -
+          condição para que o resultado projetado neste plano seja mensurável.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  19 / 44
+                                                                       PLANO DE NEGÓCIOS · 2027 - 2031
+
+05 Produtos e serviços
+
+5.1 Portfólio e tabela de preços
+
+Os preços abaixo foram definidos pela direção e já estão validados operacionalmente. Eles
+constituem a base de todo o modelo financeiro do Capítulo 9.
+
+Frente         Produto                  Formato                                         Preço praticado        Ciclo de
+Learners                                                                                                       venda
+Learners       Curso de inglês - turma  2 aulas por semana, online,                     R$ 250 / mês           Mensal,
+Learners       Curso de inglês -        após nivelamento                                                       recorrente
+Learners       particular                                                               R$ 950 / 10 aulas      Por pacote
+Learners                                Pacote pré-pago, agenda
+               Preparatório Cambridge   flexível com o professor                        R$ 950 / 10 aulas      Por pacote
+Learners
+Schools        Inglês para famílias     Aulas particulares com                          R$ 250 / mês · R$      Mensal,
+               homeschoolers            professor especialista em                       950 particular         recorrente
+Schools                                 exame
+               American School -                                                        ~R$ 4.000 / ano, em    Anual
+               matrícula e material     1 aula por semana + desafios                    até 10x
+                                        para a família realizar junto                                          Mensal ou
+               American School -                                                        R$ 700 a R$ 900 /      anual
+               mensalidade              Currículo americano +                           mês
+                                        convalidação (US$ 500                                                  Anual
+               Pacote Essential         material + US$ 200                              ~R$ 24.000 / ano       renovável
+                                        convalidação)
+               Pacote Advanced                                                          ~R$ 42.000 / ano       Anual
+                                        Acompanhamento acadêmico,                                              renovável
+Schools        Pacote Excellence        avaliação e emissão de                          ~R$ 72.000 / ano ·
+                                        histórico                                       R$ 10 a R$ 30 por      Anual
+Professionals  Formação, mentoria e                                                     aluno/mês              renovável
+Global         preparatórios            Diagnóstico do departamento,
+                                        escolha de material,                            R$ 1.200 a R$ 2.800 /  Por ciclo
+               Imersões e viagens       treinamento da equipe                           ciclo
+               acadêmicas                                                                                      Por projeto
+                                        Essential + observação de                       R$ 8.000 a R$ 12.000
+                                        aula, feedback ao professor,                    / participante
+                                        simulados, reunião com pais e
+                                        apoio a contratação docente
+
+                                        Advanced + plataforma de
+                                        dados por aluno com
+                                        diagnóstico e mentoria
+                                        orientada por dados
+
+                                        Cursos online, workshops,
+                                        mentorias e preparação TKT /
+                                        CELTA / DELTA
+
+                                        Grupos de 10 a 15 alunos, com
+                                        estrutura montada e operada
+                                        em parceria
+
+5.2 Benefícios e diferenciais
+
+Os produtos entregam formação em inglês, desenvolvimento acadêmico e profissional,
+internacionalização e acesso a oportunidades globais, integrados a uma visão cristã e de
+formação integral. O diferencial estruturante e reunir metodologia própria, experiência
+educacional, referências internacionais e soluções personalizadas em um único ecossistema.
+
+O PRODUTO MAIS DIFERENCIADO DO PORTFÓLIO
+
+Para famílias homeschoolers, a Promise oferece a trajetória American School do Elementary ao High
+School, permitindo que o estudante construa uma formação acadêmica americana em paralelo a
+sua trajetória educacional familiar e, ao concluir o High School, obtenha um diploma americano
+utilizável em candidaturas a universidades nos Estados Unidos, conforme os requisitos de cada
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                         20 / 44
+                                                                                                                               PLANO DE NEGÓCIOS · 2027 - 2031
+
+instituição.
+A proposta se diferencia das ofertas existentes no mercado brasileiro, que normalmente exigem
+que o aluno esteja matriculado simultaneamente em uma escola regular. Aqui está a assimetria
+competitiva mais forte da Promise e o motivo pelo qual essa frente é a prioridade da janela de
+lançamento.
+
+5.3 Arquitetura da jornada do cliente
+
+O portfólio não é um catálogo de itens avulsos: é uma sequência. O quadro abaixo descreve o
+caminho típico de um aluno e a receita acumulada correspondente - a lógica econômica que
+sustenta a integração das quatro frentes.
+
+Etap  Situação do aluno                 Produto acionado                                Frente
+a
+1     Não fala inglês e quer aprender   Curso de inglês em turma ou particular          Learners
+2     Já tem base e quer comprovar
+      nível                             Preparatório e certificação Cambridge           Learners
+3     Estuda em casa e precisa validar
+      a trajetória                      American School - convalidação, currículo e     Learners
+4     Está na escola e quer o ensino    diploma                                         Learners + Schools
+      médio americano                   American School via escola parceira             Global
+5     Quer viver a experiência          (transferência de créditos)
+      internacional                     Imersão, curso no exterior ou viagem
+6     Torna-se professor ou líder       acadêmica
+      educacional
+                                        Formação continuada e certificação docente Professionals
+
+5.4 Estágio do ciclo de vida de cada produto
+
+Produto / serviço             Estágio                               Implicação gerencial
+Cursos de inglês              Maturidade - operação consolidada     Escalar por abertura de turmas; não
+Consultoria para escolas      há vários anos                        requer novo desenvolvimento
+Promise Global                Crescimento - em operação e           Padronizar processo e materiais para
+American School e             validação há mais de um ano           permitir delegação
+homeschooling                 Crescimento - projetos já realizados  Pronto para rodar; depende apenas de
+Promise for Professionals     com sucesso                           demanda comercial
+Plataforma de dados e         Lançamento                            Foco total de marketing e vendas até
+aplicativos                                                         dezembro de 2026
+                              Estruturação pre-lançamento           Lançar em 2027, após consolidação das
+                              Desenvolvimento conceitual e          demais
+                              prototipagem                          Protótipo até dezembro de 2026;
+                                                                    comercialização em 2027
+
+5.5 Propriedade intelectual
+
+A Promise já detém ativos intelectuais próprios relevantes e deve ampliá-los deliberadamente,
+porque a PI é a única vantagem competitiva que não depende da agenda do fundador.
+
+Ativo                         Status                                Ação recomendada
+Promise Excellence Framework  Metodologia formulada, não            Registrar marca no INPI e documentar em
+                              registrada                            manual interno
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969            21 / 44
+                                                                  PLANO DE NEGÓCIOS · 2027 - 2031
+
+Ativo                              Status                         Ação recomendada
+                                   Em produção - volumes de
+Coleção autoral To the Nations     Infantil e Fundamental 1       Concluir, registrar e lançar
+                                   Autoria do fundador, obra sob
+Currículo de inglês Paideia e      contrato de terceiro           Não reutilizar conteúdo protegido;
+Oikos                              Em uso, não registrada         manter separação documental rigorosa
+Marca Promise e Promise English    Não iniciado                   Registro no INPI - prioridade jurídica
+Currículo próprio das disciplinas                                 Desenvolver por etapas para substituir
+do American School                 Protótipo em desenvolvimento   material de terceiros e elevar margem
+Banco de questões e plataforma                                    Documentar código, dados e titularidade
+de diagnóstico                                                    em contrato com o parceiro de tecnologia
+
+Alerta jurídico. O fundador mantém relação contratual com terceiro que detém cláusula de
+exclusividade sobre escolas já atendidas por aquele sistema. Recomenda-se parecer jurídico
+específico delimitando por escrito: (i) quais escolas estão vedadas; (ii) a titularidade da
+parceria internacional trazida pelo fundador; e (iii) o escopo permitido de produção autoral
+paralela. A operação da Promise deve ser conduzida integralmente dentro desses limites,
+documentada e auditável.
+
+5.6 Plano de desenvolvimento de produtos
+
+Etapa              Entregas                                                             Prazo crítico
+Etapa 1 -          Concluir e lançar Homeschooling e American School: estrutura         10 de setembro
+Lançamento         pedagógica, materiais, processo de matrícula, comunicação            de 2026
+Etapa 2 -          comercial e integração ao site. Em paralelo, finalizar o site        1o semestre de
+Consolidação       institucional e ativar o Instagram com publicação regular.           2027
+Etapa 3 - Escala   Aprimorar e escalar produtos existentes (cursos de inglês,           2027 - 2028
+Etapa 4 - Produto  consultoria para escolas, Promise Global) enquanto Promise for       2029 - 2031
+digital            Professionals e estruturada e lançada progressivamente.
+                   Concluir a plataforma de diagnóstico por aluno para o pacote
+                   Excellence; publicar os primeiros volumes da coleção autoral;
+                   iniciar o currículo próprio das disciplinas do American School.
+                   Desenvolver aplicativos e produtos digitais de prática de inglês,
+                   com uso responsável de inteligência artificial, ampliando receita
+                   de baixo custo marginal.
+
+5.7 Critérios de teste, viabilidade e lançamento
+
+Todo novo produto deve percorrer o mesmo circuito antes de receber investimento relevante:
+análise de demanda, viabilidade pedagógica e financeira, composição de custos, definição de
+preço, teste em pequena escala, lançamento e avaliação de resultados. Após o lançamento,
+indicadores de adesão, satisfação, retenção, resultado pedagógico, margem e retorno sobre o
+investimento orientam a decisão de ajustar, expandir ou descontinuar.
+
+A política de investimento em novos produtos considera demanda real, alinhamento
+estratégico, potencial de impacto educacional, viabilidade financeira e capacidade de escala.
+São priorizadas soluções que fortalecam uma das quatro frentes e que gerem recorrência,
+propriedade intelectual ou escala.
+
+5.8 Métricas de acompanhamento por produto
+
+Categoria          Indicadores
+Pedagógicos        Progresso por nível, frequência, resultado de simulados, aprovações em exames
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969            22 / 44
+Categoria                                                                                                 PLANO DE NEGÓCIOS · 2027 - 2031
+
+Comerciais      Indicadores
+Financeiros     Cambridge, créditos concluídos no American School
+Relacionamento  Número de alunos e clientes, leads gerados, taxa de conversão, custo de aquisição (CAC),
+                ticket médio
+                Receita e margem por produto, receita recorrente mensal, retorno sobre investimento por
+                produto
+                Satisfação (NPS), taxa de renovação, churn mensal, tempo médio de permanência
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  23 / 44
+                                                                 PLANO DE NEGÓCIOS · 2027 - 2031
+
+06 Estrutura e operações
+
+6.1 Processo de negócio ponta a ponta
+
+O processo é comum às quatro frentes até a contratação e se especializa na entrega.
+
+Etapa               O que acontece                               Responsável            Ferramenta
+1. Atração                                                       Marketing / Direção    Instagram, site, e-mail,
+2. Qualificação     Redes sociais, site, indicações, eventos ou  Administrativo         eventos
+3. Diagnóstico      prospecção direta                            Pedagógico             Formulário, CRM,
+4. Proposta                                                      Direção / Comercial    WhatsApp
+5. Contratação      Formulário de pre-matrícula ou diagnóstico   Administrativo         Teste de nivelamento,
+6. Onboarding       inicial; triagem do lead                     Coordenação            roteiro de diagnóstico
+                                                                                        Gerador de proposta, PIN
+7. Entrega          Nivelamento (Learners) ou diagnóstico do     Professores /          de acesso
+                    departamento (Schools)                       Consultores
+8. Pós-venda                                                                            Contrato digital, gateway
+                    Proposta comercial customizada, gerada a     Coordenação / CS
+                    partir de calculadora de precificação                               E-mail automatico, LMS
+
+                    Assinatura de contrato e emissão de                                 Zoom, LMS, materiais
+                    cobrança
+                                                                                        Painel de dados, reuniões
+                    Boas-vindas, acesso a plataforma, alocação                          periódicas
+                    de turma ou cronograma de implantação
+
+                    Aulas e acompanhamento (Learners);
+                    consultoria e implantação (Schools);
+                    formação (Professionals); operação de
+                    programa (Global)
+
+                    Acompanhamento continuo, avaliação de
+                    resultados, retenção e renovação
+
+6.2 Fluxo comercial e contratual
+
+O fluxo hoje é simples e precisa ser formalizado: reunião, envio de proposta, assinatura e
+início. A formalização recomendada acrescenta quatro pontos de controle que reduzem atrito e
+protegem a margem.
+
+      Proposta com validade declarada e condições de reajuste explicitas.
+
+      Contrato-padrão por frente, com escopo, entregáveis, prazos e limites de atendimento
+          definidos - evitando expansão de escopo não remunerada.
+
+      Gatilho automatico de implantação disparado pela assinatura (e-mail de boas-vindas,
+          abertura de projeto e agendamento da primeira reunião).
+
+      Separação de papéis na negociação: quem apresenta a solução pedagógica não deve
+          ser quem conduz a negociação financeira, preservando a relação de longo prazo com o
+          cliente.
+
+6.3 Plano de implantação - Promise for Schools
+
+Período             Atividade                                    Entregável
+Mês 0 (pré-letivo)  Diagnóstico do departamento de inglês e da   Relatório de diagnóstico com plano de
+Mês 1               matriz curricular                            ação
+Mês 1 - 2           Definição de material didático e desenho da  Matriz curricular aprovada
+Mês 3, 6 e 9        grade                                        Professores treinados no método e no
+                    Formação inicial da equipe docente           material
+                    Observação de aula e devolutiva individual   Relatório de observação por professor
+                    (Advanced e Excellence)
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  24 / 44
+                                                                        PLANO DE NEGÓCIOS · 2027 - 2031
+
+Período                Atividade                                        Entregável
+Mês 4 e 8              Simulados e diagnóstico de aprendizagem por      Painel de dados por turma, professor e
+Mês 5                  aluno (Excellence)                               aluno
+Mês 10 - 11            Reunião com famílias sobre a proposta de         Apresentação institucional
+                       internacionalização                              Relatório anual e proposta de
+                       Avaliação de resultados do ciclo e plano do ano  renovação
+                       seguinte
+
+6.4 Infraestrutura tecnológica
+
+A infraestrutura hoje se resume ao site institucional. O roadmap abaixo transforma tecnologia
+de custo em ativo comercial - especialmente no pacote Excellence, no qual a plataforma de
+dados é o principal justificador de preço.
+
+Camada                 Situação atual                           Roadmap
+Site institucional e   Publicado, em finalização
+captação                                                        Landing pages por produto, formulários
+CRM e funil comercial  Inexistente - controle manual            integrados ao CRM, pixel e eventos de conversão
+
+Ambiente de aula       Videoconferência genérica                CRM com funil por frente, gerador de proposta e
+                                                                painel de métricas comerciais
+LMS e conteúdo         Material distribuido por canais avulsos
+                                                                Sala virtual com identidade da marca, gravação e
+Plataforma de          Protótipo com banco de questões e        registro de presença
+diagnóstico            pontuação
+                                                                Ambiente único de trilhas, videoaulas, atividades
+Analítico e IA         Experimentação                           e entrega de material
+
+Infraestrutura         Cedida por parceiro (banco de dados e    Simulados por habilidade, correção automatica,
+                       hospedagem)                              áudio de qualidade e painel por aluno, turma e
+                                                                escola
+
+                                                                Modelos preditivos de desempenho e
+                                                                recomendação pedagógica; controle de custo por
+                                                                token
+
+                                                                Contratação própria com titularidade da Promise
+                                                                sobre dados e código
+
+Pendência de governança. A infraestrutura de banco de dados e hospedagem está hoje sob
+titularidade de um parceiro. Recomenda-se migração para contratação própria até o segundo
+semestre de 2027, com contrato que defina titularidade do código, dos dados dos alunos e das
+obrigações de proteção de dados pessoais - especialmente por se tratar de dados de menores.
+
+6.5 Máquinas, equipamentos e infraestrutura física
+
+Como aulas e formações são integralmente online, a estrutura necessária e essencialmente
+tecnológica: computadores, conexão de alta qualidade, câmeras, microfones, plataformas de
+videoconferência, sistemas de gestão e ferramentas de produção de material. Não há
+necessidade de planta física para atendimento regular; espaços compartilhados ou de
+parceiros podem ser utilizados para reuniões, eventos e treinamentos pontuais. Essa
+configuração é uma vantagem estrutural: reduz custo fixo, elimina imobilizado e permite
+atendimento nacional.
+
+6.6 Produção e distribuição
+
+A Promise possui estrutura própria para produção de currículos, materiais didáticos, cursos e
+recursos digitais, realizada internamente ou com parceiros especializados. A distribuição
+ocorre pelo site, plataformas educacionais, WhatsApp e canais digitais; materiais físicos,
+quando necessários, são produzidos por fornecedores especializados e distribuidos pelos
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  25 / 44
+                                                                  PLANO DE NEGÓCIOS · 2027 - 2031
+
+parceiros editoriais. No modelo B2B, o material e adquirido pela escola e repassado a família, o
+que antecipa caixa e reduz inadimplência.
+
+6.7 Fornecedores
+
+Fornecedor               Fornece                           Criticidade                  Plano de contingência
+                                                           Crítica                      Mapear ao menos uma
+Instituição americana    Matrícula, créditos, histórico e                               instituição alternativa
+parceira                 diploma                                                        credenciada até 2027
+                                                                                        Certificações alternativas
+Cambridge Assessment     Exames e certificações            Alta                         reconhecidas para casos
+English                  Material das disciplinas          Alta                         específicos
+Fornecedor de currículo  Distribuição editorial e          Média                        Desenvolvimento de currículo
+americano                desenvolvimento do site                                        autoral próprio
+Kairos e Arkos                                                                          Múltiplos distribuidores e
+                                                                                        fornecedor de tecnologia
+Gráfica                  Impressão das coleções            Baixa                        alternativo
+                                                                                        Cotação com três
+Operadores de viagem     Logística dos programas Global Média                           fornecedores por tiragem
+                                                                                        Cotação por projeto com no
+                                                                                        mínimo dois operadores
+
+6.8 Pós-venda e Customer Success
+
+O pós-venda e integrado a operação, com acompanhamento continuo pelos canais digitais.
+Como os serviços de Schools e Learners são recorrentes, o relacionamento não termina na
+contratação - ele começa nela. A medida que a base crescer, será estruturada uma área
+dedicada de Customer Success, com três rotinas mínimas: contato de acompanhamento no
+30o dia, avaliação de satisfação semestral e reunião de resultados antes da janela de
+renovação.
+
+6.9 Pesquisa, desenvolvimento e inovação
+
+Não há área formal de P&D, mas a inovação integra a estratégia. A Promise pretende
+estruturar progressivamente uma frente de PD&I voltada a criação e ao aprimoramento de
+currículos, materiais didáticos, metodologias, recursos digitais e aplicativos. O investimento
+será gradual, priorizando primeiro a consolidação dos produtos existentes e, em seguida,
+soluções tecnológicas escaláveis, personalização e uso responsável de inteligência artificial.
+Sugere-se destinar de 3% a 5% da receita líquida a PD&I a partir de 2028.
+
+6.10 Compliance e gestão de conflito de interesse
+
+A operação da Promise convive com um vínculo contratual preexistente do fundador junto a
+terceiro, que inclui cláusula de exclusividade sobre determinadas escolas. Esse ponto e tratado
+aqui como risco operacional gerenciável, e não como obstáculo, desde que três práticas sejam
+adotadas de forma consistente:
+
+      Manter lista atualizada e documentada das escolas alcançadas pela exclusividade, com
+          vedação expressa de prospecção.
+
+      Registrar por escrito a origem e a titularidade das parcerias internacionais trazidas pelo
+          fundador, com data e evidência.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  26 / 44
+                                                                                                                                     PLANO DE NEGÓCIOS · 2027 - 2031
+
+      Separar integralmente produção, agenda, canais e material entre as duas operações,
+          evitando qualquer sobreposição que possa ser interpretada como uso indevido de
+          recursos.
+
+Recomendação. Antecipar a comunicação formal do encerramento ou da redefinição do
+vínculo, em vez de administrar o tema reativamente. Transições anunciadas custam menos,
+jurídica e reputacionalmente, do que transições descobertas.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  27 / 44
+                                                                                                                                     PLANO DE NEGÓCIOS · 2027 - 2031
+
+07 Marketing e vendas
+
+Este capítulo estabelece a estratégia permanente de marketing e vendas dos cinco anos. A
+execução tática da janela imediata - setembro a dezembro de 2026 - está detalhada em
+documento complementar: o Projeto de Marketing de Lançamento.
+
+7.1 Posicionamento
+
+A Promise quer ser percebida como uma empresa educacional de alta qualidade, confiável,
+inovadora e com propósito, que conecta excelência acadêmica, valores cristãos e
+oportunidades globais. Diferencia-se por não oferecer cursos, consultoria ou intercâmbios
+isolados, mas um ecossistema educacional integrado, apoiado pelo Promise Excellence
+Framework, por experiência prática e por soluções personalizadas.
+
+     DECLARAÇÃO DE POSICIONAMENTO
+    Para escolas, famílias e educadores cristãos que desejam formação de excelência com horizonte
+    internacional, a Promise Education Group é o único ecossistema que integra inglês, currículo,
+    certificação, formação docente e experiência internacional em uma única trajetória - porque reúne,
+    sob uma metodologia própria, competência acadêmica comprovada e alinhamento de cosmovisão.
+
+Proposta de valor por público
+
+Público                Dor central                            Promessa da Promise
+                                                              Construir uma trajetória acadêmica
+Família homeschooler   Meu filho estuda em casa e eu não sei  americana sem sair de casa, com histórico
+                       como fica o ensino médio e a           escolar e diploma de High School
+                       faculdade dele                         Levar do início a fluência com método
+                                                              próprio, e transformar isso em certificação
+Família com filho em   Meu filho estuda inglês há anos e não  reconhecida
+escola regular         fala                                   Diagnosticar, estruturar, treinar e medir o
+                                                              departamento de inglês - e abrir a porta da
+Escola cristã          Abrimos a escola e não sabemos         internacionalização
+Professor              montar o departamento de inglês
+                       Sei dar aula, mas não tenho            Formação e preparação para certificações
+                       credencial que comprove e me faça      internacionais reconhecidas
+                       avançar
+
+7.2 Produto
+
+A política de produto segue três regras: todo produto deve pertencer a um dos cinco estágios
+do Promise Excellence Framework; todo produto deve ter um próximo passo natural dentro do
+ecossistema; e nenhum produto e lançado sem preço, custo e margem previamente
+calculados. O portfólio detalhado consta do Capítulo 5.
+
+7.3 Preço
+
+A política de preços - anteriormente em aberto - fica assim definida:
+
+Diretriz               Definição
+Estratégia geral       Precificação por valor percebido, não por custo nem por comparação com
+Ancoragem do American  concorrentes. A Promise não compete por preço.
+                       Comunicar como mensalidade de escola - e não como curso de inglês - porque o
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  28 / 44
+                                                   PLANO DE NEGÓCIOS · 2027 - 2031
+
+Diretriz                 Definição
+School                   aluno recebe currículo completo, histórico e diploma. A faixa de R$ 700 a R$ 900
+Reajuste                 posiciona o produto como escola de padrão mediano, com entrega internacional.
+Descontos                Anual, aplicado em janeiro, com indexador declarado em contrato. Premissa do
+Formas de pagamento      modelo: 6% ao ano.
+                         Máximo de 10% para pagamento anual antecipado; máximo de 15% para irmãos ou
+Política B2B             segundo produto contratado. Descontos acima disso exigem aprovação da direção.
+Combos                   Mensal recorrente (cartão ou boleto) ou anual antecipado em até 10 vezes. No
+                         American School, o pagamento antecipado quita imediatamente convalidação e
+                         material, protegendo o caixa.
+                         Precificação por pacote (Essential, Advanced, Excellence) com componente por
+                         aluno na plataforma. Piso de preço definido pela calculadora; abaixo do piso, apenas
+                         com aprovação da direção.
+                         Desconto cruzado entre cursinho de inglês e American School, incentivando a
+                         compra das duas frentes e elevando o LTV.
+
+7.4 Praça e canais
+
+Canal                    Público                   Função no funil                      Custo relativo
+Instagram (orgânico)     Famílias, homeschoolers,  Atração e autoridade                 Baixo
+                         professores
+Tráfego pago (Meta Ads)  Homeschoolers, famílias,  Atração e geração de lead            Médio
+Site e landing pages     escolas                   Conversão de lead                    Baixo
+WhatsApp                 Todos                     Qualificação e fechamento            Baixo
+E-mail marketing sobre   Todos                     Reativação e nutrição                Muito baixo
+base própria                                       Atração qualificada e
+Eventos, feiras e        Escolas e homeschoolers   fechamento                           Médio-alto
+congressos                                         Geração de reunião                   Médio
+Prospecção direta        Homeschoolers, escolas,   Atração de alta conversão            Muito baixo
+Indicação de clientes    professores               Acesso e credibilidade               Baixo
+Igrejas e organizações   Escolas                                                        Variável -
+cristãs                  Todos                     Distribuição e co-venda              comissionado
+
+                         Famílias e escolas
+
+Parceiros editoriais     Escolas
+
+7.5 Promoção
+
+A comunicação se apoia em marketing digital, venda consultiva e relacionamento institucional.
+Para escolas, prevalecem prospecção direta, reuniões e apresentações comerciais. Para
+famílias e profissionais, prevalecem conteúdo de autoridade, redes sociais, eventos e
+indicação. A participação em eventos educacionais, cristãos e de homeschooling é o canal de
+maior densidade de conversão e deve ser tratada como investimento prioritario, não como
+despesa eventual.
+
+GRANDE IDEIA DA MARCA
+
+"Bilíngue ou internacional?" - o aluno bilíngue fala inglês, e isso já abre portas. O aluno internacional
+está documentado e pronto para o que vier: universidade, viagem ou trabalho, no Brasil ou fora
+dele.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  29 / 44
+                                                                                                                               PLANO DE NEGÓCIOS · 2027 - 2031
+
+Essa pergunta organiza toda a comunicação da Promise porque cria uma categoria nova, na qual a
+empresa é a única resposta completa - e desloca a conversa do preço do curso de inglês para o
+futuro do filho.
+
+7.6 Modelo comercial e força de vendas
+
+O modelo e híbrido, combinando venda direta e canais indiretos. Para escolas e instituições:
+venda consultiva, prospecção direta, reuniões e indicações, com ciclos mais longos. Para
+famílias e profissionais: venda digital, redes sociais, WhatsApp, eventos e indicações, com
+ciclos curtos.
+
+Fase            Estrutura comercial                                                     Remuneração
+2026 - 2027     Fundador como principal vendedor, apoiado por                           Pro-labore + participação sobre
+2027 - 2028     atendimento administrativo de primeiro contato e                        contratos fechados por parceiros
+2029 em diante  por consultor externo nas reuniões de fechamento                        Fixo + variável sobre meta
+                Contratação de um executivo comercial dedicado ao                       Fixo + variável + bônus de retenção
+                B2B; atendimento B2C absorvido pela coordenação
+                Célula comercial com pré-vendas (SDR), executivos
+                de conta e Customer Success
+
+Sobre distribuidores e licenciamento - pontos anteriormente em aberto: a Promise não adotará
+modelo de franquia no horizonte deste plano. Trabalhará com parceiros de distribuição
+editorial e com escolas parceiras em regime de co-venda comissionada. Licenciamento próprio
+não é necessário para os serviços prestados; as licenças relevantes pertencem aos
+certificadores e a instituição americana parceira, e devem ser mantidas por contrato vigente e
+auditável.
+
+7.7 Projeção de vendas e participação de mercado
+
+A projeção detalhada consta do Capítulo 9. Em síntese: crescimento gradual ao longo de cinco
+anos, com aceleração a partir do lançamento de Homeschooling e American School,
+combinando receita recorrente de Learners, expansão dos contratos de Schools, lançamento
+progressivo de Professionals e crescimento dos projetos de Global. A Promise pretende
+conquistar participação pequena e altamente especializada do mercado, priorizando
+qualidade, recorrência e relacionamento em vez de volume.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  30 / 44
+                                                                  PLANO DE NEGÓCIOS · 2027 - 2031
+
+                          Figura 1 - Projeção de receita bruta por frente de negócio (2026-2031)
+
+7.8 Métricas comerciais de referência
+
+As metas abaixo são premissas de planejamento e devem ser recalibradas com dados reais
+após os primeiros noventa dias de operação com mídia paga.
+
+Indicador                 Learners - cursos  Learners - American                        Schools            Professiona
+                          R$ 8 a R$ 15       School                                     R$ 40 a R$ 90      ls
+Custo por lead (CPL)
+Taxa de conversão lead -                     R$ 18 a R$ 35                                                 R$ 10 a R$ 20
+venda
+Custo de aquisição (CAC)  8% a 12%           5% a 9%                                    6% a 10%           8% a 14%
+Ticket médio anual
+Relação LTV / CAC (alvo)  R$ 90 a R$ 160     R$ 250 a R$ 550                            R$ 600 a R$ 1.400  R$ 90 a R$ 200
+                          R$ 2.750           R$ 11.000                                                     R$ 1.800
+Churn mensal (alvo)       > 20x              > 40x                                      R$ 38.000          > 10x
+
+                          < 5%               < 2%                                       > 40x              n/a - por ciclo
+
+                                                                                        Renovação anual >
+                                                                                        80%
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                     31 / 44
+                                                             PLANO DE NEGÓCIOS · 2027 - 2031
+
+08 Estratégia de crescimento
+
+8.1 Razão de ser
+
+A Promise existe para desenvolver pessoas e instituições por meio da educação, conectando
+excelência acadêmica, formação integral, cosmovisão cristã e oportunidades globais. No
+futuro, pretende se consolidar como ecossistema educacional cristão de referência no Brasil e
+internacionalmente.
+
+8.2 Matriz SWOT                                              FRAQUEZAS
+
+ FORÇAS                                                      · Estrutura gerencial enxuta e centralizada no fundador
+                                                             · Marca ainda em consolidação, sem prova social
+  · Ecossistema integrado de quatro frentes conectando       acumulada
+  escolas, alunos, profissionais e oportunidades globais     · Situação societária (MEI) incompatível com o plano
+  · Metodologia própria (Promise Excellence Framework)       · Produtos-chave ainda em fase de lançamento
+  · Know-how em ensino de inglês, currículo, formação        · Recursos financeiros limitados para expansão
+  docente e certificações Cambridge                          · Ausência de processo comercial e financeiro
+  · Posicionamento claro em educação cristã e                documentado
+  internacionalização                                        · Dependência de fornecedor de currículo e de
+  · Portfólio B2B e B2C com forte componente de recorrência  infraestrutura de terceiros
+  · Materiais e conteúdos autorais com potencial de escala   · Baixa capacidade atual de escalar serviços
+  · Parceria internacional que emite diploma americano       personalizados
+  · Relacionamento próximo e capacidade de personalização
+
+OPORTUNIDADES                                                AMEAÇAS
+
+· Crescimento da demanda por inglês e certificações          · Concorrência intensa e pressão por preço
+internacionais                                               · Ciclo orçamentário restrito das escolas
+· Expansão acelerada de escolas cristãs e clássicas          · Mudanças regulatórias no homeschooling
+· Crescimento e amadurecimento do homeschooling              · Novos entrantes de baixo custo baseados em IA
+· Demanda represada por formação de professores e            · Exposição cambial nos custos em dólar do American
+gestores                                                     School
+· Mercado de educação cristã com espaço competitivo          · Conflito com vínculo contratual preexistente do fundador
+· Programas e experiências educacionais internacionais       · Dependência crítica de parceiro internacional único
+· Produtos digitais e aplicativos de inglês                  · Cenário macroeconômico afetando renda das famílias
+· Expansão via igrejas, organizações e instituições
+internacionais
+
+8.3 Estratégias cruzadas (TOWS)
+
+O cruzamento entre os quadrantes converte o diagnóstico em decisão. Cada célula abaixo é
+uma estratégia acionável, não uma observação.
+
+Cruzamento              Estratégia
+                        Usar a parceria americana e a metodologia própria para ocupar rapidamente o
+Forças x Oportunidades  nicho homeschooler antes que concorrentes percebam a lacuna; converter escolas
+(ofensiva)              cristãs em canal de distribuição do programa American School dentro da própria
+                        escola.
+Forças x Ameaças        Responder a pressão de preço e aos entrantes de IA com aquilo que não se copia:
+(defensiva)             diagnóstico personalizado, dados por aluno e alinhamento de cosmovisão; blindar a
+                        operação com contratos e documentação de titularidade de PI.
+Fraquezas x             Resolver a estrutura societária e contratar coordenação para poder capturar a
+Oportunidades           demanda existente; usar o volume inicial de Learners para financiar a
+(reforço)               profissionalização da gestão.
+Fraquezas x Ameaças     Manter custo fixo baixo e caixa protegido enquanto marca e processos
+(sobrevivência)         amadurecem; diversificar fornecedores críticos e não assumir compromissos de
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  32 / 44
+                                                                    PLANO DE NEGÓCIOS · 2027 - 2031
+
+Cruzamento                      Estratégia
+                                folha antes da receita confirmada.
+
+8.4 Objetivos e metas
+
+Horizonte     Objetivos                                             Metas verificáveis
+Até set/2026
+              Concluir e lançar Homeschooling e American            Produto no ar, formulário funcionando, 3 criativos
+              School; finalizar o site; ativar presença nas         por frente rodando
+              redes
+                                                                    15 a 20 matrículas American School · 2 turmas
+Até dez/2026  Consolidar as quatro frentes com processos            de cursinho abertas · 2 contratos Schools
+              comerciais e operacionais definidos                   assinados · R$ 119.680 de receita na janela
+
+2027          Ampliar carteira de escolas, alunos e                 6 escolas · 125 alunos Learners · 40
+Até 2028      profissionais; lançar Promise for Professionals;      profissionais · receita de R$ 1,08 mi · resultado
+2029 - 2031   profissionalizar a gestão                             positivo
+
+              Atingir o ponto de equilíbrio consolidado e           Payback confirmado até o mês 17 · margem
+              recuperar o investimento inicial                      líquida acima de 17%
+
+              Consolidar a Promise como referência nacional         Receita de R$ 9,14 mi em 2031 · 4 frentes
+              em educação cristã, ensino de inglês e                operando com coordenação própria · produto
+              internacionalização; expandir geograficamente         digital lançado
+              e lançar produtos digitais escaláveis
+
+Metas continuas, válidas para todo o período: aumentar a recorrência, fortalecer a marca,
+ampliar o portfólio e manter excelência, satisfação e sustentabilidade financeira.
+
+8.5 Cronograma estratégico
+
+Ano    Foco estratégico                Marcos
+2026   Lançar e provar                 Lançamento do American School · primeira turma homeschooler ·
+2027   Estruturar e escalar            migração societária · registro de marca
+2028   Consolidar margem               Coordenação contratada · Professionals lançada · CRM e LMS
+2029   Ampliar alcance                 implantados · breakeven anual
+2030   Institucionalizar               Plataforma Excellence comercializada · coleção autoral publicada ·
+2031   Liderar o nicho                 payback concluído
+                                       Expansão regional · currículo próprio do American School · primeiro
+                                       produto digital
+                                       Governança com conselho ativo · célula comercial completa ·
+                                       internacionalização de parcerias
+                                       Referência nacional em internacionalização educacional cristã ·
+                                       primeiros passos na América Latina
+
+8.6 Riscos críticos e planos de contingência
+
+Risco                           Prob.  Impact  Mitigação e contingência
+                                       o
+Baixa aquisição de clientes na  Média  Alto    Ampliar prospecção direta, parcerias e indicações; realocar
+janela de lançamento                           verba para o canal de maior conversão; acionar base de e-mail
+                                       Alto    própria antes de escalar mídia paga
+Dependência do fundador         Alta   Alto
+                                Média          Documentar processos e metodologia, formar coordenadores,
+Estrutura societária não                       distribuir responsabilidades e gravar treinamentos
+regularizada a tempo
+                                               Prazo-limite de 31/10/2026 com responsável designado;
+                                               contabilidade contratada previamente
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  33 / 44
+                                                PLANO DE NEGÓCIOS · 2027 - 2031
+
+Risco                            Prob.  Impact  Mitigação e contingência
+                                 Média  o
+Atraso no lançamento de          Média  Médio   Lançar versoes enxutas e validáveis, coletar feedback e iterar
+novos produtos                                  em vez de adiar
+                                        Alto
+Fluxo de caixa insuficiente                     Controlar custo fixo, priorizar receita recorrente e pagamento
+                                        Alto    antecipado, ajustar marketing e postergar despesas não
+Mudança regulatória no           Média  Muito   essenciais
+homeschooling                           alto
+                                        Médio   Acompanhar tramitação legislativa; manter o produto válido
+Ruptura com parceiro             Baixa  Médio   também para alunos de escola regular, o que preserva a
+internacional único              Média  Médio   receita em qualquer cenário
+                                 Média
+Conflito contratual com vínculo  Alta           Formalizar contrato com prazo e exclusividade; mapear
+preexistente                                    instituição alternativa credenciada
+
+Variação cambial elevando o                     Parecer jurídico, lista de escolas vedadas e separação
+custo do American School                        documental integral das operações
+
+Dificuldade de escalar serviços                 Reajuste contratual atrelado a câmbio ou repactuação anual
+personalizados                                  de preço; contratação em lote
+
+                                                Investir em tecnologia, automação, materiais próprios e
+                                                produtos digitais
+
+8.7 Ritmo de gestão e indicadores
+
+O crescimento será acompanhado por indicadores de número de clientes, receita por frente,
+margem, retenção, custo de aquisição e participação de mercado, com revisão trimestral das
+metas. O ritmo mínimo de gestão recomendado e semanal no comercial, mensal no financeiro
+e trimestral no estratégico.
+
+Ritual                  Frequência      Pauta                                           Indicadores
+Reunião comercial       Semanal
+Reunião de              Mensal          Funil, leads, reuniões, propostas e             Leads, conversão, propostas
+resultados              Mensal          fechamentos                                     enviadas, matrículas
+Comitê pedagógico       Trimestral
+                                        DRE do mês, caixa, margem por frente e          Receita, margem, resultado, caixa,
+Revisão estratégica                     desvios do orçamento                            inadimplência
+
+                                        Qualidade das aulas, progresso dos              Frequência, progresso, satisfação,
+                                        alunos e formação docente                       aprovações
+
+                                        Revisão de metas, premissas do modelo           Todos os anteriores + participação
+                                        e prioridades                                   de mercado
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  34 / 44
+                                                                     PLANO DE NEGÓCIOS · 2027 - 2031
+
+09 Finanças
+
+Este capítulo apresenta o modelo econômico-financeiro completo. Ele responde às três
+perguntas que estavam explicitamente em aberto na base de conhecimento da empresa: qual
+a previsão de receita para cinco anos, qual o prazo de retorno do investimento com base no
+fluxo de caixa e quais os índices de retorno do negócio.
+
+9.1 Estrutura e premissas gerais do modelo
+
+O modelo parte de premissas por frente (número de clientes e ticket médio), compõe a receita,
+aplica tributos e custos variáveis proporcionais, deduz a estrutura fixa e o investimento em
+aquisição, e chega ao resultado líquido. A partir do resultado mensalizado e do investimento
+inicial, calcula-se o payback.
+
+Premissa                Valor adotado                      Justificativa
+Horizonte
+Ano 0 (2026)            set/2026 a dez/2031                Janela de lançamento (Ano 0) mais cinco exercícios
+Reajuste de preços                                         completos
+Regime tributário       4 meses de operação, com
+Alíquota efetiva        reconhecimento de 34% do           Setembro a dezembro, com matrículas ocorrendo ao
+Marketing de aquisição  ticket anual                       longo do período
+Sazonalidade
+Inadimplência           6% ao ano a partir de 2028         Reposição inflacionária com pequeno ganho real
+
+                        Simples Nacional (Anexo III) até   A receita projetada ultrapassa o limite do Simples em
+                        2029; Lucro Presumido a partir     2030
+                        de 2030
+                                                           Progressão das faixas do Simples e carga estimada
+                        6,0% / 8,5% / 10,5% / 12,5% /      no Lucro Presumido
+                        14,3% / 14,3%
+                                                           Investimento decrescente conforme a marca
+                        10% / 8% / 7% / 6% / 6% / 5,5%     amadurece e a indicação cresce
+                        da receita
+                                                           Calendário escolar brasileiro
+                        Pico de matrícula entre janeiro e
+                        março                              Coberta pela margem; a revisar após 12 meses de
+                                                           dados reais
+                        Não provisionada
+                        separadamente
+
+9.2 Premissas por frente
+
+Número de clientes por ano e ticket médio anual base (2027). O ticket dos anos seguintes
+aplica o reajuste de 6% ao ano.
+
+Frente         Linha de receita                202  202    202  202                     203  203  Ticket     M.
+                                               6*   7      8    9                       0    1    2027       bruta
+Schools        Contratos escolares
+Learners       (Essential/Advanced/Excellenc   2    6      10   15                      21   28   R$ 38.000  70%
+Learners       e)                              30   60     110  170                     240  320  R$ 2.750   60%
+Learners                                       12   25     40   55                      70   85   R$ 2.375   58%
+Professionals  Cursos de ingles - turmas       15   40     85   150                     230  320  R$ 11.000  52%
+Global                                         0    40     120  220                     330  450  R$ 1.800   70%
+               Aulas particulares (pacotes de  0    12     25   40                      60   80   R$ 9.500   35%
+               10 aulas)
+
+               American School /
+               Homeschooling
+
+               Formacao continuada,
+               mentorias e certificacoes
+
+               Intercambios, imersoes e
+               viagens academicas
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                       35 / 44
+                                                                         PLANO DE NEGÓCIOS · 2027 - 2031
+
+(*) 2026 corresponde a apenas quatro meses de operação (setembro a dezembro), com reconhecimento
+
+parcial de receita.
+
+9.3 Investimento inicial: usos e fontes                    Valor                        % do total
+                                                           R$ 12.000                    9%
+ Uso do investimento                                       R$ 38.000                    29%
+  Regularizacao societaria, contratos e registro de marca  R$ 26.000                    20%
+  Marketing de lancamento (set-dez/2026)                   R$ 28.000                    22%
+  Tecnologia: site, CRM, LMS e painel de dados             R$ 10.000                    8%
+  Producao de curriculos e materiais autorais              R$ 16.000                    12%
+  Estruturacao comercial, feiras e eventos                 R$ 130.000                   100%
+  Capital de giro
+  TOTAL
+
+Fontes previstas: recursos próprios do fundador e reinvestimento do resultado gerado pela
+operação dos cursos de inglês e dos primeiros contratos escolares, que já estão ativos e não
+dependem do lançamento. Não há, na premissa base, necessidade de capital de terceiros.
+Caso a aquisição de clientes fique abaixo do cenário conservador descrito na seção 9.9, prevê-
+se linha de crédito de capital de giro de até R$ 80.000 como contingência.
+
+9.4 Estrutura de custos fixos
+
+Valores mensais por exercício. O crescimento é deliberadamente defasado em relação a
+receita.
+
+Rubrica                              2026*      2027       2028          2029           2030       2031
+Pro-labore Direcao Executiva         R$ 6.000   R$ 12.000  R$ 15.000     R$ 18.000      R$ 21.000  R$ 24.000
+Coordenacao pedagogica (3            R$ 0
+frentes)                                        R$ 3.500   R$ 9.000      R$ 15.000      R$ 21.000  R$ 27.000
+Gerencia                             R$ 1.800
+administrativa/comercial             R$ 900     R$ 3.800   R$ 6.000      R$ 9.000       R$ 12.000  R$ 15.000
+Tecnologia, plataformas e dados      R$ 4.500
+Marketing (retainer e midia base)    R$ 900     R$ 1.800   R$ 3.000      R$ 4.500       R$ 6.000   R$ 7.500
+Administrativo, contabil e juridico  R$ 400     R$ 3.500   R$ 5.500      R$ 8.000       R$ 10.500  R$ 13.000
+Site, dominio e infraestrutura       R$ 14.500  R$ 1.400   R$ 2.000      R$ 2.800       R$ 3.600   R$ 4.500
+TOTAL MENSAL                         R$ 58.000  R$ 500     R$ 700        R$ 900         R$ 1.100   R$ 1.400
+                                                R$ 26.500  R$ 41.200     R$ 58.200      R$ 75.200  R$ 92.400
+TOTAL ANUAL                                     R$         R$            R$             R$         R$
+                                                318.000    494.400       698.400        902.400    1.108.800
+
+9.5 Custos variáveis e margem por frente
+
+Frente                2027           2028                  2029          2030           2031          M.
+                      R$ 68.400      R$ 120.840            R$ 192.136    R$ 285.129     R$ 402.983    bruta
+Promise for Schools   R$ 302.138     R$ 646.282            R$ 1.161.648  R$ 1.843.961   R$ 2.684.515  70%
+Promise for Learners  R$ 21.600      R$ 68.688             R$ 133.484    R$ 212.239     R$ 306.782    55%
+Promise for
+Professionals                                                                                         70%
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                36 / 44
+                                                                  PLANO DE NEGÓCIOS · 2027 - 2031
+
+Frente                        2027        2028        2029        2030                  2031        M.
+Promise Global                R$ 74.100   R$ 163.638                                                bruta
+TOTAL                         R$ 466.238  R$ 999.448  R$ 277.529  R$ 441.271            R$ 623.664  35%
+                                                      R$          R$                    R$
+                                                      1.764.796   2.782.600             4.017.943   57%
+
+Compõem o custo variável: hora-aula de professores e consultores, material didático e
+convalidação do programa American School, taxas de certificação, repasse a parceiros de co-
+venda, custos de fornecedores e operadores internacionais e despesas diretas de eventos. A
+estratégia declarada e manter a estrutura fixa enxuta e permitir que os custos variáveis
+cresçam com a receita, preservando as margens.
+
+9.6 Demonstração de resultados projetada
+
+Demonstrativo (R$)            2026*       2027        2028        2029                  2030        2031
+(=) Receita bruta
+                              R$          R$          R$          R$                    R$          R$
+                              119.680     1.078.375   2.295.960   4.038.359             6.334.121   9.135.125
+
+(-) Impostos sobre serviços   R$ 7.181    R$ 91.662 R$ 241.076    R$ 504.795            R$ 905.779  R$
+                                                                                                    1.306.323
+(=) Receita líquida           R$          R$          R$          R$                    R$
+                              112.499     986.713     2.054.884   3.533.564             5.428.342   R$
+                                                                                                    7.828.803
+(-) Custos variáveis diretos  R$ 49.970 R$ 466.238 R$ 999.448     R$                    R$
+                                                                  1.764.796             2.782.600   R$
+(=) Lucro bruto               R$ 62.529   R$          R$                                            4.017.943
+    Margem bruta              52,2%       520.476     1.055.437   R$                    R$
+                                                                  1.768.768             2.645.741   R$
+                                          48,3%       46,0%                                         3.810.859
+                                                                  43,8%                 41,8%
+(-) Custos fixos              R$ 58.000 R$ 318.000 R$ 494.400                                       41,7%
+                                                                  R$ 698.400            R$ 902.400
+(-) Marketing de aquisição    R$ 11.968   R$ 86.270   R$ 160.717                                    R$
+(=) Resultado líquido         R$ -7.439                           R$ 242.302            R$ 380.047  1.108.800
+                              -6,2%       R$          R$
+     Margem líquida                       116.206     400.319     R$                    R$          R$ 502.432
+                                                                  828.066               1.363.294
+                                          10,8%       17,4%                                         R$
+                                                                  20,5%                 21,5%       2.199.627
+
+                                                                                                    24,1%
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969              37 / 44
+                                                        PLANO DE NEGÓCIOS · 2027 - 2031
+
+                  Figura 2 - Receita bruta, resultado líquido e margem líquida
+
+9.7 Receita por frente
+
+Frente            2026*         2027        2028        2029                            2030        2031        Mix
+                                                                                                                2031
+Promise for Schools R$ 25.840 R$ 228.000    R$ 402.800  R$ 640.452                      R$ 950.431  R$          15%
+                                                                                                    1.343.275
+Promise for Learners R$ 93.840  R$ 664.375  R$          R$                              R$                      64%
+                                            1.412.450   2.525.993                       3.997.347   R$
+Promise for       R$ 0          R$ 72.000                                                           5.809.761   11%
+Professionals                               R$ 228.960  R$ 444.946                      R$ 707.464              11%
+Promise Global    R$ 0          R$ 114.000                                                          R$          100%
+                  R$            R$          R$ 251.750  R$ 426.968                      R$ 678.879  1.022.606
+TOTAL             119.680       1.078.375   R$          R$                              R$
+                                            2.295.960   4.038.359                       6.334.121   R$ 959.482
+
+                                                                                                    R$
+                                                                                                    9.135.125
+
+                                             Figura 3 - Composição da receita ao final do horizonte projetado
+
+A concentração em Learners é uma característica desejada do modelo - é a frente de maior
+recorrência e maior LTV - mas exige atenção: uma dependência superior a 65% de uma única
+frente reduz a resiliência do negócio. O crescimento planejado de Schools e Professionals atua
+justamente como contrapeso.
+
+9.8 Ponto de equilíbrio e payback
+
+Os dois indicadores respondem a perguntas diferentes e não devem ser confundidos. O ponto
+de equilíbrio informa em qual exercício a operação passa a se sustentar. O payback informa
+em quantos meses o caixa devolve o investimento inicial.
+
+   Ano 1                 17 meses           R$ 789.772                                     16,9x
+
+BREAKEVEN (2027)          PAYBACK (jan/28)  RECEITA MÍNIMA 2027                         RESULTADO 2031 /
+                                                                                           INVESTIMENTO
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                          38 / 44
+                                                          PLANO DE NEGÓCIOS · 2027 - 2031
+
+A receita mínima de equilíbrio (ponto em que o resultado líquido é zero) é obtida dividindo os
+custos fixos pela margem de contribuição líquida de tributos e marketing:
+
+Exercício    Custos fixos  Margem de        Receita mínima de                           Receita            Folga
+                           contribuição     equilíbrio                                  projetada
+2027         R$ 318.000    40,3%            R$ 789.772                                  R$ 1.078.375       37%
+2028         R$ 494.400    39,0%            R$ 1.268.691                                R$ 2.295.960       81%
+2029         R$ 698.400    37,8%            R$ 1.847.660                                R$ 4.038.359       119%
+2030         R$ 902.400    35,8%            R$ 2.522.808                                R$ 6.334.121       151%
+2031         R$ 1.108.800  36,2%            R$ 3.061.584                                R$ 9.135.125       198%
+
+                                             Figura 4 - Fluxo de caixa acumulado mensal e ponto de payback
+
+O caixa acumulado atinge seu ponto mais negativo em dezembro de 2026 (aproximadamente
+R$ -137.439), refletindo a concentração do investimento de lançamento antes da maturação
+das matrículas. A partir de janeiro de 2027, com o pico de matrículas do início do ano letivo, a
+curva inverte e cruza o zero em jan/28.
+
+9.9 Análise de sensibilidade
+
+Nenhuma projeção de negócio novo deve ser apresentada em cenário único. Os três cenários
+abaixo variam simultaneamente volume de clientes, ticket e estrutura de custos.
+
+Cenário      Premissa                       Receita       Receita                       Resultado   Breake  Payback
+Conservador                                 2027          2031                          2031        ven
+Base         -35% no volume de clientes, -  R$ 665.897    R$ 5,64 mi                    R$ 1,02 mi
+Agressivo    5% no ticket, -8% no custo                                                             Ano 2   31 meses
+             fixo                           R$ 1.078.375  R$ 9,14 mi                    R$ 2,20 mi
+                                            R$ 1.471.982  R$ 12,47 mi                   R$ 3,27 mi  Ano 1   17 meses
+             Premissas declaradas neste                                                             Ano 0   10 meses
+             capítulo
+
+             +30% no volume, +5% no
+             ticket, +12% no custo fixo
+
+LEITURA DO TESTE DE ESTRESSE
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                      39 / 44
+                                                                                                                               PLANO DE NEGÓCIOS · 2027 - 2031
+
+Mesmo no cenário conservador - com um terço a menos de clientes em todas as frentes - o negócio
+atinge o equilíbrio no Ano 2 e recupera o investimento em cerca de 31 meses. A conclusão relevante
+não é o valor do cenário base, e sim que o modelo não depende do cenário base para ser viável.
+O que determina o resultado não é o volume, e sim a disciplina de custo fixo. Cada contratação
+antecipada em relação a receita confirmada desloca o payback em aproximadamente dois meses.
+
+9.10 Indicadores financeiros
+
+Indicador                        2027        2028        2029                           2030          2031
+Margem bruta operacional         56,8%       56,5%       56,3%                          56,1%         56,0%
+Margem líquida                   10,8%       17,4%       20,5%                          21,5%         24,1%
+Custo fixo / receita bruta       29,5%       21,5%       17,3%                          14,2%         12,1%
+Marketing total / receita bruta  11,9%       9,9%        8,4%                           8,0%          7,2%
+Carga tributária efetiva         8,5%        10,5%       12,5%                          14,3%         14,3%
+Resultado acumulado desde 2026   R$ 108.767  R$ 509.087  R$ 1.337.153                   R$ 2.700.446  R$ 4.900.074
+Retorno sobre investimento
+(acumulado)                      84%         392%        1029%                          2077%         3769%
+
+9.11 Necessidade de capital de giro e política de caixa
+
+O ciclo financeiro é favorável: a maior parte da receita e recebida antecipadamente
+(mensalidade no início do mês, matrícula e material no ato) enquanto os custos variáveis mais
+relevantes ocorrem ao longo da entrega. Ainda assim, três políticas de caixa devem ser
+observadas:
+
+      Manter reserva mínima equivalente a três meses de custo fixo - em 2027,
+          aproximadamente R$ 79.500.
+
+      Quitar imediatamente convalidação e material do American School quando o
+          pagamento anual for antecipado, isolando a obrigação em dólar do fluxo operacional.
+
+      Não antecipar contratação de custo fixo contra receita apenas projetada: a contratação
+          ocorre após a assinatura do contrato ou após a matrícula confirmada.
+
+9.12 Regime tributário
+
+Até 2029, a receita projetada comporta o enquadramento no Simples Nacional, Anexo III, com
+alíquota efetiva crescente conforme a faixa de receita bruta acumulada. Em 2030, a receita
+projetada ultrapassa o limite do Simples e o modelo assume a migração para o Lucro
+Presumido, com carga efetiva estimada de 14,3% sobre a receita de serviços. A decisão
+definitiva de regime deve ser revisada anualmente com o contador, considerando a
+composição entre folha e receita - fator determinante no Anexo III.
+
+Recomendação. Realizar estudo comparativo de regime (Simples x Presumido x Real) ao final
+de 2028, quando a estrutura de folha já estiver definida. A diferença entre regimes, sobre a
+receita projetada para 2030, pode superar R$ 200.000 ao ano.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                       40 / 44
+                                        PLANO DE NEGÓCIOS · 2027 - 2031
+
+10 Sumário executivo
+
+Nota. Este capítulo foi redigido por último, como síntese dos nove anteriores, e pode ser lido
+isoladamente.
+
+Quem somos
+
+A Promise Education Group é uma empresa de educação fundada e dirigida por Calebe Braga -
+mais de quatorze anos no ensino de inglês, oito anos a frente de um Centro Preparatório Oficial
+de Cambridge, autor do currículo de inglês de duas coleções de um sistema de ensino cristão e
+da coleção autoral To the Nations, formado em Letras e certificado CELTA. Sede em João
+Pessoa, operação 100% online, presença já registrada em cinco estados.
+
+O que fazemos
+
+Operamos quatro frentes de igual peso, integradas por uma metodologia própria - o Promise
+Excellence Framework. Promise for Schools estrutura departamentos de inglês e a
+internacionalização de escolas privadas, especialmente cristãs e clássicas. Promise for
+Learners oferece inglês, certificações Cambridge, o programa American School do Elementary
+ao High School com emissão de diploma, e soluções para famílias homeschoolers. Promise for
+Professionals forma professores, coordenadores e lideranças educacionais. Promise Global
+conecta escolas, famílias e alunos a experiências internacionais.
+
+Qual é a oportunidade
+
+O mercado brasileiro de idiomas movimenta cerca de US$ 1,5 bilhão e o de educação
+internacional cerca de R$ 7 bilhões, ambos em crescimento e altamente fragmentados.
+Escolas cristãs são abertas em todo o país e a maioria não sabe montar seu departamento de
+inglês. O homeschooling cresce e seus alunos precisarão comprovar trajetória acadêmica para
+ingressar em universidades. Nenhum concorrente conhecido entrega essa jornada de forma
+integrada - e praticamente nenhum a entrega sob uma cosmovisão cristã.
+
+Qual é a nossa vantagem
+
+Não disputamos isoladamente o mercado de inglês, o de consultoria, o de formação docente
+ou o de intercâmbio: integramos escola, aluno, profissional e internacionalização em um único
+ecossistema. O produto mais diferenciado do portfólio - a trajetória American School para
+famílias homeschoolers, sem exigência de matrícula simultânea em escola regular - não tem
+equivalente direto conhecido no mercado brasileiro.
+
+Quanto precisamos e o que faremos com o recurso
+
+O investimento inicial estimado é de R$ 130.000, destinado a regularização societária e
+registro de marca, marketing de lançamento, tecnologia e plataformas, produção de currículos
+e materiais autorais, estruturação comercial e capital de giro. O desembolso e gradual,
+concentrado entre setembro de 2026 e o primeiro semestre de 2027, com fonte em recursos
+próprios e reinvestimento da operação já ativa.
+
+Quais são os números
+
+R$ 1,08 mi          R$ 9,14 mi          Ano 1                                           17 meses
+
+      RECEITA 2027        RECEITA 2031  BREAKEVEN                                                PAYBACK
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  41 / 44
+                                             PLANO DE NEGÓCIOS · 2027 - 2031
+
+Indicador                      2027          2029                                       2031
+Receita bruta                  R$ 1.078.375  R$ 4.038.359                               R$ 9.135.125
+Resultado líquido              R$ 116.206    R$ 828.066                                 R$ 2.199.627
+Margem líquida                 10,8%         20,5%                                      24,1%
+Escolas atendidas              6             15                                         28
+Alunos Learners                125           375                                        725
+Profissionais formados no ano  40            220                                        450
+
+Em cenário conservador, com um terço a menos de clientes em todas as frentes, o negócio
+ainda atinge o equilíbrio no segundo ano e recupera o investimento em cerca de 31 meses.
+
+O que precisa acontecer para o plano funcionar
+
+Prioridad  Ação                                                                         Prazo
+e                                                                                       31/10/2026
+1          Migração societária de MEI para sociedade limitada e registro da marca       set - dez/2026
+           no INPI                                                                      1o semestre de 2027
+2          Lançamento comercial de Homeschooling e American School com meta             1o semestre de 2027
+           de 15 a 20 matrículas                                                        2027
+3          Contratação de gerente administrativo-financeiro e do primeiro               2027 - 2029
+           coordenador pedagógico
+4          Formalização contratual com a instituição americana parceira e
+5          mapeamento de alternativa
+6          Implantação de CRM, LMS e rotina mensal de resultados
+           Desenvolvimento de currículo autoral para substituir material de terceiros
+           e elevar margem
+
+SÍNTESE
+
+Há um mercado grande, fragmentado e em crescimento; há um produto raro e defensável; há
+competência técnica comprovada para entrega-lo; e há um modelo econômico que se sustenta
+mesmo sob premissas pessimistas. O risco central deste plano não está no mercado nem no
+produto: está na concentração da execução em uma única pessoa e na estrutura societária ainda
+não regularizada. Ambos são solucionáveis, têm prazo definido e custo conhecido - e e sobre eles
+que a atenção da direção deve se concentrar nos próximos doze meses.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                42 / 44
+                                               PLANO DE NEGÓCIOS · 2027 - 2031
+
+Anexos
+
+Anexo A · Pontos que permanecem em aberto
+
+Transparencia metodológica: os itens abaixo não possuíam definição na base de conhecimento
+da empresa. Alguns foram resolvidos neste plano; os demais permanecem como decisão
+pendente da direção e estão listados para acompanhamento.
+
+Tema                                Status     Onde foi tratado / o que falta
+                                    Resolvido  Capítulo 9, seções 9.6 e 9.7
+Previsão de receita para 5 anos     Resolvido
+                                    Resolvido  Capítulo 9, seção 9.8
+Prazo de retorno com base no fluxo  Resolvido
+de caixa                            Resolvido  Capítulo 9, seção 9.10
+                                    Resolvido  Capítulo 7, seção 7.3
+Métricas e índices de retorno       Parcial    Capítulo 7, seção 7.6
+                                               Capítulo 7, seção 7.6
+Política de preços                  Parcial    Avaliado qualitativamente no Capítulo 3; requer pesquisa
+                                               competitiva formal
+Distribuidores e licenciamento      Em aberto  Mapeado por frente; falta estudo de participação de mercado
+                                    Em aberto  por região
+Força de vendas                     Em aberto  Monitorar entrantes de IA e sistemas de ensino que
+                                    Em aberto  adicionem internacionalização
+Velocidade de decisão dos                      Decisão da direção até outubro de 2026
+concorrentes
+                                               Negociação de prazo, exclusividade e reajuste
+Concorrentes são líderes ou
+seguidores de mercado                          Definir após 12 meses de histórico real de cobrança
+
+Quem pode vir a ser concorrente no
+futuro
+
+Quadro societário definitivo
+
+Contrato formal com a instituição
+americana
+
+Provisão de inadimplência
+
+Anexo B · Glossário
+
+Termo                               Definição
+Breakeven (ponto de equilíbrio)
+Payback                             Exercício em que o resultado líquido passa de negativo a positivo
+CAC
+LTV                                 Número de meses até que o caixa acumulado recupere o investimento inicial
+Churn
+Margem de contribuição              Custo de aquisição de cliente: investimento total em marketing e vendas dividido
+TAM / SAM / SOM                     pelo número de clientes conquistados
+Convalidação
+                                    Valor total gerado por um cliente ao longo de toda a relação
+Promise Excellence Framework
+                                    Percentual de clientes que encerram a relação em um período
+
+                                    Receita menos custos variáveis, tributos e marketing de aquisição
+
+                                    Mercado total / mercado atingível / mercado efetivamente alcançável
+
+                                    Processo de reconhecimento acadêmico, pela instituição americana, dos estudos
+                                    já realizados pelo aluno
+
+                                    Metodologia proprietária em cinco estágios que estrutura toda trajetória de aluno,
+                                    professor ou escola na Promise
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  43 / 44
+                                 PLANO DE NEGÓCIOS · 2027 - 2031
+
+Anexo C · Controle do documento
+
+Campo              Conteúdo
+Título             Plano de Negócios Promise Education Group 2027-2031
+Versão             1.0
+Data-base          31 de agosto de 2026
+Elaboração         Direção Executiva da Promise Education Group com apoio de consultoria de
+                   planejamento e finanças
+Próxima revisão    Trimestral - primeira revisão prevista para dezembro de 2026, com dados reais da
+                   janela de lançamento
+Confidencialidade  Documento reservado. Distribuição restrita a sócios, investidores e parceiros
+                   institucionais mediante autorização da direção.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  44 / 44
+

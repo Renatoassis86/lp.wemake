@@ -1,0 +1,1256 @@
+PROJETO DE MARKETING · JANELA DE                             LANÇAMENTO
+
+LANÇAMENTO
+
+SETEMBRO A DEZEMBRO DE 2026
+
+Plano operacional de lançamento de marca e geração de vendas da Promise Education
+Group. Define objetivos, públicos, narrativa, campanhas, canais, verba de mídia, réguas
+de e-mail e um cronograma semana a semana das dezoito semanas que separam o
+lançamento do fechamento do exercício de 2026.
+
+Schools                       Learners       Professionals       Global
+
+ ESCOLAS                  FAMÍLIAS E ALUNOS      EDUCADORES  INTERNACIONAL
+
+Documento                 Projeto de Marketing - janela de lançamento set-dez/2026
+Empresa                   Promise Education Group (marca: Promise English)
+Responsável               Calebe Braga - Direção Executiva
+Período coberto           1º de setembro a 31 de dezembro de 2026 (18 semanas)
+Verba de mídia paga       R$ 38.000 - rubrica do investimento inicial
+Meta comercial da janela  59 matrículas e contratos · R$ 119.680 de receita
+Versão do documento       1.0 · 31 de agosto de 2026
+                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+Sumário
+
+1. Contexto e diagnóstico do ponto de partida                                           3
+
+2. Objetivos e metas da janela                                                          5
+
+3. Públicos e personas                                                                  7
+
+4. Posicionamento e narrativa                                                           9
+
+5. Arquitetura de campanhas                                                             11
+
+6. Canais e táticas                                                                     13
+
+7. Plano de mídia e verba                                                               15
+
+8. Funil e metas de conversão                                                           17
+
+9. Cronograma semanal - setembro a dezembro de 2026                                     19
+
+10. Calendário editorial orgânico                                                       22
+
+11. E-mail marketing e réguas de relacionamento                                         23
+
+12. Checklist de materiais                                                              25
+
+13. Governança, papéis e ferramentas                                                    26
+
+14. Indicadores e painel semanal                                                        27
+
+15. Riscos e planos de contingência                                                     28
+
+A. Anexo A - Roteiros aprovados e banco de ganchos                                      29
+
+B. Anexo B - Checklist de participação em evento                                        31
+
+C. Anexo C - Controle do documento                                                      32
+
+COMO USAR ESTE DOCUMENTO
+
+Este é um documento operacional, não institucional. Ele foi escrito para ser impresso, marcado e
+revisado toda segunda-feira. O capítulo 9 é o coração do plano: nele cada uma das dezoito semanas
+tem foco, entregas e meta própria.
+
+Os números de meta vêm do mesmo modelo financeiro que sustenta o Plano de Negócios 2027-
+2031. Alterar uma meta aqui exige rever a projeção lá, e vice-versa.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  2 / 32
+                                 PROJETO DE MARKETING · SET - DEZ / 2026
+
+1. Contexto e diagnóstico do ponto de partida
+
+A Promise chega a setembro de 2026 com um ativo raro e um passivo igualmente relevante. O
+ativo é reputacional: mais de quatorze anos de ensino de inglês, oito anos à frente de um
+Centro Preparatório Oficial Cambridge, autoria de currículos adotados por sistemas de ensino
+cristãos e uma rede de relacionamento real dentro do circuito de escolas confessionais e de
+famílias homeschoolers. O passivo é de comunicação: como marca autônoma, a Promise
+praticamente não existe no ambiente digital. O Instagram é novo e sem histórico, o site está
+em finalização e nunca houve campanha paga.
+
+Essa assimetria define toda a estratégia da janela. Não se trata de construir autoridade do zero
+- ela existe na pessoa do fundador - mas de transferir autoridade pessoal para uma marca
+institucional em dezoito semanas, ao mesmo tempo em que se produz caixa. São dois
+objetivos que normalmente competem entre si, e a arquitetura de campanhas do capítulo 5
+existe justamente para conciliá-los.
+
+1.1 O que já existe e pode ser usado imediatamente
+
+Ativo disponível                 Situação em set/2026                                   Uso na janela
+Base de leads de congressos de   Aproximadamente 700 contatos                           Régua de e-mail e WhatsApp - fonte
+homeschooling                    captados em dois eventos                               primária de matrículas American
+Base de contatos de escolas      Lista de relacionamento institucional                  School
+Autoridade do fundador           do fundador                                            Prospecção ativa B2B e convite para
+Roteiros de vídeo já gravados    Reconhecida no circuito Cambridge                      diagnóstico gratuito
+Materiais autorais e currículos  e cristão                                              Rosto e voz de toda a comunicação
+Parceria com instituição         Gravados em agosto/2026                                orgânica
+americana                        Coleções publicadas e em uso                           Criativos das campanhas 1 e 2
+                                                                                        Prova de competência em provas
+                                 Contratada                                             sociais
+                                                                                        Diferencial central da oferta
+                                                                                        American School
+
+1.2 O que ainda não existe e é pré-requisito
+
+Cinco lacunas precisam ser fechadas antes ou durante as primeiras semanas. Elas não são
+detalhes de execução: são condições para que a verba de mídia não seja desperdiçada.
+
+      Site institucional publicado, com páginas de destino específicas por oferta. Enviar
+          tráfego pago para um site genérico derruba a conversão e encarece o lead.
+
+      Instagram com pelo menos doze publicações antes da primeira campanha paga. Um
+          perfil vazio recebendo tráfego pago gera desconfiança e perde a venda no último
+          clique.
+
+      Gerenciador de negócios da Meta, pixel instalado e conversões configuradas. Sem
+          medição, não há otimização - e a verba de R$ 38.000 vira gasto, não investimento.
+
+      Ferramenta de disparo de e-mail com domínio autenticado. Disparar para 700 contatos
+          frios a partir de um endereço não autenticado compromete a entregabilidade de forma
+          duradoura.
+
+      Fluxo comercial definido: quem responde o lead, em quanto tempo, com qual roteiro e
+          em qual ferramenta o atendimento é registrado.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  3 / 32
+                                           PROJETO DE MARKETING · SET - DEZ / 2026
+
+RESTRIÇÃO ESTRUTURAL A CONSIDERAR
+
+A migração de MEI para sociedade limitada está prevista para o quarto trimestre de 2026. Enquanto
+ela não ocorre, há limite de faturamento anual e restrição para emissão de notas fiscais a pessoas
+jurídicas, o que afeta diretamente a capacidade de fechar contratos com escolas. A prospecção B2B
+pode e deve começar em setembro, mas a assinatura dos contratos precisa ser sincronizada com a
+regularização societária.
+
+1.3 Diagnóstico resumido
+
+         0                 ~700                   18                                    R$ 38.000
+
+CAMPANHAS PAGAS JÁ  LEADS EM BASE PRÓPRIA  SEMANAS DE JANELA                            VERBA DE MÍDIA
+           RODADAS
+
+Em uma frase: a Promise tem demanda latente e autoridade real, mas nenhuma infraestrutura
+de aquisição. A janela de lançamento é o período em que essa infraestrutura é construída
+enquanto já produz resultado comercial - e é por isso que ela concentra 29% de todo o
+investimento inicial do negócio.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  4 / 32
+                                                            PROJETO DE MARKETING · SET - DEZ / 2026
+
+2. Objetivos e metas da janela
+
+Os objetivos abaixo são os mesmos que alimentam o Ano 0 da projeção financeira de cinco
+anos. Cada um é específico, mensurável e tem prazo dentro da janela. A meta consolidada de
+receita é de R$ 119.680 no período de setembro a dezembro de 2026.
+
+2.1 Objetivos comerciais por frente
+
+Frente              Objetivo da janela                      Meta numérica               Prazo
+                    Matricular a primeira turma do          15 matrículas               31/dez/2026
+Promise for         programa americano, do Elementary
+Learners            ao High School                          30 alunos em turma          31/dez/2026
+American School     Formar turmas regulares de inglês em
+                    formato online                          12 alunos                   31/dez/2026
+Promise for                                                 2 contratos                 31/dez/2026
+Learners            Vender pacotes de dez aulas com foco    250 inscritos em            31/dez/2026
+Cursos de inglês    em preparação Cambridge                 lista                       31/dez/2026
+                    Fechar os primeiros contratos           80 interessados
+Promise for         escolares para o ano letivo de 2027
+Learners            Aquecer a audiência e formar lista de
+Aulas particulares  espera para o lançamento em 2027
+                    Sondar interesse e formar lista para a
+Promise for         primeira imersão internacional
+Schools
+
+Promise for
+Professionals
+
+Promise Global
+
+POR QUE PROFESSIONALS E GLOBAL NÃO TÊM META DE RECEITA NESTA
+JANELA
+
+As duas frentes entram em 2026 apenas em construção de audiência. Professionals depende de
+produto estruturado, que só fica pronto em 2027; Global depende de calendário e de fornecedores
+fechados com antecedência. Vender qualquer uma delas agora significaria entregar mal e queimar
+a reputação que é justamente o principal ativo da empresa. A decisão de não vender é tão
+estratégica quanto a de vender.
+
+2.2 Objetivos de marca e infraestrutura
+
+      Publicar o site institucional com páginas de destino dedicadas para American School,
+          cursos de inglês e Promise for Schools até a segunda semana de setembro.
+
+      Alcançar 2.500 seguidores no Instagram com frequência mínima de quatro publicações
+          semanais até dezembro.
+
+      Construir uma base própria de 1.100 leads qualificados, somando a base histórica
+          reativada e a captação nova da janela.
+
+      Registrar 100% dos leads em uma ferramenta única de acompanhamento comercial,
+          com origem, estágio e responsável.
+
+      Produzir e catalogar um acervo mínimo de 60 peças de conteúdo reutilizáveis em 2027.
+
+2.3 Critério de sucesso da janela
+
+A janela será considerada bem-sucedida se, em 31 de dezembro de 2026, três condições forem
+verdadeiras simultaneamente: a meta de 59 matrículas e contratos tiver sido atingida ou
+superada; o custo por aquisição médio estiver dentro das faixas de referência do plano de
+negócios; e existir um acervo de criativos, páginas e réguas testados que permita entrar em
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969               5 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+2027 escalando o que já funciona, em vez de recomeçar. A terceira condição é a mais
+importante e a mais frequentemente ignorada em lançamentos.
+
+    59          R$ 119.680           1.100                                              2.500
+
+MATRÍCULAS E  RECEITA DA JANELA  LEADS QUALIFICADOS                                     SEGUIDORES
+  CONTRATOS
+
+Esses quatro números são a régua da janela. Todos os demais indicadores deste documento
+                                   existem para explicá-los ou para antecipá-los.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969              6 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+3. Públicos e personas
+
+A janela trabalha quatro públicos com maturidade de compra muito diferente. Tratá-los com a
+mesma mensagem é o erro mais caro que se pode cometer com uma verba pequena. A ordem
+abaixo reflete a prioridade de investimento.
+
+3.1 Persona 1 - a família homeschooler
+
+Quem é           Famílias de classe média e média-alta que educam em casa por convicção, com filhos
+                 entre 6 e 17 anos. Frequentemente cristãs, organizadas em comunidades e grupos de
+Dor real         apoio, altamente informadas e desconfiadas de soluções genéricas.
+                 A liberdade conquistada no ensino fundamental vira angústia no ensino médio. A
+O que a Promise  pergunta que não sai da cabeça é: como meu filho comprova o que aprendeu e entra em
+resolve          uma universidade?
+Objeções         Uma trajetória acadêmica americana validada, do Elementary ao High School, com
+previsíveis      emissão de diploma reconhecido, construída sem sair de casa e sem abandonar o
+Onde encontrar   homeschooling.
+Prioridade       O diploma é mesmo aceito? Quanto custa no total? Meu filho dá conta em inglês? Quem
+                 garante que a instituição americana existe e é séria?
+                 Grupos e comunidades de homeschooling, congressos e feiras do segmento, igrejas,
+                 Instagram e a base própria de aproximadamente 700 contatos.
+                 MÁXIMA - 46% da verba de mídia
+
+3.2 Persona 2 - a família que quer inglês de verdade
+
+Quem é           Pais de adolescentes a partir de 14 anos e adultos que já tentaram aprender inglês mais
+                 de uma vez e não chegaram à fluência. Valorizam método e resultado comprovável mais
+Dor real         do que preço.
+O que a Promise  A sensação de ter perdido oportunidades concretas por causa do inglês: uma vaga, um
+resolve          mestrado, uma viagem, uma promoção.
+Objeções         Aulas online duas vezes por semana com nivelamento prévio, progressão estruturada por
+previsíveis      níveis e caminho claro até uma certificação Cambridge.
+Onde encontrar   Online funciona? Em quanto tempo eu falo? Já tentei antes e não deu certo, por que agora
+Prioridade       seria diferente?
+                 Instagram, indicações de alunos e ex-alunos, comunidades de igreja, tráfego pago local e
+                 regional.
+                 ALTA - 24% da verba de mídia
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  7 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+3.3 Persona 3 - a escola cristã ou clássica
+
+Quem é             Mantenedores, diretores e coordenadores pedagógicos de escolas privadas confessionais,
+                   muitas delas recém-abertas, entre 150 e 900 alunos, em capitais e no interior.
+Dor real           A escola foi aberta com clareza de propósito e de currículo, mas ninguém na equipe sabe
+O que a Promise    montar um departamento de inglês que funcione, avalie e entregue resultado.
+resolve            Diagnóstico, estruturação curricular, formação da equipe docente, sistema de avaliação e
+Objeções           caminho de internacionalização, sem que a escola perca sua identidade.
+previsíveis        Cabe no orçamento? Quem executa depois que a consultoria termina? Isso conflita com o
+Onde encontrar     material que já adotamos?
+Prioridade         Prospecção direta, indicações, redes e associações de escolas cristãs, eventos
+                   educacionais, LinkedIn e e-mail institucional.
+                   ALTA - 22% da verba, com peso maior em prospecção humana
+
+3.4 Persona 4 - o professor de inglês
+
+Quem é             Professores, coordenadores e líderes educacionais que querem se qualificar, obter
+Papel na janela    certificação docente e crescer na carreira.
+Valor estratégico  Não é público de venda em 2026. É público de audiência: conteúdo técnico gratuito, lista
+Prioridade         de espera e construção de autoridade para o lançamento de Professionals em 2027.
+                   O professor é multiplicador. Ele leva a Promise para dentro da escola onde trabalha e
+                   indica alunos particulares. É o público de menor custo e maior efeito de rede.
+                   BAIXA em verba, ALTA em conteúdo orgânico - 8% da verba
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  8 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+4. Posicionamento e narrativa
+
+4.1 Declaração de posicionamento
+
+    Para escolas, famílias e educadores que buscam excelência acadêmica sem abrir mão da fé, a
+    Promise é o primeiro ecossistema de internacionalização educacional genuinamente cristão do
+    Brasil - porque integra inglês, certificação, formação e experiência internacional em uma única
+    trajetória, em vez de vender pedaços soltos dessa jornada.
+
+Três palavras dessa declaração fazem trabalho pesado e precisam ser defendidas em toda a
+comunicação. Ecossistema é o que separa a Promise de um curso de inglês. Trajetória é o que
+transforma uma compra em uma relação de anos. E cristão é o que define o nicho - não como
+enfeite de marketing, mas como critério real de currículo e de escolha de parceiros.
+
+4.2 A grande ideia da janela
+
+       "Bilíngue ou internacional?"
+
+ Essa pergunta é o eixo criativo de toda a janela. Ela funciona porque expõe uma confusão
+   real e cara: o mercado brasileiro vendeu a palavra bilíngue como se fosse sinônimo de
+  formação internacional, e a maioria das famílias e escolas paga por bilíngue acreditando
+
+estar comprando internacional. Bilíngue é uma característica linguística. Internacional é um
+        caminho com documento, reconhecimento e porta de entrada em universidade.
+
+A Promise não precisa atacar concorrente algum para se diferenciar: basta fazer a pergunta e
+responder com honestidade. Quem faz a pergunta primeiro passa a ser a referência que define
+a categoria - e definir a categoria é a posição competitiva mais valiosa que uma marca nova
+pode ocupar.
+
+4.3 Territórios de mensagem por público
+
+Público        Mensagem central                          Prova que sustenta
+Homeschoolers  Seu filho pode construir uma trajetória   Parceria com instituição americana, emissão
+Famílias e     acadêmica americana sem sair de casa e    de diploma, currículo do Elementary ao High
+alunos         sem trocar de escola                      School
+Escolas        Não existe inglês instantâneo. Existe     Mais de 14 anos de ensino, CELTA, oito anos
+Professores    método, nível e certificação reconhecida  de Centro Preparatório Cambridge
+               Sua escola tem propósito claro. Falta um  Autoria de currículos adotados por sistemas
+               departamento de inglês à altura dele      de ensino, formação docente, avaliação
+               Quem ensina inglês também precisa de um   Experiência em preparação para TKT, CELTA
+               caminho de formação                       e DELTA
+
+4.4 Tom de voz
+
+O tom é o de um professor experiente conversando com um pai preocupado: direto, técnico
+quando precisa, sem jargão de marketing e sem promessa mágica. A Promise não vende
+atalho. Duas frases resumem o padrão de linguagem aprovado: "não existe inglês micro-
+ondas" e "cada estudante tem uma jornada". A primeira estabelece honestidade; a segunda,
+cuidado.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  9 / 32
+                       PROJETO DE MARKETING · SET - DEZ / 2026
+
+ Sempre: primeira pessoa do fundador nos vídeos, números concretos, nome real das
+     instituições parceiras.
+
+ Nunca: promessa de fluência em prazo fixo, comparação nominal com concorrente, uso
+     de fé como argumento de venda emocional.
+
+4.5 Como a narrativa se distribui pelos canais
+
+Canal                  Papel na narrativa                                               Formato dominante
+Reels e vídeos curtos  Abrir a pergunta e provocar reconhecimento do                    Fundador falando à câmera
+Carrossel              problema                                                         Texto e diagrama
+Live e webinário       Explicar a diferença entre bilíngue e                            Conversa e demonstração
+E-mail                 internacional com clareza técnica                                Texto longo e honesto
+WhatsApp               Responder objeções ao vivo e mostrar a                           Conversa individual
+Evento presencial      instituição parceira                                             Palestra e conversa
+                       Aprofundar, documentar e conduzir até a decisão
+                       Personalizar a resposta e conduzir ao
+                       fechamento
+                       Resolver a objeção de confiança de uma só vez
+
+A mesma ideia central atravessa todos os canais, mudando apenas de profundidade. Essa
+repetição deliberada é o que constrói memória de marca em uma janela curta - e o que permite
+que um lead captado no Instagram em setembro reconheça a Promise no estande do evento
+em outubro.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  10 / 32
+                                    PROJETO DE MARKETING · SET - DEZ / 2026
+
+5. Arquitetura de campanhas
+
+A janela roda três campanhas simultâneas com objetivos distintos e orçamentos separados.
+Elas não competem: cada uma alimenta um estágio diferente do negócio. Manter os
+orçamentos apartados é o que impede que a campanha de resultado mais rápido devore a
+verba das outras duas.
+
+5.1 Campanha 1 - Trajetória Internacional
+
+Objetivo           Gerar matrículas para o American School e o programa de homeschooling
+Público            Famílias homeschoolers
+Período            Semana 2 a semana 18, com picos nas semanas 3 a 6 e 11 a 14
+Verba              R$ 17.480 · 46% da mídia paga
+Oferta             Diagnóstico gratuito de trajetória acadêmica com a direção da Promise
+Métrica principal  Custo por matrícula abaixo de R$ 550
+Criativo âncora    Vídeo do fundador com o gancho do ensino médio e da universidade
+
+5.2 Campanha 2 - Inglês com Método
+
+Objetivo           Formar turmas de inglês e vender pacotes de aulas particulares
+Público            Famílias com adolescentes e adultos em busca de fluência e certificação
+Período            Semana 4 a semana 18, com pico nas semanas 14 a 17
+Verba              R$ 9.120 · 24% da mídia paga
+Oferta             Nivelamento gratuito com devolutiva escrita do nível atual
+Métrica principal  Custo por aluno matriculado abaixo de R$ 160
+Criativo âncora    Vídeo "não existe inglês micro-ondas" e depoimento de trajetória
+
+5.3 Campanha 3 - Departamento de Inglês
+
+Objetivo           Agendar diagnósticos com escolas para contratos do ano letivo de 2027
+Público            Mantenedores, diretores e coordenadores de escolas cristãs e clássicas
+Período            Semana 1 a semana 16, com pico nas semanas 6 a 12
+Verba              R$ 8.360 · 22% da mídia paga, complementada por prospecção direta
+Oferta             Diagnóstico gratuito do departamento de inglês, com relatório entregue
+Métrica principal  Custo por reunião qualificada abaixo de R$ 1.400
+Criativo âncora    Material técnico sobre estruturação de departamento de inglês
+
+REGRA DE DECISÃO SOBRE REMANEJAMENTO DE VERBA
+
+A verba só pode ser remanejada entre campanhas após a semana 8, e apenas se a campanha de
+origem tiver acumulado no mínimo trinta leads - volume abaixo disso não permite concluir nada.
+Remanejar antes disso não é otimização: é reagir a ruído estatístico. A campanha 3 é a exceção
+permanente, porque o ciclo de decisão de uma escola é longo e seu resultado aparece meses depois
+do clique.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969      11 / 32
+                                            PROJETO DE MARKETING · SET - DEZ / 2026
+
+5.4 Calendário de intensidade das campanhas
+
+Campanha                      Setembro      Outubro                                     Novembro    Dezembro
+1 - Trajetória Internacional  Teste         Escala                                      PICO        Colheita
+2 - Inglês com Método         Início na S4  Constante                                   Constante   PICO
+3 - Departamento de Inglês    Prospecção    PICO                                        Negociação  Assinatura
+
+A leitura horizontal desta tabela explica por que as três campanhas convivem sem se
+atrapalhar: os picos são desencontrados. A campanha institucional acelera em outubro,
+quando as escolas montam orçamento; a de homeschooling em novembro, quando as famílias
+decidem o ano seguinte; e a de cursos em dezembro, quando o adulto faz promessa de
+recomeço. Essa sequência não é coincidência de calendário: é a razão de a janela ter
+exatamente esses quatro meses.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969              12 / 32
+                                          PROJETO DE MARKETING · SET - DEZ / 2026
+
+6. Canais e táticas
+
+Seis canais compõem a operação da janela. A regra que organiza todos eles é simples: canal
+pago gera volume, canal orgânico gera confiança, e canal humano fecha venda. Nenhum dos
+três substitui os outros dois, e o erro clássico de lançamento é apostar tudo no primeiro.
+
+6.1 Mídia paga - Meta Ads
+
+Instagram e Facebook concentram a totalidade da verba paga da janela. Google Ads fica fora
+deliberadamente: a busca por "escola americana em casa" ou "diploma americano
+homeschooling" tem volume baixo no Brasil, porque a categoria ainda não é conhecida o
+suficiente para ser procurada. É preciso criar a demanda antes de colhê-la.
+
+      Estrutura de conta: uma campanha por público, com conjuntos separados para público
+          frio, remarketing de vídeo e remarketing de site.
+
+      Objetivos: cadastro e conversa por WhatsApp para as campanhas 1 e 2; formulário
+          instantâneo para a campanha 3, por causa da fricção maior do público institucional.
+
+      Criativos: mínimo de três variações por conjunto, sempre com vídeo do fundador como
+          primeira opção - rosto e voz convertem mais do que peça gráfica em oferta de alta
+          consideração.
+
+      Cadência de otimização: leitura às segundas, ajuste de verba às quintas, troca de
+          criativo a cada catorze dias ou quando a frequência ultrapassar 2,5.
+
+6.2 Orgânico - Instagram
+
+O orgânico tem duas funções na janela: sustentar a credibilidade de quem chega pelo anúncio
+e construir o acervo que será reaproveitado em 2027. A meta de frequência é de quatro
+publicações semanais, sendo pelo menos duas em vídeo curto.
+
+Formato                     Frequência    Função
+Reels com o fundador        2 por semana  Autoridade e alcance de público novo
+Carrossel educativo         1 por semana  Salvamento, compartilhamento e prova técnica
+Publicação de prova social  1 por semana  Depoimento, bastidor, material autoral, parceria
+                                          Relacionamento, enquete, resposta a dúvida e chamada
+Stories                     Diários       para conversa
+
+6.3 E-mail marketing
+
+A base de aproximadamente 700 contatos de congressos de homeschooling é o ativo mais
+subestimado da Promise. São pessoas que já demonstraram interesse presencialmente e
+nunca foram trabalhadas. O custo marginal de falar com elas é praticamente zero, e a taxa de
+conversão esperada é várias vezes maior que a de tráfego frio. As réguas estão detalhadas no
+capítulo 11.
+
+6.4 WhatsApp
+
+É o canal de fechamento. Toda campanha paga termina em conversa, e a velocidade de
+resposta é o fator isolado que mais influencia a conversão. O padrão adotado é resposta em
+até quinze minutos em horário comercial e em até duas horas fora dele, com mensagem
+automática informando o prazo.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  13 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+      Listas de transmissão segmentadas por público, nunca grupos - grupo mistura contatos
+          e expõe dados de terceiros.
+
+      Catálogo e mensagens rápidas configurados com as respostas às cinco objeções mais
+          frequentes.
+
+6.5 Eventos e presença institucional
+
+Eventos são o canal de maior taxa de conversão para os dois públicos prioritários, porque
+resolvem de uma vez a objeção de confiança. A Expo Homeschooling e encontros de escolas
+cristãs concentram, em dois dias, um público que o tráfego pago levaria meses para alcançar
+com o mesmo grau de qualificação. A participação exige captação estruturada de contatos -
+sem isso, o evento vira custo sem retorno mensurável.
+
+6.6 Parcerias e indicação
+
+Igrejas, comunidades de homeschooling, escolas parceiras e os distribuidores Kairos e Arkos
+formam a rede de indicação. Este é o canal de menor custo e maior confiança da janela, e deve
+ser trabalhado com contato pessoal do fundador, não com material genérico.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  14 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+7. Plano de mídia e verba
+
+A verba de mídia paga da janela é de R$ 38.000, correspondente a 29% do investimento inicial
+de R$ 130.000 previsto no plano de negócios. É a maior rubrica isolada do investimento, e a
+alocação abaixo segue a prioridade comercial definida no capítulo 3.
+
+                     Figura 1 - Alocação da verba de mídia paga por público
+
+7.1 Distribuição mensal
+
+Mês       Verba                  Ênfase do período        Racional
+Setembro  R$ 7.600               Lançamento e teste de    Verba reduzida enquanto se descobre o que
+                                 criativos                funciona; erro barato é erro bom
+                                                          Maior volume do período; público de escolas
+Outubro   R$ 11.400              Escala do que funcionou  em planejamento do ano letivo
+                                                          Janela de decisão das famílias para o ano
+Novembro  R$ 11.400              Pico de matrícula        seguinte
+                                                          Primeira quinzena de fechamento; segunda
+Dezembro  R$ 7.600               Colheita e retomada      quinzena apenas remarketing barato
+TOTAL     R$ 38.000              18 semanas
+
+A REGRA DOS PRIMEIROS TRINTA DIAS
+
+Nenhuma decisão de escala deve ser tomada antes que uma campanha acumule trinta leads ou
+trinta dias de veiculação, o que vier primeiro. Setembro existe para aprender, não para performar.
+Escalar um criativo com base em cinco resultados é a forma mais comum de queimar verba de
+lançamento inteira em três semanas.
+
+7.2 Custos-alvo por público
+
+Público                          Custo por lead           Conversão lead-               Custo por aquisição
+Homeschoolers - American School  R$ 18 a R$ 35            venda                         R$ 250 a R$ 550
+Famílias e alunos - cursos       R$ 8 a R$ 15                                           R$ 90 a R$ 160
+Escolas - B2B                    R$ 40 a R$ 90            5% a 9%                       R$ 600 a R$ 1.400
+Professores - lista de espera    R$ 10 a R$ 20            8% a 12%                      não se aplica em 2026
+                                                          6% a 10%
+                                                          não se aplica em
+                                                          2026
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  15 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+Essas faixas são as mesmas registradas no capítulo 7 do plano de negócios e devem ser recalibradas com
+dados reais após os primeiros noventa dias de operação com mídia paga.
+
+7.3 Regras de uso da verba
+
+      Nenhuma campanha começa sem que a página de destino correspondente esteja
+          publicada e medida.
+
+      Verba diária de teste limitada a R$ 40 por conjunto até que se acumulem trinta
+          resultados.
+
+      Criativo com custo por lead acima do teto por duas semanas seguidas é desligado, não
+          ajustado.
+
+      Remarketing recebe no mínimo 20% da verba de cada campanha - é o dinheiro mais
+          barato da conta.
+
+      A verba de dezembro tem corte automático no dia 20; depois disso só remarketing de
+          baixo custo.
+
+      Toda alteração de verba é registrada com data, valor e motivo, para que a leitura de
+          dezembro seja possível.
+
+     RESERVA TÉCNICA
+    Recomenda-se manter 10% da verba, cerca de R$ 3.800, sem alocação prévia. Essa reserva cobre
+    duas situações previsíveis: um criativo que performa acima do esperado e merece verba adicional
+    imediata, e uma data de evento que se confirme fora do previsto. Verba integralmente
+    comprometida no primeiro dia retira da operação a única flexibilidade que ela tem.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  16 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+8. Funil e metas de conversão
+
+O funil abaixo é a tradução operacional da meta comercial. Ele parte do resultado desejado - 59
+matrículas e contratos - e sobe até o volume de alcance necessário para produzi-lo. É esse
+cálculo invertido que permite saber, já na semana 4, se a janela está no caminho certo.
+
+                               Figura 2 - Funil-alvo da janela de lançamento
+
+8.1 Etapas, metas e responsáveis
+
+Etapa                          Meta da janela               Taxa de passagem            Onde acontece
+Alcance                        380.000 impressões           4,5% para tráfego           Meta Ads e orgânico
+Tráfego                        17.000 cliques e visitas ao  6,5% para lead              Site, páginas de destino e
+                               perfil                                                   Instagram
+Leads                          1.100 contatos               27% para reunião            Formulário, WhatsApp e
+                               qualificados                                             base reativada
+                                                                                        Videochamada e
+Reuniões e diagnósticos        300 conversas realizadas 20% para fechamento             WhatsApp
+                                                                                        Contrato assinado e
+Matrículas e contratos         59 fechamentos               R$ 119.680                  matrícula paga
+
+8.2 Leitura do funil como diagnóstico
+
+Quando a meta não é atingida, o funil diz exatamente onde está o problema, e cada gargalo
+tem um remédio diferente. Confundir os diagnósticos leva a gastar mais verba num problema
+que não é de verba.
+
+Sintoma                        Causa provável                 Ação corretiva
+Alcance alto e tráfego baixo   Criativo fraco ou público mal  Trocar criativo antes de mexer em
+Tráfego alto e leads baixos    definido                       verba
+Leads altos e reuniões baixas  Página de destino confusa ou   Revisar a página e a oferta, não o
+Reuniões altas e fechamentos   promessa desalinhada           anúncio
+baixos                         Lentidão ou roteiro fraco no   Reduzir tempo de resposta e revisar o
+                               atendimento                    roteiro
+                               Objeção de preço, prova ou     Ajustar condição de pagamento e
+                               confiança não resolvida        reforçar prova
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  17 / 32
+                              PROJETO DE MARKETING · SET - DEZ / 2026
+
+O INDICADOR QUE ANTECIPA O RESULTADO
+
+O melhor indicador antecedente da janela não é o número de leads: é o número de reuniões
+realizadas por semana. Leads podem inflar com tráfego barato e mal qualificado; reunião realizada
+é intenção confirmada. A meta é de aproximadamente 17 reuniões por semana a partir da semana
+4. Se esse número cair por duas semanas seguidas, a janela está em risco, mesmo que o volume de
+leads pareça saudável.
+
+8.3 Ritmo esperado mês a mês
+
+Mês       Leads  Reuniões     Fechamentos                                               Acumulado
+Setembro  240    35           5                                                         5
+Outubro   310    88           13                                                        18
+Novembro  330    92           28                                                        46
+Dezembro  220    85           13                                                        59
+TOTAL     1.100  300          59                                                        R$ 119.680
+
+O desenho do ritmo é deliberadamente desigual. Setembro produz poucos fechamentos
+porque está aprendendo; novembro concentra quase metade porque é quando as famílias
+decidem; dezembro cai em leads mas mantém reuniões, porque trabalha base já captada em
+vez de tráfego novo. Comparar um mês com o anterior sem levar isso em conta produz
+diagnóstico errado.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969              18 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+9. Cronograma semanal - setembro a dezembro de
+2026
+
+Este é o capítulo operacional do documento. Cada uma das dezoito semanas tem um foco
+único, um conjunto de entregas verificáveis e uma meta própria. A disciplina de fechar a
+semana com as entregas cumpridas vale mais do que qualquer ajuste fino de campanha: em
+uma operação enxuta, o inimigo não é a falta de ideia, é a dispersão.
+
+     RITUAL SEMANAL FIXO
+    Segunda-feira, 30 minutos: leitura dos números da semana anterior, definição do foco da semana e
+    revisão da fila de leads sem resposta.
+    Quinta-feira, 20 minutos: ajuste de verba, corte de criativo com baixo desempenho e conferência
+    das entregas em atraso.
+    Sexta-feira: publicação do painel semanal com os sete indicadores do capítulo 14.
+
+9.1 Setembro - fundação e lançamento
+
+S  Período          Foco                Entregas-chave                                       Meta da semana
+
+S1 01 a 06/set Fundação técnica         Publicar o site com as três páginas de destino ·     Infraestrutura
+                                        instalar pixel e configurar eventos de conversão ·   pronta
+S2 07 a 13/set      Lançamento          autenticar domínio de e-mail · abrir gerenciador de  Sem mídia paga
+                    público             negócios · definir quem responde lead, em quanto
+                                        tempo e onde registra · primeiras quatro             60 leads
+S3 14 a 20/set Prova e objeção          publicações no Instagram                             8 reuniões
+
+                                        Lançamento oficial da marca em 10/set · viagem a     90 leads
+                                        São Paulo nos dias 9 e 10 para reuniões de parceria  12 reuniões
+                                        · publicação e sequência de stories de lançamento
+                                        · primeiro e-mail para a base de homeschoolers ·     90 leads
+                                        subir campanhas 1 e 3                                15 reuniões
+                                                                                             3 matrículas
+                                        Carrossel "bilíngue ou internacional" · vídeo sobre  100 leads
+                                        validade do diploma americano · live de              17 reuniões
+                                        apresentação do American School · segundo e-mail     5 matrículas
+                                        da régua · primeiros três criativos de teste da      acumuladas
+                                        campanha 1
+
+S4 21 a 27/set      Abertura de cursos  Subir a campanha 2 · colocar o nivelamento
+                                        gratuito no ar · prospecção ativa de 30 escolas por
+                                        e-mail e telefone · conteúdo técnico para diretores
+
+S5 28/set a 04/out  Primeira leitura    Relatório de setembro · cortar criativos com custo
+                                        por lead acima do teto · revisar página de destino
+                                        de menor conversão · fechar a primeira leva de
+                                        matrículas
+
+9.2 Outubro - escala e evento
+
+S  Período          Foco                Entregas-chave                                       Meta da semana
+                    Escala do que
+S6 05 a 11/out      funcionou           Aumentar verba dos conjuntos vencedores ·            100 leads
+                                        terceiro e-mail da régua · primeiro disparo para a   18 reuniões
+S7 12 a 18/out      Evento presencial   base de escolas · carrossel sobre estruturação de
+S8 19 a 25/out                          departamento de inglês                               150 contatos
+                    Conversão do pós-                                                        captados no evento
+                    evento              Expo Homeschooling e encontros do segmento
+                                        (data a confirmar) · palestra "quero meu filho       35 reuniões
+                                        bilíngue ou internacional?" · captação estruturada   8 matrículas
+                                        de contatos com QR code · material impresso e
+                                        banner
+
+                                        Contato com 100% dos captados em até 72 horas ·
+                                        régua específica de pós-evento · remarketing para
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969       19 / 32
+                                        PROJETO DE MARKETING · SET - DEZ / 2026
+
+S    Período        Foco                Entregas-chave                                       Meta da semana
+
+S9 26/out a 01/nov  Matrícula           quem assistiu vídeo · agendamento em bloco de        20 reuniões
+                    antecipada          diagnósticos                                         8 matrículas
+                                                                                             18 acumuladas
+                                        Campanha de condição especial de matrícula para
+                                        2027 · e-mail com prazo definido · relatório de
+                                        outubro · proposta comercial enviada às escolas
+                                        em negociação
+
+9.3 Novembro - pico de decisão
+
+S    Período        Foco                Entregas-chave                                       Meta da semana
+
+S10 02 a 08/nov     Pico de matrícula   Live com a instituição americana parceira ·          22 reuniões
+                                        depoimento das primeiras famílias matriculadas ·     10 matrículas
+S11 09 a 15/nov     Quebra de objeção   verba máxima na campanha 1 · remarketing
+                    de preço            agressivo de quem abriu e não respondeu              20 reuniões
+S12 16 a 22/nov                                                                              8 matrículas
+                    Fechamento          Conteúdo aberto sobre custo total do programa e
+S13 23 a 29/nov     institucional       parcelamento · comparativo honesto entre             1º contrato escolar
+                                        alternativas · atendimento individual às objeções    assinado
+                    Condição de         registradas · segunda rodada com escolas
+                    matrícula                                                                25 reuniões
+                                        Reuniões com mantenedores para entrar no             10 matrículas
+                                        orçamento de 2027 · entrega dos relatórios de        46 acumuladas
+                                        diagnóstico escolar · negociação de contrato ·
+                                        sincronizar assinatura com a regularização
+                                        societária
+
+                                        Campanha de fim de novembro com condição de
+                                        matrícula, nunca desconto em mensalidade · prazo
+                                        real e comunicado com antecedência · relatório de
+                                        novembro
+
+9.4 Dezembro - colheita e virada
+
+S    Período        Foco                Entregas-chave                                       Meta da semana
+                    Virada para inglês
+S14  30/nov a                           Reposicionar a campanha 2 para turmas de janeiro     25 nivelamentos
+     06/dez                             · mensagem "comece 2027 falando" ·                   agendados
+                                        agendamento em bloco de nivelamentos · reativar
+S15 07 a 13/dez Pico de cursos          leads de inglês não convertidos                      20 reuniões
+                                                                                             9 matrículas
+                                        Realização dos nivelamentos com devolutiva escrita
+                                        · fechamento das turmas de janeiro · definição de    2º contrato
+                                        horários e professores · confirmação de matrícula    assinado
+                                        com pagamento                                        59 fechamentos
+                                                                                             acumulados
+S16 14 a 20/dez     Últimos             Confirmação de todas as matrículas pendentes ·
+                    fechamentos         assinatura do segundo contrato escolar ·             Manter presença
+                                        encerramento das campanhas de aquisição fria ·       Sem meta de venda
+                                        agradecimento à base
+                                                                                             Relatório entregue
+S17 21 a 27/dez Manutenção              Apenas remarketing de baixo custo · conteúdo         Plano de janeiro
+                                        institucional e de fim de ano · organização do       aprovado
+S18  28/dez a       Consolidação        acervo de criativos · operação reduzida
+     03/jan
+                                        Relatório completo da janela · cálculo do custo por
+                                        aquisição real por público · catalogação do que
+                                        funcionou e do que não funcionou · briefing de
+                                        marketing para 2027
+
+   SOBRE AS DATAS DOS EVENTOS
+
+   As datas da Expo Homeschooling e dos encontros de escolas cristãs ainda não estavam confirmadas
+   na elaboração deste documento. A semana 7 está reservada para essa finalidade e deve ser
+   realocada assim que o calendário oficial for divulgado. Se o evento cair em outra semana, o bloco de
+   pós-evento da semana 8 acompanha o deslocamento - as duas semanas funcionam sempre em par.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969       20 / 32
+                         PROJETO DE MARKETING · SET - DEZ / 2026
+
+9.5 Distribuição do esforço ao longo da janela
+
+Bloco         Semanas    Natureza do trabalho                                           Meta acumulada
+                                                                                        de fechamentos
+Fundação      S1 a S2    Construção de infraestrutura e lançamento                      0
+                         público
+Aprendizado   S3 a S5    Teste de criativos, páginas e oferta com verba                 5
+                         reduzida
+Escala        S6 a S9    Ampliação do que funcionou e evento                            18
+Decisão       S10 a S13  presencial                                                     46
+Colheita      S14 a S16  Pico de matrícula e fechamento institucional                   59
+Consolidação  S17 a S18  Turmas de janeiro e assinatura de contratos                    59
+                         Relatório, catalogação e briefing de 2027
+
+Metade dos fechamentos da janela se concentra em quatro semanas, entre o início de
+novembro e o fim do mês. Isso significa que o trabalho de setembro e outubro não deve ser
+julgado por vendas: ele é julgado por leads qualificados acumulados e por reuniões agendadas.
+Cobrar venda em setembro é o caminho mais rápido para desmontar uma operação que
+estava funcionando.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  21 / 32
+                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+10. Calendário editorial orgânico
+
+O conteúdo orgânico da janela se organiza em cinco pilares. A proporção sugerida por semana
+é de dois conteúdos de autoridade, um de prova, um de oferta e stories diários de
+relacionamento. Manter essa proporção evita o erro mais comum de perfil novo em fase de
+lançamento: virar catálogo de venda e perder alcance.
+
+Pilar          O que é                          Peso  Exemplos de pauta
+Autoridade                                      40%
+               Ensina algo verdadeiro e útil,         Por que bilíngue não é internacional · como funciona a
+Prova          mesmo para quem nunca            20%   validação de estudos · o que o Cambridge realmente
+Oferta         comprar                          20%   mede · erros comuns ao montar um departamento de
+Identidade                                      10%   inglês
+Relacionament  Mostra que a Promise sabe fazer  10%
+o              o que diz                              Materiais e currículos autorais · bastidor de aula ·
+                                                      depoimento de família · parceria internacional ·
+               Convida para uma ação                  trajetória do fundador
+               concreta
+                                                      Diagnóstico gratuito · nivelamento gratuito · turmas
+               Comunica a cosmovisão e os             de janeiro · vagas do American School
+               valores sem sermão
+                                                      Por que educação e fé não competem · o que significa
+               Abre conversa e escuta a               formação integral · propósito por trás do método
+               audiência
+                                                      Enquete sobre dúvidas · caixa de perguntas ·
+                                                      resposta pública a dúvida recorrente
+
+10.1 Grade semanal padrão
+
+Dia                Formato                      Pilar                                   Observação
+                                                Autoridade                              Melhor dia de alcance para
+Segunda            Reels do fundador            Autoridade ou identidade                público adulto
+                                                Prova                                   Formato de maior salvamento e
+Quarta             Carrossel                    Oferta                                  compartilhamento
+                                                Relacionamento                          Depoimento, bastidor ou
+Sexta              Reels ou vídeo curto                                                 material
+                                                                                        Dia de maior tempo livre das
+Sábado ou domingo  Publicação de oferta                                                 famílias
+                                                                                        Mínimo de três sequências
+Todos os dias      Stories                                                              diárias
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  22 / 32
+                                     PROJETO DE MARKETING · SET - DEZ / 2026
+
+11. E-mail marketing e réguas de relacionamento
+
+A Promise entra na janela com duas bases próprias e constrói uma terceira. Cada base tem
+temperatura, histórico e permissão diferentes, e por isso recebe uma régua distinta. Disparar a
+mesma mensagem para todas seria desperdiçar o único ativo de aquisição que já existe.
+
+11.1 Base A - contatos de congressos de homeschooling
+
+Aproximadamente 700 contatos, captados presencialmente em dois eventos e nunca
+trabalhados. São contatos frios pelo tempo decorrido, mas quentes pela intenção original. A
+régua começa reconhecendo o tempo de silêncio, o que aumenta a taxa de abertura e reduz a
+marcação como indesejado.
+
+E-    Momento    Assunto e conteúdo                                                     Chamada para ação
+mail  Semana 2                                                                          Responder a este e-mail
+1     Semana 3   Retomada honesta: quem somos, onde nos encontramos                     Assistir à live de apresentação
+      Semana 6   e por que estamos falando agora                                        Agendar diagnóstico gratuito
+2     Semana 9                                                                          Agendar diagnóstico gratuito
+      Semana 11  A pergunta do ensino médio: como o homeschooling se                    Falar no WhatsApp
+3     Semana 13  conecta com a universidade                                             Garantir a vaga
+4     Semana 16                                                                         Confirmar matrícula
+5                Como funciona o American School na prática: currículo,
+6                carga, diploma e custo
+7
+                 Histórias e dúvidas reais respondidas pela direção
+
+                 Custo total, parcelamento e o que está e o que não está
+                 incluído
+
+                 Condição de matrícula para 2027 com prazo definido
+
+                 Últimas vagas da primeira turma
+
+11.2 Base B - escolas e lideranças educacionais
+
+Base institucional de relacionamento do fundador. O tom aqui é técnico e sem urgência
+artificial: diretor não decide por prazo curto, decide por orçamento e por confiança. A régua
+acompanha o calendário de planejamento do ano letivo.
+
+E-    Momento    Assunto e conteúdo                                                     Chamada para ação
+mail  Semana 6
+1     Semana 9   Diagnóstico gratuito do departamento de inglês da sua                  Agendar 40 minutos
+      Semana 12  escola                                                                 Baixar o material
+2     Semana 16                                                                         Solicitar proposta
+                 Material técnico: os cinco erros mais comuns na                        Reservar data de implantação
+3                estruturação de inglês
+
+4                Como entrar no orçamento de 2027 sem estourar o custo
+                 por aluno
+
+                 Agenda de implantação para o primeiro trimestre de
+                 2027
+
+11.3 Base C - leads novos captados na janela
+
+Base construída pelas campanhas pagas, pelo evento e pelo orgânico. Recebe régua
+automática de boas-vindas em cinco mensagens nos primeiros dez dias, segmentada pela
+oferta de origem, e depois entra na régua correspondente da base A ou B. O lead de evento
+tem régua própria e prazo de contato de 72 horas, porque a memória do encontro presencial
+decai rápido.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  23 / 32
+                                           PROJETO DE MARKETING · SET - DEZ / 2026
+
+CUIDADOS DE ENTREGABILIDADE
+
+Autenticar o domínio antes do primeiro disparo. Enviar 700 e-mails de um domínio não autenticado
+compromete a reputação de envio de forma difícil de reverter.
+
+Aquecer o domínio: começar com 100 envios diários e crescer gradualmente.
+
+Manter link de descadastro visível e honrar o pedido imediatamente. Base limpa vale mais que base
+grande.
+
+11.4 Metas de desempenho por base
+
+Base                       Taxa de         Taxa de                                      Leitura do resultado
+                           abertura        clique
+                                                                                        Abaixo de 15% indica assunto ou
+A - congressos de homeschooling 22% a 30%  3% a 6%                                      remetente inadequados
+                                                                                        Base pequena e quente; abertura
+B - escolas e lideranças   30% a 40%       4% a 8%                                      baixa indica problema técnico
+                                                                                        Queda ao longo da régua é normal;
+C - leads novos da janela  35% a 45%       6% a 12%                                     queda abrupta indica excesso de
+                                                                                        frequência
+
+Uma observação sobre expectativa: a base A tende a apresentar o pior desempenho nos dois
+primeiros envios e melhorar a partir do terceiro, à medida que o remetente se torna conhecido.
+Descartar a base após um único disparo frustrante é um erro caro, porque ela contém
+exatamente o público de maior ticket da janela.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  24 / 32
+                                                       PROJETO DE MARKETING · SET - DEZ / 2026
+
+12. Checklist de materiais
+
+A lista abaixo é o inventário mínimo para operar a janela. Itens marcados como pré-requisito
+precisam estar prontos antes de qualquer verba ser investida em mídia.
+
+Categoria  Item                                        Quando                           Status desejado
+Digital    Site institucional publicado                S1                               Pré-requisito
+Digital    Página de destino do American School        S1                               Pré-requisito
+Digital    Página de destino de cursos de inglês       S1                               Pré-requisito
+Digital    Página de destino de diagnóstico escolar    S1                               Pré-requisito
+Medição    Pixel instalado e eventos de conversão      S1                               Pré-requisito
+Medição    Ferramenta de registro comercial dos leads  S1                               Pré-requisito
+Medição    Painel semanal de indicadores               S2                               A produzir
+Vídeo      Vídeo âncora de homeschooling               S1                               Já gravado
+Vídeo      Vídeo âncora de cursos de inglês            S3                               Já gravado
+Vídeo      Vídeo de apresentação institucional         S2                               A produzir
+Vídeo      Três variações curtas por campanha          Contínuo                         A produzir
+Gráfico    Kit de identidade para redes sociais        S1                               A produzir
+Gráfico    Banco de 12 carrosséis educativos           S1 a S6                          A produzir
+Gráfico    Flyer da Promise for Learners               S6                               Existente - revisar
+Gráfico    Banner e material de evento com QR code     S6                               A produzir
+Comercial  Proposta comercial padrão para escolas      S4                               A produzir
+Comercial  Roteiro de atendimento e objeções           S2                               A produzir
+Comercial  Contrato de matrícula e termos de uso       S3                               Jurídico
+Comercial  Modelo de relatório de diagnóstico escolar  S6                               A produzir
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                       25 / 32
+                                               PROJETO DE MARKETING · SET - DEZ / 2026
+
+13. Governança, papéis e ferramentas
+
+A operação da janela é enxuta e depende fortemente da direção executiva. Reconhecer isso
+explicitamente é o que permite protegê-la: o tempo do fundador é o recurso mais escasso do
+projeto e precisa ser alocado onde ninguém o substitui.
+
+13.1 Papéis e responsabilidades
+
+Papel                 Responsável              Responsabilidades na janela               Horas
+                                                                                         semanais
+Direção executiva     Calebe Braga             Narrativa, gravação de vídeos, reuniões   12 a 15 h
+                                               comerciais, diagnósticos, negociação com
+Mídia paga            Parceiro de marketing    escolas e decisão de verba                6 a 8 h
+Conteúdo e redes      Parceiro de marketing                                              8 a 10 h
+Atendimento           A definir - hoje na      Estruturação e otimização das campanhas,  8 a 10 h
+comercial             direção                  criativos e relatório semanal             4 a 6 h
+Apoio administrativo  Parceiro administrativo
+                                               Calendário editorial, edição de vídeo,
+                                               publicação e stories
+
+                                               Primeira resposta a leads, agendamento e
+                                               acompanhamento no registro comercial
+
+                                               Contratos, cobrança, matrícula e
+                                               documentação
+
+O GARGALO MAIS PROVÁVEL DA JANELA
+
+O atendimento comercial é o ponto de ruptura mais provável. Ele consome muitas horas, exige
+resposta rápida e hoje recai sobre a mesma pessoa que grava os vídeos e conduz as reuniões. A
+partir da semana 6, com o volume previsto de leads, esse acúmulo se torna insustentável. A
+recomendação é contratar apoio de atendimento até a semana 5, ainda que em regime parcial. Sem
+isso, leads pagos com verba esfriam na fila - e lead que esfria é dinheiro já gasto que não volta.
+
+13.2 Ferramentas mínimas
+
+      Gerenciador de negócios da Meta para campanhas e medição.
+      Ferramenta de e-mail com automação de régua e domínio autenticado.
+      Planilha ou ferramenta simples de registro comercial, com origem, estágio, responsável
+
+          e data do último contato.
+      WhatsApp Business com catálogo, mensagens rápidas e etiquetas por estágio.
+      Repositório único de criativos, roteiros e materiais, organizado por campanha.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969   26 / 32
+                                                            PROJETO DE MARKETING · SET - DEZ / 2026
+
+14. Indicadores e painel semanal
+
+Sete indicadores bastam para conduzir a janela. Acompanhar mais do que isso, numa operação
+deste porte, produz relatório em vez de decisão.
+
+Indicador                  Meta semanal a partir            Frequência                  Ação se estiver fora da meta
+                           da S4                            Semanal
+Leads gerados              Aproximadamente 65               Semanal                     Revisar criativo e público antes de
+                                                            Semanal                     aumentar verba
+Custo por lead por         Dentro das faixas do capítulo 7  Semanal
+campanha                                                    Quinzenal                   Cortar conjunto acima do teto por
+                           Aproximadamente 17               Semanal                     duas semanas seguidas
+Reuniões realizadas        Abaixo de 15 minutos em          Semanal
+                           horário comercial                                            Indicador antecedente crítico - agir
+Tempo médio de primeira    20%                                                          imediatamente
+resposta
+Taxa de fechamento por     Aproximadamente 4                                            Redistribuir atendimento ou contratar
+reunião                                                                                 apoio
+                           Aproximadamente 140
+Matrículas e contratos                                                                  Revisar oferta, condição de
+                                                                                        pagamento e prova
+Crescimento de seguidores
+                                                                                        Reavaliar meta ou verba com dois
+                                                                                        meses de antecedência
+
+                                                                                        Ajustar frequência e formato do
+                                                                                        orgânico
+
+14.1 Marcos de verificação
+
+Marco                      Quando  Pergunta que precisa ser respondida
+Fim de setembro            S5      A infraestrutura está pronta e o custo por lead está dentro da faixa?
+Meio da janela             S9      As matrículas acumuladas estão em pelo menos 30% da meta?
+Fim de novembro            S13     As matrículas acumuladas estão em pelo menos 75% da meta?
+Fechamento                 S18     A meta foi atingida e o acervo para 2027 está catalogado?
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  27 / 32
+                                 PROJETO DE MARKETING · SET - DEZ / 2026
+
+15. Riscos e planos de contingência
+
+Os riscos abaixo estão ordenados por probabilidade multiplicada por impacto. Para cada um há
+um gatilho objetivo de acionamento, para que a decisão não dependa de percepção no calor do
+momento.
+
+Risco                    Impact  Gatilho de                      Plano de contingência
+                         o       acionamento
+Atraso na regularização  Alto                                    Manter prospecção e diagnósticos; postergar
+societária                       Não concluída até 31/out        apenas a assinatura; usar carta de intenção
+                         Alto                                    com a escola
+Atendimento comercial            Tempo de resposta acima
+saturado                 Médio   de 1 hora por três dias         Contratar apoio parcial de atendimento e
+                         Alto    seguidos                        reduzir verba até normalizar o fluxo
+Custo por lead acima do  Médio
+teto                     Médio   Acima da faixa por duas         Trocar criativo antes de mexer em verba;
+                         Alto    semanas consecutivas            revisar página de destino; testar público
+Site ou páginas                                                  semelhante
+atrasados                        Não publicados até o fim da
+                                 S1                              Não subir mídia paga; usar formulário simples
+Evento em data                                                   e WhatsApp como destino provisório
+desfavorável                     Calendário oficial conflitante
+                                                                 Realocar as semanas 7 e 8 em par; compensar
+Baixa conversão da               Abertura abaixo de 15% no       com live e ação em comunidades
+base histórica                   segundo e-mail
+                                                                 Reescrever assunto e remetente; migrar
+Dependência do                   Qualquer indisponibilidade      abordagem para WhatsApp; higienizar a base
+fundador                         de duas semanas
+                                                                 Manter banco de vídeos gravados com
+                                                                 antecedência mínima de três semanas
+
+CRITÉRIO DE REAVALIAÇÃO DA JANELA
+
+Se, ao fim da semana 9, as matrículas acumuladas estiverem abaixo de 30% da meta, a
+recomendação não é aumentar a verba. É parar, revisar oferta e página de destino, e só então
+retomar o investimento. Aumentar a verba sobre um funil que não converte apenas acelera o
+consumo do caixa - e o caixa da janela é o mesmo que sustenta o primeiro ano de operação.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  28 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+Anexo A - Roteiros aprovados e banco de ganchos
+
+Os roteiros abaixo foram definidos e gravados pela direção executiva em agosto de 2026.
+Estão transcritos aqui em forma resumida para servir de referência de tom nas peças
+derivadas.
+
+A.1 Roteiro âncora - homeschooling e American School
+
+     ABERTURA
+    "Você escolheu homeschooling para o seu filho para ter mais liberdade na educação dele. Mas já
+    parou para pensar como fica o ensino médio e, mais para a frente, a faculdade?"
+
+Desenvolvimento: reconhecer a escolha da família sem julgamento, nomear a angústia real da
+documentação e do acesso à universidade, apresentar o American School como caminho de
+validação acadêmica, explicitar a parceria com a instituição americana e a emissão de
+diploma.
+
+     VIRADA
+    "E se o seu filho pudesse construir uma trajetória acadêmica americana sem precisar sair do Brasil
+    ou trocar de escola?"
+
+Encerramento e chamada para ação: "quer entender como funciona? Clique em Saiba Mais."
+
+A.2 Roteiro âncora - cursos de inglês
+
+     ABERTURA
+    "Olá, meu nome é Calebe Braga e sou professor há mais de quinze anos."
+
+Desenvolvimento: a promessa honesta contra a promessa fácil. A frase-chave da campanha é
+"não existe inglês micro-ondas". Em seguida, o reconhecimento da frustração acumulada:
+"tem muita gente que quase viajou para fora do país, que quase fez o mestrado". A credencial
+entra depois da dor, nunca antes: mais de doze anos vivendo nos Estados Unidos e quinze anos
+aperfeiçoando a metodologia. Encerramento com o convite ao nivelamento gratuito.
+
+A.3 Roteiro de palestra e apresentação em evento
+
+     TÍTULO E PERGUNTA CENTRAL
+    "Eu quero meu filho bilíngue ou internacional?"
+
+Estrutura sugerida em vinte minutos: cinco minutos separando os dois conceitos com
+exemplos concretos; cinco minutos sobre o que uma universidade estrangeira efetivamente
+pede de um candidato; cinco minutos sobre o caminho de validação acadêmica; cinco minutos
+de perguntas. A oferta aparece apenas ao final, como convite para conversa individual - nunca
+como venda no palco.
+
+A.4 Banco de ganchos de abertura
+
+      A pergunta que todo pai homeschooler evita fazer sobre o ensino médio.
+      Bilíngue não é internacional. E a diferença custa caro quando se descobre tarde.
+      Seu filho estuda inglês há anos. Ele conseguiria provar isso para uma universidade?
+      Não existe inglês micro-ondas.
+      Sua escola tem propósito claro. E o departamento de inglês, tem?
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  29 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+      Abrir uma escola cristã é difícil. Montar o departamento de inglês dela costuma ser
+          mais.
+
+      Quem ensina inglês também precisa de um caminho de formação.
+
+A.5 Regras de produção dos vídeos
+
+      Gravar em bloco: uma sessão mensal produz o material de quatro semanas e protege a
+          operação contra a indisponibilidade do fundador.
+
+      Primeiros três segundos sem introdução e sem logo - o gancho vem antes de qualquer
+          apresentação.
+
+      Legenda sempre embutida; a maioria assiste sem som.
+      Formato vertical, enquadramento na altura do peito, luz natural sempre que possível.
+      Uma ideia por vídeo. Vídeo que tenta explicar o ecossistema inteiro não explica nada.
+
+                                                Experiências internacionais - território visual da campanha 1
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  30 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+Anexo B - Checklist de participação em evento
+
+Aplicável à Expo Homeschooling e a encontros de escolas cristãs. O objetivo de um evento não
+é vender no estande: é captar contatos qualificados com contexto suficiente para converter na
+semana seguinte.
+
+B.1 Antes
+
+      Confirmar formato de participação: estande, palestra ou ambos.
+      Produzir banner, flyer e QR code com destino a uma página de captação específica do
+
+          evento.
+      Preparar formulário curto - nome, WhatsApp, e-mail, idade do filho e etapa escolar.
+      Publicar antes do evento convidando a audiência a visitar o estande.
+      Definir a meta de contatos e quem faz a captação em cada turno.
+
+B.2 Durante
+
+      Registrar todo contato no momento, com uma anotação curta sobre a dúvida principal
+          da família.
+
+      Gravar material de bastidor para conteúdo posterior, com autorização das pessoas
+          filmadas.
+
+      Agendar diagnósticos já no local, com data e horário definidos.
+      Não fazer proposta de preço no estande - a conversa de valor exige contexto individual.
+
+B.3 Depois
+
+      Contato individual com 100% dos captados em até 72 horas.
+      Disparar a régua específica de pós-evento, distinta da régua da base histórica.
+      Publicar conteúdo de retorno do evento com prova social.
+      Calcular o custo por contato captado e comparar com o custo por lead da mídia paga.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  31 / 32
+                                                                                                                      PROJETO DE MARKETING · SET - DEZ / 2026
+
+Anexo C - Controle do documento
+
+Documento              Projeto de Marketing - janela de lançamento setembro a dezembro de 2026
+Versão                 1.0 · 31 de agosto de 2026
+Elaboração             Direção Executiva da Promise Education Group com apoio de consultoria de
+                       planejamento
+Base de dados          Modelo financeiro do Plano de Negócios 2027-2031 e transcrições das reuniões de
+Revisão                definição de modelo, precificação e roteiros de agosto de 2026
+Documento relacionado  Semanal nos rituais de segunda-feira; revisão estrutural ao fim de cada mês
+Confidencialidade      Plano de Negócios Promise Education Group 2027-2031
+                       Documento interno. Distribuição restrita à direção, à equipe de marketing e a
+                       parceiros de execução.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  32 / 32
+

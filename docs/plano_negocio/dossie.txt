@@ -1,0 +1,1601 @@
+BASE DE CONTEXTO INSTITUCIONAL · DOCUMENTO
+DE REFERÊNCIA
+
+PROMISE
+
+DOSSIÊ DE CONTEXTO
+
+Documento único de referência sobre a Promise Education Group: identidade, propósito,
+identidade visual, modelo de negócio, portfólio, preços, públicos, mercado, operação,
+finanças, narrativa e decisões tomadas. Elaborado para servir de base de conhecimento a
+equipes de marketing, agências, parceiros e sistemas de inteligência artificial.
+
+Schools                  Learners       Professionals       Global
+
+ ESCOLAS             FAMÍLIAS E ALUNOS      EDUCADORES  INTERNACIONAL
+
+Documento            Dossiê de contexto institucional - base de conhecimento
+Empresa              Promise Education Group (marca comercial: Promise English)
+Fundador e Diretor
+Executivo            Calebe Braga
+Site provisório
+Contato              https://promise-peach-eight.vercel.app/
+Destinatário         calebe@promiseenglish.com · (83) 99697-7969
+Versão do documento  Analista de marketing, agências, parceiros e sistemas de IA
+                     1.0 · 31 de agosto de 2026
+                                       DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Sumário
+
+0. Como usar este documento                                                             3
+
+1. Identidade da empresa                                                                5
+
+2. Propósito, missão, visão e valores                                                   7
+
+3. Identidade visual                                                                    9
+
+4. Contatos e presença digital                                                          13
+
+5. Modelo de negócio - as quatro frentes                                                14
+
+6. Promise Excellence Framework                                                         16
+
+7. Portfólio, produtos e preços praticados                                              17
+
+8. Públicos, personas e decisores                                                       19
+
+9. Jornada do cliente e processo comercial                                              21
+
+10. Mercado, concorrência e diferenciais                                                22
+
+11. Estrutura organizacional e operação                                                 24
+
+12. Panorama financeiro                                                                 26
+
+13. Narrativa, tom de voz e mensagens-chave                                             29
+
+14. Banco de ganchos, roteiros e provas                                                 31
+
+15. Registro de decisões tomadas                                                        33
+
+16. Perguntas em aberto e pendências                                                    34
+
+17. Glossário e convenções de nomenclatura                                              35
+
+A. Anexo A - Ficha-resumo para consulta rápida                                          37
+
+B. Anexo B - O que a Promise não diz                                                    39
+
+C. Anexo C - Controle do documento                                                      40
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  2 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+0. Como usar este documento
+
+Este documento tem uma função diferente dos outros dois materiais da Promise. O Plano de
+Negócios 2027-2031 responde à pergunta "o negócio se sustenta?". O Projeto de Marketing
+set-dez/2026 responde a "o que fazemos nas próximas dezoito semanas?". Este dossiê
+responde a uma pergunta anterior e mais ampla: "o que é a Promise?"
+
+Ele foi escrito para ser lido por pessoas e processado por máquinas. Por isso, cada seção é
+autocontida, os termos são definidos onde aparecem pela primeira vez e as informações
+factuais estão separadas das hipóteses de planejamento. Quando um número é estimativa,
+isso está dito de forma explícita.
+
+0.1 Para o analista de marketing
+
+      Leia integralmente os capítulos 1 a 6 antes de produzir qualquer peça. Eles contêm as
+          decisões que não podem ser reinterpretadas por conta própria.
+
+      Os capítulos 13 e 14 são o material de trabalho diário: narrativa, tom de voz,
+          mensagens aprovadas e banco de ganchos.
+
+      O Anexo B lista o que não deve ser dito. Ele é tão importante quanto o que deve.
+      O capítulo 16 lista o que ainda está em aberto. Se a resposta que você precisa está lá,
+
+          pergunte à direção - não preencha a lacuna por conta própria.
+
+0.2 Para alimentar um sistema de inteligência artificial
+
+Este documento pode ser carregado integralmente como base de conhecimento. Recomenda-
+se acompanhá-lo das seguintes instruções de sistema, que delimitam o comportamento
+esperado do modelo:
+
+     INSTRUÇÃO DE SISTEMA SUGERIDA
+    Você é assistente de marketing da Promise Education Group, empresa brasileira de educação e
+    internacionalização educacional com cosmovisão cristã, sediada em João Pessoa (PB) e com
+    operação 100% online.
+    Use exclusivamente as informações do documento de contexto anexo. Quando a informação não
+    estiver no documento, diga que está em aberto em vez de estimar.
+    Trate as quatro frentes - Schools, Learners, Professionals e Global - como pilares de igual
+    importância; nunca as hierarquize.
+    Nunca prometa fluência em prazo fixo, nunca compare a Promise nominalmente com concorrentes
+    e nunca use a fé como argumento emocional de venda.
+    Distinga sempre premissa de planejamento e fato consolidado. Distinga breakeven, medido em ano,
+    de payback, medido em meses.
+
+0.3 Documentos relacionados
+
+Documento                    Função                                                     Quando consultar
+Plano de Negócios 2027-2031  Viabilidade, mercado, estratégia e                         Decisões estruturais, apresentação
+Projeto de Marketing         projeção financeira de cinco anos                          a investidores e parceiros
+set-dez/2026                 Plano operacional da janela de                             Execução diária de campanhas,
+                             lançamento com cronograma semanal                          conteúdo e metas da janela
+                                                                                        Onboarding de equipe, briefing de
+Dossiê de Contexto (este     Base de conhecimento institucional                         agência e alimentação de sistemas
+documento)                   completa                                                   de IA
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  3 / 40
+           DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+0.4 Convenção de confiabilidade da informação
+
+Ao longo do documento, três marcadores indicam o grau de consolidação de cada informação.
+Respeitá-los evita que uma hipótese de trabalho seja comunicada ao mercado como se fosse
+um fato.
+
+Marcador   Significado                            Como tratar em comunicação
+FATO       Informação verificada e consolidada    Pode ser comunicada livremente
+PREMISSA   Hipótese de planejamento adotada pela  Uso interno; não comunicar como resultado
+           direção                                Não comunicar; consultar a direção antes de
+EM ABERTO                                         usar
+           Ainda não definido pela direção
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  4 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+1. Identidade da empresa
+
+1.1 Ficha institucional
+
+Nome empresarial         Promise Education Group
+Marca comercial          Promise English
+Fundador e Diretor
+Executivo                Calebe Braga
+
+Setor                    Educação - ensino de idiomas, consultoria educacional e
+                         internacionalização
+Modelo                   Híbrido B2B e B2C, com receita recorrente e projetos
+Sede                     João Pessoa - Paraíba - Brasil
+                         100% online, com atendimento presencial eventual em eventos e
+Operação                 visitas institucionais
+                         Nacional, com presença de atuação em cinco estados brasileiros
+Abrangência              MEI - migração societária pendente e prevista para o 4º trimestre de
+                         2026
+Situação legal atual     https://promise-peach-eight.vercel.app/
+
+Site provisório
+
+PONTO DE ATENÇÃO JURÍDICO
+
+A condição de MEI é incompatível com o porte projetado do negócio e restringe a emissão de notas
+fiscais para pessoas jurídicas, o que afeta diretamente a capacidade de contratar com escolas. A
+migração para sociedade limitada é tratada em todos os documentos da Promise como pendência
+bloqueante, com prazo definido para 31 de outubro de 2026.
+
+1.2 O fundador
+
+A Promise é, neste momento, indissociável da trajetória de seu fundador. Compreender essa
+trajetória é compreender de onde vêm a autoridade da marca e os limites atuais da operação.
+
+Dimensão                Conteúdo
+Experiência docente
+Gestão acadêmica        Mais de 14 anos no ensino de língua inglesa
+Vivência internacional
+Formação                Mais de 8 anos à frente de um Centro Preparatório Oficial Cambridge
+
+Autoria                 Mais de 12 anos vivendo nos Estados Unidos, dos 9 aos 20 anos de idade
+
+Papel atual             Graduação em Letras · certificação CELTA pela Cambridge Assessment
+                        English
+
+                        Currículo de inglês das coleções Paideia e Oikos · sistema de ensino cristão
+                        Cidade Viva Education · coleção To the Nations · coleções de inglês
+                        infantil em coautoria com Cássia Braga
+
+                        Direção executiva, desenvolvimento de negócio, relacionamento
+                        institucional, produção pedagógica e rosto da comunicação da marca
+
+IMPLICAÇÃO ESTRATÉGICA DA AUTORIDADE PESSOAL
+
+A autoridade da Promise existe hoje na pessoa do fundador, não na marca institucional. Toda a
+comunicação da fase atual tem como missão transferir essa autoridade para a marca. Na prática,
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  5 / 40
+                                 DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+isso significa que o fundador aparece pessoalmente nos vídeos e nas reuniões - e que documentar
+processos e formar lideranças é uma prioridade estratégica, não apenas administrativa.
+
+1.3 Histórico e estágio atual
+
+Como estrutura empresarial autônoma, a Promise é nova. Os serviços que a compõem, porém,
+têm maturidades bastante diferentes, e essa diferença precisa ser respeitada na comunicação:
+não se anuncia como consolidado aquilo que ainda está em lançamento.
+
+Frente ou produto                Estágio              Observação
+                                 Maduro               Operação consolidada há vários anos; base da
+Cursos de inglês                 Em validação         experiência da marca
+                                 Experiência prática  Em operação e validação há mais de um ano
+Consultoria para escolas         Em lançamento        Projetos já realizados, sem operação contínua
+Promise Global - viagens e       Em estruturação      estruturada
+experiências                     Conceitual           Foco da janela de set-dez/2026
+American School e homeschooling                       Lançamento previsto para 2027
+Promise for Professionals                             Ideias mapeadas, sem desenvolvimento iniciado
+Tecnologia e aplicativos
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  6 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+2. Propósito, missão, visão e valores
+
+2.1 Tagline institucional
+
+    Ecossistema de internacionalização educacional para escolas, famílias e professores,
+    fundamentado em excelência acadêmica e cosmovisão cristã.
+
+2.2 Missão
+
+Expandir os horizontes de escolas, famílias homeschooling, educadores e estudantes por meio
+da internacionalização educacional de excelência, formando cidadãos preparados para
+impactar o mundo com competência, propósito e uma cosmovisão cristã.
+
+2.3 Visão
+
+Ser o principal ecossistema cristão de internacionalização educacional da América Latina.
+
+2.4 Valores         O que significa na prática
+
+ Valor              Recusa de atalho pedagógico; entrega acima do padrão do mercado mesmo
+ Excelência         quando ninguém está conferindo
+
+ Propósito          Educação como formação de pessoa, não apenas como transferência de
+                    conteúdo
+ Cosmovisão cristã
+ Desenvolvimento    Critério real de currículo, de escolha de parceiros e de conduta - não rótulo de
+ integral           marketing
+ Autonomia
+ Visão global       Formação acadêmica, linguística e humana tratadas como uma coisa só
+
+                    O sucesso do cliente é ele não precisar mais da Promise para sustentar o que foi
+                    construído
+
+                    Preparar o estudante e a instituição para operar além das fronteiras do Brasil
+
+2.5 Diferenciais declarados
+
+      Ecossistema educacional integrado, reunindo em um único fornecedor serviços que o
+          mercado oferece de forma fragmentada.
+
+      Metodologia própria - o Promise Excellence Framework, tratado como ativo central de
+          marca.
+
+      Experiência internacional real, tanto do fundador quanto por meio de parcerias
+          institucionais.
+
+      Soluções personalizadas, em oposição ao pacote padronizado das grandes redes.
+      Foco em desenvolver pessoas e instituições com autonomia e sustentabilidade.
+
+2.6 A promessa central
+
+Reduzida à sua forma mais simples, a promessa da Promise é esta: transformar o aprendizado
+de inglês em uma trajetória com destino. Não se vende aula; vende-se o percurso que vai da
+primeira palavra em inglês até uma certificação internacional, um diploma reconhecido e uma
+porta aberta em uma universidade estrangeira - com a família e a escola acompanhando cada
+etapa.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  7 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+2.7 Apresentações prontas em três tamanhos
+
+Três versões da mesma apresentação, para situações diferentes. Elas são aprovadas e podem
+ser usadas literalmente em bio de rede social, abertura de reunião e material institucional.
+
+     VERSÃO CURTA - ATÉ 15 PALAVRAS
+    A Promise é um ecossistema cristão de internacionalização educacional para escolas, famílias e
+    professores.
+
+     VERSÃO MÉDIA - ATÉ 60 PALAVRAS
+    A Promise Education Group é uma empresa de educação que integra ensino de inglês, certificações
+    Cambridge, formação de professores, consultoria escolar e experiências internacionais em uma
+    única trajetória. Atua com escolas cristãs, famílias homeschoolers, estudantes e educadores,
+    unindo excelência acadêmica e cosmovisão cristã. Sede em João Pessoa, operação nacional e 100%
+    online.
+
+     VERSÃO LONGA - ATÉ 130 PALAVRAS
+    A Promise Education Group é uma empresa brasileira de educação voltada à formação integral e à
+    internacionalização educacional. Organiza sua atuação em quatro frentes: Promise for Schools, que
+    estrutura departamentos de inglês e programas de internacionalização em escolas; Promise for
+    Learners, que oferece cursos de inglês, preparação Cambridge, American School e soluções para
+    homeschooling; Promise for Professionals, que forma professores, coordenadores e líderes
+    educacionais; e Promise Global, que conecta escolas, famílias e estudantes a experiências
+    internacionais.
+    Todas as frentes são integradas pelo Promise Excellence Framework, metodologia proprietária que
+    organiza a jornada em cinco estágios, do primeiro contato com o inglês até a experiência
+    internacional. Fundada e dirigida por Calebe Braga, a empresa reúne mais de catorze anos de
+    experiência em ensino, currículo e avaliação Cambridge.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  8 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+3. Identidade visual
+
+A identidade visual da Promise é construída sobre três elementos: o símbolo do P circular, o
+logotipo horizontal PromiseEnglish e uma paleta de dois tons dominantes - vermelho e azul
+royal - com laranja como cor de apoio. O sistema é intencionalmente simples, para funcionar
+bem em tela pequena, em material impresso e em aplicações monocromáticas.
+
+3.1 Logotipo principal
+
+                                                                  Aplicação principal sobre fundo claro
+
+Esta é a aplicação preferencial. Deve ser usada sempre que houver fundo claro disponível. O
+símbolo em vermelho e o logotipo em azul royal formam a assinatura padrão da marca.
+
+3.2 Variações do logotipo
+
+Sobre fundo azul royal - símbolo vermelho, texto branco  Sobre fundo vermelho - símbolo azul, texto branco
+
+As duas variações acima cobrem as aplicações sobre fundo saturado. A regra que as governa é
+simples: o texto sempre em branco, e o símbolo sempre na cor oposta à do fundo, nunca na
+mesma família cromática. Isso preserva o contraste do símbolo, que é o elemento de
+reconhecimento mais rápido da marca.
+
+3.3 Símbolo isolado e suas versões
+
+O símbolo pode ser usado sozinho em avatar de rede social, favicon, selo, marca d'água e
+aplicações de espaço reduzido. As seis versões abaixo cobrem todas as combinações previstas
+de fundo e cor.
+
+Vermelho sobre branco  Azul sobre branco                                                Vermelho sobre azul
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                       9 / 40
+                            DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Azul sobre vermelho         Branco sobre azul                                           Branco sobre vermelho
+
+Recomendação de uso: para avatar de perfil em redes sociais, a versão vermelha sobre branco
+é a de melhor legibilidade em miniatura. Para selo aplicado sobre fotografia, usar a versão
+branca sobre vermelho ou sobre azul, conforme o tom predominante da imagem.
+
+3.4 Área de proteção, tamanhos e formatos
+
+Regra                       Especificação
+Área de proteção            Margem livre ao redor do logotipo equivalente à altura do símbolo; nenhum
+Tamanho mínimo do logotipo  elemento gráfico ou texto invade esse espaço
+horizontal                  120 pixels de largura em tela; 25 mm em impresso
+Tamanho mínimo do símbolo
+isolado                     32 pixels em tela; 8 mm em impresso
+Formato preferencial        Vetorial (SVG ou PDF) para impressão e aplicações que exigem
+Formato para tela           redimensionamento
+Versão monocromática        PNG com fundo transparente; nunca JPG sobre fundo colorido
+                            Permitida em preto ou branco integral quando a peça não admitir cor
+
+Um erro recorrente em operações novas é reduzir o logotipo abaixo do tamanho mínimo em
+rodapés e assinaturas de e-mail. Quando não houver espaço para o logotipo horizontal legível,
+a solução correta é usar o símbolo isolado - nunca comprimir a assinatura completa.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                         10 / 40
+                                        DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+3.5 Paleta cromática
+
+    #FA1F15            #C81811       #FF7A00     #1836B2                                #0E1A50
+Vermelho Promise    Vermelho escuro     Laranja   Azul royal                            Azul escuro
+
+#FBFBFB             #F2F4FB          #E7E8EC        #4B5163                               #181B22
+    Fundo             Tint azul          Linha   Texto secundário                       Texto principal
+
+Cor                 Código           Uso previsto
+Vermelho Promise    #FA1F15          Cor de destaque, símbolo, chamadas para ação e frente Learners
+                                     Estados de contraste, gráficos e diferenciação dentro da família
+Vermelho escuro     #C81811          vermelha
+                                     Cor de apoio e frente Professionals; usar com parcimônia
+Laranja             #FF7A00          Logotipo, títulos de seção, links e frente Global
+Azul royal          #1836B2          Títulos principais, cabeçalhos de tabela e frente Schools
+Azul escuro         #0E1A50          Fundo geral de peças e documentos
+Fundo               #FBFBFB          Preenchimento de caixas, zebra de tabelas e áreas de destaque
+                                     suave
+Tint azul           #F2F4FB          Bordas, divisores e contornos sutis
+                                     Legendas, apoios e informação de menor hierarquia
+Linha               #E7E8EC          Corpo de texto
+Texto secundário    #4B5163
+Texto principal     #181B22
+
+3.6 Convenção de cor por frente de negócio
+
+Esta convenção é usada no painel administrativo interno e deve ser mantida em qualquer peça
+que represente as frentes lado a lado. Ela existe para criar reconhecimento imediato, não para
+hierarquizar as frentes.
+
+   Schools                Learners       Professionals                                           Global
+
+AZUL ESCURO ·       VERMELHO · #FA1F15  LARANJA · #FF7A00                               AZUL ROYAL · #1836B2
+      #0E1A50
+
+3.7 Tipografia      Roboto, nos pesos 300 a 900
+                    Roboto Bold ou Black, em azul escuro ou azul royal
+ Família            Roboto Regular, em #181B22, com entrelinha confortável
+ Títulos            Roboto Regular ou Light, em #4B5163, corpo reduzido
+ Corpo de texto
+ Apoios e legendas
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  11 / 40
+                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Rótulos e etiquetas  Roboto Bold em caixa alta, com espaçamento entre letras ampliado
+Substituição         Na ausência de Roboto, usar Arial ou Helvetica; nunca fonte serifada
+
+3.8 Linguagem visual e elementos gráficos
+
+      Estilo geral: clean, corporativo-moderno, com muito espaço em branco.
+
+      Cards com borda sutil em #E7E8EC e cantos levemente arredondados.
+
+      Pills e etiquetas coloridas para categorizar informação.
+
+      Blobs decorativos em azul e vermelho, usados com moderação e sempre atrás do
+          conteúdo.
+
+      Números grandes em destaque como recurso de hierarquia - a marca comunica bem
+          por dados.
+
+      Fotografia: pessoas reais em contexto acadêmico, luz natural, sem estética de banco
+          de imagem genérico.
+
+3.9 Usos incorretos                                 Motivo
+                                                    Descaracteriza o sistema e reduz o reconhecimento
+ Não fazer                                          O símbolo é geométrico; qualquer deformação é percebida
+  Aplicar o logotipo em cores fora da paleta        Compromete a legibilidade e a percepção de qualidade
+  Distorcer, inclinar ou aplicar sombra ao símbolo
+  Usar o logotipo sobre fotografia sem área de      Elimina o contraste que torna a marca reconhecível
+  proteção
+  Usar símbolo e fundo na mesma família             Erro de marca; a grafia correta é PromiseEnglish
+  cromática
+  Reescrever o nome como "Promise Inglês" ou        Polui a hierarquia visual e enfraquece a chamada para ação
+  "Promisse"
+  Combinar mais de três cores da paleta na
+  mesma peça
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969     12 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+4. Contatos e presença digital
+
+Canal                 Endereço                        Uso
+Site provisório       https://promise-peach-          Referência viva da marca; páginas de destino
+E-mail institucional  eight.vercel.app/               e conteúdo institucional
+WhatsApp              calebe@promiseenglish.com       Contato comercial e institucional
+                                                      Canal de fechamento; atendimento e
+Instagram             (83) 9 9697-7969                agendamento
+Domínio definitivo                                    Principal canal de conteúdo e aquisição
+Localização           @promise.english ·              orgânica
+                      instagram.com/promise.english   Destino final do site institucional
+                      promiseenglish.com              Sede; operação de atendimento 100% online
+                      João Pessoa - Paraíba - Brasil
+
+Acesso direto ao site provisório:
+https://promise-peach-eight.vercel.app/
+
+     OBSERVAÇÃO SOBRE O SITE PROVISÓRIO
+    O endereço acima é um ambiente provisório de publicação e deve ser tratado como referência de
+    conteúdo e de identidade, não como endereço definitivo para campanhas. Antes de qualquer
+    investimento em mídia paga, o tráfego precisa ser direcionado ao domínio definitivo, com medição
+    instalada e páginas de destino específicas por oferta.
+
+4.1 Assinatura padrão de comunicação
+
+    Promise Education Group · Promise English
+    João Pessoa - PB · Operação 100% online
+    calebe@promiseenglish.com · (83) 9 9697-7969
+    @promise.english · https://promise-peach-eight.vercel.app/
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  13 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+5. Modelo de negócio - as quatro frentes
+
+A Promise organiza toda a sua operação em quatro frentes. Elas não são linhas de produto
+independentes: são portas de entrada diferentes para o mesmo ecossistema. Uma escola
+atendida pela frente Schools gera alunos para Learners, professores para Professionals e
+participantes para Global. Essa circulação interna é a razão de existir do modelo.
+
+     REGRA INEGOCIÁVEL DE COMUNICAÇÃO
+    As quatro frentes devem sempre ser tratadas como pilares de igual importância. Nenhuma peça,
+    apresentação ou texto deve sugerir que uma frente é principal e as outras acessórias, ainda que em
+    um dado momento uma delas concentre mais receita ou mais esforço de marketing.
+
+5.1 Promise for Schools
+
+Natureza               B2B - venda consultiva para instituições
+O que entrega          Consultoria educacional, diagnóstico, estruturação curricular, formação docente,
+                       sistema de avaliação, certificações e internacionalização escolar
+Cliente ideal          Escolas privadas cristãs e clássicas, de pequeno a grande porte, que querem
+Decisores              estruturar ou aprimorar o departamento de inglês
+Ciclo de compra        Mantenedores, diretores e coordenadores pedagógicos
+Papel no ecossistema   Anual, com decisão concentrada antes do início do ano letivo
+Margem bruta estimada  Principal canal de expansão institucional e de entrada em novas praças
+                       60% a 75% · PREMISSA
+
+5.2 Promise for Learners
+
+Natureza               B2C - venda direta a famílias e estudantes
+                       Aulas de inglês, preparação para certificações Cambridge, American School do
+O que entrega          Elementary ao High School, soluções para homeschooling e experiências
+                       internacionais
+Cliente ideal          Famílias de classe média e média-alta, incluindo homeschoolers, que valorizam
+Decisores              trajetória acadêmica internacional
+Ciclo de compra        Pais e responsáveis; em cursos para adultos, o próprio aluno
+Papel no ecossistema   Recorrente, com mensalidades e ciclos semestrais ou anuais
+Margem bruta estimada  Base de receita recorrente e principal fonte de previsibilidade de caixa
+                       50% a 65% · PREMISSA
+
+5.3 Promise for Professionals
+
+Natureza               B2C profissional e B2B via escolas contratantes
+O que entrega          Formação continuada, workshops, cursos, mentorias, preparação para TKT, CELTA
+                       e DELTA, e desenvolvimento de lideranças educacionais
+Cliente ideal          Professores, coordenadores e gestores educacionais que investem na própria
+Decisores              carreira
+Ciclo de compra        O próprio profissional, ou a escola quando a formação é contratada em bloco
+                       Contínuo, por ciclo de formação
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  14 / 40
+                       DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Papel no ecossistema   Ampliação do ecossistema e efeito de rede - o professor formado leva a Promise
+Margem bruta estimada  para dentro da escola
+                       65% a 80% · PREMISSA - a maior das quatro frentes
+
+5.4 Promise Global
+
+Natureza               Projetos pontuais, para pessoa física e para instituições
+                       Intercâmbios, viagens acadêmicas, imersões, parcerias e cooperação com
+O que entrega          instituições internacionais
+                       Escolas, famílias e estudantes já relacionados com as demais frentes
+Cliente ideal          Escolas, famílias ou estudantes, conforme o projeto
+Decisores              Pontual, com planejamento por projeto e antecedência longa
+Ciclo de compra        Entrega simbólica da promessa de internacionalização; alto valor de marca
+Papel no ecossistema   25% a 45% · PREMISSA - a menor, por depender de fornecedores
+Margem bruta estimada
+
+COMO AS FRENTES SE ALIMENTAM
+Schools traz a instituição. Dentro dela existem alunos, que se tornam clientes de Learners, e
+professores, que se tornam clientes de Professionals.
+
+Learners cria a base recorrente e forma estudantes com trajetória internacional, que são o público
+natural de Global.
+
+Professionals gera multiplicadores que indicam a Promise para suas escolas e para famílias.
+
+Global entrega a experiência que dá sentido concreto a tudo o que as outras três prometem.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969            15 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+6. Promise Excellence Framework
+
+O Promise Excellence Framework é a metodologia proprietária que organiza a jornada do
+estudante em cinco estágios encadeados e conecta as quatro frentes de negócio. Ele deve ser
+tratado como ativo central de marca: é o que permite à Promise afirmar que vende um
+percurso, e não um produto avulso.
+
+01         02               03             04                                              05
+
+INGLÊS  PROFICIÊNCIA     CERTIFICAÇÃO      FORMAÇÃO                                     EXPERIÊNCIAS
+                                       INTERNACIONAL                                         GLOBAIS
+
+Estágio                  O que acontece                                                 Frente responsável
+01 Inglês                Aprender inglês com método, propósito e                        Learners · Schools
+02 Proficiência          confiança. Nivelamento inicial e progressão                    Learners · Schools
+03 Certificação          estruturada.                                                   Learners · Professionals
+04 Formação              Desenvolver habilidades linguísticas reais para se             Learners · Schools
+internacional            comunicar e compreender o mundo, não apenas                    Global
+05 Experiências globais  para passar em prova.
+                         Conquistar certificações reconhecidas
+                         internacionalmente, com preparação orientada por
+                         quem conhece o exame por dentro.
+                         Construir uma base acadêmica sólida e
+                         documentada - American School, histórico e
+                         diploma - que abra portas em universidades.
+                         Viver o mundo, conhecer culturas e ampliar
+                         horizontes por meio de imersões, intercâmbios e
+                         viagens acadêmicas.
+
+A frase que resume o framework em comunicação é: "mais que aprender uma língua, é
+preparar para a vida". Ela aparece em material impresso já produzido e deve ser mantida como
+fecho recorrente das peças que apresentam a jornada completa.
+
+6.1 Como usar o framework em comunicação
+
+      Sempre apresentar os cinco estágios como uma sequência, nunca como um cardápio
+          de opções soltas.
+
+      O nome completo com o símbolo de marca registrada é usado em documentos
+          institucionais; em peças de rede social, basta "nosso método" ou "a jornada Promise".
+
+      Cada estágio pode virar uma peça de conteúdo autônoma - é um bom eixo para uma
+          série de cinco publicações.
+
+      Nunca prometer que todos os estudantes chegam ao estágio 5. O framework descreve
+          o percurso possível, não uma obrigação.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  16 / 40
+                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+7. Portfólio, produtos e preços praticados
+
+Os valores desta seção são os efetivamente praticados ou definidos pela direção e servem de
+base às projeções financeiras. Eles são informação sensível: podem ser usados para calibrar
+comunicação, mas não devem ser publicados em peça de mídia sem autorização expressa da
+direção.
+
+7.1 Promise for Learners - preços
+
+Produto                    Formato                       Preço                          Observação
+Curso de inglês em turma   Duas aulas por semana,        R$ 250 / mês                   A partir de aproximadamente
+Aula particular e          online, após nivelamento      R$ 950 / pacote                14 anos
+preparatório Cambridge     Pacote de 10 aulas, pré-pago  R$ 250 / mês                   Modalidade de maior
+Inglês para famílias       Uma aula semanal mais          R$ 4.000                      flexibilidade de agenda
+homeschoolers              desafios em família           R$ 700 a R$ 900 /              Fundamental I e início do
+American School - entrada  Material US$ 500/ano mais     mês                            Fundamental II
+American School -          convalidação US$ 200                                         Parcelável em até 10 vezes;
+mensalidade                Acompanhamento e tutoria                                     câmbio de referência R$ 5,50
+                                                                                        Varia conforme etapa e nível
+                                                                                        de acompanhamento
+
+7.2 Promise for Schools - pacotes
+
+Pacote          Escopo                                                                  Valor anual de
+Essential       Diagnóstico, estruturação curricular e formação inicial da              referência
+Advanced        equipe docente                                                           R$ 24.000
+Excellence      Essential mais observação de aula, devolutiva ao
+Plataforma por  professor, simulados, reunião com pais e apoio à                         R$ 42.000
+aluno           contratação docente
+                Advanced mais acompanhamento contínuo, avaliação                         R$ 72.000
+                institucional e trilha de internacionalização                           R$ 10 a R$ 30 / aluno / mês
+                Complemento cobrado por aluno atendido
+
+Contratos reais já praticados no histórico do fundador situam-se entre R$ 29 mil e R$ 54 mil por ano
+letivo. Em contratos intermediados, parte relevante do valor pode ficar retida pela instituição
+intermediária - fator que precisa ser considerado em qualquer negociação futura.
+
+7.3 Professionals e Global                          Faixa de preço                      Situação
+                                                    R$ 1.200 a R$ 2.800 por             Em estruturação -
+ Produto                                            ciclo                               lançamento 2027
+  Formação continuada, mentorias e preparação para  R$ 8.000 a R$ 12.000 por            Projetos pontuais; grupos de
+  certificação docente                              participante                        10 a 15 pessoas
+  Imersões, intercâmbios e viagens acadêmicas
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  17 / 40
+                                         DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+7.4 Categorias comerciais do portfólio
+
+Categoria                Produtos                          Característica comercial
+                                                           Venda contínua, mensalidade, retorno de
+Serviços recorrentes     Cursos de inglês, homeschooling,  médio e longo prazo, alto valor de tempo de
+                         American School                   vida do cliente
+                                                           Ciclo de venda longo, contrato por projeto,
+Serviços especializados  Consultoria escolar, formação     ticket alto, receita concentrada
+                         profissional, mentorias           Venda pontual, planejamento por projeto,
+                                                           margem menor, forte impacto de marca
+Experiências e projetos  Promise Global
+
+7.5 O diferencial do American School
+
+Este é o produto que mais distancia a Promise do restante do mercado e merece descrição
+precisa. A oferta permite que uma família homeschooler construa uma trajetória acadêmica
+americana paralela à educação domiciliar, do Elementary ao High School, com currículo
+completo, histórico escolar e, ao final, um diploma americano emitido pela instituição parceira
+- documento que pode ser usado em processos de candidatura a universidades nos Estados
+Unidos, conforme os requisitos de cada instituição.
+
+O que torna essa proposta incomum no Brasil é a independência do vínculo escolar: as ofertas
+existentes de High School americano normalmente exigem que o aluno esteja
+simultaneamente matriculado em uma escola regular brasileira. A Promise atende justamente
+quem optou por não estar.
+
+CUIDADO OBRIGATÓRIO DE COMUNICAÇÃO
+
+A Promise não é instituição certificadora. Nas certificações Cambridge, ela prepara e orienta os
+candidatos, mas exames e certificados são emitidos pelos organismos autorizados. No American
+School, os requisitos acadêmicos, os créditos e a emissão do diploma são responsabilidade da
+instituição americana parceira. Nenhuma peça de comunicação pode sugerir o contrário - e
+nenhuma pode garantir aprovação em universidade específica.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  18 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+8. Públicos, personas e decisores
+
+8.1 Mapa geral de públicos
+
+Público                     Frente         Quem decide                Motivação central
+                            principal
+
+Escolas privadas cristãs e  Schools        Mantenedor, diretor,       Estruturar um departamento de
+clássicas                                  coordenador                inglês à altura do propósito da escola
+                                           pedagógico
+Famílias homeschoolers      Learners       Pais e responsáveis        Garantir validação acadêmica e
+                            Learners       Pais; em cursos adultos,   acesso à universidade sem abrir mão
+Famílias e estudantes de    Professionals  o próprio aluno            do homeschooling
+escola regular              Global         O próprio profissional ou  Fluência real, certificação
+Professores e gestores                     a escola                   reconhecida e diferencial acadêmico
+educacionais                                                          Qualificação, certificação docente e
+Participantes de                                                      progressão de carreira
+experiências
+internacionais                             Escolas, famílias ou       Viver a experiência internacional que
+                                           estudantes                 dá sentido ao percurso
+
+8.2 O que esses públicos compram hoje
+
+      Escolas: materiais didáticos, cursos de inglês terceirizados, plataformas, formação
+          pontual de professores e soluções isoladas de internacionalização.
+
+      Famílias: cursos de inglês, aulas particulares, programas de homeschooling,
+          certificações e intercâmbios.
+
+      Professores: cursos de formação continuada, mentorias e preparação para TKT, CELTA
+          e DELTA.
+
+8.3 Fatores que influenciam a decisão de compra
+
+Público        O que mais pesa                                                          O que menos pesa
+Escolas        Resultado comprovado, metodologia, segurança da                          Preço isolado
+Famílias       parceria e continuidade do suporte                                       Volume de recursos tecnológicos
+Profissionais  Confiança, qualidade pedagógica, alinhamento de                          Marca institucional
+               valores e resultado para o filho
+               Conteúdo, qualificação dos mentores e
+               reconhecimento da certificação
+
+8.4 A lacuna que a Promise atende
+
+A principal necessidade não atendida do mercado é a fragmentação. Escolas, famílias e
+profissionais encontram materiais, cursos, certificações, plataformas e intercâmbios
+isoladamente, mas quase nenhuma solução integra ensino de inglês, currículo, formação
+profissional, certificação, internacionalização e cosmovisão cristã em uma trajetória coerente.
+É nessa lacuna que a Promise se posiciona - e é por isso que a palavra ecossistema aparece na
+tagline.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969   19 / 40
+                              DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+8.5 Objeções recorrentes e respostas de referência
+
+Objeção                       Resposta de referência
+O diploma americano é         O diploma é emitido pela instituição americana parceira e pode ser usado em
+mesmo aceito?                 candidaturas a universidades nos Estados Unidos, conforme os requisitos de
+                              cada instituição. A Promise conduz o percurso acadêmico; a emissão é da
+Quanto custa no total?        parceira.
+Meu filho dá conta em         Apresentar o custo completo com transparência - entrada, mensalidade e o que
+inglês?                       está e o que não está incluído. Ocultar custo total é a principal causa de
+Online funciona?              cancelamento posterior.
+Já tentei inglês antes e não  Há nivelamento inicial e progressão estruturada. O programa é ajustado ao ponto
+deu certo.                    de partida do estudante, não o contrário.
+Cabe no orçamento da          A operação é integralmente online por escolha metodológica, com turmas
+escola?                       pequenas, acompanhamento individual e registro de progresso.
+Quem executa depois que a     Reconhecer a frustração antes de oferecer solução. O diferencial não é o método
+consultoria termina?          milagroso - é a estrutura de níveis, a certificação como meta concreta e o
+                              acompanhamento.
+                              Existem três níveis de pacote justamente para permitir entrada gradual. O
+                              diagnóstico inicial é gratuito e permite dimensionar o investimento antes de
+                              qualquer compromisso.
+                              A equipe da própria escola, formada durante o processo. Autonomia do cliente é
+                              valor declarado da Promise, não efeito colateral.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  20 / 40
+                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+9. Jornada do cliente e processo comercial
+
+O processo comercial da Promise é o mesmo para as quatro frentes, mudando apenas a
+duração de cada etapa e quem participa da conversa. Conhecê-lo permite produzir conteúdo
+para cada estágio, em vez de concentrar toda a comunicação no momento da venda.
+
+Etapa           O que acontece                      Canais                              Duração típica
+1. Atração                                          Redes sociais, site,                Contínua
+                O público descobre a Promise        indicações, eventos,
+2. Contato                                          prospecção direta                   Minutos a 48 horas
+3. Diagnóstico  Primeira conversa e qualificação    WhatsApp, formulário, e-mail        40 a 60 minutos
+4. Proposta     da necessidade                      Videochamada                        Learners: dias ·
+5. Contratação  Escuta estruturada da situação      Documento e reunião                 Schools: semanas
+6. Onboarding   real do cliente                     Contrato e sistema de               Dias
+7. Entrega      Apresentação da solução com         cobrança                            1 a 2 semanas
+8.              escopo e investimento               Plataforma e reunião                Recorrente
+Acompanhamento  Assinatura, matrícula e             Plataformas online                  Contínua
+9. Renovação    pagamento                           Relatórios e contato direto         Anual
+                Nivelamento, agenda, acessos e      Relacionamento direto
+                alinhamento de expectativas
+                Aulas, consultoria, formação ou
+                projeto internacional
+                Avaliação de resultados, suporte e
+                retenção
+                Recontratação e expansão para
+                outras frentes
+
+     O DIAGNÓSTICO É A PEÇA CENTRAL DO MODELO
+    Em todas as frentes, a oferta de entrada é um diagnóstico gratuito - de trajetória acadêmica, para
+    famílias, ou de departamento de inglês, para escolas. Ele resolve três problemas de uma vez:
+    qualifica o interessado, demonstra competência antes de pedir dinheiro e transforma uma conversa
+    de venda em uma consulta técnica. Nenhuma campanha da Promise deve oferecer preço como
+    chamada principal enquanto o diagnóstico estiver disponível.
+
+9.1 Estrutura de pós-venda
+
+O pós-venda está integrado à operação e não é uma área separada. Como Schools e Learners
+são serviços recorrentes, o relacionamento não termina na contratação - ele começa nela. À
+medida que a empresa crescer, está prevista a estruturação de uma área dedicada de sucesso
+do cliente.
+
+9.2 Indicadores de acompanhamento do cliente
+
+      Pedagógicos: frequência, progresso por nível, resultados de aprendizagem e
+          certificações obtidas.
+
+      Comerciais: número de alunos e clientes, aquisição, retenção e taxa de renovação.
+      Financeiros: receita e margem por produto, custo de aquisição e retorno sobre
+
+          investimento.
+      De satisfação: avaliação direta de famílias, alunos e instituições contratantes.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  21 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+10. Mercado, concorrência e diferenciais
+
+10.1 Dimensão do mercado
+
+Mercado                     Dimensão estimada              Fonte e observação
+                                                           Inglês como principal segmento; projeção de
+Treinamento linguístico no   US$ 1,5 bilhão em 2025        crescimento para cerca de US$ 3 bilhões até
+Brasil                                                     2034
+                                                           Base potencial para Schools e Learners
+Educação básica no Brasil    46 milhões de matrículas,
+Educação internacional      sendo  10 milhões na rede      Oportunidade direta para Promise Global
+Homeschooling               privada                        Estimativa oficial do MEC; números
+Certificações Cambridge      R$ 7 bilhões                  possivelmente desatualizados
+                            movimentados em 2025,          Reconhecimento internacional consolidado
+                            com crescimento de 27,3%
+                             17 mil famílias e 35 mil
+                            estudantes
+                            Mais de 2.800 centros em
+                            130 países
+
+10.2 Tendências que sustentam a oportunidade
+
+      Crescimento consistente do homeschooling no Brasil, acompanhado de necessidade de
+          estruturação e de validação acadêmica formal.
+
+      Abertura de escolas cristãs e clássicas em todas as regiões do país, a maioria sem
+          competência interna para montar o departamento de inglês.
+
+      Migração do ensino de inglês para o formato online, o que favorece diretamente o
+          modelo da Promise.
+
+      Demanda crescente por certificações internacionais e por trajetórias acadêmicas
+          globais.
+
+      Expansão de escolas bilíngues, que aumenta a concorrência mas também amplia o
+          mercado e a consciência do público sobre educação internacional.
+
+10.3 Concorrentes por frente
+
+Frente         Concorrência direta                         Concorrência indireta
+Schools        Consultorias educacionais, empresas de      Cultura Inglesa, CNA, Wizard, CCAA e Fisk
+               implantação de programas bilíngues e
+Learners       sistemas de ensino                          Empresas de intercâmbio
+Professionals  Escolas e plataformas de inglês, aulas      A própria Cambridge
+Global         particulares, programas de homeschooling e  Consultorias de educação internacional
+               de High School americano
+               Centros de preparação Cambridge para TKT,
+               CELTA e DELTA
+               Agências de intercâmbio e empresas de
+               viagens educacionais
+
+10.4 Onde os concorrentes são mais fortes
+
+Reconhecer isso com honestidade é o que impede a Promise de competir no terreno errado. Os
+concorrentes maiores levam vantagem em escala, marca consolidada, número de unidades,
+orçamento de marketing, tecnologia proprietária e canais de distribuição. A Cultura Inglesa
+combina material próprio, cursos presenciais e online, certificações Cambridge, formação
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  22 / 40
+                                         DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+docente e eventos culturais. A Wizard, sob a Pearson, soma material próprio, plataforma digital
+e capilaridade nacional. O CNA possui estrutura executiva com áreas dedicadas a marketing,
+tecnologia, vendas, produto e experiência do cliente.
+
+10.5 Onde a Promise é mais forte
+
+Diferencial                       Por que é difícil de copiar
+Integração das quatro frentes     Exige competência simultânea em consultoria escolar, ensino, formação
+Cosmovisão cristã como critério   docente e operação internacional
+real                              Nicho pouco disputado pelas grandes redes e incompatível com o
+Metodologia e materiais autorais  posicionamento generalista delas
+American School independente de   Construídos ao longo de mais de uma década de prática, com currículos já
+escola regular                    adotados por sistemas de ensino
+Relacionamento direto com o       Serviço praticamente inexistente no mercado brasileiro no formato
+fundador                          oferecido
+Agilidade de decisão
+                                  Personalização impossível de reproduzir em rede de franquias
+
+                                  Estrutura enxuta permite ajustar oferta em dias, não em trimestres
+
+SÍNTESE COMPETITIVA
+
+A Promise compete menos por escala e mais por integração, personalização, relacionamento,
+propósito e visão sistêmica. A frase que resume o posicionamento e que deve orientar toda a
+comunicação é: a Promise não disputa apenas um desses mercados isoladamente - ela integra
+escola, aluno, profissional e internacionalização em um único ecossistema educacional.
+
+10.6 Riscos de mercado
+
+Risco                       Natureza     Mitigação adotada
+Concorrência e pressão por  Permanente   Competir por diferenciação e integração, nunca por preço
+preço                       Sazonal      Prospecção antecipada e entrada no orçamento do ano
+Ciclo orçamentário das      Regulatório  seguinte
+escolas                     Tecnológico  Acompanhamento legislativo e parceiros especializados
+Mudanças regulatórias no    Operacional  Incorporar tecnologia como apoio e reforçar o que a IA não
+homeschooling                            substitui: mentoria e trajetória
+Avanço da IA no ensino de                Formalização contratual e diversificação futura de parceiros
+idiomas                                  Documentação de processos, formação de líderes e banco de
+Dependência de parceiros                 conteúdo antecipado
+internacionais
+
+Dependência do fundador     Estrutural
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  23 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+11. Estrutura organizacional e operação
+
+11.1 Organograma atual
+
+A estrutura é enxuta e centralizada. No topo está o Diretor Executivo e Fundador, responsável
+pela gestão estratégica e pela integração de todas as áreas e frentes. Abaixo, a operação
+conta com professores responsáveis pela entrega dos serviços educacionais. A direção recebe
+apoio de parceiros especializados em Marketing, Gestão Administrativa e Gestão Pedagógica.
+À medida que a empresa crescer, essas funções serão gradualmente estruturadas em equipes
+próprias.
+
+Área                Responsabilidades                                                   Situação atual
+Direção Executiva   Estratégia, gestão geral, decisões, desenvolvimento                 Fundador
+Pedagógico          de produtos, relacionamento com clientes e parceiros,               Fundador com apoio de
+Professores         expansão das quatro frentes                                         parceiros
+Marketing e Vendas  Programas, currículos, materiais, metodologia,                      4 professores pré-
+Administrativo      qualidade das aulas e formação de professores                       contratados
+Financeiro          Aulas, acompanhamento de alunos, aplicação de                       Parceiro externo
+                    atividades e registro de progresso                                  Apoio externo
+                    Posicionamento, comunicação, redes sociais, geração                 Apoio administrativo
+                    de leads, campanhas, prospecção e conversão                         especializado
+                    Processos internos, contratos, atendimento,
+                    documentação e agenda
+                    Receitas, despesas, fluxo de caixa, precificação,
+                    orçamento e indicadores
+
+11.2 O que está faltando na estrutura
+
+O diagnóstico da própria direção é claro: é preciso separar a gestão pedagógica da
+administrativa. O desenho desejado inclui um coordenador para Learners, um para Schools e
+um para Professionals, responsáveis por montar e acompanhar a parte pedagógica de cada
+frente, e um gerente administrativo que assuma plano de negócios, financeiro e marketing.
+Enquanto essas funções não existem, elas recaem sobre o fundador - que é, simultaneamente,
+o principal ativo e o principal gargalo da operação.
+
+11.3 Infraestrutura e operação
+
+Modalidade                  Aulas e formações integralmente online, por plataformas de videoconferência
+Infraestrutura física       Enxuta; sem planta física para atendimento regular. Espaços de parceiros para
+Equipamentos                reuniões e eventos pontuais
+Infraestrutura tecnológica  Computadores, internet de alta qualidade, câmeras, microfones e software de
+Produção de conteúdo        produção de materiais
+Distribuição                Apenas o site, no momento. CRM, LMS e painel de dados previstos no
+                            investimento inicial
+                            Currículos, materiais e cursos produzidos internamente ou com parceiros
+                            especializados
+                            Site, plataformas educacionais, WhatsApp e canais digitais; material físico por
+                            fornecedores
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  24 / 40
+                                DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+11.4 Parceiros e fornecedores
+
+Parceiro                        Papel
+Cambridge Assessment English    Certificações internacionais de proficiência e de qualificação docente
+Instituição americana parceira  Requisitos acadêmicos, créditos e emissão de diploma do American School
+Kairos                          Distribuição de livros e materiais didáticos
+Arkos                           Distribuição de livros e desenvolvimento do site institucional
+AEI e Education                 Fornecimento e intermediação de serviços educacionais
+
+11.5 Propriedade intelectual
+
+A Promise detém os direitos de uso de sua marca, conteúdos, materiais e metodologias
+desenvolvidos internamente, incluindo o Promise Excellence Framework e materiais
+curriculares autorais. A propriedade intelectual dos sistemas de certificação pertence às
+respectivas instituições certificadoras. O registro da marca no INPI está previsto na rubrica de
+regularização do investimento inicial e ainda não foi concluído.
+
+11.6 Política de recursos humanos
+
+Baseada em valorização profissional, excelência, desenvolvimento contínuo e alinhamento
+com os valores da empresa. Remuneração compatível com mercado, experiência e
+responsabilidade, complementada por remuneração variável por desempenho quando
+aplicável. Promoções por competência, resultado e comprometimento. Planos de carreira,
+formação continuada e avaliações serão estruturados gradualmente.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  25 / 40
+                                                           DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+12. Panorama financeiro
+
+Esta seção resume o modelo financeiro completo, detalhado no Plano de Negócios 2027-2031.
+Todos os números aqui são projeções construídas a partir de premissas explícitas, não
+resultados realizados. Nenhum deles deve ser usado em comunicação externa sem
+autorização da direção.
+
+12.1 Investimento inicial                                         Valor                 Participação
+                                                                  R$ 12.000             9%
+ Rubrica                                                          R$ 38.000             29%
+  Regularização societária, contratos e registro de marca         R$ 26.000             20%
+  Marketing de lançamento (set-dez/2026)                          R$ 28.000             22%
+  Tecnologia: site, CRM, LMS e painel de dados                    R$ 10.000             8%
+  Produção de currículos e materiais autorais                     R$ 16.000             12%
+  Estruturação comercial, feiras e eventos                        R$ 130.000            100%
+  Capital de giro
+  TOTAL
+
+12.2 Projeção consolidada de cinco anos
+
+Indicador          2026*       2027                        2028          2029           2030          2031
+
+Receita bruta      R$ 119.680  R$ 1.078.375                R$ 2.295.960  R$ 4.038.359   R$ 6.334.121  R$
+                                                                                                      9.135.125
+
+Resultado líquido  R$ -7.439   R$ 116.206                  R$ 400.319    R$ 828.066     R$ 1.363.294  R$
+                                                                                                      2.199.627
+
+Margem líquida     -6,2%       10,8%                       17,4%         20,5%          21,5%         24,1%
+
+* Ano 0 corresponde apenas à janela de setembro a dezembro de 2026, com quatro meses de operação.
+
+    Ano 1                      17 meses                           R$ 9,14 mi                  24,1%
+
+BREAKEVEN (2027)                   PAYBACK                         RECEITA 2031         MARGEM LÍQUIDA 2031
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969                26 / 40
+                                DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+                                                          Projeção de receita bruta por frente de negócio
+
+12.3 Distinção obrigatória entre breakeven e payback
+
+    Breakeven é o exercício em que a operação passa a se sustentar - medido em ano. Na projeção da
+    Promise: Ano 1, ou seja, 2027.
+    Payback é o tempo até o caixa acumulado devolver o investimento inicial - medido em meses. Na
+    projeção da Promise: 17 meses, o que corresponde a janeiro de 2028.
+    Os dois indicadores respondem a perguntas diferentes e nunca devem ser usados como sinônimos.
+
+12.4 Estrutura de custos
+
+Tipo              Componentes                                                           Comportamento
+Custos fixos      Pró-labore, coordenação pedagógica, gerência                          Crescem por degraus,
+Custos variáveis  administrativa e comercial, tecnologia e plataformas,                 conforme contratações
+                  marketing de retenção, administrativo, contábil e
+                  jurídico, site e infraestrutura                                       Escalam proporcionalmente à
+                  Materiais didáticos, horas de professores e                           receita
+                  consultores, taxas de certificação, fornecedores                      Percentual decrescente da
+                  internacionais, eventos e deslocamentos                               receita, de 10% no Ano 0 a
+                                                                                        5,5% no Ano 5
+Marketing de      Verba de mídia paga e produção de campanhas                           Alíquota efetiva crescente
+aquisição                                                                               conforme a faixa de receita
+
+Tributos          Simples Nacional Anexo III até 2029, com transição
+                  para Lucro Presumido em 2030
+
+12.5 Margens brutas estimadas por frente
+
+Frente            Margem bruta  Racional
+Schools           estimada
+Learners          60% a 75%     Serviço de conhecimento, baixo custo de insumo
+Professionals     50% a 65%     Custo relevante de horas de professor e material
+                                Maior margem; escalável e com forte reaproveitamento de
+                  65% a 80%     conteúdo
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  27 / 40
+                                             DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Frente                Margem bruta           Racional
+                      estimada
+
+Global                25% a 45%              Menor margem; depende de transporte, hospedagem e
+                                             fornecedores
+
+Meta consolidada       60%                   Aumenta com escala, recorrência e maior peso de serviços
+                                             próprios e digitais
+
+Todos os percentuais desta tabela são premissas de planejamento, não médias oficiais de mercado nem resultados
+apurados.
+
+12.6 Cenários de sensibilidade
+
+O modelo foi testado em três cenários. A conclusão relevante não é o valor do cenário base, e
+sim que o negócio permanece viável mesmo com uma redução severa de volume.
+
+Cenário            Premissa                  Receita 2031  Resultado                    Breakeven Payback
+Conservador                                  R$ 5,64 mi    2031
+Base               -35% de clientes, -5% de  R$ 9,14 mi                                 Ano 2  31 meses
+Agressivo          ticket                    R$ 12,47 mi   R$ 1,02 mi                   Ano 1  17 meses
+                                                                                        Ano 0  10 meses
+                   Premissas do plano                      R$ 2,20 mi
+
+                   +30% de clientes, +5% de                R$ 3,27 mi
+                   ticket
+
+12.7 Metas de referência comercial
+
+Indicador             Learners - cursos      Learners - American                        Schools
+                                             School
+Custo por lead        R$ 8 a R$ 15           R$ 18 a R$ 35                              R$ 40 a R$ 90
+Conversão lead-venda  8% a 12%               5% a 9%                                    6% a 10%
+Custo de aquisição    R$ 90 a R$ 160         R$ 250 a R$ 550                            R$ 600 a R$ 1.400
+Ticket médio anual    R$ 2.750               R$ 11.000                                  R$ 38.000
+Relação LTV / CAC     acima de 20x           acima de 40x                               acima de 40x
+                                                                                        renovação anual acima de
+Churn mensal alvo     abaixo de 5%           abaixo de 2%                               80%
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969         28 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+13. Narrativa, tom de voz e mensagens-chave
+
+13.1 Declaração de posicionamento
+
+    Para escolas, famílias e educadores que buscam excelência acadêmica sem abrir mão da fé, a
+    Promise é o primeiro ecossistema de internacionalização educacional genuinamente cristão do
+    Brasil - porque integra inglês, certificação, formação e experiência internacional em uma única
+    trajetória, em vez de vender pedaços soltos dessa jornada.
+
+13.2 A grande ideia
+
+        "Bilíngue ou internacional?"
+
+      O mercado brasileiro vendeu a palavra bilíngue como se fosse sinônimo de formação
+  internacional. A maioria das famílias e das escolas paga por bilíngue acreditando comprar
+    internacional. Bilíngue é uma característica linguística; internacional é um caminho com
+   documento, reconhecimento e porta de entrada em universidade. A Promise não precisa
+
+     atacar concorrente algum para se diferenciar: basta fazer a pergunta e responder com
+                                                             honestidade.
+
+13.3 Tom de voz
+
+O tom é o de um professor experiente conversando com um pai preocupado: direto, técnico
+quando precisa, sem jargão de marketing e sem promessa mágica. A Promise não vende
+atalho.
+
+Atributo           É                                       Não é
+Registro           Claro, direto, próximo                  Informal demais, gírio, publicitário
+Autoridade         Demonstrada por experiência e dado      Afirmada por adjetivo
+                   concreto                                Argumento emocional de venda
+Fé                 Critério que aparece em coerência e em  Resultado garantido em prazo fixo
+                   escolha de conteúdo                     Comparativa e nominal
+Promessa           Percurso estruturado com etapas
+Postura diante do  verificáveis
+concorrente        Silenciosa; a diferença se mostra pela
+                   oferta
+
+13.4 Frases de marca aprovadas
+
+      "Uma jornada de formação. Um mundo de possibilidades."
+      "Cada estudante é único. Cada jornada é única."
+      "O inglês é o começo. O mundo é o horizonte."
+      "Mais que aprender uma língua, é preparar para a vida."
+      "Com propósito, identidade e excelência, o futuro não tem limites."
+      "Não existe inglês micro-ondas."
+      "A Promise está com você em cada etapa."
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969           29 / 40
+               DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+13.5 Territórios de mensagem por público
+
+Público        Mensagem central                          Prova que sustenta
+Homeschoolers  Seu filho pode construir uma trajetória   Parceria com instituição americana, emissão
+Famílias e     acadêmica americana sem sair de casa e    de diploma, currículo do Elementary ao High
+alunos         sem trocar de escola                      School
+Escolas        Não existe inglês instantâneo. Existe     Mais de 14 anos de ensino, CELTA e 8 anos
+Professores    método, nível e certificação reconhecida  de Centro Preparatório Cambridge
+               Sua escola tem propósito claro. Falta um  Autoria de currículos adotados por sistemas
+               departamento de inglês à altura dele      de ensino, formação docente e avaliação
+               Quem ensina inglês também precisa de um   Experiência em preparação para TKT, CELTA
+               caminho de formação                       e DELTA
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  30 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+14. Banco de ganchos, roteiros e provas
+
+14.1 Roteiro âncora - homeschooling e American School
+
+     ABERTURA
+    "Você escolheu homeschooling para o seu filho para ter mais liberdade na educação dele. Mas já
+    parou para pensar como fica o ensino médio e, mais para a frente, a faculdade?"
+
+Desenvolvimento: reconhecer a escolha da família sem julgamento, nomear a angústia real da
+documentação e do acesso à universidade, apresentar o American School como caminho de
+validação acadêmica e explicitar a parceria com a instituição americana.
+
+     VIRADA
+    "E se o seu filho pudesse construir uma trajetória acadêmica americana sem precisar sair do Brasil
+    ou trocar de escola?"
+
+Chamada para ação: "quer entender como funciona? Clique em Saiba Mais."
+
+14.2 Roteiro âncora - cursos de inglês
+
+     ABERTURA
+    "Olá, meu nome é Calebe Braga e sou professor há mais de quinze anos."
+
+Desenvolvimento: a promessa honesta contra a promessa fácil, com a frase-chave "não existe
+inglês micro-ondas". Em seguida, o reconhecimento da frustração acumulada: "tem muita
+gente que quase viajou para fora do país, que quase fez o mestrado". A credencial entra depois
+da dor, nunca antes: mais de doze anos vivendo nos Estados Unidos e quinze anos
+aperfeiçoando a metodologia. Fecho com convite ao nivelamento gratuito.
+
+14.3 Roteiro de palestra e apresentação institucional
+
+     PERGUNTA CENTRAL
+    "Eu quero meu filho bilíngue ou internacional?"
+
+Estrutura sugerida em vinte minutos: cinco minutos separando os dois conceitos com
+exemplos concretos; cinco minutos sobre o que uma universidade estrangeira efetivamente
+pede de um candidato; cinco minutos sobre o caminho de validação acadêmica; cinco minutos
+de perguntas. A oferta aparece apenas no final, como convite para conversa individual, nunca
+como venda no palco.
+
+14.4 Banco de ganchos de abertura
+
+      A pergunta que todo pai homeschooler evita fazer sobre o ensino médio.
+      Bilíngue não é internacional. E a diferença custa caro quando se descobre tarde.
+      Seu filho estuda inglês há anos. Ele conseguiria provar isso para uma universidade?
+      Não existe inglês micro-ondas.
+      Sua escola tem propósito claro. E o departamento de inglês, tem?
+      Abrir uma escola cristã é difícil. Montar o departamento de inglês dela costuma ser
+
+          mais.
+      Quem ensina inglês também precisa de um caminho de formação.
+      A maioria das famílias descobre tarde demais o que a universidade realmente pede.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  31 / 40
+                                   DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+14.5 Provas disponíveis para sustentar afirmações
+
+Afirmação                          Prova utilizável
+A Promise tem experiência real     Mais de 14 anos de docência do fundador; 8 anos à frente de Centro
+em ensino de inglês                Preparatório Cambridge
+A Promise entende de currículo     Autoria do currículo de inglês das coleções Paideia e Oikos, do Cidade Viva
+A Promise entende de certificação  Education e da coleção To the Nations
+internacional                      Certificação CELTA e histórico de preparação de candidatos Cambridge
+A Promise tem vivência
+internacional                      Mais de 12 anos do fundador vivendo nos Estados Unidos
+A Promise já atua em escolas       Consultoria em operação e validação há mais de um ano; presença em
+                                   cinco estados
+O diploma americano é real         Emissão pela instituição americana parceira, responsável pelos requisitos
+                                   acadêmicos e créditos
+
+14.6 Regras de produção de vídeo
+
+      Gravar em bloco: uma sessão mensal produz o material de quatro semanas e protege a
+          operação contra a indisponibilidade do fundador.
+
+      Primeiros três segundos sem introdução e sem logotipo - o gancho vem antes de
+          qualquer apresentação.
+
+      Legenda sempre embutida; a maioria assiste sem som.
+      Formato vertical, enquadramento na altura do peito, luz natural sempre que possível.
+      Uma ideia por vídeo. Vídeo que tenta explicar o ecossistema inteiro não explica nada.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  32 / 40
+                                  DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+15. Registro de decisões tomadas
+
+Esta seção existe para evitar que decisões já tomadas sejam reabertas por desconhecimento.
+Cada linha registra uma escolha da direção, o motivo e a implicação prática. Alterá-las exige
+decisão explícita da direção executiva, não interpretação de quem executa.
+
+Decisão                           Motivo                                Implicação prática
+As quatro frentes são pilares de  O ecossistema é o diferencial
+igual importância                 competitivo; hierarquizar destrói a   Nenhuma peça pode apresentar uma
+Professionals e Global não têm    proposta                              frente como principal
+meta de receita em 2026           Produto ainda não estruturado;
+A operação é 100% online          vender mal queimaria a reputação      Em 2026 essas frentes só constroem
+                                  Escala, custo e alcance nacional      audiência
+O diagnóstico gratuito é a        Qualifica, demonstra competência e    Não comunicar endereço de
+oferta de entrada                 transforma venda em consulta          atendimento presencial
+                                  técnica
+Não competir por preço            A Promise perde essa disputa contra   Preço nunca é a chamada principal de
+                                  redes de escala                       campanha
+Cosmovisão cristã como nicho      Diferenciação real em mercado
+declarado                         pouco disputado                       Nenhuma campanha de desconto em
+American School independente      Atende exatamente quem o              mensalidade; condição especial só em
+de escola regular                 mercado ignora                        matrícula
+Migração de MEI para              Limite de faturamento e restrição de  A fé aparece como coerência, nunca
+sociedade limitada                nota fiscal para pessoa jurídica      como apelo emocional
+O fundador é o rosto da           A autoridade hoje é pessoal, não      É o principal argumento de
+comunicação                       institucional                         diferenciação para homeschoolers
+Registro da marca no INPI         Proteção do ativo de marca            Prazo de 31/10/2026; contratos B2B
+                                                                        dependem disso
+                                                                        Vídeos em primeira pessoa;
+                                                                        necessidade de gravar em bloco
+                                                                        Previsto na rubrica de regularização do
+                                                                        investimento inicial
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  33 / 40
+                                       DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+16. Perguntas em aberto e pendências
+
+As questões abaixo ainda não foram respondidas pela direção. Elas estão listadas aqui
+deliberadamente: conhecer o que não se sabe é parte da base de contexto. Nenhuma delas
+deve ser preenchida por suposição - nem por pessoas, nem por sistemas de inteligência
+artificial.
+
+16.1 Pendências operacionais com prazo
+
+Pendência                              Prazo definido        Impacto se atrasar
+Migração de MEI para sociedade         31/10/2026            Impede a assinatura de contratos com escolas
+limitada                               Semana 1 de           Inviabiliza o investimento em mídia paga
+Publicação do site definitivo com      setembro              Torna a verba de mídia não otimizável
+páginas de destino                     Semana 1 de           Leads pagos esfriam na fila de resposta
+Instalação de medição e ferramenta de  setembro              Exposição do principal ativo de marca
+registro comercial                     Até a semana 5        Realocação do bloco das semanas 7 e 8
+Contratação de apoio de atendimento    4º trimestre de 2026
+comercial                              A confirmar
+Registro da marca no INPI
+Confirmação das datas da Expo
+Homeschooling
+
+16.2 Definições estratégicas ainda não fechadas
+
+      Política de preços formal e documentada por frente, com regras de desconto e de
+          reajuste.
+
+      Definição sobre existência de distribuidores e modelo de comissionamento.
+
+      Necessidade de licenciamento específico para alguma das ofertas.
+
+      Composição definitiva da força de vendas.
+
+      Convergência sobre breakeven e payback: as respostas da direção variaram entre "6 a
+          8 meses e 12 meses" e "12 a 18 meses e 24 meses". O modelo financeiro adota a
+          segunda hipótese, mais conservadora.
+
+      Avaliação da concorrência quanto a velocidade de decisão, capacidade de resposta a
+          mudanças e posição de liderança ou de seguidora de mercado.
+
+      Tratamento formal do conflito de interesse entre a atuação autônoma da Promise e
+          vínculos existentes com o sistema de ensino Cidade Viva Education.
+
+      Titularidade da infraestrutura tecnológica, hoje sob domínio de terceiro.
+
+ORIENTAÇÃO AO ANALISTA E AO SISTEMA DE IA
+
+Quando uma pergunta cair em qualquer um dos itens acima, a resposta correta é "esta definição
+ainda está em aberto na Promise". Preencher a lacuna com uma estimativa plausível é mais
+prejudicial do que admitir a ausência, porque o conteúdo gerado passa a circular como se fosse
+decisão da empresa.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  34 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+17. Glossário e convenções de nomenclatura
+
+17.1 Grafia correta dos nomes
+
+Correto                    Incorreto                         Observação
+Promise Education Group    Promisse, Promise Educacional     Nome empresarial
+Promise English            Promise Inglês, PromiseEnglish    Marca comercial; no logotipo aparece sem
+                           School                            espaço
+                                                             Nome de frente sempre em inglês, com
+Promise for Schools        Promise Schools, Promise Escolas  "for"
+                                                             Idem
+Promise for Learners       Promise Learners, Promise Alunos  Idem
+Promise for Professionals  Promise Professionals, Promise    Exceção: esta frente não leva "for"
+Promise Global             Profissionais                     Nome da metodologia proprietária
+Promise Excellence         Promise for Global
+Framework                  Framework Promise, Metodologia    Nome do programa
+American School            Excellence
+                           Escola Americana, High School
+                           Americano
+
+17.2 Glossário de termos
+
+Termo                      Definição
+Breakeven                  Ponto de equilíbrio; exercício em que a operação passa a se sustentar. Medido em ano
+Payback                    Tempo até o caixa acumulado devolver o investimento inicial. Medido em meses
+CAC                        Custo de aquisição de cliente; total investido em marketing e vendas dividido pelo
+                           número de clientes conquistados
+LTV                        Valor do tempo de vida do cliente; receita total esperada ao longo de todo o
+Churn                      relacionamento
+CPL                        Taxa de cancelamento ou de não renovação em um período
+Lead                       Custo por lead; valor investido dividido pelo número de contatos qualificados gerados
+B2B                        Contato que demonstrou interesse e forneceu dados para retorno
+B2C                        Venda para instituições; no caso da Promise, escolas
+Homeschooling              Venda direta ao consumidor final; famílias, alunos e profissionais
+Elementary, Middle e       Educação domiciliar; modalidade em que a família assume a condução da
+High School                escolarização
+Cambridge                  Etapas do sistema educacional americano, equivalentes aproximados ao Fundamental
+                           I, Fundamental II e Ensino Médio brasileiros
+TKT, CELTA e DELTA         Cambridge Assessment English, organismo internacional de certificação de
+                           proficiência e de qualificação docente
+Convalidação               Certificações Cambridge de qualificação docente, em ordem crescente de
+                           profundidade
+Nivelamento                Processo de reconhecimento formal de estudos realizados em outro sistema
+                           educacional
+                           Avaliação inicial que define o ponto de partida do estudante na trilha de
+                           aprendizagem
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  35 / 40
+                   DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Termo              Definição
+Ecossistema        No vocabulário da Promise, o conjunto integrado das quatro frentes operando de
+Cosmovisão cristã  forma conectada
+                   Conjunto de pressupostos que orienta a leitura da realidade e, no caso da Promise, os
+                   critérios de currículo e de conduta
+
+17.3 Convenções de escrita
+
+      Os nomes das frentes permanecem sempre em inglês, mesmo em textos em
+          português.
+
+      Valores em reais escritos com separador de milhar por ponto e decimal por vírgula.
+      Períodos escritos por extenso em texto corrido e abreviados apenas em tabelas.
+      Evitar sigla não explicada; a primeira ocorrência sempre traz o termo completo.
+      Usar "estudante" ou "aluno" indistintamente; evitar "consumidor" e "usuário", que
+
+          descaracterizam a relação educacional.
+      Referir-se às famílias como "famílias", não como "clientes", em comunicação externa.
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  36 / 40
+                      DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Anexo A - Ficha-resumo para consulta rápida
+
+Esta ficha condensa em uma única página os dados mais consultados. Ela foi estruturada em
+pares de campo e valor para facilitar a extração automatizada.
+
+Campo                 Valor
+empresa               Promise Education Group
+marca                 Promise English
+fundador              Calebe Braga
+setor                 Educação, ensino de idiomas, consultoria educacional e internacionalização
+sede                  João Pessoa, Paraíba, Brasil
+operacao              100% online
+abrangencia           Nacional, com atuação em cinco estados
+situacao_legal        MEI, com migração para sociedade limitada prevista para o 4º trimestre de 2026
+site                  https://promise-peach-eight.vercel.app/
+email                 calebe@promiseenglish.com
+whatsapp              (83) 9 9697-7969
+instagram             @promise.english
+tagline               Ecossistema de internacionalização educacional para escolas, famílias e
+                      professores, fundamentado em excelência acadêmica e cosmovisão cristã
+missao                Expandir os horizontes de escolas, famílias homeschooling, educadores e
+                      estudantes por meio da internacionalização educacional de excelência
+visao                 Ser o principal ecossistema cristão de internacionalização educacional da América
+                      Latina
+valores               Excelência, propósito, cosmovisão cristã, desenvolvimento integral, autonomia e
+frentes               visão global
+metodologia           Promise for Schools, Promise for Learners, Promise for Professionals, Promise Global
+grande_ideia          Promise Excellence Framework - cinco estágios: inglês, proficiência, certificação,
+cores                 formação internacional e experiências globais
+fonte                 Bilíngue ou internacional?
+investimento_inicial  #FA1F15 vermelho, #C81811 vermelho escuro, #FF7A00 laranja, #1836B2 azul
+breakeven             royal, #0E1A50 azul escuro
+payback               Roboto, pesos 300 a 900
+receita_2027          R$ 130.000
+receita_2031          Ano 1, correspondente a 2027
+margem_liquida_2031   17 meses, correspondente a janeiro de 2028
+concorrentes          R$ 1.078.375
+parceiros             R$ 9.135.125
+                      24,1%
+                      Cultura Inglesa, Wizard by Pearson, CNA, CCAA, Fisk, consultorias educacionais e
+                      agências de intercâmbio
+                      Cambridge Assessment English, instituição americana parceira, Kairos, Arkos, AEI,
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  37 / 40
+                                     DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Campo                     Valor
+                          Education
+
+A.1 Metas da janela de lançamento set-dez/2026
+
+Campo                     Valor
+periodo                   1º de setembro a 31 de dezembro de 2026, 18 semanas
+meta_fechamentos          59 matrículas e contratos
+meta_receita              R$ 119.680
+meta_american_school      15 matrículas
+meta_turmas_ingles        30 alunos
+meta_aulas_particulares   12 alunos
+meta_contratos_escolares  2 contratos
+meta_lista_professionals  250 inscritos, sem meta de receita em 2026
+meta_lista_global         80 interessados, sem meta de receita em 2026
+meta_leads                1.100 contatos qualificados
+meta_reunioes             300 diagnósticos realizados
+meta_seguidores           2.500 no Instagram
+verba_midia               R$ 38.000
+base_leads_existente       700 contatos de dois congressos de homeschooling
+                          Trajetória Internacional (46%), Inglês com Método (24%), Departamento de Inglês
+campanhas                 (22%), aquecimento de professores (8%)
+                          Diagnóstico gratuito de trajetória acadêmica ou de departamento de inglês
+oferta_de_entrada
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  38 / 40
+                                       DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Anexo B - O que a Promise não diz
+
+Estas restrições existem por razões jurídicas, éticas e estratégicas. Elas se aplicam a qualquer
+peça, texto, anúncio ou resposta gerada em nome da Promise, inclusive por sistemas
+automatizados.
+
+Restrição                              Motivo
+                                       É promessa impossível de garantir e contradiz a frase de marca
+Nunca prometer fluência em prazo fixo  "não existe inglês micro-ondas"
+                                       A admissão depende dos requisitos de cada instituição; garantir é
+Nunca garantir aprovação em            falso e juridicamente arriscado
+universidade específica                Exames e certificados Cambridge são emitidos pelos organismos
+Nunca apresentar a Promise como        autorizados; o diploma americano, pela instituição parceira
+instituição certificadora              Decisão de posicionamento: a diferença se demonstra pela oferta,
+Nunca comparar nominalmente com        não pelo ataque
+concorrentes                           A cosmovisão cristã é critério de conduta e de currículo, não
+Nunca usar a fé como argumento         gatilho de conversão
+emocional de venda                     Corrói margem e posicionamento; condição especial só é aplicada
+Nunca oferecer desconto em             em matrícula
+mensalidade                            Informação sensível de negociação B2B
+Nunca publicar preços de contratos     Descaracteriza a proposta de ecossistema, que é o diferencial
+escolares em mídia aberta              competitivo central
+                                       Os números de receita e margem são premissas de planejamento
+Nunca hierarquizar as quatro frentes
+                                       A marca é nova e sua reputação é o ativo mais valioso que possui
+Nunca apresentar projeção financeira
+como resultado realizado
+Nunca inventar depoimento, número
+de alunos ou caso de sucesso
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  39 / 40
+                                                                                                    DOSSIÊ DE CONTEXTO · PROMISE EDUCATION GROUP
+
+Anexo C - Controle do documento
+
+Documento                Dossiê de Contexto Institucional - Promise Education Group
+Versão                   1.0 · 31 de agosto de 2026
+Finalidade               Base de conhecimento para equipe de marketing, agências, parceiros e sistemas
+                         de inteligência artificial
+Fontes                   Base de conhecimento interna da Promise, questionário do plano de negócio
+                         respondido pela direção, transcrições das reuniões de modelo de negócio,
+Documentos relacionados  precificação e roteiros de agosto de 2026, e modelo financeiro do Plano de
+Revisão                  Negócios 2027-2031
+Confidencialidade        Plano de Negócios Promise Education Group 2027-2031 · Projeto de Marketing
+                         set-dez/2026
+                         Trimestral, ou sempre que uma pendência do capítulo 16 for resolvida
+                         Documento interno. Contém preços praticados e projeções financeiras.
+                         Distribuição restrita à direção, à equipe de marketing e a parceiros mediante
+                         autorização.
+
+                   Promise Education Group · João Pessoa - PB
+calebe@promiseenglish.com · (83) 9 9697-7969 · @promise.english
+
+                       https://promise-peach-eight.vercel.app/
+
+Promise Education Group · João Pessoa/PB · calebe@promiseenglish.com · (83) 99697-7969  40 / 40
+

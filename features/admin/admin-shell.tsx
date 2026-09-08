@@ -15,6 +15,7 @@ import {
   ClipboardList,
   Calculator,
   Presentation,
+  FileText,
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -40,6 +41,11 @@ const NAV_ITEMS = [
     href: "/admin/plano-de-negocio/financeiro",
     label: "Plano de Negócio · Financeiro",
     icon: Calculator,
+  },
+  {
+    href: "/admin/plano-de-negocio/relatorio",
+    label: "Plano de Negócio · Relatório A4",
+    icon: FileText,
   },
   {
     href: "/admin/plano-de-negocio/apresentacao",

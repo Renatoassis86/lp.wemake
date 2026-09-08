@@ -10,6 +10,11 @@ const config: NextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
+  outputFileTracingIncludes: {
+    "app/api/admin/plano-negocio/relatorio-pdf/route": ["./node_modules/@sparticuz/chromium/bin/**"],
+  },
+
   experimental: {
     optimizePackageImports: [
       "lucide-react",
