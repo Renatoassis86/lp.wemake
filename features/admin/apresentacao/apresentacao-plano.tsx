@@ -33,14 +33,13 @@ export function ApresentacaoPlano({ }: Props) {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    // Carrega o HTML nativo da apresentação Deck Forge para injetar diretamente via srcDoc (evita 404 de rotas estáticas)
+    // Carrega o HTML nativo da apresentação Deck Forge
     fetch("/deck/index.html")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.text();
       })
       .then((html) => {
-        // Substitui caminhos relativos para garantir resolução de CSS/JS no domínio
         const htmlAjustado = html
           .replace(/href="deck.css"/g, 'href="/deck/deck.css"')
           .replace(/href="brand.css"/g, 'href="/deck/brand.css"')
@@ -55,34 +54,64 @@ export function ApresentacaoPlano({ }: Props) {
         console.warn("Falha ao carregar via fetch, fallback para URL do iframe:", err);
         setCarregando(false);
       });
+
+    // Monitora evento nativo de fullscreen para manter estado em sincronia em iPads/Android/Desktop
+    const handleFullscreenChange = () => {
+      const isFull = !!(
+        document.fullscreenElement ||
+        (document as any).webkitFullscreenElement ||
+        (document as any).mozFullScreenElement
+      );
+      setTelaCheia(isFull);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+    };
   }, []);
 
   const alternarTelaCheia = () => {
     if (!containerRef.current) return;
 
-    if (!document.fullscreenElement) {
-      containerRef.current.requestFullscreen().then(() => {
+    const el = containerRef.current as any;
+    const isCurrentlyFull = telaCheia || !!document.fullscreenElement;
+
+    if (!isCurrentlyFull) {
+      // Suporte nativo para Chrome/Firefox + WebKit (Safari iPad/iPhone)
+      if (el.requestFullscreen) {
+        el.requestFullscreen().catch(() => setTelaCheia(true));
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
         setTelaCheia(true);
-        iframeRef.current?.focus();
-      }).catch((err) => {
-        console.error("Erro ao entrar em tela cheia:", err);
-      });
+      } else {
+        // Fallback total via CSS Overlay em dispositivos iOS/Safari restritos
+        setTelaCheia(true);
+      }
+      iframeRef.current?.focus();
     } else {
-      document.exitFullscreen().then(() => {
+      const doc = document as any;
+      if (doc.exitFullscreen) {
+        doc.exitFullscreen().catch(() => setTelaCheia(false));
+      } else if (doc.webkitExitFullscreen) {
+        doc.webkitExitFullscreen();
         setTelaCheia(false);
-      }).catch((err) => {
-        console.error("Erro ao sair da tela cheia:", err);
-      });
+      } else {
+        setTelaCheia(false);
+      }
     }
   };
 
   return (
     <div className="w-full flex flex-col gap-3">
-      {/* Barra de Ações Rápidas */}
-      <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-white/[0.04] border border-white/10">
+      {/* Barra Responsiva de Ações Rápidas (Mobile, iPad e Desktop) */}
+      <div className="flex flex-wrap items-center justify-between gap-2.5 p-3 rounded-xl bg-white/[0.04] border border-white/10">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono text-[rgb(var(--color-brand-mint))] uppercase tracking-wider font-bold px-1">
-            Plano de Negócio 2027–2031
+          <span className="text-[0.7rem] sm:text-xs font-mono text-[rgb(var(--color-brand-mint))] uppercase tracking-wider font-bold px-1">
+            Plano 2027–2031
           </span>
           <span className="text-white/40 text-xs hidden sm:inline">|</span>
           <span className="text-xs text-white/70 hidden sm:inline">
@@ -90,48 +119,50 @@ export function ApresentacaoPlano({ }: Props) {
           </span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={alternarTelaCheia}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/90 text-[rgb(var(--color-brand-navy))] font-bold text-xs shadow transition cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/90 text-[rgb(var(--color-brand-navy))] font-bold text-xs shadow transition cursor-pointer"
           >
             <Tv className="size-3.5" />
-            <span>Tela Cheia</span>
+            <span>{telaCheia ? "Sair Tela Cheia" : "Tela Cheia"}</span>
           </button>
 
           <a
             href="/deck/index.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium text-xs border border-white/15 transition"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium text-xs border border-white/15 transition"
           >
             <ExternalLink className="size-3.5" />
-            <span>Abrir Aba</span>
+            <span className="hidden sm:inline">Abrir Aba</span>
           </a>
 
           <a
             href="/Apresentacao_We_Make_Plano_de_Negocio_2027_2031.pdf"
             download="Apresentacao_We_Make_Plano_de_Negocio_2027_2031.pdf"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium text-xs border border-white/15 transition"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium text-xs border border-white/15 transition"
           >
             <Download className="size-3.5" />
-            <span>PDF (30 Slides)</span>
+            <span>PDF</span>
           </a>
         </div>
       </div>
 
-      {/* Container da Apresentação Canvas 16:9 */}
+      {/* Container de exibição 100% responsivo para Mobile, iPad e Tela Cheia */}
       <div
         ref={containerRef}
         className={`relative w-full rounded-2xl overflow-hidden border border-white/15 bg-[#0B0F1A] shadow-2xl transition-all ${
-          telaCheia ? "fixed inset-0 z-50 rounded-none border-none" : "aspect-[16/9] min-h-[500px] lg:min-h-[640px]"
+          telaCheia
+            ? "fixed inset-0 z-[9999] w-screen h-screen rounded-none border-none p-0 m-0"
+            : "aspect-[16/9] min-h-[320px] sm:min-h-[460px] md:min-h-[560px] lg:min-h-[640px]"
         }`}
       >
         {carregando && (
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#0B0F1A] text-white/60 gap-3">
             <RefreshCw className="size-6 animate-spin text-[rgb(var(--color-brand-mint))]" />
-            <span className="text-xs font-mono">Carregando apresentação cinematográfica...</span>
+            <span className="text-xs font-mono">Carregando apresentação...</span>
           </div>
         )}
 
@@ -140,15 +171,16 @@ export function ApresentacaoPlano({ }: Props) {
           srcDoc={htmlContent || undefined}
           src={htmlContent ? undefined : "/deck/index.html"}
           title="Apresentação We Make Plano de Negócio 2027-2031"
-          className="w-full h-full border-0"
+          className="w-full h-full border-0 touch-pan-x touch-pan-y"
           allow="fullscreen"
         />
 
+        {/* Botão flutuante de alternar Tela Cheia */}
         <button
           type="button"
           onClick={alternarTelaCheia}
           aria-label={telaCheia ? "Sair da tela cheia" : "Entrar em tela cheia"}
-          className="absolute top-4 right-4 z-30 size-9 rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md flex items-center justify-center hover:bg-black/60 transition shadow-lg"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 size-9 rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md flex items-center justify-center hover:bg-black/60 transition shadow-lg"
         >
           {telaCheia ? <Minimize className="size-4" /> : <Maximize className="size-4" />}
         </button>

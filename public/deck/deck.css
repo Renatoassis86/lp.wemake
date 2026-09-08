@@ -310,3 +310,41 @@ body { background: #232326; font-family: var(--font-body); -webkit-font-smoothin
 .export [data-anim], .export .kinetic .w { opacity: 1 !important; filter: none !important; transform: none !important; clip-path: none !important; animation: none !important; }
 .export [data-anim="ken"] img, .export [data-anim="ken"] .bg-mesh { animation: none !important; transform: none !important; }
 .export .draw { stroke-dashoffset: 0 !important; animation: none !important; }
+
+/* ---------- 13. RESPONSIVIDADE E ADAPTAÇÃO PARA IPAD E MOBILE ---------- */
+@media (max-width: 1280px) {
+  .deck { padding: 0; gap: 0; width: 100vw; }
+  .slide {
+    width: 100vw;
+    height: auto;
+    min-height: 56.25vw;
+    padding: clamp(32px, 5vw, 80px);
+    font-size: clamp(16px, 2.2vw, 28px);
+  }
+  .display { font-size: clamp(48px, 8vw, 110px); }
+  .h1 { font-size: clamp(36px, 6vw, 76px); }
+  .h2 { font-size: clamp(28px, 4.5vw, 54px); }
+  .h3 { font-size: clamp(20px, 3vw, 36px); }
+  .lede { font-size: clamp(18px, 2.8vw, 32px); }
+  .body { font-size: clamp(16px, 2.2vw, 26px); }
+  .small { font-size: clamp(14px, 1.8vw, 22px); }
+  .stat__value { font-size: clamp(44px, 8vw, 96px); }
+  .logo-zone img, .logo-zone svg { height: clamp(32px, 4vw, 52px); }
+  .split, .split--60, .split--40 { grid-template-columns: 1fr; gap: 24px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  .slide { padding: 24px 20px 64px 20px; min-height: 100vh; justify-content: flex-start; }
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 16px; }
+  .bento { grid-template-columns: 1fr; }
+  .bento .card--wide, .bento .card--hero, .bento .card--tall { grid-column: span 1; grid-row: span 1; }
+  .flow { flex-direction: column; gap: 12px; }
+  .flow__arrow { transform: rotate(90deg); flex: 0 0 32px; font-size: 24px; }
+  .hier__row { flex-direction: column; gap: 12px; }
+  .hier__node { min-width: auto; width: 100%; }
+  .logo-zone { right: 20px; bottom: 20px; }
+  .footer { left: 20px; bottom: 20px; font-size: 11px; }
+}
+
