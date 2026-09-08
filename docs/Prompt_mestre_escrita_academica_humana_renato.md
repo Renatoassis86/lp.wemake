@@ -159,6 +159,8 @@ Revise e reescreva ocorrências mecânicas ou semanticamente vazias de:
 - lições morais, exortações, previsões grandiosas ou encerramentos inspiracionais incompatíveis com a evidência;
 - enumerações recorrentes em grupos de três, simetrias excessivas e sequências de frases construídas pelo mesmo molde;
 - títulos e frases de efeito compostos por duas orações curtas e paralelas separadas por ponto, no molde "X curto. Y curto." (ex.: "Cinco componentes. Um único contrato."), que soam a slogan publicitário genérico em vez de afirmação com conteúdo próprio;
+- títulos e frases de efeito construídos como contraste mecânico do tipo "X, sem Y" ou "isso, sem aquilo" (ex.: "Cinco componentes reunidos em um único contrato, sem preço fracionado entre eles"), que repetem o mesmo molde publicitário do contraste "não é X, é Y" apenas trocando a negação de lugar; prefira afirmar o conteúdo positivo diretamente, sem depender do que está sendo negado;
+- ponto final em títulos, manchetes e frases de efeito isoladas (headlines, títulos de slide, títulos de seção destacados tipograficamente): não usar ponto final nesses casos, mesmo quando a frase é declarativa e completa; o ponto final permanece normal dentro de parágrafos de texto corrido;
 - perguntas retóricas, generalizações universais, superlativos e adjetivação promocional;
 - frases metadiscursivas que anunciam o que será dito sem necessidade;
 - paráfrases que preservam a estrutura da fonte e apenas substituem vocábulos;

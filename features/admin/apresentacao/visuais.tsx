@@ -157,6 +157,7 @@ interface NoOrganograma {
   cor: string;
   iniciais: string;
   foto?: string;
+  miniBio?: string;
 }
 
 export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoOrganograma[] }) {
@@ -186,8 +187,8 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
           </div>
         )}
         <div className="text-left">
-          <p className="text-white text-[0.9375rem] font-semibold leading-snug">{topo.nome}</p>
-          <p className="font-mono text-[0.6875rem] uppercase tracking-wider" style={{ color: topo.cor }}>{topo.cargo}</p>
+          <p className="text-white text-base font-semibold leading-snug">{topo.nome}</p>
+          <p className="font-mono text-base uppercase tracking-wider" style={{ color: topo.cor }}>{topo.cargo}</p>
         </div>
       </motion.div>
 
@@ -195,7 +196,7 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
       <motion.div
         className="w-px bg-white/25"
         initial={{ height: 0 }}
-        animate={emVista ? { height: 28 } : {}}
+        animate={emVista ? { height: 40 } : {}}
         transition={{ delay: 0.35, duration: 0.35 }}
       />
       <motion.div
@@ -207,9 +208,9 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
       />
 
       {/* Filhos, cada um com seu próprio galho vertical */}
-      <div className="flex flex-wrap justify-center gap-x-2 gap-y-6 mt-0 max-w-4xl">
+      <div className="flex flex-wrap justify-center gap-x-3 gap-y-8 mt-0 max-w-6xl pt-2">
         {filhos.map((f, i) => (
-          <div key={f.nome} className="flex flex-col items-center w-[7.5rem]">
+          <div key={f.nome} className="flex flex-col items-center w-[11rem]">
             <motion.div
               className="w-px bg-white/25"
               initial={{ height: 0 }}
@@ -217,20 +218,31 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
               transition={{ delay: 0.55 + i * 0.06, duration: 0.3 }}
             />
             <motion.div
-              className="rounded-xl border px-2.5 py-2 text-center w-full"
+              className="rounded-xl border px-3 py-3 text-center w-full"
               style={{ background: `${f.cor}14`, borderColor: `${f.cor}55` }}
               initial={{ opacity: 0, y: 10 }}
               animate={emVista ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 + i * 0.06, duration: 0.4 }}
             >
-              <div
-                className="size-7 rounded-full flex items-center justify-center font-display text-[0.6875rem] font-bold mx-auto mb-1.5"
-                style={{ background: `${f.cor}33`, color: f.cor }}
-              >
-                {f.iniciais}
-              </div>
-              <p className="text-white/85 text-[0.6875rem] font-medium leading-snug">{f.nome}</p>
-              <p className="font-mono text-[0.5625rem] uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
+              {f.foto ? (
+                <div className="size-11 rounded-full overflow-hidden mx-auto mb-1.5" style={{ boxShadow: `0 0 0 2px ${f.cor}` }}>
+                  <Image src={f.foto} alt={f.nome} width={44} height={44} className="size-full object-cover" />
+                </div>
+              ) : (
+                <div
+                  className="size-8 rounded-full flex items-center justify-center font-display text-base font-bold mx-auto mb-1.5"
+                  style={{ background: `${f.cor}33`, color: f.cor }}
+                >
+                  {f.iniciais}
+                </div>
+              )}
+              <p className="text-white/85 text-base font-medium leading-snug">{f.nome}</p>
+              <p className="font-mono text-base uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
+              {f.miniBio && (
+                <p className="text-white/45 text-base leading-snug mt-1.5 pt-1.5 border-t" style={{ borderColor: `${f.cor}30` }}>
+                  {f.miniBio}
+                </p>
+              )}
             </motion.div>
           </div>
         ))}
@@ -250,10 +262,10 @@ interface NoFluxo {
 export function FluxoCurriculo({ centro, satelites }: { centro: string; satelites: NoFluxo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 620;
+  const size = 680;
   const cx = size / 2;
   const cy = size / 2;
-  const rOrbita = 232;
+  const rOrbita = 255;
   const n = satelites.length;
 
   return (
@@ -330,8 +342,101 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
             >
               <Icone className="size-5 text-[rgb(var(--color-brand-mint))] mx-auto mb-1.5" strokeWidth={1.75} />
-              <p className="text-white text-[0.8125rem] font-semibold leading-snug">{s.titulo}</p>
-              <p className="text-white/50 text-[0.625rem] leading-snug mt-0.5">{s.texto}</p>
+              <p className="text-white text-base font-semibold leading-snug">{s.titulo}</p>
+              <p className="text-white/50 text-base leading-snug mt-0.5">{s.texto}</p>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ================= Ciclo circular de etapas ================= */
+
+interface EtapaCiclo {
+  titulo: string;
+  icone: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+}
+
+export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaCiclo[] }) {
+  const ref = useRef<SVGSVGElement>(null);
+  const emVista = useInView(ref, { once: true, margin: "-10%" });
+  const size = 580;
+  const cx = size / 2;
+  const cy = size / 2;
+  const r = 205;
+  const n = etapas.length;
+
+  const pontos = etapas.map((_, i) => {
+    const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
+    return { ang, x: cx + Math.cos(ang) * r, y: cy + Math.sin(ang) * r };
+  });
+
+  return (
+    <div className="relative mx-auto" style={{ maxWidth: size }}>
+      <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-auto overflow-visible">
+        <motion.circle
+          cx={cx}
+          cy={cy}
+          r={r}
+          fill="none"
+          stroke="rgba(255,255,255,0.14)"
+          strokeWidth={2}
+          initial={{ pathLength: 0 }}
+          animate={emVista ? { pathLength: 1 } : {}}
+          transition={{ duration: 1.7, ease: [0.65, 0, 0.35, 1] }}
+        />
+        {pontos.map((p, i) => {
+          const prox = pontos[(i + 1) % n]!;
+          const varredura = ((prox.ang - p.ang + Math.PI * 2) % (Math.PI * 2)) || Math.PI * 2;
+          const midAng = p.ang + varredura / 2;
+          const mx = cx + Math.cos(midAng) * r;
+          const my = cy + Math.sin(midAng) * r;
+          const tangDeg = (Math.atan2(Math.cos(midAng), -Math.sin(midAng)) * 180) / Math.PI;
+          return (
+            <motion.path
+              key={`seta-${i}`}
+              d="M -6 -6 L 6 0 L -6 6"
+              stroke="rgb(var(--color-brand-mint))"
+              strokeWidth={2.25}
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              transform={`translate(${mx} ${my}) rotate(${tangDeg})`}
+              initial={{ opacity: 0 }}
+              animate={emVista ? { opacity: 0.9 } : {}}
+              transition={{ delay: 1 + i * 0.08, duration: 0.4 }}
+            />
+          );
+        })}
+      </svg>
+
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <span className="font-mono text-base uppercase tracking-[0.25em] text-white/25 text-center max-w-[7rem] leading-relaxed">
+          {centro}
+        </span>
+      </div>
+
+      <div className="absolute inset-0">
+        {pontos.map((p, i) => {
+          const etapa = etapas[i]!;
+          const Icone = etapa.icone;
+          const leftPct = (p.x / size) * 100;
+          const topPct = (p.y / size) * 100;
+          return (
+            <motion.div
+              key={etapa.titulo}
+              className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: 118 }}
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={emVista ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 0.25 + i * 0.12, duration: 0.45, ease: "backOut" }}
+            >
+              <div className="size-14 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm flex items-center justify-center shrink-0">
+                <Icone className="size-6 text-[rgb(var(--color-brand-mint))]" strokeWidth={1.75} />
+              </div>
+              <p className="text-white text-base font-semibold text-center leading-snug">{etapa.titulo}</p>
             </motion.div>
           );
         })}
@@ -352,8 +457,8 @@ interface PontoMatriz {
 export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 480;
-  const pad = 54;
+  const size = 560;
+  const pad = 60;
   const meio = (size + pad) / 2;
 
   return (
@@ -369,10 +474,10 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
       <line x1={size / 2} y1={pad} x2={size / 2} y2={size - pad} stroke="rgba(255,255,255,0.12)" strokeWidth={1} strokeDasharray="3 4" />
       <line x1={pad} y1={size / 2} x2={size - pad} y2={size / 2} stroke="rgba(255,255,255,0.12)" strokeWidth={1} strokeDasharray="3 4" />
 
-      <text x={pad - 14} y={size / 2} textAnchor="end" fontFamily="var(--font-mono)" fontSize={11} fontWeight={700} letterSpacing="0.08em" fill="rgba(255,255,255,0.55)" transform={`rotate(-90 ${pad - 14} ${size / 2})`}>
+      <text x={pad - 16} y={size / 2} textAnchor="end" fontFamily="var(--font-mono)" fontSize={13} fontWeight={700} letterSpacing="0.08em" fill="rgba(255,255,255,0.55)" transform={`rotate(-90 ${pad - 16} ${size / 2})`}>
         IMPACTO →
       </text>
-      <text x={size / 2} y={size - pad + 24} textAnchor="middle" fontFamily="var(--font-mono)" fontSize={11} fontWeight={700} letterSpacing="0.08em" fill="rgba(255,255,255,0.55)">
+      <text x={size / 2} y={size - pad + 28} textAnchor="middle" fontFamily="var(--font-mono)" fontSize={13} fontWeight={700} letterSpacing="0.08em" fill="rgba(255,255,255,0.55)">
         PROBABILIDADE →
       </text>
 
@@ -386,9 +491,9 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
             animate={emVista ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.3 + i * 0.1, duration: 0.4, ease: "backOut" }}
           >
-            <circle cx={x} cy={y} r={20} fill={p.cor} fillOpacity={0.18} />
-            <circle cx={x} cy={y} r={9} fill={p.cor} />
-            <text x={x} y={y - 27} textAnchor="middle" fontFamily="var(--font-sans)" fontSize={12} fontWeight={600} fill="rgba(255,255,255,0.9)">
+            <circle cx={x} cy={y} r={23} fill={p.cor} fillOpacity={0.18} />
+            <circle cx={x} cy={y} r={10} fill={p.cor} />
+            <text x={x} y={y - 30} textAnchor="middle" fontFamily="var(--font-sans)" fontSize={14} fontWeight={600} fill="rgba(255,255,255,0.9)">
               {p.label}
             </text>
           </motion.g>
@@ -403,9 +508,9 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
 export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: string }[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 340;
-  const r = 128;
-  const stroke = 42;
+  const size = 400;
+  const r = 150;
+  const stroke = 48;
   const c = 2 * Math.PI * r;
   const maior = fatias.reduce((m, f) => (f.pct > m.pct ? f : m), fatias[0]!);
   let acumulado = 0;
@@ -444,7 +549,7 @@ export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: s
           transition={{ delay: 0.9, duration: 0.5 }}
         >
           <p className="font-display text-white text-4xl font-semibold">{maior.pct}%</p>
-          <p className="text-white/45 text-[0.75rem] max-w-[7rem] text-center leading-snug mt-1">{maior.label}</p>
+          <p className="text-white/45 text-base max-w-[7rem] text-center leading-snug mt-1">{maior.label}</p>
         </motion.div>
       </div>
       <div className="flex flex-col gap-2.5">
@@ -458,8 +563,8 @@ export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: s
             transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
           >
             <span className="size-3 rounded-full shrink-0" style={{ background: f.cor }} />
-            <span className="text-white/75 text-[0.875rem]">{f.label}</span>
-            <span className="font-mono text-white/45 text-[0.8125rem] tabular-nums">{f.pct}%</span>
+            <span className="text-white/75 text-base">{f.label}</span>
+            <span className="font-mono text-white/45 text-base tabular-nums">{f.pct}%</span>
           </motion.div>
         ))}
       </div>
