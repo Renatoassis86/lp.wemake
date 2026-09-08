@@ -55,7 +55,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O planejamento orçamentário de 2027, já consolidado mês a mês, projeta receita de escolas de R$1.100.000,00, sendo R$951.961,90 já contratados e R$148.038,10 de escolas em fase final de negociação, com fechamento previsto para as próximas semanas. A isso se soma, como receita adicional e distinta, R$49.890,00 da primeira venda da trilha de currículo para famílias educadoras, totalizando R$1.149.890,00 de receita no exercício. A despesa total soma R$820.365,14, resultando em resultado operacional positivo de R$329.524,86, margem de 28,7%.",
+              "O planejamento orçamentário de 2027, já consolidado mês a mês, projeta receita de escolas de R$1.100.000,00, sendo R$951.961,90 já contratados e R$148.038,10 de escolas em fase final de negociação, com fechamento previsto para as próximas semanas. A isso se soma, como receita adicional e distinta, R$49.890,00 da primeira venda da trilha de currículo para famílias educadoras, totalizando R$1.149.890,00 de receita no exercício. A despesa total soma R$844.365,14, resultando em resultado operacional positivo de R$305.524,86, margem de 26,6%.",
           },
           {
             tipo: "stats",
@@ -63,9 +63,9 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               { label: "Escolas parceiras (2026)", valor: "12" },
               { label: "Alunos atendidos (2026)", valor: "~2.000" },
               { label: "Receita total 2027 (escolas + homeschool)", valor: "R$ 1.149.890" },
-              { label: "Resultado operacional 2027", valor: "R$ 329.525" },
+              { label: "Resultado operacional 2027", valor: "R$ 305.525" },
+              { label: "Margem operacional 2027", valor: "26,6%" },
               { label: "Meta de alunos 2027 → 2031", valor: "4.000 → 8.000" },
-              { label: "Investimento incremental 2027", valor: "~R$ 400 mil" },
             ],
           },
           {
@@ -576,6 +576,33 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           },
         ],
       },
+      {
+        id: "parcerias-locais",
+        titulo: "Parcerias locais e geração de repercussão",
+        blocos: [
+          {
+            tipo: "paragrafo",
+            texto:
+              "Além da operação recorrente de implantação e acompanhamento, a We Make deve estruturar iniciativas que gerem visibilidade e repercussão local em cada região onde atua, aproximando a empresa de escolas, famílias e comunidades para além do contrato já firmado. Duas frentes concretas orientam esse esforço: olimpíadas de tecnologia e hackathons voltados aos alunos do sistema.",
+          },
+          {
+            tipo: "paragrafo",
+            texto:
+              "As olimpíadas de tecnologia ainda estão em fase de estruturação, mas já integram o horizonte de iniciativas da empresa como forma de estimular a excelência técnica entre os alunos das escolas parceiras e ampliar a visibilidade do sistema We Make para além dos muros de cada instituição.",
+          },
+          {
+            tipo: "paragrafo",
+            texto:
+              "Os hackathons devem trabalhar problemas reais, exigindo soluções inovadoras alinhadas ao princípio que fundamenta o sistema We Make: tecnologia a serviço do desenvolvimento dos potenciais da criação e do alívio dos efeitos da Queda. A premiação já testada combina reconhecimento material e oportunidade concreta de carreira: cada integrante da equipe vencedora recebe um leitor digital, e a equipe como um todo recebe uma semana de estágio em empresas de tecnologia parceiras do projeto. Esse formato de prêmio direciona o aluno vencedor para uma experiência real de mercado de trabalho em tecnologia, e não apenas para um reconhecimento simbólico.",
+          },
+          {
+            tipo: "destaque",
+            titulo: "Lógica de expansão",
+            texto:
+              "A expansão dessas iniciativas para novas escolas e regiões deve seguir o mesmo princípio: parcerias locais que ofereçam projetos, prêmios ou oportunidades de estágio concretas em troca de exposição da marca We Make junto às comunidades escolares atendidas, fortalecendo o relacionamento comercial por meio de reputação construída em campo, não apenas por prospecção direta.",
+          },
+        ],
+      },
     ],
   },
   {
@@ -653,13 +680,13 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "À meta escolar soma-se, como receita adicional e distinta, a venda da trilha de currículo para famílias educadoras: R$49.890,00 em 2027, referentes a 100 alunos adquirindo os dois níveis iniciais da Trilha 1. Somando as duas frentes, a receita total projetada para 2027 é R$1.149.890,00. A despesa total soma R$820.365,14, resultando em resultado operacional positivo de R$329.524,86, margem de 28,7%.",
+              "À meta escolar soma-se, como receita adicional e distinta, a venda da trilha de currículo para famílias educadoras: R$49.890,00 em 2027, referentes a 100 alunos adquirindo os dois níveis iniciais da Trilha 1. Somando as duas frentes, a receita total projetada para 2027 é R$1.149.890,00. A despesa total soma R$844.365,14, resultando em resultado operacional positivo de R$305.524,86, margem de 26,6%.",
           },
           {
             tipo: "destaque",
             titulo: "Piso do exercício",
             texto:
-              "Considerando apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a venda à frente de famílias educadoras, o resultado do exercício seria de R$131.596,76, margem de 13,8% — positivo em todos os cenários avaliados.",
+              "Considerando apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a venda à frente de famílias educadoras, o resultado do exercício seria de R$107.596,76, margem de 11,3% — positivo em todos os cenários avaliados.",
           },
           {
             tipo: "stats",
@@ -668,8 +695,8 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               { label: "A fechar (negociação avançada)", valor: "R$ 148.038 · 13,5%" },
               { label: "Homeschool 2027 (100 alunos)", valor: "R$ 49.890" },
               { label: "Receita total 2027", valor: "R$ 1.149.890" },
-              { label: "Despesa total 2027", valor: "R$ 820.365" },
-              { label: "Resultado operacional 2027", valor: "R$ 329.525 · 28,7%" },
+              { label: "Despesa total 2027", valor: "R$ 844.365" },
+              { label: "Resultado operacional 2027", valor: "R$ 305.525 · 26,6%" },
             ],
           },
         ],
@@ -682,7 +709,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["Categoria", "Valor anual", "% da despesa"],
             linhas: [
-              ["Pessoal (CLT e PJ recorrente)", "R$ 326.172,00", "39,8%"],
+              ["Pessoal (CLT e PJ recorrente)", "R$ 350.172,00", "41,5%"],
               ["Produção gráfica e impressão", "R$ 180.000,00", "21,9%"],
               ["Taxas e serviços financeiros", "R$ 111.772,38", "13,6%"],
               ["Tecnologia (inclui Plataforma Arkos)", "R$ 44.390,76", "5,4%"],
@@ -693,7 +720,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               ["Produção audiovisual", "R$ 11.500,00", "1,4%"],
               ["Logística e distribuição", "R$ 9.000,00", "1,1%"],
               ["Regulatórios, PI e taxas legais", "R$ 3.870,00", "0,5%"],
-              ["Total", "R$ 820.365,14", "100%"],
+              ["Total", "R$ 844.365,14", "100%"],
             ],
           },
         ],
@@ -706,7 +733,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["Função", "Mensal", "Anual"],
             linhas: [
-              ["CEO, Dênis Júlio", "R$ 13.000,00", "R$ 156.000,00"],
+              ["CEO, Dênis Júlio", "R$ 15.000,00", "R$ 180.000,00"],
               ["Gerente Administrativo, Renato Assis", "R$ 6.000,00", "R$ 72.000,00"],
               ["Analista de Marketing, Emanuel Peixoto", "R$ 3.000,00", "R$ 36.000,00"],
               ["Consultora Pedagógica, Suzana Bonifazio", "R$ 2.000,00", "R$ 24.000,00"],
@@ -714,7 +741,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               ["Representante Comercial, Christiano Bonifazio (fixo)", "R$ 1.621,00", "R$ 19.452,00"],
               ["Contador", "R$ 400,00", "R$ 4.800,00"],
               ["Pós-graduação (Suzana e Christiano)", "—", "R$ 1.920,00"],
-              ["Total de pessoal", "", "R$ 326.172,00"],
+              ["Total de pessoal", "", "R$ 350.172,00"],
             ],
           },
           {
@@ -755,34 +782,6 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "paragrafo",
             texto:
               "Se as nove escolas migrarem integralmente para o formato com livro, a receita conjunta desse grupo sobe de R$360.303,00 para R$500.090,00 — ganho potencial de R$139.787,00 ao ano, adicional à receita total já projetada para 2027. Para viabilizar essa migração, provisiona-se R$50.000,00 destinado à produção do primeiro lote de Livro Maker para as escolas que aderirem, condicionado à efetiva adesão, não como custo fixo automático de 2027.",
-          },
-        ],
-      },
-      {
-        id: "investimento-estrategico",
-        titulo: "Investimento estratégico, 2027-2028",
-        blocos: [
-          {
-            tipo: "paragrafo",
-            texto:
-              "O investimento estratégico não deve ser somado automaticamente à despesa operacional de R$820.365,14 sem conciliação prévia, sob risco de dupla contagem. A faixa estimada é de R$315 mil a R$505 mil, com cenário-base de aproximadamente R$400 mil.",
-          },
-          {
-            tipo: "tabela",
-            cabecalho: ["Área de investimento", "% do total", "Finalidade"],
-            linhas: [
-              ["Conteúdo curricular", "25%", "Consolidação da Educação Infantil ao Ensino Médio, atualização curricular, produção editorial e capital de giro do Livro Maker"],
-              ["Tecnologia e plataforma", "25%", "Desenvolvimento, estabilidade, segurança, experiência do usuário, dados, dashboards e recursos de inteligência artificial"],
-              ["Estrutura transversal", "~25%", "CRM, Customer Success, marketing e vendas, jurídico, propriedade intelectual, LGPD e capital de giro"],
-              ["Formação e Academia We Make", "10%", "Trilhas formativas, conteúdos digitais, certificações e estrutura da Academia We Make"],
-              ["Espaço maker", "~8%", "Framework proprietário de diagnóstico e implantação, modelos padronizados e rede de parceiros"],
-              ["Assessoria institucional", "~7%", "Diagnósticos, metodologias e frameworks próprios de gestão pedagógica e administrativa"],
-            ],
-          },
-          {
-            tipo: "paragrafo",
-            texto:
-              "O investimento estratégico não deve ser confundido com necessidade de aporte externo. A empresa pretende financiar parte do crescimento por meio de caixa próprio, lucros reinvestidos, contratos plurianuais, antecipação de recebíveis e negociação com fornecedores. O eventual funding externo deve representar apenas a diferença entre a necessidade total e a capacidade de autofinanciamento.",
           },
         ],
       },
@@ -887,14 +886,9 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
     titulo: "Plano Financeiro",
     secoes: [
       {
-        id: "necessidade-investimento",
-        titulo: "Necessidade de investimento e estrutura de custos",
+        id: "estrutura-custos",
+        titulo: "Estrutura de custos",
         blocos: [
-          {
-            tipo: "paragrafo",
-            texto:
-              "Para executar o plano 2027-2031, estima-se necessidade de investimento incremental de aproximadamente R$400 mil em 2027, adicional ao custo operacional recorrente, com faixa de sensibilidade entre R$315 mil e R$505 mil. Esse investimento é alocado por área de capacidade interna, não por produto vendido separadamente, já que o sistema We Make continua sendo comercializado de forma integral.",
-          },
           {
             tipo: "paragrafo",
             texto:
@@ -935,9 +929,9 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["", "Funciona hoje", "A partir do ano 4 (2030)"],
             linhas: [
-              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e faculdade de tecnologia — ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira"],
+              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia — ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada, não frente já decidida"],
               ["Status", "Gera receita real, contratada e projetada até 2031", "Sem receita, sem contrato, sem operação até o momento"],
-              ["Investimento", "Já orçado no Capítulo 9", "Ainda não orçado — depende de business case próprio"],
+              ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$844.365,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado — depende de business case próprio"],
               ["Condição de avanço", "Execução do roadmap de consolidação", "Consolidação prévia do sistema atual, validação de demanda e conclusão do registro de propriedade intelectual"],
             ],
           },
@@ -988,6 +982,23 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               "Conclusão do registro da propriedade intelectual do currículo e da marca.",
               "Estruturação de capital, próprio ou externo, dimensionado especificamente para a escola de tecnologia e para a faculdade.",
             ],
+          },
+        ],
+      },
+      {
+        id: "capital-externo",
+        titulo: "Papel de um eventual capital externo",
+        blocos: [
+          {
+            tipo: "paragrafo",
+            texto:
+              "A trajetória descrita neste plano foi construída, até aqui, com recursos próprios, sem dívida ou passivo relevante a sustentar. Essa é a base a partir da qual qualquer conversa sobre capital externo deve partir: não como suprimento de uma operação em dificuldade, mas como aceleração de uma trajetória que a empresa já demonstrou ser capaz de percorrer sozinha. A pergunta que orienta essa conversa não é se a We Make consegue chegar ao horizonte de cinco anos deste plano, mas se um eventual investidor deseja antecipar esse horizonte para dois ou três anos.",
+          },
+          {
+            tipo: "destaque",
+            titulo: "Prioridades, se a aceleração se concretizar",
+            texto:
+              "Fortalecimento imediato da equipe comercial e investimento mais robusto na consultoria pedagógica, para elevar a experiência de pós-venda das escolas e famílias atendidas. Essas prioridades são inspiração de alocação, não orçamento aprovado, e devem ser tratadas com o mesmo rigor de conciliação já aplicado às demais estimativas deste plano antes de qualquer decisão de captação.",
           },
         ],
       },
@@ -1061,7 +1072,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O ano de 2027 é, por desenho, um ano de reinvestimento: a receita mais que dobra frente a 2025, e a empresa amplia remuneração da liderança, tecnologia própria e estrutura física mantendo resultado operacional positivo — R$329.524,86, margem de 28,7%, considerando a meta escolar já contratada, a receita em negociação avançada e a primeira venda à frente de famílias educadoras.",
+              "O ano de 2027 é, por desenho, um ano de reinvestimento: a receita mais que dobra frente a 2025, e a empresa amplia remuneração da liderança, tecnologia própria e estrutura física mantendo resultado operacional positivo — R$305.524,86, margem de 26,6%, considerando a meta escolar já contratada, a receita em negociação avançada e a primeira venda à frente de famílias educadoras.",
           },
           {
             tipo: "paragrafo",

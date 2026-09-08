@@ -25,7 +25,6 @@ export interface AnoProjetado {
 
 interface Props {
   anos: AnoProjetado[];
-  investimentoInicial: number;
 }
 
 function formatBRL(v: number, casas = 0): string {
@@ -265,7 +264,7 @@ function Slide({ children, variante = "navy" }: { children: React.ReactNode; var
 
 /* ================= Componente principal ================= */
 
-export function ApresentacaoPlano({ anos, investimentoInicial }: Props) {
+export function ApresentacaoPlano({ anos }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [atual, setAtual] = useState(0);
   const [direcao, setDirecao] = useState(1);
@@ -489,8 +488,8 @@ export function ApresentacaoPlano({ anos, investimentoInicial }: Props) {
           <p className="text-white/50 text-[0.75rem] mt-1">Receita 2031 (cenário-base)</p>
         </Cartao>
         <Cartao delay={0.3}>
-          <p className="font-display text-white text-2xl"><NumeroAnimado valor={investimentoInicial} prefixo="R$ " /></p>
-          <p className="text-white/50 text-[0.75rem] mt-1">Investimento 2027</p>
+          <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={ultimoAno?.resultado ?? 0} prefixo="R$ " /></p>
+          <p className="text-white/50 text-[0.75rem] mt-1">Resultado 2031 (cenário-base)</p>
         </Cartao>
         <Cartao delay={0.4}>
           <p className="font-display text-white text-2xl"><NumeroAnimado valor={ultimoAno?.margemPct ?? 0} sufixo="%" casas={1} /></p>
@@ -523,34 +522,43 @@ export function ApresentacaoPlano({ anos, investimentoInicial }: Props) {
       </div>
     </Slide>,
 
-    // 9 — o pedido / investimento
-    <Slide key="investimento" variante="dark">
-      <Eyebrow>O que buscamos</Eyebrow>
-      <Titulo>Um investimento para consolidar o sistema — não para criá-lo do zero.</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-10">
+    // 9 — capital externo: aceleração, não sobrevivência
+    <Slide key="capital-externo" variante="royal">
+      <Eyebrow>Sobre capital externo</Eyebrow>
+      <Titulo>Uma trajetória construída sem dívida. Capital é aceleração — não sobrevivência.</Titulo>
+
+      <motion.div
+        className="mt-9 rounded-2xl bg-[rgb(var(--color-brand-ivory))] text-[rgb(var(--color-brand-navy))] p-6 sm:p-8 max-w-3xl shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-[rgb(var(--color-brand-royal))] font-bold mb-3">
+          Ponto de partida
+        </p>
+        <p className="font-display text-[1.05rem] sm:text-[1.25rem] leading-snug">
+          A trajetória descrita neste plano foi construída, até aqui, com recursos próprios — sem dívida ou
+          passivo relevante a sustentar. A pergunta não é se a We Make chega ao horizonte de cinco anos deste
+          plano sozinha, mas se um investidor deseja antecipar esse horizonte para dois ou três anos.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 max-w-3xl">
         {[
-          { pct: "25%", area: "Conteúdo curricular", texto: "Educação Infantil ao Médio, Livro Maker" },
-          { pct: "25%", area: "Tecnologia e plataforma", texto: "Estabilidade, dados, IA" },
-          { pct: "~25%", area: "Estrutura transversal", texto: "CRM, Customer Success, jurídico" },
-          { pct: "10%", area: "Formação e Academia We Make", texto: "Trilhas, certificações" },
-          { pct: "~8%", area: "Espaço maker", texto: "Framework proprietário" },
-          { pct: "~7%", area: "Assessoria institucional", texto: "Diagnósticos e metodologia" },
-        ].map((a, i) => (
-          <Cartao key={a.area} delay={i * 0.08}>
-            <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl mb-1">{a.pct}</p>
-            <p className="text-white/85 text-sm font-medium">{a.area}</p>
-            <p className="text-white/45 text-[0.75rem] mt-1">{a.texto}</p>
+          { titulo: "Equipe comercial", texto: "Fortalecimento imediato da estrutura de aquisição — mais capacidade de busca ativa e qualificação de novas escolas." },
+          { titulo: "Consultoria pedagógica", texto: "Investimento mais robusto na Academia We Make, elevando a experiência de pós-venda de escolas e famílias já atendidas." },
+        ].map((c, i) => (
+          <Cartao key={c.titulo} delay={0.15 + i * 0.12}>
+            <p className="font-display text-white text-[1.0625rem] mb-2">{c.titulo}</p>
+            <p className="text-white/60 text-[0.8125rem] leading-relaxed">{c.texto}</p>
           </Cartao>
         ))}
       </div>
-      <Cartao delay={0.6} className="mt-4">
-        <p className="text-white/75 text-sm sm:text-base leading-relaxed">
-          Investimento incremental de aproximadamente <strong className="text-white">R$ 400 mil</strong>, faixa de
-          sensibilidade entre R$ 315 mil e R$ 505 mil — adicional ao custo operacional, que já opera com margem
-          positiva. Concentrado em 2027–2028; a partir de 2029, o crescimento é financiado progressivamente pela
-          própria geração de caixa.
-        </p>
-      </Cartao>
+      <p className="text-white/40 text-xs mt-5 max-w-2xl">
+        Prioridades de alocação caso a aceleração se concretize — inspiração, não orçamento aprovado. Devem ser
+        tratadas com o mesmo rigor de conciliação já aplicado às demais estimativas deste plano.
+      </p>
     </Slide>,
 
     // 10 — fechamento

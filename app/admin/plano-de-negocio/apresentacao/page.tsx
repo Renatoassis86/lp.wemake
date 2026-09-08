@@ -73,7 +73,7 @@ export default async function ApresentacaoPlanoDeNegocioPage() {
       </header>
 
       <div className="rounded-2xl overflow-hidden border border-white/10">
-        <ApresentacaoPlano anos={anos} investimentoInicial={investimentoInicial} />
+        <ApresentacaoPlano anos={anos} />
       </div>
     </div>
   );
