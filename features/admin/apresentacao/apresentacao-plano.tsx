@@ -520,8 +520,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <Cartao delay={0.2}>
           <p className="font-mono text-base uppercase tracking-wider text-white/50 font-bold mb-2">Missão</p>
           <p className="text-white/85 text-base leading-relaxed">
-            Equipar escolas, educadores, famílias e comunidades com currículo, formação, tecnologia, ambientes e
-            orientação para formar crianças e adolescentes com sabedoria para o mundo tecnológico.
+            Conduzir pessoas ao deslumbramento a partir de uma educação cristã de excelência, educando mentes e corações
+            para aprender a criar tecnologia em vez de apenas consumir.
           </p>
         </Cartao>
       </div>
@@ -679,9 +679,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </div>
           <Cartao delay={0.75} className="mt-5">
             <p className="text-white/70 text-base leading-relaxed">
-              Entrega inteiramente digital. Venda e cobrança conduzidas por parceira comercial já estabelecida
-              nesse mercado, com negociação avançada em curso com a Aspen. Primeira venda projetada para 2027: 100
-              alunos, R$49.890,00.
+              Cobrança realizada por aluno (com acesso gratuito aos pais/responsáveis). Venda e distribuição conduzidas por
+              parceira comercial já estabelecida (Aspen). Primeira venda projetada para 2027: 100 alunos, R$49.890,00.
             </p>
           </Cartao>
         </div>
@@ -1027,14 +1026,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 21 — metas de vendas
     <Slide key="metas-vendas" variante="royal">
       <Eyebrow>Capítulo 8 · Marketing e vendas</Eyebrow>
-      <Titulo>Meta comercial única, medida por novas escolas a cada ano</Titulo>
+      <Titulo>Metas de alunos: 4.000 em 2027 crescendo até 13.500 em 2030</Titulo>
       <div className="mt-9 space-y-2.5 max-w-3xl">
         {[
-          { ano: 2027, escolas: 10, largura: 45 },
-          { ano: 2028, escolas: 13, largura: 59 },
-          { ano: 2029, escolas: 16, largura: 73 },
-          { ano: 2030, escolas: 19, largura: 86 },
-          { ano: 2031, escolas: 22, largura: 100 },
+          { ano: 2027, alunos: "4.000 alunos (10 novas escolas)", largura: 30 },
+          { ano: 2028, alunos: "6.000 alunos (+10 escolas)", largura: 45 },
+          { ano: 2029, alunos: "8.000 alunos (+10 escolas)", largura: 60 },
+          { ano: 2030, alunos: "13.500 alunos (+10 escolas)", largura: 100 },
         ].map((r, i) => (
           <motion.div
             key={r.ano}
@@ -1047,20 +1045,20 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             <span className="font-mono text-white/60 text-base w-10 shrink-0">{r.ano}</span>
             <div className="flex-1 h-6 rounded-lg bg-black/15 overflow-hidden">
               <motion.div
-                className="h-full rounded-lg bg-white flex items-center justify-end px-2"
+                className="h-full rounded-lg bg-white flex items-center justify-end px-3"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${r.largura}%` }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 + 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="font-mono text-base font-bold text-[rgb(var(--color-brand-royal-deep))]">{r.escolas}</span>
+                <span className="font-mono text-base font-bold text-[rgb(var(--color-brand-royal-deep))]">{r.alunos}</span>
               </motion.div>
             </div>
           </motion.div>
         ))}
       </div>
       <p className="text-white/60 text-base max-w-2xl mt-6 leading-relaxed">
-        80 novas escolas entre 2027 e 2031, cenário-base de 5% a 8% do mercado-alvo confessional até 2031.
+        Adição constante de 10 novas escolas parceiras por ano, construindo uma operação sólida com recursos próprios.
       </p>
     </Slide>,
 
