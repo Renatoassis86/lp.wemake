@@ -63,7 +63,7 @@ function Bloco({ bloco }: { bloco: BlocoConteudo }) {
           {bloco.atribuicao && <cite>{bloco.atribuicao}</cite>}
         </blockquote>
       );
-        case "organograma":
+            case "organograma":
       return (
         <div className="ra4-org-wrap">
           <h4 className="ra4-visual-title">Organograma de Governança Executiva &amp; Líderes de Área</h4>
@@ -277,10 +277,10 @@ function RelatorioA4Estilos() {
   return (
     <style>{`
       .ra4-doc {
-        --ra4-navy: #0B1F44;
-        --ra4-royal: #0E2A47;
-        --ra4-mint: #76F3CD;
-        --ra4-ivory: #F7F9FC;
+        --ra4-navy: #002933;
+        --ra4-teal: #003B49;
+        --ra4-cyan: #00CEFF;
+        --ra4-ivory: #F4F3EF;
         max-width: 900px;
         margin: 0 auto;
         background: #fff;
@@ -296,14 +296,14 @@ function RelatorioA4Estilos() {
         align-items: flex-start;
         gap: 1rem;
         padding: 4rem 3rem;
-        background: linear-gradient(160deg, #0B1F44 0%, #0E2A47 100%);
+        background: linear-gradient(160deg, #002933 0%, #003B49 100%);
         color: #fff;
         page-break-after: always;
         break-after: page;
       }
       .ra4-capa-eyebrow {
         font-size: 0.85rem;
-        color: #76F3CD;
+        color: #00CEFF;
         font-weight: 700;
         letter-spacing: 0.2em;
         text-transform: uppercase;
@@ -312,10 +312,11 @@ function RelatorioA4Estilos() {
         font-size: 3rem;
         line-height: 1.1;
         font-weight: 800;
+        color: #F4F3EF;
       }
       .ra4-capa-sub {
         font-size: 1.25rem;
-        color: #A9C2DA;
+        color: #94B4BD;
         max-width: 32ch;
       }
       .ra4-capa-rodape {
@@ -324,137 +325,76 @@ function RelatorioA4Estilos() {
         flex-direction: column;
         gap: 0.5rem;
         font-size: 0.8rem;
-        color: rgba(255,255,255,0.6);
+        color: rgba(244,243,239,0.6);
       }
 
-      .ra4-sumario {
-        padding: 3rem;
-        page-break-after: always;
-      }
-      .ra4-sumario-eyebrow {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: #0E2A47;
-        text-transform: uppercase;
-        margin-bottom: 1.5rem;
-      }
-      .ra4-sumario-lista {
-        list-style: none;
-        padding: 0;
+      .ra4-org-wrap {
+        background: #F0F9FB;
+        border: 1px solid #B3ECFF;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
-      }
-      .ra4-sumario-lista li {
-        display: flex;
-        gap: 1rem;
         align-items: center;
-        border-bottom: 1px solid #E2E8F0;
-        padding-bottom: 0.5rem;
       }
-      .ra4-sumario-num {
-        font-weight: 800;
-        color: #0E2A47;
-      }
-
-      .ra4-capitulo {
-        padding: 3rem;
-        border-top: 4px solid #0E2A47;
-        margin-bottom: 2rem;
-      }
-      .ra4-capitulo-header {
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-      .ra4-capitulo-num {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #0E2A47;
-      }
-      .ra4-capitulo-titulo {
-        font-size: 1.75rem;
-        font-weight: 800;
-        color: #0B1F44;
-      }
-
-      .ra4-p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #334155;
-        margin-bottom: 1rem;
-      }
-      .ra4-subtitulo {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #0E2A47;
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
-      }
-      .ra4-lista {
-        margin-bottom: 1.5rem;
-        padding-left: 1.25rem;
-        color: #334155;
-      }
-      .ra4-lista li {
-        margin-bottom: 0.5rem;
-      }
-
-      .ra4-tabela-wrap {
-        margin: 1.5rem 0;
-        overflow-x: auto;
-      }
-      .ra4-tabela {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9rem;
-      }
-      .ra4-tabela th {
-        background: #0E2A47;
+      .ra4-org-ceo {
+        background: #002933;
         color: #fff;
-        padding: 0.75rem;
-        text-align: left;
-      }
-      .ra4-tabela td {
-        padding: 0.75rem;
-        border-bottom: 1px solid #E2E8F0;
-        color: #334155;
-      }
-
-      .ra4-stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
         gap: 1rem;
-        margin: 1.5rem 0;
+        width: 100%;
+        max-width: 520px;
+        border-left: 4px solid #00CEFF;
       }
-      .ra4-stat {
-        background: #F7F9FC;
-        border-left: 4px solid #0E2A47;
-        padding: 1rem;
-        border-radius: 4px;
-      }
-      .ra4-stat-valor {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: #0E2A47;
-      }
-      .ra4-stat-label {
+      .ra4-org-badge {
+        background: #00CEFF;
+        color: #002933;
+        font-weight: 900;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
         font-size: 0.8rem;
-        color: #64748B;
-        margin-top: 0.25rem;
       }
-
-      .ra4-visual-title {
-        font-size: 1.1rem;
+      .ra4-org-line-v {
+        width: 2px;
+        height: 24px;
+        background: #00CEFF;
+        margin: 0.5rem 0;
+      }
+      .ra4-org-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 100%;
+      }
+      .ra4-org-card {
+        background: #fff;
+        border: 1px solid #CBD5E1;
+        padding: 0.85rem 1rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        border-top: 3px solid #002933;
+      }
+      .ra4-dept-title {
+        font-size: 0.75rem;
         font-weight: 800;
-        color: #0E2A47;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #76F3CD;
-        padding-bottom: 0.25rem;
-        display: inline-block;
+        text-transform: uppercase;
+        color: #00CEFF;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
       }
-
+      .ra4-org-card strong {
+        color: #002933;
+        font-size: 0.95rem;
+      }
+      .ra4-org-card span {
+        color: #64748B;
+        font-size: 0.8rem;
+      }
       /* ELEMENTOS VISUAIS NO RELATÓRIO A4 */
       .ra4-org-wrap {
         background: #F8FAFC;

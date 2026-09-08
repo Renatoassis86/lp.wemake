@@ -1,19 +1,22 @@
 {
   "name": "wemake",
-  "bg": "#0B1F44",
-  "surface": "#1A2C4F",
+  "bg": "#1A202A",
+  "surface": "#272E37",
   "ink": "#F4F6FB",
-  "muted": "#929CAE",
-  "accent": "#76F3CD",
-  "accent2": "#76F3CD",
-  "display": "Poppins",
+  "muted": "#989CA3",
+  "accent": "#5094A4",
+  "accent2": "#94A5A9",
+  "display": "Space Grotesk",
   "body": "Inter",
   "logo_height_px": 56,
   "logo_position": "br",
   "contrast": {
-    "ink/bg": 15.01,
-    "muted/bg": 5.85,
-    "accent/bg": 11.96
+    "ink/bg": 15.11,
+    "muted/bg": 5.94,
+    "accent/bg": 4.77
   },
-  "adjustments": []
+  "adjustments": [
+    "paleta extraida de C:\\repositorio\\marcas\\wemake\\PNG\\LOGO1_WEMAKE.png: #284A52, #94A5A9, #516D74, #738A8F",
+    "accent: #284A52 -> #5094A4 (contraste 1.7:1 abaixo de 4.5)"
+  ]
 }

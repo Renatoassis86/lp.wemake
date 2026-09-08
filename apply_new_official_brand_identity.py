@@ -1,4 +1,85 @@
-/* ============================================================
+import shutil
+import os
+import re
+
+print("=== APPLYING OFFICIAL WE MAKE BRAND IDENTITY (#002933 / #00CEFF / #F4F3EF) ===")
+
+# 1. COPY OFFICIAL LOGO PNG FROM C:\repositorio\marcas\wemake\PNG
+src_logo = r'C:\repositorio\marcas\wemake\PNG\LOGO2A_WEMAKE.png'
+dest_logos = [
+    r'public\deck\logo.png',
+    r'public\logo-wemake.png',
+    r'c:\repositorio\decks\wemake-plano\logo.png',
+    r'c:\repositorio\decks\wemake-plano\img\logo.png'
+]
+
+for d in dest_logos:
+    os.makedirs(os.path.dirname(d), exist_ok=True)
+    shutil.copy(src_logo, d)
+    print(f"Copied official logo to {d}")
+
+# 2. WRITE OFFICIAL BRAND.CSS WITH EXACT BRAND COLORS
+brand_css = '''/* ============================================================
+   WE MAKE OFFICIAL BRAND TOKENS (Identidade C:\\repositorio\\marcas\\wemake)
+   ============================================================ */
+:root {
+  --color-brand-navy: 0 41 51;        /* #002933 */
+  --color-brand-teal: 0 59 73;        /* #003B49 */
+  --color-brand-cyan: 0 206 255;      /* #00CEFF */
+  --color-brand-ivory: 244 243 239;   /* #F4F3EF */
+  
+  --bg: #002933;
+  --surface: #003B49;
+  --surface-card: rgba(0, 59, 73, 0.85);
+  --accent: #00CEFF;
+  --accent-secondary: #40D9FF;
+  --accent-glow: rgba(0, 206, 255, 0.25);
+  --ink: #F4F3EF;
+  --muted: #94B4BD;
+  --line: rgba(0, 206, 255, 0.2);
+}
+
+[data-theme="wemake"] {
+  --bg: #002933;
+  --surface: #003B49;
+  --ink: #F4F3EF;
+  --muted: #94B4BD;
+  --accent: #00CEFF;
+  --line: rgba(0, 206, 255, 0.2);
+}
+
+/* Zona de Marca Oficial com alinhamento perfeito */
+.logo-zone {
+  position: absolute;
+  right: 48px !important;
+  bottom: 48px !important;
+  top: auto !important;
+  left: auto !important;
+  height: auto !important;
+  max-height: 52px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.logo-zone img, .logo-zone svg {
+  height: 48px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 206, 255, 0.3));
+}
+'''
+
+for path in ['public/deck/brand.css', 'c:/repositorio/decks/wemake-plano/brand.css']:
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(brand_css)
+
+print("2. Created brand.css with official #002933 and #00CEFF brand tokens!")
+
+# 3. UPDATE DECK.CSS TO ALIGN ALL COMPONENTS PERFECTLY
+updated_deck_css = '''/* ============================================================
    DECK FORGE v2 — DESIGN SYSTEM WE MAKE (CANVAS 1920x1080)
    ============================================================ */
 :root {
@@ -358,3 +439,145 @@ html, body {
   color: #94B4BD;
   font-family: var(--font-mono);
 }
+'''
+
+for path in ['public/deck/deck.css', 'c:/repositorio/decks/wemake-plano/deck.css']:
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(updated_deck_css)
+
+print("3. Updated deck.css with official brand colors and alignment rules!")
+
+# 4. UPDATE RELATORIO-A4.TSX STYLES FOR OFFICIAL BRAND IDENTITY
+a4_styles_fix = '''
+      .ra4-doc {
+        --ra4-navy: #002933;
+        --ra4-teal: #003B49;
+        --ra4-cyan: #00CEFF;
+        --ra4-ivory: #F4F3EF;
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        color: #1a2233;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      .ra4-capa {
+        min-height: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 4rem 3rem;
+        background: linear-gradient(160deg, #002933 0%, #003B49 100%);
+        color: #fff;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ra4-capa-eyebrow {
+        font-size: 0.85rem;
+        color: #00CEFF;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .ra4-capa-titulo {
+        font-size: 3rem;
+        line-height: 1.1;
+        font-weight: 800;
+        color: #F4F3EF;
+      }
+      .ra4-capa-sub {
+        font-size: 1.25rem;
+        color: #94B4BD;
+        max-width: 32ch;
+      }
+      .ra4-capa-rodape {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: rgba(244,243,239,0.6);
+      }
+
+      .ra4-org-wrap {
+        background: #F0F9FB;
+        border: 1px solid #B3ECFF;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .ra4-org-ceo {
+        background: #002933;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 520px;
+        border-left: 4px solid #00CEFF;
+      }
+      .ra4-org-badge {
+        background: #00CEFF;
+        color: #002933;
+        font-weight: 900;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+      }
+      .ra4-org-line-v {
+        width: 2px;
+        height: 24px;
+        background: #00CEFF;
+        margin: 0.5rem 0;
+      }
+      .ra4-org-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 100%;
+      }
+      .ra4-org-card {
+        background: #fff;
+        border: 1px solid #CBD5E1;
+        padding: 0.85rem 1rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        border-top: 3px solid #002933;
+      }
+      .ra4-dept-title {
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #00CEFF;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
+      }
+      .ra4-org-card strong {
+        color: #002933;
+        font-size: 0.95rem;
+      }
+      .ra4-org-card span {
+        color: #64748B;
+        font-size: 0.8rem;
+      }
+'''
+
+with open('features/admin/relatorio-a4.tsx', 'r', encoding='utf-8') as f:
+    a4_code = f.read()
+
+pattern_styles = r'\.ra4-doc \{.*?\/\* ELEMENTOS VISUAIS'
+a4_code = re.sub(pattern_styles, a4_styles_fix.strip() + '\n      /* ELEMENTOS VISUAIS', a4_code, flags=re.DOTALL)
+
+with open('features/admin/relatorio-a4.tsx', 'w', encoding='utf-8') as f:
+    f.write(a4_code)
+
+print("4. Updated relatorio-a4.tsx with official brand colors!")
+print("=== FINISHED BRAND IDENTITY UPDATE ===")
