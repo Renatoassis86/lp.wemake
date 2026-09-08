@@ -12,7 +12,12 @@ export type BlocoConteudo =
   | { tipo: "tabela"; legenda?: string; cabecalho: string[]; linhas: string[][] }
   | { tipo: "stats"; itens: { label: string; valor: string }[] }
   | { tipo: "destaque"; titulo: string; texto: string }
-  | { tipo: "citacao"; texto: string; atribuicao?: string };
+  | { tipo: "citacao"; texto: string; atribuicao?: string }
+  | { tipo: "organograma" }
+  | { tipo: "mapa-ibge" }
+  | { tipo: "galeria-livros" }
+  | { tipo: "ciclo-maker" }
+  | { tipo: "imagem"; url: string; legenda?: string };
 
 export interface SecaoRelatorio {
   id: string;
@@ -37,6 +42,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
         id: "sumario-executivo-corpo",
         titulo: "Sumário Executivo",
         blocos: [
+          { tipo: "mapa-ibge" },
           {
             tipo: "paragrafo",
             texto:
@@ -143,6 +149,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
         id: "equipe",
         titulo: "Equipe",
         blocos: [
+          { tipo: "organograma" },
           {
             tipo: "tabela",
             cabecalho: ["Pessoa", "Função"],
@@ -187,6 +194,8 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
         id: "kit-we-make",
         titulo: "O que compõe o sistema",
         blocos: [
+          { tipo: "galeria-livros" },
+          { tipo: "ciclo-maker" },
           {
             tipo: "paragrafo",
             texto:

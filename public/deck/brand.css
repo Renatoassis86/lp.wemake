@@ -1,145 +1,31 @@
-/* brand.css — Identidade Visual Oficial We Make
-   Cores, Tipografia e Tokens fiéis ao Design System We Make */
-
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Poppins:wght@600;700;800&display=swap');
-
+/* Brand tokens for We Make */
 :root {
-  /* Tipografia Oficial We Make */
-  --font-display: "Baloo 2", "Poppins", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-  --logo-h: 52px;
-  --logo-inset: 48px;
+  --color-brand-navy: 14 42 71;
+  --color-brand-royal: 20 62 102;
+  --color-brand-mint: 118 243 205;
+  --color-brand-ivory: 247 249 252;
+  --accent: #76F3CD;
+  --bg: #0B1F44;
+  --surface: #0E2A47;
+  --ink: #FFFFFF;
+  --muted: #A9C2DA;
 }
 
-/* Tema Principal We Make — Navy Escuro Cinematográfico */
-[data-theme="wemake"] {
-  --bg: #0B1F44;               /* Navy Original We Make */
-  --surface: #142B59;          /* Navy Card Surface */
-  --surface-card: #18346B;     /* Surface Card Elevada */
-  --ink: #FFFFFF;              /* Texto Branco Puro */
-  --muted: #A8C4E6;            /* Azul Claro Suave */
-  --accent: #76F3CD;           /* Verdinho Água We Make (#76f3cd) */
-  --accent-2: #FFCC00;         /* Amarelo Destaque We Make (#ffcc00) */
-  --accent-royal: #4C8ADE;     /* Azul Royal We Make (#4c8ade) */
-  --line: rgba(118, 243, 205, 0.2);
-  --on-accent: #0B1F44;        /* Texto sobre fundo mint */
-}
-
-/* Regras de Cores da Marca */
-.accent { color: var(--accent) !important; }
-.accent-sky { color: var(--accent-2) !important; }
-.accent-royal { color: var(--accent-royal) !important; }
-
-/* Badges e Selos no tom We Make */
-.badge {
-  background: rgba(118, 243, 205, 0.12);
-  color: var(--accent);
-  border: 1px solid rgba(118, 243, 205, 0.3);
-  font-weight: 700;
-}
-
-.badge--yellow {
-  background: rgba(255, 204, 0, 0.15);
-  color: var(--accent-2);
-  border: 1px solid rgba(255, 204, 0, 0.4);
-}
-
-/* Cartões com a Identidade da Marca */
-[data-theme="wemake"] .card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35);
-}
-
-[data-theme="wemake"] .card--accent {
-  background: var(--accent);
-  color: var(--on-accent);
-  border: none;
-  box-shadow: 0 16px 40px -10px rgba(118, 243, 205, 0.4);
-}
-
-[data-theme="wemake"] .card--accent .h3,
-[data-theme="wemake"] .card--accent .stat__value,
-[data-theme="wemake"] .card--accent p {
-  color: var(--on-accent) !important;
-}
-
-[data-theme="wemake"] .icon-badge {
-  background: rgba(118, 243, 205, 0.12);
-  color: var(--accent);
-  border: 1px solid rgba(118, 243, 205, 0.25);
-  border-radius: 12px;
-}
-
-/* Zona da Logomarca */
 .logo-zone {
   position: absolute;
-  top: auto;
-  bottom: 36px;
-  right: 44px;
-  left: auto;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  height: auto;
-  max-height: 48px;
-  background: rgba(11, 31, 68, 0.75);
-  backdrop-filter: blur(12px);
-  padding: 6px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(118, 243, 205, 0.25);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  right: var(--logo-inset, 40px);
+  bottom: var(--logo-inset, 40px);
+  top: auto !important;
+  left: auto !important;
+  height: auto !important;
+  max-height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  z-index: 10;
 }
 
-.logo-zone img,
-.logo-zone svg {
-  height: var(--logo-h, 32px);
-  max-height: 36px;
-  width: auto;
+.logo-zone img, .logo-zone svg {
+  height: 40px !important;
+  width: auto !important;
   object-fit: contain;
-  display: block;
-}
-
-.logo-zone--tr {
-  top: 36px;
-  bottom: auto;
-  right: 44px;
-  left: auto;
-}
-
-.logo-zone--tl {
-  top: 36px;
-  bottom: auto;
-  left: 44px;
-  right: auto;
-}
-
-.logo-zone--bl {
-  bottom: 36px;
-  top: auto;
-  left: 44px;
-  right: auto;
-}
-
-.logo-zone--br {
-  bottom: 36px;
-  top: auto;
-  right: 44px;
-  left: auto;
-}
-
-.logo-zone--hero {
-  top: 36px;
-  right: 44px;
-  bottom: auto;
-  left: auto;
-}
-
-.logo-zone--hero img,
-.logo-zone--hero svg {
-  height: 40px;
-  max-height: 44px;
 }

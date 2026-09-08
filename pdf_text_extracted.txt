@@ -1,0 +1,1619 @@
+=== PAGE 1 ===
+P L A N O   D E   N E G Ó C I O   2 0 2 7 - 2 0 3 1
+We Make Educação Tecnológica
+O primeiro sistema de educação tecnológica com cosmovisão cristã do Brasil
+We Make Educação Tecnológica LTDA · CNPJ 48.760.895/0001-99
+Elaborado pela direção estratégica da empresa
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 1
+
+=== PAGE 2 ===
+Sumário
+1. Sumário Executivo
+2. Apresentação e Identidade Institucional
+3. O Sistema We Make: Conceito de Negócio
+4. Análise de Oportunidade
+5. Mercado, Legislação e Concorrência
+6. Produtos e Serviços
+7. Estrutura Organizacional e Operações
+8. Pesquisa e Desenvolvimento
+9. Marketing e Estratégia Comercial
+10. Premissas de Crescimento: Receitas e Despesas
+11. Análise SWOT
+12. Plano Financeiro
+13. Estratégia de Crescimento Futuro
+14. Análise de Riscos
+15. Considerações Finais
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 2
+
+=== PAGE 3 ===
+1
+Sumário Executivo
+A We Make é o primeiro sistema de educação tecnológica com cosmovisão cristã do Brasil. Fundada em 2023, 
+iniciou operação comercial em 2024 com duas escolas parceiras e alcança, em 2026, 12 escolas parceiras e  
+cerca de 2.000 estudantes atendidos.
+A empresa entrega um sistema único, o Kit We Make, que reúne currículo, plataforma digital, espaço maker,  
+formação docente e assessoria institucional em um único contrato. Esses componentes não são vendidos  
+separadamente: ao adquirir o Kit We Make, a escola ou a família educadora tem acesso a todo o sistema, sem 
+custo adicional por serviço, salvo quando deseja algo além do que já está previsto no plano letivo contratado. 
+Essa integração é o que diferencia a We Make de qualquer concorrente que ofereça apenas um desses  
+componentes isoladamente.
+O sistema atende hoje dois mercados que compartilham estruturas pedagógicas semelhantes: escolas  
+confessionais cristãs e famílias educadoras organizadas em comunidades de homeschooling. A partir do quarto 
+ano deste plano, 2030, a empresa pretende lançar dois novos negócios, autônomos em relação ao sistema  
+escolar, a escola de tecnologia para crianças e adolescentes em geral e a faculdade de tecnologia, ambos  
+voltados a atender indivíduos independentemente de vínculo com uma escola parceira.
+O planejamento orçamentário de 2027, já consolidado mês a mês, projeta receita de escolas de  
+R$1.100.000,00, sendo R$951.961,90 já contratados e R$148.038,10 de escolas em fase final de negociação,  
+com fechamento previsto para as próximas semanas. A isso se soma, como receita adicional e distinta,  
+R$49.890,00 da primeira venda da trilha de currículo para famílias educadoras, totalizando R$1.149.890,00 de 
+receita no exercício. A despesa total soma R$848.913,14, resultando em resultado operacional positivo de  
+R$300.976,86, margem de 26,2%. Esse resultado já reflete o reinvestimento em pessoal, tecnologia própria e 
+estrutura física: a receita cresce de forma acentuada frente à base de 2025 com margem operacional positiva.
+Números de referência
+Escolas parceiras (2026) 12 Alunos atendidos (2026) ~2.000
+Receita total 2027 
+(escolas + homeschool) R$ 1.149.890,00 Resultado operacional 
+2027 R$ 300.976,86
+Meta de alunos 2027 4.000 Meta de alunos 2031 20.250 (cenário-base)
+Caixa disponível de 
+referência R$ 50.000,00 Lançamento de novos 
+negócios Ano 4 do plano (2030)
+O discurso público do sistema parte de uma proposta simples de comunicar: ensinar a criar tecnologia, e não 
+apenas a consumi-la. A cosmovisão cristã permanece como fundamento do currículo e da formação, e a  
+linguagem comercial se apoia na utilidade prática dessa proposta, o que amplia o alcance da mensagem  
+também junto a famílias e instituições fora do público confessional.
+Este plano organiza premissas, metas e projeções em torno do sistema integrado que a empresa já entrega a 
+escolas e famílias educadoras, e trata a escola de tecnologia e a faculdade de tecnologia como horizonte de  
+expansão claramente delimitado no tempo, condicionado à consolidação do sistema atual.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 3
+
+=== PAGE 4 ===
+2
+Apresentação e Identidade Institucional
+2.1 Visão
+Formar uma geração que cria tecnologia com sabedoria, para a glória de Deus e o bem do próximo.
+Em seu desdobramento, a visão é ser referência em educação tecnológica fundamentada na cosmovisão  
+cristã, formando estudantes capazes de compreender, utilizar e criar tecnologia com sabedoria, excelência e  
+responsabilidade.
+2.2 Missão
+Equipar escolas e famílias para ensinar tecnologia com verdade, beleza e bondade.
+Em seu desdobramento, a missão é pensar, estudar, ensinar e desenvolver educação tecnológica com  
+excelência, liberdade e responsabilidade, entregando currículo, formação, tecnologia, ambientes e orientação 
+a escolas, educadores, famílias e comunidades.
+2.3 Valores
+Fidelidade à Verdade
+A empresa reconhece que educação e tecnologia não são neutras. Busca pensar, ensinar e criar a partir da  
+verdade revelada nas Escrituras e percebida na criação.
+Beleza e Bondade
+Uma tecnologia não é avaliada apenas pela eficiência ou pela novidade. A empresa busca aquilo que é belo,  
+verdadeiro e bom, submetendo a inovação a fins que contribuam para uma formação verdadeiramente  
+humana.
+Excelência como resposta ao chamado
+Rigor acadêmico, qualidade pedagógica, cuidado editorial, competência tecnológica e melhoria contínua são  
+tratados como expressão de responsabilidade diante da vocação recebida.
+Liberdade com responsabilidade
+O potencial criativo da tecnologia é reconhecido junto com a exigência de que a liberdade caminhe com  
+sabedoria, limites, ética e responsabilidade pelas consequências das escolhas.
+Serviço e mordomia
+A tecnologia é compreendida como instrumento para desenvolver responsavelmente os potenciais da criação, 
+servir ao próximo, cuidar do mundo criado e contribuir para aliviar os efeitos da queda.
+Comunidade e parceria
+Educação e criação são tratadas como empreendimentos comunitários. A empresa caminha ao lado de  
+escolas, professores, famílias, estudantes e parceiros, valorizando relações duradouras, expressão do princípio 
+que dá nome à We Make: nós fazemos.
+Em toda a atuação da empresa, o tripé formado por Beleza, Verdade e Bondade orienta a avaliação de  
+qualquer produto, conteúdo ou tecnologia antes de sua adoção pedagógica.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 4
+
+=== PAGE 5 ===
+2.4 Histórico
+A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023, com início da operação 
+comercial em 2024 e duas escolas parceiras. Em 2026, a We Make soma 12 escolas parceiras e  
+aproximadamente 2.000 estudantes atendidos, e é, até o momento, a primeira e única empresa brasileira a  
+oferecer um sistema completo de educação tecnológica estruturado a partir de uma cosmovisão cristã  
+explícita.
+O currículo evoluiu para atender Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como  
+componente curricular, cobrindo programação, robótica educacional, eletrônica, modelagem e fabricação 3D, 
+projetos de engenharia, inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar 
+e Criar. Para o ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
+A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do 
+sistema, disponibilizando currículo, planos de aula e recursos a professores, além de instrumentos de  
+acompanhamento à coordenação. A empresa também acumulou experiência em concepção e orientação de  
+ambientes físicos de aprendizagem, incluindo projeto arquitetônico, memorial descritivo, dimensionamento e 
+especificação de recursos, e desenvolveu um modelo próprio de acompanhamento institucional contínuo às  
+escolas parceiras.
+2.5 Equipe
+Dênis Júlio Pereira 
+Francisco
+CEO e Diretor Pedagógico. Responde pela estratégia, direção pedagógica e 
+teológica, desenvolvimento do currículo, arquitetura das formações, visão 
+pedagógica da plataforma e concepção dos espaços maker. Responsável, junto 
+com Emanuela Monteiro, pela implantação do cronograma da Academia We 
+Make.
+Renato Silva de Assis
+Gerente Administrativo. Responde pela gestão administrativa e financeira, 
+contratos, processos, indicadores, organização das implantações, fornecedores e 
+apoio operacional ao sistema.
+Emanuel dos Santos 
+Peixoto
+Analista de Marketing. Responsável pelo posicionamento da marca, geração de 
+demanda, conteúdo, campanhas, eventos e comunicação institucional.
+Suzana Bonifazio Consultora Pedagógica. Atua em implantação, onboarding, acompanhamento de 
+professores e escolas, formações e suporte pedagógico.
+Emanuela Monteiro
+Responsável pela implementação da equipe de consultoria pedagógica. Atua 
+junto a Suzana Bonifazio nas etapas de implantação, acompanhamento, 
+formação, diagnóstico e prescrição de resultados junto às escolas, cobrindo todo 
+o suporte de que as instituições parceiras precisam. Responsável, junto a Dênis 
+Júlio, pela implantação do cronograma da Academia We Make.
+Christiano Bonifazio
+Representante Comercial, baseado em São Paulo. Atua de forma integral na busca 
+ativa de novas escolas, mas não é o único ponto de contato comercial da 
+empresa: toda a equipe estratégica participa do processo de venda, cada membro 
+em sua fase, da apresentação pedagógica às tratativas comerciais e contratuais, 
+até o pós-venda.
+Gabriela (Espaço Maker)
+Responsável pela área de Espaço Maker, que passa a operar como produto 
+institucional da empresa, cobrindo concepção do ambiente, especificação de 
+recursos e acompanhamento da implantação junto às escolas. Formalização na 
+folha de pagamento em curso.
+Equipe de tecnologia Três desenvolvedores e um cientista de dados para negócios, responsáveis pela 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 5
+
+=== PAGE 6 ===
+construção, evolução e implantação contínua da plataforma tecnológica própria.
+Iran Firmino Contador. Presta suporte contábil, fiscal, tributário e societário à operação.
+Atendente Comercial Posição em processo de contratação, responsável pelo primeiro atendimento, 
+gestão do CRM, qualificação inicial e follow-up comercial.
+A estrutura de liderança é hoje concentrada, o que garante agilidade na fase atual, mas exige, à medida que o 
+sistema cresce, distribuição progressiva de conhecimento e responsabilidade entre a equipe, ponto tratado no 
+Capítulo 7.
+O currículo profissional de cada integrante da equipe está em processo de coleta para compor anexo próprio 
+deste plano, ainda não finalizado.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 6
+
+=== PAGE 7 ===
+3
+O Sistema We Make: Conceito de Negócio
+A We Make entrega um sistema único de educação tecnológica, comercializado sob a unidade Kit We Make. O 
+sistema reúne currículo pedagógico, plataforma digital, espaço maker, formação docente e assessoria  
+institucional em um único contrato, sem fracionamento de preço entre esses componentes. Ao adquirir o  
+currículo do sistema, a escola ou a família educadora passa a ter direito a todos os demais serviços já previstos 
+no plano letivo contratado, sem cobrança adicional. Serviços fora desse escopo, quando solicitados pela  
+instituição, são tratados como demanda extraordinária e negociados à parte.
+3.1 O que compõe o sistema
+Currículo
+Estrutura pedagógica que define o que ensinar, por que ensinar e como organizar a progressão da  
+aprendizagem em educação tecnológica, integrando programação, robótica, eletrônica, fabricação digital,  
+engenharia, inteligência artificial, cultura maker e cidadania digital sob a metodologia Conhecer, Explorar e  
+Criar. O Livro Maker complementa a experiência como material físico de registro, reflexão e portfólio do  
+estudante.
+Plataforma tecnológica
+Ambiente digital próprio que organiza, distribui e acompanha currículo, recursos pedagógicos, formação,  
+projetos e dados de implementação, conectando professores, coordenadores, estudantes e famílias. A  
+plataforma também sustenta a coleta de indicadores e a análise de dados que alimentam a assessoria  
+institucional.
+Espaço maker
+Consultoria de concepção do ambiente físico de aprendizagem, incluindo proposta arquitetônica,  
+acompanhamento da construção ou adaptação do espaço e orientação sobre equipamentos, sempre a partir 
+das experiências previstas pelo currículo e das necessidades reais da instituição. O espaço maker deixa de ser 
+tratado como serviço acessório e passa a operar como produto institucional da empresa, com responsável  
+próprio e precificação em definição, conforme a Seção 6.5.
+Na fase de negociação, o dimensionamento de salas e equipamentos apresentado à escola tem caráter de  
+simulação. A lista técnica detalhada de recursos, com especificação e quantitativos, é entregue somente após 
+a assinatura do contrato, o que preserva o valor da consultoria e evita que a especificação circule como  
+material de comparação de preço.
+Assessoria institucional
+Acompanhamento estratégico de mantenedores, diretores e lideranças, cobrindo gestão pedagógica e  
+administrativa, pesquisa de satisfação realizada por meio da própria plataforma tecnológica, análise de  
+indicadores de implementação e recomendações fundamentadas em dados. O uso de ciência de dados é um  
+dos pontos fortes do sistema, tanto para a tomada de decisão interna da We Make quanto para gerar insights 
+de gestão às escolas parceiras.
+Formação docente e Academia We Make
+A formação de professores e coordenadores é entregue por meio da Academia We Make, trilha de formação, 
+mentoria e consultoria pedagógica que integra o Kit We Make. Assim que o contrato de currículo é firmado, a 
+implantação da Academia We Make é iniciada, com operacionalização contínua ao longo de todo o ano letivo, 
+conforme as fases de implantação, acompanhamento, formação, diagnóstico e prescrição de resultados  
+descritas no Capítulo 7.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 7
+
+=== PAGE 8 ===
+3.2 Dois mercados, o mesmo sistema
+O sistema We Make atende hoje dois mercados que compartilham estruturas pedagógicas semelhantes:  
+escolas confessionais cristãs e famílias educadoras organizadas em comunidades de homeschooling. Em  
+ambos os casos, a família ou a instituição tem acesso a um conjunto semelhante de currículo, plataforma,  
+formação e acompanhamento. A adesão ao espaço maker e ao desenvolvimento institucional tende a ser  
+menor entre famílias educadoras, dada a natureza doméstica do ambiente de aprendizagem, mas os demais  
+componentes do sistema se aplicam integralmente a esse público.
+Estruturas semelhantes não significam ofertas idênticas: escolas e famílias educadoras têm necessidades  
+distintas de comunicação, suporte e cadência de acompanhamento, e cada frente recebe currículo e  
+plataforma adaptados à sua finalidade. A distribuição do sistema a famílias educadoras conta hoje com  
+parceiros que já atuam nesse mercado, organizados em comunidades e redes de educação domiciliar, o que  
+permite à We Make alcançar famílias sem depender de prospecção individual.
+3.3 Dois negócios futuros, fora do sistema escolar
+A partir do quarto ano deste plano, 2030, a empresa pretende lançar dois negócios que não dependem de  
+vínculo com uma escola parceira: uma escola de tecnologia voltada a crianças e adolescentes em geral, e uma 
+faculdade de tecnologia. Diferentemente do sistema atual, vendido a instituições e famílias, esses dois  
+negócios atendem diretamente o indivíduo, independentemente de sua escola de origem. Por essa razão, são 
+tratados neste plano como linhas de negócio distintas, com modelo comercial próprio a ser desenvolvido, e  
+não como extensão do Kit We Make. O detalhamento dessas duas iniciativas está no Capítulo 13.
+Até que esse horizonte se concretize, o negócio da We Make permanece organizado em torno de um único  
+sistema, vendido de forma integral a escolas e a famílias educadoras, com um único ciclo de venda e um único 
+contrato por cliente.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 8
+
+=== PAGE 9 ===
+4
+Análise de Oportunidade
+4.1 Público-alvo
+O público do sistema We Make é composto por escolas privadas confessionais cristãs, redes educacionais, e  
+famílias educadoras organizadas em comunidades de homeschooling. Em ambos os casos, o processo de  
+decisão concentra mantenedores, diretores ou responsáveis pela família, com professores, coordenadores ou 
+tutores como mediadores da experiência, e alunos como beneficiários diretos da formação.
+4.2 Acessibilidade aos clientes e canais
+Os canais em uso incluem prospecção direta, participação em eventos de educação cristã, indicações,  
+relacionamento institucional, redes sociais, produção de conteúdo, palestras e expansão dentro da própria  
+base de clientes. O sistema completo permite padronização de funil, da geração de leads à proposta comercial, 
+sem exigir prospecção separada para cada componente do Kit We Make, já que a venda é única. Para famílias 
+educadoras, a distribuição conta com parceiros já estabelecidos nesse mercado, o que reduz a dependência de 
+prospecção individual família a família.
+A base instalada de clientes é, ela mesma, o principal canal de expansão: escolas satisfeitas geram indicação  
+para outras instituições da mesma rede ou região. O desafio comercial do ciclo 2027-2031 é transformar os  
+canais existentes em sistema previsível e mensurável de aquisição, com CRM, segmentação de base e  
+acompanhamento de conversão por canal.
+4.3 Barreiras de entrada
+A principal vantagem competitiva da We Make decorre da integração entre currículo autoral, metodologia  
+própria, plataforma tecnológica, propriedade intelectual, dados de implementação, relacionamento  
+institucional e marca, entregues como sistema único. Um concorrente pode reproduzir isoladamente um  
+currículo de robótica, uma plataforma de gestão ou um serviço de consultoria pedagógica. É mais difícil  
+reproduzir, ao mesmo tempo, todos esses componentes funcionando de forma integrada e coerente com uma 
+cosmovisão cristã.
+Quatro ativos transversais devem se consolidar até 2031: dados acumulados de implementação,  
+relacionamentos institucionais, força de marca e integração do ecossistema. A meta declarada não é impedir 
+que concorrentes reproduzam elementos isolados, e sim tornar progressivamente mais difícil reproduzir o  
+valor do sistema completo.
+4.4 Ciclo de vida e retenção
+O sistema opera por contrato anual renovável, com meta estratégica de estender o relacionamento para além 
+de quatro ou cinco anos, incentivando expansão entre séries e segmentos dentro da mesma instituição. Para 
+famílias educadoras, o ciclo acompanha a trajetória educacional da família, com potencial de relacionamento 
+plurianual à medida que novos filhos ingressam no sistema.
+4.5 O mercado está crescendo? É fragmentado?
+O setor brasileiro de tecnologia educacional já não é um mercado nascente: reúne centenas de empresas  
+ativas e soluções maduras em diferentes categorias. Dentro desse contexto amplo, o segmento específico da 
+We Make, um sistema completo de educação tecnológica fundamentado em cosmovisão cristã, ainda  
+apresenta características de mercado emergente, com baixa densidade de soluções equivalentes.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 9
+
+=== PAGE 10 ===
+4.6 Potencial de crescimento
+O potencial de crescimento é impulsionado pela obrigatoriedade curricular da computação na Educação  
+Básica, detalhada no Capítulo 5, pela disseminação da inteligência artificial no ambiente educacional e pela  
+necessidade de instituições confessionais desenvolverem essas competências sem abrir mão de sua  
+identidade. A expansão para famílias educadoras amplia esse potencial para um público fora do mercado  
+escolar tradicional, com aderência natural ao currículo, à plataforma e à formação de pais e tutores.
+4.7 Retorno do investimento
+O sistema apresenta, em geral, condições de recuperação do investimento em menos de dois anos por nova  
+escola, dado o baixo custo marginal de atender um cliente adicional frente ao custo fixo de produção de  
+conteúdo já amortizado. A frente de famílias educadoras, ainda em fase de validação, é tratada com postura  
+mais conservadora, com horizonte preliminar de recuperação entre 18 e 36 meses.
+4.8 Tamanho do mercado
+O Censo Escolar de 2025 registra 41.746 escolas privadas de Educação Básica no Brasil, das quais 24.683  
+oferecem Ensino Fundamental, um teto amplo que não corresponde ao mercado efetivamente endereçável.  
+Para o recorte confessional, este plano adota como referência de trabalho um mercado total entre 3.500 e  
+5.000 escolas confessionais cristãs no Brasil, com mercado acessível entre 900 e 1.400 escolas de perfil  
+econômico e institucional compatível com a proposta da We Make.
+Esses números devem ser tratados como estimativa de planejamento, não como dado consolidado: um estudo 
+específico de dimensionamento de mercado, cruzando microdados do Censo Escolar com bases de  
+associações confessionais, é recomendado antes da consolidação definitiva das metas de participação de  
+mercado apresentadas no Capítulo 9.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 10
+
+=== PAGE 11 ===
+5
+Mercado, Legislação e Concorrência
+5.1 O que o cliente compra hoje, na ausência da We Make
+Na ausência do sistema We Make, escolas raramente ficam sem comprar nada. Elas substituem o sistema  
+integrado por fornecedores fragmentados: um fornecedor de robótica ou programação, uma plataforma de  
+gestão genérica, formação pontual para professores, e nenhuma assessoria estratégica de fato integrada. Essa 
+fragmentação é, ao mesmo tempo, o padrão de mercado e a principal oportunidade que o sistema We Make 
+explora.
+5.2 Por que o cliente compra
+A dor central que motiva a contratação é a ausência de um caminho estruturado, coerente e tecnicamente  
+sólido para ensinar tecnologia ao longo dos anos escolares, sem abrir mão da identidade confessional da  
+instituição. Escolas costumam já ter tentado soluções fragmentadas, um professor de robótica aqui, uma  
+plataforma ali, e buscam no sistema We Make a integração que essas soluções isoladas não entregam.
+5.3 Legislação: a obrigatoriedade curricular da computação
+A Lei nº 14.533/2023, que instituiu a Política Nacional de Educação Digital, e a Resolução CNE/CEB nº 2/2025, 
+que estabeleceu o Complemento de Computação da Base Nacional Comum Curricular, tornam obrigatória, a  
+partir de 2026, a inclusão de pensamento computacional, cultura digital e mundo digital no currículo de todas 
+as escolas brasileiras, públicas e privadas, do primeiro ano do Ensino Fundamental ao terceiro ano do Ensino  
+Médio. As redes tiveram até o final de 2025 para adequar seus currículos, e a implementação efetiva já está em 
+curso em 2026. Em 5 de março de 2026, a Comissão Intergovernamental de Financiamento para a Educação  
+Básica de Qualidade condicionou o repasse do Valor Aluno Ano com base em Resultados, uma das  
+modalidades do Fundeb, à comprovação dessa adequação curricular até agosto de 2026, com efeito direto nos 
+repasses de 2027. Embora esse mecanismo financeiro específico se aplique à rede pública, a pressão  
+regulatória alcança igualmente as escolas privadas, que precisam demonstrar conformidade curricular às  
+famílias e aos órgãos de supervisão educacional.
+5.3.1 O que cada estado já fez além do piso federal
+A obrigatoriedade federal é o piso comum a todo o país, mas cinco estados já foram além dela, com  
+instrumento próprio identificado nesta pesquisa, seja lei aprovada pelo Legislativo, seja resolução ou  
+deliberação de seu Conselho Estadual de Educação, aplicável tanto à rede pública quanto à rede privada de seu 
+sistema de ensino.
+Estado Instrumento e data Conteúdo
+Distrito 
+Federal Lei nº 7.796/2025
+Aprovada pela Câmara Legislativa após os deputados derrubarem 
+veto do governador. Cria os Centros Interescolares de Robótica, 
+voltados ao letramento digital, à robótica educacional e ao uso 
+responsável de inteligência artificial como elemento didático.
+São Paulo Deliberação CEE nº 
+233/2025
+Do Conselho Estadual de Educação. Institui a Educação Digital, 
+Midiática e Computação como complemento obrigatório e 
+progressivo ao Currículo Paulista, da Educação Infantil ao Ensino 
+Médio, abrangendo rede estadual, redes municipais e instituições 
+particulares do Sistema de Ensino do Estado.
+Minas Gerais Parecer CEE/MG nº 
+1.588/2025 e Resolução 
+Homologa o Referencial Curricular de Computação na Educação 
+Básica, que passa a integrar o Currículo Referência de Minas 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 11
+
+=== PAGE 12 ===
+Estado Instrumento e data Conteúdo
+SEE nº 5.234/2026 Gerais, com diretrizes para computação, programação, cultura 
+digital e inteligência artificial, obrigatório a partir de 2026.
+Paraná Deliberação CEE/PR nº 
+04/2025
+Dispõe sobre a obrigatoriedade da Educação Digital e Computação 
+como componente curricular no Ensino Fundamental e no Ensino 
+Médio, em todo o Sistema Estadual de Ensino do Paraná, incluindo 
+instituições particulares.
+Rio Grande do 
+Sul
+Resolução CEEd nº 
+382/2024
+A mais antiga identificada nesta pesquisa, de 20 de dezembro de 
+2024. Institui a Computação na Educação Básica como 
+complemento ao Referencial Curricular Gaúcho.
+Nos demais 22 entes federativos, a pesquisa não identificou, até o momento, instrumento estadual próprio  
+equivalente: a obrigatoriedade em vigor nessas unidades decorre diretamente da norma federal, sem  
+complemento local documentado. Essa ausência não significa necessariamente inação, apenas que nenhum  
+ato estadual específico foi localizado nas fontes consultadas, entre sites oficiais de assembleias legislativas,  
+conselhos estaduais de educação e portais de notícia.
+O sistema We Make já incorpora, desde sua concepção curricular, os três eixos estruturantes exigidos pela  
+norma federal, pensamento computacional, cultura digital e mundo digital, o que posiciona a empresa como 
+resposta pronta a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo de  
+atender, independentemente de o estado em que operam já possuir ou não instrumento próprio.
+5.4 Concorrência
+A pesquisa de mercado identificou concorrentes em três categorias: propostas confessionais de escopo mais  
+restrito, sistemas seculares de tecnologia e cultura maker vendidos a escolas, e franquias ou plataformas de  
+tecnologia voltadas diretamente à família, sem vínculo institucional.
+Categoria Exemplos identificados
+Propostas confessionais
+IDBIRD Educação, com o kit The Maker, de escopo mais restrito, um material 
+pontual para uma faixa etária específica, sem currículo plurianual, plataforma 
+digital nem assessoria institucional integrada
+Sistemas seculares vendidos 
+a escolas
+Nave à Vela, Mind Makers, ZOOM Education, Robomind, MundoMaker, Somai, 
+todos sem proposta confessional
+Franquias e plataformas 
+diretas à família
+Código Kid, SuperGeeks, Ctrl+Play, Kodland, e a atuação pontual da BYJU’S no 
+Brasil, todos com cobrança direta da família, sem vínculo institucional com a 
+escola
+A We Make é a primeira empresa brasileira a reunir, em um único sistema, currículo plurianual, plataforma  
+tecnológica própria, espaço maker, formação docente e assessoria institucional, fundamentados de forma  
+explícita na cosmovisão cristã. Nenhum concorrente mapeado reproduz essa combinação: os concorrentes  
+confessionais têm escopo mais restrito, os sistemas seculares não adotam cosmovisão religiosa, e as franquias 
+e plataformas de maior escala vendem diretamente à família, sem a estrutura de contrato institucional que  
+caracteriza o sistema We Make.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 12
+
+=== PAGE 13 ===
+5.5 Futuros concorrentes
+A ameaça mais relevante de médio prazo provavelmente não virá de uma nova startup, e sim de um agente  
+que já possui distribuição consolidada: sistemas de ensino cristãos já estabelecidos, grandes grupos editoriais 
+criando produtos confessionais, redes como Mackenzie, ou big techs como Google e Microsoft avançando de 
+ferramentas digitais para apoio pedagógico. A defesa competitiva da We Make deve se apoiar em  
+especialização no mercado cristão, propriedade intelectual protegida, metodologia própria, relacionamento  
+consolidado com as escolas e integração profunda entre os componentes do sistema.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 13
+
+=== PAGE 14 ===
+6
+Produtos e Serviços
+6.1 O Kit We Make
+O Kit We Make é a unidade comercial única do sistema. Reúne currículo autoral de educação tecnológica para 
+Ensino Fundamental I, Ensino Fundamental II e Ensino Médio, com Educação Infantil incorporada a partir de  
+2027, estruturado pela metodologia Conhecer, Explorar e Criar. O currículo se organiza em quatro categorias 
+de experiência: Programação, Codificação e Jogos; Robótica e Eletrônica; Engenharia, Design e Fabricação; e  
+Mordomia e Tecnologias para o Futuro, esta última dedicada a discutir de forma direta o uso responsável e o 
+propósito da tecnologia à luz da cosmovisão cristã, para além da competência técnica em si.
+Cada aula segue os três momentos da metodologia: Conhecer, que provoca deslumbramento e conexão inicial 
+com o tema; Explorar, que sistematiza o conteúdo por meio de explicações, exemplos e discussão; e Criar,  
+conduzido pelo Ciclo de Projeto, processo estruturado em que o aluno identifica o problema, pesquisa,  
+imagina soluções, planeja, constrói, testa, identifica erros, aperfeiçoa e compartilha o resultado. A avaliação  
+acompanha todo esse percurso, não apenas o resultado final, observando compreensão, participação, tomada 
+de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
+O contrato inclui também acesso à plataforma tecnológica própria, consultoria de espaço maker quando  
+aplicável, assessoria institucional contínua e a Academia We Make, trilha de formação e mentoria docente.
+Serviços além do escopo já contratado, como uma expansão pontual do espaço maker ou uma consultoria  
+estratégica mais aprofundada do que a assessoria institucional recorrente, são tratados como demanda  
+extraordinária, negociada à parte.
+O currículo para famílias educadoras
+Para famílias educadoras, o mesmo acervo curricular do Kit We Make é entregue em formato adaptado, hoje a 
+frente de negócio mais madura e mais bem definida do sistema ao lado do currículo escolar, ambas já  
+operando com produto, preço e canal de distribuição estabelecidos para 2027. O currículo se organiza em  
+quatro trilhas, as mesmas que sustentam o Kit We Make escolar: Programação Criativa, Robótica e Automação, 
+Engenharia e Prototipagem, e Modelagem e Impressão 3D. Cada trilha é dividida em três níveis, nomeados  
+segundo o percurso clássico do Trivium: Gramática, no primeiro nível, para conhecer os fundamentos e o  
+vocabulário próprio da área; Lógica, no segundo, para articular esses fundamentos e resolver problemas com 
+eles; e Retórica, no terceiro, para criar com autoria e apresentar o resultado. O público é de adolescentes de 12 
+a 16 anos.
+Um nível equivale a um semestre completo, com encontro semanal entre tutor e aluno e acesso contínuo ao 
+conteúdo prático da trilha pela plataforma digital ao longo de todo o período. No ritmo esperado, a família  
+conclui dois níveis por ano dentro da mesma trilha, o que projeta a trilha completa em cerca de um ano e meio. 
+Ao final de uma trilha, a família pode migrar para outra, mantendo a mesma cadência.
+A cobrança do acesso à plataforma é feita por aluno matriculado. O responsável pela família tem acesso  
+próprio, sem custo adicional, para acompanhar a jornada de cada filho e conduzir os encontros semanais  
+quando ele próprio for o tutor. O conteúdo é segmentado por perfil de acesso: o responsável recebe formação 
+de apoio, com temas pedagógicos e teológicos, preparando-o para acompanhar a jornada do filho e para  
+conduzir os encontros semanais quando ele próprio for o tutor; o aluno recebe o conteúdo prático da trilha,  
+voltado à aplicação direta. Essa preparação do tutor é entregue pela Academia We Make, descrita na Seção  
+6.2, com formação estruturada antes do início de cada semestre.
+O valor de referência é R$249,00 por nível, cobrado diretamente da família por parceiros que já atuam no  
+mercado de famílias educadoras, responsáveis pela venda, pela cobrança e pelo parcelamento junto ao cliente 
+final. A We Make não emite boleto nem intermedia esse pagamento, recebendo da parceria um valor líquido 
+por nível concluído. Esse desenho comercial concentra na parceira a relação direta com a família, inclusive a  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 14
+
+=== PAGE 15 ===
+exposição jurídica discutida no Capítulo 14 quanto à ausência de regulamentação federal do homeschooling no 
+Brasil.
+A entrega é inteiramente digital, sem o Livro Maker físico que passa a integrar o Kit We Make escolar a partir de 
+2027. Essa é uma diferença deliberada de escopo entre as duas frentes, não uma limitação: a ausência de  
+material impresso elimina estoque, logística e risco de capital de giro justamente na frente de negócio ainda  
+em fase de validação de escala, ao mesmo tempo em que preserva a integridade do currículo, entregue de  
+forma completa pela plataforma.
+6.2 A Academia We Make
+A Academia We Make, nome ainda em definição, é a trilha de formação, mentoria e consultoria pedagógica  
+oferecida a toda escola que adquire o Kit We Make e a toda família educadora atendida pelo sistema. Assim  
+que o contrato de currículo é firmado, a implantação da Academia We Make é iniciada, com operacionalização 
+contínua ao longo de todo o ano letivo, organizada em oito fases sequenciais: apresentação pré-contratual,  
+onboarding inicial, diagnóstico de entrada, implantação intensiva no primeiro bimestre, acompanhamento  
+contínuo, formação continuada temática, diagnóstico de meio de ciclo e prescrição de resultados no  
+fechamento do ano. Na frente de famílias educadoras, esse ciclo é adaptado à cadência semestral de cada nível 
+das quatro trilhas, com formação do tutor renovada a cada semestre iniciado.
+A responsabilidade pela implantação do cronograma da Academia We Make é de Dênis Júlio e Emanuela  
+Monteiro, com Suzana Bonifazio atuando na implantação, no acompanhamento e no suporte pedagógico  
+recorrente. O detalhamento completo de cada fase, dos indicadores de acompanhamento e do roadmap de  
+evolução da Academia entre 2027 e 2031 está descrito em documento normativo próprio.
+6.3 O livro físico
+A partir de 2027, o sistema passa a incluir o Livro Maker físico, com produção e distribuição realizadas por meio 
+de gráfica parceira sediada em São Paulo. O livro complementa a entrega digital já realizada pela plataforma, 
+funcionando como material de registro, reflexão e portfólio do aluno ao longo do ano letivo.
+A identidade visual da coleção adota o personagem Pelicano como elemento central das capas, mantendo  
+unidade entre volumes e segmentos. A diretriz de design é de limpeza visual, evitando excesso de elementos 
+gráficos e recursos datados que comprometeriam a percepção de qualidade editorial do material.
+6.4 Precificação
+O valor de referência do Kit We Make é R$420,00 por aluno ao ano. A partir desse valor, a precificação final de 
+cada contrato é ponderada por critérios técnicos e comerciais próprios de cada instituição, entre eles porte da 
+escola, ticket médio cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo casos de  
+escolas sem fins lucrativos. Essa ponderação permite que a empresa mantenha um valor de referência único e, 
+ao mesmo tempo, viabilize contratos com instituições de perfil econômico distinto, sempre preservando o  
+rigor de critérios comerciais e de prospecção, sem que a negociação abra mão de justiça e coerência entre  
+contratos.
+A carteira atual reflete essa ponderação: contratos vigentes praticam valores entre R$180,00 e R$420,00 por 
+aluno ao ano, a depender do momento da negociação, do volume de alunos e das condições específicas de  
+cada instituição. Essa variação não representa inconsistência de política comercial, e sim a aplicação prática do 
+critério de ponderação que orienta a precificação do sistema.
+6.5 O Espaço Maker como produto institucional
+O Espaço Maker passa a ser tratado como produto institucional da empresa, com responsável dedicado e  
+formalização da posição na folha de pagamento. A mudança tem duas razões. A primeira é comercial: a  
+assessoria especializada na concepção do ambiente é um diferencial competitivo que não se reproduz com a  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 15
+
+=== PAGE 16 ===
+simples venda de equipamentos. A segunda é pedagógica: o espaço não é um ambiente equipado, e sim uma 
+extensão cíclica do currículo, dimensionada a partir das experiências previstas para cada segmento.
+A precificação dessa frente ainda está em definição e deve ser concluída antes do fechamento orçamentário, 
+distinguindo o que permanece incluído no Kit We Make, a consultoria de concepção prevista no escopo  
+contratado, do que passa a ser cobrado como projeto à parte, como expansões, reformas e acompanhamento 
+de obra fora do escopo original.
+6.6 Autoria e propriedade dos materiais
+Para autores terceirizados envolvidos na produção de conteúdo curricular, a We Make trabalha com cessão de 
+direitos de obra, sem direito a royalties, garantindo à empresa a titularidade plena do material produzido e a 
+liberdade de atualização e distribuição contínua do currículo.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 16
+
+=== PAGE 17 ===
+7
+Estrutura Organizacional e Operações
+7.1 Estrutura atual
+A operação é hoje concentrada na liderança executiva, que responde por estratégia, currículo, formação e  
+parte da assessoria institucional, apoiada pela equipe de consultoria pedagógica, pela área comercial, pela  
+equipe de tecnologia e pelo suporte administrativo e contábil. A implantação de cada escola segue etapas de 
+onboarding, acompanhamento pedagógico contínuo, formação de professores pela Academia We Make, e  
+avaliação periódica de resultados, sob responsabilidade conjunta de Suzana Bonifazio e Emanuela Monteiro,  
+esta última à frente da implementação da equipe de consultoria pedagógica.
+A consultoria pedagógica é remunerada em R$2.000,00 mensais e opera sob um princípio explícito: postura  
+propositiva, não reativa. O papel não se limita a responder demandas das escolas parceiras, e sim a organizar 
+jornadas de formação, calendário de eventos e acompanhamento contínuo, garantindo resposta rápida às  
+solicitações. Esse é o principal vetor de fidelização do sistema e o ponto em que a empresa se diferencia de  
+fornecedores que entregam material didático e falham na comunicação recorrente. O cronograma inicial dos 
+temas de formação é definido pela equipe, com participação crescente das escolas nas edições seguintes. A  
+carga horária necessária para atendimento e formação ainda deve ser quantificada.
+A remuneração do representante comercial combina uma parte fixa de R$2.000,00 mensais, em regime de  
+pessoa jurídica, o reembolso de custos de prospecção e uma comissão escalonada por porte da escola  
+contratada. A contratação nesse formato está condicionada à apresentação, pelo próprio profissional, de um 
+escopo de trabalho com metas semanais verificáveis, como volume de leads captados, contatos realizados e  
+reuniões agendadas, acompanhado de relatório periódico de atividades. O modelo comercial é sazonal e  
+depende de prospecção ativa, de modo que a remuneração fixa é contrapartida de um trabalho de abertura de 
+mercado, não de atendimento reativo.
+A comissão segue a tabela abaixo, aplicada sobre o valor do contrato escolar fechado.
+Porte da escola contratada Comissão sobre o contrato
+De 100 a 300 alunos 2%
+De 300 a 500 alunos 3%
+De 500 a 800 alunos 4%
+Acima de 801 alunos 5%
+A comissão ainda não tem valor estimado no orçamento do Capítulo 10, por depender do volume e do porte  
+real dos fechamentos ao longo do ano, e deve ser apurada e incorporada ao custo de pessoal à medida que os 
+contratos forem assinados. Sobre a base de contratos de 2027, a faixa de 2% a 5% implica desembolso  
+relevante em caso de fechamento de escolas de maior porte, o que recomenda tratá-la como custo variável de 
+aquisição no acompanhamento mensal, e não como rubrica fixa.
+7.1.1 Estrutura do onboarding de escolas parceiras
+O onboarding de cada escola já opera como processo documentado, estruturado em dois dias de formação  
+presencial, com carga horária de referência de 12 horas, distribuídas em três formações que seguem uma  
+sequência deliberada: primeiro os fundamentos de cosmovisão, educação e tecnologia, depois a metodologia 
+Conhecer, Explorar e Criar, e só então a operacionalização pela plataforma, pelo planejamento de aulas e pelas 
+ferramentas do espaço maker. Essa ordem evita que a formação se reduza ao domínio técnico de  
+equipamentos antes que o professor compreenda o propósito pedagógico e teológico que orienta seu uso.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 17
+
+=== PAGE 18 ===
+Bloco formativo Dia Carga horária
+Cosmovisão, Educação e Tecnologia 1 2h45
+Conhecer, Explorar e Criar 1 2h30
+Plataforma, Planejamento e Ferramentas 2 5h15
+Abertura, retomadas, intervalos e sínteses 1 e 2 1h30
+Total 12h
+A preparação do onboarding já segue divisão de responsabilidades estabelecida entre a escola parceira e a We 
+Make. Cabe à escola definir os professores que participarão, disponibilizar sala com projetor, áudio e internet, 
+e garantir acesso aos equipamentos do espaço maker que serão utilizados na formação. Cabe à We Make  
+organizar previamente acessos, materiais formativos, planos de aula e a experiência prática que será  
+conduzida no segundo dia. O alinhamento de horários, intervalos e particularidades da escola é  
+responsabilidade conjunta.
+Ao final do onboarding, a escola sai com uma base sólida para iniciar a implementação: compreensão dos  
+fundamentos, domínio da lógica metodológica, capacidade de navegar pela plataforma e de interpretar um  
+plano de aula, e familiaridade inicial com os principais equipamentos que utilizará. A especialização plena em 
+todas as tecnologias do programa é objetivo de médio prazo, construído ao longo do ano pela formação  
+continuada temática da Academia We Make, descrita em documento normativo próprio.
+7.2 Tecnologia própria
+A We Make já opera um conjunto de tecnologias desenvolvidas internamente. A gestão comercial é realizada 
+por um CRM próprio, disponível em comercial.wemake.tec.br, que organiza todo o processo de prospecção,  
+negociação e acompanhamento de contratos. A empresa também mantém plataformas próprias de  
+customização e acompanhamento do plano de negócio em tempo real, e uma estrutura de inteligência de  
+negócio que permite o acompanhamento da gestão financeira também em tempo real. Essas três camadas,  
+comercial, planejamento e financeira, são tecnologias próprias, construídas e mantidas pela equipe de três  
+desenvolvedores e um cientista de dados para negócios já incorporada à empresa.
+A empresa deve implantar, ainda no ciclo de 2027, uma plataforma de gestão automatizada para controle de 
+vendas, estoque e emissão de notas fiscais. O controle manual em uso hoje é suficiente para o volume atual,  
+mas se torna impeditivo à medida que a base cresce e o Livro Maker passa a gerar movimentação física de  
+estoque e faturamento em maior escala. Essa automação é condição para que o crescimento projetado não  
+dependa da disponibilidade pessoal de um único gestor.
+Essa base tecnológica sustenta, além da operação interna, a análise de indicadores e a pesquisa de satisfação 
+oferecidas às escolas como parte da assessoria institucional, permitindo que a mesma infraestrutura de dados 
+gere valor simultaneamente para a gestão da We Make e para a gestão pedagógica e administrativa das  
+instituições parceiras.
+7.3 Fornecedores e parceiros
+O fornecedor mais crítico da operação é a gráfica parceira em São Paulo, responsável pela produção e  
+distribuição do Livro Maker a partir de 2027. Entre os parceiros institucionais, destaca-se a ACSI Brasil, hoje a 
+parceria já consolidada de maior alcance, que abre canal de relacionamento com mantenedores e diretores  
+por meio de congressos e da Academia de Liderança.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 18
+
+=== PAGE 19 ===
+A natureza dessa relação precisa ficar registrada com precisão: trata-se de parceria e colaboração mútua, não 
+de chancela. A ACSI não certifica, não recomenda e não endossa o sistema We Make, e nenhuma peça  
+comercial, apresentação ou material institucional da empresa deve sugerir esse tipo de aval. O que a parceria 
+oferece é acesso e convivência com a rede de escolas associadas, e o que sustenta a decisão de compra  
+continua sendo o próprio sistema. Por ser associação sem fins lucrativos, a ACSI tampouco é tratada como  
+concorrente: a orientação estratégica é fornecer e apoiar, não disputar mercado. Duas iniciativas concretas  
+sustentam essa aproximação, o repasse de R$360,00 por escola como apoio ao trabalho da associação e a  
+oferta de um ano gratuito de plataforma como porta de entrada, ambas entendidas como contribuição à  
+parceria, e não como contrapartida por indicação de clientes. As duas ainda precisam de dotação orçamentária 
+própria antes do fechamento do plano.
+A empresa também deve estruturar um hub de parcerias no próprio site, reunindo os parceiros institucionais, 
+acadêmicos e tecnológicos com quem já colabora. A finalidade é dupla: validar publicamente o trabalho  
+realizado e concentrar em um único ponto a autoridade construída em campo. Como contrapartida dessa  
+exposição, a empresa deve exercer maior controle sobre o uso de sua marca em eventos de terceiros, evitando 
+situações em que a autoridade construída pela We Make sirva de vitrine para concorrentes.
+Para a frente de famílias educadoras, a We Make mantém negociação avançada com a Aspen, parceria  
+estratégica ainda em fase de estruturação, mas já com grandes avanços na definição do modelo de negócio  
+conjunto. A conclusão dessa estruturação deve ampliar significativamente o alcance do sistema We Make  
+junto a comunidades de homeschooling.
+7.3.1 Operação da frente de famílias educadoras
+Ao lado do currículo escolar, o currículo para famílias educadoras, detalhado na Seção 6.1, é hoje a segunda  
+frente de negócio com produto, preço e canal já definidos para 2027, o que a torna, junto com a frente escolar, 
+a base mais segura de receita do exercício, conforme os contratos e a meta de captação já contabilizados no  
+Capítulo 10.
+A operação dessa frente segue desenho deliberadamente enxuto. A entrega é cem por cento digital, pela  
+mesma plataforma tecnológica que atende as escolas, o que dispensa qualquer estrutura logística própria de 
+impressão ou distribuição física nessa frente. A venda, a cobrança e o parcelamento junto à família ficam a  
+cargo da parceira comercial, o que elimina da operação da We Make a necessidade de um funil comercial  
+família a família e concentra o esforço interno em produzir e manter atualizado o conteúdo das quatro trilhas e 
+em preparar o tutor por meio da Academia We Make antes de cada semestre. O suporte técnico à família é  
+prestado pela mesma equipe e pela mesma plataforma que atendem a frente escolar, sem estrutura de  
+atendimento paralela.
+Essa arquitetura operacional, sustentada por apenas três frentes internas, conteúdo curricular, plataforma e  
+formação do tutor, é o que permite à empresa atender, em tese, um número elevado de famílias sem  
+crescimento proporcional de equipe, desde que a parceria comercial em estruturação assuma integralmente a 
+função de aquisição e relacionamento direto com o cliente final.
+7.4 Regulamentação
+O currículo já incorpora os principais referenciais normativos: a Base Nacional Comum Curricular, o  
+Complemento de Computação estabelecido pela Resolução CNE/CEB nº 2/2025, e a Política Nacional de  
+Educação Digital instituída pela Lei nº 14.533/2023, detalhados no Capítulo 5. Na plataforma, aplicam-se a Lei 
+Geral de Proteção de Dados, as normas da Autoridade Nacional de Proteção de Dados e o ECA Digital, exigindo 
+governança contínua sobre bases legais de tratamento, retenção de dados e proteção específica de menores.
+No plano societário e fiscal, duas providências estão em curso com o suporte contábil da empresa: a migração 
+do CNPJ, hoje registrado no Rio Grande do Norte, e a atualização da Classificação Nacional de Atividades  
+Econômicas, de modo que o enquadramento reflita a operação real de editora, plataforma tecnológica e  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 19
+
+=== PAGE 20 ===
+prestação de serviços educacionais. Ambas devem ser concluídas antes do início do ciclo comercial de 2027,  
+por afetarem emissão de notas fiscais, carga tributária e a própria formalização dos contratos.
+7.5 Propriedade intelectual
+A marca We Make já possui registro, referente à nova identidade visual da empresa, e segue em processo de 
+proteção de novas frentes autorais junto aos órgãos competentes, à medida que o portfólio curricular se  
+expande para novos segmentos e materiais. Os materiais do currículo possuem aviso de direitos autorais e  
+cláusulas contratuais de restrição à reprodução em todos os contratos vigentes. Para autores terceirizados  
+envolvidos na produção de conteúdo, a empresa trabalha com cessão de direitos de obra, sem direito a  
+royalties, o que garante à We Make a titularidade plena e a liberdade de atualização contínua do material  
+produzido.
+7.6 Parcerias locais e geração de repercussão
+Além da operação recorrente de implantação e acompanhamento, a We Make deve estruturar iniciativas que 
+gerem visibilidade e repercussão local em cada região onde atua, aproximando a empresa de escolas, famílias 
+e comunidades para além do contrato já firmado. Duas frentes concretas orientam esse esforço: olimpíadas de 
+tecnologia e hackathons voltados aos alunos do sistema.
+As olimpíadas de tecnologia ainda estão em fase de estruturação, mas já integram o horizonte de iniciativas da 
+empresa como forma de estimular a excelência técnica entre os alunos das escolas parceiras e ampliar a  
+visibilidade do sistema We Make para além dos muros de cada instituição.
+Os hackathons devem trabalhar problemas reais, exigindo soluções inovadoras alinhadas ao princípio que  
+fundamenta o sistema We Make: tecnologia a serviço do desenvolvimento dos potenciais da criação e do alívio 
+dos efeitos da Queda. A premiação já testada combina reconhecimento material e oportunidade concreta de 
+carreira: cada integrante da equipe vencedora recebe um leitor digital, e a equipe como um todo recebe uma 
+semana de estágio em empresas de tecnologia parceiras do projeto. Esse formato de prêmio direciona o aluno 
+vencedor para uma experiência real de mercado de trabalho em tecnologia, e não apenas para um  
+reconhecimento simbólico.
+A esse conjunto somam-se competições de redação e de artigos científicos voltadas a estudantes do Ensino  
+Médio, integrando tecnologia, ciência e escrita acadêmica. Além de preparar o aluno para exames de larga  
+escala, essa frente conecta a operação comercial à produção de pesquisa descrita no Capítulo 8 e reforça a  
+autoridade da empresa junto às escolas parceiras.
+A expansão dessas iniciativas para novas escolas e regiões deve seguir o mesmo princípio: parcerias locais que 
+ofereçam projetos, prêmios ou oportunidades de estágio concretas em troca de exposição da marca We Make 
+junto às comunidades escolares atendidas, fortalecendo o relacionamento comercial descrito no Capítulo 9  
+por meio de reputação construída em campo, não apenas por prospecção direta.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 20
+
+=== PAGE 21 ===
+8
+Pesquisa e Desenvolvimento
+A pesquisa e desenvolvimento é um dos braços já estabelecidos da We Make, não uma expectativa que  
+depende da futura faculdade de tecnologia descrita no Capítulo 13. A empresa pretende estruturar essa frente 
+antes mesmo de a faculdade existir, porque a produção científica e teórica já sustenta, hoje, o currículo, a  
+Academia We Make e a autoridade de marca da empresa. Currículo, formação e conteúdo comercial nascem 
+de pesquisa aplicada, não de intuição pedagógica isolada, e essa lógica deve se tornar mais estruturada à  
+medida que a empresa cresce, não apenas continuar dependendo da produção pessoal do fundador.
+8.1 O que já existe
+Dênis Júlio concluiu, em fevereiro de 2026, o Mestrado em Inovação em Tecnologias Educacionais pelo  
+Instituto Metrópole Digital da Universidade Federal do Rio Grande do Norte, no Programa de Pós-Graduação 
+em Inovação em Tecnologias Educacionais. A dissertação, intitulada Ciberética: Investigando a Formação Ética 
+dos Adolescentes no Uso das Tecnologias Digitais de Informação e Comunicação, é pesquisa empírica  
+conduzida com 259 estudantes de 14 a 17 anos, de cinco escolas públicas e privadas, de orientação laica,  
+confessional e clássica, localizadas no Rio Grande do Norte, na Paraíba, no Paraná e em Santa Catarina. A  
+pesquisa investiga dilemas morais no ambiente digital, cidadania digital, ética das virtudes, sabedoria prática, 
+formação do caráter, cyberbullying e o papel da escola e dos professores na formação ética dos estudantes.
+Essa pesquisa já gerou produtos concretos, não apenas um título acadêmico. O livro Cartas para um Professor 
+Digital, escrito em formato epistolar, traduz os resultados da dissertação em orientações práticas para  
+professores, pais e educadores sobre o uso sábio, ético e responsável das tecnologias digitais, e já circula como 
+produto editorial da empresa. A oficina A Escola como Escudo, ministrada em julho de 2026 no Colégio Oficina, 
+em Joinville, Santa Catarina, apresenta a mesma pesquisa em formato de palestra e formação, argumentando 
+que a escola funciona como comunidade moral capaz de formar o aluno de modo implícito e explícito diante da 
+cultura digital. A formação Ressignificando a Tecnologia segue a mesma lógica de transformar pesquisa em  
+conteúdo formativo aplicável.
+8.2 Estrutura operacional da frente de pesquisa
+A empresa não depende de uma estrutura acadêmica formal para começar a ampliar essa frente. Três  
+formatos operacionais podem coexistir, e devem ser avaliados conforme a disponibilidade de tempo e  
+recursos de cada ciclo: constituição de um grupo de pesquisa formal, eventualmente em parceria com  
+instituições de ensino superior; incorporação de estagiários dedicados a projetos de pesquisa específicos, sob 
+orientação da liderança pedagógica; e distribuição de áreas de pesquisa entre a própria equipe já existente,  
+atribuindo a cada integrante uma frente de investigação coerente com sua função na empresa. Este último  
+formato tem o custo de implantação mais baixo e pode começar imediatamente, sem esperar por nova  
+contratação ou parceria externa.
+A frente de pesquisa tem também um horizonte de qualificação já definido: o ingresso do fundador em  
+programa de doutorado a partir de 2028, com o objetivo de consolidar a base acadêmica do sistema e a  
+autoridade da empresa nos campos de educação cristã, gestão e tecnologia. A prioridade metodológica é a  
+produção de dados longitudinais, acompanhando as mesmas escolas e turmas ao longo dos anos de  
+implantação, o que permite demonstrar resultado de aprendizagem com evidência, e não apenas com relato 
+de satisfação.
+8.3 Três eixos temáticos
+A produção de pesquisa e desenvolvimento da We Make deve se organizar em torno de três eixos, todos já  
+presentes na identidade da empresa, ainda que hoje concentrados na atuação pessoal do fundador.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 21
+
+=== PAGE 22 ===
+• Educação clássica: fundamentos pedagógicos e filosóficos da tradição clássica de educação, sua aplicação 
+à formação de professores e à construção curricular, e sua articulação com a proposta de escola de  
+tecnologia e faculdade descritas no Capítulo 13.
+• Tecnologia e desenvolvimento: pesquisa aplicada em programação, robótica, engenharia, fabricação  
+digital e inteligência artificial voltada à educação básica, sustentando a atualização contínua do currículo 
+do Kit We Make frente a um campo tecnológico que muda rapidamente.
+• Filosofia e ética: continuidade da linha de pesquisa já aberta pela dissertação Ciberética, investigando  
+dilemas morais, formação do caráter e cidadania digital, e ampliando a base empírica para novas escolas, 
+estados e faixas etárias.
+Cada eixo deve gerar produção científica documentada, não apenas conteúdo comercial: artigos, capítulos,  
+materiais de formação e, quando possível, pesquisa submetida a programas de pós-graduação, replicando o  
+modelo que já produziu a dissertação Ciberética e seus desdobramentos comerciais.
+8.4 Como isso já alimenta o negócio
+Essa produção não fica isolada da operação comercial. A pesquisa acadêmica fundamenta os princípios de  
+cosmovisão cristã, ética digital e formação do caráter que estruturam o currículo do Kit We Make e a trilha de 
+formação da Academia We Make. Os produtos derivados dela, como o livro e as oficinas, circulam como  
+material comercial autônomo e como conteúdo de autoridade em eventos e palestras, o mesmo canal de  
+aquisição já descrito no Capítulo 9. A produção teórica é, também, o que torna mais difícil para um concorrente 
+reproduzir o sistema We Make apenas copiando conteúdo já publicado, uma vez que a pesquisa original é o  
+que sustenta a atualização contínua do discurso e do currículo.
+8.5 Direção futura
+A prioridade para os próximos ciclos é dar continuidade a esse modelo de forma mais estruturada: manter um 
+fluxo permanente de pesquisa aplicada nos três eixos descritos, ampliar o número de escolas e de estudantes 
+participantes de estudos futuros, envolvendo de forma prioritária os alunos do Ensino Médio das escolas  
+parceiras, e transformar sistematicamente cada nova pesquisa em três camadas de valor, atualização do  
+currículo e da Academia We Make, produto editorial comercializável, e conteúdo de autoridade para eventos e 
+formações. À medida que a estrutura organizacional crescer, conforme o Capítulo 7, a empresa deve avaliar a 
+criação de um núcleo de pesquisa e desenvolvimento com responsabilidade e orçamento próprios. Esse núcleo 
+antecede a faculdade de tecnologia descrita no Capítulo 13 e não depende dela para existir: é, ao contrário,  
+parte do que pode tornar a faculdade viável quando chegar sua hora.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 22
+
+=== PAGE 23 ===
+9
+Marketing e Estratégia Comercial
+9.1 Posicionamento
+A We Make quer ser percebida como um sistema completo de educação tecnológica fundamentado na  
+cosmovisão cristã, não como fornecedora de um componente isolado, seja robótica, plataforma ou  
+consultoria. O posicionamento central é o de um sistema pedagógico integral, sequenciado e alinhado à Base 
+Nacional Comum Curricular, estruturado a partir de uma antropologia cristã, que entrega currículo,  
+plataforma, espaço maker, formação docente e assessoria institucional como partes de uma mesma proposta 
+contratada de uma só vez.
+Na comunicação com o mercado, esse posicionamento se traduz em uma proposta direta: ensinar o aluno a  
+criar tecnologia, e não apenas a consumi-la, convertendo tempo de tela em produção de conhecimento. A  
+fundamentação cristã permanece explícita e não negociável na construção do currículo e da formação,  
+enquanto o argumento de utilidade prática amplia o alcance da mensagem, inclusive junto a instituições e  
+famílias que chegam à empresa pela qualidade técnica da proposta antes de pela afinidade confessional.
+9.1.1 Força de vendas
+A venda do sistema We Make não é responsabilidade de uma única função isolada. O representante comercial, 
+baseado em São Paulo, atua de forma integral na busca ativa de novas escolas, mas o processo comercial é  
+conduzido por toda a equipe estratégica, cada membro atuando na fase que lhe é própria: a liderança  
+executiva participa da apresentação pedagógica e institucional, a equipe de consultoria pedagógica conduz o 
+diagnóstico e o alinhamento de expectativas com a escola, o representante comercial avança as tratativas  
+comerciais e contratuais, e a mesma equipe de consultoria pedagógica permanece responsável pelo pós-
+venda, na implantação e no acompanhamento contínuo pela Academia We Make. Essa característica torna a  
+retenção de clientes parte do mesmo processo de venda, não uma etapa posterior e desconectada dele.
+9.2 Canais e praça
+O modelo de distribuição é direto, consultivo e nacional, sem representantes ou revendedores. O funil típico  
+percorre evento, indicação ou contato direto, reunião de diagnóstico, apresentação institucional, proposta  
+comercial, apresentação ao conselho ou mantenedora e assinatura, gerido de ponta a ponta pelo CRM próprio 
+da empresa. A entrega do currículo e da plataforma é digital, o que reduz a dependência de estrutura logística 
+regional própria. A partir de 2027, o sistema passa a incluir também o Livro Maker físico, com produção e  
+distribuição realizadas por meio de gráfica parceira sediada em São Paulo, responsável por atender a expansão 
+nacional da base de escolas.
+9.3 Calendário comercial e ciclo de decisão
+O processo de compra acompanha o calendário escolar. Fevereiro a abril concentram relacionamento,  
+conteúdo e diagnóstico; maio e junho abrem a janela comercial forte para o ano seguinte; agosto a dezembro 
+concentram o maior volume de fechamentos e definição de materiais; dezembro e janeiro são dedicados a  
+implantação e onboarding. Como a escola contrata o sistema completo em uma única decisão, o ciclo de venda 
+do Kit We Make costuma levar entre 60 e 120 dias, da primeira apresentação à assinatura, sem ciclos de  
+decisão paralelos para cada componente do sistema, já que a contratação do currículo já garante à instituição 
+acesso à plataforma, à formação docente pela Academia We Make, ao suporte de espaço maker quando  
+aplicável e à assessoria institucional.
+Essa sazonalidade recomenda que a prospecção do ano seguinte comece ainda no primeiro semestre, com  
+intensificação das negociações entre agosto e dezembro.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 23
+
+=== PAGE 24 ===
+9.4 Meta de vendas do sistema, 2027-2031
+A meta comercial do sistema We Make é única, medida pelo número de novas escolas e famílias educadoras  
+que contratam o Kit We Make, e pelo número de alunos alcançados por essas contratações, não por metas  
+paralelas para cada componente do sistema.
+Indicador 2027 2028 2029 2030 2031
+Novas escolas contratantes 10 10 10 10 10
+Alunos atendidos (meta) 4.000 6.000 9.000 13.500 20.250
+A meta de alunos foi revista para um ritmo de crescimento de 50% ao ano, partindo de 4.000 estudantes em  
+2027. A meta de captação de escolas, por sua vez, permanece constante em 10 novas instituições por ano. As 
+duas metas só se sustentam em conjunto se o crescimento da base de alunos vier de três motores simultâneos: 
+novas escolas contratantes, expansão de segmentos e séries dentro das escolas já atendidas, e crescimento da 
+frente de famílias educadoras. Isoladamente, a captação de 10 escolas por ano no porte médio atual da  
+carteira não produz a progressão de alunos aqui projetada, e essa é a principal premissa a ser validada na  
+revisão do plano.
+Essa meta é acompanhada por indicadores complementares de saúde comercial, como taxa de renovação  
+contratual, receita média por escola e evolução do ticket médio, todos referentes ao mesmo contrato integral 
+do Kit We Make, não a receitas segregadas por serviço.
+9.5 Participação de mercado pretendida
+Como cenário-base, a captação de 10 novas escolas por ano, somada à base atual e a uma retenção entre 90% 
+e 93%, leva a empresa a uma base ativa estimada entre 60 e 70 escolas em 2031, o equivalente a algo entre 4% 
+e 7% do mercado-alvo confessional adotado como referência de trabalho no Capítulo 4, considerando que  
+toda escola contratante do sistema tem acesso ao mesmo conjunto integral de serviços. Essas metas devem  
+ser revisadas anualmente à medida que o estudo de dimensionamento de mercado recomendado no Capítulo 
+4 seja concluído.
+9.6 Investimento em marketing e vendas
+A empresa direciona investimento a eventos institucionais, como a presença da empresa na Academia de  
+Liderança da ACSI, na condição de parceira, produção de conteúdo, tráfego pago e materiais comerciais. A  
+prioridade para 2027 é consolidar essas despesas em centro de custo próprio, permitindo medir investimento 
+total, custo de aquisição de cliente, conversão e retorno por canal, sempre em relação à venda única do  
+sistema.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 24
+
+=== PAGE 25 ===
+10
+Premissas de Crescimento: Receitas e Despesas
+10.1 Status do planejamento
+O planejamento financeiro consolidado neste capítulo deve ser tratado como preliminar. Os valores de 2027  
+permanecem sujeitos a revisão, conciliação e aprovação da liderança. As projeções de 2028 a 2031 são  
+premissas de planejamento, não orçamento aprovado. Rubricas como autoria, ilustração, diagramação,  
+revisão editorial, logística e distribuição, material de encantamento comercial, registro de marca e ISBN  
+aparecem hoje zeradas ou insuficientemente detalhadas na planilha de origem, e devem ser orçadas antes do 
+fechamento definitivo do plano.
+A produção editorial exige, ainda, segregação de custos entre exercícios. O material do primeiro volume segue 
+para a gráfica em outubro de 2026, de modo que o pagamento da diagramação desse volume ocorre entre  
+outubro e novembro de 2026, dentro do exercício corrente, enquanto os demais custos de autoria, ilustração e 
+diagramação dos volumes seguintes recaem sobre 2027. Essa separação precisa estar refletida na planilha  
+antes do fechamento, sob pena de o orçamento de 2027 absorver despesa que pertence ao exercício anterior. 
+Registra-se também que o valor hoje pago pela diagramação está abaixo do praticado no mercado, e um  
+reajuste, como estímulo à continuidade do fornecedor, deve ser considerado na revisão da rubrica.
+Os 23 contratos que compõem o orçamento de 2027 somam, hoje, tanto escolas que ainda pagam pelo  
+modelo anual direto por aluno quanto escolas migradas para os planos de adesão descritos no Capítulo 6. A  
+quase totalidade dessa receita corresponde, na prática, ao Currículo Maker vendido de forma integrada com a 
+Plataforma, o que significa que Formação Docente, Espaço Maker e Assessoria Institucional ainda não geram 
+receita própria e mensurável em separado dentro deste orçamento. Essa constatação, e não uma falha de  
+levantamento, é o principal motivo pelo qual a divisão financeira por frente de negócio ainda não pode ser  
+apresentada como demonstração de resultado fechada, apenas como direção de trabalho.
+10.2 Base histórica
+Indicador 2025 (realizado)
+Receita R$ 386.878,92
+Despesa total R$ 239.442,42
+Resultado operacional R$ 147.436,50
+Margem operacional 38,1%
+Caixa disponível (referência) R$ 50.000,00
+Investimento inicial da empresa ~R$ 25.000,00, já recuperado
+A empresa já demonstrou capacidade de operar com margem positiva e de recuperar o capital inicial investido. 
+A estrutura projetada para 2027, no entanto, é significativamente maior do que a estrutura que gerou esse  
+resultado, o que explica a mudança de patamar discutida a seguir.
+10.3 Orçamento operacional 2027
+A meta de receita da frente escolar para 2027 é R$1.100.000,00. Os 23 contratos já identificados somam  
+R$951.961,90, e a diferença até a meta, R$148.038,10, corresponde a escolas novas, com contrato de currículo 
+e Kit We Make completo, hoje em fase final de negociação, fruto do trabalho comercial em curso desde  
+janeiro, com fechamento previsto para as próximas semanas. Esse valor não tem relação com a reprecificação 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 25
+
+=== PAGE 26 ===
+de contratos legados discutida na Seção 10.9, tratada neste plano como cenário contrafactual à parte, e não  
+como parte do caminho até a meta escolar.
+À meta escolar soma-se, como receita adicional e distinta, a venda da trilha de currículo para famílias  
+educadoras, descrita na Seção 6.1. Essa frente entra ano a ano como receita própria, incremental à receita das 
+escolas, não como parte da meta de R$1.100.000,00. Em 2027, a primeira venda projetada é de R$49.890,00, 
+referente a 100 alunos adquirindo os dois níveis iniciais da Trilha 1.
+Somando as duas frentes, a receita total projetada para 2027 é R$1.149.890,00. A despesa total planejada, já 
+incorporando a atualização da equipe descrita na Seção 10.7, soma R$848.913,14, resultando em resultado  
+operacional positivo de R$300.976,86 para o exercício, margem de aproximadamente 26,2%. Considerando  
+apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a venda à frente de 
+famílias educadoras, o resultado do exercício seria de R$103.048,76, margem de 10,8%, positivo em todos os 
+cenários. Entre 2025 e 2027, a receita cresce de forma acentuada frente à base de 2025, e a empresa amplia  
+remuneração da liderança, equipe, estrutura pedagógica, atendimento comercial, tecnologia própria,  
+produção gráfica, marketing, sede física, viagens e produção audiovisual sem comprometer a margem  
+operacional.
+10.4 Receita por contrato, 2027
+Contrato Ano de 
+vigência Receita anual Observação
+Colégio Graciosa 1/4 R$ 97.500,48 Livro incluso
+Col. Presb. de Sete Lagoas N/A R$ 4.800,00 Em processo de rescisão
+Colégio Cristão Amar 3/4 R$ 82.800,00 R$345/aluno hoje; oportunidade 
+de reprecificar a R$380 com livro
+Colégio Journey 3/5 R$ 98.496,00 R$288/aluno hoje; oportunidade 
+de reprecificar a R$360 com livro
+Executivo Colégio e Curso N/A R$ 0,00 Parceria gratuita
+Escola Cristã do Reino 2/4 R$ 5.976,00 R$249/aluno hoje; oportunidade 
+de reprecificar a R$310 com livro
+Escola Aprender e Viver 2/4 R$ 64.999,92 Livro incluso
+Educar Londrina 2/4 R$ 66.950,18 R$198/aluno hoje; oportunidade 
+de reprecificar a R$350 com livro
+CESE 2/4 R$ 39.693,78 R$180/aluno hoje; oportunidade 
+de reprecificar a R$300 com livro
+CEA 2/4 R$ 5.670,54 R$180/aluno hoje; oportunidade 
+de reprecificar a R$280 com livro
+Sagrados Corações 2/4 R$ 12.600,00 R$210/aluno hoje; oportunidade 
+de reprecificar a R$350 com livro
+ACR Classical Christian School 2/4 R$ 11.718,00 R$279/aluno hoje; oportunidade 
+de reprecificar a R$350 com livro
+Escola Cristã Paz 1/4 R$ 45.144,00 Escola nova; R$250,80/aluno, 
+oportunidade de reprecificar a 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 26
+
+=== PAGE 27 ===
+Contrato Ano de 
+vigência Receita anual Observação
+R$350 com livro
+Colégio da Comunidade (Curuçá) 1/4 R$ 101.286,00 Livro incluso
+Colégio da Comunidade (Carrão) 1/4 R$ 83.232,00 Livro incluso
+Escola Estímulos 1/4 R$ 0,00 Primeiro ano bonificado por 
+sorteio
+Col. Cristão Rev. Olavo Nunes 1/4 R$ 25.875,00 Livro incluso
+Colégio Cristão Zoe 1/4 R$ 19.500,00 Livro incluso
+Colégio Lighthouse F1 1/4 R$ 22.743,00 Livro incluso
+Colégio Lighthouse F2 1/4 R$ 23.541,00 Livro incluso
+Bee Christian School 1/5 R$ 45.500,00 Livro incluso
+For Life 1/4 R$ 51.300,00 Nova parceria
+Escola Supremo N/A R$ 42.636,00 Nova parceria
+Escolas em fase final de negociação N/A R$ 148.038,10
+Escolas novas, com contrato de 
+currículo e Kit We Make 
+completo, em estágio avançado 
+do funil comercial desde janeiro
+Total da meta escolar R$ 1.100.000,00
+10.4.1 Comparação entre o já fechado e o que falta para a meta escolar
+O quadro a seguir isola, da meta escolar de R$1.100.000,00, o que já está assinado do que ainda depende de 
+fechamento.
+Valor % da meta
+Já fechado (23 contratos assinados) R$ 951.961,90 86,5%
+A fechar: escolas em fase final de negociação R$ 148.038,10 13,5%
+Meta escolar 2027 R$ 1.100.000,00 100%
+A empresa já assegurou 86,5% da meta escolar de 2027 em contratos assinados. Os 13,5% restantes não  
+dependem de uma campanha comercial ainda por iniciar: são escolas novas já em negociação avançada desde 
+janeiro, com contrato de currículo e Kit We Make completo, e fechamento esperado nas próximas semanas.
+10.4.2 Receita adicional de famílias educadoras
+Distinta da meta escolar, a venda da trilha de currículo para famílias educadoras entra como receita própria,  
+incremental, que se soma ano a ano à receita das escolas. Em 2027, a primeira venda projetada é de  
+R$49.890,00, referente a 100 alunos que adquirem os dois níveis iniciais da Trilha 1, lançada neste ano.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 27
+
+=== PAGE 28 ===
+Item Alunos Valor unitário Receita
+Trilha 1, Nível 1 100 R$ 249,90 R$ 24.990,00
+Trilha 1, Nível 2 100 R$ 249,00 R$ 24.900,00
+Total R$ 49.890,00
+Somando a meta escolar de R$1.100.000,00 à receita de famílias educadoras de R$49.890,00, a receita total  
+projetada para 2027 é R$1.149.890,00.
+10.5 Sazonalidade e fluxo de caixa mensal
+O padrão de receita mensal é fortemente sazonal: janeiro a abril concentram R$128.618,34 por mês,  
+decorrentes das parcelas remanescentes dos contratos legados e da primeira leva de parcelas dos contratos  
+novos, enquanto junho a dezembro se estabilizam em torno de R$44.295,74 por mês. As despesas seguem  
+concentradas entre fevereiro e maio, período de maior produção gráfica, o que reduz o resultado mensal  
+nesse intervalo, sem chegar a superar a receita de nenhum mês do período.
+Mês Receita Despesa Resultado
+Janeiro R$ 128.618,34 R$ 64.619,43 R$ 63.998,91
+Fevereiro R$ 128.618,34 R$ 90.249,43 R$ 38.368,91
+Março R$ 128.618,34 R$ 89.749,43 R$ 38.868,91
+Abril R$ 128.618,34 R$ 96.849,43 R$ 31.768,91
+Maio R$ 127.418,34 R$ 100.110,35 R$ 27.307,99
+Junho R$ 44.295,74 R$ 74.976,44 -R$ 30.680,70
+Julho R$ 44.295,74 R$ 75.476,44 -R$ 31.180,70
+Agosto R$ 44.295,74 R$ 50.076,44 -R$ 5.780,70
+Setembro R$ 44.295,74 R$ 48.076,44 -R$ 3.780,70
+Outubro R$ 44.295,74 R$ 49.776,44 -R$ 5.480,70
+Novembro R$ 44.295,74 R$ 54.976,44 -R$ 10.680,70
+Dezembro R$ 44.295,74 R$ 53.976,44 -R$ 9.680,70
+Total 2027 R$ 951.961,90 R$ 848.913,14 R$ 103.048,76
+Este quadro mensal reflete apenas os 23 contratos já identificados na Seção 10.4, já incorporando a  
+atualização de pessoal da Seção 10.7, e não inclui a receita de escolas ainda em negociação nem a venda à  
+frente de famílias educadoras. Os R$148.038,10 de escolas em fase final de negociação ainda não têm  
+distribuição mensal definida e devem se concentrar nas próximas semanas, à medida que os contratos forem 
+assinados. Por isso, o total anual apresentado aqui, R$951.961,90 de receita e resultado de R$103.048,76, é o 
+piso do exercício, já positivo mesmo sem qualquer contrato novo. Com a conclusão dos fechamentos já em  
+andamento e a soma da receita de famílias educadoras, a receita total deve se aproximar de R$1.149.890,00 e 
+do resultado de R$300.976,86 detalhados na Seção 10.3.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 28
+
+=== PAGE 29 ===
+A distribuição mensal apresentada acima foi reconciliada com o total anual de despesa. Na planilha de origem, 
+a soma dos doze meses ficava R$24.000,00 abaixo do total do exercício, diferença equivalente a R$2.000,00  
+por mês, hoje redistribuída de forma linear ao longo do ano. A conciliação definitiva dessa rubrica com o plano 
+de contas deve ser feita no fechamento gerencial do primeiro mês de execução.
+Os meses de resultado mensal negativo, de junho a dezembro, não configuram déficit do exercício: decorrem 
+da concentração de recebimentos no primeiro semestre, e são absorvidos pelo resultado acumulado dos  
+primeiros cinco meses. O ponto de atenção que esse padrão exige é de capital de giro e de calendário de  
+desembolso, tratado na Seção 10.8, não de rentabilidade.
+10.6 Estrutura de despesas por categoria
+Categoria Valor anual % da despesa total
+Pessoal (CLT e PJ recorrente, com treinamento) R$ 354.720,00 41,8%
+Produção gráfica e impressão R$ 180.000,00 21,2%
+Taxas e serviços financeiros R$ 111.772,38 13,2%
+Tecnologia (inclui Plataforma Arkos) R$ 44.390,76 5,2%
+Infraestrutura e utilidades (inclui sede própria) R$ 44.760,00 5,3%
+Marketing e publicidade R$ 39.500,00 4,7%
+Comercial e relacionamento R$ 20.000,00 2,4%
+Viagens e representação R$ 29.400,00 3,5%
+Regulatórios, propriedade intelectual e taxas legais R$ 3.870,00 0,5%
+Logística e distribuição R$ 9.000,00 1,1%
+Produção audiovisual R$ 11.500,00 1,4%
+Total R$ 848.913,14 100%
+As categorias de Comercial e Relacionamento, Regulatórios e Propriedade Intelectual, e Logística e  
+Distribuição já possuem valor alocado no orçamento de 2027, cobrindo, respectivamente, material de  
+encantamento comercial e bonificações de campanha, o registro de ISBN dos títulos do currículo e o  
+encaminhamento de registro de marcas, e o frete de livros e de material institucional. Autoria, ilustração,  
+diagramação e revisão editorial de novos títulos seguem como rubricas estruturadas no orçamento, mas ainda 
+sem valor alocado, e devem ser precificadas antes do fechamento definitivo do plano. Somam-se a essa lista  
+três compromissos ainda sem dotação: a remuneração da responsável pelo Espaço Maker, o apoio ao trabalho 
+da ACSI, de R$360,00 por escola e a comissão escalonada do representante comercial.
+Registre-se uma leitura que precisa ficar clara na apresentação a terceiros: o montante da ordem de R$400 mil 
+que circulava como investimento de 2027 não é investimento de capital, e sim projeção de gasto operacional, 
+concentrada em folha de pagamento e produção gráfica. Esses valores já estão integralmente contemplados  
+na tabela acima, e apresentá-los como investimento adicional produziria dupla contagem.
+10.7 Detalhamento de pessoal
+Toda a equipe estratégica participa do processo comercial, da apresentação pedagógica às tratativas  
+contratuais e ao pós-venda, cada membro atuando em sua fase. O representante comercial dedicado, baseado 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 29
+
+=== PAGE 30 ===
+em São Paulo, concentra a busca ativa por novas escolas, mas não é o único ponto de contato comercial da  
+empresa.
+Função Mensal Anual
+CEO, Dênis Júlio R$ 15.000,00 R$ 180.000,00
+Gerente Administrativo, Renato Assis R$ 6.000,00 R$ 72.000,00
+Analista de Marketing, Emanuel Peixoto R$ 3.000,00 R$ 36.000,00
+Consultora Pedagógica, Suzana Bonifazio R$ 2.000,00 R$ 24.000,00
+Consultora Pedagógica e de Negócios, Emanuela 
+Monteiro R$ 1.000,00 R$ 12.000,00
+Representante Comercial (São Paulo) R$ 2.000,00 (PJ) + custos + 
+comissão escalonada
+R$ 24.000,00 fixo + custos + 
+comissão variável
+Contador R$ 400,00 R$ 4.800,00
+Atendente Comercial Posição em contratação Sem dotação no orçamento 
+atual
+Responsável pelo Espaço Maker Formalização em curso Valor em definição
+Pós-graduação em Educação Cristã Clássica 
+(Suzana e Christiano) R$ 1.920,00
+Total de pessoal R$ 354.720,00
+O valor acima cobre apenas o componente fixo da remuneração do representante comercial, R$2.000,00 por 
+mês em regime de pessoa jurídica. O reembolso de custos de prospecção e a comissão escalonada de 2% a 5% 
+por porte de escola, detalhada no Capítulo 7, ainda não têm valor estimado neste orçamento, por dependerem 
+do volume e do perfil real dos fechamentos ao longo do ano. Duas posições permanecem sem dotação e  
+devem ser precificadas antes do fechamento: a atendente comercial e a responsável pelo Espaço Maker, cuja 
+formalização já foi decidida.
+10.8 Caixa disponível e capacidade de absorção
+O caixa disponível informado como referência é de R$50.000,00. Mesmo no cenário mais conservador, em que 
+nenhuma das escolas hoje em fase final de negociação venha a assinar e a venda da trilha para famílias  
+educadoras não se concretize, o exercício fecha com resultado operacional positivo de R$103.048,76,  
+considerando apenas os 23 contratos já assinados, que se soma a esse caixa ao longo do ano. Com a conclusão 
+dos R$148.038,10 de escolas em negociação e a soma da receita de famílias educadoras, o resultado do  
+exercício sobe para R$300.976,86. Em nenhum dos cenários o exercício de 2027 é deficitário.
+Com caixa de referência de R$50.000,00 e resultado mensal negativo entre junho e dezembro, a disciplina de 
+capital de giro passa a ser um controle de execução, não apenas uma recomendação: o resultado acumulado 
+do primeiro semestre precisa ser preservado para sustentar a operação do segundo, evitando que o excedente 
+de caixa gerado entre janeiro e maio seja comprometido antecipadamente com investimentos não vinculados 
+à operação do exercício. O resultado acumulado até maio, de aproximadamente R$200 mil, é a fonte que  
+cobre os sete meses seguintes de resultado negativo, que somam cerca de R$97 mil, e essa provisão deve ser 
+tratada como caixa carimbado, não como excedente disponível.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 30
+
+=== PAGE 31 ===
+A necessidade de capital além desse caixa disponível dependerá de decisões de investimento ainda não  
+detalhadas neste plano, como eventual expansão de equipe, tecnologia ou infraestrutura além do que já está 
+incorporado ao orçamento operacional de R$848.913,14. Essas decisões devem ser avaliadas separadamente, 
+à medida que surgirem, sempre em conciliação com a geração de caixa do próprio exercício, antecipações  
+contratuais, reinvestimento de lucros e condições negociadas com fornecedores.
+10.9 Cenário contrafactual: reprecificação da base legada
+Esta seção apresenta um exercício contrafactual, não um componente do orçamento de 2027 nem da meta  
+escolar de R$1.100.000,00 descrita na Seção 10.3. O objetivo é mostrar até onde a receita poderia chegar,  
+além do que já está orçado, caso nove contratos legados decidam aderir ao Livro Maker, hoje ausente de seus 
+contratos. Diferentemente das escolas em fase final de negociação da Seção 10.4, que são clientes novos com 
+contrato de currículo e Kit We Make completo, os nove contratos aqui analisados já são clientes ativos, e o que 
+se avalia é apenas a inclusão de um componente adicional ao contrato já vigente.
+Os nove contratos, Colégio Cristão Amar, Colégio Journey, Escola Cristã do Reino, Educar Londrina, CESE, CEA, 
+Sagrados Corações, ACR Classical Christian School e Escola Cristã Paz, operam hoje com ticket por aluno abaixo 
+do praticado nos contratos mais recentes, e todos têm via de reprecificação já identificada: a inclusão do Livro 
+Maker como justificativa para elevar o valor por aluno a um patamar mais próximo do praticado na base mais 
+recente. Essa reprecificação é alavanca de receita e margem que não depende de captação de novos clientes, e 
+deve ser perseguida comercialmente, mas seu resultado, caso se concretize, deve ser lido como ganho  
+adicional sobre a receita total de R$1.149.890,00 já projetada para 2027, não como parte do caminho até ela.
+O quadro a seguir compara, escola a escola, a receita no formato atual, sem o livro, com a receita no formato 
+proposto, incluindo o livro, considerando o quantitativo de alunos informado para cada instituição.
+Escola Alunos Ticket atual Receita atual Ticket c/ 
+livro
+Receita c/ 
+livro
+Colégio Cristão Amar 234 R$ 345,00 R$ 80.730,00 R$ 380,00 R$ 88.920,00
+Colégio Journey 348 R$ 288,00 R$ 100.224,00 R$ 360,00 R$ 125.280,00
+Escola Cristã do Reino 19 R$ 249,00 R$ 4.731,00 R$ 310,00 R$ 5.890,00
+Educar Londrina 322 R$ 198,00 R$ 63.756,00 R$ 350,00 R$ 112.700,00
+CESE 210 R$ 180,00 R$ 37.800,00 R$ 300,00 R$ 63.000,00
+CEA 20 R$ 180,00 R$ 3.600,00 R$ 280,00 R$ 5.600,00
+Sagrados Corações 60 R$ 210,00 R$ 12.600,00 R$ 350,00 R$ 21.000,00
+ACR Classical Christian 
+School 42 R$ 279,00 R$ 11.718,00 R$ 350,00 R$ 14.700,00
+Escola Cristã Paz 180 R$ 250,80 R$ 45.144,00 R$ 350,00 R$ 63.000,00
+Total 1.435 R$ 360.303,00 R$ 500.090,00
+Se as nove escolas migrarem integralmente para o formato com livro, a receita conjunta desse grupo sobe de 
+R$360.303,00 para R$500.090,00, ganho potencial de R$139.787,00 ao ano, adicional à receita total de  
+R$1.149.890,00 já projetada para 2027 nas Seções 10.3 e 10.4. Os pequenos desvios entre este total e a soma 
+das receitas individuais já registradas na Seção 10.4 decorrem de o quantitativo de alunos aqui utilizado ter  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 31
+
+=== PAGE 32 ===
+sido informado de forma independente do contrato original, e devem ser conciliados antes do fechamento  
+definitivo do plano.
+Para viabilizar essa migração, provisiona-se o valor de R$50.000,00 destinado à produção do primeiro lote de 
+Livro Maker para as escolas que aderirem à reprecificação, cobrindo produção gráfica, ajuste de tiragem e  
+distribuição inicial. Esse valor é adicional à rubrica de produção gráfica de R$180.000,00 já orçada na Seção  
+10.6, que cobre a impressão dos livros das escolas cujo contrato já inclui o material, e deve ser tratado como 
+investimento condicionado à efetiva adesão das escolas à nova precificação, não como custo fixo automático 
+de 2027.
+A direção avalia dimensionar essa frente como campanha comercial própria, dirigida a toda a base atual e não 
+apenas às nove escolas simuladas acima, com meta de 3.600 exemplares e potencial de receita operacional  
+adicional superior a R$250.000,00. Essa leitura é mais ampla do que o exercício da tabela e depende de  
+conciliação com o quantitativo real de alunos por contrato antes de ser incorporada a qualquer meta.  
+Enquanto essa conciliação não ocorrer, prevalece no plano o valor de R$139.787,00 aqui calculado.
+10.10 Premissas de crescimento, 2027-2031
+Como o sistema We Make é vendido de forma integral, o número de escolas contratantes é o mesmo número 
+de escolas com acesso a currículo, plataforma, Academia We Make e assessoria institucional. Não há sentido 
+em projetar quantidades diferentes de clientes para cada componente do sistema, já que todos são entregues 
+juntos, no mesmo contrato.
+A meta de referência é de 10 novas escolas por ano ao longo de todo o período, totalizando 50 novas  
+instituições entre 2027 e 2031 e uma base ativa estimada entre 60 e 70 escolas em 2031, considerando  
+renovação. O ticket líquido médio inicial situa-se entre R$50 mil e R$60 mil por escola ao ano, com reajuste  
+pelo IPCA contratual e hipótese nominal de planejamento de 4% ao ano para fins de cenário. A retenção parte 
+de aproximadamente 90% e evolui para 92% a 93% até 2031.
+A meta de alunos, revista para crescimento de 50% ao ano, parte de 4.000 estudantes em 2027 e chega a  
+20.250 em 2031. Essa progressão não decorre apenas da captação de novas escolas: depende, na mesma  
+medida, da expansão de séries e segmentos dentro das instituições já atendidas e do crescimento da frente de 
+famílias educadoras. Mantido o porte médio atual da carteira, próximo de 140 alunos por contrato, 50 novas 
+escolas adicionariam cerca de 7.000 alunos ao período, o que cobre parte, e não a totalidade, da meta. A  
+diferença precisa ser explicitamente atribuída aos outros dois motores antes de o plano ser levado a terceiros.
+Dentro dessa mesma base de escolas, a utilização do espaço maker como consultoria de ambiente físico tende 
+a ser seletiva, concentrada nas instituições que decidem investir em infraestrutura própria, sem que isso  
+configure uma meta comercial separada: a consultoria de espaço maker está incluída no contrato de toda  
+escola que a solicitar dentro do escopo do sistema. O mesmo vale para a frente de famílias educadoras, na qual 
+a adesão ao componente de espaço maker e de desenvolvimento institucional tende a ser naturalmente  
+menor, dada a natureza doméstica do ambiente de aprendizagem, sem que isso represente um produto à  
+parte.
+10.11 Centros de custo e governança financeira recomendada
+A partir de 2027, recomenda-se a criação de centros de custo internos, Corporativo, Conteúdo Curricular,  
+Tecnologia e Plataforma, Formação e Academia We Make, Espaço Maker e Assessoria Institucional, com  
+finalidade exclusivamente gerencial, de controle de custo e produtividade interna. Esses centros não  
+representam produtos vendidos separadamente ao mercado, e sim uma forma de a empresa acompanhar  
+onde o custo do sistema é gerado, para gerir com mais precisão a operação de um produto que continua sendo 
+vendido de forma única. Custos diretamente identificáveis devem ser lançados no centro correspondente;  
+custos compartilhados devem ser rateados por critério objetivo, horas, receita, número de usuários ou volume 
+de projetos.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 32
+
+=== PAGE 33 ===
+A governança financeira recomendada para 2027 inclui fechamento gerencial mensal, demonstração de  
+resultado consolidada do sistema, acompanhamento de fluxo de caixa projetado contra realizado, orçamento 
+contra realizado, forecast revisado trimestralmente, controle de contratos e receita futura, controle de  
+inadimplência e de capital de giro, comitê trimestral de orçamento e revisão anual das premissas do plano.
+10.12 Indicadores financeiros a desenvolver
+Em nível corporativo, os indicadores a consolidar incluem receita recorrente contratada, receita por escola e  
+por aluno, margem bruta e de contribuição, EBITDA quando a estrutura contábil permitir, geração operacional 
+de caixa, capital de giro, taxa de renovação, Net Revenue Retention, LTV sobre CAC, prazo médio de  
+recebimento, inadimplência e concentração de receita. Internamente, cada centro de custo listado na Seção  
+10.11 deve também acompanhar indicadores próprios de eficiência, como custo por hora de formação na  
+Academia We Make, custo de infraestrutura da plataforma por instituição ativa, e margem por projeto de  
+espaço maker, sempre como ferramenta de gestão de custo, não como resultado de venda independente.
+10.13 Direcionamento estratégico financeiro, ano a ano
+Ano Prioridade financeira
+2027 Estruturar, investir, criar centros de custo, reprecificar contratos legados, melhorar 
+governança, proteger propriedade intelectual
+2028 Absorver a nova capacidade instalada, escalar receita, aumentar recorrência, reduzir peso 
+relativo dos custos fixos
+2029 Diversificar receita entre as frentes do sistema, aumentar geração de caixa e Net Revenue 
+Retention, reduzir dependência dos fundadores
+2030-2031 Financiar maior parcela da expansão pela própria geração de caixa, consolidar as frentes do 
+sistema, preparar business cases separados para a escola de tecnologia e a faculdade
+10.14 Nota sobre o exercício de valuation
+Um exercício preliminar de valuation da empresa, conduzido em documento separado, projetou cenários de  
+receita e margem para 2026 e para 2028 a 2030 com finalidade específica de estimar valor presente de fluxo de 
+caixa, tomando como base a receita contratada de R$951.961,90 para 2027 e uma estrutura de despesa  
+estimada à época, distinta da despesa real de R$848.913,14 apurada neste capítulo a partir da planilha  
+financeira consolidada. Esses números do valuation, receita interpolada de R$606.872,30 para 2026 e margens 
+hipotéticas de 15%, 25% e 30% para 2028, 2029 e 2030, pertencem exclusivamente àquele exercício e não  
+devem substituir a modelagem financeira operacional deste capítulo nem ser tratados como orçamento  
+aprovado. Para fins de gestão operacional, prevalece sempre o orçamento detalhado nas seções anteriores,  
+hoje com receita total projetada de R$1.149.890,00 e resultado de R$300.976,86 para 2027, e recomenda-se 
+que o exercício de valuation seja também atualizado com a estrutura de despesa corrigida.
+O ponto de equilíbrio da empresa também deve ser recalculado à luz do novo patamar de custos fixos  
+assumido em 2027, considerando estrutura fixa atualizada, custos variáveis, margem por Kit, produção gráfica, 
+tributos, inadimplência e os novos investimentos em tecnologia e Customer Success. O objetivo de 2027 e  
+2028 é fazer a receita crescer o suficiente para absorver essa nova capacidade instalada.
+10.15 Cenário de crescimento por meta de alunos, 2027-2031
+Este é um terceiro exercício numérico, distinto tanto do orçamento operacional das Seções 10.3 a 10.8 quanto 
+do exercício de valuation da Seção 10.14, e deve ser lido como tal. Enquanto o orçamento operacional parte da 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 33
+
+=== PAGE 34 ===
+base de 3.240 alunos efetivamente contratada, este cenário parte da meta de 4.000 alunos definida para 2027 
+e aplica o ritmo de crescimento de 50% ao ano aprovado pela direção, alcançando 20.250 alunos em 2031. Ao 
+final desta seção, o mesmo exercício é replicado em versão conservadora e em versão agressiva.
+Cenário-base
+O ticket médio de partida é o ticket blended real de 2027, calculado dividindo a receita contratada de  
+R$951.961,90 pela base de 3.240 alunos, o que resulta em R$293,82 por aluno ao ano. A partir de 2028, esse 
+ticket é reajustado pela hipótese de IPCA de 4% ao ano já utilizada nas premissas da Seção 10.10.
+Ano Alunos (meta) Ticket médio (IPCA 
+4%/ano) Receita projetada
+2027 4.000 R$ 293,82 R$ 1.175.280,00
+2028 6.000 R$ 305,57 R$ 1.833.436,80
+2029 9.000 R$ 317,80 R$ 2.860.161,41
+2030 13.500 R$ 330,51 R$ 4.461.851,80
+2031 20.250 R$ 343,73 R$ 6.960.488,80
+Do lado da despesa, a orientação recebida da liderança é a de que o crescimento de custo decorre  
+principalmente da manutenção do custo operacional atual, reajustado, somada a aumentos estruturais  
+vinculados ao próprio crescimento do negócio, não de um novo patamar de investimento equivalente ao de  
+2027. Para tornar essa orientação numérica, a despesa foi decomposta em três blocos: produção gráfica, que 
+escala com o número de alunos, mantendo o custo unitário de R$55,56 por aluno observado em 2027; taxas e 
+serviços financeiros, que escalam com a receita, na proporção de 11,7% já observada em 2027; e uma base  
+estrutural de R$557.141,00, que reúne pessoal, tecnologia, infraestrutura, marketing, comercial, viagens,  
+produção audiovisual e as demais categorias da Seção 10.6. Como a base de alunos passa a crescer 50% ao ano, 
+essa base estrutural foi projetada com crescimento de 35% ao ano, premissa que já embute ganho real de  
+produtividade: o custo estrutural cresce menos que a operação atendida, mas cresce bem acima da inflação,  
+porque atender cinco vezes mais alunos exige equipe pedagógica, comercial e de suporte proporcionalmente 
+maior.
+Ano Gráfica Taxas Base estrutural Despesa total Resultado
+2027 R$ 222.222 R$ 137.993 R$ 557.141 R$ 917.356 R$ 257.924
+2028 R$ 333.333 R$ 215.269 R$ 752.140 R$ 1.300.742 R$ 532.695
+2029 R$ 500.000 R$ 335.819 R$ 1.015.389 R$ 1.851.208 R$ 1.008.954
+2030 R$ 749.999 R$ 523.878 R$ 1.370.775 R$ 2.644.652 R$ 1.817.199
+2031 R$ 1.124.999 R$ 817.250 R$ 1.850.547 R$ 3.792.795 R$ 3.167.694
+Nesse cenário, a margem operacional passa de aproximadamente 21,9% em 2027 para 45,5% em 2031. A  
+leitura da margem exige cautela: ela cresce porque o modelo trata como variável apenas a produção gráfica e 
+as taxas financeiras, enquanto todo o restante é projetado como bloco estrutural de crescimento controlado. 
+Margens acima de 40% devem ser revalidadas com um plano de quadro de pessoal construído de baixo para  
+cima, posição a posição, antes de o cenário ser apresentado a terceiros. O valor de 2027 deste exercício,  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 34
+
+=== PAGE 35 ===
+R$1.175.280,00 de receita, é uma leitura por número de alunos, distinta da leitura por meta de receita da  
+Seção 10.3, que projeta R$1.100.000,00 de receita escolar para o mesmo ano.
+Cenário conservador
+Assume que a captação retorna ao ritmo linear do plano anterior, mil alunos ao ano, chegando a 8.000 em  
+2031, e um crescimento de base estrutural de 10% ao ano, coerente com uma operação que cresce menos e  
+dilui menos custo fixo.
+Cenário agressivo
+Mantém as metas de alunos aprovadas e assume maior disciplina de custo, com a base estrutural crescendo  
+28% ao ano em vez de 35%, premissa que exige ganho real de produtividade por colaborador à medida que a 
+base cresce.
+Ano Conservador Base Agressivo
+2027 (alunos) 4.000 4.000 4.000
+2031 (alunos) 8.000 20.250 20.250
+Resultado 2027 R$ 257.924 R$ 257.924 R$ 257.924
+Resultado 2029 R$ 650.684 R$ 1.008.954 R$ 1.111.523
+Resultado 2031 R$ 1.105.843 R$ 3.167.694 R$ 3.522.677
+Margem 2031 40,2% 45,5% 50,6%
+Os três cenários partem do mesmo ponto em 2027, porque a meta de alunos para esse ano está fixada em  
+4.000 nos três casos, e divergem a partir de 2028 conforme a capacidade real de captação comercial e a  
+disciplina de custo estrutural que a empresa conseguir sustentar. A distância entre o cenário conservador e o 
+agressivo em 2031 mede o tamanho do prêmio que a execução comercial e a produtividade organizacional  
+podem gerar dentro do mesmo horizonte de planejamento, e deve ser usada como referência de  
+sensibilidade, não como intervalo de garantia.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 35
+
+=== PAGE 36 ===
+11
+Análise SWOT
+A matriz a seguir consolida forças, fraquezas, oportunidades e ameaças identificadas ao longo deste plano, já 
+lidas à luz do sistema integrado que a We Make entrega a escolas e famílias educadoras.
+FORÇAS FRAQUEZAS
+Integração entre currículo, plataforma, formação, 
+espaço maker e assessoria em um único sistema, difícil 
+de reproduzir por concorrentes especializados em 
+apenas um componente
+Currículo autoral consolidado do 1º ao 9º ano, com 
+Ensino Médio e Educação Infantil em expansão
+Cosmovisão cristã incorporada ao produto, não apenas 
+ao discurso comercial
+Relacionamento próximo e recorrente com as escolas 
+parceiras
+Entrega do Currículo Maker inteiramente digital, sem 
+custo de logística física
+Modelo de precificação com calculadora e planos de 
+adesão, adaptável ao porte e à natureza de cada 
+escola
+Espaço Maker institucionalizado como produto 
+próprio, com responsável dedicado
+86,5% da meta escolar de 2027 já assegurada em 
+contratos assinados
+Dependência elevada da presença pessoal do fundador 
+para vendas de maior complexidade
+Formação Docente, Espaço Maker e Assessoria 
+Institucional ainda não produtizados como linhas 
+independentes
+Proteção de novas frentes autorais ainda em 
+andamento junto aos órgãos competentes
+Plataforma tecnologicamente menos madura que a de 
+concorrentes de maior porte
+Presença digital e participação em grandes eventos de 
+EdTech ainda incipiente
+TAM e SAM ainda baseados em estimativa preliminar, 
+sem estudo de dimensionamento consolidado
+Caixa de referência de R$50.000,00 frente a um 
+orçamento anual de despesa de R$848.913,14
+OPORTUNIDADES AMEAÇAS
+Curricularização da educação digital e da computação 
+na Educação Básica
+Fragmentação do mercado atual: escolas compram de 
+vários fornecedores diferentes para currículo, 
+formação, software e equipamentos
+Negociação avançada com a Aspen como possível 
+porta de entrada para comunidades de homeschooling
+Assessoria Institucional como linha de menor 
+concorrência direta no recorte confessional
+Reprecificação da base legada e campanha de 
+migração para o novo kit, com ganho potencial a partir 
+de R$139.787,00 ao ano sem captação de novos 
+clientes
+Potencial de expansão para escola de tecnologia de 
+abrangência nacional e faculdade de tecnologia
+Modelos de licenciamento ou distribuição OEM com 
+redes confessionais já estabelecidas
+Entrada de sistemas de ensino cristãos, grandes 
+editoras ou big techs no mesmo nicho
+Comoditização de planos de aula e conteúdo por 
+ferramentas de inteligência artificial generativa
+Pressão orçamentária das escolas clientes em cenários 
+de deterioração macroeconômica
+Incerteza regulatória sobre o homeschooling no Brasil
+Risco de uso indevido de conteúdo proprietário para 
+treinamento de IA de terceiros
+Concentração de receita em poucos contratos de 
+maior porte
+Descasamento de caixa entre o primeiro e o segundo 
+semestre de 2027
+A leitura cruzada aponta uma prioridade clara: transformar a integração do sistema, hoje sustentada em  
+grande parte pelo conhecimento pessoal da liderança, em processo documentado e replicável, antes que a  
+dependência de liderança central se torne restrição ativa ao crescimento projetado.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 36
+
+=== PAGE 37 ===
+12
+Plano Financeiro
+12.1 Estrutura de custos
+Os custos específicos do conteúdo curricular cobrem autoria, revisão, diagramação, ilustração e, a partir do  
+Livro Maker, gráfica, estoque e frete. Na Academia We Make, o custo principal é o tempo da equipe de  
+consultoria pedagógica, somado a viagens e materiais de formação. Na plataforma, os custos concentram-se  
+em desenvolvimento, hospedagem, manutenção e segurança, sustentados pela equipe própria de  
+desenvolvedores e ciência de dados. No espaço maker, predominam custos por projeto, como arquitetura e  
+horas de planejamento, já que equipamentos e obras são normalmente adquiridos diretamente pela escola.  
+Na assessoria institucional, o principal custo é o tempo dos consultores e a manutenção da infraestrutura de  
+dados que sustenta a análise de indicadores entregue às escolas.
+A partir de 2027, a empresa deve operar com os centros de custo internos descritos na Seção 10.11, atribuindo 
+despesas diretamente identificáveis a cada área e rateando pessoal e estrutura compartilhada por critério de 
+horas, receita ou utilização, sempre com o objetivo de gerir com precisão o custo de um sistema que continua 
+sendo vendido como produto único.
+12.2 Indicadores de retorno
+Indicador O que mede
+Margem bruta por aluno e por escola Rentabilidade do sistema integral entregue a cada cliente
+Retenção e renovação contratual Capacidade de manter a base de escolas e famílias educadoras ano 
+após ano
+LTV sobre CAC Retorno do investimento comercial ao longo do relacionamento com 
+cada cliente
+Custo por hora de formação e de 
+consultoria Eficiência da Academia We Make e da assessoria institucional
+Custo de infraestrutura da plataforma 
+por instituição ativa Eficiência tecnológica à medida que a base cresce
+Margem de contribuição por projeto de 
+espaço maker Rentabilidade da consultoria de ambiente físico quando solicitada
+Em nível consolidado, a empresa deve acompanhar margem bruta do sistema, percentual de receita  
+recorrente, LTV sobre CAC, receita média por escola e concentração de receita nos maiores clientes. Esses  
+indicadores permitem avaliar se o crescimento do número de escolas e famílias atendidas ocorre com  
+margem, recorrência e capacidade de escala.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 37
+
+=== PAGE 38 ===
+13
+Estratégia de Crescimento Futuro
+O que opera hoje e o que compõe o ecossistema futuro
+Antes de detalhar os dois negócios futuros, este quadro separa o que já é operação em curso do que ainda é  
+horizonte de médio e longo prazo.
+FUNCIONA HOJE A PARTIR DO ANO 4 (2030)
+O que é
+O sistema We Make, vendido de forma 
+integral a escolas confessionais e a famílias 
+educadoras, reunindo currículo, 
+plataforma, espaço maker, formação 
+docente e assessoria institucional em um 
+único contrato
+Escola de tecnologia para crianças e 
+adolescentes em geral, e eventual 
+faculdade de tecnologia, ambas voltadas 
+ao indivíduo, independentemente de 
+vínculo com escola parceira. A faculdade, 
+em particular, é possibilidade a ser 
+buscada, não frente já decidida
+Status Gera receita real, contratada e projetada 
+até 2031 nos Capítulos 9 e 10
+Sem receita, sem contrato, sem operação 
+até o momento
+Investimento
+Já orçado: receita total de R$1.149.890,00 
+(meta escolar mais famílias educadoras) e 
+R$848.913,14 em despesa operacional 
+para 2027, detalhados no Capítulo 10
+Ainda não orçado. Depende de business 
+case próprio, a construir a partir da 
+consolidação do sistema atual
+Condição de 
+avanço
+Execução do roadmap de consolidação da 
+Seção 13.1
+Consolidação prévia do sistema atual, 
+validação de demanda e conclusão do 
+registro de propriedade intelectual, 
+conforme Seção 13.4
+Em outras palavras: toda a receita que este plano projeta entre 2027 e 2031 vem do sistema já existente,  
+vendido a escolas e famílias educadoras. A escola de tecnologia e a faculdade são o horizonte que esse sistema 
+torna possível a partir do quarto ano do plano, não um compromisso financeiro dos três primeiros anos.
+13.1 Roadmap de consolidação do sistema atual
+O período entre setembro e dezembro de 2026 é dedicado a preparar produtos, processos, tecnologia, equipe, 
+contratos, preços e logística para o ciclo seguinte. Em 2027, o foco é consolidação do sistema já entregue a  
+escolas e famílias educadoras. Em 2028, replicação e delegação, reduzindo a dependência direta da liderança 
+central. Em 2028, entra também em pauta a ampliação do uso do espaço maker por novos currículos, como  
+marcenaria e eletrônica básica, que estendem a utilidade do ambiente para além de programação e robótica e 
+o conectam a componentes da base comum. Em 2029, escala orientada por dados, com indicadores internos 
+plenamente operacionais. Em 2030, início da operação dos dois negócios futuros descritos a seguir, e, em  
+2031, consolidação da We Make como referência nacional em educação tecnológica fundamentada na  
+cosmovisão cristã.
+13.2 Ano 4: escola de tecnologia para crianças e adolescentes
+O sistema We Make já detém o currículo, a metodologia de ensino em três etapas e a experiência de formação 
+de tutores leigos que sustentam uma escola de tecnologia própria, de abrangência nacional, dedicada à  
+formação de crianças e adolescentes em programação, robótica e áreas correlatas, sob a mesma cosmovisão 
+cristã que já fundamenta o sistema atual. Diferentemente do sistema escolar e do sistema de famílias  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 38
+
+=== PAGE 39 ===
+educadoras, essa escola atende diretamente o indivíduo, sem exigir vínculo com uma escola parceira, e deve 
+operar com modelo comercial próprio, ainda a ser desenvolvido.
+Essa iniciativa deve considerar modelo de oferta presencial em polos regionais, remoto pela plataforma já  
+desenvolvida, ou híbrido, progressão formal por certificação técnica, e corpo docente formado a partir da  
+própria trilha de mentoria de tutores da Academia We Make, permitindo escalar turmas sem depender  
+exclusivamente de professores especialistas em tecnologia.
+13.3 Ano 4: faculdade de tecnologia, uma iniciativa a ser buscada
+A faculdade de tecnologia não é, neste plano, uma frente de negócio já decidida ou garantida. É uma  
+possibilidade que a empresa pretende buscar a partir do quarto ano do plano, com o objetivo específico de  
+agregar mais valor à prestação de serviços já entregue pelo sistema We Make, oferecendo um caminho de  
+formação superior coerente com a mesma proposta pedagógica praticada da Educação Infantil ao Ensino  
+Médio: formação tecnológica orientada por uma cosmovisão que integra técnica, ética e propósito.
+Sua viabilidade depende de etapas regulatórias que extrapolam o controle direto da empresa, entre elas o  
+credenciamento junto ao Ministério da Educação e a definição do arranjo institucional, por credenciamento  
+próprio ou por parceria com instituição já credenciada. Nenhuma dessas etapas está em curso hoje, e a  
+iniciativa só deve avançar de fato após a consolidação do sistema atual e a validação das condições de sucesso 
+listadas na Seção 13.4.
+A viabilização de parcerias acadêmicas para bolsas de estudo e formação continuada, hoje ainda não  
+formalizadas, é um dos caminhos que a empresa avaliará ao buscar essa frente, com potencial de, no futuro, 
+abranger também graduações em pedagogia e psicologia. Essa possibilidade permanece condicionada à  
+identificação de parceiros adequados e às etapas regulatórias mencionadas acima, não devendo ser lida como 
+compromisso já assumido.
+13.4 Condições de sucesso
+• Consolidação prévia da governança e da estrutura organizacional descrita no Capítulo 7, sem a qual a  
+ampliação de escopo institucional multiplicaria a dependência de liderança central.
+• Validação de demanda real por meio da execução das metas comerciais de 2027 a 2029 antes de  
+comprometer capital relevante nos dois negócios futuros.
+• Conclusão do registro da propriedade intelectual do currículo e da marca, condição para que a expansão 
+não exponha a empresa a risco de diluição de sua vantagem competitiva.
+• Estruturação de capital, próprio ou externo, dimensionado especificamente para a escola de tecnologia e 
+para a faculdade, dado que ambas exigem investimento muito superior ao praticado na operação atual  
+do sistema.
+13.5 Papel de um eventual capital externo
+A trajetória descrita neste plano foi construída, até aqui, com recursos próprios, sem dívida ou passivo  
+relevante a sustentar. Essa é a base a partir da qual qualquer conversa sobre capital externo deve partir: não 
+como suprimento de uma operação em dificuldade, mas como aceleração de uma trajetória que a empresa já 
+demonstrou ser capaz de percorrer sozinha. A pergunta que orienta essa conversa não é se a We Make  
+consegue chegar ao horizonte de cinco anos deste plano, mas se um eventual investidor deseja antecipar esse 
+horizonte para dois ou três anos.
+Caso essa aceleração se concretize, as prioridades de alocação incluiriam o fortalecimento imediato da equipe 
+comercial e investimento mais robusto na consultoria pedagógica, para elevar a experiência de pós-venda das 
+escolas e famílias atendidas. Essas prioridades são inspiração de alocação, não orçamento aprovado, e devem 
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 39
+
+=== PAGE 40 ===
+ser tratadas com o mesmo rigor de conciliação já aplicado às demais estimativas deste plano antes de qualquer 
+decisão de captação.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 40
+
+=== PAGE 41 ===
+14
+Análise de Riscos
+14.1 Dependência de liderança central
+Grande parte do conhecimento comercial, pedagógico e de relacionamento institucional da empresa está  
+concentrada no CEO e, em menor grau, no Gerente Administrativo. A venda da Assessoria Institucional e do  
+Espaço Maker, em particular, ainda depende diretamente da participação do fundador nas negociações mais 
+complexas. Esse é um padrão comum em empresas em fase de crescimento acelerado, mas exige, como  
+mitigação, documentação sistemática de processos, delegação progressiva e formação de uma segunda  
+camada de liderança, condição de sucesso já apontada no Capítulo 13 para os horizontes futuros de expansão.
+14.2 Propriedade intelectual
+A marca We Make já possui registro, referente à nova identidade visual da empresa, e o processo de proteção 
+de novas frentes autorais do currículo segue em andamento junto aos órgãos competentes. Até a conclusão  
+desse processo, a empresa permanece exposta a algum grau de risco de reprodução não autorizada de  
+conteúdo por terceiros, ainda que os contratos comerciais já incluam cláusulas de restrição à reprodução. A  
+conclusão do registro das frentes autorais deve seguir como prioridade jurídica.
+14.3 Maturidade desigual entre componentes do sistema
+O currículo é o componente mais maduro do sistema. A Academia We Make, o espaço maker e a assessoria  
+institucional ainda dependem de maior padronização interna para operar de forma escalável, e a plataforma  
+exige investimento tecnológico contínuo para não ficar atrás de concorrentes de maior porte. Essa maturidade 
+desigual cria risco de que a venda do sistema avance mais rápido do que a capacidade operacional de entregar 
+todos os seus componentes com o mesmo padrão de qualidade, o que pode comprometer a percepção de  
+integração que sustenta o diferencial competitivo da empresa.
+14.4 Uso indevido de conteúdo por inteligência artificial
+A crescente capacidade de sistemas de inteligência artificial de extrair e replicar conteúdo pedagógico a partir 
+de materiais digitais expõe o currículo da empresa ao risco de ser usado, sem autorização, para treinar  
+ferramentas concorrentes ou genéricas. A empresa já inclui cláusulas contratuais de vedação a esse uso em  
+seus contratos mais recentes, mas deve avaliar medidas técnicas complementares de proteção da Plataforma.
+14.5 Risco regulatório sobre o homeschooling
+O homeschooling não possui regulamentação federal consolidada no Brasil. Uma família de Blumenau, em  
+Santa Catarina, mantida em regime de educação domiciliar havia treze anos, foi condenada em primeira  
+instância em agosto de 2026, com multa de aproximadamente R$65 mil e determinação de matrícula  
+obrigatória na rede regular. O precedente confirma que a exposição legal recai sobre a família, não sobre o  
+fornecedor de currículo, o que já orienta a estruturação do modelo de negócio em negociação com a Aspen,  
+prevendo que a relação direta com a família fique a cargo da parceira, com a We Make fornecendo conteúdo e 
+plataforma. Ainda assim, a empresa deve monitorar a tramitação do PL 1.338/2022 e manter o sistema escolar 
+como âncora de receita caso esse risco se materialize.
+14.6 Concorrência e pressão de custo
+O nicho específico da We Make é hoje pouco disputado, mas grandes editoras, sistemas de ensino cristãos já 
+estabelecidos, redes como Mackenzie, ou big techs como Google e Microsoft, poderiam decidir entrar no  
+segmento de educação confessional caso identifiquem ali oportunidade de escala. A pressão orçamentária  
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 41
+
+=== PAGE 42 ===
+sobre escolas clientes, em cenários de deterioração macroeconômica, pode comprimir a disposição de  
+pagamento pelo ticket médio atual.
+14.7 Concentração de receita e descasamento de caixa
+Dois riscos financeiros acompanham o crescimento projetado. O primeiro é a concentração de receita: um  
+número reduzido de contratos de maior porte responde por parcela relevante da receita do exercício, de modo 
+que a perda de um único cliente dessa faixa produz impacto desproporcional no resultado. O segundo é o  
+descasamento de caixa descrito na Seção 10.5, com resultado mensal positivo até maio e negativo de junho a 
+dezembro, sobre um caixa de referência de R$50.000,00, com sete meses negativos somando cerca de R$97  
+mil. Ambos são administráveis, mas exigem controle mensal de fluxo projetado contra realizado e disciplina na 
+liberação de investimentos ao longo do segundo semestre.
+14.8 Matriz de probabilidade e impacto
+Risco Probabilidade Impacto Prioridade de 
+tratamento
+Dependência de liderança central Alta Alto Imediata
+Proteção autoral do currículo ainda em 
+andamento Média Alto Imediata
+Maturidade desigual entre componentes Alta Médio Imediata
+Concentração de receita em poucos 
+contratos Média Alto Imediata
+Descasamento de caixa no segundo 
+semestre Alta Médio Controle mensal
+Meta de alunos acima da capacidade de 
+captação Média Alto Revisão no 1º trimestre
+Uso indevido por IA de terceiros Baixa Médio No prazo do ciclo 2027
+Regulação do homeschooling Baixa Alto Monitoramento 
+contínuo
+Concorrência e pressão de custo Média Médio No prazo do ciclo 2027
+Nenhum dos riscos acima é, isoladamente, impeditivo do plano de crescimento apresentado. Em conjunto, no 
+entanto, justificam que a consolidação de governança e a padronização dos componentes do sistema  
+precedam o avanço para os dois negócios futuros descritos no Capítulo 13.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 42
+
+=== PAGE 43 ===
+15
+Considerações Finais
+A We Make entrega hoje um sistema único de educação tecnológica, fundamentado na cosmovisão cristã, a  
+escolas confessionais e a famílias educadoras. Currículo, plataforma, espaço maker, formação docente e  
+assessoria institucional funcionam de forma integrada, contratados de uma só vez, sem fracionamento de  
+preço ou de decisão comercial entre esses componentes.
+O ano de 2027 é, por desenho, um ano de transição: a receita mais que dobra frente a 2025 e o resultado  
+operacional projetado permanece positivo, em R$300.976,86, mesmo com investimento simultâneo em  
+pessoal, tecnologia própria e estrutura física. A margem cai de 38,1% em 2025 para 26,2% em 2027 não por  
+fragilidade comercial, e sim por uma decisão deliberada de reinvestimento em capacidade organizacional,  
+absorvida sem levar o exercício a resultado negativo em nenhum dos cenários avaliados.
+A partir do quarto ano deste plano, a empresa pretende buscar dois negócios que atendem o indivíduo  
+diretamente, sem vínculo com escola parceira: a escola de tecnologia para crianças e adolescentes em geral, e 
+a eventual faculdade de tecnologia, esta última ainda uma possibilidade a ser explorada, não uma frente já  
+decidida. Esses dois negócios permanecem condicionados à consolidação do sistema atual, e não competem  
+por recurso ou atenção com a operação já contratada para os próximos anos.
+Este plano organiza premissas, metas e projeções em torno do sistema já entregue, com metas e indicadores 
+construídos a partir de dados reais de contrato e de orçamento, e deve ser revisado à medida que o realizado 
+financeiro e comercial de cada ciclo avance.
+WE MAKE EDUCAÇÃO TECNOLÓGICA · Plano de Negócio 2027-2031 · Documento Confidencial · página 43
+
