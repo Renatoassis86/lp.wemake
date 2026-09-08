@@ -55,7 +55,7 @@ export default async function PlanoFinanceiroPage() {
           Capítulo Financeiro (2027–2031)
         </h1>
         <p className="text-white/55 text-[0.875rem] sm:text-sm mt-1.5 max-w-2xl">
-          Planilha compartilhada — qualquer sócio pode editar. Receita, custo fixo e custo variável,
+          Planilha compartilhada, qualquer sócio pode editar. Receita, custo fixo e custo variável,
           abertos pelas cinco linhas de negócio da We Make. Resultado, margem, ponto de equilíbrio e
           payback são calculados automaticamente.
         </p>

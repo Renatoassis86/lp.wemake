@@ -11,7 +11,7 @@ export default function RelatorioPlanoDeNegocioPage() {
           Plano de negócio · We Make · 2027–2031
         </p>
         <h1 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1]">
-          Relatório completo — formato A4
+          Relatório completo em formato A4
         </h1>
         <p className="text-white/55 text-[0.875rem] sm:text-sm mt-1.5 max-w-2xl">
           Os 14 capítulos do Plano de Negócio 2027–2031 na íntegra, prontos para leitura ou exportação em PDF.

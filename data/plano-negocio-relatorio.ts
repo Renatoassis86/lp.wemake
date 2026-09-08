@@ -1,6 +1,6 @@
 /**
  * Conteúdo estruturado do Plano de Negócio We Make 2027-2031.
- * Fonte: We_Make_Plano_de_Negocio_2027_2031 (4).pdf — documento oficial da direção estratégica.
+ * Fonte: We_Make_Plano_de_Negocio_2027_2031 (4).pdf, documento oficial da direção estratégica.
  * Usado tanto pelo relatório A4 (/admin/plano-de-negocio/relatorio) quanto, futuramente,
  * como base de dados para a apresentação em tela cheia.
  */
@@ -102,12 +102,12 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "lista",
             itens: [
-              "Fidelidade à Verdade — a empresa reconhece que educação e tecnologia não são neutras. Busca pensar, ensinar e criar a partir da verdade revelada nas Escrituras e percebida na criação.",
-              "Beleza e Bondade — uma tecnologia não é avaliada apenas pela eficiência ou pela novidade. A empresa busca aquilo que é belo, verdadeiro e bom, submetendo a inovação a fins que contribuam para uma formação verdadeiramente humana.",
-              "Excelência como resposta ao chamado — rigor acadêmico, qualidade pedagógica, cuidado editorial, competência tecnológica e melhoria contínua são tratados como expressão de responsabilidade diante da vocação recebida.",
-              "Liberdade com responsabilidade — o potencial criativo da tecnologia é reconhecido junto com a exigência de que a liberdade caminhe com sabedoria, limites, ética e responsabilidade pelas consequências das escolhas.",
-              "Serviço e mordomia — a tecnologia é compreendida como instrumento para desenvolver responsavelmente os potenciais da criação, servir ao próximo, cuidar do mundo criado e contribuir para aliviar os efeitos da queda.",
-              "Comunidade e parceria — educação e criação são tratadas como empreendimentos comunitários. A empresa caminha ao lado de escolas, professores, famílias, estudantes e parceiros, valorizando relações duradouras — expressão do princípio que dá nome à We Make: nós fazemos.",
+              "Fidelidade à Verdade: a empresa reconhece que educação e tecnologia não são neutras. Busca pensar, ensinar e criar a partir da verdade revelada nas Escrituras e percebida na criação.",
+              "Beleza e Bondade: uma tecnologia não é avaliada apenas pela eficiência ou pela novidade. A empresa busca aquilo que é belo, verdadeiro e bom, submetendo a inovação a fins que contribuam para uma formação verdadeiramente humana.",
+              "Excelência como resposta ao chamado: rigor acadêmico, qualidade pedagógica, cuidado editorial, competência tecnológica e melhoria contínua são tratados como expressão de responsabilidade diante da vocação recebida.",
+              "Liberdade com responsabilidade: o potencial criativo da tecnologia é reconhecido junto com a exigência de que a liberdade caminhe com sabedoria, limites, ética e responsabilidade pelas consequências das escolhas.",
+              "Serviço e mordomia: a tecnologia é compreendida como instrumento para desenvolver responsavelmente os potenciais da criação, servir ao próximo, cuidar do mundo criado e contribuir para aliviar os efeitos da queda.",
+              "Comunidade e parceria: educação e criação são tratadas como empreendimentos comunitários. A empresa caminha ao lado de escolas, professores, famílias, estudantes e parceiros, valorizando relações duradouras, expressão do princípio que dá nome à We Make: nós fazemos.",
             ],
           },
           {
@@ -152,7 +152,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               ["Emanuel dos Santos Peixoto", "Analista de Marketing. Posicionamento da marca, geração de demanda, conteúdo, campanhas, eventos e comunicação institucional."],
               ["Suzana Bonifazio", "Consultora Pedagógica. Implantação, onboarding, acompanhamento de professores e escolas, formações e suporte pedagógico."],
               ["Emanuela Monteiro", "Consultora Pedagógica e de Negócios. Implementação da equipe de consultoria pedagógica; conduz, com Suzana, implantação, acompanhamento, formação, diagnóstico e prescrição de resultados. Corresponsável pelo cronograma da Academia We Make."],
-              ["Christiano Bonifazio", "Representante Comercial, São Paulo. Busca ativa de novas escolas — mas não é o único ponto de contato comercial: toda a equipe estratégica participa do processo de venda, cada membro em sua fase."],
+              ["Christiano Bonifazio", "Representante Comercial, São Paulo. Busca ativa de novas escolas, mas não é o único ponto de contato comercial: toda a equipe estratégica participa do processo de venda, cada membro em sua fase."],
               ["Equipe de tecnologia", "Três desenvolvedores e um cientista de dados para negócios, responsáveis pela construção, evolução e implantação contínua da plataforma tecnológica própria."],
               ["Iran Firmino", "Contador. Suporte contábil, fiscal, tributário e societário."],
               ["Atendente Comercial", "Posição em contratação: primeiro atendimento, gestão do CRM, qualificação inicial e follow-up comercial."],
@@ -161,7 +161,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A estrutura de liderança é hoje concentrada, o que garante agilidade na fase atual, mas exige, à medida que o sistema cresce, distribuição progressiva de conhecimento e responsabilidade entre a equipe — ponto tratado no Capítulo 7.",
+              "A estrutura de liderança é hoje concentrada, o que garante agilidade na fase atual, mas exige, à medida que o sistema cresce, distribuição progressiva de conhecimento e responsabilidade entre a equipe, ponto tratado no Capítulo 7.",
           },
         ],
       },
@@ -196,9 +196,9 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["Componente", "O que é"],
             linhas: [
-              ["Currículo", "Estrutura pedagógica que define o que ensinar, por que ensinar e como organizar a progressão da aprendizagem em educação tecnológica — programação, robótica, eletrônica, fabricação digital, engenharia, inteligência artificial, cultura maker e cidadania digital, sob a metodologia Conhecer, Explorar e Criar. O Livro Maker complementa a experiência como material físico de registro, reflexão e portfólio do estudante."],
+              ["Currículo", "Estrutura pedagógica que define o que ensinar, por que ensinar e como organizar a progressão da aprendizagem em educação tecnológica: programação, robótica, eletrônica, fabricação digital, engenharia, inteligência artificial, cultura maker e cidadania digital, sob a metodologia Conhecer, Explorar e Criar. O Livro Maker complementa a experiência como material físico de registro, reflexão e portfólio do estudante."],
               ["Plataforma tecnológica", "Ambiente digital próprio que organiza, distribui e acompanha currículo, recursos pedagógicos, formação, projetos e dados de implementação, conectando professores, coordenadores, estudantes e famílias. Sustenta também a coleta de indicadores e a análise de dados que alimentam a assessoria institucional."],
-              ["Espaço maker", "Consultoria de concepção do ambiente físico de aprendizagem — proposta arquitetônica, acompanhamento da construção ou adaptação do espaço e orientação sobre equipamentos, a partir das experiências previstas pelo currículo e das necessidades reais da instituição."],
+              ["Espaço maker", "Consultoria de concepção do ambiente físico de aprendizagem: proposta arquitetônica, acompanhamento da construção ou adaptação do espaço e orientação sobre equipamentos, a partir das experiências previstas pelo currículo e das necessidades reais da instituição."],
               ["Assessoria institucional", "Acompanhamento estratégico de mantenedores, diretores e lideranças: gestão pedagógica e administrativa, pesquisa de satisfação pela própria plataforma, análise de indicadores de implementação e recomendações fundamentadas em dados."],
               ["Formação docente e Academia We Make", "Trilha de formação, mentoria e consultoria pedagógica incluída no Kit We Make, não comercializada separadamente. Inicia assim que o contrato é firmado, com operacionalização contínua ao longo do ano letivo."],
             ],
@@ -305,7 +305,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O setor brasileiro de tecnologia educacional já não é um mercado nascente: reúne centenas de empresas ativas e soluções maduras em diferentes categorias. Dentro desse contexto amplo, o segmento específico da We Make — um sistema completo de educação tecnológica fundamentado em cosmovisão cristã — ainda apresenta características de mercado emergente, com baixa densidade de soluções equivalentes.",
+              "O setor brasileiro de tecnologia educacional já não é um mercado nascente: reúne centenas de empresas ativas e soluções maduras em diferentes categorias. Dentro desse contexto amplo, o segmento específico da We Make, um sistema completo de educação tecnológica fundamentado em cosmovisão cristã, ainda apresenta características de mercado emergente, com baixa densidade de soluções equivalentes.",
           },
           {
             tipo: "paragrafo",
@@ -321,7 +321,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O Censo Escolar de 2025 registra 41.746 escolas privadas de Educação Básica no Brasil, das quais 24.683 oferecem Ensino Fundamental — um teto amplo que não corresponde ao mercado efetivamente endereçável. Para o recorte confessional, este plano adota como referência de trabalho um mercado total entre 3.500 e 5.000 escolas confessionais cristãs no Brasil, com mercado acessível entre 900 e 1.400 escolas de perfil econômico e institucional compatível com a proposta da We Make.",
+              "O Censo Escolar de 2025 registra 41.746 escolas privadas de Educação Básica no Brasil, das quais 24.683 oferecem Ensino Fundamental, um teto amplo que não corresponde ao mercado efetivamente endereçável. Para o recorte confessional, este plano adota como referência de trabalho um mercado total entre 3.500 e 5.000 escolas confessionais cristãs no Brasil, com mercado acessível entre 900 e 1.400 escolas de perfil econômico e institucional compatível com a proposta da We Make.",
           },
           {
             tipo: "destaque",
@@ -350,7 +350,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A dor central que motiva a contratação é a ausência de um caminho estruturado, coerente e tecnicamente sólido para ensinar tecnologia ao longo dos anos escolares, sem abrir mão da identidade confessional da instituição. Escolas costumam já ter tentado soluções fragmentadas — um professor de robótica aqui, uma plataforma ali — e buscam no sistema We Make a integração que essas soluções isoladas não entregam.",
+              "A dor central que motiva a contratação é a ausência de um caminho estruturado, coerente e tecnicamente sólido para ensinar tecnologia ao longo dos anos escolares, sem abrir mão da identidade confessional da instituição. Escolas costumam já ter tentado soluções fragmentadas, um professor de robótica aqui, uma plataforma ali, e buscam no sistema We Make a integração que essas soluções isoladas não entregam.",
           },
         ],
       },
@@ -371,7 +371,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Para escolas privadas, essa obrigatoriedade transforma a educação tecnológica de diferencial competitivo em exigência curricular. O sistema We Make já incorpora, desde sua concepção curricular, os três eixos estruturantes exigidos pela norma — pensamento computacional, cultura digital e mundo digital —, o que posiciona a empresa como resposta pronta a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo de atender.",
+              "Para escolas privadas, essa obrigatoriedade transforma a educação tecnológica de diferencial competitivo em exigência curricular. O sistema We Make já incorpora, desde sua concepção curricular, os três eixos estruturantes exigidos pela norma: pensamento computacional, cultura digital e mundo digital. Isso posiciona a empresa como resposta pronta a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo de atender.",
           },
         ],
       },
@@ -384,9 +384,9 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             legenda: "Concorrentes mapeados, por categoria",
             cabecalho: ["Categoria", "Exemplos identificados"],
             linhas: [
-              ["Propostas confessionais", "IDBIRD Educação, com o kit The Maker — escopo mais restrito, material pontual para uma faixa etária específica, sem currículo plurianual, plataforma digital nem assessoria institucional integrada."],
-              ["Sistemas seculares vendidos a escolas", "Nave à Vela, Mind Makers, ZOOM Education, Robomind, MundoMaker, Somai — todos sem proposta confessional."],
-              ["Franquias e plataformas diretas à família", "Código Kid, SuperGeeks, Ctrl+Play, Kodland, e a atuação pontual da BYJU'S no Brasil — todos com cobrança direta da família, sem vínculo institucional com a escola."],
+              ["Propostas confessionais", "IDBIRD Educação, com o kit The Maker, de escopo mais restrito, material pontual para uma faixa etária específica, sem currículo plurianual, plataforma digital nem assessoria institucional integrada."],
+              ["Sistemas seculares vendidos a escolas", "Nave à Vela, Mind Makers, ZOOM Education, Robomind, MundoMaker, Somai, todos sem proposta confessional."],
+              ["Franquias e plataformas diretas à família", "Código Kid, SuperGeeks, Ctrl+Play, Kodland, e a atuação pontual da BYJU'S no Brasil, todos com cobrança direta da família, sem vínculo institucional com a escola."],
             ],
           },
           {
@@ -427,17 +427,17 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O Kit We Make é a unidade comercial única do sistema. Reúne currículo autoral de educação tecnológica para Ensino Fundamental I, Ensino Fundamental II e Ensino Médio, com Educação Infantil incorporada a partir de 2027, estruturado pela metodologia Conhecer, Explorar e Criar. O currículo se organiza em quatro categorias de experiência: Programação, Codificação e Jogos; Robótica e Eletrônica; Engenharia, Design e Fabricação; e Mordomia e Tecnologias para o Futuro — esta última dedicada a discutir de forma direta o uso responsável e o propósito da tecnologia à luz da cosmovisão cristã, para além da competência técnica em si.",
+              "O Kit We Make é a unidade comercial única do sistema. Reúne currículo autoral de educação tecnológica para Ensino Fundamental I, Ensino Fundamental II e Ensino Médio, com Educação Infantil incorporada a partir de 2027, estruturado pela metodologia Conhecer, Explorar e Criar. O currículo se organiza em quatro categorias de experiência: Programação, Codificação e Jogos; Robótica e Eletrônica; Engenharia, Design e Fabricação; e Mordomia e Tecnologias para o Futuro, esta última dedicada a discutir de forma direta o uso responsável e o propósito da tecnologia à luz da cosmovisão cristã, para além da competência técnica em si.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "Cada aula segue os três momentos da metodologia: Conhecer, que provoca deslumbramento e conexão inicial com o tema; Explorar, que sistematiza o conteúdo por meio de explicações, exemplos e discussão; e Criar, conduzido pelo Ciclo de Projeto — identificar o problema, pesquisar, imaginar soluções, planejar, construir, testar, identificar erros, aperfeiçoar e compartilhar o resultado. A avaliação acompanha todo esse percurso, não apenas o resultado final.",
+              "Cada aula segue os três momentos da metodologia: Conhecer, que provoca deslumbramento e conexão inicial com o tema; Explorar, que sistematiza o conteúdo por meio de explicações, exemplos e discussão; e Criar, conduzido pelo Ciclo de Projeto: identificar o problema, pesquisar, imaginar soluções, planejar, construir, testar, identificar erros, aperfeiçoar e compartilhar o resultado. A avaliação acompanha todo esse percurso, não apenas o resultado final.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "O contrato inclui também acesso à plataforma tecnológica própria, consultoria de espaço maker quando aplicável, assessoria institucional contínua e a Academia We Make. Nenhum desses componentes é cobrado à parte da escola ou família que já contratou o currículo — a cobrança adicional só ocorre quando a instituição solicita algo além do que está previsto no plano letivo já contratado.",
+              "O contrato inclui também acesso à plataforma tecnológica própria, consultoria de espaço maker quando aplicável, assessoria institucional contínua e a Academia We Make. Nenhum desses componentes é cobrado à parte da escola ou família que já contratou o currículo. A cobrança adicional só ocorre quando a instituição solicita algo além do que está previsto no plano letivo já contratado.",
           },
         ],
       },
@@ -448,17 +448,17 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Para famílias educadoras, o mesmo acervo curricular do Kit We Make é entregue em formato adaptado — hoje a frente de negócio mais madura e mais bem definida do sistema ao lado do currículo escolar, ambas já operando com produto, preço e canal de distribuição estabelecidos para 2027. O currículo se organiza em quatro trilhas: Programação Criativa, Robótica e Automação, Engenharia e Prototipagem, e Modelagem e Impressão 3D. Cada trilha é dividida em três níveis, nomeados segundo o percurso clássico do Trivium: Gramática, Lógica e Retórica. O público é de adolescentes de 12 a 16 anos.",
+              "Para famílias educadoras, o mesmo acervo curricular do Kit We Make é entregue em formato adaptado, hoje a frente de negócio mais madura e mais bem definida do sistema ao lado do currículo escolar, ambas já operando com produto, preço e canal de distribuição estabelecidos para 2027. O currículo se organiza em quatro trilhas: Programação Criativa, Robótica e Automação, Engenharia e Prototipagem, e Modelagem e Impressão 3D. Cada trilha é dividida em três níveis, nomeados segundo o percurso clássico do Trivium: Gramática, Lógica e Retórica. O público é de adolescentes de 12 a 16 anos.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "Um nível equivale a um semestre completo, com encontro semanal entre tutor e aluno e acesso contínuo ao conteúdo prático da trilha pela plataforma digital. No ritmo esperado, a família conclui dois níveis por ano dentro da mesma trilha — a trilha completa em cerca de um ano e meio. O acesso à plataforma é organizado por família, não por aluno isolado: o responsável tem acesso único, capaz de acompanhar mais de um filho matriculado, sem cobrança duplicada.",
+              "Um nível equivale a um semestre completo, com encontro semanal entre tutor e aluno e acesso contínuo ao conteúdo prático da trilha pela plataforma digital. No ritmo esperado, a família conclui dois níveis por ano dentro da mesma trilha, e a trilha completa em cerca de um ano e meio. O acesso à plataforma é organizado por família, não por aluno isolado: o responsável tem acesso único, capaz de acompanhar mais de um filho matriculado, sem cobrança duplicada.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "A venda, cobrança e parcelamento junto à família ficam a cargo de uma parceira comercial que já atua nesse mercado. A We Make não emite boleto nem intermedia esse pagamento, recebendo da parceria um valor líquido por nível concluído. A entrega é inteiramente digital, sem o Livro Maker físico que passa a integrar o Kit We Make escolar a partir de 2027 — uma diferença deliberada de escopo, não uma limitação: elimina estoque, logística e risco de capital de giro justamente na frente ainda em fase de validação de escala.",
+              "A venda, cobrança e parcelamento junto à família ficam a cargo de uma parceira comercial que já atua nesse mercado. A We Make não emite boleto nem intermedia esse pagamento, recebendo da parceria um valor líquido por nível concluído. A entrega é inteiramente digital, sem o Livro Maker físico que passa a integrar o Kit We Make escolar a partir de 2027. É uma diferença deliberada de escopo, não uma limitação, pois elimina estoque, logística e risco de capital de giro justamente na frente ainda em fase de validação de escala.",
           },
           {
             tipo: "tabela",
@@ -500,7 +500,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O valor de referência do Kit We Make é R$420,00 por aluno ao ano. A partir desse valor, a precificação final de cada contrato é ponderada por critérios técnicos e comerciais próprios de cada instituição — porte da escola, ticket médio cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo casos de escolas sem fins lucrativos. A carteira atual reflete essa ponderação: contratos vigentes praticam valores entre R$180,00 e R$420,00 por aluno ao ano.",
+              "O valor de referência do Kit We Make é R$420,00 por aluno ao ano. A partir desse valor, a precificação final de cada contrato é ponderada por critérios técnicos e comerciais próprios de cada instituição: porte da escola, ticket médio cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo casos de escolas sem fins lucrativos. A carteira atual reflete essa ponderação: contratos vigentes praticam valores entre R$180,00 e R$420,00 por aluno ao ano.",
           },
         ],
       },
@@ -540,7 +540,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A We Make já opera um conjunto de tecnologias desenvolvidas internamente. A gestão comercial é realizada por um CRM próprio, disponível em comercial.wemake.tec.br, que organiza todo o processo de prospecção, negociação e acompanhamento de contratos. A empresa também mantém plataformas próprias de customização e acompanhamento do plano de negócio em tempo real, e uma estrutura de inteligência de negócio para acompanhamento da gestão financeira. Essas três camadas — comercial, planejamento e financeira — são construídas e mantidas pela equipe de três desenvolvedores e um cientista de dados para negócios já incorporada à empresa.",
+              "A We Make já opera um conjunto de tecnologias desenvolvidas internamente. A gestão comercial é realizada por um CRM próprio, disponível em comercial.wemake.tec.br, que organiza todo o processo de prospecção, negociação e acompanhamento de contratos. A empresa também mantém plataformas próprias de customização e acompanhamento do plano de negócio em tempo real, e uma estrutura de inteligência de negócio para acompanhamento da gestão financeira. Essas três camadas, comercial, planejamento e financeira, são construídas e mantidas pela equipe de três desenvolvedores e um cientista de dados para negócios já incorporada à empresa.",
           },
         ],
       },
@@ -617,7 +617,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A We Make quer ser percebida como um sistema completo de educação tecnológica fundamentado na cosmovisão cristã, não como fornecedora de um componente isolado — seja robótica, plataforma ou consultoria. O posicionamento central é o de um sistema pedagógico integral, sequenciado e alinhado à Base Nacional Comum Curricular, estruturado a partir de uma antropologia cristã, que entrega currículo, plataforma, espaço maker, formação docente e assessoria institucional como partes de uma mesma proposta contratada de uma só vez.",
+              "A We Make quer ser percebida como um sistema completo de educação tecnológica fundamentado na cosmovisão cristã, não como fornecedora de um componente isolado, seja robótica, plataforma ou consultoria. O posicionamento central é o de um sistema pedagógico integral, sequenciado e alinhado à Base Nacional Comum Curricular, estruturado a partir de uma antropologia cristã, que entrega currículo, plataforma, espaço maker, formação docente e assessoria institucional como partes de uma mesma proposta contratada de uma só vez.",
           },
         ],
       },
@@ -628,7 +628,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A venda do sistema We Make não é responsabilidade de uma única função isolada. O representante comercial, baseado em São Paulo, atua de forma integral na busca ativa de novas escolas, mas o processo comercial é conduzido por toda a equipe estratégica, cada membro atuando na fase que lhe é própria — da apresentação pedagógica às tratativas comerciais e contratuais, até o pós-venda pela Academia We Make. Essa característica torna a retenção de clientes parte do mesmo processo de venda, não uma etapa posterior e desconectada dele.",
+              "A venda do sistema We Make não é responsabilidade de uma única função isolada. O representante comercial, baseado em São Paulo, atua de forma integral na busca ativa de novas escolas, mas o processo comercial é conduzido por toda a equipe estratégica, cada membro atuando na fase que lhe é própria, da apresentação pedagógica às tratativas comerciais e contratuais, até o pós-venda pela Academia We Make. Essa característica torna a retenção de clientes parte do mesmo processo de venda, não uma etapa posterior e desconectada dele.",
           },
           {
             tipo: "paragrafo",
@@ -686,7 +686,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "destaque",
             titulo: "Piso do exercício",
             texto:
-              "Considerando apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a venda à frente de famílias educadoras, o resultado do exercício seria de R$107.596,76, margem de 11,3% — positivo em todos os cenários avaliados.",
+              "Considerando apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a venda à frente de famílias educadoras, o resultado do exercício seria de R$107.596,76, margem de 11,3%, positivo em todos os cenários avaliados.",
           },
           {
             tipo: "stats",
@@ -740,7 +740,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               ["Consultora Pedagógica e de Negócios, Emanuela Monteiro", "R$ 1.000,00", "R$ 12.000,00"],
               ["Representante Comercial, Christiano Bonifazio (fixo)", "R$ 1.621,00", "R$ 19.452,00"],
               ["Contador", "R$ 400,00", "R$ 4.800,00"],
-              ["Pós-graduação (Suzana e Christiano)", "—", "R$ 1.920,00"],
+              ["Pós-graduação (Suzana e Christiano)", "·", "R$ 1.920,00"],
               ["Total de pessoal", "", "R$ 350.172,00"],
             ],
           },
@@ -759,11 +759,11 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Este é um exercício contrafactual, não um componente do orçamento de 2027 nem da meta escolar de R$1.100.000,00. O objetivo é mostrar até onde a receita poderia chegar, além do que já está orçado, caso nove contratos legados decidam aderir ao Livro Maker, hoje ausente de seus contratos. São clientes já ativos — avalia-se apenas a inclusão de um componente adicional ao contrato vigente.",
+              "Este é um exercício contrafactual, não um componente do orçamento de 2027 nem da meta escolar de R$1.100.000,00. O objetivo é mostrar até onde a receita poderia chegar, além do que já está orçado, caso nove contratos legados decidam aderir ao Livro Maker, hoje ausente de seus contratos. São clientes já ativos. Avalia-se apenas a inclusão de um componente adicional ao contrato vigente.",
           },
           {
             tipo: "tabela",
-            legenda: "Nove contratos legados — situação atual e com adoção do Livro Maker",
+            legenda: "Nove contratos legados: situação atual e com adoção do Livro Maker",
             cabecalho: ["Escola", "Alunos", "Ticket atual", "Receita atual", "Ticket c/ livro", "Receita c/ livro"],
             linhas: [
               ["Colégio Cristão Amar", "234", "R$ 345,00", "R$ 80.730,00", "R$ 380,00", "R$ 88.920,00"],
@@ -781,7 +781,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Se as nove escolas migrarem integralmente para o formato com livro, a receita conjunta desse grupo sobe de R$360.303,00 para R$500.090,00 — ganho potencial de R$139.787,00 ao ano, adicional à receita total já projetada para 2027. Para viabilizar essa migração, provisiona-se R$50.000,00 destinado à produção do primeiro lote de Livro Maker para as escolas que aderirem, condicionado à efetiva adesão, não como custo fixo automático de 2027.",
+              "Se as nove escolas migrarem integralmente para o formato com livro, a receita conjunta desse grupo sobe de R$360.303,00 para R$500.090,00, ganho potencial de R$139.787,00 ao ano, adicional à receita total já projetada para 2027. Para viabilizar essa migração, provisiona-se R$50.000,00 destinado à produção do primeiro lote de Livro Maker para as escolas que aderirem, condicionado à efetiva adesão, não como custo fixo automático de 2027.",
           },
         ],
       },
@@ -792,7 +792,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Este é um terceiro exercício numérico, distinto do orçamento operacional por contrato e do exercício de valuation. Parte da meta de 4.000 alunos em 2027 e projeta crescimento de 1.000 alunos ao ano até 2031 no cenário-base, alcançando 8.000 alunos no último ano do plano — leitura por número de alunos, distinta da leitura por meta de receita, mas convergente: ambas confirmam que 2027 fecha com margem operacional positiva.",
+              "Este é um terceiro exercício numérico, distinto do orçamento operacional por contrato e do exercício de valuation. Parte da meta de 4.000 alunos em 2027 e projeta crescimento de 1.000 alunos ao ano até 2031 no cenário-base, alcançando 8.000 alunos no último ano do plano. É uma leitura por número de alunos, distinta da leitura por meta de receita, mas convergente: ambas confirmam que 2027 fecha com margem operacional positiva.",
           },
           {
             tipo: "tabela",
@@ -808,7 +808,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Nesse cenário, a margem operacional passa de aproximadamente 24,4% em 2027 para cerca de 43,7% em 2031, porque a receita cresce por dois motores ao mesmo tempo — mais alunos e ticket reajustado pela inflação — enquanto a despesa cresce sobretudo pelo bloco estrutural, com incremento inferior ao crescimento da receita.",
+              "Nesse cenário, a margem operacional passa de aproximadamente 24,4% em 2027 para cerca de 43,7% em 2031, porque a receita cresce por dois motores ao mesmo tempo: mais alunos e ticket reajustado pela inflação, enquanto a despesa cresce sobretudo pelo bloco estrutural, com incremento inferior ao crescimento da receita.",
           },
         ],
       },
@@ -929,9 +929,9 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["", "Funciona hoje", "A partir do ano 4 (2030)"],
             linhas: [
-              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia — ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada, não frente já decidida"],
+              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia, ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada, não frente já decidida"],
               ["Status", "Gera receita real, contratada e projetada até 2031", "Sem receita, sem contrato, sem operação até o momento"],
-              ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$844.365,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado — depende de business case próprio"],
+              ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$844.365,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado. Depende de business case próprio"],
               ["Condição de avanço", "Execução do roadmap de consolidação", "Consolidação prévia do sistema atual, validação de demanda e conclusão do registro de propriedade intelectual"],
             ],
           },
@@ -1016,7 +1016,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Grande parte do conhecimento comercial, pedagógico e de relacionamento institucional da empresa está concentrada no CEO e, em menor grau, no Gerente Administrativo. A venda da Assessoria Institucional e do Espaço Maker, em particular, ainda depende diretamente da participação do fundador nas negociações mais complexas — padrão comum em empresas em fase de crescimento acelerado, que exige documentação sistemática de processos, delegação progressiva e formação de uma segunda camada de liderança.",
+              "Grande parte do conhecimento comercial, pedagógico e de relacionamento institucional da empresa está concentrada no CEO e, em menor grau, no Gerente Administrativo. A venda da Assessoria Institucional e do Espaço Maker, em particular, ainda depende diretamente da participação do fundador nas negociações mais complexas, padrão comum em empresas em fase de crescimento acelerado, que exige documentação sistemática de processos, delegação progressiva e formação de uma segunda camada de liderança.",
           },
           {
             tipo: "paragrafo",
@@ -1072,7 +1072,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O ano de 2027 é, por desenho, um ano de reinvestimento: a receita mais que dobra frente a 2025, e a empresa amplia remuneração da liderança, tecnologia própria e estrutura física mantendo resultado operacional positivo — R$305.524,86, margem de 26,6%, considerando a meta escolar já contratada, a receita em negociação avançada e a primeira venda à frente de famílias educadoras.",
+              "O ano de 2027 é, por desenho, um ano de reinvestimento: a receita mais que dobra frente a 2025, e a empresa amplia remuneração da liderança, tecnologia própria e estrutura física mantendo resultado operacional positivo de R$305.524,86, margem de 26,6%, considerando a meta escolar já contratada, a receita em negociação avançada e a primeira venda à frente de famílias educadoras.",
           },
           {
             tipo: "paragrafo",

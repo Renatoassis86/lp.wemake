@@ -39,7 +39,7 @@ export default async function PlanoDeNegocioPage() {
           Plano de negócio · We Make
         </p>
         <h1 className="font-display text-white text-[clamp(1.5rem,2.5vw,2rem)] leading-[1.1]">
-          Questionário — {username}
+          Questionário de {username}
         </h1>
         <p className="text-white/55 text-[0.875rem] sm:text-sm mt-1.5 max-w-2xl">
           Suas respostas são salvas automaticamente e ficam visíveis só para você até a apresentação
