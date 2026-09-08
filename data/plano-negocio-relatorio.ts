@@ -166,13 +166,13 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
         ],
       },
       {
-        id: "ficv",
-        titulo: "Parceria com a FICV",
+        id: "acsi-aliancas",
+        titulo: "Parcerias Institucionais e ACSI",
         blocos: [
           {
             tipo: "paragrafo",
             texto:
-              "A We Make mantém parceria com a Faculdade Integrada de Ciências e Valores (FICV) para viabilizar bolsas de estudo de até 80% em cursos de teologia e em pós-graduações em educação cristã clássica, gestão de escolas cristãs e psicopedagogia, destinadas a colaboradores, professores parceiros e lideranças das escolas atendidas pelo sistema. Essa parceria sustenta, no médio prazo, a formação continuada da própria equipe de consultoria pedagógica e, no longo prazo, integra a proposta de faculdade de tecnologia descrita no Capítulo 12, que pretende oferecer também graduações em pedagogia e psicologia.",
+              "A We Make mantém parceria estratégica com a Associação Internacional de Escolas Cristãs (ACSI Brasil) e redes de ensino confessionais para viabilizar formação continuada, eventos de inovação e cooperação acadêmica em educação clássica e tecnológica. Essa aliança sustenta a formação continuada da equipe de consultoria pedagógica e a homologação do sistema em escolas parceiras.",
           },
         ],
       },
@@ -952,7 +952,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["", "Funciona hoje", "A partir do ano 4 (2030)"],
             linhas: [
-              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia, ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada em parceria com a FICV, não frente já decidida"],
+              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia We Make, ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada no ecossistema próprio, não frente já decidida"],
               ["Status", "Gera receita real, contratada e projetada até 2031", "Sem receita, sem contrato, sem operação até o momento"],
               ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$844.365,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado. Depende de business case próprio"],
               ["Condição de avanço", "Execução do roadmap de consolidação", "Consolidação prévia do sistema atual, validação de demanda e conclusão do registro de propriedade intelectual"],
@@ -989,7 +989,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A faculdade de tecnologia é a extensão, no nível de ensino superior, da mesma proposta que a We Make já pratica da Educação Infantil ao Ensino Médio. Depende de etapas regulatórias que extrapolam o controle direto da empresa, entre elas o credenciamento junto ao Ministério da Educação e a definição do arranjo institucional. A parceria com a FICV sustenta também esse horizonte de longo prazo, que pretende oferecer também graduações em pedagogia e psicologia.",
+              "A faculdade de tecnologia é a extensão, no nível de ensino superior, da mesma proposta que a We Make já pratica da Educação Infantil ao Ensino Médio. Depende de etapas regulatórias que extrapolam o controle direto da empresa, entre elas o credenciamento junto ao Ministério da Educação e a definição do arranjo institucional. O ecossistema We Make sustenta esse horizonte de longo prazo, pretendendo oferecer graduações em pedagogia, computação e inteligência artificial.",
           },
         ],
       },
@@ -1100,7 +1100,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A partir do quarto ano deste plano, a empresa pretende lançar dois negócios que atendem o indivíduo diretamente, sem vínculo com escola parceira: a escola tecnologia para crianças e adolescentes em geral, e a faculdade de tecnologia, sustentada em parte pela parceria com a Faculdade Integrada de Ciências e Valores (FICV). Esses dois negócios permanecem condicionados à consolidação do sistema atual, e não competem por recurso ou atenção com a operação já contratada para os próximos anos.",
+              "A partir do quarto ano deste plano, a empresa pretende lançar dois negócios que atendem o indivíduo diretamente, sem vínculo com escola parceira: a escola tecnologia para crianças e adolescentes em geral, e a faculdade de tecnologia We Make. Esses dois negócios permanecem condicionados à consolidação do sistema atual, e não competem por recurso ou atenção com a operação já contratada para os próximos anos.",
           },
           {
             tipo: "destaque",

@@ -80,21 +80,115 @@
   --accent: #F2B705; --accent-2: #4FC3A1; --line: rgba(242,247,252,.16);
 }
 
-/* ---------- 3. RESET E PALCO ---------- */
+/* ---------- 3. RESET E PALCO DE SLIDES NATIVO LATERAL ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #232326; font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
-.deck { display: flex; flex-direction: column; align-items: center; gap: 48px; padding: 48px 0; }
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important; /* Sem barras de rolagem */
+  background: #0B0F1A;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
 
-/* ---------- 4. SLIDE E ZONAS FIXAS ---------- */
-.slide {
+.deck {
   position: relative;
-  width: var(--slide-w); height: var(--slide-h);
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  background: var(--bg); color: var(--ink);
-  padding: var(--margin);
-  display: flex; flex-direction: column; justify-content: center;
-  font-size: var(--fs-body); line-height: var(--lh-body);
-  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+
+/* ---------- 4. SLIDES EM TRANSIÇÃO LATERAL ---------- */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: clamp(32px, 5vw, 96px);
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100vw);
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease, visibility 0.45s;
+  box-shadow: none;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slide.prev {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100vw);
+  z-index: 1;
+}
+
+/* CONTROLES FLUTUANTES DE NAVEGAÇÃO LATERAL */
+.deck-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 18px;
+  background: rgba(11, 15, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  color: #F4F6FB;
+  font-size: 14px;
+  user-select: none;
+}
+
+.deck-controls button {
+  background: transparent;
+  border: none;
+  color: #F4F6FB;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.deck-controls button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.08);
+}
+
+.deck-controls button:active {
+  transform: scale(0.95);
+}
+
+.deck-counter-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--accent, #35E3B4);
+  font-weight: 600;
 }
 .slide--flush { padding: 0; }
 .slide--tight { padding: 88px 96px; }

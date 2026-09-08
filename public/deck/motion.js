@@ -145,39 +145,110 @@
     slides().forEach((s) => io.observe(s));
   }
 
-  /* --- modo apresentação: um slide por vez, setas para navegar --- */
+  /* --- modo apresentação: navegação lateral slide a slide com transição suave --- */
   let current = 0;
+
+  function updateControls() {
+    const counterEl = document.getElementById('deck-counter');
+    if (counterEl) {
+      const all = slides();
+      counterEl.textContent = `${String(current + 1).padStart(2, '0')} / ${String(all.length).padStart(2, '0')}`;
+    }
+  }
+
   function goto(i) {
     const all = slides();
+    if (!all.length) return;
     current = Math.max(0, Math.min(all.length - 1, i));
+
+    all.forEach((s, idx) => {
+      s.classList.remove('active', 'prev');
+      if (idx === current) {
+        s.classList.add('active');
+      } else if (idx < current) {
+        s.classList.add('prev');
+      }
+    });
+
     const s = all[current];
-    s.scrollIntoView({ behavior: 'smooth', block: 'center' });
     reset(s);
-    setTimeout(() => play(s), 250);
+    setTimeout(() => play(s), 200);
+    updateControls();
   }
+
   function togglePresent() {
     html.classList.toggle('presenting');
     if (html.classList.contains('presenting')) {
       document.documentElement.requestFullscreen?.();
-      goto(current);
     } else {
       document.exitFullscreen?.();
     }
   }
 
+  /* --- Controles flutuantes de tela --- */
+  function injectControls() {
+    if (document.getElementById('deck-controls')) return;
+    const div = document.createElement('div');
+    div.id = 'deck-controls';
+    div.className = 'deck-controls';
+    div.innerHTML = `
+      <button id="btn-prev" aria-label="Slide anterior">←</button>
+      <span id="deck-counter" class="deck-counter-badge">01 / ${String(slides().length).padStart(2, '0')}</span>
+      <button id="btn-next" aria-label="Próximo slide">→</button>
+    `;
+    document.body.appendChild(div);
+
+    document.getElementById('btn-prev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      goto(current - 1);
+    });
+
+    document.getElementById('btn-next').addEventListener('click', (e) => {
+      e.stopPropagation();
+      goto(current + 1);
+    });
+  }
+
+  /* --- Eventos de teclado e touch swipe lateral --- */
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); goto(current + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); goto(current - 1); }
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault();
+      goto(current + 1);
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      goto(current - 1);
+    }
     if (e.key.toLowerCase() === 'p') togglePresent();
   });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) goto(current + 1);
+      else goto(current - 1);
+    }
+  }, { passive: true });
 
   function init() {
     injectLogo();
     paginate();
     splitWords();
     measureStrokes();
-    observe();
+    injectControls();
+    goto(0);
   }
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 
@@ -189,3 +260,4 @@
     count: () => slides().length,
   };
 })();
+

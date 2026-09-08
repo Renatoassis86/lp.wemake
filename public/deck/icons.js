@@ -4,7 +4,7 @@
    nada de CDN: funciona em file:// e no render offline).
 
    Uso:  <svg class="icon"><use href="#i-target"/></svg>
-         <svg class="icon icon--lg accent"><use href="#i-users"/></svg>
+         <i data-lucide="network"></i> (convertido automaticamente)
 
    Estilo: traço de 1.75, cantos arredondados, grade 24.
    Herdam a cor do texto — nunca coloque cor fixa no ícone.
@@ -21,8 +21,17 @@
     heart: '<path d="M12 20s-7.5-4.6-7.5-9.6A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/>',
     user: '<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1-3.8 4-5.6 7.5-5.6s6.5 1.8 7.5 5.6"/>',
     users: '<circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.9-3.4 3.4-5 6.5-5s5.6 1.6 6.5 5"/><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6.1M18 15c2.1.5 3.2 2 3.5 5"/>',
-    book: '<path d="M4 5.5A2 2 0 0 1 6 3.5h13v15H6a2 2 0 0 0-2 2v-15z"/><path d="M4 18.5A2 2 0 0 1 6 16.5h13"/>',
+    book: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
+    'book-open': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
     graduation: '<path d="m12 4 9.5 4.5L12 13 2.5 8.5 12 4z"/><path d="M6.5 10.8V16c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-5.2"/>',
+    'graduation-cap': '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/>',
+    cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/>',
+    wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+    compass: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+    network: '<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 8v4"/>',
+    layers: '<path d="m12 3 8.5 4.7L12 12.4 3.5 7.7 12 3z"/><path d="m4 12 8 4.5 8-4.5"/><path d="m4 16.4 8 4.5 8-4.5"/>',
+    school: '<path d="m4 6 8-4 8 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"/><path d="M12 22V12"/><path d="m12 7 3 1.5M12 7 9 8.5"/>',
+    'building-2': '<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/>',
     calendar: '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
     clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.2V12l3.2 2.2"/>',
     'map-pin': '<path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/>',
@@ -30,13 +39,12 @@
     lightbulb: '<path d="M9.2 17.5a6 6 0 1 1 5.6 0v2.2H9.2v-2.2z"/><path d="M10 21.5h4"/>',
     'chart-bar': '<path d="M4 20V11M10 20V5M16 20v-6M22 20H2"/>',
     'trending-up': '<path d="M3 17.5 9.5 11l4 4L21 7.5"/><path d="M15.5 7.5H21v5.5"/>',
-    'pie': '<path d="M12 3.5v8.5h8.5A8.5 8.5 0 0 0 12 3.5z"/><path d="M20.2 15A8.5 8.5 0 1 1 9 3.8"/>',
+    pie: '<path d="M12 3.5v8.5h8.5A8.5 8.5 0 0 0 12 3.5z"/><path d="M20.2 15A8.5 8.5 0 1 1 9 3.8"/>',
     coins: '<ellipse cx="12" cy="6.5" rx="7.5" ry="3"/><path d="M4.5 6.5v5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-5"/><path d="M4.5 11.5v5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-5"/>',
     gift: '<rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12"/><path d="M12 8.5C10.5 5 8.8 3.5 7.4 4.2 6 4.9 6.6 7.3 12 8.5zM12 8.5c1.5-3.5 3.2-5 4.6-4.3 1.4.7.8 3.1-4.6 4.3z"/>',
     home: '<path d="M4 10.5 12 4l8 6.5V20H4v-9.5z"/><path d="M9.5 20v-6h5v6"/>',
     mail: '<rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.8 7 8.2 6 8.2-6"/>',
     search: '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
-    layers: '<path d="m12 3 8.5 4.7L12 12.4 3.5 7.7 12 3z"/><path d="m4 12 8 4.5 8-4.5"/><path d="m4 16.4 8 4.5 8-4.5"/>',
     flag: '<path d="M5.5 21V4M5.5 5h11l-2 3.5 2 3.5h-11"/>',
     play: '<path d="M8 5.5 18.5 12 8 18.5v-13z"/>',
     download: '<path d="M12 3.5v11M7.5 10.5 12 15l4.5-4.5M4.5 19.5h15"/>',
@@ -45,14 +53,34 @@
   };
 
   const svg =
-    '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">' +
+    '<svg id="deck-icons-svg" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">' +
     Object.entries(P).map(([k, d]) =>
       `<symbol id="i-${k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${d}</symbol>`
     ).join('') + '</svg>';
 
-  const mount = () => document.body.insertAdjacentHTML('afterbegin', svg);
+  const mount = () => {
+    if (!document.getElementById('deck-icons-svg')) {
+      document.body.insertAdjacentHTML('afterbegin', svg);
+    }
+    // Converte <i data-lucide="..."> em SVG
+    document.querySelectorAll('i[data-lucide]').forEach((el) => {
+      const name = el.getAttribute('data-lucide');
+      if (!name) return;
+      const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svgEl.setAttribute('class', 'icon');
+      svgEl.setAttribute('viewBox', '0 0 24 24');
+      svgEl.style.width = '32px';
+      svgEl.style.height = '32px';
+      const useEl = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      useEl.setAttribute('href', `#i-${name}`);
+      svgEl.appendChild(useEl);
+      el.parentNode.replaceChild(svgEl, el);
+    });
+  };
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount);
   else mount();
 
   window.deckIcons = Object.keys(P);
 })();
+

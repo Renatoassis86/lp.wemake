@@ -115,7 +115,7 @@ export function ApresentacaoPlano({ }: Props) {
           </span>
           <span className="text-white/40 text-xs hidden sm:inline">|</span>
           <span className="text-xs text-white/70 hidden sm:inline">
-            30 Slides Cinematográficos · Skill Deck Forge
+            32 Slides Cinematográficos · Skill Deck Forge
           </span>
         </div>
 

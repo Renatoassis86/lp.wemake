@@ -1,27 +1,103 @@
-/* brand.css — tokens de wemake. Gerado por brand_init.py.
-   Carregue DEPOIS de deck.css e use <body data-theme="wemake">. */
-/* sem webfont: fontes do sistema */
+/* brand.css — Identidade Visual Oficial We Make
+   Cores, Tipografia e Tokens fiéis ao Design System We Make */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Poppins:wght@600;700;800&display=swap');
 
 :root {
-  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  /* Tipografia Oficial We Make */
+  --font-display: "Baloo 2", "Poppins", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
-  --logo-h: 56px;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --logo-h: 52px;
+  --logo-inset: 48px;
 }
 
+/* Tema Principal We Make — Navy Escuro Cinematográfico */
 [data-theme="wemake"] {
-  --bg: #0B1F44;
-  --surface: #1A2C4F;
-  --ink: #F4F6FB;
-  --muted: #929CAE;
-  --accent: #76F3CD;
-  --accent-2: #76F3CD;
-  --line: rgba(244,246,251,.15);
-  --on-accent: #0B0F1A;
+  --bg: #0B1F44;               /* Navy Original We Make */
+  --surface: #142B59;          /* Navy Card Surface */
+  --surface-card: #18346B;     /* Surface Card Elevada */
+  --ink: #FFFFFF;              /* Texto Branco Puro */
+  --muted: #A8C4E6;            /* Azul Claro Suave */
+  --accent: #76F3CD;           /* Verdinho Água We Make (#76f3cd) */
+  --accent-2: #FFCC00;         /* Amarelo Destaque We Make (#ffcc00) */
+  --accent-royal: #4C8ADE;     /* Azul Royal We Make (#4c8ade) */
+  --line: rgba(118, 243, 205, 0.2);
+  --on-accent: #0B1F44;        /* Texto sobre fundo mint */
 }
 
-/* texto sobre bloco de acento: cor calculada, nunca chutada */
-[data-theme="wemake"] .card--accent,
-[data-theme="wemake"] .num,
-[data-theme="wemake"] .cycle__dot,
-[data-theme="wemake"] .flow__step--key,
-[data-theme="wemake"] .hier__node--root { color: var(--on-accent); }
+/* Regras de Cores da Marca */
+.accent { color: var(--accent) !important; }
+.accent-sky { color: var(--accent-2) !important; }
+.accent-royal { color: var(--accent-royal) !important; }
+
+/* Badges e Selos no tom We Make */
+.badge {
+  background: rgba(118, 243, 205, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(118, 243, 205, 0.3);
+  font-weight: 700;
+}
+
+.badge--yellow {
+  background: rgba(255, 204, 0, 0.15);
+  color: var(--accent-2);
+  border: 1px solid rgba(255, 204, 0, 0.4);
+}
+
+/* Cartões com a Identidade da Marca */
+[data-theme="wemake"] .card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="wemake"] .card--accent {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: none;
+  box-shadow: 0 16px 40px -10px rgba(118, 243, 205, 0.4);
+}
+
+[data-theme="wemake"] .card--accent .h3,
+[data-theme="wemake"] .card--accent .stat__value,
+[data-theme="wemake"] .card--accent p {
+  color: var(--on-accent) !important;
+}
+
+[data-theme="wemake"] .icon-badge {
+  background: rgba(118, 243, 205, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(118, 243, 205, 0.25);
+  border-radius: 12px;
+}
+
+/* Zona da Logomarca */
+.logo-zone {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  z-index: 100;
+  display: flex;
+  items-center: center;
+  gap: 12px;
+  background: rgba(11, 31, 68, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(118, 243, 205, 0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.logo-zone img {
+  height: var(--logo-h, 44px);
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-zone--br {
+  top: auto;
+  bottom: 36px;
+  right: 44px;
+}
