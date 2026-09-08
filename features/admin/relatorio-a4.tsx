@@ -63,34 +63,48 @@ function Bloco({ bloco }: { bloco: BlocoConteudo }) {
           {bloco.atribuicao && <cite>{bloco.atribuicao}</cite>}
         </blockquote>
       );
-    case "organograma":
+        case "organograma":
       return (
         <div className="ra4-org-wrap">
-          <h4 className="ra4-visual-title">Organograma de Governança Executiva</h4>
+          <h4 className="ra4-visual-title">Organograma de Governança Executiva &amp; Líderes de Área</h4>
           <div className="ra4-org-ceo">
             <div className="ra4-org-badge">CEO</div>
             <div>
               <strong className="ra4-org-name">Dênis Júlio Pereira Francisco</strong>
-              <p className="ra4-org-role">CEO &amp; Diretor Pedagógico (Estratégia, P&amp;D e Parcerias)</p>
+              <p className="ra4-org-role">CEO &amp; Diretor Pedagógico (Estratégia, P&amp;D, Cosmovisão e Parcerias)</p>
             </div>
           </div>
           <div className="ra4-org-line-v"></div>
           <div className="ra4-org-grid">
             <div className="ra4-org-card">
+              <span className="ra4-dept-title">Gestão &amp; Operações</span>
               <strong>Renato Assis</strong>
               <span>Gerente Administrativo &amp; Financeiro</span>
+              <strong style={{ marginTop: '6px' }}>Iran Firmino</strong>
+              <span>Contabilidade &amp; Compliance Fiscal</span>
             </div>
             <div className="ra4-org-card">
+              <span className="ra4-dept-title">Pedagogia &amp; Formação</span>
               <strong>Suzana Bonifazio</strong>
-              <span>Consultora Pedagógica &amp; Formação</span>
+              <span>Consultora Pedagógica &amp; Onboarding</span>
+              <strong style={{ marginTop: '6px' }}>Emanuela Monteiro</strong>
+              <span>Consultora Pedagógica &amp; Negócios</span>
             </div>
             <div className="ra4-org-card">
+              <span className="ra4-dept-title">Marketing &amp; Expansão</span>
               <strong>Emanuel Peixoto</strong>
-              <span>Analista de Marketing &amp; Expansão</span>
+              <span>Analista de Marketing &amp; Campanhas</span>
+              <strong style={{ marginTop: '6px' }}>Christiano Bonifazio</strong>
+              <span>Rep. Comercial SP (Expansão B2B)</span>
+              <strong style={{ marginTop: '6px' }}>Atendimento Comercial</strong>
+              <span>CRM &amp; Qualificação de Leads</span>
             </div>
             <div className="ra4-org-card">
-              <strong>Equipe P&amp;D / TI</strong>
-              <span>Plataforma Arkos &amp; Suporte Técnico</span>
+              <span className="ra4-dept-title">Tecnologia &amp; P&amp;D</span>
+              <strong>Engenharia Arkos (3 Devs)</strong>
+              <span>Plataforma LMS &amp; Nuvem</span>
+              <strong style={{ marginTop: '6px' }}>Cientista de Dados</strong>
+              <span>Analytics &amp; Métricas de Negócio</span>
             </div>
           </div>
         </div>

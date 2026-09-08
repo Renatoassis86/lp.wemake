@@ -603,3 +603,58 @@ html, body {
   border-radius: 16px;
   box-shadow: 0 12px 32px rgba(0,0,0,0.4);
 }
+
+/* Organograma Completo Multidepartamental com Todos os Líderes */
+.org-card-dept {
+  background: rgba(14, 42, 71, 0.85);
+  border: 1px solid rgba(118, 243, 205, 0.3);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.org-dept-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(118, 243, 205, 0.25);
+  padding-bottom: 8px;
+  color: #76F3CD;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.org-dept-header .icon {
+  width: 20px;
+  height: 20px;
+  color: #76F3CD;
+}
+
+.org-person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(11, 31, 68, 0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #76F3CD;
+}
+
+.org-person strong {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-family: var(--font-display);
+}
+
+.org-person p {
+  color: #A9C2DA;
+  font-size: 12px;
+  margin: 0;
+}
