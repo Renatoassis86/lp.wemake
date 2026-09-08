@@ -361,17 +361,40 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A Lei nº 14.533/2023, que instituiu a Política Nacional de Educação Digital, e a Resolução CNE/CEB nº 2/2025, que estabeleceu o Complemento de Computação da Base Nacional Comum Curricular, tornam obrigatória, a partir de 2026, a inclusão de pensamento computacional, cultura digital e mundo digital no currículo de todas as escolas brasileiras, públicas e privadas, do primeiro ano do Ensino Fundamental ao terceiro ano do Ensino Médio. As redes tiveram até o final de 2025 para adequar seus currículos, e a implementação efetiva já está em curso em 2026.",
+              "A Lei nº 14.533/2023, que instituiu a Política Nacional de Educação Digital, e a Resolução CNE/CEB nº 2/2025, que estabeleceu o Complemento de Computação da Base Nacional Comum Curricular, tornam obrigatória, a partir de 2026, a inclusão de pensamento computacional, cultura digital e mundo digital no currículo de todas as escolas brasileiras, públicas e privadas, do primeiro ano do Ensino Fundamental ao terceiro ano do Ensino Médio. As redes tiveram até o final de 2025 para adequar seus currículos, e a implementação efetiva já está em curso em 2026. Em 5 de março de 2026, a Comissão Intergovernamental de Financiamento para a Educação Básica de Qualidade condicionou o repasse do Valor Aluno Ano com base em Resultados, uma das modalidades do Fundeb, à comprovação dessa adequação curricular até agosto de 2026, com efeito direto nos repasses de 2027. Embora esse mecanismo financeiro se aplique à rede pública, a pressão regulatória alcança igualmente as escolas privadas, que precisam demonstrar conformidade curricular às famílias e aos órgãos de supervisão educacional.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "Esse movimento não se limita à esfera federal. O Distrito Federal já promulgou legislação própria, a Lei nº 7.796/2025, que cria os Centros Interescolares de Robótica, voltados ao letramento digital, à robótica educacional e ao uso responsável de inteligência artificial nas escolas. A tendência observada é a de que outros estados sigam caminho semelhante.",
+              "Cinco estados já foram além do piso federal, com instrumento próprio identificado nesta pesquisa: lei aprovada pelo Legislativo ou resolução do Conselho Estadual de Educação, aplicável tanto à rede pública quanto à privada.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "Para escolas privadas, essa obrigatoriedade transforma a educação tecnológica de diferencial competitivo em exigência curricular. O sistema We Make já incorpora, desde sua concepção curricular, os três eixos estruturantes exigidos pela norma: pensamento computacional, cultura digital e mundo digital. Isso posiciona a empresa como resposta pronta a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo de atender.",
+              "Para escolas privadas, essa obrigatoriedade transforma a educação tecnológica de diferencial competitivo em exigência curricular. O sistema We Make já incorpora, desde sua concepção curricular, os três eixos estruturantes exigidos pela norma federal: pensamento computacional, cultura digital e mundo digital. Isso posiciona a empresa como resposta pronta a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo de atender, independentemente de o estado em que operam já possuir instrumento próprio.",
+          },
+        ],
+      },
+      {
+        id: "legislacao-estados",
+        titulo: "O que cada estado já fez além do piso federal",
+        blocos: [
+          {
+            tipo: "tabela",
+            legenda: "Cinco estados com instrumento próprio identificado nesta pesquisa",
+            cabecalho: ["Estado", "Instrumento", "Conteúdo"],
+            linhas: [
+              ["Distrito Federal", "Lei nº 7.796/2025", "Aprovada pela Câmara Legislativa após os deputados derrubarem veto do governador. Cria os Centros Interescolares de Robótica."],
+              ["São Paulo", "Deliberação CEE nº 233/2025", "Institui a Educação Digital, Midiática e Computação como complemento obrigatório e progressivo ao Currículo Paulista, da Educação Infantil ao Ensino Médio, incluindo instituições particulares."],
+              ["Minas Gerais", "Parecer CEE/MG nº 1.588/2025 e Resolução SEE nº 5.234/2026", "Homologa o Referencial Curricular de Computação na Educação Básica, obrigatório a partir de 2026."],
+              ["Paraná", "Deliberação CEE/PR nº 04/2025", "Obrigatoriedade da Educação Digital e Computação no Ensino Fundamental e Médio, incluindo instituições particulares."],
+              ["Rio Grande do Sul", "Resolução CEEd nº 382/2024", "A mais antiga identificada nesta pesquisa, de 20 de dezembro de 2024. Institui a Computação na Educação Básica como complemento ao Referencial Curricular Gaúcho."],
+            ],
+          },
+          {
+            tipo: "paragrafo",
+            texto:
+              "Nos demais 22 entes federativos, a pesquisa não identificou instrumento estadual próprio equivalente: a obrigatoriedade em vigor decorre diretamente da norma federal, sem complemento local documentado. Essa ausência não significa necessariamente inação, apenas que nenhum ato estadual específico foi localizado nas fontes consultadas.",
           },
         ],
       },

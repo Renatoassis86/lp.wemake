@@ -280,6 +280,9 @@ function RelatorioA4Estilos() {
         color: #2a3244;
         margin: 0 0 0.9rem;
         max-width: 68ch;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
       }
       .ra4-lista {
         margin: 0 0 0.5rem;
@@ -292,6 +295,8 @@ function RelatorioA4Estilos() {
         font-size: 0.9375rem;
         line-height: 1.65;
         color: #2a3244;
+        text-align: justify;
+        text-justify: inter-word;
       }
 
       .ra4-tabela-wrap { margin: 0.5rem 0 1.25rem; break-inside: avoid-page; overflow-x: auto; }
@@ -365,7 +370,7 @@ function RelatorioA4Estilos() {
         font-weight: 700;
         margin-bottom: 0.3rem;
       }
-      .ra4-destaque-texto { font-size: 0.875rem; line-height: 1.6; color: #2a3244; }
+      .ra4-destaque-texto { font-size: 0.875rem; line-height: 1.6; color: #2a3244; text-align: justify; text-justify: inter-word; }
 
       .ra4-citacao {
         border-left: 3px solid var(--ra4-navy);

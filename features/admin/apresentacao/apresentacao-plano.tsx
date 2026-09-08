@@ -24,7 +24,13 @@ import {
   Trophy,
   Building2,
   School,
+  Search,
+  Lightbulb,
+  ClipboardCheck,
+  TestTube,
+  Share2,
 } from "lucide-react";
+import { MapaBrasil, Organograma, FluxoCurriculo, MatrizRisco, Donut, type GeoBrasil } from "./visuais";
 
 export interface AnoProjetado {
   ano: number;
@@ -35,6 +41,9 @@ export interface AnoProjetado {
 
 interface Props {
   anos: AnoProjetado[];
+  geoBrasil: GeoBrasil | null;
+  escolasPorEstado: Record<string, number>;
+  estadosComLeiPropria: Record<string, number>;
 }
 
 function formatBRL(v: number, casas = 0): string {
@@ -219,10 +228,10 @@ function Cartao({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({ children, tom = "mint" }: { children: React.ReactNode; tom?: "mint" | "navy" }) {
   return (
     <motion.p
-      className="font-mono text-[0.6875rem] sm:text-xs uppercase tracking-[0.25em] text-[rgb(var(--color-brand-mint))] font-bold mb-3"
+      className={`font-mono text-[0.6875rem] sm:text-xs uppercase tracking-[0.25em] font-bold mb-3 ${tom === "navy" ? "text-[rgb(var(--color-brand-navy))]" : "text-[rgb(var(--color-brand-mint))]"}`}
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -232,16 +241,25 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Titulo({ children }: { children: React.ReactNode }) {
+/** Título com construção cinética: cada palavra entra com seu próprio delay. */
+function Titulo({ children, tom = "claro" }: { children: string; tom?: "claro" | "escuro" }) {
+  const palavras = children.split(" ");
   return (
-    <motion.h2
-      className="font-display text-white text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.05] max-w-4xl text-balance"
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.65, delay: 0.08 }}
+    <h2
+      className={`font-display text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.05] max-w-4xl text-balance ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
     >
-      {children}
-    </motion.h2>
+      {palavras.map((p, i) => (
+        <motion.span
+          key={i}
+          className="inline-block mr-[0.28em]"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 + i * 0.035, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {p}
+        </motion.span>
+      ))}
+    </h2>
   );
 }
 
@@ -258,11 +276,13 @@ function Avatar({ iniciais, cor }: { iniciais: string; cor: string }) {
 
 /* ---------- Fundo por slide (fundo sobre fundo, tom sobre tom) ---------- */
 
-function Fundo({ variante }: { variante: "navy" | "royal" | "mint" | "dark" }) {
-  const mapa: Record<string, string> = {
+type VarianteFundo = "navy" | "royal" | "sky" | "dark";
+
+function Fundo({ variante }: { variante: VarianteFundo }) {
+  const mapa: Record<VarianteFundo, string> = {
     navy: "radial-gradient(120% 100% at 100% 0%, rgba(76,138,222,0.16), transparent 55%), radial-gradient(90% 70% at 0% 100%, rgba(118,243,205,0.10), transparent 55%), rgb(var(--color-brand-navy))",
-    royal: "linear-gradient(155deg, rgb(var(--color-brand-royal-deep)) 0%, rgb(var(--color-brand-navy)) 65%)",
-    mint: "linear-gradient(155deg, #0d2e28 0%, rgb(var(--color-brand-navy)) 60%)",
+    royal: "linear-gradient(155deg, rgb(var(--color-brand-royal)) 0%, rgb(var(--color-brand-royal-deep)) 55%, rgb(var(--color-brand-navy)) 100%)",
+    sky: "linear-gradient(155deg, rgb(var(--color-brand-sky)) 0%, #e0ac00 60%, rgb(var(--color-brand-navy)) 130%)",
     dark: "linear-gradient(180deg, #060d1e 0%, rgb(var(--color-brand-navy)) 100%)",
   };
   return (
@@ -274,9 +294,10 @@ function Fundo({ variante }: { variante: "navy" | "royal" | "mint" | "dark" }) {
 
 /* ---------- Slide wrapper ---------- */
 
-function Slide({ children, variante = "navy" }: { children: React.ReactNode; variante?: "navy" | "royal" | "mint" | "dark" }) {
+function Slide({ children, variante = "navy" }: { children: React.ReactNode; variante?: VarianteFundo }) {
+  const tomTexto = variante === "sky" ? "escuro" : "claro";
   return (
-    <div className="relative w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-16 sm:py-20 overflow-y-auto">
+    <div className="relative w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-16 sm:py-20 overflow-y-auto" data-tom={tomTexto}>
       <Fundo variante={variante} />
       <div className="max-w-6xl mx-auto w-full">{children}</div>
     </div>
@@ -285,20 +306,19 @@ function Slide({ children, variante = "navy" }: { children: React.ReactNode; var
 
 /* ================= Dados de apoio ================= */
 
-const EQUIPE = [
-  { nome: "Dênis Júlio Pereira Francisco", cargo: "CEO e Diretor Pedagógico", texto: "Estratégia, direção pedagógica e teológica, desenvolvimento do currículo e concepção dos espaços maker.", cor: "rgb(var(--color-brand-mint))" },
-  { nome: "Renato Silva de Assis", cargo: "Gerente Administrativo", texto: "Gestão administrativa e financeira, contratos, processos, indicadores e fornecedores.", cor: "rgb(var(--color-brand-royal))" },
-  { nome: "Emanuel dos Santos Peixoto", cargo: "Analista de Marketing", texto: "Posicionamento da marca, geração de demanda, conteúdo, campanhas e eventos.", cor: "rgb(var(--color-brand-sky))" },
-  { nome: "Suzana Bonifazio", cargo: "Consultora Pedagógica", texto: "Implantação, onboarding, acompanhamento de professores e escolas.", cor: "rgb(var(--color-brand-mint))" },
-  { nome: "Emanuela Monteiro", cargo: "Consultora Pedagógica e de Negócios", texto: "Implementação da equipe de consultoria, corresponsável pela Academia We Make.", cor: "rgb(var(--color-brand-royal))" },
-  { nome: "Christiano Bonifazio", cargo: "Representante Comercial, São Paulo", texto: "Busca ativa de novas escolas, do primeiro contato ao pós-venda.", cor: "rgb(var(--color-brand-sky))" },
-  { nome: "Equipe de tecnologia", cargo: "3 desenvolvedores + 1 cientista de dados", texto: "Construção, evolução e implantação contínua da plataforma tecnológica própria.", cor: "rgb(var(--color-brand-mint))" },
-  { nome: "Iran Firmino", cargo: "Contador", texto: "Suporte contábil, fiscal, tributário e societário.", cor: "rgb(var(--color-brand-royal))" },
+const EQUIPE_FILHOS = [
+  { nome: "Renato Silva de Assis", cargo: "Gerente Administrativo", cor: "rgb(var(--color-brand-royal))" },
+  { nome: "Emanuel Peixoto", cargo: "Marketing", cor: "rgb(var(--color-brand-sky))" },
+  { nome: "Suzana Bonifazio", cargo: "Consultora Pedagógica", cor: "rgb(var(--color-brand-mint))" },
+  { nome: "Emanuela Monteiro", cargo: "Consultoria e Negócios", cor: "rgb(var(--color-brand-mint))" },
+  { nome: "Christiano Bonifazio", cargo: "Comercial, SP", cor: "rgb(var(--color-brand-sky))" },
+  { nome: "Equipe de tecnologia", cargo: "3 devs + 1 dados", cor: "rgb(var(--color-brand-royal))" },
+  { nome: "Iran Firmino", cargo: "Contador", cor: "rgb(var(--color-brand-mint))" },
 ];
 
 /* ================= Componente principal ================= */
 
-export function ApresentacaoPlano({ anos }: Props) {
+export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosComLeiPropria }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [atual, setAtual] = useState(0);
   const [direcao, setDirecao] = useState(1);
@@ -311,12 +331,7 @@ export function ApresentacaoPlano({ anos }: Props) {
   const slides = [
     // 0 — capa
     <Slide key="capa" variante="dark">
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="mb-8"
-      >
+      <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8">
         <Image src="/photos/2.png" alt="We Make" width={180} height={54} className="h-11 sm:h-12 w-auto object-contain" priority />
       </motion.div>
       <motion.p
@@ -335,14 +350,6 @@ export function ApresentacaoPlano({ anos }: Props) {
       >
         O primeiro sistema de educação tecnológica com cosmovisão cristã do Brasil.
       </motion.h1>
-      <motion.p
-        className="text-white/70 text-[clamp(1rem,2.2vw,1.375rem)] max-w-2xl mt-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.65 }}
-      >
-        We Make Educação Tecnológica.
-      </motion.p>
       <motion.div
         className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-white/40 text-xs font-mono uppercase tracking-widest"
         initial={{ opacity: 0 }}
@@ -374,24 +381,55 @@ export function ApresentacaoPlano({ anos }: Props) {
           </Cartao>
         ))}
       </div>
-      <p className="text-white/60 text-sm sm:text-base max-w-2xl mt-8 leading-relaxed">
-        Única empresa brasileira a oferecer um sistema completo de educação tecnológica estruturado a partir de
-        uma cosmovisão cristã explícita, reunindo currículo, plataforma, espaço maker, formação docente e
-        assessoria institucional em um único contrato.
-      </p>
     </Slide>,
 
-    // 2 — o sistema
+    // 2 — visão, missão, valores
+    <Slide key="visao-missao" variante="royal">
+      <Eyebrow>Capítulo 2 · Identidade institucional</Eyebrow>
+      <Titulo>Beleza, Verdade e Bondade orientam toda decisão de produto.</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+        <Cartao delay={0.1}>
+          <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-white/50 font-bold mb-2">Visão</p>
+          <p className="text-white/85 text-[0.9375rem] leading-relaxed">
+            Ser referência em educação tecnológica fundamentada na cosmovisão cristã, formando uma geração capaz
+            de compreender, criar e utilizar tecnologia com sabedoria.
+          </p>
+        </Cartao>
+        <Cartao delay={0.2}>
+          <p className="font-mono text-[0.6875rem] uppercase tracking-wider text-white/50 font-bold mb-2">Missão</p>
+          <p className="text-white/85 text-[0.9375rem] leading-relaxed">
+            Equipar escolas, educadores, famílias e comunidades com currículo, formação, tecnologia, ambientes e
+            orientação para formar crianças e adolescentes com sabedoria para o mundo tecnológico.
+          </p>
+        </Cartao>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-3">
+        {["Fidelidade à Verdade", "Beleza e Bondade", "Excelência", "Liberdade com responsabilidade", "Serviço e mordomia", "Comunidade e parceria"].map((v, i) => (
+          <motion.div
+            key={v}
+            className="rounded-lg border border-white/15 bg-black/10 px-3 py-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 + i * 0.06, duration: 0.35 }}
+          >
+            <p className="text-white/80 text-[0.75rem] font-medium">{v}</p>
+          </motion.div>
+        ))}
+      </div>
+    </Slide>,
+
+    // 3 — o sistema
     <Slide key="sistema" variante="dark">
       <Eyebrow>O Kit We Make</Eyebrow>
       <Titulo>Cinco componentes reunidos em um único contrato, sem preço fracionado entre eles.</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-10">
         {[
-          { icone: BookOpen, titulo: "Currículo", texto: "Programação, robótica, eletrônica, fabricação digital, IA e cidadania digital, pela metodologia Conhecer, Explorar e Criar." },
-          { icone: Cpu, titulo: "Plataforma", texto: "Ambiente digital próprio que distribui e acompanha currículo, formação e dados de implementação." },
-          { icone: Wrench, titulo: "Espaço maker", texto: "Concepção do ambiente físico a partir do currículo, não do catálogo de equipamentos." },
-          { icone: GraduationCap, titulo: "Academia We Make", texto: "Formação, mentoria e consultoria pedagógica contínua, incluída no contrato, nunca vendida à parte." },
-          { icone: Compass, titulo: "Assessoria institucional", texto: "Acompanhamento estratégico de mantenedores e diretores, com dados reais de implementação." },
+          { icone: BookOpen, titulo: "Currículo", texto: "Programação, robótica, eletrônica, fabricação digital, IA e cidadania digital." },
+          { icone: Cpu, titulo: "Plataforma", texto: "Ambiente digital próprio que distribui e acompanha currículo e formação." },
+          { icone: Wrench, titulo: "Espaço maker", texto: "Concepção do ambiente físico a partir das necessidades do currículo." },
+          { icone: GraduationCap, titulo: "Academia We Make", texto: "Formação, mentoria e consultoria pedagógica contínua." },
+          { icone: Compass, titulo: "Assessoria institucional", texto: "Acompanhamento estratégico de mantenedores e diretores." },
         ].map((c, i) => (
           <Cartao key={c.titulo} delay={i * 0.12} className="flex flex-col">
             <c.icone className="size-6 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
@@ -402,10 +440,33 @@ export function ApresentacaoPlano({ anos }: Props) {
       </div>
     </Slide>,
 
-    // 3 — currículo em detalhe
+    // 4 — fluxo do sistema (hub e satélites)
+    <Slide key="fluxo-sistema" variante="sky">
+      <Eyebrow tom="navy">Capítulo 3 · Como o sistema se conecta</Eyebrow>
+      <Titulo tom="escuro">O currículo alimenta e é alimentado por cada um dos outros quatro componentes.</Titulo>
+      <div className="mt-8">
+        <FluxoCurriculo
+          centro="Kit We Make"
+          satelites={[
+            { titulo: "Currículo", cor: "#0b1f44" },
+            { titulo: "Plataforma", cor: "#0b1f44" },
+            { titulo: "Formação", cor: "#0b1f44" },
+            { titulo: "Espaço maker", cor: "#0b1f44" },
+            { titulo: "Assessoria", cor: "#0b1f44" },
+          ]}
+        />
+      </div>
+      <p className="text-[rgb(var(--color-brand-navy))]/70 text-sm max-w-xl mt-4">
+        O currículo gera necessidade de formação, a formação melhora a implementação do currículo, a plataforma
+        sustenta os dois, o espaço maker traduz o currículo em ambiente físico e a assessoria integra tudo na
+        estratégia da instituição.
+      </p>
+    </Slide>,
+
+    // 5 — currículo em detalhe
     <Slide key="curriculo" variante="royal">
       <Eyebrow>Capítulo 6 · Produtos e serviços</Eyebrow>
-      <Titulo>Um currículo autoral, da Educação Infantil ao Ensino Médio, com progressão real entre as séries.</Titulo>
+      <Titulo>Um currículo autoral, da Educação Infantil ao Ensino Médio, com progressão real entre séries.</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-9">
         {[
           { icone: Code2, titulo: "Programação, Codificação e Jogos" },
@@ -414,30 +475,82 @@ export function ApresentacaoPlano({ anos }: Props) {
           { icone: CompassIcon, titulo: "Mordomia e Tecnologias para o Futuro" },
         ].map((c, i) => (
           <Cartao key={c.titulo} delay={i * 0.1}>
-            <c.icone className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
+            <c.icone className="size-5 text-white mb-3" strokeWidth={1.75} />
             <p className="text-white/85 text-[0.9375rem] font-medium leading-snug">{c.titulo}</p>
           </Cartao>
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+    </Slide>,
+
+    // 6 — Ciclo de Projeto (flow)
+    <Slide key="ciclo-projeto" variante="dark">
+      <Eyebrow>Metodologia Conhecer, Explorar e Criar</Eyebrow>
+      <Titulo>O Momento Criar segue um ciclo de projeto estruturado em seis etapas.</Titulo>
+      <div className="mt-9 flex flex-wrap items-stretch gap-2">
         {[
-          { et: "Conhecer", texto: "Deslumbramento e conexão inicial com o tema." },
-          { et: "Explorar", texto: "Sistematização por explicações, exemplos e discussão." },
-          { et: "Criar", texto: "Ciclo de Projeto: identificar, pesquisar, planejar, construir, testar e compartilhar." },
-        ].map((e, i) => (
-          <Cartao key={e.et} delay={0.4 + i * 0.1}>
-            <p className="font-mono text-[rgb(var(--color-brand-mint))] text-[0.75rem] uppercase tracking-wider font-bold mb-2">{e.et}</p>
-            <p className="text-white/65 text-[0.8125rem] leading-relaxed">{e.texto}</p>
-          </Cartao>
+          { icone: Search, titulo: "Identificar" },
+          { icone: Lightbulb, titulo: "Imaginar" },
+          { icone: ClipboardCheck, titulo: "Planejar" },
+          { icone: Hammer, titulo: "Construir" },
+          { icone: TestTube, titulo: "Testar" },
+          { icone: Share2, titulo: "Compartilhar" },
+        ].map((e, i, arr) => (
+          <div key={e.titulo} className="flex items-center gap-2">
+            <motion.div
+              className="rounded-xl border border-white/15 bg-white/[0.04] px-3.5 py-3 flex flex-col items-center gap-1.5 w-24"
+              initial={{ opacity: 0, scale: 0.7 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.4, ease: "backOut" }}
+            >
+              <e.icone className="size-4 text-[rgb(var(--color-brand-mint))]" strokeWidth={1.75} />
+              <p className="text-white/80 text-[0.6875rem] text-center font-medium">{e.titulo}</p>
+            </motion.div>
+            {i < arr.length - 1 && (
+              <motion.div
+                className="text-white/25 text-lg"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 + 0.15 }}
+              >
+                →
+              </motion.div>
+            )}
+          </div>
         ))}
       </div>
-      <p className="text-white/45 text-xs mt-5 max-w-2xl">
-        A partir de 2027, o portfólio incorpora o Livro Maker físico, material de registro, reflexão e portfólio do
-        aluno, e a Educação Infantil.
+      <p className="text-white/45 text-xs mt-6 max-w-lg">
+        Etapas não rigidamente lineares: o processo permite retornar, ajustar e refinar soluções ao longo do
+        projeto.
       </p>
     </Slide>,
 
-    // 4 — homeschool
+    // 7 — livro maker e precificação
+    <Slide key="livro-preco" variante="navy">
+      <Eyebrow>Capítulo 6 · Livro Maker e precificação</Eyebrow>
+      <Titulo>A partir de 2027, o currículo ganha um componente físico e um valor de referência único.</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
+        <Cartao delay={0.1}>
+          <BookOpen className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
+          <p className="font-display text-white text-[1.0625rem] mb-1.5">Livro Maker físico</p>
+          <p className="text-white/55 text-[0.8125rem] leading-relaxed">
+            Material de registro, reflexão e portfólio do aluno, produzido por gráfica parceira em São Paulo.
+            Complementa a entrega digital já feita pela plataforma.
+          </p>
+        </Cartao>
+        <Cartao delay={0.2}>
+          <p className="font-display text-white text-2xl mb-1">R$ 420</p>
+          <p className="text-white/50 text-[0.75rem] mb-3">Valor de referência por aluno ao ano</p>
+          <p className="text-white/55 text-[0.8125rem] leading-relaxed">
+            Ponderado por porte, ticket já cobrado das famílias e natureza da instituição. Carteira atual pratica
+            entre R$180 e R$420 por aluno ao ano.
+          </p>
+        </Cartao>
+      </div>
+    </Slide>,
+
+    // 8 — homeschool
     <Slide key="homeschool" variante="dark">
       <Eyebrow>Segundo mercado</Eyebrow>
       <Titulo>O mesmo currículo, adaptado para famílias educadoras em comunidades de homeschooling.</Titulo>
@@ -466,22 +579,17 @@ export function ApresentacaoPlano({ anos }: Props) {
       </div>
       <Cartao delay={0.75} className="mt-5 max-w-2xl">
         <p className="text-white/70 text-sm leading-relaxed">
-          Entrega inteiramente digital, sem material físico nessa frente. Venda e cobrança conduzidas por uma
-          parceira comercial já estabelecida no mercado de homeschooling, com negociação avançada em curso com a
-          Aspen. Primeira venda projetada para 2027: 100 alunos, R$49.890,00.
+          Entrega inteiramente digital. Venda e cobrança conduzidas por parceira comercial já estabelecida nesse
+          mercado, com negociação avançada em curso com a Aspen. Primeira venda projetada para 2027: 100 alunos,
+          R$49.890,00.
         </p>
       </Cartao>
     </Slide>,
 
-    // 5 — Academia We Make
+    // 9 — Academia We Make
     <Slide key="academia" variante="navy">
       <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
-      <Titulo>A Academia We Make garante que o currículo não dependa apenas de bons materiais.</Titulo>
-      <p className="text-white/60 text-sm sm:text-base max-w-2xl mt-6 leading-relaxed">
-        Trilha de formação, mentoria e consultoria pedagógica incluída em todo contrato, escolar ou de família
-        educadora. Opera em ciclo anual, com oito fases sequenciais que acompanham a escola do primeiro contato
-        comercial ao fechamento do ano letivo.
-      </p>
+      <Titulo>A Academia We Make garante que o currículo dependa de professores preparados, não só de bons materiais.</Titulo>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-8">
         {["Apresentação", "Onboarding", "Diagnóstico de entrada", "Implantação intensiva", "Acompanhamento contínuo", "Formação temática", "Diagnóstico de meio de ciclo", "Prescrição de resultados"].map((f, i) => (
           <motion.div
@@ -498,12 +606,11 @@ export function ApresentacaoPlano({ anos }: Props) {
         ))}
       </div>
       <p className="text-white/40 text-xs mt-5 max-w-xl">
-        Financiada pela mesma receita do Kit We Make, sem cobrança adicional: formação mal feita é tratada como
-        risco maior ao negócio do que o custo de formar bem cada professor.
+        Financiada pela mesma receita do Kit We Make, sem cobrança adicional.
       </p>
     </Slide>,
 
-    // 6 — por que agora (regulatório)
+    // 10 — por que agora (federal)
     <Slide key="por-que-agora" variante="royal">
       <Eyebrow>Por que agora</Eyebrow>
       <Titulo>A lei transformou a educação tecnológica de diferencial em exigência curricular.</Titulo>
@@ -511,24 +618,51 @@ export function ApresentacaoPlano({ anos }: Props) {
         {[
           { lei: "Lei nº 14.533/2023", texto: "Institui a Política Nacional de Educação Digital." },
           { lei: "Resolução CNE/CEB nº 2/2025", texto: "Complemento de Computação da BNCC, obrigatório do 1º ano do Fundamental ao 3º do Médio, a partir de 2026." },
-          { lei: "Lei DF nº 7.796/2025", texto: "Cria os Centros Interescolares de Robótica no Distrito Federal, tendência que outros estados devem seguir." },
+          { lei: "Fundeb, 5 de março de 2026", texto: "Repasse do Valor Aluno Ano com base em Resultados condicionado à comprovação da adequação curricular até agosto de 2026." },
         ].map((c, i) => (
-          <Cartao key={c.lei} delay={i * 0.15} className="border-l-2 border-l-[rgb(var(--color-brand-mint))]">
-            <p className="font-mono text-[rgb(var(--color-brand-mint))] text-[0.75rem] uppercase tracking-wider font-bold mb-2">{c.lei}</p>
-            <p className="text-white/75 text-sm leading-relaxed">{c.texto}</p>
+          <Cartao key={c.lei} delay={i * 0.15} className="border-l-2 border-l-white/60">
+            <p className="font-mono text-white text-[0.75rem] uppercase tracking-wider font-bold mb-2">{c.lei}</p>
+            <p className="text-white/80 text-sm leading-relaxed">{c.texto}</p>
           </Cartao>
         ))}
       </div>
-      <Cartao delay={0.55} className="mt-4">
-        <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-          O sistema We Make já incorpora, desde sua concepção curricular, os três eixos exigidos pela norma:
-          pensamento computacional, cultura digital e mundo digital. Isso posiciona a empresa como resposta pronta
-          a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo de atender.
-        </p>
-      </Cartao>
     </Slide>,
 
-    // 7 — mercado / funil
+    // 11 — mapa: estados com lei própria
+    <Slide key="mapa-leis" variante="dark">
+      <Eyebrow>Cinco estados foram além do piso federal</Eyebrow>
+      <Titulo>DF, São Paulo, Minas Gerais, Paraná e Rio Grande do Sul já têm lei ou resolução própria.</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 items-center">
+        {geoBrasil ? (
+          <MapaBrasil geo={geoBrasil} porEstado={estadosComLeiPropria} width={340} height={340} corAtiva="rgb(var(--color-brand-mint))" />
+        ) : (
+          <div className="text-white/40 text-sm">Mapa indisponível</div>
+        )}
+        <div className="space-y-2">
+          {[
+            ["DF", "Lei nº 7.796/2025 — Centros Interescolares de Robótica"],
+            ["SP", "Deliberação CEE nº 233/2025 — Educação Digital, Midiática e Computação"],
+            ["MG", "Parecer CEE/MG nº 1.588/2025 — Referencial Curricular de Computação"],
+            ["PR", "Deliberação CEE/PR nº 04/2025"],
+            ["RS", "Resolução CEEd nº 382/2024, a mais antiga identificada"],
+          ].map(([uf, texto], i) => (
+            <motion.div
+              key={uf}
+              className="flex gap-3 items-baseline"
+              initial={{ opacity: 0, x: 16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+            >
+              <span className="font-mono text-[rgb(var(--color-brand-mint))] text-xs font-bold w-7 shrink-0">{uf}</span>
+              <span className="text-white/65 text-[0.8125rem] leading-snug">{texto}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </Slide>,
+
+    // 12 — mercado / funil
     <Slide key="mercado" variante="navy">
       <Eyebrow>Tamanho de mercado</Eyebrow>
       <Titulo>Um nicho pouco disputado dentro de um setor de tecnologia educacional já maduro.</Titulo>
@@ -564,13 +698,37 @@ export function ApresentacaoPlano({ anos }: Props) {
           </motion.div>
         ))}
       </div>
-      <p className="text-white/45 text-xs mt-6 max-w-xl">
-        Estimativa de planejamento. Recomenda-se estudo de dimensionamento cruzando microdados do Censo Escolar
-        com bases de associações confessionais antes da consolidação definitiva das metas de participação de mercado.
+    </Slide>,
+
+    // 13 — a dor do cliente
+    <Slide key="dor-cliente" variante="sky">
+      <Eyebrow tom="navy">Capítulo 5 · Por que ele compra</Eyebrow>
+      <Titulo tom="escuro">Sem a We Make, a escola fragmenta a compra entre vários fornecedores diferentes.</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-9">
+        {[
+          "Um fornecedor de robótica ou programação",
+          "Uma plataforma de gestão genérica",
+          "Formação pontual para professores, sem assessoria estratégica integrada",
+        ].map((t, i) => (
+          <motion.div
+            key={t}
+            className="rounded-xl bg-[rgb(var(--color-brand-navy))]/10 border border-[rgb(var(--color-brand-navy))]/20 px-4 py-3"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.12, duration: 0.5 }}
+          >
+            <p className="text-[rgb(var(--color-brand-navy))] text-[0.8125rem] font-medium leading-snug">{t}</p>
+          </motion.div>
+        ))}
+      </div>
+      <p className="text-[rgb(var(--color-brand-navy))]/70 text-sm max-w-xl mt-5">
+        Essa fragmentação é, ao mesmo tempo, o padrão do mercado e a principal oportunidade que o sistema We
+        Make explora.
       </p>
     </Slide>,
 
-    // 8 — concorrência
+    // 14 — concorrência
     <Slide key="concorrencia" variante="dark">
       <Eyebrow>Concorrência</Eyebrow>
       <Titulo>Nenhum concorrente mapeado reproduz essa combinação de currículo, tecnologia e cosmovisão.</Titulo>
@@ -589,32 +747,84 @@ export function ApresentacaoPlano({ anos }: Props) {
       </div>
     </Slide>,
 
-    // 9 — equipe
-    <Slide key="equipe" variante="royal">
-      <Eyebrow>Capítulo 2 · Equipe</Eyebrow>
-      <Titulo>Uma liderança pequena, com presença direta em cada etapa da entrega.</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
-        {EQUIPE.map((p, i) => (
-          <Cartao key={p.nome} delay={i * 0.07} className="flex items-start gap-3">
-            <Avatar iniciais={p.nome.split(" ").filter((w) => w.length > 2).slice(0, 2).map((w) => w[0]).join("")} cor={p.cor} />
-            <div className="min-w-0">
-              <p className="text-white/90 text-[0.9375rem] font-medium leading-snug">{p.nome}</p>
-              <p className="font-mono text-[0.6875rem] uppercase tracking-wider mb-1.5" style={{ color: p.cor }}>{p.cargo}</p>
-              <p className="text-white/55 text-[0.75rem] leading-relaxed">{p.texto}</p>
-            </div>
-          </Cartao>
+    // 15 — futuros concorrentes
+    <Slide key="futuros-concorrentes" variante="navy">
+      <Eyebrow>A ameaça mais provável já tem distribuição</Eyebrow>
+      <Titulo>A ameaça mais provável já tem acesso às mesmas escolas que nós.</Titulo>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-9">
+        {["Sistemas de ensino cristãos", "Grandes grupos editoriais", "Mackenzie e ACSI", "Google e Microsoft"].map((t, i) => (
+          <motion.div
+            key={t}
+            className="rounded-lg border border-white/12 bg-white/[0.03] px-3 py-3"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1, duration: 0.4 }}
+          >
+            <p className="text-white/75 text-[0.8125rem] font-medium">{t}</p>
+          </motion.div>
         ))}
       </div>
-      <p className="text-white/40 text-xs mt-5 max-w-2xl">
+      <p className="text-white/50 text-sm max-w-xl mt-5">
+        A defesa competitiva se apoia em especialização no mercado cristão, propriedade intelectual protegida e
+        integração profunda entre os cinco componentes do sistema.
+      </p>
+    </Slide>,
+
+    // 16 — mapa: onde estão nossos alunos
+    <Slide key="mapa-alunos" variante="royal">
+      <Eyebrow>Onde estamos hoje</Eyebrow>
+      <Titulo>Presença em 7 estados, do Sul ao Nordeste.</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 items-center">
+        {geoBrasil ? (
+          <MapaBrasil geo={geoBrasil} porEstado={escolasPorEstado} width={340} height={340} />
+        ) : (
+          <div className="text-white/40 text-sm">Mapa indisponível</div>
+        )}
+        <div>
+          <p className="text-white/70 text-sm leading-relaxed mb-4">
+            Escolas parceiras identificadas por estado no cadastro comercial, entre as 23 que compõem o
+            orçamento de 2027. Concentração inicial em PR, SC e SP, com presença já em ES, MA, RN e RS.
+          </p>
+          <div className="grid grid-cols-3 gap-2">
+            {Object.entries(escolasPorEstado).sort((a, b) => b[1] - a[1]).map(([uf, qtd], i) => (
+              <motion.div
+                key={uf}
+                className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-2 text-center"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06, duration: 0.35 }}
+              >
+                <p className="font-display text-white text-lg">{qtd}</p>
+                <p className="font-mono text-white/50 text-[0.625rem]">{uf}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Slide>,
+
+    // 17 — equipe (organograma)
+    <Slide key="equipe" variante="dark">
+      <Eyebrow>Capítulo 2 · Equipe</Eyebrow>
+      <Titulo>Uma liderança pequena, com presença direta em cada etapa da entrega.</Titulo>
+      <div className="mt-10">
+        <Organograma
+          topo={{ nome: "Dênis Júlio Pereira Francisco", cargo: "CEO e Diretor Pedagógico", cor: "rgb(var(--color-brand-mint))" }}
+          filhos={EQUIPE_FILHOS}
+        />
+      </div>
+      <p className="text-white/40 text-xs mt-8 max-w-2xl">
         Estrutura hoje concentrada, o que garante agilidade nesta fase, com distribuição progressiva de
         responsabilidade prevista à medida que o sistema cresce.
       </p>
     </Slide>,
 
-    // 10 — operações e tecnologia
-    <Slide key="operacoes" variante="dark">
+    // 18 — operações e tecnologia
+    <Slide key="operacoes" variante="navy">
       <Eyebrow>Capítulo 7 · Estrutura e operações</Eyebrow>
-      <Titulo>Tecnologia própria já em operação, não uma promessa de roadmap.</Titulo>
+      <Titulo>A tecnologia própria já sustenta a operação diária da empresa.</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-9">
         {[
           { icone: Network, titulo: "CRM próprio", texto: "comercial.wemake.tec.br organiza prospecção, negociação e acompanhamento de contratos." },
@@ -632,8 +842,8 @@ export function ApresentacaoPlano({ anos }: Props) {
         <Cartao delay={0.4}>
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Onboarding de escolas</p>
           <p className="text-white/55 text-[0.8125rem] leading-relaxed">
-            12 horas, 2 dias, 3 formações: primeiro fundamentos de cosmovisão, depois metodologia, só então
-            operação da plataforma e das ferramentas do espaço maker.
+            12 horas, 2 dias, 3 formações: primeiro fundamentos, depois metodologia, só então operação da
+            plataforma e do espaço maker.
           </p>
         </Cartao>
         <Cartao delay={0.5}>
@@ -646,38 +856,46 @@ export function ApresentacaoPlano({ anos }: Props) {
       </div>
     </Slide>,
 
-    // 11 — parcerias locais e repercussão
-    <Slide key="parcerias-locais" variante="navy">
-      <Eyebrow>Capítulo 7 · Repercussão local</Eyebrow>
-      <Titulo>Olimpíadas e hackathons transformam relacionamento comercial em reputação de campo.</Titulo>
+    // 19 — parcerias locais
+    <Slide key="parcerias-locais" variante="sky">
+      <Eyebrow tom="navy">Capítulo 7 · Repercussão local</Eyebrow>
+      <Titulo tom="escuro">Olimpíadas e hackathons transformam relacionamento comercial em reputação de campo.</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
-        <Cartao delay={0.1}>
-          <Trophy className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
-          <p className="font-display text-white text-[1.0625rem] mb-1.5">Olimpíadas de tecnologia</p>
-          <p className="text-white/55 text-[0.8125rem] leading-relaxed">
-            Em fase de estruturação, para estimular a excelência técnica entre alunos das escolas parceiras e
-            ampliar a visibilidade do sistema para além dos muros de cada instituição.
+        <Cartao delay={0.1} className="bg-[rgb(var(--color-brand-navy))]/10 border-[rgb(var(--color-brand-navy))]/25">
+          <Trophy className="size-5 text-[rgb(var(--color-brand-navy))] mb-3" strokeWidth={1.75} />
+          <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] mb-1.5">Olimpíadas de tecnologia</p>
+          <p className="text-[rgb(var(--color-brand-navy))]/70 text-[0.8125rem] leading-relaxed">
+            Em fase de estruturação, para estimular a excelência técnica entre alunos das escolas parceiras.
           </p>
         </Cartao>
-        <Cartao delay={0.2}>
-          <Trophy className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
-          <p className="font-display text-white text-[1.0625rem] mb-1.5">Hackathons</p>
-          <p className="text-white/55 text-[0.8125rem] leading-relaxed">
-            Problemas reais, premiação já testada: cada integrante da equipe vencedora recebe um leitor digital, e
-            a equipe recebe uma semana de estágio em empresas de tecnologia parceiras.
+        <Cartao delay={0.2} className="bg-[rgb(var(--color-brand-navy))]/10 border-[rgb(var(--color-brand-navy))]/25">
+          <Trophy className="size-5 text-[rgb(var(--color-brand-navy))] mb-3" strokeWidth={1.75} />
+          <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] mb-1.5">Hackathons</p>
+          <p className="text-[rgb(var(--color-brand-navy))]/70 text-[0.8125rem] leading-relaxed">
+            Premiação já testada: cada vencedor recebe um leitor digital, e a equipe recebe uma semana de
+            estágio em empresas de tecnologia parceiras.
           </p>
         </Cartao>
       </div>
-      <p className="text-white/40 text-xs mt-5 max-w-2xl">
-        A expansão dessas iniciativas segue o mesmo princípio: parcerias locais em troca de exposição da marca
-        junto às comunidades escolares atendidas.
-      </p>
     </Slide>,
 
-    // 12 — marketing e metas de vendas
+    // 20 — posicionamento
+    <Slide key="posicionamento" variante="dark">
+      <Eyebrow>Capítulo 8 · Posicionamento</Eyebrow>
+      <Titulo>Um sistema pedagógico integral, estruturado a partir de uma antropologia cristã.</Titulo>
+      <Cartao delay={0.1} className="mt-8 max-w-3xl">
+        <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+          Sequenciado e alinhado à Base Nacional Comum Curricular, estruturado a partir de uma antropologia
+          cristã, entregando currículo, plataforma, espaço maker, formação docente e assessoria institucional
+          como partes de uma mesma proposta contratada de uma só vez.
+        </p>
+      </Cartao>
+    </Slide>,
+
+    // 21 — metas de vendas
     <Slide key="metas-vendas" variante="royal">
       <Eyebrow>Capítulo 8 · Marketing e vendas</Eyebrow>
-      <Titulo>Meta comercial única, medida por novas escolas e alunos alcançados a cada ano.</Titulo>
+      <Titulo>Meta comercial única, medida por novas escolas a cada ano.</Titulo>
       <div className="mt-9 space-y-2.5 max-w-3xl">
         {[
           { ano: 2027, escolas: 10, largura: 45 },
@@ -694,29 +912,27 @@ export function ApresentacaoPlano({ anos }: Props) {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
           >
-            <span className="font-mono text-white/50 text-[0.75rem] w-10 shrink-0">{r.ano}</span>
-            <div className="flex-1 h-6 rounded-lg bg-white/10 overflow-hidden">
+            <span className="font-mono text-white/60 text-[0.75rem] w-10 shrink-0">{r.ano}</span>
+            <div className="flex-1 h-6 rounded-lg bg-black/15 overflow-hidden">
               <motion.div
-                className="h-full rounded-lg bg-[rgb(var(--color-brand-mint))] flex items-center justify-end px-2"
+                className="h-full rounded-lg bg-white flex items-center justify-end px-2"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${r.largura}%` }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 + 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="font-mono text-[0.6875rem] font-bold text-[rgb(var(--color-brand-navy))]">{r.escolas}</span>
+                <span className="font-mono text-[0.6875rem] font-bold text-[rgb(var(--color-brand-royal-deep))]">{r.escolas}</span>
               </motion.div>
             </div>
           </motion.div>
         ))}
       </div>
-      <p className="text-white/50 text-sm max-w-2xl mt-6 leading-relaxed">
-        80 novas escolas entre 2027 e 2031, cenário-base de 5% a 8% do mercado-alvo confessional até 2031, o
-        equivalente a 75 a 80 escolas ativas. Funil direto e consultivo, gerido de ponta a ponta pelo CRM próprio,
-        sem representantes ou revendedores.
+      <p className="text-white/60 text-sm max-w-2xl mt-6 leading-relaxed">
+        80 novas escolas entre 2027 e 2031, cenário-base de 5% a 8% do mercado-alvo confessional até 2031.
       </p>
     </Slide>,
 
-    // 13 — SWOT
+    // 22 — SWOT
     <Slide key="swot" variante="dark">
       <Eyebrow>Leitura estratégica</Eyebrow>
       <Titulo>Análise SWOT</Titulo>
@@ -741,7 +957,7 @@ export function ApresentacaoPlano({ anos }: Props) {
       </div>
     </Slide>,
 
-    // 14 — financeiro: gráfico animado
+    // 23 — financeiro
     <Slide key="financeiro" variante="navy">
       <Eyebrow>Projeção financeira</Eyebrow>
       <Titulo>Receita projetada, 2027 a 2031</Titulo>
@@ -768,77 +984,88 @@ export function ApresentacaoPlano({ anos }: Props) {
       </div>
     </Slide>,
 
-    // 15 — despesas 2027
+    // 24 — despesas (donut)
     <Slide key="despesas" variante="dark">
       <Eyebrow>Capítulo 9 · Estrutura de despesas</Eyebrow>
       <Titulo>Onde vai cada real do orçamento de 2027.</Titulo>
-      <div className="mt-9 space-y-2.5 max-w-3xl">
-        {[
-          { cat: "Pessoal, CLT e PJ recorrente", pct: 41.5 },
-          { cat: "Produção gráfica e impressão", pct: 21.3 },
-          { cat: "Taxas e serviços financeiros", pct: 13.2 },
-          { cat: "Tecnologia, inclui Plataforma Arkos", pct: 5.3 },
-          { cat: "Infraestrutura e utilidades", pct: 5.3 },
-          { cat: "Marketing e publicidade", pct: 4.7 },
-          { cat: "Demais categorias", pct: 8.7 },
-        ].map((d, i) => (
-          <motion.div
-            key={d.cat}
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08, duration: 0.5 }}
-          >
-            <div className="flex items-baseline justify-between mb-1.5 gap-3">
-              <span className="text-white/60 text-[0.8125rem]">{d.cat}</span>
-              <span className="font-mono font-bold tabular-nums text-sm text-white/70">{d.pct}%</span>
-            </div>
-            <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-              <motion.div
-                className="h-full rounded-full bg-[rgb(var(--color-brand-royal))]"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${d.pct * 2.2}%` }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 + 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </div>
-          </motion.div>
-        ))}
+      <div className="mt-9">
+        <Donut
+          fatias={[
+            { label: "Pessoal, CLT e PJ", pct: 41.5, cor: "rgb(var(--color-brand-mint))" },
+            { label: "Produção gráfica", pct: 21.3, cor: "rgb(var(--color-brand-royal))" },
+            { label: "Taxas e serviços financeiros", pct: 13.2, cor: "rgb(var(--color-brand-sky))" },
+            { label: "Tecnologia", pct: 5.3, cor: "#8b7ce8" },
+            { label: "Infraestrutura", pct: 5.3, cor: "#e8607a" },
+            { label: "Demais categorias", pct: 13.4, cor: "rgba(255,255,255,0.3)" },
+          ]}
+        />
       </div>
       <p className="text-white/40 text-xs mt-6 max-w-xl">
-        Despesa total de R$844.365,14 em 2027, já incorporando pró-labore da liderança, equipe de tecnologia
-        própria e produção do Livro Maker.
+        Despesa total de R$844.365,14 em 2027, já incorporando pró-labore da liderança e equipe de tecnologia
+        própria.
       </p>
     </Slide>,
 
-    // 16 — riscos
-    <Slide key="riscos" variante="royal">
-      <Eyebrow>Governança e risco</Eyebrow>
-      <Titulo>Nenhum risco listado é, isoladamente, impeditivo do plano.</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-10">
-        {[
-          { risco: "Dependência de liderança central", prob: "Alta", impacto: "Alto", prazo: "Imediata" },
-          { risco: "Propriedade intelectual sem registro confirmado", prob: "Média", impacto: "Alto", prazo: "Imediata" },
-          { risco: "Maturidade desigual entre linhas", prob: "Alta", impacto: "Médio", prazo: "Imediata" },
-          { risco: "Uso indevido de conteúdo por IA de terceiros", prob: "Baixa", impacto: "Médio", prazo: "No ciclo de 2027" },
-          { risco: "Regulação do homeschooling", prob: "Baixa", impacto: "Alto", prazo: "Monitoramento contínuo" },
-          { risco: "Concorrência e pressão de custo", prob: "Média", impacto: "Médio", prazo: "No ciclo de 2027" },
-        ].map((r, i) => (
-          <Cartao key={r.risco} delay={i * 0.08} className="flex items-start gap-3">
-            <ShieldAlert className="size-5 text-[rgb(var(--color-brand-sky))] shrink-0 mt-0.5" strokeWidth={1.75} />
-            <div>
-              <p className="text-white/85 text-sm font-medium mb-1.5">{r.risco}</p>
-              <p className="text-white/45 text-[0.75rem] font-mono">
-                Prob. {r.prob} · Impacto {r.impacto} · {r.prazo}
-              </p>
-            </div>
-          </Cartao>
+    // 25 — indicadores de retorno
+    <Slide key="indicadores" variante="royal">
+      <Eyebrow>Capítulo 11 · Indicadores de retorno</Eyebrow>
+      <Titulo>Seis indicadores acompanham se o crescimento vem com margem, não só com volume.</Titulo>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-9">
+        {["Margem bruta por aluno e por escola", "Retenção e renovação contratual", "LTV sobre CAC", "Custo por hora de formação", "Custo de infraestrutura por instituição ativa", "Margem por projeto de espaço maker"].map((t, i) => (
+          <motion.div
+            key={t}
+            className="rounded-lg border border-white/20 bg-white/[0.06] px-3 py-2.5"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.08, duration: 0.4 }}
+          >
+            <p className="text-white/85 text-[0.75rem] font-medium leading-snug">{t}</p>
+          </motion.div>
         ))}
       </div>
     </Slide>,
 
-    // 17 — crescimento futuro
-    <Slide key="crescimento-futuro" variante="dark">
+    // 26 — riscos (matriz)
+    <Slide key="riscos" variante="dark">
+      <Eyebrow>Governança e risco</Eyebrow>
+      <Titulo>Nenhum risco listado é, isoladamente, impeditivo do plano.</Titulo>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 items-center">
+        <MatrizRisco
+          pontos={[
+            { label: "Liderança central", x: 0.82, y: 0.85, cor: "#e8607a" },
+            { label: "PI sem registro", x: 0.55, y: 0.85, cor: "rgb(var(--color-brand-sky))" },
+            { label: "Maturidade desigual", x: 0.82, y: 0.5, cor: "rgb(var(--color-brand-sky))" },
+            { label: "IA de terceiros", x: 0.25, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
+            { label: "Homeschooling", x: 0.25, y: 0.85, cor: "rgb(var(--color-brand-royal))" },
+            { label: "Concorrência", x: 0.55, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
+          ]}
+        />
+        <ul className="space-y-2">
+          {[
+            "Dependência de liderança central — prioridade imediata",
+            "Propriedade intelectual sem registro confirmado — prioridade imediata",
+            "Maturidade desigual entre linhas — prioridade imediata",
+            "Regulação do homeschooling — monitoramento contínuo",
+          ].map((r, i) => (
+            <motion.li
+              key={r}
+              className="flex items-start gap-2 text-white/65 text-[0.8125rem] leading-relaxed"
+              initial={{ opacity: 0, x: 16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+            >
+              <ShieldAlert className="size-4 text-[rgb(var(--color-brand-sky))] shrink-0 mt-0.5" strokeWidth={1.75} />
+              {r}
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+    </Slide>,
+
+    // 27 — crescimento futuro
+    <Slide key="crescimento-futuro" variante="navy">
       <Eyebrow>Capítulo 12 · Estratégia de crescimento futuro</Eyebrow>
       <Titulo>Dois negócios futuros, condicionados à consolidação do sistema atual.</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
@@ -854,25 +1081,24 @@ export function ApresentacaoPlano({ anos }: Props) {
           <Building2 className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Faculdade de tecnologia</p>
           <p className="text-white/55 text-[0.8125rem] leading-relaxed">
-            Extensão da proposta em nível superior, possibilidade a ser buscada, não frente já decidida. Depende de
-            credenciamento junto ao MEC e sustentada pela parceria com a FICV.
+            Extensão da proposta em nível superior, possibilidade a ser buscada, sustentada pela parceria com a
+            FICV. Depende de credenciamento junto ao MEC.
           </p>
         </Cartao>
       </div>
       <Cartao delay={0.4} className="mt-3">
         <p className="text-white/70 text-sm leading-relaxed">
-          Toda a receita projetada entre 2027 e 2031 vem do sistema já existente. Os dois negócios futuros são o
-          horizonte que esse sistema torna possível a partir do quarto ano, condicionados à consolidação da
-          governança, à validação de demanda e à conclusão do registro de propriedade intelectual.
+          Toda a receita projetada entre 2027 e 2031 vem do sistema já existente. Os dois negócios futuros
+          dependem da consolidação da governança, da validação de demanda e do registro de propriedade
+          intelectual.
         </p>
       </Cartao>
     </Slide>,
 
-    // 18 — capital externo: aceleração, não sobrevivência
+    // 28 — capital externo
     <Slide key="capital-externo" variante="royal">
       <Eyebrow>Sobre capital externo</Eyebrow>
-      <Titulo>Uma trajetória construída sem dívida, em que capital é aceleração, não sobrevivência.</Titulo>
-
+      <Titulo>Uma trajetória construída sem dívida, pronta para ser acelerada por capital externo.</Titulo>
       <motion.div
         className="mt-9 rounded-2xl bg-[rgb(var(--color-brand-ivory))] text-[rgb(var(--color-brand-navy))] p-6 sm:p-8 max-w-3xl shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]"
         initial={{ opacity: 0, y: 28 }}
@@ -884,12 +1110,11 @@ export function ApresentacaoPlano({ anos }: Props) {
           Ponto de partida
         </p>
         <p className="font-display text-[1.05rem] sm:text-[1.25rem] leading-snug">
-          A trajetória descrita neste plano foi construída, até aqui, com recursos próprios, sem dívida ou passivo
-          relevante a sustentar. A pergunta não é se a We Make chega ao horizonte de cinco anos deste plano
-          sozinha, mas se um investidor deseja antecipar esse horizonte para dois ou três anos.
+          Construída até aqui com recursos próprios, sem dívida ou passivo relevante a sustentar. A pergunta não
+          é se a We Make chega ao horizonte de cinco anos deste plano sozinha, mas se um investidor deseja
+          antecipar esse horizonte para dois ou três anos.
         </p>
       </motion.div>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 max-w-3xl">
         {[
           { titulo: "Equipe comercial", texto: "Fortalecimento imediato da estrutura de aquisição, com mais capacidade de busca ativa e qualificação de novas escolas." },
@@ -902,12 +1127,11 @@ export function ApresentacaoPlano({ anos }: Props) {
         ))}
       </div>
       <p className="text-white/40 text-xs mt-5 max-w-2xl">
-        Prioridades de alocação caso a aceleração se concretize, inspiração, não orçamento aprovado. Devem ser
-        tratadas com o mesmo rigor de conciliação já aplicado às demais estimativas deste plano.
+        Prioridades de alocação caso a aceleração se concretize, inspiração, não orçamento aprovado.
       </p>
     </Slide>,
 
-    // 19 — fechamento
+    // 29 — fechamento
     <Slide key="fechamento" variante="dark">
       <div className="flex flex-col items-start">
         <Sparkles className="size-8 text-[rgb(var(--color-brand-mint))] mb-6" strokeWidth={1.5} />

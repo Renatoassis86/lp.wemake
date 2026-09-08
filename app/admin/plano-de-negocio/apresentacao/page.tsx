@@ -1,4 +1,7 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { ApresentacaoPlano, type AnoProjetado } from "@/features/admin/apresentacao/apresentacao-plano";
+import type { GeoBrasil } from "@/features/admin/apresentacao/visuais";
 import {
   ANOS_PLANEJAMENTO,
   calcularProjecaoFinanceira,
@@ -9,6 +12,33 @@ import {
 import type { LinhaDeNegocioId } from "@/data/plano-negocio-perguntas";
 
 export const dynamic = "force-dynamic";
+
+/**
+ * Distribuição real das 23 escolas do orçamento 2027 por estado, confirmada
+ * contra o cadastro do CRM comercial (app_comercial_We Make). 11 das 23
+ * escolas foram localizadas com confiança; as demais ainda não têm
+ * cidade/UF padronizados no CRM e não entram aqui para não inventar dado.
+ */
+const ESCOLAS_POR_ESTADO: Record<string, number> = {
+  PR: 3, // Educar Londrina, Colégio Lighthouse (Campo Largo), Escola Supremo (Curitiba)
+  SC: 2, // Colégio Cristão Amar (Itajaí), For Life School (Florianópolis)
+  SP: 2, // ACR Classical Christian School (São Bernardo do Campo), Colégio Cristão Zoe (Guarulhos)
+  ES: 1, // Primeiro o Reino (Vitória)
+  MA: 1, // Escola Estímulos (São Mateus do Maranhão)
+  RS: 1, // Colégio/Instituto Reverendo Olavo Nunes (Porto Alegre)
+  RN: 1, // Bee Christian School (Natal/Parnamirim)
+};
+
+const ESTADOS_COM_LEI_PROPRIA: Record<string, number> = { DF: 1, SP: 1, MG: 1, PR: 1, RS: 1 };
+
+function carregarGeoBrasil(): GeoBrasil | null {
+  try {
+    const raw = readFileSync(join(process.cwd(), "public/data/brasil-uf.geojson"), "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
 
 async function fetchFinancas() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
@@ -48,7 +78,10 @@ async function fetchFinancas() {
 }
 
 export default async function ApresentacaoPlanoDeNegocioPage() {
-  const { linhas, investimentoInicial } = await fetchFinancas();
+  const [{ linhas, investimentoInicial }, geoBrasil] = await Promise.all([
+    fetchFinancas(),
+    Promise.resolve(carregarGeoBrasil()),
+  ]);
   const projecao = calcularProjecaoFinanceira(linhas, investimentoInicial);
 
   const anos: AnoProjetado[] = ANOS_PLANEJAMENTO.map((ano) => {
@@ -73,7 +106,12 @@ export default async function ApresentacaoPlanoDeNegocioPage() {
       </header>
 
       <div className="rounded-2xl overflow-hidden border border-white/10">
-        <ApresentacaoPlano anos={anos} />
+        <ApresentacaoPlano
+          anos={anos}
+          geoBrasil={geoBrasil}
+          escolasPorEstado={ESCOLAS_POR_ESTADO}
+          estadosComLeiPropria={ESTADOS_COM_LEI_PROPRIA}
+        />
       </div>
     </div>
   );
