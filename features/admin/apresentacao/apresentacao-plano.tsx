@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Maximize,
   Minimize,
@@ -8,6 +8,11 @@ import {
   Download,
   Tv,
   RefreshCw,
+  Pencil,
+  Save,
+  Undo2,
+  AlertTriangle,
+  CheckCircle2,
 } from "lucide-react";
 import type { GeoBrasil } from "./visuais";
 
@@ -31,29 +36,40 @@ export function ApresentacaoPlano({ }: Props) {
   const [telaCheia, setTelaCheia] = useState(false);
   const [htmlContent, setHtmlContent] = useState<string | null>(null);
   const [carregando, setCarregando] = useState(true);
+  const [modoEdicao, setModoEdicao] = useState(false);
+  const [salvando, setSalvando] = useState(false);
+  const [status, setStatus] = useState<{ tipo: "ok" | "erro"; texto: string } | null>(null);
+  const editKeyGuardRef = useRef<((e: KeyboardEvent) => void) | null>(null);
 
-  useEffect(() => {
-    // Carrega o HTML nativo da apresentação Deck Forge
-    fetch("/deck/index.html")
+  const ajustarCaminhos = (html: string) =>
+    html
+      .replace(/href="deck.css"/g, 'href="/deck/deck.css"')
+      .replace(/href="brand.css"/g, 'href="/deck/brand.css"')
+      .replace(/src="icons.js"/g, 'src="/deck/icons.js"')
+      .replace(/src="motion.js"/g, 'src="/deck/motion.js"')
+      .replace(/src="presenter.js"/g, 'src="/deck/presenter.js"')
+      .replace(/src="img\//g, 'src="/deck/img/');
+
+  const carregarApresentacao = useCallback(() => {
+    setCarregando(true);
+    return fetch("/deck/index.html", { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.text();
       })
       .then((html) => {
-        const htmlAjustado = html
-          .replace(/href="deck.css"/g, 'href="/deck/deck.css"')
-          .replace(/href="brand.css"/g, 'href="/deck/brand.css"')
-          .replace(/src="icons.js"/g, 'src="/deck/icons.js"')
-          .replace(/src="motion.js"/g, 'src="/deck/motion.js"')
-          .replace(/src="presenter.js"/g, 'src="/deck/presenter.js"')
-          .replace(/src="img\//g, 'src="/deck/img/');
-        setHtmlContent(htmlAjustado);
+        setHtmlContent(ajustarCaminhos(html));
         setCarregando(false);
       })
       .catch((err) => {
         console.warn("Falha ao carregar via fetch, fallback para URL do iframe:", err);
         setCarregando(false);
       });
+  }, []);
+
+  useEffect(() => {
+    // Carrega o HTML nativo da apresentação Deck Forge
+    carregarApresentacao();
 
     // Monitora evento nativo de fullscreen para manter estado em sincronia em iPads/Android/Desktop
     const handleFullscreenChange = () => {
@@ -105,6 +121,90 @@ export function ApresentacaoPlano({ }: Props) {
     }
   };
 
+  // Bloqueia os atalhos de teclado do próprio deck (setas, espaço, "p") enquanto
+  // o usuário está digitando dentro de um campo contentEditable, para não trocar
+  // de slide sem querer no meio da edição de texto.
+  const guardaTeclado = (e: KeyboardEvent) => {
+    const alvo = e.target as HTMLElement | null;
+    if (alvo?.isContentEditable) {
+      e.stopPropagation();
+    }
+  };
+
+  const entrarModoEdicao = () => {
+    const doc = iframeRef.current?.contentDocument;
+    if (!doc) {
+      setStatus({ tipo: "erro", texto: "Não foi possível acessar o conteúdo da apresentação para editar." });
+      return;
+    }
+
+    doc.body.contentEditable = "true";
+    doc.body.style.cursor = "text";
+
+    // marca, controles e ícones ficam fora da edição de texto
+    doc.querySelectorAll<HTMLElement>(".logo-zone, #deck-controls, svg").forEach((el) => {
+      el.contentEditable = "false";
+    });
+
+    doc.addEventListener("keydown", guardaTeclado, true);
+    editKeyGuardRef.current = guardaTeclado;
+
+    setStatus(null);
+    setModoEdicao(true);
+  };
+
+  const limparEdicao = () => {
+    const doc = iframeRef.current?.contentDocument;
+    if (doc) {
+      doc.body.contentEditable = "false";
+      doc.body.style.cursor = "";
+      if (editKeyGuardRef.current) {
+        doc.removeEventListener("keydown", editKeyGuardRef.current, true);
+        editKeyGuardRef.current = null;
+      }
+    }
+    setModoEdicao(false);
+  };
+
+  const descartarEdicao = () => {
+    limparEdicao();
+    setStatus(null);
+    carregarApresentacao();
+  };
+
+  const salvarEdicao = async () => {
+    const doc = iframeRef.current?.contentDocument;
+    if (!doc) {
+      setStatus({ tipo: "erro", texto: "Não foi possível ler o conteúdo editado." });
+      return;
+    }
+
+    setSalvando(true);
+    setStatus(null);
+    try {
+      const htmlFinal = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+      const res = await fetch("/api/admin/plano-negocio/apresentacao", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ html: htmlFinal }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || `HTTP ${res.status}`);
+      }
+      limparEdicao();
+      setStatus({
+        tipo: "ok",
+        texto: "Alterações salvas. O PDF baixável não é atualizado automaticamente — regenere-o à parte.",
+      });
+      carregarApresentacao();
+    } catch (err: any) {
+      setStatus({ tipo: "erro", texto: err?.message || "Erro ao salvar as alterações." });
+    } finally {
+      setSalvando(false);
+    }
+  };
+
   return (
     <div className="w-full flex flex-col gap-3">
       {/* Barra Responsiva de Ações Rápidas (Mobile, iPad e Desktop) */}
@@ -120,10 +220,43 @@ export function ApresentacaoPlano({ }: Props) {
         </div>
 
         <div className="flex items-center gap-1.5 sm:gap-2">
+          {modoEdicao ? (
+            <>
+              <button
+                type="button"
+                onClick={salvarEdicao}
+                disabled={salvando}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/90 disabled:opacity-60 text-[rgb(var(--color-brand-navy))] font-bold text-xs shadow transition cursor-pointer"
+              >
+                {salvando ? <RefreshCw className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
+                <span>{salvando ? "Salvando..." : "Salvar"}</span>
+              </button>
+              <button
+                type="button"
+                onClick={descartarEdicao}
+                disabled={salvando}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 disabled:opacity-60 text-white font-medium text-xs border border-white/15 transition"
+              >
+                <Undo2 className="size-3.5" />
+                <span className="hidden sm:inline">Descartar</span>
+              </button>
+            </>
+          ) : (
+            <button
+              type="button"
+              onClick={entrarModoEdicao}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-bold text-xs border border-white/15 transition cursor-pointer"
+            >
+              <Pencil className="size-3.5" />
+              <span>Editar</span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={alternarTelaCheia}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/90 text-[rgb(var(--color-brand-navy))] font-bold text-xs shadow transition cursor-pointer"
+            disabled={modoEdicao}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[rgb(var(--color-brand-mint))] hover:bg-[rgb(var(--color-brand-mint))]/90 disabled:opacity-40 text-[rgb(var(--color-brand-navy))] font-bold text-xs shadow transition cursor-pointer"
           >
             <Tv className="size-3.5" />
             <span>{telaCheia ? "Sair Tela Cheia" : "Tela Cheia"}</span>
@@ -149,6 +282,33 @@ export function ApresentacaoPlano({ }: Props) {
           </a>
         </div>
       </div>
+
+      {modoEdicao && (
+        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs">
+          <Pencil className="size-3.5 shrink-0" />
+          <span>
+            Modo de edição ativo — clique no texto dentro da apresentação para alterar. Nada é salvo até você clicar
+            em <strong>Salvar</strong>.
+          </span>
+        </div>
+      )}
+
+      {status && (
+        <div
+          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs border ${
+            status.tipo === "ok"
+              ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-200"
+              : "bg-red-500/10 border-red-500/30 text-red-200"
+          }`}
+        >
+          {status.tipo === "ok" ? (
+            <CheckCircle2 className="size-3.5 shrink-0" />
+          ) : (
+            <AlertTriangle className="size-3.5 shrink-0" />
+          )}
+          <span>{status.texto}</span>
+        </div>
+      )}
 
       {/* Container de exibição 100% responsivo para Mobile, iPad e Tela Cheia */}
       <div
