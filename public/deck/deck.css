@@ -407,3 +407,61 @@ html.export [data-anim].is-in {
   transform: none !important;
   transition: none !important;
 }
+
+/* GRÁFICO DE BARRAS QUE CRESCE AO ENTRAR NO SLIDE.
+   Cada .bar__fill sai de altura 0 e cresce até --h quando o ancestral
+   ganha .is-active (o mesmo gatilho que já revela o slide inteiro) — sem
+   precisar de JS extra por gráfico. Em modo de exportação a barra já
+   nasce na altura final, senão o PDF fotografaria o gráfico vazio. */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+  width: 100%;
+}
+.bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.bar__track {
+  width: 100%;
+  max-width: 80px;
+  height: var(--track-h, 140px);
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 2px solid rgba(0, 206, 255, 0.25);
+  margin: 0 auto;
+}
+.bar__fill {
+  width: 100%;
+  height: 0;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(180deg, #00CEFF 0%, #0077A8 100%);
+  box-shadow: 0 0 24px rgba(0, 206, 255, 0.35);
+  transition: height 1.1s var(--ease-out);
+}
+.bar--accent .bar__fill {
+  background: linear-gradient(180deg, #76F3CD 0%, #00CEFF 100%);
+}
+.is-active .bar__fill {
+  height: var(--h);
+}
+html.export .bar__fill {
+  height: var(--h) !important;
+  transition: none !important;
+}
+.bar__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: #F4F3EF;
+}
+.bar__label {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: #94B4BD;
+  text-align: center;
+}
