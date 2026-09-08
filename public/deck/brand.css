@@ -76,28 +76,70 @@
 /* Zona da Logomarca */
 .logo-zone {
   position: absolute;
-  top: 40px;
-  right: 50px;
+  top: auto;
+  bottom: 36px;
+  right: 44px;
+  left: auto;
   z-index: 100;
-  display: flex;
-  items-center: center;
+  display: inline-flex;
+  align-items: center;
   gap: 12px;
-  background: rgba(11, 31, 68, 0.7);
+  height: auto;
+  max-height: 48px;
+  background: rgba(11, 31, 68, 0.75);
   backdrop-filter: blur(12px);
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: 999px;
   border: 1px solid rgba(118, 243, 205, 0.25);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
-.logo-zone img {
-  height: var(--logo-h, 44px);
+.logo-zone img,
+.logo-zone svg {
+  height: var(--logo-h, 32px);
+  max-height: 36px;
   width: auto;
   object-fit: contain;
+  display: block;
+}
+
+.logo-zone--tr {
+  top: 36px;
+  bottom: auto;
+  right: 44px;
+  left: auto;
+}
+
+.logo-zone--tl {
+  top: 36px;
+  bottom: auto;
+  left: 44px;
+  right: auto;
+}
+
+.logo-zone--bl {
+  bottom: 36px;
+  top: auto;
+  left: 44px;
+  right: auto;
 }
 
 .logo-zone--br {
-  top: auto;
   bottom: 36px;
+  top: auto;
   right: 44px;
+  left: auto;
+}
+
+.logo-zone--hero {
+  top: 36px;
+  right: 44px;
+  bottom: auto;
+  left: auto;
+}
+
+.logo-zone--hero img,
+.logo-zone--hero svg {
+  height: 40px;
+  max-height: 44px;
 }

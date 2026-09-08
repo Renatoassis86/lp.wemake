@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+import re
+import os
+
+index_path = r'C:\repositorio\wemake\projetos_wemake\lp_wemake\public\deck\index.html'
+
+deck_html = '''<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -1275,3 +1280,9 @@
   <script src="/deck/motion.js"></script>
 </body>
 </html>
+'''
+
+with open(index_path, 'w', encoding='utf-8') as f:
+    f.write(deck_html)
+
+print('Successfully generated 40-Slide Master Deck with state densities and quantities!')

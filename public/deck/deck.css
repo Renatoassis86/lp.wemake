@@ -199,13 +199,13 @@ html, body {
    Padrão: inferior direito. Variantes: --tr, --tl, --bl, --hero, --onmedia. */
 .logo-zone {
   position: absolute; z-index: 20;
-  right: var(--logo-inset); bottom: var(--logo-inset);
-  display: flex; align-items: center; gap: 16px;
-  max-width: var(--logo-safe);
+  right: var(--logo-inset); bottom: var(--logo-inset); top: auto; left: auto;
+  display: inline-flex; align-items: center; gap: 16px;
+  max-width: var(--logo-safe); height: auto; max-height: 48px;
 }
 .logo-zone--tr { top: var(--logo-inset); bottom: auto; }
 .logo-zone--tl { top: var(--logo-inset); left: var(--logo-inset); right: auto; bottom: auto; }
-.logo-zone--bl { left: var(--logo-inset); right: auto; }
+.logo-zone--bl { left: var(--logo-inset); right: auto; top: auto; }
 .logo-zone img, .logo-zone svg { height: var(--logo-h); width: auto; display: block; }
 .logo-zone--hero img, .logo-zone--hero svg { height: calc(var(--logo-h) * 1.8); }
 /* marca sobre foto: cápsula de proteção; nunca logo solta em cima de imagem */
