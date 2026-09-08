@@ -15,7 +15,7 @@
   --fs-lede: 26px;
   --fs-body: 20px;
   --fs-small: 16px;
-  --fs-micro: 13px;
+  --fs-micro: 16px;
 
   --font-display: "Poppins", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -43,19 +43,29 @@ html, body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Canvas fixo de 1920x1080. motion.js aplica um transform:scale() pra caber
+   em qualquer moldura (preview pequeno no admin, aba cheia, apresentação),
+   em vez de deixar os slides reamostrar o proprio layout pixel a pixel —
+   e' isso que cortava icones e badges quando o iframe ficava menor que o
+   canvas de design. */
 .deck {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: var(--slide-w);
+  height: var(--slide-h);
   overflow: hidden;
+  flex: none;
+  transform-origin: center center;
 }
 
 .slide {
   position: absolute;
   top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  width: var(--slide-w); height: var(--slide-h);
   padding: 80px 100px 90px 100px;
   display: flex;
   flex-direction: column;
@@ -76,7 +86,7 @@ html, body {
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #00CEFF;
@@ -117,12 +127,22 @@ html, body {
 .split--50 { grid-template-columns: 1fr 1fr; }
 .split--60 { grid-template-columns: 1.2fr 0.8fr; }
 
-/* CARTÕES QUADRADOS COM BADGE DE 52PX DA MARCA */
+/* CARTÕES COM BADGE DE 52PX DA MARCA.
+   Altura pelo próprio conteúdo (não aspect-ratio 1:1 esticando pela largura
+   da coluna): num grid de 3 ou 4 colunas, esticar pela largura jogava a
+   altura pra mais de 500px e sobrava espaço vazio no meio do card. Um
+   número fixo tampouco funciona — corta o conteúdo quando o card tem mais
+   linhas que a média. max-height é só uma rede de segurança pro card nunca
+   alcançar o rodapé/a logomarca quando o título do slide empurra a grade
+   pra baixo. */
 .card--square {
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 16px;
   padding: 32px 24px 24px 24px;
   border-radius: 20px;
   background: rgba(0, 59, 73, 0.75);
@@ -130,6 +150,8 @@ html, body {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(16px);
   position: relative;
+  align-self: start;
+  overflow: hidden;
 }
 
 .card--accent {
@@ -167,7 +189,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 16px;
   color: #94B4BD;
 }
 
@@ -214,7 +236,7 @@ html, body {
 
 .org-node__role {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #00CEFF;
@@ -229,7 +251,7 @@ html, body {
 }
 
 .org-node__desc {
-  font-size: 13px;
+  font-size: 16px;
   color: #94B4BD;
   margin-top: 4px;
 }
@@ -267,7 +289,7 @@ html, body {
   padding-bottom: 8px;
   color: #00CEFF;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -291,13 +313,13 @@ html, body {
 
 .org-person strong {
   color: #F4F3EF;
-  font-size: 15px;
+  font-size: 16px;
   font-family: var(--font-display);
 }
 
 .org-person p {
   color: #94B4BD;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 /* CICLO MAKER */
@@ -320,7 +342,7 @@ html, body {
 
 .flow__num {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 16px;
   color: #00CEFF;
   font-weight: 800;
   display: block;
@@ -355,7 +377,7 @@ html, body {
   bottom: 48px;
   display: flex;
   gap: 16px;
-  font-size: 13px;
+  font-size: 16px;
   color: #94B4BD;
   font-family: var(--font-mono);
 }
@@ -363,9 +385,15 @@ html, body {
 /* EXPORTAÇÃO (build.py / PDF): empilha os slides em fluxo normal para que
    cada um ocupe sua própria área e possa ser fotografado individualmente.
    No carrossel ao vivo (sem .export), o comportamento continua intacto. */
+html.export, html.export body {
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+}
 html.export .deck {
   height: auto;
   overflow: visible;
+  transform: none !important;
 }
 html.export .slide {
   position: relative;

@@ -21,6 +21,18 @@
   const isExport = () => html.classList.contains('export');
   const slides = () => [...document.querySelectorAll('.slide')];
 
+  /* --- encaixa o canvas fixo de 1920x1080 em qualquer moldura ---
+     Sem isso, um iframe pequeno (preview do admin, por exemplo) força o
+     canvas a reamostrar 100vw/100vh, e badge/icone/texto desenhados para
+     1920px ficam cortados. Aqui o .deck mantém sempre 1920x1080 e só
+     recebe um transform:scale() proporcional ao espaço disponível. */
+  function fitToViewport() {
+    if (isExport()) return;
+    const deck = document.querySelector('.deck');
+    if (!deck) return;
+    const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = `scale(${scale})`;
+  }
 
   /* --- marca automática ---
      <body data-logo="img/marca.svg" data-logo-pos="br" data-logo-hero="1,13">
@@ -246,11 +258,18 @@
     splitWords();
     measureStrokes();
     injectControls();
+    fitToViewport();
     goto(0);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fitToViewport, 80);
+  });
 
   window.deckForge = {
     play: (i) => play(slides()[i]),
