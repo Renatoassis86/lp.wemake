@@ -274,6 +274,23 @@ function Avatar({ iniciais, cor }: { iniciais: string; cor: string }) {
   );
 }
 
+/** Painel de foto real, em cartão próprio — mais confiável que blend em fundo de tela cheia. */
+function FotoPainel({ src, legenda, className = "" }: { src: string; legenda?: string; className?: string }) {
+  return (
+    <motion.div
+      className={`relative rounded-2xl overflow-hidden border border-white/15 ${className}`}
+      initial={{ opacity: 0, scale: 0.96 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <Image src={src} alt="" width={520} height={640} className="w-full h-full object-cover" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 55%, rgba(11,31,68,0.85) 100%)" }} />
+      {legenda && <p className="absolute bottom-3 left-4 right-4 text-white/85 text-[0.75rem] font-medium">{legenda}</p>}
+    </motion.div>
+  );
+}
+
 /* ---------- Fundo por slide (fundo sobre fundo, tom sobre tom) ---------- */
 
 type VarianteFundo = "navy" | "royal" | "sky" | "dark";
@@ -294,7 +311,12 @@ function Fundo({ variante }: { variante: VarianteFundo }) {
 
 /* ---------- Slide wrapper ---------- */
 
-function Slide({ children, variante = "navy" }: { children: React.ReactNode; variante?: VarianteFundo }) {
+function Slide({
+  children, variante = "navy",
+}: {
+  children: React.ReactNode;
+  variante?: VarianteFundo;
+}) {
   const tomTexto = variante === "sky" ? "escuro" : "claro";
   return (
     <div className="relative w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-16 sm:py-20 overflow-y-auto" data-tom={tomTexto}>
@@ -307,13 +329,13 @@ function Slide({ children, variante = "navy" }: { children: React.ReactNode; var
 /* ================= Dados de apoio ================= */
 
 const EQUIPE_FILHOS = [
-  { nome: "Renato Silva de Assis", cargo: "Gerente Administrativo", cor: "rgb(var(--color-brand-royal))" },
-  { nome: "Emanuel Peixoto", cargo: "Marketing", cor: "rgb(var(--color-brand-sky))" },
-  { nome: "Suzana Bonifazio", cargo: "Consultora Pedagógica", cor: "rgb(var(--color-brand-mint))" },
-  { nome: "Emanuela Monteiro", cargo: "Consultoria e Negócios", cor: "rgb(var(--color-brand-mint))" },
-  { nome: "Christiano Bonifazio", cargo: "Comercial, SP", cor: "rgb(var(--color-brand-sky))" },
-  { nome: "Equipe de tecnologia", cargo: "3 devs + 1 dados", cor: "rgb(var(--color-brand-royal))" },
-  { nome: "Iran Firmino", cargo: "Contador", cor: "rgb(var(--color-brand-mint))" },
+  { nome: "Renato Silva de Assis", cargo: "Gerente Administrativo", cor: "rgb(var(--color-brand-royal))", iniciais: "RA" },
+  { nome: "Emanuel Peixoto", cargo: "Marketing", cor: "rgb(var(--color-brand-sky))", iniciais: "EP" },
+  { nome: "Suzana Bonifazio", cargo: "Consultora Pedagógica", cor: "rgb(var(--color-brand-mint))", iniciais: "SB" },
+  { nome: "Emanuela Monteiro", cargo: "Consultoria e Negócios", cor: "rgb(var(--color-brand-mint))", iniciais: "EM" },
+  { nome: "Christiano Bonifazio", cargo: "Comercial, SP", cor: "rgb(var(--color-brand-sky))", iniciais: "CB" },
+  { nome: "Equipe de tecnologia", cargo: "3 devs + 1 dados", cor: "rgb(var(--color-brand-royal))", iniciais: "TI" },
+  { nome: "Iran Firmino", cargo: "Contador", cor: "rgb(var(--color-brand-mint))", iniciais: "IF" },
 ];
 
 /* ================= Componente principal ================= */
@@ -331,35 +353,40 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
   const slides = [
     // 0 — capa
     <Slide key="capa" variante="dark">
-      <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8">
-        <Image src="/photos/2.png" alt="We Make" width={180} height={54} className="h-11 sm:h-12 w-auto object-contain" priority />
-      </motion.div>
-      <motion.p
-        className="font-mono text-xs uppercase tracking-[0.3em] text-[rgb(var(--color-brand-mint))] font-bold mb-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.15 }}
-      >
-        Plano de Negócio · 2027–2031
-      </motion.p>
-      <motion.h1
-        className="font-display text-white text-[clamp(2.25rem,7vw,5rem)] leading-[1.02] max-w-5xl text-balance"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      >
-        O primeiro sistema de educação tecnológica com cosmovisão cristã do Brasil.
-      </motion.h1>
-      <motion.div
-        className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-white/40 text-xs font-mono uppercase tracking-widest"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.1 }}
-      >
-        <span>We Make Educação Tecnológica LTDA</span>
-        <span>CNPJ 48.760.895/0001-99</span>
-        <span>Documento confidencial</span>
-      </motion.div>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+        <div>
+          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8">
+            <Image src="/photos/2.png" alt="We Make" width={180} height={54} className="h-11 sm:h-12 w-auto object-contain" priority />
+          </motion.div>
+          <motion.p
+            className="font-mono text-xs uppercase tracking-[0.3em] text-[rgb(var(--color-brand-mint))] font-bold mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            Plano de Negócio · 2027–2031
+          </motion.p>
+          <motion.h1
+            className="font-display text-white text-[clamp(2rem,5.5vw,4.25rem)] leading-[1.03] text-balance"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            O primeiro sistema de educação tecnológica com cosmovisão cristã do Brasil.
+          </motion.h1>
+          <motion.div
+            className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-white/40 text-xs font-mono uppercase tracking-widest"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+          >
+            <span>We Make Educação Tecnológica LTDA</span>
+            <span>CNPJ 48.760.895/0001-99</span>
+            <span>Documento confidencial</span>
+          </motion.div>
+        </div>
+        <FotoPainel src="/photos/maker_student.png" legenda="Aluno de escola parceira com robô construído em aula" className="aspect-[4/5] hidden lg:block" />
+      </div>
     </Slide>,
 
     // 1 — tração
@@ -441,26 +468,21 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 4 — fluxo do sistema (hub e satélites)
-    <Slide key="fluxo-sistema" variante="sky">
-      <Eyebrow tom="navy">Capítulo 3 · Como o sistema se conecta</Eyebrow>
-      <Titulo tom="escuro">O currículo alimenta e é alimentado por cada um dos outros quatro componentes.</Titulo>
-      <div className="mt-8">
+    <Slide key="fluxo-sistema" variante="dark">
+      <Eyebrow>Capítulo 3 · Como o sistema se conecta</Eyebrow>
+      <Titulo>O currículo alimenta e é alimentado por cada um dos outros quatro componentes.</Titulo>
+      <div className="mt-6">
         <FluxoCurriculo
           centro="Kit We Make"
           satelites={[
-            { titulo: "Currículo", cor: "#0b1f44" },
-            { titulo: "Plataforma", cor: "#0b1f44" },
-            { titulo: "Formação", cor: "#0b1f44" },
-            { titulo: "Espaço maker", cor: "#0b1f44" },
-            { titulo: "Assessoria", cor: "#0b1f44" },
+            { titulo: "Currículo", texto: "Define o que ensinar", icone: BookOpen },
+            { titulo: "Plataforma", texto: "Distribui e acompanha", icone: Cpu },
+            { titulo: "Formação", texto: "Prepara o professor", icone: GraduationCap },
+            { titulo: "Espaço maker", texto: "Traduz em ambiente", icone: Wrench },
+            { titulo: "Assessoria", texto: "Integra a estratégia", icone: Compass },
           ]}
         />
       </div>
-      <p className="text-[rgb(var(--color-brand-navy))]/70 text-sm max-w-xl mt-4">
-        O currículo gera necessidade de formação, a formação melhora a implementação do currículo, a plataforma
-        sustenta os dois, o espaço maker traduz o currículo em ambiente físico e a assessoria integra tudo na
-        estratégia da instituição.
-      </p>
     </Slide>,
 
     // 5 — currículo em detalhe
@@ -552,62 +574,72 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
     // 8 — homeschool
     <Slide key="homeschool" variante="dark">
-      <Eyebrow>Segundo mercado</Eyebrow>
-      <Titulo>O mesmo currículo, adaptado para famílias educadoras em comunidades de homeschooling.</Titulo>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-9">
-        {["Programação Criativa", "Robótica e Automação", "Engenharia e Prototipagem", "Modelagem e Impressão 3D"].map((t, i) => (
-          <Cartao key={t} delay={i * 0.1}>
-            <p className="text-white/85 text-[0.875rem] font-medium leading-snug">{t}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
+        <div>
+          <Eyebrow>Segundo mercado</Eyebrow>
+          <Titulo>O mesmo currículo, adaptado para famílias educadoras em comunidades de homeschooling.</Titulo>
+          <div className="grid grid-cols-2 gap-3 mt-9">
+            {["Programação Criativa", "Robótica e Automação", "Engenharia e Prototipagem", "Modelagem e Impressão 3D"].map((t, i) => (
+              <Cartao key={t} delay={i * 0.1}>
+                <p className="text-white/85 text-[0.875rem] font-medium leading-snug">{t}</p>
+              </Cartao>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-3 mt-4">
+            {["Gramática", "Lógica", "Retórica"].map((n, i) => (
+              <motion.div
+                key={n}
+                className="rounded-full border border-[rgb(var(--color-brand-mint))]/40 px-4 py-2"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 + i * 0.12, duration: 0.4 }}
+              >
+                <span className="font-mono text-[0.75rem] text-[rgb(var(--color-brand-mint))] uppercase tracking-wider font-bold">
+                  Nível {i + 1} · {n}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+          <Cartao delay={0.75} className="mt-5">
+            <p className="text-white/70 text-sm leading-relaxed">
+              Entrega inteiramente digital. Venda e cobrança conduzidas por parceira comercial já estabelecida
+              nesse mercado, com negociação avançada em curso com a Aspen. Primeira venda projetada para 2027: 100
+              alunos, R$49.890,00.
+            </p>
           </Cartao>
-        ))}
+        </div>
+        <FotoPainel src="/photos/salamaker3.png" legenda="Ambiente maker em escola parceira" className="aspect-[4/5] hidden lg:block" />
       </div>
-      <div className="flex flex-wrap gap-3 mt-4">
-        {["Gramática", "Lógica", "Retórica"].map((n, i) => (
-          <motion.div
-            key={n}
-            className="rounded-full border border-[rgb(var(--color-brand-mint))]/40 px-4 py-2"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 + i * 0.12, duration: 0.4 }}
-          >
-            <span className="font-mono text-[0.75rem] text-[rgb(var(--color-brand-mint))] uppercase tracking-wider font-bold">
-              Nível {i + 1} · {n}
-            </span>
-          </motion.div>
-        ))}
-      </div>
-      <Cartao delay={0.75} className="mt-5 max-w-2xl">
-        <p className="text-white/70 text-sm leading-relaxed">
-          Entrega inteiramente digital. Venda e cobrança conduzidas por parceira comercial já estabelecida nesse
-          mercado, com negociação avançada em curso com a Aspen. Primeira venda projetada para 2027: 100 alunos,
-          R$49.890,00.
-        </p>
-      </Cartao>
     </Slide>,
 
     // 9 — Academia We Make
     <Slide key="academia" variante="navy">
-      <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
-      <Titulo>A Academia We Make garante que o currículo dependa de professores preparados, não só de bons materiais.</Titulo>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-8">
-        {["Apresentação", "Onboarding", "Diagnóstico de entrada", "Implantação intensiva", "Acompanhamento contínuo", "Formação temática", "Diagnóstico de meio de ciclo", "Prescrição de resultados"].map((f, i) => (
-          <motion.div
-            key={f}
-            className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.06, duration: 0.4 }}
-          >
-            <p className="font-mono text-[rgb(var(--color-brand-mint))] text-[0.6875rem] mb-1">{String(i + 1).padStart(2, "0")}</p>
-            <p className="text-white/75 text-[0.75rem] leading-snug">{f}</p>
-          </motion.div>
-        ))}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
+        <div>
+          <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
+          <Titulo>A Academia We Make garante que o currículo dependa de professores preparados, não só de bons materiais.</Titulo>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-8">
+            {["Apresentação", "Onboarding", "Diagnóstico de entrada", "Implantação intensiva", "Acompanhamento contínuo", "Formação temática", "Diagnóstico de meio de ciclo", "Prescrição de resultados"].map((f, i) => (
+              <motion.div
+                key={f}
+                className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06, duration: 0.4 }}
+              >
+                <p className="font-mono text-[rgb(var(--color-brand-mint))] text-[0.6875rem] mb-1">{String(i + 1).padStart(2, "0")}</p>
+                <p className="text-white/75 text-[0.75rem] leading-snug">{f}</p>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-white/40 text-xs mt-5 max-w-xl">
+            Financiada pela mesma receita do Kit We Make, sem cobrança adicional.
+          </p>
+        </div>
+        <FotoPainel src="/photos/formacao_docente.png" legenda="Formação de professores parceiros" className="aspect-[4/5] hidden lg:block" />
       </div>
-      <p className="text-white/40 text-xs mt-5 max-w-xl">
-        Financiada pela mesma receita do Kit We Make, sem cobrança adicional.
-      </p>
     </Slide>,
 
     // 10 — por que agora (federal)
@@ -811,7 +843,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Titulo>Uma liderança pequena, com presença direta em cada etapa da entrega.</Titulo>
       <div className="mt-10">
         <Organograma
-          topo={{ nome: "Dênis Júlio Pereira Francisco", cargo: "CEO e Diretor Pedagógico", cor: "rgb(var(--color-brand-mint))" }}
+          topo={{
+            nome: "Dênis Júlio Pereira Francisco",
+            cargo: "CEO e Diretor Pedagógico",
+            cor: "rgb(var(--color-brand-mint))",
+            iniciais: "DJ",
+            foto: "/photos/denis_profile.png",
+          }}
           filhos={EQUIPE_FILHOS}
         />
       </div>

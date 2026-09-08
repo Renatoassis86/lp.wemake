@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
 /* ================= Mapa do Brasil (coroplético, sem lib externa) ================= */
@@ -148,80 +149,91 @@ export function MapaBrasil({
   );
 }
 
-/* ================= Organograma ================= */
+/* ================= Organograma (flexbox puro, sem matemática de viewBox) ================= */
 
 interface NoOrganograma {
   nome: string;
   cargo: string;
   cor: string;
+  iniciais: string;
+  foto?: string;
 }
 
 export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoOrganograma[] }) {
-  const ref = useRef<SVGSVGElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const width = 760;
-  const rowTopoY = 34;
-  const rowFilhosY = 150;
-  const n = filhos.length;
-  const stepX = width / n;
 
   return (
-    <div className="relative">
-      <svg ref={ref} viewBox={`0 0 ${width} 190`} className="w-full h-auto overflow-visible">
-        {filhos.map((_, i) => {
-          const x = stepX * i + stepX / 2;
-          const midY = (rowTopoY + rowFilhosY) / 2;
-          const d = `M ${width / 2} ${rowTopoY + 14} L ${width / 2} ${midY} L ${x} ${midY} L ${x} ${rowFilhosY - 14}`;
-          return (
-            <motion.path
-              key={i}
-              d={d}
-              fill="none"
-              stroke="rgba(255,255,255,0.25)"
-              strokeWidth={1.5}
-              initial={{ pathLength: 0 }}
-              animate={emVista ? { pathLength: 1 } : {}}
-              transition={{ delay: 0.3 + i * 0.08, duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
-            />
-          );
-        })}
-      </svg>
-
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute -translate-x-1/2 flex flex-col items-center text-center"
-          style={{ left: "50%", top: 0 }}
-          initial={{ opacity: 0, y: -10 }}
-          animate={emVista ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          <div
-            className="rounded-xl px-4 py-2 border"
-            style={{ background: `${topo.cor}1a`, borderColor: `${topo.cor}66` }}
-          >
-            <p className="text-white text-[0.8125rem] font-medium whitespace-nowrap">{topo.nome}</p>
-            <p className="font-mono text-[0.625rem] uppercase tracking-wider mt-0.5" style={{ color: topo.cor }}>{topo.cargo}</p>
+    <div ref={ref} className="flex flex-col items-center">
+      {/* Nó do topo — visualmente maior, para marcar hierarquia real */}
+      <motion.div
+        className="flex items-center gap-3 rounded-2xl border-2 px-5 py-3.5"
+        style={{ background: `${topo.cor}1f`, borderColor: topo.cor }}
+        initial={{ opacity: 0, y: -14 }}
+        animate={emVista ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+      >
+        {topo.foto ? (
+          <div className="size-12 rounded-full overflow-hidden shrink-0 ring-2" style={{ boxShadow: `0 0 0 2px ${topo.cor}` }}>
+            <Image src={topo.foto} alt={topo.nome} width={48} height={48} className="size-full object-cover" />
           </div>
-        </motion.div>
+        ) : (
+          <div
+            className="size-11 rounded-full flex items-center justify-center font-display text-base font-bold shrink-0"
+            style={{ background: topo.cor, color: "rgb(var(--color-brand-navy))" }}
+          >
+            {topo.iniciais}
+          </div>
+        )}
+        <div className="text-left">
+          <p className="text-white text-[0.9375rem] font-semibold leading-snug">{topo.nome}</p>
+          <p className="font-mono text-[0.6875rem] uppercase tracking-wider" style={{ color: topo.cor }}>{topo.cargo}</p>
+        </div>
+      </motion.div>
 
-        {filhos.map((f, i) => {
-          const leftPct = ((stepX * i + stepX / 2) / width) * 100;
-          return (
+      {/* Tronco vertical até a linha de distribuição */}
+      <motion.div
+        className="w-px bg-white/25"
+        initial={{ height: 0 }}
+        animate={emVista ? { height: 28 } : {}}
+        transition={{ delay: 0.35, duration: 0.35 }}
+      />
+      <motion.div
+        className="h-px bg-white/25"
+        style={{ maxWidth: 720 }}
+        initial={{ width: 0 }}
+        animate={emVista ? { width: "100%" } : {}}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      />
+
+      {/* Filhos, cada um com seu próprio galho vertical */}
+      <div className="flex flex-wrap justify-center gap-x-2 gap-y-6 mt-0 max-w-4xl">
+        {filhos.map((f, i) => (
+          <div key={f.nome} className="flex flex-col items-center w-[7.5rem]">
             <motion.div
-              key={f.nome}
-              className="absolute -translate-x-1/2 flex flex-col items-center text-center w-[6.4rem]"
-              style={{ left: `${leftPct}%`, top: 116 }}
+              className="w-px bg-white/25"
+              initial={{ height: 0 }}
+              animate={emVista ? { height: 20 } : {}}
+              transition={{ delay: 0.55 + i * 0.06, duration: 0.3 }}
+            />
+            <motion.div
+              className="rounded-xl border px-2.5 py-2 text-center w-full"
+              style={{ background: `${f.cor}14`, borderColor: `${f.cor}55` }}
               initial={{ opacity: 0, y: 10 }}
               animate={emVista ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.5 + i * 0.08, duration: 0.4 }}
+              transition={{ delay: 0.6 + i * 0.06, duration: 0.4 }}
             >
-              <div className="rounded-lg px-2 py-1.5 border w-full" style={{ background: `${f.cor}14`, borderColor: `${f.cor}55` }}>
-                <p className="text-white/85 text-[0.6875rem] font-medium leading-snug">{f.nome}</p>
-                <p className="font-mono text-[0.5625rem] uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
+              <div
+                className="size-7 rounded-full flex items-center justify-center font-display text-[0.6875rem] font-bold mx-auto mb-1.5"
+                style={{ background: `${f.cor}33`, color: f.cor }}
+              >
+                {f.iniciais}
               </div>
+              <p className="text-white/85 text-[0.6875rem] font-medium leading-snug">{f.nome}</p>
+              <p className="font-mono text-[0.5625rem] uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
             </motion.div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -231,37 +243,45 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
 
 interface NoFluxo {
   titulo: string;
-  cor: string;
+  texto: string;
+  icone: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }
 
 export function FluxoCurriculo({ centro, satelites }: { centro: string; satelites: NoFluxo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 460;
+  const size = 620;
   const cx = size / 2;
   const cy = size / 2;
-  const rOrbita = 172;
+  const rOrbita = 232;
   const n = satelites.length;
 
   return (
     <div className="relative mx-auto" style={{ maxWidth: size }}>
       <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-auto overflow-visible">
+        <defs>
+          <marker id="seta-fluxo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="rgb(var(--color-brand-mint))" />
+          </marker>
+        </defs>
         {satelites.map((_, i) => {
           const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
-          const x = cx + Math.cos(ang) * rOrbita;
-          const y = cy + Math.sin(ang) * rOrbita;
+          const x1 = cx + Math.cos(ang) * 76;
+          const y1 = cy + Math.sin(ang) * 76;
+          const x2 = cx + Math.cos(ang) * (rOrbita - 66);
+          const y2 = cy + Math.sin(ang) * (rOrbita - 66);
           return (
             <motion.line
               key={i}
-              x1={cx}
-              y1={cy}
-              x2={x}
-              y2={y}
+              x1={x1}
+              y1={y1}
+              x2={x2}
+              y2={y2}
               stroke="rgb(var(--color-brand-mint))"
-              strokeWidth={1.5}
-              strokeDasharray="3 4"
+              strokeWidth={2}
+              markerEnd="url(#seta-fluxo)"
               initial={{ pathLength: 0, opacity: 0 }}
-              animate={emVista ? { pathLength: 1, opacity: 0.55 } : {}}
+              animate={emVista ? { pathLength: 1, opacity: 0.8 } : {}}
               transition={{ delay: 0.4 + i * 0.1, duration: 0.6 }}
             />
           );
@@ -269,35 +289,49 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
         <motion.circle
           cx={cx}
           cy={cy}
-          r={58}
+          r={70}
           fill="rgb(var(--color-brand-mint))"
           initial={{ scale: 0 }}
           animate={emVista ? { scale: 1 } : {}}
           transition={{ duration: 0.5, ease: "backOut" }}
+        />
+        <motion.circle
+          cx={cx}
+          cy={cy}
+          r={70}
+          fill="none"
+          stroke="rgb(var(--color-brand-mint))"
+          strokeWidth={1}
+          initial={{ scale: 1, opacity: 0.6 }}
+          animate={emVista ? { scale: [1, 1.35], opacity: [0.6, 0] } : {}}
+          transition={{ delay: 1.2, duration: 1.8, repeat: Infinity, repeatDelay: 0.8 }}
         />
       </svg>
 
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center"
-          style={{ left: "50%", top: "50%", width: 108 }}
+          style={{ left: "50%", top: "50%", width: 130 }}
         >
-          <p className="font-display text-[rgb(var(--color-brand-navy))] text-[0.9375rem] leading-tight font-semibold">{centro}</p>
+          <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] leading-tight font-semibold">{centro}</p>
         </div>
         {satelites.map((s, i) => {
           const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
           const leftPct = ((cx + Math.cos(ang) * rOrbita) / size) * 100;
           const topPct = ((cy + Math.sin(ang) * rOrbita) / size) * 100;
+          const Icone = s.icone;
           return (
             <motion.div
               key={s.titulo}
-              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-xl border px-3 py-2 text-center pointer-events-auto"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, background: `${s.cor}1f`, borderColor: `${s.cor}66`, width: 118 }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border bg-[rgb(var(--color-brand-navy))]/70 backdrop-blur-sm px-4 py-3 text-center pointer-events-auto"
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: 148 }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.6 + i * 0.1, duration: 0.4, ease: "backOut" }}
+              transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
             >
-              <p className="text-white text-[0.75rem] font-medium leading-snug">{s.titulo}</p>
+              <Icone className="size-5 text-[rgb(var(--color-brand-mint))] mx-auto mb-1.5" strokeWidth={1.75} />
+              <p className="text-white text-[0.8125rem] font-semibold leading-snug">{s.titulo}</p>
+              <p className="text-white/50 text-[0.625rem] leading-snug mt-0.5">{s.texto}</p>
             </motion.div>
           );
         })}
@@ -318,21 +352,28 @@ interface PontoMatriz {
 export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 420;
-  const pad = 46;
+  const size = 480;
+  const pad = 54;
+  const meio = (size + pad) / 2;
 
   return (
-    <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-auto max-w-md overflow-visible">
-      <line x1={pad} y1={pad} x2={pad} y2={size - pad} stroke="rgba(255,255,255,0.2)" strokeWidth={1} />
-      <line x1={pad} y1={size - pad} x2={size - pad} y2={size - pad} stroke="rgba(255,255,255,0.2)" strokeWidth={1} />
-      <line x1={(size) / 2} y1={pad} x2={size / 2} y2={size - pad} stroke="rgba(255,255,255,0.08)" strokeWidth={1} strokeDasharray="3 4" />
-      <line x1={pad} y1={size / 2} x2={size - pad} y2={size / 2} stroke="rgba(255,255,255,0.08)" strokeWidth={1} strokeDasharray="3 4" />
+    <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-auto overflow-visible">
+      {/* Quadrantes sombreados: mais forte no canto de alta prob. x alto impacto */}
+      <rect x={pad} y={pad} width={(size - pad * 2) / 2} height={(size - pad * 2) / 2} fill="rgba(232,96,122,0.10)" />
+      <rect x={meio - pad / 2} y={pad} width={(size - pad * 2) / 2} height={(size - pad * 2) / 2} fill="rgba(255,204,0,0.09)" />
+      <rect x={pad} y={meio - pad / 2} width={(size - pad * 2) / 2} height={(size - pad * 2) / 2} fill="rgba(255,255,255,0.03)" />
+      <rect x={meio - pad / 2} y={meio - pad / 2} width={(size - pad * 2) / 2} height={(size - pad * 2) / 2} fill="rgba(118,243,205,0.06)" />
 
-      <text x={pad - 10} y={size / 2} textAnchor="end" fontFamily="var(--font-mono)" fontSize={9} fill="rgba(255,255,255,0.4)" transform={`rotate(-90 ${pad - 10} ${size / 2})`}>
-        IMPACTO
+      <line x1={pad} y1={pad} x2={pad} y2={size - pad} stroke="rgba(255,255,255,0.3)" strokeWidth={1.5} />
+      <line x1={pad} y1={size - pad} x2={size - pad} y2={size - pad} stroke="rgba(255,255,255,0.3)" strokeWidth={1.5} />
+      <line x1={size / 2} y1={pad} x2={size / 2} y2={size - pad} stroke="rgba(255,255,255,0.12)" strokeWidth={1} strokeDasharray="3 4" />
+      <line x1={pad} y1={size / 2} x2={size - pad} y2={size / 2} stroke="rgba(255,255,255,0.12)" strokeWidth={1} strokeDasharray="3 4" />
+
+      <text x={pad - 14} y={size / 2} textAnchor="end" fontFamily="var(--font-mono)" fontSize={11} fontWeight={700} letterSpacing="0.08em" fill="rgba(255,255,255,0.55)" transform={`rotate(-90 ${pad - 14} ${size / 2})`}>
+        IMPACTO →
       </text>
-      <text x={size / 2} y={size - pad + 20} textAnchor="middle" fontFamily="var(--font-mono)" fontSize={9} fill="rgba(255,255,255,0.4)">
-        PROBABILIDADE
+      <text x={size / 2} y={size - pad + 24} textAnchor="middle" fontFamily="var(--font-mono)" fontSize={11} fontWeight={700} letterSpacing="0.08em" fill="rgba(255,255,255,0.55)">
+        PROBABILIDADE →
       </text>
 
       {pontos.map((p, i) => {
@@ -345,8 +386,9 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
             animate={emVista ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.3 + i * 0.1, duration: 0.4, ease: "backOut" }}
           >
-            <circle cx={x} cy={y} r={7} fill={p.cor} />
-            <text x={x} y={y - 13} textAnchor="middle" fontFamily="var(--font-sans)" fontSize={9.5} fill="rgba(255,255,255,0.8)">
+            <circle cx={x} cy={y} r={20} fill={p.cor} fillOpacity={0.18} />
+            <circle cx={x} cy={y} r={9} fill={p.cor} />
+            <text x={x} y={y - 27} textAnchor="middle" fontFamily="var(--font-sans)" fontSize={12} fontWeight={600} fill="rgba(255,255,255,0.9)">
               {p.label}
             </text>
           </motion.g>
@@ -361,43 +403,64 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
 export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: string }[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 220;
-  const r = 78;
-  const stroke = 30;
+  const size = 340;
+  const r = 128;
+  const stroke = 42;
   const c = 2 * Math.PI * r;
+  const maior = fatias.reduce((m, f) => (f.pct > m.pct ? f : m), fatias[0]!);
   let acumulado = 0;
 
   return (
-    <div className="flex items-center gap-6 flex-wrap">
-      <svg ref={ref} viewBox={`0 0 ${size} ${size}`} width={size} height={size} className="shrink-0">
-        <g transform={`translate(${size / 2},${size / 2}) rotate(-90)`}>
-          {fatias.map((f, i) => {
-            const len = (f.pct / 100) * c;
-            const offset = c - (acumulado / 100) * c;
-            acumulado += f.pct;
-            return (
-              <motion.circle
-                key={f.label}
-                r={r}
-                fill="none"
-                stroke={f.cor}
-                strokeWidth={stroke}
-                strokeDasharray={`${len} ${c - len}`}
-                initial={{ strokeDashoffset: c, opacity: 0 }}
-                animate={emVista ? { strokeDashoffset: offset, opacity: 1 } : {}}
-                transition={{ delay: i * 0.15, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              />
-            );
-          })}
-        </g>
-      </svg>
-      <div className="flex flex-col gap-1.5">
-        {fatias.map((f) => (
-          <div key={f.label} className="flex items-center gap-2">
-            <span className="size-2.5 rounded-full shrink-0" style={{ background: f.cor }} />
-            <span className="text-white/70 text-[0.75rem]">{f.label}</span>
-            <span className="font-mono text-white/40 text-[0.6875rem]">{f.pct}%</span>
-          </div>
+    <div className="flex items-center gap-10 flex-wrap">
+      <div className="relative shrink-0" style={{ width: size, height: size }}>
+        <svg ref={ref} viewBox={`0 0 ${size} ${size}`} width={size} height={size}>
+          <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth={stroke} />
+          <g transform={`translate(${size / 2},${size / 2}) rotate(-90)`}>
+            {fatias.map((f, i) => {
+              const len = (f.pct / 100) * c;
+              const offset = c - (acumulado / 100) * c;
+              acumulado += f.pct;
+              return (
+                <motion.circle
+                  key={f.label}
+                  r={r}
+                  fill="none"
+                  stroke={f.cor}
+                  strokeWidth={stroke}
+                  strokeLinecap="butt"
+                  strokeDasharray={`${len} ${c - len}`}
+                  initial={{ strokeDashoffset: c, opacity: 0 }}
+                  animate={emVista ? { strokeDashoffset: offset, opacity: 1 } : {}}
+                  transition={{ delay: i * 0.15, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                />
+              );
+            })}
+          </g>
+        </svg>
+        <motion.div
+          className="absolute inset-0 flex flex-col items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={emVista ? { opacity: 1 } : {}}
+          transition={{ delay: 0.9, duration: 0.5 }}
+        >
+          <p className="font-display text-white text-4xl font-semibold">{maior.pct}%</p>
+          <p className="text-white/45 text-[0.75rem] max-w-[7rem] text-center leading-snug mt-1">{maior.label}</p>
+        </motion.div>
+      </div>
+      <div className="flex flex-col gap-2.5">
+        {fatias.map((f, i) => (
+          <motion.div
+            key={f.label}
+            className="flex items-center gap-2.5"
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
+          >
+            <span className="size-3 rounded-full shrink-0" style={{ background: f.cor }} />
+            <span className="text-white/75 text-[0.875rem]">{f.label}</span>
+            <span className="font-mono text-white/45 text-[0.8125rem] tabular-nums">{f.pct}%</span>
+          </motion.div>
         ))}
       </div>
     </div>
