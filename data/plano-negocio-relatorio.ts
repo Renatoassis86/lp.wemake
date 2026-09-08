@@ -50,12 +50,12 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O sistema atende hoje dois mercados que compartilham a mesma estrutura pedagógica: escolas confessionais cristãs e famílias educadoras organizadas em comunidades de homeschooling. A partir do quarto ano deste plano, 2030, a empresa pretende lançar dois novos negócios, autônomos em relação ao sistema escolar: a escola técnica de tecnologia para crianças e adolescentes em geral e a faculdade de tecnologia, ambos voltados a atender indivíduos independentemente de vínculo com uma escola parceira.",
+              "O sistema atende hoje dois mercados que compartilham a mesma estrutura pedagógica: escolas confessionais cristãs e famílias educadoras organizadas em comunidades de homeschooling. A partir do quarto ano deste plano, 2030, a empresa pretende lançar dois novos negócios, autônomos em relação ao sistema escolar: a escola tecnologia para crianças e adolescentes em geral e a faculdade de tecnologia, ambos voltados a atender indivíduos independentemente de vínculo com uma escola parceira.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "O planejamento orçamentário de 2027, já consolidado mês a mês, projeta receita de escolas de R$1.100.000,00, sendo R$951.961,90 já contratados e R$148.038,10 de escolas em fase final de negociação, com fechamento previsto para as próximas semanas. A isso se soma, como receita adicional e distinta, R$49.890,00 da primeira venda da trilha de currículo para famílias educadoras, totalizando R$1.149.890,00 de receita no exercício. A despesa total soma R$844.365,14, resultando em resultado operacional positivo de R$305.524,86, margem de 26,6%.",
+              "O planejamento orçamentário de 2027, já consolidado mês a mês, projeta receita de escolas de R$1.100.000,00, sendo R$951.961,90 já contratados (86,5%) e R$148.038,10 de escolas em fase final de negociação. A isso se soma R$49.890,00 da primeira venda da trilha para famílias educadoras (comercializada em parceria com a Aspen), totalizando R$1.149.890,00 de receita no exercício. A despesa total soma R$848.913,14, resultando em resultado operacional positivo de R$300.976,86 (margem de 26,2%), partindo de um caixa inicial de referência de R$50.000,00.",
           },
           {
             tipo: "stats",
@@ -63,15 +63,15 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               { label: "Escolas parceiras (2026)", valor: "12" },
               { label: "Alunos atendidos (2026)", valor: "~2.000" },
               { label: "Receita total 2027 (escolas + homeschool)", valor: "R$ 1.149.890" },
-              { label: "Resultado operacional 2027", valor: "R$ 305.525" },
-              { label: "Margem operacional 2027", valor: "26,6%" },
-              { label: "Meta de alunos 2027 → 2031", valor: "4.000 → 8.000" },
+              { label: "Resultado operacional 2027", valor: "R$ 300.977" },
+              { label: "Margem operacional 2027", valor: "26,2%" },
+              { label: "Meta de alunos 2027 → 2031", valor: "4.000 → 20.250" },
             ],
           },
           {
             tipo: "paragrafo",
             texto:
-              "Este plano organiza premissas, metas e projeções em torno do sistema integrado que a empresa já entrega a escolas e famílias educadoras, e trata a escola técnica e a faculdade de tecnologia como horizonte de expansão claramente delimitado no tempo, condicionado à consolidação do sistema atual.",
+              "Este plano organiza premissas, metas e projeções em torno do sistema integrado que a empresa já entrega a escolas e famílias educadoras, e trata a escola tecnologia e a faculdade de tecnologia como horizonte de expansão claramente delimitado no tempo, condicionado à consolidação do sistema atual.",
           },
         ],
       },
@@ -90,13 +90,13 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Ser referência em educação tecnológica fundamentada na cosmovisão cristã, formando uma geração capaz de compreender, criar e utilizar tecnologia com sabedoria, excelência e responsabilidade para a glória de Deus e o bem do próximo.",
+              "Formar uma geração que cria tecnologia com sabedoria, para a glória de Deus e o bem do próximo.",
           },
           { tipo: "subtitulo", texto: "Missão" },
           {
             tipo: "paragrafo",
             texto:
-              "Pensar, estudar, desenvolver e ensinar educação tecnológica com excelência, liberdade e responsabilidade em resposta a Deus, equipando escolas, educadores, famílias e comunidades com currículo, formação, tecnologia, ambientes e orientação para formar crianças e adolescentes com sabedoria para o mundo tecnológico.",
+              "Equipar escolas e famílias para ensinar tecnologia com verdade, beleza e bondade.",
           },
           { tipo: "subtitulo", texto: "Valores" },
           {
@@ -476,7 +476,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Um nível equivale a um semestre completo, com encontro semanal entre tutor e aluno e acesso contínuo ao conteúdo prático da trilha pela plataforma digital. No ritmo esperado, a família conclui dois níveis por ano dentro da mesma trilha, e a trilha completa em cerca de um ano e meio. O acesso à plataforma é organizado por família, não por aluno isolado: o responsável tem acesso único, capaz de acompanhar mais de um filho matriculado, sem cobrança duplicada.",
+              "Um nível equivale a um semestre completo, com encontro semanal entre tutor e aluno e acesso contínuo ao conteúdo prático da trilha pela plataforma digital. No ritmo esperado, a família conclui dois níveis por ano dentro da mesma trilha. A cobrança da plataforma é realizada por aluno (R$ 249,00 por nível), enquanto o responsável ou tutor da família tem acesso gratuito para acompanhar os filhos matriculados.",
           },
           {
             tipo: "paragrafo",
@@ -673,8 +673,8 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["Indicador", "2027", "2028", "2029", "2030", "2031"],
             linhas: [
-              ["Novas escolas contratantes", "10", "13", "16", "19", "22"],
-              ["Alunos atendidos (meta)", "4.000", "5.000", "6.000", "7.000", "8.000"],
+              ["Novas escolas contratantes", "10", "10", "10", "10", "10"],
+              ["Alunos atendidos (meta)", "4.000", "6.000", "9.000", "13.500", "20.250"],
             ],
           },
           {
@@ -703,13 +703,13 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "À meta escolar soma-se, como receita adicional e distinta, a venda da trilha de currículo para famílias educadoras: R$49.890,00 em 2027, referentes a 100 alunos adquirindo os dois níveis iniciais da Trilha 1. Somando as duas frentes, a receita total projetada para 2027 é R$1.149.890,00. A despesa total soma R$844.365,14, resultando em resultado operacional positivo de R$305.524,86, margem de 26,6%.",
+              "À meta escolar soma-se, como receita adicional e distinta, a venda da trilha de currículo para famílias educadoras: R$49.890,00 em 2027, referentes a 100 alunos adquirindo os dois níveis iniciais da Trilha 1 via parceria comercial com a Aspen. Somando as duas frentes, a receita total projetada para 2027 é R$1.149.890,00. A despesa total soma R$848.913,14, resultando em resultado operacional positivo de R$300.976,86, margem de 26,2%.",
           },
           {
             tipo: "destaque",
-            titulo: "Piso do exercício",
+            titulo: "Caixa e resiliência financeira",
             texto:
-              "Considerando apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a venda à frente de famílias educadoras, o resultado do exercício seria de R$107.596,76, margem de 11,3%, positivo em todos os cenários avaliados.",
+              "O caixa inicial de referência é de R$50.000,00. Considerando apenas os 23 contratos escolares hoje assinados, sem a receita ainda em negociação e sem a frente de homeschooling, a operação permanece superavitária em todos os cenários testados.",
           },
           {
             tipo: "stats",
@@ -718,8 +718,8 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               { label: "A fechar (negociação avançada)", valor: "R$ 148.038 · 13,5%" },
               { label: "Homeschool 2027 (100 alunos)", valor: "R$ 49.890" },
               { label: "Receita total 2027", valor: "R$ 1.149.890" },
-              { label: "Despesa total 2027", valor: "R$ 844.365" },
-              { label: "Resultado operacional 2027", valor: "R$ 305.525 · 26,6%" },
+              { label: "Despesa total 2027", valor: "R$ 848.913" },
+              { label: "Resultado operacional 2027", valor: "R$ 300.977 · 26,2%" },
             ],
           },
         ],
@@ -821,11 +821,11 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["Ano", "Alunos", "Ticket médio", "Receita projetada", "Despesa total", "Resultado"],
             linhas: [
-              ["2027", "4.000", "R$ 293,82", "R$ 1.175.261,60", "R$ 888.806", "R$ 286.456"],
-              ["2028", "5.000", "R$ 305,57", "R$ 1.527.840,09", "R$ 1.039.886", "R$ 487.954"],
-              ["2029", "6.000", "R$ 317,79", "R$ 1.906.744,43", "R$ 1.199.601", "R$ 707.144"],
-              ["2030", "7.000", "R$ 330,50", "R$ 2.313.516,57", "R$ 1.368.697", "R$ 944.819"],
-              ["2031", "8.000", "R$ 343,72", "R$ 2.749.779,70", "R$ 1.547.992", "R$ 1.201.787"],
+              ["2027", "4.000", "R$ 287,47", "R$ 1.149.890,00", "R$ 848.913", "R$ 300.977"],
+              ["2028", "6.000", "R$ 300,00", "R$ 1.800.000,00", "R$ 1.150.000", "R$ 650.000"],
+              ["2029", "9.000", "R$ 344,44", "R$ 3.100.000,00", "R$ 1.650.000", "R$ 1.450.000"],
+              ["2030", "13.500", "R$ 348,15", "R$ 4.700.000,00", "R$ 2.350.000", "R$ 2.350.000"],
+              ["2031", "20.250", "R$ 340,74", "R$ 6.900.000,00", "R$ 3.100.000", "R$ 3.800.000"],
             ],
           },
           {
@@ -878,7 +878,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               "Fragmentação do mercado atual: escolas compram de vários fornecedores diferentes para currículo, formação, software e equipamentos.",
               "Negociação avançada com a Aspen como possível porta de entrada para comunidades de homeschooling.",
               "Assessoria Institucional como linha de menor concorrência direta no recorte confessional.",
-              "Potencial de expansão para escola técnica nacional e faculdade de tecnologia.",
+              "Potencial de expansão para escola tecnologia nacional (a partir de 2030) e faculdade de tecnologia.",
               "Modelos de licenciamento ou distribuição OEM com redes confessionais já estabelecidas.",
             ],
           },
@@ -952,7 +952,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["", "Funciona hoje", "A partir do ano 4 (2030)"],
             linhas: [
-              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia, ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada, não frente já decidida"],
+              ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia, ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada em parceria com a FICV, não frente já decidida"],
               ["Status", "Gera receita real, contratada e projetada até 2031", "Sem receita, sem contrato, sem operação até o momento"],
               ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$844.365,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado. Depende de business case próprio"],
               ["Condição de avanço", "Execução do roadmap de consolidação", "Consolidação prévia do sistema atual, validação de demanda e conclusão do registro de propriedade intelectual"],
@@ -1095,12 +1095,12 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "O ano de 2027 é, por desenho, um ano de reinvestimento: a receita mais que dobra frente a 2025, e a empresa amplia remuneração da liderança, tecnologia própria e estrutura física mantendo resultado operacional positivo de R$305.524,86, margem de 26,6%, considerando a meta escolar já contratada, a receita em negociação avançada e a primeira venda à frente de famílias educadoras.",
+              "O ano de 2027 é, por desenho, um ano de reinvestimento: a receita mais que dobra frente a 2025, e a empresa amplia remuneração da liderança, tecnologia própria e estrutura física mantendo resultado operacional positivo de R$300.976,86, margem de 26,2%, considerando a meta escolar já contratada, a receita em negociação avançada e a primeira venda à frente de famílias educadoras.",
           },
           {
             tipo: "paragrafo",
             texto:
-              "A partir do quarto ano deste plano, a empresa pretende lançar dois negócios que atendem o indivíduo diretamente, sem vínculo com escola parceira: a escola de tecnologia para crianças e adolescentes em geral, e a faculdade de tecnologia, sustentada em parte pela parceria com a Faculdade Integrada de Ciências e Valores. Esses dois negócios permanecem condicionados à consolidação do sistema atual, e não competem por recurso ou atenção com a operação já contratada para os próximos anos.",
+              "A partir do quarto ano deste plano, a empresa pretende lançar dois negócios que atendem o indivíduo diretamente, sem vínculo com escola parceira: a escola tecnologia para crianças e adolescentes em geral, e a faculdade de tecnologia, sustentada em parte pela parceria com a Faculdade Integrada de Ciências e Valores (FICV). Esses dois negócios permanecem condicionados à consolidação do sistema atual, e não competem por recurso ou atenção com a operação já contratada para os próximos anos.",
           },
           {
             tipo: "destaque",
