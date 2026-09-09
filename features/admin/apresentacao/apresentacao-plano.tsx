@@ -515,35 +515,6 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       </p>
     </Slide>,
 
-    // 1b — orçamento 2027
-    <Slide key="orcamento-2027" variante="dark">
-      <Eyebrow>Capítulo 1 · Sumário executivo</Eyebrow>
-      <Titulo>86,5% da meta escolar de 2027 já está assinada em contrato</Titulo>
-      <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
-        Dos R$1.100.000,00 previstos em receita escolar, R$951.961,90 já estão assinados. Os R$148.038,10
-        restantes dependem de escolas em fase final de negociação, não de prospecção ainda por começar. Somada à
-        primeira venda da trilha de currículo para famílias educadoras, a receita total projetada chega a
-        R$1.149.890,00. A despesa do exercício soma R$848.913,14, o que deixa um resultado operacional de
-        R$300.976,86, margem de 26,2%, positivo mesmo no cenário mais conservador, em que nenhuma das escolas
-        hoje em negociação venha a fechar contrato.
-      </p>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8">
-        {[
-          { label: "Já contratado para o ano", valor: 951962, prefixo: "R$ " },
-          { label: "Em negociação avançada", valor: 148038, prefixo: "R$ " },
-          { label: "Resultado operacional", valor: 300977, prefixo: "R$ " },
-          { label: "Margem operacional", valor: 26.2, sufixo: "%", casas: 1 },
-        ].map((s, i) => (
-          <Cartao key={s.label} delay={i * 0.1} className="border-[rgb(var(--color-brand-mint))]/30">
-            <p className="font-display text-[rgb(var(--color-brand-mint))] text-[clamp(1.5rem,3.5vw,2rem)]">
-              <NumeroAnimado valor={s.valor} prefixo={s.prefixo} sufixo={s.sufixo} casas={s.casas} />
-            </p>
-            <p className="text-white/60 text-lg mt-1.5 leading-snug">{s.label}</p>
-          </Cartao>
-        ))}
-      </div>
-    </Slide>,
-
     // 2 — visão, missão
     <Slide key="visao-missao" variante="dark">
       <Eyebrow>Capítulo 2 · Identidade institucional</Eyebrow>
