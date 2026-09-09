@@ -312,7 +312,7 @@ function CartaoTopico({
 function Eyebrow({ children, tom = "mint" }: { children: React.ReactNode; tom?: "mint" | "navy" }) {
   return (
     <motion.p
-      className={`font-mono text-lg uppercase tracking-[0.25em] font-bold mb-4 ${tom === "navy" ? "text-[rgb(var(--color-brand-navy))]" : "text-[rgb(var(--color-brand-mint))]"}`}
+      className={`font-mono text-lg uppercase tracking-[0.25em] font-bold mb-4 [@media(max-height:640px)]:mb-2 ${tom === "navy" ? "text-[rgb(var(--color-brand-navy))]" : "text-[rgb(var(--color-brand-mint))]"}`}
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -327,7 +327,7 @@ function Titulo({ children, tom = "claro" }: { children: string; tom?: "claro" |
   const palavras = children.split(" ");
   return (
     <h2
-      className={`text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.1] max-w-5xl text-balance font-bold ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
+      className={`text-[clamp(1.75rem,5.5vw,4.5rem)] [@media(max-height:640px)]:text-[clamp(1.5rem,4.5vw,2.75rem)] leading-[1.1] max-w-5xl text-balance font-bold ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
       style={{ fontFamily: "var(--font-wemake)" }}
     >
       {palavras.map((p, i) => (
@@ -400,9 +400,15 @@ function Slide({
 }) {
   const tomTexto = variante === "sky" ? "escuro" : "claro";
   return (
-    <div className="relative w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 pt-16 sm:pt-20 pb-24 sm:pb-28 overflow-y-auto" data-tom={tomTexto}>
+    <div
+      className="relative w-full h-full flex flex-col px-4 sm:px-12 lg:px-24 pt-16 sm:pt-20 pb-24 sm:pb-28 overflow-y-auto [@media(max-height:640px)]:pt-12 [@media(max-height:640px)]:pb-16 [@media(max-height:420px)]:pt-10 [@media(max-height:420px)]:pb-12"
+      data-tom={tomTexto}
+    >
       <Fundo variante={variante} />
-      <div className="max-w-[100rem] mx-auto w-full">{children}</div>
+      {/* margin auto (não justify-center) centraliza quando o conteúdo cabe, mas some
+          quando o slide é mais alto que a tela (celular/tablet deitado), permitindo rolar
+          e ver o topo do conteúdo em vez de cortá-lo — bug clássico de flex+overflow+center. */}
+      <div className="max-w-[100rem] m-auto w-full">{children}</div>
     </div>
   );
 }

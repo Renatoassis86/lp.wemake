@@ -323,7 +323,7 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center"
-          style={{ left: "50%", top: "50%", width: 130 }}
+          style={{ left: "50%", top: "50%", width: `${(130 / size) * 100}%` }}
         >
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] leading-tight font-semibold">{centro}</p>
         </div>
@@ -336,7 +336,7 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
             <motion.div
               key={s.titulo}
               className="absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border bg-[rgb(var(--color-brand-navy))]/70 backdrop-blur-sm px-4 py-3 text-center pointer-events-auto"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: 172 }}
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: `${(172 / size) * 100}%` }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
@@ -428,7 +428,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
             <motion.div
               key={etapa.titulo}
               className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: 136 }}
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: `${(136 / size) * 100}%` }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.25 + i * 0.12, duration: 0.45, ease: "backOut" }}
@@ -517,8 +517,8 @@ export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: s
 
   return (
     <div className="flex items-center gap-10 flex-wrap">
-      <div className="relative shrink-0" style={{ width: size, height: size }}>
-        <svg ref={ref} viewBox={`0 0 ${size} ${size}`} width={size} height={size}>
+      <div className="relative shrink-0" style={{ width: size, maxWidth: "100%", aspectRatio: "1 / 1" }}>
+        <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-full">
           <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth={stroke} />
           <g transform={`translate(${size / 2},${size / 2}) rotate(-90)`}>
             {fatias.map((f, i) => {
