@@ -502,7 +502,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 1b — orçamento 2027
     <Slide key="orcamento-2027" variante="royal">
       <Eyebrow>Capítulo 1 · Sumário executivo</Eyebrow>
-      <Titulo>O orçamento de 2027 já está em grande parte contratado, não projetado</Titulo>
+      <Titulo>86,5% da meta escolar de 2027 já está assinada em contrato</Titulo>
       <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
         Dos R$1.100.000,00 previstos em receita escolar, R$951.961,90 já estão assinados. Os R$148.038,10
         restantes dependem de escolas em fase final de negociação, não de prospecção ainda por começar. Somada à
@@ -528,40 +528,82 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       </div>
     </Slide>,
 
-    // 2 — visão, missão, valores
+    // 2 — visão, missão
     <Slide key="visao-missao" variante="royal">
       <Eyebrow>Capítulo 2 · Identidade institucional</Eyebrow>
-      <Titulo>Beleza, Verdade e Bondade orientam toda decisão de produto</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+      <Titulo>Visão e missão fixam o alvo antes de qualquer decisão de produto</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
         <Cartao delay={0.1}>
           <p className="font-mono text-base uppercase tracking-wider text-white/50 font-bold mb-2">Visão</p>
-          <p className="text-white/85 text-base leading-relaxed">
-            Ser referência em educação tecnológica fundamentada na cosmovisão cristã, formando uma geração capaz
-            de compreender, criar e utilizar tecnologia com sabedoria.
+          <p className="text-white text-lg sm:text-xl font-display leading-snug">
+            Formar uma geração que cria tecnologia com sabedoria, para a glória de Deus e o bem do próximo.
+          </p>
+          <p className="text-white/70 text-base leading-relaxed mt-3">
+            Em seu desdobramento, ser referência em educação tecnológica fundamentada na cosmovisão cristã,
+            formando estudantes capazes de compreender, utilizar e criar tecnologia com sabedoria, excelência e
+            responsabilidade.
           </p>
         </Cartao>
         <Cartao delay={0.2}>
           <p className="font-mono text-base uppercase tracking-wider text-white/50 font-bold mb-2">Missão</p>
-          <p className="text-white/85 text-base leading-relaxed">
-            Conduzir pessoas ao deslumbramento a partir de uma educação cristã de excelência, educando mentes e corações
-            para aprender a criar tecnologia em vez de apenas consumir.
+          <p className="text-white text-lg sm:text-xl font-display leading-snug">
+            Equipar escolas e famílias para ensinar tecnologia com verdade, beleza e bondade.
+          </p>
+          <p className="text-white/70 text-base leading-relaxed mt-3">
+            Em seu desdobramento, pensar, estudar, ensinar e desenvolver educação tecnológica com excelência,
+            liberdade e responsabilidade, entregando currículo, formação, tecnologia, ambientes e orientação a
+            escolas, educadores, famílias e comunidades.
           </p>
         </Cartao>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-3">
-        {["Fidelidade à Verdade", "Beleza e Bondade", "Excelência", "Liberdade com responsabilidade", "Serviço e mordomia", "Comunidade e parceria"].map((v, i) => (
+    </Slide>,
+
+    // 2b — valores
+    <Slide key="valores" variante="navy">
+      <Eyebrow>Capítulo 2 · Identidade institucional</Eyebrow>
+      <Titulo>Beleza, Verdade e Bondade orientam a avaliação de qualquer produto antes da adoção pedagógica</Titulo>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+        {[
+          { titulo: "Fidelidade à Verdade", texto: "Pensar, ensinar e criar a partir da verdade revelada nas Escrituras e percebida na criação." },
+          { titulo: "Beleza e Bondade", texto: "Uma tecnologia não se avalia só pela eficiência ou pela novidade, mas por aquilo que é belo, verdadeiro e bom." },
+          { titulo: "Excelência como resposta ao chamado", texto: "Rigor acadêmico, pedagógico e tecnológico tratados como expressão de responsabilidade diante da vocação recebida." },
+          { titulo: "Liberdade com responsabilidade", texto: "O potencial criativo da tecnologia caminha com sabedoria, limites, ética e responsabilidade pelas escolhas." },
+          { titulo: "Serviço e mordomia", texto: "Tecnologia como instrumento para servir ao próximo, cuidar do mundo criado e aliviar os efeitos da queda." },
+          { titulo: "Comunidade e parceria", texto: "Educação e criação como empreendimentos comunitários, ao lado de escolas, professores, famílias e estudantes." },
+        ].map((v, i) => (
           <motion.div
-            key={v}
-            className="rounded-lg border border-white/15 bg-black/10 px-3 py-2"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 + i * 0.06, duration: 0.35 }}
+            key={v.titulo}
+            className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3.5"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
           >
-            <p className="text-white/80 text-base font-medium">{v}</p>
+            <p className="text-[rgb(var(--color-brand-mint))] text-base font-bold mb-1">{v.titulo}</p>
+            <p className="text-white/70 text-base leading-relaxed">{v.texto}</p>
           </motion.div>
         ))}
       </div>
+    </Slide>,
+
+    // 2c — histórico
+    <Slide key="historico" variante="dark">
+      <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
+      <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
+      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+        A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
+        cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
+        programação, robótica educacional, eletrônica, modelagem e fabricação 3D, projetos de engenharia,
+        inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar e Criar. Para o
+        ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
+      </p>
+      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-3">
+        A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do
+        sistema, entregando currículo, planos de aula e recursos a professores e instrumentos de acompanhamento à
+        coordenação. A empresa também acumulou experiência em concepção de ambientes físicos de aprendizagem,
+        incluindo projeto arquitetônico, memorial descritivo e dimensionamento de recursos, e desenvolveu um
+        modelo próprio de acompanhamento institucional contínuo às escolas parceiras.
+      </p>
     </Slide>,
 
     // 3 — o sistema
@@ -716,7 +758,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
         <div>
           <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
-          <Titulo>A Academia We Make garante que o currículo dependa de professores preparados, não só de bons materiais</Titulo>
+          <Titulo>A Academia We Make forma o professor que vai aplicar o currículo</Titulo>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-8">
             {["Apresentação", "Onboarding", "Diagnóstico de entrada", "Implantação intensiva", "Acompanhamento contínuo", "Formação temática", "Diagnóstico de meio de ciclo", "Prescrição de resultados"].map((f, i) => (
               <motion.div
@@ -1162,7 +1204,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 25 — indicadores de retorno
     <Slide key="indicadores" variante="royal">
       <Eyebrow>Capítulo 11 · Indicadores de retorno</Eyebrow>
-      <Titulo>Seis indicadores acompanham se o crescimento vem com margem, não só com volume</Titulo>
+      <Titulo>Seis indicadores medem se o crescimento vem acompanhado de margem</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-9">
         {[
           { icone: Percent, titulo: "Margem bruta por aluno e por escola" },
