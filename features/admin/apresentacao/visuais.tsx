@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
@@ -161,13 +161,76 @@ interface NoOrganograma {
 }
 
 export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoOrganograma[] }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const emVista = useInView(ref, { once: true, margin: "-10%" });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const topoRef = useRef<HTMLDivElement>(null);
+  const filhoRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const emVista = useInView(containerRef, { once: true, margin: "-10%" });
+  const [linhas, setLinhas] = useState<{ x1: number; y1: number; x2: number; y2: number }[]>([]);
+  const [tamanho, setTamanho] = useState({ w: 0, h: 0 });
+
+  const medir = useCallback(() => {
+    const container = containerRef.current;
+    const topoEl = topoRef.current;
+    if (!container || !topoEl) return;
+    const caixaContainer = container.getBoundingClientRect();
+    const caixaTopo = topoEl.getBoundingClientRect();
+    const origemX = caixaTopo.left + caixaTopo.width / 2 - caixaContainer.left;
+    const origemY = caixaTopo.bottom - caixaContainer.top;
+    const novasLinhas = filhoRefs.current
+      .map((el) => {
+        if (!el) return null;
+        const caixa = el.getBoundingClientRect();
+        return {
+          x1: origemX,
+          y1: origemY,
+          x2: caixa.left + caixa.width / 2 - caixaContainer.left,
+          y2: caixa.top - caixaContainer.top,
+        };
+      })
+      .filter((l): l is { x1: number; y1: number; x2: number; y2: number } => l !== null);
+    setLinhas(novasLinhas);
+    setTamanho({ w: caixaContainer.width, h: caixaContainer.height });
+  }, []);
+
+  useLayoutEffect(() => {
+    medir();
+    const ro = new ResizeObserver(() => medir());
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", medir);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", medir);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [medir, filhos.length]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center">
+    <div ref={containerRef} className="relative flex flex-col items-center">
+      {/* Conexões desenhadas com a posição real de cada card (medida via DOM), não uma
+          barra horizontal fixa — assim continuam corretas mesmo quando os cards quebram
+          em mais de uma linha, e cada uma entra junto do card correspondente. */}
+      <svg className="absolute inset-0 pointer-events-none overflow-visible" width={tamanho.w} height={tamanho.h} aria-hidden>
+        {linhas.map((l, i) => {
+          const meioY = l.y1 + (l.y2 - l.y1) * 0.55;
+          const d = `M ${l.x1} ${l.y1} L ${l.x1} ${meioY} L ${l.x2} ${meioY} L ${l.x2} ${l.y2}`;
+          return (
+            <motion.path
+              key={i}
+              d={d}
+              fill="none"
+              stroke="rgba(255,255,255,0.28)"
+              strokeWidth={1.5}
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={emVista ? { pathLength: 1, opacity: 1 } : {}}
+              transition={{ delay: 0.45 + i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            />
+          );
+        })}
+      </svg>
+
       {/* Nó do topo — visualmente maior, para marcar hierarquia real */}
       <motion.div
+        ref={topoRef}
         className="flex items-center gap-3 rounded-2xl border-2 px-5 py-3.5"
         style={{ background: `${topo.cor}1f`, borderColor: topo.cor }}
         initial={{ opacity: 0, y: -14 }}
@@ -192,59 +255,38 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
         </div>
       </motion.div>
 
-      {/* Tronco vertical até a linha de distribuição */}
-      <motion.div
-        className="w-px bg-white/25"
-        initial={{ height: 0 }}
-        animate={emVista ? { height: 40 } : {}}
-        transition={{ delay: 0.35, duration: 0.35 }}
-      />
-      <motion.div
-        className="h-px bg-white/25"
-        style={{ maxWidth: 720 }}
-        initial={{ width: 0 }}
-        animate={emVista ? { width: "100%" } : {}}
-        transition={{ delay: 0.5, duration: 0.5 }}
-      />
-
-      {/* Filhos, cada um com seu próprio galho vertical */}
-      <div className="flex flex-wrap justify-center gap-x-3 gap-y-8 mt-0 max-w-6xl pt-2">
+      {/* Filhos, cada área surgindo em sequência junto da sua conexão */}
+      <div className="flex flex-wrap justify-center gap-x-3 gap-y-10 mt-12 max-w-6xl">
         {filhos.map((f, i) => (
-          <div key={f.nome} className="flex flex-col items-center w-[16rem]">
-            <motion.div
-              className="w-px bg-white/25"
-              initial={{ height: 0 }}
-              animate={emVista ? { height: 20 } : {}}
-              transition={{ delay: 0.55 + i * 0.06, duration: 0.3 }}
-            />
-            <motion.div
-              className="rounded-xl border px-3 py-3 text-center w-full"
-              style={{ background: `${f.cor}14`, borderColor: `${f.cor}55` }}
-              initial={{ opacity: 0, y: 10 }}
-              animate={emVista ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.6 + i * 0.06, duration: 0.4 }}
-            >
-              {f.foto ? (
-                <div className="size-11 rounded-full overflow-hidden mx-auto mb-1.5" style={{ boxShadow: `0 0 0 2px ${f.cor}` }}>
-                  <Image src={f.foto} alt={f.nome} width={44} height={44} className="size-full object-cover" />
-                </div>
-              ) : (
-                <div
-                  className="size-8 rounded-full flex items-center justify-center font-display text-lg font-bold mx-auto mb-1.5"
-                  style={{ background: `${f.cor}33`, color: f.cor }}
-                >
-                  {f.iniciais}
-                </div>
-              )}
-              <p className="text-white/85 text-lg font-medium leading-snug break-words">{f.nome}</p>
-              <p className="font-mono text-lg uppercase tracking-wider mt-0.5 leading-snug break-words" style={{ color: f.cor }}>{f.cargo}</p>
-              {f.miniBio && (
-                <p className="text-white/45 text-lg leading-snug mt-1.5 pt-1.5 border-t" style={{ borderColor: `${f.cor}30` }}>
-                  {f.miniBio}
-                </p>
-              )}
-            </motion.div>
-          </div>
+          <motion.div
+            key={f.nome}
+            ref={(el) => { filhoRefs.current[i] = el; }}
+            className="rounded-xl border px-3 py-3 text-center w-[16rem]"
+            style={{ background: `${f.cor}14`, borderColor: `${f.cor}55` }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={emVista ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.55 + i * 0.1, duration: 0.4 }}
+          >
+            {f.foto ? (
+              <div className="size-11 rounded-full overflow-hidden mx-auto mb-1.5" style={{ boxShadow: `0 0 0 2px ${f.cor}` }}>
+                <Image src={f.foto} alt={f.nome} width={44} height={44} className="size-full object-cover" />
+              </div>
+            ) : (
+              <div
+                className="size-8 rounded-full flex items-center justify-center font-display text-lg font-bold mx-auto mb-1.5"
+                style={{ background: `${f.cor}33`, color: f.cor }}
+              >
+                {f.iniciais}
+              </div>
+            )}
+            <p className="text-white/85 text-lg font-medium leading-snug break-words">{f.nome}</p>
+            <p className="font-mono text-lg uppercase tracking-wider mt-0.5 leading-snug break-words" style={{ color: f.cor }}>{f.cargo}</p>
+            {f.miniBio && (
+              <p className="text-white/45 text-lg leading-snug mt-1.5 pt-1.5 border-t" style={{ borderColor: `${f.cor}30` }}>
+                {f.miniBio}
+              </p>
+            )}
+          </motion.div>
         ))}
       </div>
     </div>
@@ -262,10 +304,10 @@ interface NoFluxo {
 export function FluxoCurriculo({ centro, satelites }: { centro: string; satelites: NoFluxo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 760;
+  const size = 620;
   const cx = size / 2;
   const cy = size / 2;
-  const rOrbita = 255;
+  const rOrbita = 208;
   const n = satelites.length;
 
   return (
@@ -278,10 +320,10 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
         </defs>
         {satelites.map((_, i) => {
           const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
-          const x1 = cx + Math.cos(ang) * 76;
-          const y1 = cy + Math.sin(ang) * 76;
-          const x2 = cx + Math.cos(ang) * (rOrbita - 66);
-          const y2 = cy + Math.sin(ang) * (rOrbita - 66);
+          const x1 = cx + Math.cos(ang) * 62;
+          const y1 = cy + Math.sin(ang) * 62;
+          const x2 = cx + Math.cos(ang) * (rOrbita - 54);
+          const y2 = cy + Math.sin(ang) * (rOrbita - 54);
           return (
             <motion.line
               key={i}
@@ -301,7 +343,7 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
         <motion.circle
           cx={cx}
           cy={cy}
-          r={70}
+          r={57}
           fill="rgb(var(--color-brand-mint))"
           initial={{ scale: 0 }}
           animate={emVista ? { scale: 1 } : {}}
@@ -310,7 +352,7 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
         <motion.circle
           cx={cx}
           cy={cy}
-          r={70}
+          r={57}
           fill="none"
           stroke="rgb(var(--color-brand-mint))"
           strokeWidth={1}
@@ -323,7 +365,7 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center"
-          style={{ left: "50%", top: "50%", width: `${(130 / size) * 100}%` }}
+          style={{ left: "50%", top: "50%", width: `${(106 / size) * 100}%` }}
         >
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] leading-tight font-semibold">{centro}</p>
         </div>
@@ -335,8 +377,8 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
           return (
             <motion.div
               key={s.titulo}
-              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border bg-[rgb(var(--color-brand-navy))]/70 backdrop-blur-sm px-4 py-3 text-center pointer-events-auto"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: `${(172 / size) * 100}%` }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border bg-[rgb(var(--color-brand-navy))]/70 backdrop-blur-sm px-2.5 py-2.5 text-center pointer-events-auto"
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: `${(140 / size) * 100}%` }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
@@ -362,10 +404,10 @@ interface EtapaCiclo {
 export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaCiclo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 760;
+  const size = 620;
   const cx = size / 2;
   const cy = size / 2;
-  const r = 270;
+  const r = 220;
   const n = etapas.length;
 
   const pontos = etapas.map((_, i) => {
@@ -413,7 +455,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
       </svg>
 
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <span className="font-mono text-lg uppercase tracking-[0.25em] text-white/25 text-center max-w-[8.5rem] leading-relaxed">
+        <span className="font-mono text-lg uppercase tracking-[0.25em] text-white/25 text-center max-w-[7rem] leading-relaxed">
           {centro}
         </span>
       </div>
@@ -428,12 +470,12 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
             <motion.div
               key={etapa.titulo}
               className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: `${(136 / size) * 100}%` }}
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: `${(111 / size) * 100}%` }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.25 + i * 0.12, duration: 0.45, ease: "backOut" }}
             >
-              <div className="size-14 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm flex items-center justify-center shrink-0">
+              <div className="size-12 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm flex items-center justify-center shrink-0">
                 <Icone className="size-6 text-[rgb(var(--color-brand-mint))]" strokeWidth={1.75} />
               </div>
               <p className="text-white text-lg font-semibold text-center leading-snug">{etapa.titulo}</p>
@@ -454,11 +496,19 @@ interface PontoMatriz {
   cor: string;
 }
 
+/** Quebra rótulos longos em 2 linhas balanceadas, pra não colidir com o vizinho no eixo x. */
+function quebrarLabelMatriz(label: string): string[] {
+  if (label.length <= 20) return [label];
+  const palavras = label.split(" ");
+  const meio = Math.ceil(palavras.length / 2);
+  return [palavras.slice(0, meio).join(" "), palavras.slice(meio).join(" ")];
+}
+
 export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 620;
-  const pad = 64;
+  const size = 520;
+  const pad = 56;
   const meio = (size + pad) / 2;
 
   return (
@@ -484,6 +534,7 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
       {pontos.map((p, i) => {
         const x = pad + p.x * (size - pad * 2);
         const y = size - pad - p.y * (size - pad * 2);
+        const linhas = quebrarLabelMatriz(p.label);
         return (
           <motion.g
             key={p.label}
@@ -491,10 +542,12 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
             animate={emVista ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.3 + i * 0.1, duration: 0.4, ease: "backOut" }}
           >
-            <circle cx={x} cy={y} r={23} fill={p.cor} fillOpacity={0.18} />
-            <circle cx={x} cy={y} r={10} fill={p.cor} />
-            <text x={x} y={y - 30} textAnchor="middle" fontFamily="var(--font-sans)" fontSize={14} fontWeight={600} fill="rgba(255,255,255,0.9)">
-              {p.label}
+            <circle cx={x} cy={y} r={20} fill={p.cor} fillOpacity={0.18} />
+            <circle cx={x} cy={y} r={9} fill={p.cor} />
+            <text x={x} y={y - 26 - (linhas.length - 1) * 14} textAnchor="middle" fontFamily="var(--font-sans)" fontSize={13} fontWeight={600} fill="rgba(255,255,255,0.9)">
+              {linhas.map((linha, li) => (
+                <tspan key={li} x={x} dy={li === 0 ? 0 : 15}>{linha}</tspan>
+              ))}
             </text>
           </motion.g>
         );

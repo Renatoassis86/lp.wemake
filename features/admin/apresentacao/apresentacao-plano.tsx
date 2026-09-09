@@ -281,17 +281,17 @@ function CartaoTopico({
   const t = TONS_CARTAO_TOPICO[variante];
   return (
     <motion.div
-      className="rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[13rem] sm:min-h-[15rem]"
+      className={`rounded-2xl p-5 sm:p-6 flex flex-col justify-between ${texto ? "min-h-[9.5rem] sm:min-h-[10.5rem]" : "min-h-[6rem]"}`}
       style={{ background: t.bg, border: `1px solid ${t.borda}` }}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="size-14 rounded-xl flex items-center justify-center shrink-0" style={{ background: t.iconeFundo }}>
-        <Icone className="size-7" strokeWidth={1.75} style={{ color: t.iconeCor }} />
+      <div className="size-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: t.iconeFundo }}>
+        <Icone className="size-6" strokeWidth={1.75} style={{ color: t.iconeCor }} />
       </div>
-      <div className="mt-5">
+      <div className="mt-3">
         <p className="font-display text-xl leading-snug" style={{ color: t.titulo }}>{titulo}</p>
         {texto && (
           <p className="text-lg leading-relaxed mt-2" style={{ color: t.texto }}>{texto}</p>
@@ -392,7 +392,7 @@ function Slide({
   const tomTexto = "claro";
   return (
     <div
-      className="relative w-full h-full flex flex-col px-4 sm:px-12 lg:px-24 pt-16 sm:pt-20 pb-24 sm:pb-28 overflow-y-auto [@media(max-height:640px)]:pt-12 [@media(max-height:640px)]:pb-16 [@media(max-height:420px)]:pt-10 [@media(max-height:420px)]:pb-12"
+      className="relative w-full h-full flex flex-col px-4 sm:px-12 lg:px-24 pt-14 sm:pt-16 pb-16 sm:pb-20 overflow-y-auto [@media(max-height:640px)]:pt-12 [@media(max-height:640px)]:pb-14 [@media(max-height:420px)]:pt-10 [@media(max-height:420px)]:pb-12"
       data-tom={tomTexto}
     >
       <Fundo variante={variante} />
@@ -604,8 +604,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
     // 2c — histórico
     <Slide key="historico" variante="dark">
-      <div className="relative">
-        <div className="relative">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
+        <div>
           <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
           <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
           <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
@@ -623,6 +623,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             modelo próprio de acompanhamento institucional contínuo às escolas parceiras.
           </p>
         </div>
+        <FotoPainel src="/photos/salamaker1.png" className="aspect-[4/5] hidden lg:block" />
       </div>
     </Slide>,
 
@@ -957,13 +958,19 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Titulo>O Momento Criar segue um ciclo de projeto estruturado em seis etapas</Titulo>
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center mt-8">
         <div>
-          <p className="text-white/55 text-lg leading-relaxed max-w-md">
-            As seis etapas se repetem a cada novo desafio proposto em sala, do primeiro contato com o problema
-            até a apresentação da solução para a turma.
+          <p className="text-white/70 text-xl leading-relaxed max-w-lg">
+            Cada aula segue os três momentos da metodologia: Conhecer, que provoca deslumbramento e conexão
+            inicial com o tema; Explorar, que sistematiza o conteúdo por meio de explicações, exemplos e
+            discussão; e Criar, conduzido pelo Ciclo de Projeto ao lado.
           </p>
-          <p className="text-white/45 text-lg mt-4 max-w-md">
-            Etapas não rigidamente lineares: o processo permite retornar, ajustar e refinar soluções ao longo do
-            projeto.
+          <p className="text-white/60 text-xl leading-relaxed max-w-lg mt-4">
+            As seis etapas se repetem a cada novo desafio proposto em sala, do primeiro contato com o problema
+            até a apresentação da solução para a turma, e não são rigidamente lineares: o processo permite
+            retornar, ajustar e refinar soluções ao longo do projeto.
+          </p>
+          <p className="text-white/50 text-xl leading-relaxed max-w-lg mt-4">
+            A avaliação acompanha todo esse percurso, não apenas o resultado final, observando compreensão,
+            participação, tomada de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
           </p>
         </div>
         <CicloEtapas
@@ -1037,27 +1044,17 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <div>
           <Eyebrow>Capítulo 6 · Segundo mercado</Eyebrow>
           <Titulo>O mesmo currículo, adaptado para famílias educadoras em comunidades de homeschooling</Titulo>
-          <p className="text-white/70 text-lg leading-relaxed max-w-2xl mt-4">
+          <p className="text-white/70 text-lg leading-relaxed max-w-2xl mt-3">
             O acervo curricular do Kit We Make é entregue em formato adaptado, hoje a frente de negócio mais
             madura ao lado do currículo escolar, organizado em quatro trilhas divididas em três níveis segundo o
             percurso clássico do Trivium. Um nível equivale a um semestre, com encontro semanal entre tutor e
             aluno.
           </p>
-          <div className="grid grid-cols-2 gap-3 mt-6">
-            {[
-              { icone: Code2, titulo: "Programação Criativa" },
-              { icone: CircuitBoard, titulo: "Robótica e Automação" },
-              { icone: Hammer, titulo: "Engenharia e Prototipagem" },
-              { icone: Box, titulo: "Modelagem e Impressão 3D" },
-            ].map((c, i) => (
-              <CartaoTopico key={c.titulo} delay={i * 0.1} icone={c.icone} titulo={c.titulo} variante="dark" />
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-3 mt-4">
+          <div className="flex flex-wrap gap-2.5 mt-4">
             {["Gramática", "Lógica", "Retórica"].map((n, i) => (
               <motion.div
                 key={n}
-                className="rounded-full border border-[rgb(var(--color-brand-mint))]/40 px-4 py-2"
+                className="rounded-full border border-[rgb(var(--color-brand-mint))]/40 px-4 py-1.5"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -1069,7 +1066,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
               </motion.div>
             ))}
           </div>
-          <Cartao delay={0.75} className="mt-5">
+          <Cartao delay={0.75} className="mt-3 !p-4">
             <p className="text-white/70 text-lg leading-relaxed">
               Cobrança realizada por aluno, com acesso gratuito ao pai ou responsável. Venda e distribuição
               conduzidas pela Aspen, parceria estratégica em negociação avançada, ainda em fase de estruturação.
@@ -1078,6 +1075,16 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </Cartao>
         </div>
         <FotoPainel src="/photos/salamaker3.png" className="aspect-[4/5] hidden lg:block" />
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-5">
+        {[
+          { icone: Code2, titulo: "Programação Criativa" },
+          { icone: CircuitBoard, titulo: "Robótica e Automação" },
+          { icone: Hammer, titulo: "Engenharia e Prototipagem" },
+          { icone: Box, titulo: "Modelagem e Impressão 3D" },
+        ].map((c, i) => (
+          <CartaoTopico key={c.titulo} delay={i * 0.1} icone={c.icone} titulo={c.titulo} variante="dark" />
+        ))}
       </div>
     </Slide>,
 
@@ -1188,7 +1195,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="pesquisa-desenvolvimento" variante="dark">
       <Eyebrow>Capítulo 8 · Pesquisa e desenvolvimento</Eyebrow>
       <Titulo>Um mestrado concluído, com pesquisa real em cinco escolas, já sustenta o currículo</Titulo>
-      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-4">
         Dênis Júlio concluiu, em fevereiro de 2026, o Mestrado em Inovação em Tecnologias Educacionais pelo
         Instituto Metrópole Digital da Universidade Federal do Rio Grande do Norte. A dissertação, Ciberética,
         investiga a formação ética de adolescentes no uso de tecnologias digitais, pesquisa empírica conduzida com
@@ -1196,13 +1203,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         Catarina. Dela já saíram o livro Cartas para um Professor Digital e a oficina A Escola como Escudo,
         ministrada em julho de 2026 no Colégio Oficina, em Joinville.
       </p>
-      <div className="grid grid-cols-3 gap-3 mt-6 max-w-2xl">
+      <div className="grid grid-cols-3 gap-3 mt-4 max-w-2xl">
         {[
           { label: "Estudantes na pesquisa", valor: 259 },
           { label: "Escolas participantes", valor: 5 },
           { label: "Estados cobertos", valor: 4 },
         ].map((s, i) => (
-          <Cartao key={s.label} delay={i * 0.1}>
+          <Cartao key={s.label} delay={i * 0.1} className="!p-4">
             <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={s.valor} /></p>
             <p className="text-white/50 text-lg mt-1 leading-snug">{s.label}</p>
           </Cartao>
@@ -1217,7 +1224,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <CartaoTopico key={c.titulo} delay={0.3 + i * 0.1} icone={c.icone} titulo={c.titulo} texto={c.texto} variante="dark" />
         ))}
       </div>
-      <p className="text-white/40 text-lg mt-4 max-w-3xl">
+      <p className="text-white/40 text-lg mt-3 max-w-3xl">
         Horizonte de qualificação já definido: ingresso do fundador em programa de doutorado a partir de 2028.
       </p>
     </Slide>,
@@ -1501,16 +1508,18 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         anterior.
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 items-center">
-        <MatrizRisco
-          pontos={[
-            { label: "Liderança central", x: 0.82, y: 0.85, cor: "#e8607a" },
-            { label: "Registro autoral em curso", x: 0.55, y: 0.85, cor: "rgb(var(--color-brand-sky))" },
-            { label: "Maturidade desigual", x: 0.82, y: 0.5, cor: "rgb(var(--color-brand-sky))" },
-            { label: "IA de terceiros", x: 0.25, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
-            { label: "Homeschooling", x: 0.25, y: 0.85, cor: "rgb(var(--color-brand-royal))" },
-            { label: "Concorrência", x: 0.55, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
-          ]}
-        />
+        <div className="max-w-sm w-full mx-auto lg:mx-0">
+          <MatrizRisco
+            pontos={[
+              { label: "Liderança central", x: 0.82, y: 0.85, cor: "#e8607a" },
+              { label: "Registro autoral em curso", x: 0.55, y: 0.85, cor: "rgb(var(--color-brand-sky))" },
+              { label: "Maturidade desigual", x: 0.82, y: 0.5, cor: "rgb(var(--color-brand-sky))" },
+              { label: "IA de terceiros", x: 0.25, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
+              { label: "Homeschooling", x: 0.25, y: 0.85, cor: "rgb(var(--color-brand-royal))" },
+              { label: "Concorrência", x: 0.55, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
+            ]}
+          />
+        </div>
         <ul className="space-y-2">
           {[
             "Dependência de liderança central, prioridade imediata",
