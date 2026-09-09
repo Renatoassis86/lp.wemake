@@ -262,14 +262,6 @@ const TONS_CARTAO_TOPICO = {
     titulo: "#ffffff",
     texto: "rgba(255,255,255,0.8)",
   },
-  sky: {
-    bg: "rgba(11,31,68,0.12)",
-    borda: "rgba(11,31,68,0.3)",
-    iconeFundo: "rgba(11,31,68,0.2)",
-    iconeCor: "rgb(var(--color-brand-navy))",
-    titulo: "rgb(var(--color-brand-navy))",
-    texto: "rgba(11,31,68,0.75)",
-  },
 } as const;
 
 /** Cartão quadrado, com ícone em selo e tom derivado do próprio fundo do slide — para tópicos e partes de um todo. */
@@ -374,13 +366,12 @@ function FotoPainel({ src, className = "" }: { src: string; className?: string }
 
 /* ---------- Fundo por slide (fundo sobre fundo, tom sobre tom) ---------- */
 
-type VarianteFundo = "navy" | "royal" | "sky" | "dark";
+type VarianteFundo = "navy" | "royal" | "dark";
 
 function Fundo({ variante }: { variante: VarianteFundo }) {
   const mapa: Record<VarianteFundo, string> = {
     navy: "radial-gradient(120% 100% at 100% 0%, rgba(76,138,222,0.16), transparent 55%), radial-gradient(90% 70% at 0% 100%, rgba(118,243,205,0.10), transparent 55%), rgb(var(--color-brand-navy))",
     royal: "linear-gradient(155deg, rgb(var(--color-brand-royal)) 0%, rgb(var(--color-brand-royal-deep)) 55%, rgb(var(--color-brand-navy)) 100%)",
-    sky: "linear-gradient(155deg, rgb(var(--color-brand-sky)) 0%, rgb(224, 172, 0) 62%, rgb(var(--color-brand-navy)) 100%)",
     dark: "linear-gradient(180deg, #060d1e 0%, rgb(var(--color-brand-navy)) 100%)",
   };
   return (
@@ -398,7 +389,7 @@ function Slide({
   children: React.ReactNode;
   variante?: VarianteFundo;
 }) {
-  const tomTexto = variante === "sky" ? "escuro" : "claro";
+  const tomTexto = "claro";
   return (
     <div
       className="relative w-full h-full flex flex-col px-4 sm:px-12 lg:px-24 pt-16 sm:pt-20 pb-24 sm:pb-28 overflow-y-auto [@media(max-height:640px)]:pt-12 [@media(max-height:640px)]:pb-16 [@media(max-height:420px)]:pt-10 [@media(max-height:420px)]:pb-12"
@@ -841,19 +832,19 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 13 — a dor do cliente
-    <Slide key="dor-cliente" variante="sky">
-      <Eyebrow tom="navy">Capítulo 5 · Por que ele compra</Eyebrow>
-      <Titulo tom="escuro">Sem a We Make, a escola fragmenta a compra entre vários fornecedores diferentes</Titulo>
+    <Slide key="dor-cliente" variante="royal">
+      <Eyebrow>Capítulo 5 · Por que ele compra</Eyebrow>
+      <Titulo>Sem a We Make, a escola fragmenta a compra entre vários fornecedores diferentes</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-9">
         {[
           { icone: Puzzle, titulo: "Um fornecedor de robótica ou programação", texto: "Contrato isolado, sem currículo plurianual nem integração com o restante da grade." },
           { icone: LayoutGrid, titulo: "Uma plataforma de gestão genérica", texto: "Organiza dados administrativos, mas não ensina nem acompanha aprendizagem." },
           { icone: GraduationCap, titulo: "Formação pontual para professores", texto: "Capacitação isolada, sem assessoria estratégica que sustente o resultado ao longo do ano." },
         ].map((c, i) => (
-          <CartaoTopico key={c.titulo} delay={i * 0.12} icone={c.icone} titulo={c.titulo} texto={c.texto} variante="sky" />
+          <CartaoTopico key={c.titulo} delay={i * 0.12} icone={c.icone} titulo={c.titulo} texto={c.texto} variante="royal" />
         ))}
       </div>
-      <p className="text-[rgb(var(--color-brand-navy))]/70 text-lg max-w-2xl mt-5">
+      <p className="text-white/70 text-lg max-w-2xl mt-5">
         Essa fragmentação é, ao mesmo tempo, o padrão do mercado e a principal oportunidade que o sistema We
         Make explora.
       </p>
@@ -886,7 +877,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 15 — futuros concorrentes
     <Slide key="futuros-concorrentes" variante="navy">
       <Eyebrow>Capítulo 5 · Futuros concorrentes</Eyebrow>
-      <Titulo>A ameaça mais provável já tem acesso às mesmas escolas que nós</Titulo>
+      <Titulo>Os nomes que a escola já conhece são a ameaça competitiva mais séria</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
         {[
           { icone: BookOpen, titulo: "Sistemas de ensino cristãos", texto: "Já têm a base de clientes e a confiança das mantenedoras confessionais." },
@@ -1166,27 +1157,27 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 19 — parcerias locais
-    <Slide key="parcerias-locais" variante="sky">
-      <Eyebrow tom="navy">Capítulo 7 · Repercussão local</Eyebrow>
-      <Titulo tom="escuro">Olimpíadas e hackathons transformam relacionamento comercial em reputação de campo</Titulo>
+    <Slide key="parcerias-locais" variante="royal">
+      <Eyebrow>Capítulo 7 · Repercussão local</Eyebrow>
+      <Titulo>Olimpíadas e hackathons transformam relacionamento comercial em reputação de campo</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
-        <Cartao delay={0.1} className="bg-[rgb(var(--color-brand-navy))]/10 border-[rgb(var(--color-brand-navy))]/25">
-          <Trophy className="size-5 text-[rgb(var(--color-brand-navy))] mb-3" strokeWidth={1.75} />
-          <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] mb-1.5">Olimpíadas de tecnologia</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/70 text-lg leading-relaxed">
+        <Cartao delay={0.1}>
+          <Trophy className="size-5 text-white mb-3" strokeWidth={1.75} />
+          <p className="font-display text-white text-[1.0625rem] mb-1.5">Olimpíadas de tecnologia</p>
+          <p className="text-white/70 text-lg leading-relaxed">
             Em fase de estruturação, para estimular a excelência técnica entre alunos das escolas parceiras.
           </p>
         </Cartao>
-        <Cartao delay={0.2} className="bg-[rgb(var(--color-brand-navy))]/10 border-[rgb(var(--color-brand-navy))]/25">
-          <Trophy className="size-5 text-[rgb(var(--color-brand-navy))] mb-3" strokeWidth={1.75} />
-          <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] mb-1.5">Hackathons</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/70 text-lg leading-relaxed">
+        <Cartao delay={0.2}>
+          <Trophy className="size-5 text-white mb-3" strokeWidth={1.75} />
+          <p className="font-display text-white text-[1.0625rem] mb-1.5">Hackathons</p>
+          <p className="text-white/70 text-lg leading-relaxed">
             Premiação já testada: cada vencedor recebe um leitor digital, e a equipe recebe uma semana de
             estágio em empresas de tecnologia parceiras.
           </p>
         </Cartao>
       </div>
-      <p className="text-[rgb(var(--color-brand-navy))]/60 text-lg max-w-3xl mt-5 leading-relaxed">
+      <p className="text-white/60 text-lg max-w-3xl mt-5 leading-relaxed">
         A expansão dessas iniciativas para novas escolas e regiões segue o mesmo princípio: parcerias locais que
         ofereçam projetos, prêmios ou estágios em troca de exposição da marca junto às comunidades escolares
         atendidas, reforçando o relacionamento comercial por reputação construída em campo.
@@ -1196,7 +1187,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 19b — pesquisa e desenvolvimento (Capítulo 8)
     <Slide key="pesquisa-desenvolvimento" variante="dark">
       <Eyebrow>Capítulo 8 · Pesquisa e desenvolvimento</Eyebrow>
-      <Titulo>A pesquisa acadêmica já sustenta o currículo, não é uma promessa ligada à futura faculdade</Titulo>
+      <Titulo>Um mestrado concluído, com pesquisa real em cinco escolas, já sustenta o currículo</Titulo>
       <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         Dênis Júlio concluiu, em fevereiro de 2026, o Mestrado em Inovação em Tecnologias Educacionais pelo
         Instituto Metrópole Digital da Universidade Federal do Rio Grande do Norte. A dissertação, Ciberética,
@@ -1379,7 +1370,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 22 — SWOT
     <Slide key="swot" variante="dark">
       <Eyebrow>Capítulo 11 · Análise SWOT</Eyebrow>
-      <Titulo>A integração do sistema é força e fraqueza ao mesmo tempo</Titulo>
+      <Titulo>O que torna o sistema difícil de copiar também o torna dependente de poucas pessoas</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
         {[
           { titulo: "Forças", cor: "rgb(var(--color-brand-mint))", itens: ["Integração das cinco frentes em um sistema único", "Currículo autoral consolidado, 1º ao 9º ano", "Cosmovisão cristã incorporada ao produto", "Entrega 100% digital do currículo escolar"] },
