@@ -180,15 +180,15 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
           </div>
         ) : (
           <div
-            className="size-11 rounded-full flex items-center justify-center font-display text-base font-bold shrink-0"
+            className="size-11 rounded-full flex items-center justify-center font-display text-lg font-bold shrink-0"
             style={{ background: topo.cor, color: "rgb(var(--color-brand-navy))" }}
           >
             {topo.iniciais}
           </div>
         )}
         <div className="text-left">
-          <p className="text-white text-base font-semibold leading-snug">{topo.nome}</p>
-          <p className="font-mono text-base uppercase tracking-wider" style={{ color: topo.cor }}>{topo.cargo}</p>
+          <p className="text-white text-lg font-semibold leading-snug">{topo.nome}</p>
+          <p className="font-mono text-lg uppercase tracking-wider" style={{ color: topo.cor }}>{topo.cargo}</p>
         </div>
       </motion.div>
 
@@ -230,16 +230,16 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
                 </div>
               ) : (
                 <div
-                  className="size-8 rounded-full flex items-center justify-center font-display text-base font-bold mx-auto mb-1.5"
+                  className="size-8 rounded-full flex items-center justify-center font-display text-lg font-bold mx-auto mb-1.5"
                   style={{ background: `${f.cor}33`, color: f.cor }}
                 >
                   {f.iniciais}
                 </div>
               )}
-              <p className="text-white/85 text-base font-medium leading-snug">{f.nome}</p>
-              <p className="font-mono text-base uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
+              <p className="text-white/85 text-lg font-medium leading-snug">{f.nome}</p>
+              <p className="font-mono text-lg uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
               {f.miniBio && (
-                <p className="text-white/45 text-base leading-snug mt-1.5 pt-1.5 border-t" style={{ borderColor: `${f.cor}30` }}>
+                <p className="text-white/45 text-lg leading-snug mt-1.5 pt-1.5 border-t" style={{ borderColor: `${f.cor}30` }}>
                   {f.miniBio}
                 </p>
               )}
@@ -262,7 +262,7 @@ interface NoFluxo {
 export function FluxoCurriculo({ centro, satelites }: { centro: string; satelites: NoFluxo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 680;
+  const size = 760;
   const cx = size / 2;
   const cy = size / 2;
   const rOrbita = 255;
@@ -342,8 +342,8 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
             >
               <Icone className="size-5 text-[rgb(var(--color-brand-mint))] mx-auto mb-1.5" strokeWidth={1.75} />
-              <p className="text-white text-base font-semibold leading-snug">{s.titulo}</p>
-              <p className="text-white/50 text-base leading-snug mt-0.5">{s.texto}</p>
+              <p className="text-white text-lg font-semibold leading-snug">{s.titulo}</p>
+              <p className="text-white/50 text-lg leading-snug mt-0.5">{s.texto}</p>
             </motion.div>
           );
         })}
@@ -362,7 +362,7 @@ interface EtapaCiclo {
 export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaCiclo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 580;
+  const size = 640;
   const cx = size / 2;
   const cy = size / 2;
   const r = 205;
@@ -413,7 +413,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
       </svg>
 
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <span className="font-mono text-base uppercase tracking-[0.25em] text-white/25 text-center max-w-[7rem] leading-relaxed">
+        <span className="font-mono text-lg uppercase tracking-[0.25em] text-white/25 text-center max-w-[7rem] leading-relaxed">
           {centro}
         </span>
       </div>
@@ -436,7 +436,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
               <div className="size-14 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm flex items-center justify-center shrink-0">
                 <Icone className="size-6 text-[rgb(var(--color-brand-mint))]" strokeWidth={1.75} />
               </div>
-              <p className="text-white text-base font-semibold text-center leading-snug">{etapa.titulo}</p>
+              <p className="text-white text-lg font-semibold text-center leading-snug">{etapa.titulo}</p>
             </motion.div>
           );
         })}
@@ -457,8 +457,8 @@ interface PontoMatriz {
 export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 560;
-  const pad = 60;
+  const size = 620;
+  const pad = 64;
   const meio = (size + pad) / 2;
 
   return (
@@ -508,8 +508,8 @@ export function MatrizRisco({ pontos }: { pontos: PontoMatriz[] }) {
 export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: string }[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 400;
-  const r = 150;
+  const size = 440;
+  const r = 165;
   const stroke = 48;
   const c = 2 * Math.PI * r;
   const maior = fatias.reduce((m, f) => (f.pct > m.pct ? f : m), fatias[0]!);
@@ -549,7 +549,7 @@ export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: s
           transition={{ delay: 0.9, duration: 0.5 }}
         >
           <p className="font-display text-white text-4xl font-semibold">{maior.pct}%</p>
-          <p className="text-white/45 text-base max-w-[7rem] text-center leading-snug mt-1">{maior.label}</p>
+          <p className="text-white/45 text-lg max-w-[7rem] text-center leading-snug mt-1">{maior.label}</p>
         </motion.div>
       </div>
       <div className="flex flex-col gap-2.5">
@@ -563,8 +563,8 @@ export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: s
             transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
           >
             <span className="size-3 rounded-full shrink-0" style={{ background: f.cor }} />
-            <span className="text-white/75 text-base">{f.label}</span>
-            <span className="font-mono text-white/45 text-base tabular-nums">{f.pct}%</span>
+            <span className="text-white/75 text-lg">{f.label}</span>
+            <span className="font-mono text-white/45 text-lg tabular-nums">{f.pct}%</span>
           </motion.div>
         ))}
       </div>

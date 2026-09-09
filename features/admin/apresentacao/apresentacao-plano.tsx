@@ -228,7 +228,7 @@ function GraficoTendencia({ anos }: { anos: AnoProjetado[] }) {
 function Cartao({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
-      className={`rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 ${className}`}
+      className={`rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 ${className}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
@@ -284,20 +284,20 @@ function CartaoTopico({
   const t = TONS_CARTAO_TOPICO[variante];
   return (
     <motion.div
-      className="rounded-2xl p-5 sm:p-6 flex flex-col justify-between min-h-[11rem] sm:min-h-[12rem]"
+      className="rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[13rem] sm:min-h-[15rem]"
       style={{ background: t.bg, border: `1px solid ${t.borda}` }}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="size-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: t.iconeFundo }}>
-        <Icone className="size-6" strokeWidth={1.75} style={{ color: t.iconeCor }} />
+      <div className="size-14 rounded-xl flex items-center justify-center shrink-0" style={{ background: t.iconeFundo }}>
+        <Icone className="size-7" strokeWidth={1.75} style={{ color: t.iconeCor }} />
       </div>
-      <div className="mt-4">
-        <p className="font-display text-[1.0625rem] leading-snug" style={{ color: t.titulo }}>{titulo}</p>
+      <div className="mt-5">
+        <p className="font-display text-xl leading-snug" style={{ color: t.titulo }}>{titulo}</p>
         {texto && (
-          <p className="text-base leading-relaxed mt-1.5" style={{ color: t.texto }}>{texto}</p>
+          <p className="text-lg leading-relaxed mt-2" style={{ color: t.texto }}>{texto}</p>
         )}
       </div>
     </motion.div>
@@ -307,7 +307,7 @@ function CartaoTopico({
 function Eyebrow({ children, tom = "mint" }: { children: React.ReactNode; tom?: "mint" | "navy" }) {
   return (
     <motion.p
-      className={`font-mono text-base uppercase tracking-[0.25em] font-bold mb-3 ${tom === "navy" ? "text-[rgb(var(--color-brand-navy))]" : "text-[rgb(var(--color-brand-mint))]"}`}
+      className={`font-mono text-lg uppercase tracking-[0.25em] font-bold mb-4 ${tom === "navy" ? "text-[rgb(var(--color-brand-navy))]" : "text-[rgb(var(--color-brand-mint))]"}`}
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -322,7 +322,7 @@ function Titulo({ children, tom = "claro" }: { children: string; tom?: "claro" |
   const palavras = children.split(" ");
   return (
     <h2
-      className={`text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.12] max-w-4xl text-balance font-bold ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
+      className={`text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.1] max-w-5xl text-balance font-bold ${tom === "escuro" ? "text-[rgb(var(--color-brand-navy))]" : "text-white"}`}
       style={{ fontFamily: "var(--font-wemake)" }}
     >
       {palavras.map((p, i) => (
@@ -343,7 +343,7 @@ function Titulo({ children, tom = "claro" }: { children: string; tom?: "claro" |
 function Avatar({ iniciais, cor }: { iniciais: string; cor: string }) {
   return (
     <div
-      className="size-11 rounded-full flex items-center justify-center font-display text-base font-semibold shrink-0"
+      className="size-11 rounded-full flex items-center justify-center font-display text-lg font-semibold shrink-0"
       style={{ background: `${cor}22`, color: cor, border: `1px solid ${cor}55` }}
     >
       {iniciais}
@@ -395,9 +395,9 @@ function Slide({
 }) {
   const tomTexto = variante === "sky" ? "escuro" : "claro";
   return (
-    <div className="relative w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-20 pt-16 sm:pt-20 pb-24 sm:pb-28 overflow-y-auto" data-tom={tomTexto}>
+    <div className="relative w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 pt-16 sm:pt-20 pb-24 sm:pb-28 overflow-y-auto" data-tom={tomTexto}>
       <Fundo variante={variante} />
-      <div className="max-w-6xl mx-auto w-full">{children}</div>
+      <div className="max-w-[100rem] mx-auto w-full">{children}</div>
     </div>
   );
 }
@@ -435,7 +435,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             <Image src="/logo-wemake.png" alt="We Make" width={197} height={60} className="h-11 sm:h-12 w-auto object-contain" priority />
           </motion.div>
           <motion.p
-            className="font-mono text-base uppercase tracking-[0.3em] text-[rgb(var(--color-brand-mint))] font-bold mb-6"
+            className="font-mono text-lg uppercase tracking-[0.3em] text-[rgb(var(--color-brand-mint))] font-bold mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.15 }}
@@ -452,7 +452,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             O primeiro sistema de educação tecnológica com cosmovisão cristã do Brasil
           </motion.h1>
           <motion.div
-            className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-white/40 text-base font-mono uppercase tracking-widest"
+            className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-white/40 text-lg font-mono uppercase tracking-widest"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
@@ -470,7 +470,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="tracao" variante="navy">
       <Eyebrow>Quem somos hoje</Eyebrow>
       <Titulo>De duas escolas parceiras, em 2024, a um sistema em expansão nacional</Titulo>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         A trajetória começou em 2023, quando a empresa foi formalizada e apresentada ao mercado. A operação
         comercial abriu no ano seguinte, com duas escolas parceiras dispostas a testar um currículo ainda em
         formação. Três anos depois, a carteira soma doze escolas e cerca de dois mil alunos atendidos, crescimento
@@ -487,11 +487,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             <p className="font-display text-white text-[clamp(1.75rem,4vw,2.5rem)]">
               {s.semAnimacao ? s.valor : <NumeroAnimado valor={s.valor} sufixo={s.sufixo} />}
             </p>
-            <p className="text-white/50 text-base mt-1.5 leading-snug">{s.label}</p>
+            <p className="text-white/50 text-lg mt-1.5 leading-snug">{s.label}</p>
           </Cartao>
         ))}
       </div>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-8">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-8">
         O sistema entrega currículo, plataforma digital, espaço maker, formação docente e assessoria institucional
         num único contrato, sem cobrança separada por serviço. É essa integração, não um componente isolado, que
         a empresa aponta como diferencial diante de fornecedores que vendem apenas um pedaço do problema: um kit
@@ -503,7 +503,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="orcamento-2027" variante="royal">
       <Eyebrow>Capítulo 1 · Sumário executivo</Eyebrow>
       <Titulo>86,5% da meta escolar de 2027 já está assinada em contrato</Titulo>
-      <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         Dos R$1.100.000,00 previstos em receita escolar, R$951.961,90 já estão assinados. Os R$148.038,10
         restantes dependem de escolas em fase final de negociação, não de prospecção ainda por começar. Somada à
         primeira venda da trilha de currículo para famílias educadoras, a receita total projetada chega a
@@ -522,7 +522,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             <p className="font-display text-[rgb(var(--color-brand-mint))] text-[clamp(1.5rem,3.5vw,2rem)]">
               <NumeroAnimado valor={s.valor} prefixo={s.prefixo} sufixo={s.sufixo} casas={s.casas} />
             </p>
-            <p className="text-white/60 text-base mt-1.5 leading-snug">{s.label}</p>
+            <p className="text-white/60 text-lg mt-1.5 leading-snug">{s.label}</p>
           </Cartao>
         ))}
       </div>
@@ -534,22 +534,22 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Titulo>Visão e missão fixam o alvo antes de qualquer decisão de produto</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
         <Cartao delay={0.1}>
-          <p className="font-mono text-base uppercase tracking-wider text-white/50 font-bold mb-2">Visão</p>
+          <p className="font-mono text-lg uppercase tracking-wider text-white/50 font-bold mb-2">Visão</p>
           <p className="text-white text-lg sm:text-xl font-display leading-snug">
             Formar uma geração que cria tecnologia com sabedoria, para a glória de Deus e o bem do próximo.
           </p>
-          <p className="text-white/70 text-base leading-relaxed mt-3">
+          <p className="text-white/70 text-lg leading-relaxed mt-3">
             Em seu desdobramento, ser referência em educação tecnológica fundamentada na cosmovisão cristã,
             formando estudantes capazes de compreender, utilizar e criar tecnologia com sabedoria, excelência e
             responsabilidade.
           </p>
         </Cartao>
         <Cartao delay={0.2}>
-          <p className="font-mono text-base uppercase tracking-wider text-white/50 font-bold mb-2">Missão</p>
+          <p className="font-mono text-lg uppercase tracking-wider text-white/50 font-bold mb-2">Missão</p>
           <p className="text-white text-lg sm:text-xl font-display leading-snug">
             Equipar escolas e famílias para ensinar tecnologia com verdade, beleza e bondade.
           </p>
-          <p className="text-white/70 text-base leading-relaxed mt-3">
+          <p className="text-white/70 text-lg leading-relaxed mt-3">
             Em seu desdobramento, pensar, estudar, ensinar e desenvolver educação tecnológica com excelência,
             liberdade e responsabilidade, entregando currículo, formação, tecnologia, ambientes e orientação a
             escolas, educadores, famílias e comunidades.
@@ -579,8 +579,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             viewport={{ once: true, margin: "-10%" }}
             transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
           >
-            <p className="text-[rgb(var(--color-brand-mint))] text-base font-bold mb-1">{v.titulo}</p>
-            <p className="text-white/70 text-base leading-relaxed">{v.texto}</p>
+            <p className="text-[rgb(var(--color-brand-mint))] text-lg font-bold mb-1">{v.titulo}</p>
+            <p className="text-white/70 text-lg leading-relaxed">{v.texto}</p>
           </motion.div>
         ))}
       </div>
@@ -590,14 +590,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="historico" variante="dark">
       <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
       <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
         cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
         programação, robótica educacional, eletrônica, modelagem e fabricação 3D, projetos de engenharia,
         inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar e Criar. Para o
         ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
       </p>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-3">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-3">
         A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do
         sistema, entregando currículo, planos de aula e recursos a professores e instrumentos de acompanhamento à
         coordenação. A empresa também acumulou experiência em concepção de ambientes físicos de aprendizagem,
@@ -622,7 +622,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           filhos={EQUIPE_FILHOS}
         />
       </div>
-      <p className="text-white/40 text-base mt-8 max-w-2xl">
+      <p className="text-white/40 text-lg mt-8 max-w-3xl">
         Estrutura hoje concentrada, o que garante agilidade nesta fase, com distribuição progressiva de
         responsabilidade prevista à medida que o sistema cresce.
       </p>
@@ -632,7 +632,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="sistema" variante="dark">
       <Eyebrow>Capítulo 3 · Conceito de negócio</Eyebrow>
       <Titulo>Cinco componentes reunidos em um único contrato, com preço unificado para o conjunto</Titulo>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         Ao adquirir o currículo, a escola ou a família educadora passa a ter direito a todos os demais serviços
         já previstos no plano letivo contratado, sem cobrança adicional. Serviços fora desse escopo, quando
         solicitados pela instituição, são tratados como demanda extraordinária e negociados à parte.
@@ -666,7 +666,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           ]}
         />
       </div>
-      <p className="text-white/50 text-base max-w-2xl mt-2 mx-auto text-center">
+      <p className="text-white/50 text-lg max-w-3xl mt-2 mx-auto text-center">
         O mesmo sistema atende dois mercados que compartilham estrutura pedagógica semelhante, escolas
         confessionais cristãs e famílias educadoras em comunidades de homeschooling, com currículo, plataforma e
         cadência de acompanhamento adaptados a cada um.
@@ -677,7 +677,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="oportunidade" variante="royal">
       <Eyebrow>Capítulo 4 · Análise de oportunidade</Eyebrow>
       <Titulo>Reproduzir um componente isolado é simples, reproduzir os sete juntos não é</Titulo>
-      <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         Um concorrente pode copiar um currículo de robótica ou lançar uma plataforma de gestão. É mais difícil
         reproduzir, ao mesmo tempo, currículo autoral, metodologia própria, plataforma tecnológica, propriedade
         intelectual, dados de implementação, relacionamento institucional e marca funcionando de forma integrada.
@@ -694,16 +694,16 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <CartaoTopico key={c.titulo} delay={i * 0.1} icone={c.icone} titulo={c.titulo} variante="royal" />
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-3 mt-3 max-w-xl">
+      <div className="grid grid-cols-2 gap-3 mt-3 max-w-2xl">
         <Cartao delay={0.5} className="bg-[rgb(var(--color-brand-navy))]/15 border-[rgb(var(--color-brand-navy))]/25">
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-xl">&lt; 2 anos</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/75 text-base mt-1 leading-snug">
+          <p className="text-[rgb(var(--color-brand-navy))]/75 text-lg mt-1 leading-snug">
             Recuperação do investimento por nova escola
           </p>
         </Cartao>
         <Cartao delay={0.6} className="bg-[rgb(var(--color-brand-navy))]/15 border-[rgb(var(--color-brand-navy))]/25">
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-xl">18 a 36 meses</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/75 text-base mt-1 leading-snug">
+          <p className="text-[rgb(var(--color-brand-navy))]/75 text-lg mt-1 leading-snug">
             Recuperação na frente de famílias educadoras, ainda em validação
           </p>
         </Cartao>
@@ -714,13 +714,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="mercado" variante="navy">
       <Eyebrow>Capítulo 4 · Tamanho de mercado</Eyebrow>
       <Titulo>Um nicho pouco disputado dentro de um setor de tecnologia educacional já maduro</Titulo>
-      <p className="text-white/60 text-base max-w-3xl mt-4 leading-relaxed">
+      <p className="text-white/60 text-lg max-w-4xl mt-4 leading-relaxed">
         O Censo Escolar de 2025 registra 41.746 escolas privadas de Educação Básica no Brasil. Para o recorte
         confessional, este plano adota como referência de trabalho um mercado entre 3.500 e 5.000 escolas, com
         mercado acessível entre 900 e 1.400, estimativa a ser validada por estudo de dimensionamento específico
         antes da consolidação definitiva das metas de participação.
       </p>
-      <div className="mt-6 space-y-3 max-w-3xl">
+      <div className="mt-6 space-y-3 max-w-4xl">
         {[
           { label: "Escolas privadas de Educação Básica no Brasil (Censo 2025)", valor: 41746, largura: 100 },
           { label: "Escolas com Ensino Fundamental", valor: 24683, largura: 68 },
@@ -735,8 +735,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             transition={{ delay: i * 0.15, duration: 0.6 }}
           >
             <div className="flex items-baseline justify-between mb-1.5 gap-3">
-              <span className="text-white/60 text-base">{f.label}</span>
-              <span className={`font-mono font-bold tabular-nums text-base ${f.destaque ? "text-[rgb(var(--color-brand-mint))]" : "text-white/70"}`}>
+              <span className="text-white/60 text-lg">{f.label}</span>
+              <span className={`font-mono font-bold tabular-nums text-lg ${f.destaque ? "text-[rgb(var(--color-brand-mint))]" : "text-white/70"}`}>
                 {f.valor.toLocaleString("pt-BR")}
               </span>
             </div>
@@ -767,7 +767,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <CartaoTopico key={c.lei} delay={i * 0.15} icone={c.icone} titulo={c.lei} texto={c.texto} variante="royal" />
         ))}
       </div>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-6">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-6">
         Embora o mecanismo do Fundeb se aplique diretamente à rede pública, a pressão regulatória alcança
         igualmente as escolas privadas, que precisam demonstrar conformidade curricular às famílias e aos órgãos
         de supervisão educacional. O sistema We Make já incorpora, desde a concepção do currículo, os três eixos
@@ -783,9 +783,9 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Titulo>DF, São Paulo, Minas Gerais, Paraná e Rio Grande do Sul já têm lei ou resolução própria</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 items-center">
         {geoBrasil ? (
-          <MapaBrasil geo={geoBrasil} porEstado={estadosComLeiPropria} width={460} height={460} corAtiva="rgb(var(--color-brand-mint))" />
+          <MapaBrasil geo={geoBrasil} porEstado={estadosComLeiPropria} width={540} height={540} corAtiva="rgb(var(--color-brand-mint))" />
         ) : (
-          <div className="text-white/40 text-base">Mapa indisponível</div>
+          <div className="text-white/40 text-lg">Mapa indisponível</div>
         )}
         <div className="space-y-2">
           {[
@@ -803,8 +803,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
             >
-              <span className="font-mono text-[rgb(var(--color-brand-mint))] text-base font-bold w-7 shrink-0">{uf}</span>
-              <span className="text-white/65 text-base leading-snug">{texto}</span>
+              <span className="font-mono text-[rgb(var(--color-brand-mint))] text-lg font-bold w-7 shrink-0">{uf}</span>
+              <span className="text-white/65 text-lg leading-snug">{texto}</span>
             </motion.div>
           ))}
         </div>
@@ -824,7 +824,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <CartaoTopico key={c.titulo} delay={i * 0.12} icone={c.icone} titulo={c.titulo} texto={c.texto} variante="sky" />
         ))}
       </div>
-      <p className="text-[rgb(var(--color-brand-navy))]/70 text-base max-w-xl mt-5">
+      <p className="text-[rgb(var(--color-brand-navy))]/70 text-lg max-w-2xl mt-5">
         Essa fragmentação é, ao mesmo tempo, o padrão do mercado e a principal oportunidade que o sistema We
         Make explora.
       </p>
@@ -841,13 +841,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           { cat: "Franquias diretas à família", ex: "Código Kid, SuperGeeks, Kodland, BYJU'S", limite: "Sem vínculo institucional com a escola." },
         ].map((c, i) => (
           <Cartao key={c.cat} delay={i * 0.15}>
-            <p className="font-mono text-base uppercase tracking-wider text-white/40 font-bold mb-2">{c.cat}</p>
+            <p className="font-mono text-lg uppercase tracking-wider text-white/40 font-bold mb-2">{c.cat}</p>
             <p className="font-display text-white text-[1.0625rem] mb-3">{c.ex}</p>
-            <p className="text-white/55 text-base leading-relaxed">{c.limite}</p>
+            <p className="text-white/55 text-lg leading-relaxed">{c.limite}</p>
           </Cartao>
         ))}
       </div>
-      <p className="text-white/50 text-base max-w-2xl mt-5 leading-relaxed">
+      <p className="text-white/50 text-lg max-w-3xl mt-5 leading-relaxed">
         A We Make é a primeira empresa brasileira a reunir, num único sistema, currículo plurianual, plataforma
         tecnológica própria, espaço maker, formação docente e assessoria institucional, fundamentados de forma
         explícita na cosmovisão cristã.
@@ -862,13 +862,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         {[
           { icone: BookOpen, titulo: "Sistemas de ensino cristãos", texto: "Já têm a base de clientes e a confiança das mantenedoras confessionais." },
           { icone: Newspaper, titulo: "Grandes grupos editoriais", texto: "Distribuição nacional consolidada e capital para lançar um módulo de tecnologia." },
-          { icone: Landmark, titulo: "Mackenzie e ACSI", texto: "Credibilidade institucional acumulada junto às mesmas escolas confessionais." },
+          { icone: Landmark, titulo: "Redes como Mackenzie", texto: "Credibilidade institucional já acumulada junto às mesmas escolas confessionais." },
           { icone: Cpu, titulo: "Google e Microsoft", texto: "Plataformas já presentes no dia a dia de boa parte das escolas parceiras." },
         ].map((c, i) => (
           <CartaoTopico key={c.titulo} delay={i * 0.1} icone={c.icone} titulo={c.titulo} texto={c.texto} variante="dark" />
         ))}
       </div>
-      <p className="text-white/50 text-base max-w-xl mt-5">
+      <p className="text-white/50 text-lg max-w-2xl mt-5">
         A defesa competitiva se apoia em especialização no mercado cristão, propriedade intelectual protegida e
         integração profunda entre os cinco componentes do sistema.
       </p>
@@ -880,12 +880,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Titulo>Presença em 9 estados, do Sul ao Nordeste</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 items-center">
         {geoBrasil ? (
-          <MapaBrasil geo={geoBrasil} porEstado={escolasPorEstado} width={460} height={460} />
+          <MapaBrasil geo={geoBrasil} porEstado={escolasPorEstado} width={540} height={540} />
         ) : (
-          <div className="text-white/40 text-base">Mapa indisponível</div>
+          <div className="text-white/40 text-lg">Mapa indisponível</div>
         )}
         <div>
-          <p className="text-white/70 text-base leading-relaxed mb-4">
+          <p className="text-white/70 text-lg leading-relaxed mb-4">
             Escolas parceiras identificadas por estado no cadastro comercial, entre as 23 que compõem o
             orçamento de 2027. Concentração no Paraná, com presença já em São Paulo, Santa Catarina,
             Paraíba, Espírito Santo, Maranhão, Rio Grande do Sul, Rio Grande do Norte e Ceará.
@@ -901,7 +901,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
                 transition={{ delay: i * 0.06, duration: 0.35 }}
               >
                 <p className="font-display text-white text-lg">{qtd}</p>
-                <p className="font-mono text-white/50 text-base">{uf}</p>
+                <p className="font-mono text-white/50 text-lg">{uf}</p>
               </motion.div>
             ))}
           </div>
@@ -913,7 +913,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="curriculo" variante="royal">
       <Eyebrow>Capítulo 6 · Produtos e serviços</Eyebrow>
       <Titulo>Um currículo autoral, da Educação Infantil ao Ensino Médio, com progressão real entre séries</Titulo>
-      <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         Cada aula segue os três momentos da metodologia: Conhecer, que provoca conexão inicial com o tema;
         Explorar, que sistematiza o conteúdo por explicações, exemplos e discussão; e Criar, conduzido pelo Ciclo
         de Projeto. A avaliação acompanha todo esse percurso, não apenas o resultado final, observando
@@ -937,11 +937,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Titulo>O Momento Criar segue um ciclo de projeto estruturado em seis etapas</Titulo>
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center mt-8">
         <div>
-          <p className="text-white/55 text-base leading-relaxed max-w-md">
+          <p className="text-white/55 text-lg leading-relaxed max-w-md">
             As seis etapas se repetem a cada novo desafio proposto em sala, do primeiro contato com o problema
             até a apresentação da solução para a turma.
           </p>
-          <p className="text-white/45 text-base mt-4 max-w-md">
+          <p className="text-white/45 text-lg mt-4 max-w-md">
             Etapas não rigidamente lineares: o processo permite retornar, ajustar e refinar soluções ao longo do
             projeto.
           </p>
@@ -968,21 +968,21 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <Cartao delay={0.1}>
           <BookOpen className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Livro Maker físico</p>
-          <p className="text-white/55 text-base leading-relaxed">
+          <p className="text-white/55 text-lg leading-relaxed">
             Material de registro, reflexão e portfólio do aluno, produzido por gráfica parceira em São Paulo.
             Complementa a entrega digital já feita pela plataforma.
           </p>
         </Cartao>
         <Cartao delay={0.2}>
           <p className="font-display text-white text-2xl mb-1">R$ 420</p>
-          <p className="text-white/50 text-base mb-3">Valor de referência por aluno ao ano</p>
-          <p className="text-white/55 text-base leading-relaxed">
+          <p className="text-white/50 text-lg mb-3">Valor de referência por aluno ao ano</p>
+          <p className="text-white/55 text-lg leading-relaxed">
             Ponderado por porte, ticket já cobrado das famílias e natureza da instituição. Carteira atual pratica
             entre R$180 e R$420 por aluno ao ano.
           </p>
         </Cartao>
       </div>
-      <p className="text-white/50 text-base max-w-2xl mt-4 leading-relaxed">
+      <p className="text-white/50 text-lg max-w-3xl mt-4 leading-relaxed">
         A partir desse valor de referência, a precificação final de cada contrato é ponderada por porte da
         escola, ticket já cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo escolas
         sem fins lucrativos, o que explica a variação praticada hoje na carteira.
@@ -995,7 +995,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <div>
           <Eyebrow>Capítulo 6 · Segundo mercado</Eyebrow>
           <Titulo>O mesmo currículo, adaptado para famílias educadoras em comunidades de homeschooling</Titulo>
-          <p className="text-white/70 text-base leading-relaxed max-w-xl mt-4">
+          <p className="text-white/70 text-lg leading-relaxed max-w-2xl mt-4">
             O acervo curricular do Kit We Make é entregue em formato adaptado, hoje a frente de negócio mais
             madura ao lado do currículo escolar, organizado em quatro trilhas divididas em três níveis segundo o
             percurso clássico do Trivium. Um nível equivale a um semestre, com encontro semanal entre tutor e
@@ -1021,14 +1021,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 + i * 0.12, duration: 0.4 }}
               >
-                <span className="font-mono text-base text-[rgb(var(--color-brand-mint))] uppercase tracking-wider font-bold">
+                <span className="font-mono text-lg text-[rgb(var(--color-brand-mint))] uppercase tracking-wider font-bold">
                   Nível {i + 1} · {n}
                 </span>
               </motion.div>
             ))}
           </div>
           <Cartao delay={0.75} className="mt-5">
-            <p className="text-white/70 text-base leading-relaxed">
+            <p className="text-white/70 text-lg leading-relaxed">
               Cobrança realizada por aluno, com acesso gratuito ao pai ou responsável. Venda e distribuição
               conduzidas pela Aspen, parceria estratégica em negociação avançada, ainda em fase de estruturação.
               Primeira venda projetada para 2027: 100 alunos, R$49.890,00.
@@ -1045,7 +1045,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <div>
           <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
           <Titulo>A Academia We Make forma o professor que vai aplicar o currículo</Titulo>
-          <p className="text-white/70 text-base leading-relaxed max-w-xl mt-4">
+          <p className="text-white/70 text-lg leading-relaxed max-w-2xl mt-4">
             Assim que o contrato de currículo é firmado, a implantação da Academia We Make começa, com
             operacionalização contínua ao longo de todo o ano letivo, em oito fases sequenciais que vão da
             apresentação pré-contratual até a prescrição de resultados no fechamento do ano.
@@ -1060,12 +1060,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06, duration: 0.4 }}
               >
-                <p className="font-mono text-[rgb(var(--color-brand-mint))] text-base mb-1">{String(i + 1).padStart(2, "0")}</p>
-                <p className="text-white/75 text-base leading-snug">{f}</p>
+                <p className="font-mono text-[rgb(var(--color-brand-mint))] text-lg mb-1">{String(i + 1).padStart(2, "0")}</p>
+                <p className="text-white/75 text-lg leading-snug">{f}</p>
               </motion.div>
             ))}
           </div>
-          <p className="text-white/40 text-base mt-5 max-w-xl">
+          <p className="text-white/40 text-lg mt-5 max-w-2xl">
             Financiada pela mesma receita do Kit We Make, sem cobrança adicional.
           </p>
         </div>
@@ -1086,21 +1086,21 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <Cartao key={c.titulo} delay={i * 0.12}>
             <c.icone className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
             <p className="font-display text-white text-[1.0625rem] mb-1.5">{c.titulo}</p>
-            <p className="text-white/55 text-base leading-relaxed">{c.texto}</p>
+            <p className="text-white/55 text-lg leading-relaxed">{c.texto}</p>
           </Cartao>
         ))}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
         <Cartao delay={0.4}>
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Onboarding de escolas</p>
-          <p className="text-white/55 text-base leading-relaxed">
+          <p className="text-white/55 text-lg leading-relaxed">
             12 horas, 2 dias, 3 formações: primeiro fundamentos, depois metodologia, só então operação da
             plataforma e do espaço maker.
           </p>
         </Cartao>
         <Cartao delay={0.5}>
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Parceiros estratégicos</p>
-          <p className="text-white/55 text-base leading-relaxed">
+          <p className="text-white/55 text-lg leading-relaxed">
             ACSI Brasil para acesso institucional, gráfica parceira em São Paulo para o Livro Maker, Aspen para a
             frente de homeschooling.
           </p>
@@ -1116,14 +1116,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <Cartao delay={0.1} className="bg-[rgb(var(--color-brand-navy))]/10 border-[rgb(var(--color-brand-navy))]/25">
           <Trophy className="size-5 text-[rgb(var(--color-brand-navy))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] mb-1.5">Olimpíadas de tecnologia</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/70 text-base leading-relaxed">
+          <p className="text-[rgb(var(--color-brand-navy))]/70 text-lg leading-relaxed">
             Em fase de estruturação, para estimular a excelência técnica entre alunos das escolas parceiras.
           </p>
         </Cartao>
         <Cartao delay={0.2} className="bg-[rgb(var(--color-brand-navy))]/10 border-[rgb(var(--color-brand-navy))]/25">
           <Trophy className="size-5 text-[rgb(var(--color-brand-navy))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] mb-1.5">Hackathons</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/70 text-base leading-relaxed">
+          <p className="text-[rgb(var(--color-brand-navy))]/70 text-lg leading-relaxed">
             Premiação já testada: cada vencedor recebe um leitor digital, e a equipe recebe uma semana de
             estágio em empresas de tecnologia parceiras.
           </p>
@@ -1135,7 +1135,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="pesquisa-desenvolvimento" variante="dark">
       <Eyebrow>Capítulo 8 · Pesquisa e desenvolvimento</Eyebrow>
       <Titulo>A pesquisa acadêmica já sustenta o currículo, não é uma promessa ligada à futura faculdade</Titulo>
-      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         Dênis Júlio concluiu, em fevereiro de 2026, o Mestrado em Inovação em Tecnologias Educacionais pelo
         Instituto Metrópole Digital da Universidade Federal do Rio Grande do Norte. A dissertação, Ciberética,
         investiga a formação ética de adolescentes no uso de tecnologias digitais, pesquisa empírica conduzida com
@@ -1143,7 +1143,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         Catarina. Dela já saíram o livro Cartas para um Professor Digital e a oficina A Escola como Escudo,
         ministrada em julho de 2026 no Colégio Oficina, em Joinville.
       </p>
-      <div className="grid grid-cols-3 gap-3 mt-6 max-w-xl">
+      <div className="grid grid-cols-3 gap-3 mt-6 max-w-2xl">
         {[
           { label: "Estudantes na pesquisa", valor: 259 },
           { label: "Escolas participantes", valor: 5 },
@@ -1151,7 +1151,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         ].map((s, i) => (
           <Cartao key={s.label} delay={i * 0.1}>
             <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={s.valor} /></p>
-            <p className="text-white/50 text-base mt-1 leading-snug">{s.label}</p>
+            <p className="text-white/50 text-lg mt-1 leading-snug">{s.label}</p>
           </Cartao>
         ))}
       </div>
@@ -1164,7 +1164,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <CartaoTopico key={c.titulo} delay={0.3 + i * 0.1} icone={c.icone} titulo={c.titulo} texto={c.texto} variante="dark" />
         ))}
       </div>
-      <p className="text-white/40 text-base mt-4 max-w-2xl">
+      <p className="text-white/40 text-lg mt-4 max-w-3xl">
         Horizonte de qualificação já definido: ingresso do fundador em programa de doutorado a partir de 2028.
       </p>
     </Slide>,
@@ -1183,7 +1183,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <div className="relative">
           <Eyebrow>Capítulo 9 · Posicionamento</Eyebrow>
           <Titulo>Um sistema pedagógico integral, estruturado a partir de uma antropologia cristã</Titulo>
-          <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-6">
+          <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-6">
             Sequenciado e alinhado à Base Nacional Comum Curricular, entregando currículo, plataforma, espaço
             maker, formação docente e assessoria institucional como partes de uma mesma proposta contratada de
             uma só vez.
@@ -1207,7 +1207,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
                 <span className="size-8 rounded-full bg-[rgb(var(--color-brand-mint))]/15 flex items-center justify-center shrink-0">
                   <c.icone className="size-4 text-[rgb(var(--color-brand-mint))]" strokeWidth={1.75} />
                 </span>
-                <span className="text-white text-base font-medium">{c.titulo}</span>
+                <span className="text-white text-lg font-medium">{c.titulo}</span>
               </motion.div>
             ))}
           </div>
@@ -1219,7 +1219,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="metas-vendas" variante="royal">
       <Eyebrow>Capítulo 9 · Marketing e vendas</Eyebrow>
       <Titulo>Meta de 4.000 alunos em 2027 chega a 20.250 no cenário-base de 2031</Titulo>
-      <div className="mt-9 space-y-2.5 max-w-3xl">
+      <div className="mt-9 space-y-2.5 max-w-4xl">
         {[
           { ano: 2027, alunos: "4.000 alunos", largura: 20 },
           { ano: 2028, alunos: "6.000 alunos", largura: 30 },
@@ -1235,7 +1235,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
           >
-            <span className="font-mono text-white/60 text-base w-10 shrink-0">{r.ano}</span>
+            <span className="font-mono text-white/60 text-lg w-10 shrink-0">{r.ano}</span>
             <div className="flex-1 h-6 rounded-lg bg-black/15 overflow-hidden">
               <motion.div
                 className="h-full rounded-lg bg-white flex items-center justify-end px-3"
@@ -1244,13 +1244,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 + 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="font-mono text-base font-bold text-[rgb(var(--color-brand-royal-deep))]">{r.alunos}</span>
+                <span className="font-mono text-lg font-bold text-[rgb(var(--color-brand-royal-deep))]">{r.alunos}</span>
               </motion.div>
             </div>
           </motion.div>
         ))}
       </div>
-      <p className="text-white/60 text-base max-w-2xl mt-6 leading-relaxed">
+      <p className="text-white/60 text-lg max-w-3xl mt-6 leading-relaxed">
         Adição constante de 10 novas escolas parceiras por ano, construindo uma operação sólida com recursos próprios.
       </p>
     </Slide>,
@@ -1265,19 +1265,19 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
         <Cartao delay={0.1}>
           <p className="font-display text-white text-2xl"><NumeroAnimado valor={receitaTotal2027} prefixo="R$ " /></p>
-          <p className="text-white/50 text-base mt-1">Receita 2027</p>
+          <p className="text-white/50 text-lg mt-1">Receita 2027</p>
         </Cartao>
         <Cartao delay={0.2}>
           <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={ultimoAno?.receita ?? 0} prefixo="R$ " /></p>
-          <p className="text-white/50 text-base mt-1">Receita 2031, cenário-base</p>
+          <p className="text-white/50 text-lg mt-1">Receita 2031, cenário-base</p>
         </Cartao>
         <Cartao delay={0.3}>
           <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={ultimoAno?.resultado ?? 0} prefixo="R$ " /></p>
-          <p className="text-white/50 text-base mt-1">Resultado 2031, cenário-base</p>
+          <p className="text-white/50 text-lg mt-1">Resultado 2031, cenário-base</p>
         </Cartao>
         <Cartao delay={0.4}>
           <p className="font-display text-white text-2xl"><NumeroAnimado valor={ultimoAno?.margemPct ?? 0} sufixo="%" casas={1} /></p>
-          <p className="text-white/50 text-base mt-1">Margem projetada 2031</p>
+          <p className="text-white/50 text-lg mt-1">Margem projetada 2031</p>
         </Cartao>
       </div>
     </Slide>,
@@ -1298,7 +1298,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           ]}
         />
       </div>
-      <p className="text-white/40 text-base mt-6 max-w-xl">
+      <p className="text-white/40 text-lg mt-6 max-w-2xl">
         Despesa total de R$848.913,14 em 2027, já incorporando pró-labore da liderança e equipe de tecnologia
         própria.
       </p>
@@ -1319,7 +1319,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             <p className="font-display text-[1.0625rem] mb-3" style={{ color: q.cor }}>{q.titulo}</p>
             <ul className="space-y-1.5">
               {q.itens.map((it) => (
-                <li key={it} className="text-white/65 text-base leading-relaxed flex gap-2">
+                <li key={it} className="text-white/65 text-lg leading-relaxed flex gap-2">
                   <span style={{ color: q.cor }}>·</span>{it}
                 </li>
               ))}
@@ -1355,7 +1355,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <Cartao delay={0.1}>
           <School className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Escola de tecnologia</p>
-          <p className="text-white/55 text-base leading-relaxed">
+          <p className="text-white/55 text-lg leading-relaxed">
             Abrangência nacional, atende diretamente crianças e adolescentes, sem exigir vínculo com escola
             parceira. Ano 4 do plano, 2030.
           </p>
@@ -1363,7 +1363,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <Cartao delay={0.2}>
           <Building2 className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Faculdade de tecnologia</p>
-          <p className="text-white/55 text-base leading-relaxed">
+          <p className="text-white/55 text-lg leading-relaxed">
             Possibilidade a ser buscada a partir do Ano 4, não frente já decidida. Depende de credenciamento
             junto ao Ministério da Educação, próprio ou por parceria com instituição já credenciada, etapa que
             ainda não está em curso.
@@ -1371,7 +1371,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         </Cartao>
       </div>
       <Cartao delay={0.4} className="mt-3">
-        <p className="text-white/70 text-base leading-relaxed">
+        <p className="text-white/70 text-lg leading-relaxed">
           Toda a receita projetada entre 2027 e 2031 vem do sistema já existente. Os dois negócios futuros
           dependem da consolidação da governança, da validação de demanda e do registro de propriedade
           intelectual.
@@ -1384,13 +1384,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Eyebrow>Capítulo 13 · Capital externo</Eyebrow>
       <Titulo>Uma trajetória construída sem dívida, pronta para ser acelerada por capital externo</Titulo>
       <motion.div
-        className="mt-9 rounded-2xl bg-[rgb(var(--color-brand-ivory))] text-[rgb(var(--color-brand-navy))] p-6 sm:p-8 max-w-3xl shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]"
+        className="mt-9 rounded-2xl bg-[rgb(var(--color-brand-ivory))] text-[rgb(var(--color-brand-navy))] p-6 sm:p-8 max-w-4xl shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="font-mono text-base uppercase tracking-[0.2em] text-[rgb(var(--color-brand-royal))] font-bold mb-3">
+        <p className="font-mono text-lg uppercase tracking-[0.2em] text-[rgb(var(--color-brand-royal))] font-bold mb-3">
           Ponto de partida
         </p>
         <p className="font-display text-[1.05rem] sm:text-[1.25rem] leading-snug">
@@ -1399,18 +1399,18 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           antecipar esse horizonte para dois ou três anos.
         </p>
       </motion.div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 max-w-3xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 max-w-4xl">
         {[
           { titulo: "Equipe comercial", texto: "Fortalecimento imediato da estrutura de aquisição, com mais capacidade de busca ativa e qualificação de novas escolas." },
           { titulo: "Consultoria pedagógica", texto: "Investimento mais robusto na Academia We Make, elevando a experiência de pós-venda de escolas e famílias já atendidas." },
         ].map((c, i) => (
           <Cartao key={c.titulo} delay={0.15 + i * 0.12}>
             <p className="font-display text-white text-[1.0625rem] mb-2">{c.titulo}</p>
-            <p className="text-white/60 text-base leading-relaxed">{c.texto}</p>
+            <p className="text-white/60 text-lg leading-relaxed">{c.texto}</p>
           </Cartao>
         ))}
       </div>
-      <p className="text-white/40 text-base mt-5 max-w-2xl">
+      <p className="text-white/40 text-lg mt-5 max-w-3xl">
         Prioridades de alocação caso a aceleração se concretize, inspiração, não orçamento aprovado.
       </p>
     </Slide>,
@@ -1439,7 +1439,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           ].map((r, i) => (
             <motion.li
               key={r}
-              className="flex items-start gap-2 text-white/65 text-base leading-relaxed"
+              className="flex items-start gap-2 text-white/65 text-lg leading-relaxed"
               initial={{ opacity: 0, x: 16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -1458,7 +1458,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <div className="flex flex-col items-start">
         <Sparkles className="size-8 text-[rgb(var(--color-brand-mint))] mb-6" strokeWidth={1.5} />
         <Titulo>Educação tecnológica com sabedoria, para a glória de Deus e o bem do próximo</Titulo>
-        <p className="text-white/55 text-base max-w-2xl mt-6 leading-relaxed">
+        <p className="text-white/55 text-lg max-w-3xl mt-6 leading-relaxed">
           We Make Educação Tecnológica LTDA · CNPJ 48.760.895/0001-99 · Documento confidencial, elaborado pela
           direção estratégica da empresa.
         </p>
@@ -1559,7 +1559,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
       {/* Controles */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex items-center gap-2">
-        <span className="font-mono text-base text-white/40 tabular-nums hidden sm:inline">
+        <span className="font-mono text-lg text-white/40 tabular-nums hidden sm:inline">
           {String(atual + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
         <button
