@@ -1280,7 +1280,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="financeiro" variante="navy">
       <Eyebrow>Capítulo 10 · Premissas de crescimento</Eyebrow>
       <Titulo>Receita projetada, 2027 a 2031</Titulo>
-      <div className="mt-8">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-4">
+        Os valores de 2027 permanecem sujeitos a revisão e aprovação da liderança; as projeções de 2028 a 2031
+        são premissas de planejamento, não orçamento aprovado. Como referência, 2025 fechou com receita de
+        R$386.878,92 e margem operacional de 38,1%, base bem menor que a estrutura projetada para 2027, o que
+        explica a mudança de patamar nos números a seguir.
+      </p>
+      <div className="mt-6">
         <GraficoTendencia anos={anos} />
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
@@ -1319,9 +1325,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           ]}
         />
       </div>
-      <p className="text-white/40 text-lg mt-6 max-w-2xl">
+      <p className="text-white/40 text-lg mt-6 max-w-3xl">
         Despesa total de R$848.913,14 em 2027, já incorporando pró-labore da liderança e equipe de tecnologia
-        própria.
+        própria. A prioridade financeira muda a cada ano do plano: estruturar e reprecificar em 2027, absorver a
+        capacidade instalada em 2028, diversificar receita em 2029, e financiar a expansão pela própria geração
+        de caixa a partir de 2030.
       </p>
     </Slide>,
 
