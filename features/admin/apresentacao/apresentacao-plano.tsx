@@ -1348,7 +1348,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 22 — SWOT
     <Slide key="swot" variante="dark">
       <Eyebrow>Capítulo 11 · Análise SWOT</Eyebrow>
-      <Titulo>Análise SWOT</Titulo>
+      <Titulo>A integração do sistema é força e fraqueza ao mesmo tempo</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
         {[
           { titulo: "Forças", cor: "rgb(var(--color-brand-mint))", itens: ["Integração das cinco frentes em um sistema único", "Currículo autoral consolidado, 1º ao 9º ano", "Cosmovisão cristã incorporada ao produto", "Entrega 100% digital do currículo escolar"] },
@@ -1368,6 +1368,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </Cartao>
         ))}
       </div>
+      <p className="text-white/50 text-lg max-w-4xl mt-5 leading-relaxed">
+        A leitura cruzada aponta uma prioridade clara: transformar a integração do sistema, hoje sustentada em
+        grande parte pelo conhecimento pessoal da liderança, em processo documentado e replicável, antes que essa
+        dependência se torne restrição ativa ao crescimento projetado.
+      </p>
     </Slide>,
 
     // 25 — indicadores de retorno
