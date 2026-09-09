@@ -913,7 +913,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="curriculo" variante="royal">
       <Eyebrow>Capítulo 6 · Produtos e serviços</Eyebrow>
       <Titulo>Um currículo autoral, da Educação Infantil ao Ensino Médio, com progressão real entre séries</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
+      <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+        Cada aula segue os três momentos da metodologia: Conhecer, que provoca conexão inicial com o tema;
+        Explorar, que sistematiza o conteúdo por explicações, exemplos e discussão; e Criar, conduzido pelo Ciclo
+        de Projeto. A avaliação acompanha todo esse percurso, não apenas o resultado final, observando
+        compreensão, participação e capacidade de aperfeiçoamento do aluno ao longo do processo.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
         {[
           { icone: Code2, titulo: "Programação, Codificação e Jogos", texto: "Lógica computacional aplicada à criação de jogos e aplicativos." },
           { icone: CircuitBoard, titulo: "Robótica e Eletrônica", texto: "Montagem, sensores e circuitos que unem hardware e software." },
@@ -976,15 +982,26 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </p>
         </Cartao>
       </div>
+      <p className="text-white/50 text-base max-w-2xl mt-4 leading-relaxed">
+        A partir desse valor de referência, a precificação final de cada contrato é ponderada por porte da
+        escola, ticket já cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo escolas
+        sem fins lucrativos, o que explica a variação praticada hoje na carteira.
+      </p>
     </Slide>,
 
     // 8 — homeschool
     <Slide key="homeschool" variante="dark">
       <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
         <div>
-          <Eyebrow>Segundo mercado</Eyebrow>
+          <Eyebrow>Capítulo 6 · Segundo mercado</Eyebrow>
           <Titulo>O mesmo currículo, adaptado para famílias educadoras em comunidades de homeschooling</Titulo>
-          <div className="grid grid-cols-2 gap-3 mt-9">
+          <p className="text-white/70 text-base leading-relaxed max-w-xl mt-4">
+            O acervo curricular do Kit We Make é entregue em formato adaptado, hoje a frente de negócio mais
+            madura ao lado do currículo escolar, organizado em quatro trilhas divididas em três níveis segundo o
+            percurso clássico do Trivium. Um nível equivale a um semestre, com encontro semanal entre tutor e
+            aluno.
+          </p>
+          <div className="grid grid-cols-2 gap-3 mt-6">
             {[
               { icone: Code2, titulo: "Programação Criativa" },
               { icone: CircuitBoard, titulo: "Robótica e Automação" },
@@ -1012,8 +1029,9 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </div>
           <Cartao delay={0.75} className="mt-5">
             <p className="text-white/70 text-base leading-relaxed">
-              Cobrança realizada por aluno (com acesso gratuito aos pais/responsáveis). Venda e distribuição conduzidas por
-              parceira comercial já estabelecida (Aspen). Primeira venda projetada para 2027: 100 alunos, R$49.890,00.
+              Cobrança realizada por aluno, com acesso gratuito ao pai ou responsável. Venda e distribuição
+              conduzidas pela Aspen, parceria estratégica em negociação avançada, ainda em fase de estruturação.
+              Primeira venda projetada para 2027: 100 alunos, R$49.890,00.
             </p>
           </Cartao>
         </div>
@@ -1027,7 +1045,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <div>
           <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
           <Titulo>A Academia We Make forma o professor que vai aplicar o currículo</Titulo>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-8">
+          <p className="text-white/70 text-base leading-relaxed max-w-xl mt-4">
+            Assim que o contrato de currículo é firmado, a implantação da Academia We Make começa, com
+            operacionalização contínua ao longo de todo o ano letivo, em oito fases sequenciais que vão da
+            apresentação pré-contratual até a prescrição de resultados no fechamento do ano.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-6">
             {["Apresentação", "Onboarding", "Diagnóstico de entrada", "Implantação intensiva", "Acompanhamento contínuo", "Formação temática", "Diagnóstico de meio de ciclo", "Prescrição de resultados"].map((f, i) => (
               <motion.div
                 key={f}
