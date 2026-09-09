@@ -187,8 +187,8 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
           </div>
         )}
         <div className="text-left">
-          <p className="text-white text-lg font-semibold leading-snug">{topo.nome}</p>
-          <p className="font-mono text-lg uppercase tracking-wider" style={{ color: topo.cor }}>{topo.cargo}</p>
+          <p className="text-white text-lg font-semibold leading-snug break-words">{topo.nome}</p>
+          <p className="font-mono text-lg uppercase tracking-wider break-words" style={{ color: topo.cor }}>{topo.cargo}</p>
         </div>
       </motion.div>
 
@@ -210,7 +210,7 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
       {/* Filhos, cada um com seu próprio galho vertical */}
       <div className="flex flex-wrap justify-center gap-x-3 gap-y-8 mt-0 max-w-6xl pt-2">
         {filhos.map((f, i) => (
-          <div key={f.nome} className="flex flex-col items-center w-[11rem]">
+          <div key={f.nome} className="flex flex-col items-center w-[13rem]">
             <motion.div
               className="w-px bg-white/25"
               initial={{ height: 0 }}
@@ -236,8 +236,8 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
                   {f.iniciais}
                 </div>
               )}
-              <p className="text-white/85 text-lg font-medium leading-snug">{f.nome}</p>
-              <p className="font-mono text-lg uppercase tracking-wider mt-0.5 leading-snug" style={{ color: f.cor }}>{f.cargo}</p>
+              <p className="text-white/85 text-lg font-medium leading-snug break-words">{f.nome}</p>
+              <p className="font-mono text-lg uppercase tracking-wider mt-0.5 leading-snug break-words" style={{ color: f.cor }}>{f.cargo}</p>
               {f.miniBio && (
                 <p className="text-white/45 text-lg leading-snug mt-1.5 pt-1.5 border-t" style={{ borderColor: `${f.cor}30` }}>
                   {f.miniBio}
@@ -336,13 +336,13 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
             <motion.div
               key={s.titulo}
               className="absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border bg-[rgb(var(--color-brand-navy))]/70 backdrop-blur-sm px-4 py-3 text-center pointer-events-auto"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: 148 }}
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: 172 }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
             >
               <Icone className="size-5 text-[rgb(var(--color-brand-mint))] mx-auto mb-1.5" strokeWidth={1.75} />
-              <p className="text-white text-lg font-semibold leading-snug">{s.titulo}</p>
+              <p className="text-white text-lg font-semibold leading-snug break-words">{s.titulo}</p>
               <p className="text-white/50 text-lg leading-snug mt-0.5">{s.texto}</p>
             </motion.div>
           );
@@ -413,7 +413,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
       </svg>
 
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <span className="font-mono text-lg uppercase tracking-[0.25em] text-white/25 text-center max-w-[7rem] leading-relaxed">
+        <span className="font-mono text-lg uppercase tracking-[0.25em] text-white/25 text-center max-w-[8.5rem] leading-relaxed">
           {centro}
         </span>
       </div>
@@ -428,7 +428,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
             <motion.div
               key={etapa.titulo}
               className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: 118 }}
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, width: 136 }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.25 + i * 0.12, duration: 0.45, ease: "backOut" }}
@@ -549,7 +549,7 @@ export function Donut({ fatias }: { fatias: { label: string; pct: number; cor: s
           transition={{ delay: 0.9, duration: 0.5 }}
         >
           <p className="font-display text-white text-4xl font-semibold">{maior.pct}%</p>
-          <p className="text-white/45 text-lg max-w-[7rem] text-center leading-snug mt-1">{maior.label}</p>
+          <p className="text-white/45 text-lg max-w-[8.5rem] text-center leading-snug mt-1">{maior.label}</p>
         </motion.div>
       </div>
       <div className="flex flex-col gap-2.5">

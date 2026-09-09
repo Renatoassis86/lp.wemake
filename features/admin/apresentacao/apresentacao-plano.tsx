@@ -588,22 +588,34 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
     // 2c — histórico
     <Slide key="historico" variante="dark">
-      <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
-      <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
-      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
-        A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
-        cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
-        programação, robótica educacional, eletrônica, modelagem e fabricação 3D, projetos de engenharia,
-        inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar e Criar. Para o
-        ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
-      </p>
-      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-3">
-        A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do
-        sistema, entregando currículo, planos de aula e recursos a professores e instrumentos de acompanhamento à
-        coordenação. A empresa também acumulou experiência em concepção de ambientes físicos de aprendizagem,
-        incluindo projeto arquitetônico, memorial descritivo e dimensionamento de recursos, e desenvolveu um
-        modelo próprio de acompanhamento institucional contínuo às escolas parceiras.
-      </p>
+      <div className="relative">
+        <Image
+          src="/photos/we-make-emblem.png"
+          alt=""
+          width={640}
+          height={640}
+          aria-hidden
+          className="pointer-events-none select-none absolute -right-20 top-1/2 -translate-y-1/2 w-[24rem] h-auto opacity-[0.06] hidden lg:block"
+        />
+        <div className="relative">
+          <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
+          <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
+          <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
+            A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
+            cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
+            programação, robótica educacional, eletrônica, modelagem e fabricação 3D, projetos de engenharia,
+            inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar e Criar. Para o
+            ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
+          </p>
+          <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-3">
+            A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do
+            sistema, entregando currículo, planos de aula e recursos a professores e instrumentos de acompanhamento à
+            coordenação. A empresa também acumulou experiência em concepção de ambientes físicos de aprendizagem,
+            incluindo projeto arquitetônico, memorial descritivo e dimensionamento de recursos, e desenvolveu um
+            modelo próprio de acompanhamento institucional contínuo às escolas parceiras.
+          </p>
+        </div>
+      </div>
     </Slide>,
 
     // 2d — equipe (organograma)
