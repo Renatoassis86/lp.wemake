@@ -7,17 +7,20 @@
 @layer base {
   :root {
     /* ============================================================
-       BRAND PALETTE — EdTech Lúdica Original We Make
+       BRAND PALETTE — identidade oficial We Make (2026-09-08)
+       navy e mint são a identidade em si (#002933 / #00CEFF, a mesma
+       paleta aplicada no deck.css); royal/sky seguem como tons
+       secundários de variação de fundo, não fazem parte da logo.
        ============================================================ */
-    --color-brand-royal: 76 138 222;       /* Azul Principal (#4c8ade) */
+    --color-brand-royal: 76 138 222;       /* Azul secundário de variação (#4c8ade) */
     --color-brand-royal-deep: 42 105 186;  /* Azul escuro hover */
     --color-brand-royal-soft: 141 190 240; /* Azul claro secundário */
-    --color-brand-mint: 118 243 205;       /* Verdinho Água (#76f3cd) */
-    --color-brand-mint-deep: 39 168 132;   /* Mint hover */
-    --color-brand-sky: 255 204 0;          /* Amarelo vibrante - Destaque original */
+    --color-brand-mint: 0 206 255;         /* Ciano oficial da marca (#00ceff) */
+    --color-brand-mint-deep: 0 158 196;    /* Ciano hover, mais escuro */
+    --color-brand-sky: 255 204 0;          /* Amarelo vibrante - tom secundário de variação */
     --color-brand-ivory: 255 255 255;      /* Branco puro */
     --color-brand-ivory-deep: 248 250 252; /* Cinza/Azul muito claro */
-    --color-brand-navy: 11 31 68;          /* Texto escuro primário (Navy original We Make) */
+    --color-brand-navy: 0 41 51;           /* Navy oficial da marca (#002933) */
 
     /* ─── Brand palette (Escala - Fundo Claro) ──────────────────── */
     --color-ink-950: 255 255 255;     /* Fundo principal agora é BRANCO */

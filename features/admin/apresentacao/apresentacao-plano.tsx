@@ -432,7 +432,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
         <div>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8">
-            <Image src="/photos/2.png" alt="We Make" width={180} height={54} className="h-11 sm:h-12 w-auto object-contain" priority />
+            <Image src="/logo-wemake.png" alt="We Make" width={197} height={60} className="h-11 sm:h-12 w-auto object-contain" priority />
           </motion.div>
           <motion.p
             className="font-mono text-base uppercase tracking-[0.3em] text-[rgb(var(--color-brand-mint))] font-bold mb-6"
@@ -1275,7 +1275,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-10"
         >
-          <Image src="/photos/2.png" alt="We Make" width={150} height={45} className="h-9 w-auto object-contain" />
+          <Image src="/logo-wemake.png" alt="We Make" width={164} height={50} className="h-9 w-auto object-contain" />
         </motion.div>
       </div>
     </Slide>,
