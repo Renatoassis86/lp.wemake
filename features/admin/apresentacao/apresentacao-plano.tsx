@@ -40,6 +40,11 @@ import {
   Repeat,
   Clock,
   TrendingUp,
+  Pencil,
+  Save,
+  Undo2,
+  CheckCircle2,
+  AlertTriangle,
 } from "lucide-react";
 import { MapaBrasil, Organograma, FluxoCurriculo, CicloEtapas, MatrizRisco, Donut, type GeoBrasil } from "./visuais";
 
@@ -406,7 +411,7 @@ function Slide({
 
 const EQUIPE_FILHOS = [
   { nome: "Renato Silva de Assis", cargo: "Gerente Administrativo", cor: "rgb(var(--color-brand-royal))", iniciais: "RA", foto: "/renato.jpeg" },
-  { nome: "Emanuel Peixoto", cargo: "Marketing", cor: "rgb(var(--color-brand-sky))", iniciais: "EP" },
+  { nome: "Emanuel Peixoto", cargo: "Marketing", cor: "rgb(var(--color-brand-sky))", iniciais: "EP", foto: "/emanuel.jpeg" },
   { nome: "Suzana Bonifazio", cargo: "Consultora Pedagógica", cor: "rgb(var(--color-brand-mint))", iniciais: "SB" },
   { nome: "Emanuela Monteiro", cargo: "Consultoria e Negócios", cor: "rgb(var(--color-brand-mint))", iniciais: "EM" },
   { nome: "Christiano Bonifazio", cargo: "Comercial, SP", cor: "rgb(var(--color-brand-sky))", iniciais: "CB" },
@@ -418,9 +423,23 @@ const EQUIPE_FILHOS = [
 
 export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosComLeiPropria }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const slideEditRef = useRef<HTMLDivElement>(null);
   const [atual, setAtual] = useState(0);
   const [direcao, setDirecao] = useState(1);
   const [telaCheia, setTelaCheia] = useState(false);
+  const [overrides, setOverrides] = useState<Record<string, string>>({});
+  const [modoEdicao, setModoEdicao] = useState(false);
+  const [salvando, setSalvando] = useState(false);
+  const [statusEdicao, setStatusEdicao] = useState<{ tipo: "ok" | "erro"; texto: string } | null>(null);
+
+  useEffect(() => {
+    fetch("/api/admin/plano-negocio/apresentacao-slides")
+      .then((r) => r.json())
+      .then((d) => {
+        if (d?.success) setOverrides(d.overrides || {});
+      })
+      .catch(() => {});
+  }, []);
 
   const ultimoAno = anos[anos.length - 1];
   const primeiroAno = anos[0];
@@ -999,13 +1018,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         escola, ticket já cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo escolas
         sem fins lucrativos, o que explica a variação praticada hoje na carteira.
       </p>
-      <div className="grid grid-cols-5 gap-3 mt-6 max-w-4xl">
+      <div className="grid grid-cols-4 gap-4 mt-6 max-w-4xl">
         {[
-          { src: "/deck/img/livros/capa_infantil_3.png", legenda: "Educação Infantil" },
-          { src: "/deck/img/livros/capa_ef1_1ano.png", legenda: "1º Ano EF" },
-          { src: "/deck/img/livros/capa_ef1_3ano.png", legenda: "3º Ano EF" },
-          { src: "/deck/img/livros/capa_ef1_4ano.png", legenda: "4º Ano EF" },
-          { src: "/deck/img/livros/capa_ef1_5ano.png", legenda: "5º Ano EF" },
+          { src: "/img/livros/infantil-5.jpg", legenda: "Educação Infantil" },
+          { src: "/img/livros/1ano-ef.jpg", legenda: "1º Ano, Ensino Fundamental" },
+          { src: "/img/livros/6ano.jpg", legenda: "6º Ano, Anos Finais" },
+          { src: "/img/livros/1ano-em.jpg", legenda: "1º Ano, Ensino Médio" },
         ].map((c, i) => (
           <motion.div
             key={c.src}
@@ -1016,7 +1034,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             transition={{ delay: 0.3 + i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="rounded-lg overflow-hidden shadow-[0_16px_32px_-12px_rgba(0,0,0,0.6)]">
-              <Image src={c.src} alt={`Capa do Livro Maker, ${c.legenda}`} width={600} height={848} className="w-full h-auto object-contain" />
+              <Image src={c.src} alt={`Capa do Livro Maker, ${c.legenda}`} width={1145} height={1374} className="w-full h-auto object-contain" />
             </div>
             <p className="text-white/50 text-lg text-center leading-snug">{c.legenda}</p>
           </motion.div>
@@ -1580,6 +1598,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      // Digitando dentro do slide em edição: as setas e a barra de espaço são
+      // texto, não navegação. Sem essa guarda, editar um slide troca de slide
+      // a cada espaço digitado.
+      const alvo = e.target as HTMLElement | null;
+      if (alvo?.isContentEditable) return;
       if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) { e.preventDefault(); irPara(atual + 1); }
       if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) { e.preventDefault(); irPara(atual - 1); }
       if (e.key === "Escape" && document.fullscreenElement) document.exitFullscreen();
@@ -1606,6 +1629,70 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     } else {
       setTelaCheia(true);
       containerRef.current?.requestFullscreen?.().catch(() => {});
+    }
+  }
+
+  const chaveAtual = (slides[atual] as any)?.key as string | undefined;
+  const overrideAtual = chaveAtual ? overrides[chaveAtual] : undefined;
+
+  function entrarEdicao() {
+    if (telaCheia) return;
+    setStatusEdicao(null);
+    setModoEdicao(true);
+  }
+
+  function descartarEdicao() {
+    setModoEdicao(false);
+    setStatusEdicao(null);
+  }
+
+  async function salvarEdicao() {
+    if (!chaveAtual || !slideEditRef.current) {
+      setStatusEdicao({ tipo: "erro", texto: "Não foi possível identificar este slide." });
+      return;
+    }
+    setSalvando(true);
+    setStatusEdicao(null);
+    try {
+      const html = slideEditRef.current.innerHTML;
+      const res = await fetch("/api/admin/plano-negocio/apresentacao-slides", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chave: chaveAtual, html }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+      setOverrides((prev) => ({ ...prev, [chaveAtual]: html }));
+      setModoEdicao(false);
+      setStatusEdicao({ tipo: "ok", texto: "Slide salvo." });
+    } catch (err: any) {
+      setStatusEdicao({ tipo: "erro", texto: err?.message || "Erro ao salvar o slide." });
+    } finally {
+      setSalvando(false);
+    }
+  }
+
+  async function restaurarOriginal() {
+    if (!chaveAtual) return;
+    setSalvando(true);
+    setStatusEdicao(null);
+    try {
+      const res = await fetch(`/api/admin/plano-negocio/apresentacao-slides?chave=${encodeURIComponent(chaveAtual)}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || `HTTP ${res.status}`);
+      setOverrides((prev) => {
+        const next = { ...prev };
+        delete next[chaveAtual];
+        return next;
+      });
+      setModoEdicao(false);
+      setStatusEdicao({ tipo: "ok", texto: "Slide restaurado ao original." });
+    } catch (err: any) {
+      setStatusEdicao({ tipo: "erro", texto: err?.message || "Erro ao restaurar o slide." });
+    } finally {
+      setSalvando(false);
     }
   }
 
@@ -1645,15 +1732,95 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0"
         >
-          {slides[atual]}
+          <div
+            ref={slideEditRef}
+            contentEditable={modoEdicao}
+            suppressContentEditableWarning
+            className={modoEdicao ? "h-full outline outline-2 outline-dashed outline-[rgb(var(--color-brand-mint))]/60 outline-offset-[-6px] cursor-text" : "h-full"}
+          >
+            {overrideAtual && !modoEdicao ? (
+              <div dangerouslySetInnerHTML={{ __html: overrideAtual }} />
+            ) : (
+              slides[atual]
+            )}
+          </div>
         </motion.div>
       </AnimatePresence>
+
+      {!telaCheia && modoEdicao && (
+        <div className="absolute top-16 sm:top-20 left-4 right-4 sm:left-6 sm:right-6 z-30 flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-500/15 border border-amber-400/30 text-amber-100 text-lg">
+          <Pencil className="size-4 shrink-0" />
+          <span>Modo de edição ativo neste slide. Clique no texto pra alterar. Nada é salvo até você clicar em Salvar.</span>
+        </div>
+      )}
+
+      {!telaCheia && statusEdicao && (
+        <div
+          className={`absolute top-16 sm:top-20 left-4 right-4 sm:left-6 sm:right-6 z-30 flex items-center gap-2 px-3 py-2 rounded-lg text-lg border ${
+            statusEdicao.tipo === "ok"
+              ? "bg-emerald-500/15 border-emerald-400/30 text-emerald-100"
+              : "bg-red-500/15 border-red-400/30 text-red-100"
+          }`}
+        >
+          {statusEdicao.tipo === "ok" ? <CheckCircle2 className="size-4 shrink-0" /> : <AlertTriangle className="size-4 shrink-0" />}
+          <span>{statusEdicao.texto}</span>
+        </div>
+      )}
 
       {/* Controles */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex items-center gap-2">
         <span className="font-mono text-lg text-white/40 tabular-nums hidden sm:inline">
           {String(atual + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
+        {!telaCheia && (
+          modoEdicao ? (
+            <>
+              <button
+                type="button"
+                onClick={salvarEdicao}
+                disabled={salvando}
+                aria-label="Salvar slide"
+                className="h-10 px-3 rounded-full border border-[rgb(var(--color-brand-mint))]/40 bg-[rgb(var(--color-brand-mint))]/15 text-[rgb(var(--color-brand-mint))] backdrop-blur-sm flex items-center gap-1.5 hover:bg-[rgb(var(--color-brand-mint))]/25 transition disabled:opacity-50 text-lg font-medium"
+              >
+                <Save className="size-4" />
+                {salvando ? "Salvando..." : "Salvar"}
+              </button>
+              <button
+                type="button"
+                onClick={descartarEdicao}
+                disabled={salvando}
+                aria-label="Descartar edição"
+                className="size-10 rounded-full border border-white/15 bg-black/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/10 transition disabled:opacity-50"
+              >
+                <Undo2 className="size-4" />
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={entrarEdicao}
+                aria-label="Editar slide"
+                className="h-10 px-3 rounded-full border border-white/15 bg-black/20 backdrop-blur-sm flex items-center gap-1.5 hover:bg-white/10 transition text-lg font-medium"
+              >
+                <Pencil className="size-4" />
+                Editar
+              </button>
+              {overrideAtual && (
+                <button
+                  type="button"
+                  onClick={restaurarOriginal}
+                  disabled={salvando}
+                  aria-label="Restaurar slide original"
+                  title="Este slide tem uma edição salva. Restaurar o original descarta a edição."
+                  className="size-10 rounded-full border border-white/15 bg-black/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/10 transition disabled:opacity-50"
+                >
+                  <Undo2 className="size-4" />
+                </button>
+              )}
+            </>
+          )
+        )}
         <button
           type="button"
           onClick={alternarTelaCheia}
