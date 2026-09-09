@@ -210,7 +210,7 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
       {/* Filhos, cada um com seu próprio galho vertical */}
       <div className="flex flex-wrap justify-center gap-x-3 gap-y-8 mt-0 max-w-6xl pt-2">
         {filhos.map((f, i) => (
-          <div key={f.nome} className="flex flex-col items-center w-[13rem]">
+          <div key={f.nome} className="flex flex-col items-center w-[16rem]">
             <motion.div
               className="w-px bg-white/25"
               initial={{ height: 0 }}
@@ -269,7 +269,7 @@ export function FluxoCurriculo({ centro, satelites }: { centro: string; satelite
   const n = satelites.length;
 
   return (
-    <div className="relative mx-auto" style={{ maxWidth: size }}>
+    <div className="relative mx-auto" style={{ width: size, maxWidth: "100%" }}>
       <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-auto overflow-visible">
         <defs>
           <marker id="seta-fluxo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -374,7 +374,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
   });
 
   return (
-    <div className="relative mx-auto" style={{ maxWidth: size }}>
+    <div className="relative mx-auto" style={{ width: size, maxWidth: "100%" }}>
       <svg ref={ref} viewBox={`0 0 ${size} ${size}`} className="w-full h-auto overflow-visible">
         <motion.circle
           cx={cx}

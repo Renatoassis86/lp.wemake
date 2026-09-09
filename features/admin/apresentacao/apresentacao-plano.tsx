@@ -608,14 +608,6 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 2c — histórico
     <Slide key="historico" variante="dark">
       <div className="relative">
-        <Image
-          src="/photos/we-make-emblem.png"
-          alt=""
-          width={640}
-          height={640}
-          aria-hidden
-          className="pointer-events-none select-none absolute -right-20 top-1/2 -translate-y-1/2 w-[24rem] h-auto opacity-[0.06] hidden lg:block"
-        />
         <div className="relative">
           <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
           <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
@@ -1236,14 +1228,6 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 20 — posicionamento
     <Slide key="posicionamento" variante="dark">
       <div className="relative">
-        <Image
-          src="/photos/we-make-emblem.png"
-          alt=""
-          width={640}
-          height={640}
-          aria-hidden
-          className="pointer-events-none select-none absolute -right-16 -top-24 w-[26rem] h-auto opacity-[0.07] hidden sm:block"
-        />
         <div className="relative">
           <Eyebrow>Capítulo 9 · Posicionamento</Eyebrow>
           <Titulo>Um sistema pedagógico integral, estruturado a partir de uma antropologia cristã</Titulo>
@@ -1555,6 +1539,15 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
     // 29 — fechamento
     <Slide key="fechamento" variante="dark">
+      <Image
+        src="/photos/maker_student.png"
+        alt=""
+        width={640}
+        height={800}
+        aria-hidden
+        className="pointer-events-none select-none absolute -right-10 bottom-0 w-[26rem] h-auto opacity-[0.14] hidden lg:block"
+        style={{ maskImage: "linear-gradient(to top, black 40%, transparent 95%)", WebkitMaskImage: "linear-gradient(to top, black 40%, transparent 95%)" }}
+      />
       <div className="flex flex-col items-start">
         <Eyebrow>Capítulo 15 · Considerações finais</Eyebrow>
         <Sparkles className="size-8 text-[rgb(var(--color-brand-mint))] mb-6" strokeWidth={1.5} />
