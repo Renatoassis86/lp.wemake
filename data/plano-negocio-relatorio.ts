@@ -435,7 +435,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "A ameaça mais relevante de médio prazo provavelmente não virá de uma nova startup, e sim de um agente que já possui distribuição consolidada: sistemas de ensino cristãos já estabelecidos, grandes grupos editoriais criando produtos confessionais, redes como Mackenzie e ACSI incorporando tecnologia à sua proposta, ou big techs como Google e Microsoft avançando de ferramentas digitais para apoio pedagógico.",
+              "A ameaça mais relevante de médio prazo provavelmente não virá de uma nova startup, e sim de um agente que já possui distribuição consolidada: sistemas de ensino cristãos já estabelecidos, grandes grupos editoriais criando produtos confessionais, redes como Mackenzie, ou big techs como Google e Microsoft avançando de ferramentas digitais para apoio pedagógico. A defesa competitiva da We Make deve se apoiar em especialização no mercado cristão, propriedade intelectual protegida, metodologia própria, relacionamento consolidado com as escolas e integração profunda entre os componentes do sistema.",
           },
           {
             tipo: "destaque",
@@ -689,7 +689,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Como cenário-base, a empresa pretende alcançar entre 5% e 8% do mercado-alvo confessional até 2031, o equivalente a 75 a 80 escolas ativas. Essas metas devem ser revisadas anualmente à medida que o estudo de dimensionamento de mercado recomendado no Capítulo 4 seja concluído.",
+              "A meta de alunos foi revista para um ritmo de crescimento de 50% ao ano, partindo de 4.000 estudantes em 2027. A meta de captação de escolas permanece constante em 10 novas instituições por ano; as duas metas só se sustentam em conjunto se o crescimento da base de alunos vier de três motores simultâneos: novas escolas contratantes, expansão de segmentos e séries dentro das escolas já atendidas, e crescimento da frente de famílias educadoras. Como cenário-base, a captação de 10 novas escolas por ano, somada à base atual e a uma retenção entre 90% e 93%, leva a empresa a uma base ativa estimada entre 60 e 70 escolas em 2031, o equivalente a algo entre 4% e 7% do mercado-alvo confessional. Essas metas devem ser revisadas anualmente à medida que o estudo de dimensionamento de mercado recomendado no Capítulo 4 seja concluído.",
           },
         ],
       },
@@ -741,18 +741,18 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             tipo: "tabela",
             cabecalho: ["Categoria", "Valor anual", "% da despesa"],
             linhas: [
-              ["Pessoal (CLT e PJ recorrente)", "R$ 350.172,00", "41,5%"],
-              ["Produção gráfica e impressão", "R$ 180.000,00", "21,9%"],
-              ["Taxas e serviços financeiros", "R$ 111.772,38", "13,6%"],
-              ["Tecnologia (inclui Plataforma Arkos)", "R$ 44.390,76", "5,4%"],
-              ["Infraestrutura e utilidades (inclui sede própria)", "R$ 44.760,00", "5,4%"],
-              ["Marketing e publicidade", "R$ 39.500,00", "4,8%"],
-              ["Viagens e representação", "R$ 29.400,00", "3,6%"],
+              ["Pessoal (CLT e PJ recorrente, com treinamento)", "R$ 354.720,00", "41,8%"],
+              ["Produção gráfica e impressão", "R$ 180.000,00", "21,2%"],
+              ["Taxas e serviços financeiros", "R$ 111.772,38", "13,2%"],
+              ["Tecnologia (inclui Plataforma Arkos)", "R$ 44.390,76", "5,2%"],
+              ["Infraestrutura e utilidades (inclui sede própria)", "R$ 44.760,00", "5,3%"],
+              ["Marketing e publicidade", "R$ 39.500,00", "4,7%"],
               ["Comercial e relacionamento", "R$ 20.000,00", "2,4%"],
-              ["Produção audiovisual", "R$ 11.500,00", "1,4%"],
+              ["Viagens e representação", "R$ 29.400,00", "3,5%"],
+              ["Regulatórios, propriedade intelectual e taxas legais", "R$ 3.870,00", "0,5%"],
               ["Logística e distribuição", "R$ 9.000,00", "1,1%"],
-              ["Regulatórios, PI e taxas legais", "R$ 3.870,00", "0,5%"],
-              ["Total", "R$ 844.365,14", "100%"],
+              ["Produção audiovisual", "R$ 11.500,00", "1,4%"],
+              ["Total", "R$ 848.913,14", "100%"],
             ],
           },
         ],
@@ -770,17 +770,19 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               ["Analista de Marketing, Emanuel Peixoto", "R$ 3.000,00", "R$ 36.000,00"],
               ["Consultora Pedagógica, Suzana Bonifazio", "R$ 2.000,00", "R$ 24.000,00"],
               ["Consultora Pedagógica e de Negócios, Emanuela Monteiro", "R$ 1.000,00", "R$ 12.000,00"],
-              ["Representante Comercial, Christiano Bonifazio (fixo)", "R$ 1.621,00", "R$ 19.452,00"],
+              ["Representante Comercial, Christiano Bonifazio (fixo, PJ)", "R$ 2.000,00", "R$ 24.000,00 + custos + comissão variável"],
               ["Contador", "R$ 400,00", "R$ 4.800,00"],
-              ["Pós-graduação (Suzana e Christiano)", "·", "R$ 1.920,00"],
-              ["Total de pessoal", "", "R$ 350.172,00"],
+              ["Atendente Comercial", "Posição em contratação", "Sem dotação no orçamento atual"],
+              ["Responsável pelo Espaço Maker", "Formalização em curso", "Valor em definição"],
+              ["Pós-graduação em Educação Cristã Clássica (Suzana e Christiano)", "", "R$ 1.920,00"],
+              ["Total de pessoal", "", "R$ 354.720,00"],
             ],
           },
           {
             tipo: "destaque",
             titulo: "Comissão comercial",
             texto:
-              "O valor acima cobre apenas o componente fixo da remuneração de Christiano Bonifazio. A comissão de 1% sobre os contratos escolares por ele fechados ainda não tem valor estimado neste orçamento, por depender do volume real de fechamentos ao longo do ano.",
+              "O valor acima cobre apenas o componente fixo da remuneração de Christiano Bonifazio, R$2.000,00 por mês em regime de pessoa jurídica. O reembolso de custos de prospecção e a comissão escalonada de 2% a 5% por porte de escola ainda não têm valor estimado neste orçamento, por dependerem do volume e do perfil real dos fechamentos ao longo do ano. Duas posições permanecem sem dotação e devem ser precificadas antes do fechamento: a atendente comercial e a responsável pelo Espaço Maker, cuja formalização já foi decidida.",
           },
         ],
       },
@@ -824,23 +826,23 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
           {
             tipo: "paragrafo",
             texto:
-              "Este é um terceiro exercício numérico, distinto do orçamento operacional por contrato e do exercício de valuation. Parte da meta de 4.000 alunos em 2027 e projeta crescimento de 1.000 alunos ao ano até 2031 no cenário-base, alcançando 8.000 alunos no último ano do plano. É uma leitura por número de alunos, distinta da leitura por meta de receita, mas convergente: ambas confirmam que 2027 fecha com margem operacional positiva.",
+              "Este é um terceiro exercício numérico, distinto tanto do orçamento operacional das seções anteriores quanto do exercício de valuation. Enquanto o orçamento operacional parte da base de 3.240 alunos efetivamente contratada, este cenário parte da meta de 4.000 alunos definida para 2027 e aplica o ritmo de crescimento de 50% ao ano aprovado pela direção, alcançando 20.250 alunos em 2031. O ticket médio de partida é o ticket blended real de 2027, R$293,82 por aluno ao ano, reajustado a partir de 2028 pela hipótese de IPCA de 4% ao ano. É uma leitura por número de alunos, distinta da leitura por meta de receita da seção sobre o orçamento de 2027, que projeta R$1.100.000,00 de receita escolar para o mesmo ano.",
           },
           {
             tipo: "tabela",
             cabecalho: ["Ano", "Alunos", "Ticket médio", "Receita projetada", "Despesa total", "Resultado"],
             linhas: [
-              ["2027", "4.000", "R$ 287,47", "R$ 1.149.890,00", "R$ 848.913", "R$ 300.977"],
-              ["2028", "6.000", "R$ 300,00", "R$ 1.800.000,00", "R$ 1.150.000", "R$ 650.000"],
-              ["2029", "9.000", "R$ 344,44", "R$ 3.100.000,00", "R$ 1.650.000", "R$ 1.450.000"],
-              ["2030", "13.500", "R$ 348,15", "R$ 4.700.000,00", "R$ 2.350.000", "R$ 2.350.000"],
-              ["2031", "20.250", "R$ 340,74", "R$ 6.900.000,00", "R$ 3.100.000", "R$ 3.800.000"],
+              ["2027", "4.000", "R$ 293,82", "R$ 1.175.280,00", "R$ 917.356", "R$ 257.924"],
+              ["2028", "6.000", "R$ 305,57", "R$ 1.833.436,80", "R$ 1.300.742", "R$ 532.695"],
+              ["2029", "9.000", "R$ 317,80", "R$ 2.860.161,41", "R$ 1.851.208", "R$ 1.008.954"],
+              ["2030", "13.500", "R$ 330,51", "R$ 4.461.851,80", "R$ 2.644.652", "R$ 1.817.199"],
+              ["2031", "20.250", "R$ 343,73", "R$ 6.960.488,80", "R$ 3.792.795", "R$ 3.167.694"],
             ],
           },
           {
             tipo: "paragrafo",
             texto:
-              "Nesse cenário, a margem operacional passa de aproximadamente 24,4% em 2027 para cerca de 43,7% em 2031, porque a receita cresce por dois motores ao mesmo tempo: mais alunos e ticket reajustado pela inflação, enquanto a despesa cresce sobretudo pelo bloco estrutural, com incremento inferior ao crescimento da receita.",
+              "Nesse cenário, a margem operacional passa de aproximadamente 21,9% em 2027 para 45,5% em 2031, porque a receita cresce por dois motores ao mesmo tempo, mais alunos e ticket reajustado pela inflação, enquanto a despesa é decomposta em três blocos: produção gráfica, que escala com o número de alunos ao custo unitário de R$55,56 observado em 2027; taxas e serviços financeiros, que escalam com a receita na proporção de 11,7% já observada em 2027; e uma base estrutural de R$557.141,00 em 2027, que reúne pessoal, tecnologia, infraestrutura, marketing, comercial, viagens e produção audiovisual, projetada com crescimento de 35% ao ano. Margens acima de 40% devem ser revalidadas com um plano de quadro de pessoal construído de baixo para cima antes de o cenário ser apresentado a terceiros. No cenário conservador, em que a captação retorna ao ritmo linear de mil alunos ao ano até 8.000 em 2031, o resultado de 2031 cai para R$1.105.843, margem de 40,2%; no cenário agressivo, com as mesmas metas de alunos e a base estrutural crescendo 28% ao ano em vez de 35%, o resultado de 2031 sobe para R$3.522.677, margem de 50,6%.",
           },
         ],
       },
@@ -873,7 +875,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             itens: [
               "Dependência elevada da presença pessoal do fundador para vendas de maior complexidade.",
               "Formação Docente, Espaço Maker e Assessoria Institucional ainda não produtizados como linhas independentes.",
-              "Processo de registro de marca e de novas frentes autorais ainda em andamento junto aos órgãos competentes.",
+              "Proteção de novas frentes autorais do currículo ainda em andamento junto aos órgãos competentes (a marca já está registrada).",
               "Plataforma tecnologicamente menos madura que a de concorrentes de maior porte.",
               "Presença digital e participação em grandes eventos de EdTech ainda incipiente.",
               "TAM e SAM ainda baseados em estimativa preliminar, sem estudo de dimensionamento consolidado.",
@@ -963,7 +965,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             linhas: [
               ["O que é", "O sistema We Make, vendido de forma integral a escolas confessionais e a famílias educadoras", "Escola de tecnologia para crianças e adolescentes em geral, e eventual faculdade de tecnologia We Make, ambas voltadas ao indivíduo, independentemente de vínculo com escola parceira. A faculdade, em particular, é possibilidade a ser buscada no ecossistema próprio, não frente já decidida"],
               ["Status", "Gera receita real, contratada e projetada até 2031", "Sem receita, sem contrato, sem operação até o momento"],
-              ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$844.365,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado. Depende de business case próprio"],
+              ["Investimento", "Já orçado: receita total de R$1.149.890,00 (meta escolar mais famílias educadoras) e R$848.913,14 em despesa operacional para 2027, detalhados no Capítulo 9", "Ainda não orçado. Depende de business case próprio"],
               ["Condição de avanço", "Execução do roadmap de consolidação", "Consolidação prévia do sistema atual, validação de demanda e conclusão do registro de propriedade intelectual"],
             ],
           },
@@ -1011,7 +1013,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             itens: [
               "Consolidação prévia da governança e da estrutura organizacional descrita no Capítulo 7, sem a qual a ampliação de escopo institucional multiplicaria a dependência de liderança central.",
               "Validação de demanda real por meio da execução das metas comerciais de 2027 a 2029 antes de comprometer capital relevante nos dois negócios futuros.",
-              "Conclusão do registro da propriedade intelectual do currículo e da marca.",
+              "Conclusão do registro das frentes autorais mais recentes do currículo junto aos órgãos competentes (a marca já está registrada).",
               "Estruturação de capital, próprio ou externo, dimensionado especificamente para a escola de tecnologia e para a faculdade.",
             ],
           },
@@ -1071,7 +1073,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
             cabecalho: ["Risco", "Probabilidade", "Impacto", "Prioridade de tratamento"],
             linhas: [
               ["Dependência de liderança central", "Alta", "Alto", "Imediata"],
-              ["Propriedade intelectual sem registro confirmado", "Média", "Alto", "Imediata"],
+              ["Marca já registrada; frentes autorais do currículo em processo de registro", "Média", "Alto", "Imediata"],
               ["Maturidade desigual entre linhas", "Alta", "Médio", "Imediata"],
               ["Uso indevido por IA de terceiros", "Baixa", "Médio", "No prazo do ciclo 2027"],
               ["Regulação do homeschooling", "Baixa", "Alto", "Monitoramento contínuo"],

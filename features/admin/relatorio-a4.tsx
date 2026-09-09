@@ -109,61 +109,60 @@ function Bloco({ bloco }: { bloco: BlocoConteudo }) {
           </div>
         </div>
       );
-    case "mapa-ibge":
+    case "mapa-ibge": {
+      const estados = [
+        { uf: "Paraná", sigla: "PR", escolas: 8 },
+        { uf: "São Paulo", sigla: "SP", escolas: 3 },
+        { uf: "Santa Catarina", sigla: "SC", escolas: 2 },
+        { uf: "Paraíba", sigla: "PB", escolas: 2 },
+        { uf: "Espírito Santo", sigla: "ES", escolas: 1 },
+        { uf: "Maranhão", sigla: "MA", escolas: 1 },
+        { uf: "Rio Grande do Sul", sigla: "RS", escolas: 1 },
+        { uf: "Rio Grande do Norte", sigla: "RN", escolas: 1 },
+        { uf: "Ceará", sigla: "CE", escolas: 1 },
+      ];
+      const max = Math.max(...estados.map((e) => e.escolas));
       return (
         <div className="ra4-map-wrap">
-          <h4 className="ra4-visual-title">Presença Territorial e Densidade de Escolas (Base IBGE)</h4>
-          <div className="ra4-map-grid">
-            <div className="ra4-map-svg-box">
-              <svg viewBox="0 0 500 480" className="ra4-svg-map">
-                <g fill="#0E2A47" stroke="#76F3CD" strokeWidth="1.5">
-                  <circle cx="311" cy="268" r="8" fill="#76F3CD" />
-                  <circle cx="313" cy="352" r="8" fill="#FFCC00" />
-                  <circle cx="263" cy="439" r="8" fill="#76F3CD" />
-                </g>
-                <text x="311" y="250" textAnchor="middle" fill="#0E2A47" fontWeight="bold" fontSize="12">HQ DF (12)</text>
-                <text x="380" y="355" textAnchor="middle" fill="#D97706" fontWeight="bold" fontSize="12">SP (14)</text>
-                <text x="263" y="460" textAnchor="middle" fill="#0E2A47" fontWeight="bold" fontSize="12">RS (10)</text>
-              </svg>
-            </div>
-            <div className="ra4-map-legend">
-              <div className="ra4-map-item"><strong>DF (Sede):</strong> 12 Escolas Ativas</div>
-              <div className="ra4-map-item"><strong>São Paulo (SP):</strong> 14 Escolas (Projeção)</div>
-              <div className="ra4-map-item"><strong>Rio Grande do Sul (RS):</strong> 10 Escolas</div>
-              <div className="ra4-map-item"><strong>Paraná (PR):</strong> 8 Escolas</div>
-              <div className="ra4-map-item"><strong>Santa Catarina (SC):</strong> 6 Escolas</div>
-              <div className="ra4-map-item"><strong>Paraíba (PB):</strong> 5 Escolas</div>
-              <div className="ra4-map-item"><strong>Espírito Santo (ES):</strong> 4 Escolas</div>
-              <div className="ra4-map-item"><strong>Ceará (CE):</strong> 4 Escolas</div>
-              <div className="ra4-map-item"><strong>Maranhão (MA):</strong> 3 Escolas</div>
-            </div>
+          <h4 className="ra4-visual-title">Distribuição geográfica das escolas contratantes</h4>
+          <p className="ra4-map-nota">
+            20 das 23 escolas do orçamento de 2027 têm cidade e UF confirmados no cadastro comercial; as 3
+            restantes ainda não entram nesta distribuição.
+          </p>
+          <div className="ra4-map-legend">
+            {estados.map((e) => (
+              <div key={e.sigla} className="ra4-map-item">
+                <span className="ra4-map-item-label"><strong>{e.uf}</strong> ({e.sigla})</span>
+                <div className="ra4-map-bar-track">
+                  <div className="ra4-map-bar-fill" style={{ width: `${(e.escolas / max) * 100}%` }} />
+                </div>
+                <span className="ra4-map-item-valor">{e.escolas}</span>
+              </div>
+            ))}
           </div>
         </div>
       );
+    }
     case "galeria-livros":
       return (
         <div className="ra4-books-wrap">
-          <h4 className="ra4-visual-title">Coleção Livro Maker (1º ao 5º Ano — Cobertura Total)</h4>
+          <h4 className="ra4-visual-title">Coleção Livro Maker, amostras da Educação Infantil ao Ensino Médio</h4>
           <div className="ra4-books-grid">
             <div className="ra4-book-card">
-              <img src="/deck/capa_infantil_3.png" alt="Livro Infantil" className="ra4-book-img" />
+              <img src="/img/livros/infantil-5.jpg" alt="Capa do Livro Maker, Educação Infantil" className="ra4-book-img" />
               <span>Educação Infantil</span>
             </div>
             <div className="ra4-book-card">
-              <img src="/deck/capa_ef1_1ano.png" alt="Livro 1º Ano" className="ra4-book-img" />
-              <span>1º Ano EF</span>
+              <img src="/img/livros/1ano-ef.jpg" alt="Capa do Livro Maker, 1º Ano do Ensino Fundamental" className="ra4-book-img" />
+              <span>1º Ano, Ensino Fundamental</span>
             </div>
             <div className="ra4-book-card">
-              <img src="/deck/capa_ef1_3ano.png" alt="Livro 3º Ano" className="ra4-book-img" />
-              <span>3º Ano EF</span>
+              <img src="/img/livros/6ano.jpg" alt="Capa do Livro Maker, 6º Ano, Anos Finais" className="ra4-book-img" />
+              <span>6º Ano, Anos Finais</span>
             </div>
             <div className="ra4-book-card">
-              <img src="/deck/capa_ef1_4ano.png" alt="Livro 4º Ano" className="ra4-book-img" />
-              <span>4º Ano EF</span>
-            </div>
-            <div className="ra4-book-card">
-              <img src="/deck/capa_ef1_5ano.png" alt="Livro 5º Ano" className="ra4-book-img" />
-              <span>5º Ano EF</span>
+              <img src="/img/livros/1ano-em.jpg" alt="Capa do Livro Maker, 1º Ano do Ensino Médio" className="ra4-book-img" />
+              <span>1º Ano, Ensino Médio</span>
             </div>
           </div>
         </div>
@@ -171,37 +170,17 @@ function Bloco({ bloco }: { bloco: BlocoConteudo }) {
     case "ciclo-maker":
       return (
         <div className="ra4-flow-wrap">
-          <h4 className="ra4-visual-title">Metodologia Maker: Ciclo de Aprendizagem de 6 Etapas</h4>
+          <h4 className="ra4-visual-title">Momento Criar: ciclo de aprendizagem de 6 etapas</h4>
           <div className="ra4-flow-steps">
-            <div className="ra4-flow-step">
-              <span className="ra4-step-num">01</span>
-              <strong>Investigar</strong>
-            </div>
-            <div className="ra4-flow-arrow">→</div>
-            <div className="ra4-flow-step">
-              <span className="ra4-step-num">02</span>
-              <strong>Projetar</strong>
-            </div>
-            <div className="ra4-flow-arrow">→</div>
-            <div className="ra4-flow-step">
-              <span className="ra4-step-num">03</span>
-              <strong>Construir</strong>
-            </div>
-            <div className="ra4-flow-arrow">→</div>
-            <div className="ra4-flow-step">
-              <span className="ra4-step-num">04</span>
-              <strong>Testar</strong>
-            </div>
-            <div className="ra4-flow-arrow">→</div>
-            <div className="ra4-flow-step">
-              <span className="ra4-step-num">05</span>
-              <strong>Refletir</strong>
-            </div>
-            <div className="ra4-flow-arrow">→</div>
-            <div className="ra4-flow-step">
-              <span className="ra4-step-num">06</span>
-              <strong>Compartilhar</strong>
-            </div>
+            {["Identificar", "Imaginar", "Planejar", "Construir", "Testar", "Compartilhar"].map((etapa, i, arr) => (
+              <div key={etapa} className="ra4-flow-step-group">
+                <div className="ra4-flow-step">
+                  <span className="ra4-step-num">{String(i + 1).padStart(2, "0")}</span>
+                  <strong>{etapa}</strong>
+                </div>
+                {i < arr.length - 1 && <div className="ra4-flow-arrow">→</div>}
+              </div>
+            ))}
           </div>
         </div>
       );
@@ -286,60 +265,291 @@ function RelatorioA4Estilos() {
         background: #fff;
         color: #1a2233;
         font-family: system-ui, -apple-system, sans-serif;
+        font-size: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+        line-height: 1.6;
       }
 
+      /* ===== Capa ===== */
       .ra4-capa {
-        min-height: 900px;
+        min-height: clamp(420px, 70vh, 900px);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         gap: 1rem;
-        padding: 4rem 3rem;
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 5vw, 3rem);
         background: linear-gradient(160deg, #002933 0%, #003B49 100%);
         color: #fff;
         page-break-after: always;
         break-after: page;
       }
       .ra4-capa-eyebrow {
-        font-size: 0.85rem;
+        font-size: clamp(0.7rem, 0.65rem + 0.2vw, 0.85rem);
         color: #00CEFF;
         font-weight: 700;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
       }
       .ra4-capa-titulo {
-        font-size: 3rem;
+        font-size: clamp(1.75rem, 1.3rem + 3.5vw, 3rem);
         line-height: 1.1;
         font-weight: 800;
         color: #F4F3EF;
       }
       .ra4-capa-sub {
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
         color: #94B4BD;
         max-width: 32ch;
       }
       .ra4-capa-rodape {
-        margin-top: 4rem;
+        margin-top: clamp(2rem, 5vw, 4rem);
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         color: rgba(244,243,239,0.6);
       }
 
+      /* ===== Sumário ===== */
+      .ra4-sumario {
+        padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 3rem);
+        background: var(--ra4-ivory);
+        page-break-after: always;
+        break-after: page;
+      }
+      .ra4-sumario-eyebrow {
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ra4-teal);
+        margin-bottom: 1rem;
+      }
+      .ra4-sumario-lista {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.65rem;
+      }
+      .ra4-sumario-lista li {
+        display: flex;
+        align-items: baseline;
+        gap: 0.85rem;
+        padding-bottom: 0.65rem;
+        border-bottom: 1px solid rgba(0,41,51,0.12);
+        font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem);
+        color: var(--ra4-navy);
+      }
+      .ra4-sumario-num {
+        font-family: ui-monospace, monospace;
+        font-weight: 700;
+        color: var(--ra4-cyan);
+        background: var(--ra4-navy);
+        border-radius: 4px;
+        padding: 0.1rem 0.4rem;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      /* ===== Capítulo e seção ===== */
+      .ra4-capitulo {
+        padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 3rem);
+        page-break-before: always;
+        break-before: page;
+      }
+      .ra4-capitulo:first-of-type {
+        page-break-before: auto;
+        break-before: auto;
+      }
+      .ra4-capitulo-header {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        border-bottom: 3px solid var(--ra4-navy);
+        padding-bottom: 0.85rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .ra4-capitulo-num {
+        font-family: ui-monospace, monospace;
+        font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+        font-weight: 800;
+        color: var(--ra4-cyan);
+        -webkit-text-stroke: 1px var(--ra4-navy);
+      }
+      .ra4-capitulo-titulo {
+        font-size: clamp(1.15rem, 1rem + 1vw, 1.75rem);
+        font-weight: 800;
+        color: var(--ra4-navy);
+        line-height: 1.2;
+      }
+      .ra4-secao {
+        margin-bottom: 2rem;
+      }
+      .ra4-secao-titulo {
+        font-size: clamp(1rem, 0.92rem + 0.4vw, 1.15rem);
+        font-weight: 700;
+        color: var(--ra4-teal);
+        margin: 0 0 0.85rem;
+        padding-left: 0.75rem;
+        border-left: 3px solid var(--ra4-cyan);
+      }
+
+      /* ===== Blocos de conteúdo ===== */
+      .ra4-p {
+        margin: 0 0 1rem;
+        color: #29323F;
+        line-height: 1.7;
+      }
+      .ra4-subtitulo {
+        font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+        font-weight: 800;
+        color: var(--ra4-navy);
+        margin: 1.25rem 0 0.5rem;
+      }
+      .ra4-lista {
+        margin: 0 0 1rem;
+        padding-left: 1.25rem;
+        display: grid;
+        gap: 0.4rem;
+      }
+      .ra4-lista li {
+        color: #29323F;
+        line-height: 1.6;
+      }
+      .ra4-lista li::marker {
+        color: var(--ra4-cyan);
+      }
+
+      .ra4-tabela-wrap {
+        margin: 0 0 1.25rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 10px;
+        border: 1px solid #E2E8F0;
+      }
+      .ra4-tabela-legenda {
+        font-size: 0.8rem;
+        color: #64748B;
+        padding: 0.6rem 0.85rem 0;
+      }
+      .ra4-tabela {
+        width: 100%;
+        min-width: 480px;
+        border-collapse: collapse;
+        font-size: clamp(0.75rem, 0.7rem + 0.15vw, 0.85rem);
+      }
+      .ra4-tabela thead th {
+        background: var(--ra4-navy);
+        color: #fff;
+        text-align: left;
+        padding: 0.6rem 0.85rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .ra4-tabela tbody td {
+        padding: 0.55rem 0.85rem;
+        border-bottom: 1px solid #E2E8F0;
+        color: #29323F;
+      }
+      .ra4-tabela tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .ra4-tabela tbody tr:nth-child(even) {
+        background: #F8FAFC;
+      }
+      .ra4-tabela tbody tr:last-child {
+        font-weight: 700;
+        background: var(--ra4-ivory);
+      }
+
+      .ra4-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75rem;
+        margin: 0 0 1.25rem;
+      }
+      .ra4-stat {
+        background: var(--ra4-ivory);
+        border: 1px solid #E2E8F0;
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+        border-top: 3px solid var(--ra4-cyan);
+      }
+      .ra4-stat-valor {
+        margin: 0;
+        font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+        font-weight: 800;
+        color: var(--ra4-navy);
+      }
+      .ra4-stat-label {
+        margin: 0.2rem 0 0;
+        font-size: 0.75rem;
+        color: #64748B;
+      }
+
+      .ra4-destaque {
+        margin: 0 0 1.25rem;
+        background: var(--ra4-navy);
+        color: #fff;
+        border-radius: 12px;
+        padding: 1.1rem 1.35rem;
+        border-left: 4px solid var(--ra4-cyan);
+      }
+      .ra4-destaque-titulo {
+        margin: 0 0 0.4rem;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ra4-cyan);
+      }
+      .ra4-destaque-texto {
+        margin: 0;
+        line-height: 1.6;
+        color: rgba(255,255,255,0.9);
+      }
+
+      .ra4-citacao {
+        margin: 0 0 1.25rem;
+        padding: 0.25rem 0 0.25rem 1.25rem;
+        border-left: 3px solid var(--ra4-cyan);
+        font-style: italic;
+        color: #334155;
+      }
+      .ra4-citacao p {
+        margin: 0 0 0.4rem;
+      }
+      .ra4-citacao cite {
+        display: block;
+        font-style: normal;
+        font-size: 0.8rem;
+        color: #64748B;
+      }
+
+      /* ===== Rodapé final ===== */
+      .ra4-rodape-final {
+        padding: 2rem clamp(1.25rem, 5vw, 3rem);
+        background: #0E2A47;
+        color: #A9C2DA;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+
+      /* ===== Organograma ===== */
       .ra4-org-wrap {
         background: #F0F9FB;
         border: 1px solid #B3ECFF;
         border-radius: 12px;
-        padding: 1.5rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
         margin: 1.5rem 0;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
       .ra4-org-ceo {
-        background: #002933;
+        background: var(--ra4-navy);
         color: #fff;
         padding: 1rem 1.5rem;
         border-radius: 8px;
@@ -348,20 +558,21 @@ function RelatorioA4Estilos() {
         gap: 1rem;
         width: 100%;
         max-width: 520px;
-        border-left: 4px solid #00CEFF;
+        border-left: 4px solid var(--ra4-cyan);
       }
       .ra4-org-badge {
-        background: #00CEFF;
-        color: #002933;
+        background: var(--ra4-cyan);
+        color: var(--ra4-navy);
         font-weight: 900;
         padding: 0.25rem 0.75rem;
         border-radius: 999px;
         font-size: 0.8rem;
+        flex-shrink: 0;
       }
       .ra4-org-line-v {
         width: 2px;
         height: 24px;
-        background: #00CEFF;
+        background: var(--ra4-cyan);
         margin: 0.5rem 0;
       }
       .ra4-org-grid {
@@ -377,119 +588,86 @@ function RelatorioA4Estilos() {
         border-radius: 8px;
         display: flex;
         flex-direction: column;
-        border-top: 3px solid #002933;
+        border-top: 3px solid var(--ra4-navy);
       }
       .ra4-dept-title {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         font-weight: 800;
         text-transform: uppercase;
-        color: #00CEFF;
+        color: #0891B2;
         letter-spacing: 0.05em;
         margin-bottom: 0.25rem;
       }
       .ra4-org-card strong {
-        color: #002933;
-        font-size: 0.95rem;
+        color: var(--ra4-navy);
+        font-size: 0.9rem;
       }
       .ra4-org-card span {
         color: #64748B;
-        font-size: 0.8rem;
-      }
-      /* ELEMENTOS VISUAIS NO RELATÓRIO A4 */
-      .ra4-org-wrap {
-        background: #F8FAFC;
-        border: 1px solid #E2E8F0;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .ra4-org-ceo {
-        background: #0E2A47;
-        color: #fff;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-        max-width: 480px;
-      }
-      .ra4-org-badge {
-        background: #76F3CD;
-        color: #0B1F44;
-        font-weight: 900;
-        padding: 0.25rem 0.75rem;
-        border-radius: 999px;
-        font-size: 0.8rem;
-      }
-      .ra4-org-line-v {
-        width: 2px;
-        height: 24px;
-        background: #0E2A47;
-        margin: 0.5rem 0;
-      }
-      .ra4-org-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        width: 100%;
-      }
-      .ra4-org-card {
-        background: #fff;
-        border: 1px solid #CBD5E1;
-        padding: 0.75rem 1rem;
-        border-radius: 6px;
-        display: flex;
-        flex-direction: column;
-      }
-      .ra4-org-card strong {
-        color: #0F172A;
-        font-size: 0.95rem;
-      }
-      .ra4-org-card span {
-        color: #64748B;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
       }
 
+      /* ===== Mapa por estado ===== */
       .ra4-map-wrap {
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 12px;
-        padding: 1.5rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
         margin: 1.5rem 0;
       }
-      .ra4-map-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        align-items: center;
-      }
-      .ra4-map-svg-box {
-        width: 100%;
-        background: #0E2A47;
-        border-radius: 8px;
-        padding: 1rem;
+      .ra4-map-nota {
+        font-size: 0.78rem;
+        color: #64748B;
+        margin: -0.25rem 0 1rem;
+        line-height: 1.5;
       }
       .ra4-map-legend {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        font-size: 0.85rem;
+        gap: 0.6rem;
+      }
+      .ra4-map-item {
+        display: grid;
+        grid-template-columns: minmax(120px, 9rem) 1fr auto;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.8rem;
+      }
+      .ra4-map-item-label {
+        color: #334155;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ra4-map-bar-track {
+        height: 10px;
+        border-radius: 999px;
+        background: #E2E8F0;
+        overflow: hidden;
+      }
+      .ra4-map-bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--ra4-teal), var(--ra4-cyan));
+      }
+      .ra4-map-item-valor {
+        font-weight: 800;
+        color: var(--ra4-navy);
+        min-width: 1.5rem;
+        text-align: right;
       }
 
+      /* ===== Galeria de livros ===== */
       .ra4-books-wrap {
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 12px;
-        padding: 1.5rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
         margin: 1.5rem 0;
       }
       .ra4-books-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
       }
       .ra4-book-card {
@@ -497,9 +675,10 @@ function RelatorioA4Estilos() {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 700;
         text-align: center;
+        color: var(--ra4-navy);
       }
       .ra4-book-img {
         width: 100%;
@@ -507,20 +686,28 @@ function RelatorioA4Estilos() {
         object-fit: contain;
         border-radius: 6px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        background: #fff;
       }
 
+      /* ===== Ciclo Momento Criar ===== */
       .ra4-flow-wrap {
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 12px;
-        padding: 1.5rem;
+        padding: clamp(1rem, 3vw, 1.5rem);
         margin: 1.5rem 0;
       }
       .ra4-flow-steps {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        flex-wrap: wrap;
         gap: 0.5rem;
+      }
+      .ra4-flow-step-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex: 1 1 auto;
       }
       .ra4-flow-step {
         background: #fff;
@@ -529,18 +716,25 @@ function RelatorioA4Estilos() {
         border-radius: 6px;
         text-align: center;
         flex: 1;
+        min-width: 84px;
       }
       .ra4-step-num {
         display: block;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         font-weight: 800;
-        color: #0E2A47;
+        color: var(--ra4-cyan);
+      }
+      .ra4-flow-step strong {
+        color: var(--ra4-navy);
+        font-size: 0.82rem;
       }
       .ra4-flow-arrow {
-        color: #0E2A47;
+        color: #94A3B8;
         font-weight: 900;
+        flex-shrink: 0;
       }
 
+      /* ===== Imagem ilustrativa ===== */
       .ra4-img-box {
         margin: 1.5rem 0;
       }
@@ -558,12 +752,28 @@ function RelatorioA4Estilos() {
         text-align: center;
       }
 
-      .ra4-rodape-final {
-        padding: 2rem 3rem;
-        background: #0E2A47;
-        color: #A9C2DA;
-        font-size: 0.8rem;
-        text-align: center;
+      /* ===== Responsivo: tablet ===== */
+      @media (max-width: 820px) {
+        .ra4-books-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      /* ===== Responsivo: celular ===== */
+      @media (max-width: 560px) {
+        .ra4-org-grid { grid-template-columns: 1fr; }
+        .ra4-org-ceo { flex-wrap: wrap; }
+        .ra4-map-item { grid-template-columns: 1fr; gap: 0.3rem; }
+        .ra4-map-item-valor { text-align: left; }
+        .ra4-flow-steps { flex-direction: column; align-items: stretch; }
+        .ra4-flow-step-group { flex-direction: column; }
+        .ra4-flow-arrow { transform: rotate(90deg); }
+        .ra4-capitulo-header { gap: 0.5rem; }
+      }
+
+      /* ===== Impressão ===== */
+      @media print {
+        .ra4-doc { max-width: none; }
+        .ra4-tabela-wrap { overflow-x: visible; }
+        .ra4-tabela { min-width: 0; }
       }
     `}</style>
   );
