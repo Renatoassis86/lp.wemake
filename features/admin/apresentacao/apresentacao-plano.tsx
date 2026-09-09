@@ -1379,7 +1379,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="indicadores" variante="royal">
       <Eyebrow>Capítulo 12 · Plano financeiro</Eyebrow>
       <Titulo>Seis indicadores medem se o crescimento vem acompanhado de margem</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-9">
+      <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
+        Cada centro de custo, currículo, Academia We Make, plataforma, espaço maker e assessoria institucional,
+        acompanha sua própria eficiência internamente. Em nível consolidado, a empresa acompanha ainda margem
+        bruta do sistema, percentual de receita recorrente, receita média por escola e concentração de receita
+        nos maiores clientes, para avaliar se o crescimento do número de escolas e famílias atendidas ocorre com
+        margem e capacidade de escala.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
         {[
           { icone: Percent, titulo: "Margem bruta por aluno e por escola" },
           { icone: Repeat, titulo: "Retenção e renovação contratual" },
