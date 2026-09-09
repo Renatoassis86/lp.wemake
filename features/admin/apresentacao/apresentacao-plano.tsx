@@ -809,9 +809,9 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         )}
         <div className="space-y-2">
           {[
-            ["DF", "Lei nº 7.796/2025 — Centros Interescolares de Robótica"],
-            ["SP", "Deliberação CEE nº 233/2025 — Educação Digital, Midiática e Computação"],
-            ["MG", "Parecer CEE/MG nº 1.588/2025 — Referencial Curricular de Computação"],
+            ["DF", "Lei nº 7.796/2025: Centros Interescolares de Robótica"],
+            ["SP", "Deliberação CEE nº 233/2025: Educação Digital, Midiática e Computação"],
+            ["MG", "Parecer CEE/MG nº 1.588/2025: Referencial Curricular de Computação"],
             ["PR", "Deliberação CEE/PR nº 04/2025"],
             ["RS", "Resolução CEEd nº 382/2024, a mais antiga identificada"],
           ].map(([uf, texto], i) => (
@@ -1091,13 +1091,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 21 — metas de vendas
     <Slide key="metas-vendas" variante="royal">
       <Eyebrow>Capítulo 8 · Marketing e vendas</Eyebrow>
-      <Titulo>Metas de alunos: 4.000 em 2027 crescendo até 13.500 em 2030</Titulo>
+      <Titulo>Meta de 4.000 alunos em 2027 chega a 20.250 no cenário-base de 2031</Titulo>
       <div className="mt-9 space-y-2.5 max-w-3xl">
         {[
-          { ano: 2027, alunos: "4.000 alunos (10 novas escolas)", largura: 30 },
-          { ano: 2028, alunos: "6.000 alunos (+10 escolas)", largura: 45 },
-          { ano: 2029, alunos: "8.000 alunos (+10 escolas)", largura: 60 },
-          { ano: 2030, alunos: "13.500 alunos (+10 escolas)", largura: 100 },
+          { ano: 2027, alunos: "4.000 alunos", largura: 20 },
+          { ano: 2028, alunos: "6.000 alunos", largura: 30 },
+          { ano: 2029, alunos: "9.000 alunos", largura: 44 },
+          { ano: 2030, alunos: "13.500 alunos", largura: 67 },
+          { ano: 2031, alunos: "20.250 alunos", largura: 100 },
         ].map((r, i) => (
           <motion.div
             key={r.ano}
@@ -1186,17 +1187,17 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <div className="mt-9">
         <Donut
           fatias={[
-            { label: "Pessoal, CLT e PJ", pct: 41.5, cor: "rgb(var(--color-brand-mint))" },
-            { label: "Produção gráfica", pct: 21.3, cor: "rgb(var(--color-brand-royal))" },
+            { label: "Pessoal, CLT e PJ", pct: 41.8, cor: "rgb(var(--color-brand-mint))" },
+            { label: "Produção gráfica", pct: 21.2, cor: "rgb(var(--color-brand-royal))" },
             { label: "Taxas e serviços financeiros", pct: 13.2, cor: "rgb(var(--color-brand-sky))" },
-            { label: "Tecnologia", pct: 5.3, cor: "#8b7ce8" },
+            { label: "Tecnologia", pct: 5.2, cor: "#8b7ce8" },
             { label: "Infraestrutura", pct: 5.3, cor: "#e8607a" },
-            { label: "Demais categorias", pct: 13.4, cor: "rgba(255,255,255,0.3)" },
+            { label: "Demais categorias", pct: 13.3, cor: "rgba(255,255,255,0.3)" },
           ]}
         />
       </div>
       <p className="text-white/40 text-base mt-6 max-w-xl">
-        Despesa total de R$844.365,14 em 2027, já incorporando pró-labore da liderança e equipe de tecnologia
+        Despesa total de R$848.913,14 em 2027, já incorporando pró-labore da liderança e equipe de tecnologia
         própria.
       </p>
     </Slide>,
@@ -1227,7 +1228,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         <MatrizRisco
           pontos={[
             { label: "Liderança central", x: 0.82, y: 0.85, cor: "#e8607a" },
-            { label: "PI sem registro", x: 0.55, y: 0.85, cor: "rgb(var(--color-brand-sky))" },
+            { label: "Registro autoral em curso", x: 0.55, y: 0.85, cor: "rgb(var(--color-brand-sky))" },
             { label: "Maturidade desigual", x: 0.82, y: 0.5, cor: "rgb(var(--color-brand-sky))" },
             { label: "IA de terceiros", x: 0.25, y: 0.5, cor: "rgb(var(--color-brand-royal))" },
             { label: "Homeschooling", x: 0.25, y: 0.85, cor: "rgb(var(--color-brand-royal))" },
@@ -1236,10 +1237,10 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         />
         <ul className="space-y-2">
           {[
-            "Dependência de liderança central — prioridade imediata",
-            "Propriedade intelectual sem registro confirmado — prioridade imediata",
-            "Maturidade desigual entre linhas — prioridade imediata",
-            "Regulação do homeschooling — monitoramento contínuo",
+            "Dependência de liderança central, prioridade imediata",
+            "Marca já registrada; frentes autorais do currículo em processo de registro, prioridade imediata",
+            "Maturidade desigual entre linhas, prioridade imediata",
+            "Regulação do homeschooling, monitoramento contínuo",
           ].map((r, i) => (
             <motion.li
               key={r}
@@ -1274,8 +1275,9 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <Building2 className="size-5 text-[rgb(var(--color-brand-mint))] mb-3" strokeWidth={1.75} />
           <p className="font-display text-white text-[1.0625rem] mb-1.5">Faculdade de tecnologia</p>
           <p className="text-white/55 text-base leading-relaxed">
-            Extensão da proposta em nível superior, possibilidade a ser buscada, sustentada pela parceria com a
-            FICV. Depende de credenciamento junto ao MEC.
+            Possibilidade a ser buscada a partir do Ano 4, não frente já decidida. Depende de credenciamento
+            junto ao Ministério da Educação, próprio ou por parceria com instituição já credenciada, etapa que
+            ainda não está em curso.
           </p>
         </Cartao>
       </div>
