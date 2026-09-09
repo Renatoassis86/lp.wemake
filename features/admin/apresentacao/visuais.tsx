@@ -362,10 +362,10 @@ interface EtapaCiclo {
 export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaCiclo[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 640;
+  const size = 760;
   const cx = size / 2;
   const cy = size / 2;
-  const r = 205;
+  const r = 270;
   const n = etapas.length;
 
   const pontos = etapas.map((_, i) => {

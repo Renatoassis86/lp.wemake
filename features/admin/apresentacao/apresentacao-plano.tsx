@@ -999,6 +999,29 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         escola, ticket já cobrado das famílias, segmentos atendidos e natureza da instituição, incluindo escolas
         sem fins lucrativos, o que explica a variação praticada hoje na carteira.
       </p>
+      <div className="grid grid-cols-5 gap-3 mt-6 max-w-4xl">
+        {[
+          { src: "/deck/img/livros/capa_infantil_3.png", legenda: "Educação Infantil" },
+          { src: "/deck/img/livros/capa_ef1_1ano.png", legenda: "1º Ano EF" },
+          { src: "/deck/img/livros/capa_ef1_3ano.png", legenda: "3º Ano EF" },
+          { src: "/deck/img/livros/capa_ef1_4ano.png", legenda: "4º Ano EF" },
+          { src: "/deck/img/livros/capa_ef1_5ano.png", legenda: "5º Ano EF" },
+        ].map((c, i) => (
+          <motion.div
+            key={c.src}
+            className="flex flex-col items-center gap-2"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ delay: 0.3 + i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="rounded-lg overflow-hidden shadow-[0_16px_32px_-12px_rgba(0,0,0,0.6)]">
+              <Image src={c.src} alt={`Capa do Livro Maker, ${c.legenda}`} width={600} height={848} className="w-full h-auto object-contain" />
+            </div>
+            <p className="text-white/50 text-lg text-center leading-snug">{c.legenda}</p>
+          </motion.div>
+        ))}
+      </div>
     </Slide>,
 
     // 8 — homeschool
@@ -1515,9 +1538,19 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 29 — fechamento
     <Slide key="fechamento" variante="dark">
       <div className="flex flex-col items-start">
+        <Eyebrow>Capítulo 15 · Considerações finais</Eyebrow>
         <Sparkles className="size-8 text-[rgb(var(--color-brand-mint))] mb-6" strokeWidth={1.5} />
         <Titulo>Educação tecnológica com sabedoria, para a glória de Deus e o bem do próximo</Titulo>
-        <p className="text-white/55 text-lg max-w-3xl mt-6 leading-relaxed">
+        <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-6">
+          2027 é, por desenho, um ano de transição: a receita mais que dobra frente a 2025 e o resultado
+          operacional projetado permanece positivo, em R$300.976,86, mesmo com investimento simultâneo em
+          pessoal, tecnologia própria e estrutura física. A margem cai de 38,1% em 2025 para 26,2% em 2027 por
+          uma decisão deliberada de reinvestimento em capacidade organizacional, absorvida sem levar o exercício
+          a resultado negativo em nenhum dos cenários avaliados. A escola de tecnologia e a eventual faculdade
+          permanecem condicionadas à consolidação desse sistema, e não competem por recurso ou atenção com a
+          operação já contratada para os próximos anos.
+        </p>
+        <p className="text-white/55 text-lg max-w-4xl mt-6 leading-relaxed">
           We Make Educação Tecnológica LTDA · CNPJ 48.760.895/0001-99 · Documento confidencial, elaborado pela
           direção estratégica da empresa.
         </p>
