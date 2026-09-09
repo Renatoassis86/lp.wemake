@@ -1106,6 +1106,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </p>
         </Cartao>
       </div>
+      <p className="text-white/50 text-lg max-w-4xl mt-5 leading-relaxed">
+        A consultoria pedagógica opera sob um princípio explícito: postura propositiva, não reativa, organizando
+        jornadas de formação e acompanhamento contínuo em vez de só responder demandas das escolas parceiras. A
+        relação com a ACSI é de parceria e colaboração mútua, não de chancela: a associação não certifica,
+        recomenda ou endossa o sistema We Make.
+      </p>
     </Slide>,
 
     // 19 — parcerias locais
@@ -1129,6 +1135,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </p>
         </Cartao>
       </div>
+      <p className="text-[rgb(var(--color-brand-navy))]/60 text-lg max-w-3xl mt-5 leading-relaxed">
+        A expansão dessas iniciativas para novas escolas e regiões segue o mesmo princípio: parcerias locais que
+        ofereçam projetos, prêmios ou estágios em troca de exposição da marca junto às comunidades escolares
+        atendidas, reforçando o relacionamento comercial por reputação construída em campo.
+      </p>
     </Slide>,
 
     // 19b — pesquisa e desenvolvimento (Capítulo 8)
