@@ -174,20 +174,52 @@ export function Organograma({ topo, filhos }: { topo: NoOrganograma; filhos: NoO
     if (!container || !topoEl) return;
     const caixaContainer = container.getBoundingClientRect();
     const caixaTopo = topoEl.getBoundingClientRect();
-    const origemX = caixaTopo.left + caixaTopo.width / 2 - caixaContainer.left;
-    const origemY = caixaTopo.bottom - caixaContainer.top;
-    const novasLinhas = filhoRefs.current
-      .map((el) => {
-        if (!el) return null;
-        const caixa = el.getBoundingClientRect();
-        return {
-          x1: origemX,
-          y1: origemY,
-          x2: caixa.left + caixa.width / 2 - caixaContainer.left,
-          y2: caixa.top - caixaContainer.top,
-        };
-      })
-      .filter((l): l is { x1: number; y1: number; x2: number; y2: number } => l !== null);
+
+    const caixasFilhos = filhoRefs.current.map((el) => {
+      if (!el) return null;
+      const caixa = el.getBoundingClientRect();
+      return {
+        x: caixa.left + caixa.width / 2 - caixaContainer.left,
+        yTopo: caixa.top - caixaContainer.top,
+        yBase: caixa.bottom - caixaContainer.top,
+      };
+    });
+
+    // Agrupa os cards por fileira (mesma altura de topo, com folga). Cada fileira parte do
+    // rodapé da fileira anterior, nunca da raiz — assim a linha nunca atravessa por cima de
+    // um card de uma fileira acima, só passa pelo vão vazio entre fileiras.
+    const indicesValidos = caixasFilhos
+      .map((c, i) => (c ? i : -1))
+      .filter((i) => i >= 0)
+      .sort((a, b) => caixasFilhos[a]!.yTopo - caixasFilhos[b]!.yTopo);
+
+    const fileiras: number[][] = [];
+    for (const i of indicesValidos) {
+      const c = caixasFilhos[i]!;
+      const ultima = fileiras[fileiras.length - 1];
+      const primeiroIdx = ultima?.[0];
+      if (ultima && primeiroIdx !== undefined && Math.abs(caixasFilhos[primeiroIdx]!.yTopo - c.yTopo) < 12) {
+        ultima.push(i);
+      } else {
+        fileiras.push([i]);
+      }
+    }
+
+    const origemXRaiz = caixaTopo.left + caixaTopo.width / 2 - caixaContainer.left;
+    const origemYRaiz = caixaTopo.bottom - caixaContainer.top;
+
+    const novasLinhas: { x1: number; y1: number; x2: number; y2: number }[] = [];
+    let origemY = origemYRaiz;
+    for (const fileira of fileiras) {
+      let maxBase = origemY;
+      for (const i of fileira) {
+        const c = caixasFilhos[i]!;
+        novasLinhas[i] = { x1: origemXRaiz, y1: origemY, x2: c.x, y2: c.yTopo };
+        maxBase = Math.max(maxBase, c.yBase);
+      }
+      origemY = maxBase + 8;
+    }
+
     setLinhas(novasLinhas);
     setTamanho({ w: caixaContainer.width, h: caixaContainer.height });
   }, []);

@@ -483,7 +483,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 1 — tração
-    <Slide key="tracao" variante="navy">
+    <Slide key="tracao" variante="dark">
       <Eyebrow>Quem somos hoje</Eyebrow>
       <Titulo>De duas escolas parceiras, em 2024, a um sistema em expansão nacional</Titulo>
       <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
@@ -516,7 +516,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 1b — orçamento 2027
-    <Slide key="orcamento-2027" variante="royal">
+    <Slide key="orcamento-2027" variante="dark">
       <Eyebrow>Capítulo 1 · Sumário executivo</Eyebrow>
       <Titulo>86,5% da meta escolar de 2027 já está assinada em contrato</Titulo>
       <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
@@ -545,7 +545,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 2 — visão, missão
-    <Slide key="visao-missao" variante="royal">
+    <Slide key="visao-missao" variante="dark">
       <Eyebrow>Capítulo 2 · Identidade institucional</Eyebrow>
       <Titulo>Visão e missão fixam o alvo antes de qualquer decisão de produto</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
@@ -575,7 +575,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 2b — valores
-    <Slide key="valores" variante="navy">
+    <Slide key="valores" variante="dark">
       <Eyebrow>Capítulo 2 · Identidade institucional</Eyebrow>
       <Titulo>Beleza, Verdade e Bondade orientam a avaliação de qualquer produto antes da adoção pedagógica</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
@@ -695,7 +695,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 4b — barreiras de entrada e retorno (Capítulo 4)
-    <Slide key="oportunidade" variante="royal">
+    <Slide key="oportunidade" variante="dark">
       <Eyebrow>Capítulo 4 · Análise de oportunidade</Eyebrow>
       <Titulo>Reproduzir um componente isolado é simples, reproduzir os sete juntos não é</Titulo>
       <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
@@ -732,7 +732,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 4c — tamanho de mercado (Capítulo 4)
-    <Slide key="mercado" variante="navy">
+    <Slide key="mercado" variante="dark">
       <Eyebrow>Capítulo 4 · Tamanho de mercado</Eyebrow>
       <Titulo>Um nicho pouco disputado dentro de um setor de tecnologia educacional já maduro</Titulo>
       <p className="text-white/60 text-lg max-w-4xl mt-4 leading-relaxed">
@@ -773,10 +773,23 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </motion.div>
         ))}
       </div>
+      <div className="mt-5 max-w-4xl border-t border-white/10 pt-3 space-y-1">
+        <p className="text-white/35 text-lg leading-snug">
+          <strong className="text-white/55">Fonte das duas primeiras linhas:</strong> Censo Escolar 2025
+          (INEP/MEC), dado publicado, não sujeito a revisão pela We Make.
+        </p>
+        <p className="text-white/35 text-lg leading-snug">
+          <strong className="text-white/55">Memória de cálculo das duas últimas:</strong> não são derivadas por
+          fórmula a partir do Censo, e sim uma referência de trabalho adotada pela direção (3.500 a 5.000 escolas
+          confessionais; 900 a 1.400 de perfil acessível), ainda sem estudo de dimensionamento que cruze
+          microdados do Censo com bases de associações confessionais. Os valores exibidos são o teto de cada
+          faixa.
+        </p>
+      </div>
     </Slide>,
 
     // 10 — por que agora (federal)
-    <Slide key="por-que-agora" variante="royal">
+    <Slide key="por-que-agora" variante="dark">
       <Eyebrow>Capítulo 5 · Legislação</Eyebrow>
       <Titulo>A lei transformou a educação tecnológica de diferencial em exigência curricular</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
@@ -833,7 +846,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 13 — a dor do cliente
-    <Slide key="dor-cliente" variante="royal">
+    <Slide key="dor-cliente" variante="dark">
       <Eyebrow>Capítulo 5 · Por que ele compra</Eyebrow>
       <Titulo>Sem a We Make, a escola fragmenta a compra entre vários fornecedores diferentes</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-9">
@@ -876,7 +889,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 15 — futuros concorrentes
-    <Slide key="futuros-concorrentes" variante="navy">
+    <Slide key="futuros-concorrentes" variante="dark">
       <Eyebrow>Capítulo 5 · Futuros concorrentes</Eyebrow>
       <Titulo>Os nomes que a escola já conhece são a ameaça competitiva mais séria</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
@@ -896,7 +909,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 16 — mapa: onde estão nossos alunos
-    <Slide key="mapa-alunos" variante="royal">
+    <Slide key="mapa-alunos" variante="dark">
       <Eyebrow>Capítulo 5 · Presença atual</Eyebrow>
       <Titulo>Presença em 9 estados, do Sul ao Nordeste</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 items-center">
@@ -931,7 +944,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 5 — currículo em detalhe
-    <Slide key="curriculo" variante="royal">
+    <Slide key="curriculo" variante="dark">
       <Eyebrow>Capítulo 6 · Produtos e serviços</Eyebrow>
       <Titulo>Um currículo autoral, da Educação Infantil ao Ensino Médio, com progressão real entre séries</Titulo>
       <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
@@ -988,7 +1001,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 7 — livro maker e precificação
-    <Slide key="livro-preco" variante="navy">
+    <Slide key="livro-preco" variante="dark">
       <Eyebrow>Capítulo 6 · Livro Maker e precificação</Eyebrow>
       <Titulo>A partir de 2027, o currículo ganha um componente físico e um valor de referência único</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
@@ -1089,7 +1102,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 9 — Academia We Make
-    <Slide key="academia" variante="navy">
+    <Slide key="academia" variante="dark">
       <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
         <div>
           <Eyebrow>Capítulo 6 · Formação docente</Eyebrow>
@@ -1123,7 +1136,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 18 — operações e tecnologia
-    <Slide key="operacoes" variante="navy">
+    <Slide key="operacoes" variante="dark">
       <Eyebrow>Capítulo 7 · Estrutura e operações</Eyebrow>
       <Titulo>A tecnologia própria já sustenta a operação diária da empresa</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-9">
@@ -1164,7 +1177,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 19 — parcerias locais
-    <Slide key="parcerias-locais" variante="royal">
+    <Slide key="parcerias-locais" variante="dark">
       <Eyebrow>Capítulo 7 · Repercussão local</Eyebrow>
       <Titulo>Olimpíadas e hackathons transformam relacionamento comercial em reputação de campo</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
@@ -1274,7 +1287,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 21 — metas de vendas
-    <Slide key="metas-vendas" variante="royal">
+    <Slide key="metas-vendas" variante="dark">
       <Eyebrow>Capítulo 9 · Marketing e vendas</Eyebrow>
       <Titulo>Meta de 4.000 alunos em 2027 chega a 20.250 no cenário-base de 2031</Titulo>
       <div className="mt-9 space-y-2.5 max-w-4xl">
@@ -1318,7 +1331,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 23 — financeiro
-    <Slide key="financeiro" variante="navy">
+    <Slide key="financeiro" variante="dark">
       <Eyebrow>Capítulo 10 · Premissas de crescimento</Eyebrow>
       <Titulo>Receita projetada, 2027 a 2031</Titulo>
       <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-4">
@@ -1405,7 +1418,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 25 — indicadores de retorno
-    <Slide key="indicadores" variante="royal">
+    <Slide key="indicadores" variante="dark">
       <Eyebrow>Capítulo 12 · Plano financeiro</Eyebrow>
       <Titulo>Seis indicadores medem se o crescimento vem acompanhado de margem</Titulo>
       <p className="text-white/80 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
@@ -1430,7 +1443,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 27 — crescimento futuro
-    <Slide key="crescimento-futuro" variante="navy">
+    <Slide key="crescimento-futuro" variante="dark">
       <Eyebrow>Capítulo 13 · Estratégia de crescimento futuro</Eyebrow>
       <Titulo>Dois negócios futuros, condicionados à consolidação do sistema atual</Titulo>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-9">
@@ -1463,23 +1476,24 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     </Slide>,
 
     // 28 — capital externo
-    <Slide key="capital-externo" variante="royal">
+    <Slide key="capital-externo" variante="dark">
       <Eyebrow>Capítulo 13 · Capital externo</Eyebrow>
-      <Titulo>Uma trajetória construída sem dívida, pronta para ser acelerada por capital externo</Titulo>
+      <Titulo>Uma trajetória construída sem dívida, com espaço para acelerar o crescimento</Titulo>
       <motion.div
-        className="mt-9 rounded-2xl bg-[rgb(var(--color-brand-ivory))] text-[rgb(var(--color-brand-navy))] p-6 sm:p-8 max-w-4xl shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]"
+        className="mt-9 rounded-2xl border-l-4 border-[rgb(var(--color-brand-mint))] bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 max-w-4xl"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="font-mono text-lg uppercase tracking-[0.2em] text-[rgb(var(--color-brand-royal))] font-bold mb-3">
+        <p className="font-mono text-lg uppercase tracking-[0.2em] text-[rgb(var(--color-brand-mint))] font-bold mb-3">
           Ponto de partida
         </p>
-        <p className="font-display text-[1.05rem] sm:text-[1.25rem] leading-snug">
-          Construída até aqui com recursos próprios, sem dívida ou passivo relevante a sustentar. A pergunta não
-          é se a We Make chega ao horizonte de cinco anos deste plano sozinha, mas se um investidor deseja
-          antecipar esse horizonte para dois ou três anos.
+        <p className="font-display text-white text-[1.05rem] sm:text-[1.25rem] leading-snug">
+          Construída até aqui inteiramente com recursos próprios, sem dívida ou passivo relevante a sustentar. O
+          horizonte de cinco anos deste plano está desenhado para ser alcançado pela própria geração de caixa da
+          operação; capital adicional, se buscado no futuro, serviria para acelerar esse horizonte, não para
+          viabilizá-lo.
         </p>
       </motion.div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 max-w-4xl">
@@ -1494,7 +1508,8 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         ))}
       </div>
       <p className="text-white/40 text-lg mt-5 max-w-3xl">
-        Prioridades de alocação caso a aceleração se concretize, inspiração, não orçamento aprovado.
+        Prioridades internas de alocação caso a empresa opte por acelerar o crescimento com capital adicional,
+        inspiração, não orçamento aprovado.
       </p>
     </Slide>,
 
@@ -1546,13 +1561,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 29 — fechamento
     <Slide key="fechamento" variante="dark">
       <Image
-        src="/photos/maker_student.png"
+        src="/photos/salamaker2.png"
         alt=""
-        width={640}
-        height={800}
+        width={2000}
+        height={1130}
         aria-hidden
-        className="pointer-events-none select-none absolute -right-10 bottom-0 w-[26rem] h-auto opacity-[0.14] hidden lg:block"
-        style={{ maskImage: "linear-gradient(to top, black 40%, transparent 95%)", WebkitMaskImage: "linear-gradient(to top, black 40%, transparent 95%)" }}
+        className="pointer-events-none select-none absolute inset-x-0 bottom-0 w-full h-[42%] object-cover opacity-[0.12] hidden lg:block"
+        style={{ maskImage: "linear-gradient(to top, black 15%, transparent 92%)", WebkitMaskImage: "linear-gradient(to top, black 15%, transparent 92%)" }}
       />
       <div className="flex flex-col items-start">
         <Eyebrow>Capítulo 15 · Considerações finais</Eyebrow>
@@ -1860,6 +1875,17 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           />
         ))}
       </div>
+
+      {atual > 0 && (
+        <Image
+          src="/logo-wemake.png"
+          alt="We Make"
+          width={197}
+          height={60}
+          aria-hidden
+          className="pointer-events-none select-none absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 h-6 sm:h-7 w-auto object-contain opacity-60"
+        />
+      )}
     </div>
   );
 }
