@@ -470,7 +470,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="tracao" variante="navy">
       <Eyebrow>Quem somos hoje</Eyebrow>
       <Titulo>De duas escolas parceiras, em 2024, a um sistema em expansão nacional</Titulo>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-10">
+      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+        A trajetória começou em 2023, quando a empresa foi formalizada e apresentada ao mercado. A operação
+        comercial abriu no ano seguinte, com duas escolas parceiras dispostas a testar um currículo ainda em
+        formação. Três anos depois, a carteira soma doze escolas e cerca de dois mil alunos atendidos, crescimento
+        que a direção atribui à integração do sistema, não à expansão isolada de um único produto.
+      </p>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8">
         {[
           { label: "Escolas parceiras (2026)", valor: 12 },
           { label: "Alunos atendidos (2026)", valor: 2000, sufixo: "+" },
@@ -485,23 +491,40 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </Cartao>
         ))}
       </div>
-
-      <p className="font-mono text-base uppercase tracking-[0.2em] text-white/40 font-bold mt-10 mb-3">
-        Já em 2027
+      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-8">
+        O sistema entrega currículo, plataforma digital, espaço maker, formação docente e assessoria institucional
+        num único contrato, sem cobrança separada por serviço. É essa integração, não um componente isolado, que
+        a empresa aponta como diferencial diante de fornecedores que vendem apenas um pedaço do problema: um kit
+        de robótica aqui, uma plataforma de gestão ali, sem relação entre as partes.
       </p>
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-xl">
-        <Cartao delay={0.5} className="border-[rgb(var(--color-brand-mint))]/30">
-          <p className="font-display text-[rgb(var(--color-brand-mint))] text-[clamp(1.5rem,3.5vw,2rem)]">
-            <NumeroAnimado valor={951962} prefixo="R$ " />
-          </p>
-          <p className="text-white/50 text-base mt-1.5 leading-snug">Já contratado para o ano</p>
-        </Cartao>
-        <Cartao delay={0.6} className="border-[rgb(var(--color-brand-mint))]/30">
-          <p className="font-display text-[rgb(var(--color-brand-mint))] text-[clamp(1.5rem,3.5vw,2rem)]">
-            <NumeroAnimado valor={86.5} sufixo="%" casas={1} />
-          </p>
-          <p className="text-white/50 text-base mt-1.5 leading-snug">Da meta escolar já garantida</p>
-        </Cartao>
+    </Slide>,
+
+    // 1b — orçamento 2027
+    <Slide key="orcamento-2027" variante="royal">
+      <Eyebrow>Capítulo 1 · Sumário executivo</Eyebrow>
+      <Titulo>O orçamento de 2027 já está em grande parte contratado, não projetado</Titulo>
+      <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-3xl mt-5">
+        Dos R$1.100.000,00 previstos em receita escolar, R$951.961,90 já estão assinados. Os R$148.038,10
+        restantes dependem de escolas em fase final de negociação, não de prospecção ainda por começar. Somada à
+        primeira venda da trilha de currículo para famílias educadoras, a receita total projetada chega a
+        R$1.149.890,00. A despesa do exercício soma R$848.913,14, o que deixa um resultado operacional de
+        R$300.976,86, margem de 26,2%, positivo mesmo no cenário mais conservador, em que nenhuma das escolas
+        hoje em negociação venha a fechar contrato.
+      </p>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8">
+        {[
+          { label: "Já contratado para o ano", valor: 951962, prefixo: "R$ " },
+          { label: "Em negociação avançada", valor: 148038, prefixo: "R$ " },
+          { label: "Resultado operacional", valor: 300977, prefixo: "R$ " },
+          { label: "Margem operacional", valor: 26.2, sufixo: "%", casas: 1 },
+        ].map((s, i) => (
+          <Cartao key={s.label} delay={i * 0.1} className="border-[rgb(var(--color-brand-mint))]/30">
+            <p className="font-display text-[rgb(var(--color-brand-mint))] text-[clamp(1.5rem,3.5vw,2rem)]">
+              <NumeroAnimado valor={s.valor} prefixo={s.prefixo} sufixo={s.sufixo} casas={s.casas} />
+            </p>
+            <p className="text-white/60 text-base mt-1.5 leading-snug">{s.label}</p>
+          </Cartao>
+        ))}
       </div>
     </Slide>,
 
