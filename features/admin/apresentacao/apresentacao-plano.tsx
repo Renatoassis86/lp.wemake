@@ -837,7 +837,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
             >
-              <span className="font-mono text-[rgb(var(--color-brand-mint))] text-lg font-bold w-7 shrink-0">{uf}</span>
+              <span className="font-mono text-[rgb(var(--color-brand-mint))] text-lg font-bold w-8 shrink-0 whitespace-nowrap">{uf}</span>
               <span className="text-white/65 text-lg leading-snug">{texto}</span>
             </motion.div>
           ))}
@@ -1306,7 +1306,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
           >
-            <span className="font-mono text-white/60 text-lg w-10 shrink-0">{r.ano}</span>
+            <span className="font-mono text-white/60 text-lg w-14 shrink-0 whitespace-nowrap">{r.ano}</span>
             <div className="flex-1 h-6 rounded-lg bg-black/15 overflow-hidden">
               <motion.div
                 className="h-full rounded-lg bg-white flex items-center justify-end px-3"
