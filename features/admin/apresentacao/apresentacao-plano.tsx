@@ -1222,6 +1222,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
               </motion.div>
             ))}
           </div>
+          <p className="text-white/50 text-lg max-w-3xl mt-6 leading-relaxed">
+            A venda não é responsabilidade de uma função isolada: toda a equipe estratégica participa, cada
+            membro na fase que lhe é própria, da apresentação pedagógica às tratativas contratuais e ao
+            acompanhamento pós-venda. Isso torna a retenção de clientes parte do mesmo processo, não uma etapa
+            posterior a ele.
+          </p>
         </div>
       </div>
     </Slide>,
@@ -1261,8 +1267,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </motion.div>
         ))}
       </div>
-      <p className="text-white/60 text-lg max-w-3xl mt-6 leading-relaxed">
-        Adição constante de 10 novas escolas parceiras por ano, construindo uma operação sólida com recursos próprios.
+      <p className="text-white/60 text-lg max-w-4xl mt-6 leading-relaxed">
+        A meta de captação é constante, 10 novas escolas por ano, mas a progressão de alunos só se sustenta com
+        três motores simultâneos: novas escolas contratantes, expansão de séries e segmentos dentro das escolas
+        já atendidas, e crescimento da frente de famílias educadoras. Isoladamente, a captação de escolas no
+        porte médio atual da carteira não produz essa progressão, principal premissa a ser validada na revisão
+        do plano.
       </p>
     </Slide>,
 
