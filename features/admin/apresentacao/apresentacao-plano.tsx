@@ -1426,8 +1426,9 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <Cartao delay={0.4} className="mt-3">
         <p className="text-white/70 text-lg leading-relaxed">
           Toda a receita projetada entre 2027 e 2031 vem do sistema já existente. Os dois negócios futuros
-          dependem da consolidação da governança, da validação de demanda e do registro de propriedade
-          intelectual.
+          dependem de quatro condições: consolidação da governança, validação de demanda entre 2027 e 2029,
+          conclusão do registro de propriedade intelectual e estruturação de capital dimensionado especificamente
+          para eles.
         </p>
       </Cartao>
     </Slide>,
@@ -1472,7 +1473,12 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="riscos" variante="dark">
       <Eyebrow>Capítulo 14 · Análise de riscos</Eyebrow>
       <Titulo>Nenhum risco listado é, isoladamente, impeditivo do plano</Titulo>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 items-center">
+      <p className="text-white/60 text-lg max-w-4xl mt-4 leading-relaxed">
+        Em conjunto, no entanto, os riscos mapeados justificam que a consolidação de governança e a padronização
+        dos componentes do sistema precedam o avanço para os dois negócios futuros descritos no capítulo
+        anterior.
+      </p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 items-center">
         <MatrizRisco
           pontos={[
             { label: "Liderança central", x: 0.82, y: 0.85, cor: "#e8607a" },
