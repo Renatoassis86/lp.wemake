@@ -767,6 +767,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           <CartaoTopico key={c.lei} delay={i * 0.15} icone={c.icone} titulo={c.lei} texto={c.texto} variante="royal" />
         ))}
       </div>
+      <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mt-6">
+        Embora o mecanismo do Fundeb se aplique diretamente à rede pública, a pressão regulatória alcança
+        igualmente as escolas privadas, que precisam demonstrar conformidade curricular às famílias e aos órgãos
+        de supervisão educacional. O sistema We Make já incorpora, desde a concepção do currículo, os três eixos
+        exigidos pela norma federal, pensamento computacional, cultura digital e mundo digital, o que a posiciona
+        como resposta pronta a uma obrigatoriedade que a maioria das escolas confessionais ainda está em processo
+        de atender.
+      </p>
     </Slide>,
 
     // 11 — mapa: estados com lei própria
@@ -839,6 +847,11 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
           </Cartao>
         ))}
       </div>
+      <p className="text-white/50 text-base max-w-2xl mt-5 leading-relaxed">
+        A We Make é a primeira empresa brasileira a reunir, num único sistema, currículo plurianual, plataforma
+        tecnológica própria, espaço maker, formação docente e assessoria institucional, fundamentados de forma
+        explícita na cosmovisão cristã.
+      </p>
     </Slide>,
 
     // 15 — futuros concorrentes
