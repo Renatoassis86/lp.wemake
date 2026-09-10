@@ -495,13 +495,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8">
         {[
           { label: "Escolas parceiras (2026)", valor: 12 },
-          { label: "Alunos atendidos (2026)", valor: 2000, sufixo: "+" },
+          { label: "Alunos atendidos (2026)", valor: 2000, prefixo: "≈" },
           { label: "Crescimento em escolas, 2024 a 2026", valor: 500, sufixo: "%" },
           { label: "Ano de fundação", valor: 2023, semAnimacao: true },
         ].map((s, i) => (
           <Cartao key={s.label} delay={i * 0.1}>
             <p className="font-display text-white text-[clamp(1.75rem,4vw,2.5rem)]">
-              {s.semAnimacao ? s.valor : <NumeroAnimado valor={s.valor} sufixo={s.sufixo} />}
+              {s.semAnimacao ? s.valor : <NumeroAnimado valor={s.valor} prefixo={s.prefixo} sufixo={s.sufixo} />}
             </p>
             <p className="text-white/50 text-lg mt-1.5 leading-snug">{s.label}</p>
           </Cartao>
