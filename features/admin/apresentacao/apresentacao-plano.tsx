@@ -60,6 +60,8 @@ interface Props {
   geoBrasil: GeoBrasil | null;
   escolasPorEstado: Record<string, number>;
   estadosComLeiPropria: Record<string, number>;
+  /** Renderiza todos os slides empilhados, sem interatividade — usado só pela exportação em PDF. */
+  modoImpressao?: boolean;
 }
 
 function formatBRL(v: number, casas = 0): string {
@@ -445,7 +447,7 @@ const EQUIPE_FILHOS = [
 
 /* ================= Componente principal ================= */
 
-export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosComLeiPropria }: Props) {
+export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosComLeiPropria, modoImpressao = false }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const slideEditRef = useRef<HTMLDivElement>(null);
   const [atual, setAtual] = useState(0);
@@ -1782,6 +1784,31 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     const dy = t.clientY - touchStart.current.y;
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) irPara(atual + (dx < 0 ? 1 : -1));
     touchStart.current = null;
+  }
+
+  // Impressão/PDF: todos os slides empilhados em fluxo normal, sem carrossel,
+  // sem controles, com quebra de página entre eles. O wrapper de cada slide
+  // força altura automática e overflow visível (em vez de h-full + overflow-y-
+  // auto do modo interativo) pra nunca cortar conteúdo — se um slide for mais
+  // alto que uma página, o navegador simplesmente continua na próxima.
+  if (modoImpressao) {
+    return (
+      <div className="bg-[rgb(var(--color-brand-navy))] text-white">
+        {slides.map((slide, i) => {
+          const chave = (slide as any)?.key as string | undefined;
+          const override = chave ? overrides[chave] : undefined;
+          return (
+            <div
+              key={i}
+              className="relative w-full [&>div]:!h-auto [&>div]:!min-h-[1000px] [&>div]:!overflow-visible"
+              style={{ breakAfter: "page", pageBreakAfter: "always" }}
+            >
+              {override ? <div dangerouslySetInnerHTML={{ __html: override }} /> : slide}
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   const variante = motionVariant(direcao);
