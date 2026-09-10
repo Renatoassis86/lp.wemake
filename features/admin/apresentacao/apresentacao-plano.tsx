@@ -413,7 +413,7 @@ const EQUIPE_FILHOS = [
   { nome: "Emanuela Monteiro", cargo: "Consultoria e Negócios", cor: "rgb(var(--color-brand-mint))", iniciais: "EM" },
   { nome: "Christiano Bonifazio", cargo: "Comercial, SP", cor: "rgb(var(--color-brand-sky))", iniciais: "CB" },
   { nome: "Equipe de tecnologia", cargo: "3 devs + 1 dados", cor: "rgb(var(--color-brand-royal))", iniciais: "TI" },
-  { nome: "Iran Firmino", cargo: "Contador", cor: "rgb(var(--color-brand-mint))", iniciais: "IF" },
+  { nome: "Assessoria Contábil", cargo: "Contador", cor: "rgb(var(--color-brand-mint))", iniciais: "AC" },
 ];
 
 /* ================= Componente principal ================= */
@@ -575,27 +575,22 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
 
     // 2c — histórico
     <Slide key="historico" variante="dark">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
-        <div>
-          <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
-          <Titulo>O currículo evoluiu de robótica pontual para um sistema completo do 1º ano ao Ensino Médio</Titulo>
-          <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
-            A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
-            cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
-            programação, robótica educacional, eletrônica, modelagem e fabricação 3D, projetos de engenharia,
-            inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar e Criar. Para o
-            ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
-          </p>
-          <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-3">
-            A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do
-            sistema, entregando currículo, planos de aula e recursos a professores e instrumentos de acompanhamento à
-            coordenação. A empresa também acumulou experiência em concepção de ambientes físicos de aprendizagem,
-            incluindo projeto arquitetônico, memorial descritivo e dimensionamento de recursos, e desenvolveu um
-            modelo próprio de acompanhamento institucional contínuo às escolas parceiras.
-          </p>
-        </div>
-        <FotoPainel src="/photos/salamaker1.png" className="aspect-[4/5] hidden lg:block" />
-      </div>
+      <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
+      <Titulo>O currículo evoluiu para um sistema completo do 1º ano ao Ensino Médio</Titulo>
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
+        A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
+        cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
+        programação, robótica educacional, eletrônica, modelagem e fabricação 3D, projetos de engenharia,
+        inteligência artificial e cidadania digital, sob a metodologia própria Conhecer, Explorar e Criar. Para o
+        ciclo de 2027, o portfólio passa a incorporar o Livro Maker físico e a Educação Infantil.
+      </p>
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-3">
+        A plataforma tecnológica própria tornou-se a principal camada digital de distribuição e acompanhamento do
+        sistema, entregando currículo, planos de aula e recursos a professores e instrumentos de acompanhamento à
+        coordenação. A empresa também acumulou experiência em concepção de ambientes físicos de aprendizagem,
+        incluindo projeto arquitetônico, memorial descritivo e dimensionamento de recursos, e desenvolveu um
+        modelo próprio de acompanhamento institucional contínuo às escolas parceiras.
+      </p>
     </Slide>,
 
     // 2d — equipe (organograma)
@@ -687,15 +682,15 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         ))}
       </div>
       <div className="grid grid-cols-2 gap-3 mt-3 max-w-2xl">
-        <Cartao delay={0.5} className="bg-[rgb(var(--color-brand-navy))]/15 border-[rgb(var(--color-brand-navy))]/25">
-          <p className="font-display text-[rgb(var(--color-brand-navy))] text-xl">&lt; 2 anos</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/75 text-lg mt-1 leading-snug">
+        <Cartao delay={0.5} className="border-[rgb(var(--color-brand-mint))]/25">
+          <p className="font-display text-[rgb(var(--color-brand-mint))] text-xl">&lt; 2 anos</p>
+          <p className="text-white/70 text-lg mt-1 leading-snug">
             Recuperação do investimento por nova escola
           </p>
         </Cartao>
-        <Cartao delay={0.6} className="bg-[rgb(var(--color-brand-navy))]/15 border-[rgb(var(--color-brand-navy))]/25">
-          <p className="font-display text-[rgb(var(--color-brand-navy))] text-xl">18 a 36 meses</p>
-          <p className="text-[rgb(var(--color-brand-navy))]/75 text-lg mt-1 leading-snug">
+        <Cartao delay={0.6} className="border-[rgb(var(--color-brand-mint))]/25">
+          <p className="font-display text-[rgb(var(--color-brand-mint))] text-xl">18 a 36 meses</p>
+          <p className="text-white/70 text-lg mt-1 leading-snug">
             Recuperação na frente de famílias educadoras, ainda em validação
           </p>
         </Cartao>
@@ -1280,15 +1275,16 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             <span className="font-mono text-white/60 text-lg w-14 shrink-0 whitespace-nowrap">{r.ano}</span>
             <div className="flex-1 h-6 rounded-lg bg-black/15 overflow-hidden">
               <motion.div
-                className="h-full rounded-lg bg-white flex items-center justify-end px-3"
+                className="h-full rounded-lg bg-white"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${r.largura}%` }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 + 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="font-mono text-lg font-bold text-[rgb(var(--color-brand-royal-deep))]">{r.alunos}</span>
-              </motion.div>
+              />
             </div>
+            <span className="font-mono text-lg font-bold text-white min-w-[9.5rem] shrink-0 text-right whitespace-nowrap">
+              {r.alunos}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -1362,18 +1358,59 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="swot" variante="dark">
       <Eyebrow>Capítulo 11 · Análise SWOT</Eyebrow>
       <Titulo>O que torna o sistema difícil de copiar também o torna dependente de poucas pessoas</Titulo>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
         {[
-          { titulo: "Forças", cor: "rgb(var(--color-brand-mint))", itens: ["Integração das cinco frentes em um sistema único", "Currículo autoral consolidado, 1º ao 9º ano", "Cosmovisão cristã incorporada ao produto", "Entrega 100% digital do currículo escolar"] },
-          { titulo: "Fraquezas", cor: "rgb(var(--color-brand-sky))", itens: ["Dependência da presença pessoal do fundador", "Formação, espaço maker e assessoria ainda não produtizados", "Plataforma menos madura que concorrentes maiores", "TAM/SAM ainda em estimativa preliminar"] },
-          { titulo: "Oportunidades", cor: "rgb(var(--color-brand-royal))", itens: ["Curricularização da educação digital", "Fragmentação do mercado atual", "Parceria avançada com a Aspen, homeschooling", "Escola técnica e faculdade de tecnologia, 2030"] },
-          { titulo: "Ameaças", cor: "#e8607a", itens: ["Entrada de players com distribuição já consolidada", "Comoditização por IA generativa", "Incerteza regulatória do homeschooling no Brasil", "Pressão orçamentária das escolas clientes"] },
+          {
+            titulo: "Forças", cor: "rgb(var(--color-brand-mint))", itens: [
+              "Integração entre currículo, plataforma, formação, espaço maker e assessoria em um único sistema, difícil de reproduzir por concorrentes especializados em apenas um componente",
+              "Currículo autoral consolidado do 1º ao 9º ano, com Ensino Médio e Educação Infantil em expansão",
+              "Cosmovisão cristã incorporada ao produto, não apenas ao discurso comercial",
+              "Relacionamento próximo e recorrente com as escolas parceiras",
+              "Entrega do Currículo Maker inteiramente digital, sem custo de logística física",
+              "Modelo de precificação com calculadora e planos de adesão, adaptável ao porte e à natureza de cada escola",
+              "Espaço Maker institucionalizado como produto próprio, com responsável dedicado",
+              "86,5% da meta escolar de 2027 já assegurada em contratos assinados",
+            ],
+          },
+          {
+            titulo: "Fraquezas", cor: "rgb(var(--color-brand-sky))", itens: [
+              "Dependência elevada da presença pessoal do fundador para vendas de maior complexidade",
+              "Formação Docente, Espaço Maker e Assessoria Institucional ainda não produtizados como linhas independentes",
+              "Proteção de novas frentes autorais ainda em andamento junto aos órgãos competentes",
+              "Plataforma tecnologicamente menos madura que a de concorrentes de maior porte",
+              "Presença digital e participação em grandes eventos de EdTech ainda incipiente",
+              "TAM e SAM ainda baseados em estimativa preliminar, sem estudo de dimensionamento consolidado",
+              "Caixa de referência de R$50.000,00 frente a um orçamento anual de despesa de R$848.913,14",
+            ],
+          },
+          {
+            titulo: "Oportunidades", cor: "rgb(var(--color-brand-royal))", itens: [
+              "Leis federais recentes tornando a educação tecnológica exigência curricular: Lei nº 14.533/2023, Complemento de Computação da BNCC e condicionantes do novo Fundeb",
+              "Fragmentação do mercado atual: escolas compram de vários fornecedores diferentes para currículo, formação, software e equipamentos",
+              "Negociação avançada com a Aspen como possível porta de entrada para comunidades de homeschooling",
+              "Assessoria Institucional como linha de menor concorrência direta no recorte confessional",
+              "Reprecificação da base legada e campanha de migração para o novo kit, com ganho potencial a partir de R$139.787,00 ao ano sem captação de novos clientes",
+              "Potencial de expansão para escola de tecnologia de abrangência nacional e faculdade de tecnologia",
+              "Modelos de licenciamento ou distribuição OEM com redes confessionais já estabelecidas",
+            ],
+          },
+          {
+            titulo: "Ameaças", cor: "#e8607a", itens: [
+              "Entrada de sistemas de ensino cristãos, grandes editoras ou big techs no mesmo nicho",
+              "Comoditização de planos de aula e conteúdo por ferramentas de inteligência artificial generativa",
+              "Pressão orçamentária das escolas clientes em cenários de deterioração macroeconômica",
+              "Incerteza regulatória sobre o homeschooling no Brasil",
+              "Risco de uso indevido de conteúdo proprietário para treinamento de IA de terceiros",
+              "Concentração de receita em poucos contratos de maior porte",
+              "Descasamento de caixa entre o primeiro e o segundo semestre de 2027",
+            ],
+          },
         ].map((q, i) => (
           <Cartao key={q.titulo} delay={i * 0.1}>
-            <p className="font-display text-[1.0625rem] mb-3" style={{ color: q.cor }}>{q.titulo}</p>
-            <ul className="space-y-1.5">
+            <p className="font-display text-[1.0625rem] mb-2.5" style={{ color: q.cor }}>{q.titulo}</p>
+            <ul className="space-y-1">
               {q.itens.map((it) => (
-                <li key={it} className="text-white/65 text-lg leading-relaxed flex gap-2">
+                <li key={it} className="text-white/65 text-lg leading-snug flex gap-2">
                   <span style={{ color: q.cor }}>·</span>{it}
                 </li>
               ))}
