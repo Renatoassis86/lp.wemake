@@ -416,8 +416,8 @@ export function FluxoCurriculo({ centro, satelites, tamanho = 620 }: { centro: s
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
             >
               <Icone className="size-5 text-[rgb(var(--color-brand-mint))] mx-auto mb-1.5" strokeWidth={1.75} />
-              <p className="text-white text-lg font-semibold leading-snug break-words">{s.titulo}</p>
-              <p className="text-white/50 text-lg leading-snug mt-0.5 break-words">{s.texto}</p>
+              <p lang="pt-BR" className="text-white text-lg font-semibold leading-snug [hyphens:auto] break-words">{s.titulo}</p>
+              <p lang="pt-BR" className="text-white/50 text-lg leading-snug mt-0.5 [hyphens:auto] break-words">{s.texto}</p>
             </motion.div>
           );
         })}
@@ -510,7 +510,7 @@ export function CicloEtapas({ centro, etapas }: { centro: string; etapas: EtapaC
               <div className="size-12 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm flex items-center justify-center shrink-0">
                 <Icone className="size-6 text-[rgb(var(--color-brand-mint))]" strokeWidth={1.75} />
               </div>
-              <p className="text-white text-lg font-semibold text-center leading-snug break-words">{etapa.titulo}</p>
+              <p lang="pt-BR" className="text-white text-lg font-semibold text-center leading-snug [hyphens:auto] break-words">{etapa.titulo}</p>
             </motion.div>
           );
         })}
