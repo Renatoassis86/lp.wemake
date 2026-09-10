@@ -970,7 +970,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       </p>
       <div className="mt-4 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 items-center">
         <FluxoCurriculo
-          tamanho={440}
+          tamanho={540}
           centro="Sabedoria"
           satelites={[
             { titulo: "Conhecer", texto: "Coração: deslumbramento.", icone: Sparkles },

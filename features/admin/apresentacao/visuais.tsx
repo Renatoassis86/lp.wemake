@@ -397,7 +397,7 @@ export function FluxoCurriculo({ centro, satelites, tamanho = 620 }: { centro: s
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center"
-          style={{ left: "50%", top: "50%", width: `${(106 / size) * 100}%` }}
+          style={{ left: "50%", top: "50%", width: `${(106 / 620) * 100}%` }}
         >
           <p className="font-display text-[rgb(var(--color-brand-navy))] text-[1.0625rem] leading-tight font-semibold">{centro}</p>
         </div>
@@ -410,7 +410,7 @@ export function FluxoCurriculo({ centro, satelites, tamanho = 620 }: { centro: s
             <motion.div
               key={s.titulo}
               className="absolute -translate-x-1/2 -translate-y-1/2 rounded-2xl border bg-[rgb(var(--color-brand-navy))]/70 backdrop-blur-sm px-2.5 py-2.5 text-center pointer-events-auto"
-              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: `${(140 / size) * 100}%` }}
+              style={{ left: `${leftPct}%`, top: `${topPct}%`, borderColor: "rgba(255,255,255,0.25)", width: `${(140 / 620) * 100}%` }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={emVista ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.65 + i * 0.1, duration: 0.4, ease: "backOut" }}
