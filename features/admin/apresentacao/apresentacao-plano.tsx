@@ -962,15 +962,14 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="metodologia" variante="dark">
       <Eyebrow>Metodologia pedagógica</Eyebrow>
       <Titulo>A metodologia busca alcançar o coração, a mente e as mãos do aluno</Titulo>
-      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-4">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-3">
         Toda pedagogia pressupõe uma resposta à pergunta "o que é o ser humano?". A metodologia própria da We
-        Make parte da antropologia bíblica: o ser humano não se define apenas pela razão, como no homo
-        rationalis, nem apenas pela capacidade de fazer, como no homo faber, mas antes de tudo pelo coração,
-        aquilo que ama e deseja. Sabedoria, nas Escrituras, é o termo que une razão, afeto e ação.
+        Make não se define apenas pela razão nem apenas pela capacidade de fazer, mas antes de tudo pelo
+        coração. Sabedoria, nas Escrituras, é o termo que une razão, afeto e ação.
       </p>
-      <div className="mt-4 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 items-center">
+      <div className="mt-4 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 items-center">
         <FluxoCurriculo
-          tamanho={540}
+          tamanho={680}
           centro="Sabedoria"
           satelites={[
             { titulo: "Conhecer", texto: "Coração: deslumbramento.", icone: Sparkles },
@@ -978,10 +977,10 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
             { titulo: "Criar", texto: "Mãos: Ciclo de Projeto.", icone: Hammer },
           ]}
         />
-        <p className="text-white/50 text-lg leading-relaxed max-w-md">
+        <p className="text-white/50 text-xl leading-relaxed max-w-md">
           Cada aula integra os três momentos, projetados para alcançar o coração, a mente e as mãos do aluno. A
-          avaliação acompanha todo o percurso, não apenas o resultado final, observando compreensão,
-          participação, tomada de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
+          avaliação acompanha todo o percurso, observando compreensão, participação, tomada de decisão e
+          capacidade de aperfeiçoamento do aluno ao longo do processo.
         </p>
       </div>
     </Slide>,
