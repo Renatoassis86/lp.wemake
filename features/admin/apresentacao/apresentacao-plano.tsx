@@ -967,13 +967,13 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         Make não se define apenas pela razão nem apenas pela capacidade de fazer, mas antes de tudo pelo
         coração. Sabedoria, nas Escrituras, é o termo que une razão, afeto e ação.
       </p>
-      <div className="mt-4 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 items-center">
+      <div className="mt-3 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 items-center">
         <FluxoCurriculo
-          tamanho={680}
+          tamanho={750}
           centro="Sabedoria"
           satelites={[
-            { titulo: "Conhecer", texto: "Coração: deslumbramento.", icone: Sparkles },
-            { titulo: "Explorar", texto: "Mente: sistematização.", icone: BookOpen },
+            { titulo: "Conhecer", texto: "Coração: deslumbra.", icone: Sparkles },
+            { titulo: "Explorar", texto: "Mente: sistematiza.", icone: BookOpen },
             { titulo: "Criar", texto: "Mãos: Ciclo de Projeto.", icone: Hammer },
           ]}
         />
