@@ -962,27 +962,28 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     <Slide key="metodologia" variante="dark">
       <Eyebrow>Metodologia pedagógica</Eyebrow>
       <Titulo>A metodologia busca alcançar o coração, a mente e as mãos do aluno</Titulo>
-      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-4">
         Toda pedagogia pressupõe uma resposta à pergunta "o que é o ser humano?". A metodologia própria da We
-        Make parte da antropologia bíblica: o ser humano não se define apenas pela razão, como no modelo do
-        homo rationalis, nem apenas pela capacidade de fazer, como no homo faber, mas antes de tudo pelo
-        coração, aquilo que ama e deseja. Nas Escrituras, sabedoria é o termo que une razão, afeto e ação; por
-        isso cada aula integra três momentos, projetados para alcançar o coração, a mente e as mãos do aluno.
+        Make parte da antropologia bíblica: o ser humano não se define apenas pela razão, como no homo
+        rationalis, nem apenas pela capacidade de fazer, como no homo faber, mas antes de tudo pelo coração,
+        aquilo que ama e deseja. Sabedoria, nas Escrituras, é o termo que une razão, afeto e ação.
       </p>
-      <div className="mt-6">
+      <div className="mt-4 grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 items-center">
         <FluxoCurriculo
+          tamanho={440}
           centro="Sabedoria"
           satelites={[
-            { titulo: "Conhecer", texto: "Alcança o coração: provoca deslumbramento e conexão inicial com o tema.", icone: Sparkles },
-            { titulo: "Explorar", texto: "Alcança a mente: sistematiza o conteúdo por explicações, exemplos e discussão.", icone: BookOpen },
-            { titulo: "Criar", texto: "Alcança as mãos: resolve a problematização inicial pelo Ciclo de Projeto.", icone: Hammer },
+            { titulo: "Conhecer", texto: "Coração: deslumbramento.", icone: Sparkles },
+            { titulo: "Explorar", texto: "Mente: sistematização.", icone: BookOpen },
+            { titulo: "Criar", texto: "Mãos: Ciclo de Projeto.", icone: Hammer },
           ]}
         />
+        <p className="text-white/50 text-lg leading-relaxed max-w-md">
+          Cada aula integra os três momentos, projetados para alcançar o coração, a mente e as mãos do aluno. A
+          avaliação acompanha todo o percurso, não apenas o resultado final, observando compreensão,
+          participação, tomada de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
+        </p>
       </div>
-      <p className="text-white/50 text-lg max-w-3xl mt-4 leading-relaxed">
-        A avaliação acompanha todo o percurso, não apenas o resultado final, observando compreensão,
-        participação, tomada de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
-      </p>
     </Slide>,
 
     // 6 — Ciclo de Projeto (fluxo circular)

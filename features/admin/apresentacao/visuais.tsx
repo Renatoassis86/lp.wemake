@@ -333,13 +333,13 @@ interface NoFluxo {
   icone: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }
 
-export function FluxoCurriculo({ centro, satelites }: { centro: string; satelites: NoFluxo[] }) {
+export function FluxoCurriculo({ centro, satelites, tamanho = 620 }: { centro: string; satelites: NoFluxo[]; tamanho?: number }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-10%" });
-  const size = 620;
+  const size = tamanho;
   const cx = size / 2;
   const cy = size / 2;
-  const rOrbita = 208;
+  const rOrbita = size * 0.335;
   const n = satelites.length;
 
   return (
