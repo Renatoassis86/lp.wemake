@@ -101,9 +101,9 @@ function GraficoTendencia({ anos }: { anos: AnoProjetado[] }) {
   const ref = useRef<SVGSVGElement>(null);
   const emVista = useInView(ref, { once: true, margin: "-15% 0px" });
   const width = 760;
-  const height = 280;
+  const height = 320;
   const padX = 36;
-  const padY = 28;
+  const padY = 40;
   const max = Math.max(...anos.map((a) => a.receita)) * 1.08;
   const min = 0;
 
@@ -161,50 +161,77 @@ function GraficoTendencia({ anos }: { anos: AnoProjetado[] }) {
         transition={{ duration: 1.6, ease: [0.65, 0, 0.35, 1] }}
       />
 
-      {pontos.map((p, i) => (
-        <g key={p.ano.ano}>
-          <motion.circle
-            cx={p.x}
-            cy={p.y}
-            r={i === pontos.length - 1 ? 7 : 4.5}
-            fill={i === pontos.length - 1 ? "rgb(var(--color-brand-mint))" : "rgb(var(--color-brand-navy))"}
-            stroke="rgb(var(--color-brand-mint))"
-            strokeWidth={i === pontos.length - 1 ? 0 : 2}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={emVista ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: 0.3 + i * 0.28, duration: 0.4, ease: "backOut" }}
-          />
-          {i === pontos.length - 1 && (
+      {pontos.map((p, i) => {
+        // Rótulo sempre para o canto superior-esquerdo do ponto, nunca reto acima
+        // dele: numa curva de crescimento, o espaço à esquerda-cima de qualquer
+        // ponto está sempre livre (o trecho anterior da curva é mais baixo), o que
+        // evita colisão mesmo quando os pontos ficam verticalmente próximos nos
+        // primeiros anos, quando o crescimento ainda é mais lento.
+        const rotulo = formatCompactoBRL(p.ano.receita);
+        const larguraRotulo = rotulo.length * 7.6 + 14;
+        // O primeiro ponto fica colado na borda esquerda do gráfico: um rótulo pra
+        // esquerda sairia da tela, então só ele vai pra direita.
+        const paraDireita = i === 0;
+        const rotuloX = paraDireita ? p.x + 10 : p.x - 10;
+        const rotuloY = Math.max(16, p.y - 14);
+        return (
+          <g key={p.ano.ano}>
             <motion.circle
               cx={p.x}
               cy={p.y}
-              r={7}
-              fill="none"
+              r={i === pontos.length - 1 ? 7 : 4.5}
+              fill={i === pontos.length - 1 ? "rgb(var(--color-brand-mint))" : "rgb(var(--color-brand-navy))"}
               stroke="rgb(var(--color-brand-mint))"
-              strokeWidth={2}
-              initial={{ scale: 1, opacity: 0.7 }}
-              animate={emVista ? { scale: [1, 2.4], opacity: [0.7, 0] } : {}}
-              transition={{ delay: 1.9, duration: 1.4, repeat: Infinity, repeatDelay: 0.6 }}
+              strokeWidth={i === pontos.length - 1 ? 0 : 2}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={emVista ? { scale: 1, opacity: 1 } : {}}
+              transition={{ delay: 0.3 + i * 0.28, duration: 0.4, ease: "backOut" }}
             />
-          )}
-          <motion.text
-            x={p.x}
-            y={p.y - 16}
-            textAnchor="middle"
-            fontSize="12"
-            fontFamily="var(--font-mono)"
-            fill="rgba(255,255,255,0.85)"
-            initial={{ opacity: 0, y: p.y - 8 }}
-            animate={emVista ? { opacity: 1, y: p.y - 16 } : {}}
-            transition={{ delay: 0.45 + i * 0.28, duration: 0.4 }}
-          >
-            {formatCompactoBRL(p.ano.receita)}
-          </motion.text>
-          <text x={p.x} y={height - 6} textAnchor="middle" fontSize="12" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.45)">
-            {p.ano.ano}
-          </text>
-        </g>
-      ))}
+            {i === pontos.length - 1 && (
+              <motion.circle
+                cx={p.x}
+                cy={p.y}
+                r={7}
+                fill="none"
+                stroke="rgb(var(--color-brand-mint))"
+                strokeWidth={2}
+                initial={{ scale: 1, opacity: 0.7 }}
+                animate={emVista ? { scale: [1, 2.4], opacity: [0.7, 0] } : {}}
+                transition={{ delay: 1.9, duration: 1.4, repeat: Infinity, repeatDelay: 0.6 }}
+              />
+            )}
+            <motion.g
+              initial={{ opacity: 0, y: rotuloY + 8 }}
+              animate={emVista ? { opacity: 1, y: rotuloY } : {}}
+              transition={{ delay: 0.45 + i * 0.28, duration: 0.4 }}
+            >
+              <rect
+                x={paraDireita ? rotuloX : rotuloX - larguraRotulo}
+                y={-11}
+                width={larguraRotulo}
+                height={18}
+                rx={5}
+                fill="rgb(var(--color-brand-navy))"
+                fillOpacity={0.85}
+              />
+              <text
+                x={paraDireita ? rotuloX + 6 : rotuloX - 6}
+                y={2}
+                textAnchor={paraDireita ? "start" : "end"}
+                fontSize="13"
+                fontWeight={700}
+                fontFamily="var(--font-mono)"
+                fill="rgba(255,255,255,0.92)"
+              >
+                {rotulo}
+              </text>
+            </motion.g>
+            <text x={p.x} y={height - 10} textAnchor="middle" fontSize="13" fontWeight={700} fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.55)">
+              {p.ano.ano}
+            </text>
+          </g>
+        );
+      })}
 
       {ultimoPonto && (
         <motion.g
@@ -214,7 +241,7 @@ function GraficoTendencia({ anos }: { anos: AnoProjetado[] }) {
         >
           <text
             x={ultimoPonto.x}
-            y={ultimoPonto.y - 34}
+            y={Math.max(14, ultimoPonto.y - 44)}
             textAnchor="middle"
             fontSize="11"
             fontFamily="var(--font-mono)"
@@ -576,7 +603,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
     // 2c — histórico
     <Slide key="historico" variante="dark">
       <Eyebrow>Capítulo 2 · Histórico</Eyebrow>
-      <Titulo>O currículo evoluiu para um sistema completo do 1º ano ao Ensino Médio</Titulo>
+      <Titulo>O currículo evoluiu para um sistema completo do Ensino Fundamental I ao Ensino Médio</Titulo>
       <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
         A empresa foi formalizada e apresentada publicamente ao mercado no final de 2023. O currículo, hoje,
         cobre Ensino Fundamental I, Ensino Fundamental II e Ensino Médio como componente curricular, incluindo
@@ -1331,23 +1358,23 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
         R$386.878,92 e margem operacional de 38,1%, base bem menor que a estrutura projetada para 2027, o que
         explica a mudança de patamar nos números a seguir.
       </p>
-      <div className="mt-6">
+      <div className="mt-5">
         <GraficoTendencia anos={anos} />
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
-        <Cartao delay={0.1}>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+        <Cartao delay={0.1} className="!p-4 sm:!p-5">
           <p className="font-display text-white text-2xl"><NumeroAnimado valor={receitaTotal2027} prefixo="R$ " /></p>
           <p className="text-white/50 text-lg mt-1">Receita 2027</p>
         </Cartao>
-        <Cartao delay={0.2}>
+        <Cartao delay={0.2} className="!p-4 sm:!p-5">
           <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={ultimoAno?.receita ?? 0} prefixo="R$ " /></p>
           <p className="text-white/50 text-lg mt-1">Receita 2031, cenário-base</p>
         </Cartao>
-        <Cartao delay={0.3}>
+        <Cartao delay={0.3} className="!p-4 sm:!p-5">
           <p className="font-display text-[rgb(var(--color-brand-mint))] text-2xl"><NumeroAnimado valor={ultimoAno?.resultado ?? 0} prefixo="R$ " /></p>
           <p className="text-white/50 text-lg mt-1">Resultado 2031, cenário-base</p>
         </Cartao>
-        <Cartao delay={0.4}>
+        <Cartao delay={0.4} className="!p-4 sm:!p-5">
           <p className="font-display text-white text-2xl"><NumeroAnimado valor={ultimoAno?.margemPct ?? 0} sufixo="%" casas={1} /></p>
           <p className="text-white/50 text-lg mt-1">Margem projetada 2031</p>
         </Cartao>
@@ -1403,7 +1430,7 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
               "Proteção de novas frentes autorais ainda em andamento junto aos órgãos competentes",
               "Plataforma tecnologicamente menos madura que a de concorrentes de maior porte",
               "Presença digital e participação em grandes eventos de EdTech ainda incipiente",
-              "TAM e SAM ainda baseados em estimativa preliminar, sem estudo de dimensionamento consolidado",
+              "Tamanho total do mercado confessional e mercado efetivamente acessível ainda baseados em estimativa preliminar, sem estudo de dimensionamento consolidado",
               "Caixa de referência de R$50.000,00 frente a um orçamento anual de despesa de R$848.913,14",
             ],
           },

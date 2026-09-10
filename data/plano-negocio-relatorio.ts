@@ -878,7 +878,7 @@ export const CAPITULOS_RELATORIO: CapituloRelatorio[] = [
               "Proteção de novas frentes autorais do currículo ainda em andamento junto aos órgãos competentes (a marca já está registrada).",
               "Plataforma tecnologicamente menos madura que a de concorrentes de maior porte.",
               "Presença digital e participação em grandes eventos de EdTech ainda incipiente.",
-              "TAM e SAM ainda baseados em estimativa preliminar, sem estudo de dimensionamento consolidado.",
+              "Tamanho total do mercado confessional e mercado efetivamente acessível ainda baseados em estimativa preliminar, sem estudo de dimensionamento consolidado.",
             ],
           },
           { tipo: "subtitulo", texto: "Oportunidades" },
