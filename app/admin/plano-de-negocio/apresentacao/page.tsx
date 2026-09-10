@@ -16,16 +16,17 @@ export const dynamic = "force-dynamic";
 /**
  * Distribuição real das 23 escolas do orçamento 2027 por estado. Base: cadastro
  * do CRM comercial (app_comercial_We Make) e o slide "Onde estamos?" enviado
- * pelo usuário, que confirmou cidade das escolas do Paraná, Ceará, Paraíba,
- * São Paulo e Santa Catarina. 21 das 23 escolas já têm cidade/UF confirmados;
- * as 2 restantes ainda não entram aqui para não inventar dado.
+ * pelo usuário. Corrigido em 2026-09-10 por revisão direta do Dênis: não há
+ * escola no ES (removida), SP tem 5 (não 3) e SC tem 3 (não 2) — os nomes das
+ * escolas adicionais em SP/SC ainda não foram informados, por isso não estão
+ * listados nos comentários abaixo (só o total, pra não inventar atribuição).
+ * 22 das 23 escolas já têm UF confirmada; 1 restante ainda não entra aqui.
  */
 const ESCOLAS_POR_ESTADO: Record<string, number> = {
   PR: 8, // Educar Londrina, Colégio Lighthouse (Campo Largo), Escola Supremo (Curitiba), Colégio Graciosa (Quatro Barras), Escola Cristã do Reino (Campo Mourão), Colégio Journey (Curitiba), Escola Aprender e Viver (Curitiba), Sagrados Corações (Jacarezinho)
-  SP: 3, // ACR Classical Christian School (São Bernardo do Campo), Colégio Cristão Zoe (Guarulhos), Escola Cristã Paz (Itapetininga)
-  SC: 2, // Colégio Cristão Amar (Itajaí), For Life School (Florianópolis)
+  SP: 5, // inclui ACR Classical Christian School (São Bernardo do Campo), Colégio Cristão Zoe (Guarulhos), Escola Cristã Paz (Itapetininga) + 2 escolas ainda sem nome/cidade confirmados
+  SC: 3, // inclui Colégio Cristão Amar (Itajaí), For Life School (Florianópolis) + 1 escola ainda sem nome/cidade confirmados
   PB: 2, // Executivo Colégio e Curso (Guarabira), Centro Educacional Sonho de Eloi (Ingá)
-  ES: 1, // Primeiro o Reino (Vitória)
   MA: 1, // Escola Estímulos (São Mateus do Maranhão)
   RS: 1, // Colégio/Instituto Reverendo Olavo Nunes (Porto Alegre)
   RN: 1, // Bee Christian School (Natal/Parnamirim)

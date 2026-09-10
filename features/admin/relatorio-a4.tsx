@@ -112,10 +112,9 @@ function Bloco({ bloco }: { bloco: BlocoConteudo }) {
     case "mapa-ibge": {
       const estados = [
         { uf: "Paraná", sigla: "PR", escolas: 8 },
-        { uf: "São Paulo", sigla: "SP", escolas: 3 },
-        { uf: "Santa Catarina", sigla: "SC", escolas: 2 },
+        { uf: "São Paulo", sigla: "SP", escolas: 5 },
+        { uf: "Santa Catarina", sigla: "SC", escolas: 3 },
         { uf: "Paraíba", sigla: "PB", escolas: 2 },
-        { uf: "Espírito Santo", sigla: "ES", escolas: 1 },
         { uf: "Maranhão", sigla: "MA", escolas: 1 },
         { uf: "Rio Grande do Sul", sigla: "RS", escolas: 1 },
         { uf: "Rio Grande do Norte", sigla: "RN", escolas: 1 },
@@ -126,8 +125,8 @@ function Bloco({ bloco }: { bloco: BlocoConteudo }) {
         <div className="ra4-map-wrap">
           <h4 className="ra4-visual-title">Distribuição geográfica das escolas contratantes</h4>
           <p className="ra4-map-nota">
-            20 das 23 escolas do orçamento de 2027 têm cidade e UF confirmados no cadastro comercial; as 3
-            restantes ainda não entram nesta distribuição.
+            22 das 23 escolas do orçamento de 2027 têm cidade e UF confirmados no cadastro comercial; a 1
+            restante ainda não entra nesta distribuição.
           </p>
           <div className="ra4-map-legend">
             {estados.map((e) => (
