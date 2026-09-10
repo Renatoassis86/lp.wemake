@@ -931,31 +931,55 @@ export function ApresentacaoPlano({ anos, geoBrasil, escolasPorEstado, estadosCo
       </div>
     </Slide>,
 
+    // 5b — metodologia Conhecer, Explorar e Criar (visão geral)
+    <Slide key="metodologia" variante="dark">
+      <Eyebrow>Metodologia pedagógica</Eyebrow>
+      <Titulo>A metodologia busca alcançar o coração, a mente e as mãos do aluno</Titulo>
+      <p className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-4xl mt-5">
+        Toda pedagogia pressupõe uma resposta à pergunta "o que é o ser humano?". A metodologia própria da We
+        Make parte da antropologia bíblica: o ser humano não se define apenas pela razão, como no modelo do
+        homo rationalis, nem apenas pela capacidade de fazer, como no homo faber, mas antes de tudo pelo
+        coração, aquilo que ama e deseja. Nas Escrituras, sabedoria é o termo que une razão, afeto e ação; por
+        isso cada aula integra três momentos, projetados para alcançar o coração, a mente e as mãos do aluno.
+      </p>
+      <div className="mt-6">
+        <FluxoCurriculo
+          centro="Sabedoria"
+          satelites={[
+            { titulo: "Conhecer", texto: "Alcança o coração: provoca deslumbramento e conexão inicial com o tema.", icone: Sparkles },
+            { titulo: "Explorar", texto: "Alcança a mente: sistematiza o conteúdo por explicações, exemplos e discussão.", icone: BookOpen },
+            { titulo: "Criar", texto: "Alcança as mãos: resolve a problematização inicial pelo Ciclo de Projeto.", icone: Hammer },
+          ]}
+        />
+      </div>
+      <p className="text-white/50 text-lg max-w-3xl mt-4 leading-relaxed">
+        A avaliação acompanha todo o percurso, não apenas o resultado final, observando compreensão,
+        participação, tomada de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
+      </p>
+    </Slide>,
+
     // 6 — Ciclo de Projeto (fluxo circular)
     <Slide key="ciclo-projeto" variante="dark">
-      <Eyebrow>Metodologia Conhecer, Explorar e Criar</Eyebrow>
-      <Titulo>O Momento Criar segue um ciclo de projeto estruturado em seis etapas</Titulo>
+      <Eyebrow>Momento Criar</Eyebrow>
+      <Titulo>O Momento Criar segue um ciclo de projeto estruturado em sete etapas</Titulo>
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center mt-8">
         <div>
           <p className="text-white/70 text-xl leading-relaxed max-w-lg">
-            Cada aula segue os três momentos da metodologia: Conhecer, que provoca deslumbramento e conexão
-            inicial com o tema; Explorar, que sistematiza o conteúdo por meio de explicações, exemplos e
-            discussão; e Criar, conduzido pelo Ciclo de Projeto ao lado.
+            No Momento Criar, o aluno busca resolver a problematização inicial com o conhecimento adquirido no
+            Momento Explorar, através da construção de um protótipo, de um algoritmo ou da realização de uma
+            atividade, geralmente seguindo o Ciclo de Projeto ao lado.
           </p>
           <p className="text-white/60 text-xl leading-relaxed max-w-lg mt-4">
-            As seis etapas se repetem a cada novo desafio proposto em sala, do primeiro contato com o problema
-            até a apresentação da solução para a turma, e não são rigidamente lineares: o processo permite
-            retornar, ajustar e refinar soluções ao longo do projeto.
-          </p>
-          <p className="text-white/50 text-xl leading-relaxed max-w-lg mt-4">
-            A avaliação acompanha todo esse percurso, não apenas o resultado final, observando compreensão,
-            participação, tomada de decisão e capacidade de aperfeiçoamento do aluno ao longo do processo.
+            As etapas não seguem uma sequência rígida. Quando o teste mostra que a ideia não funcionou, o aluno
+            identifica o erro, repensa a solução, aperfeiçoa o protótipo e testa de novo, quantas vezes forem
+            necessárias, antes de compartilhar o resultado com a turma.
           </p>
         </div>
         <CicloEtapas
           centro="Momento Criar"
           etapas={[
             { icone: Search, titulo: "Identificar" },
+            { icone: BookOpen, titulo: "Pesquisar" },
             { icone: Lightbulb, titulo: "Imaginar" },
             { icone: ClipboardCheck, titulo: "Planejar" },
             { icone: Hammer, titulo: "Construir" },
